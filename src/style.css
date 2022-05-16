@@ -2,7 +2,8 @@ body{
     background-color: #f8edeb;
     display: flex;
     place-content: center center;
-    align-items: end;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .container{
