@@ -3,5 +3,3 @@
 import { myFunction } from './lib/index.js';
 
 myFunction();
-
-//console.log(firebase);
