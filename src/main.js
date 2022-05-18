@@ -23,8 +23,8 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-let auth = getAuth(app);
-let dataBase = getFirestore(app);
+const auth = getAuth(app);
+const db = getFirestore(app);
 
 onAuthStateChanged(auth, (user) => {
   if (user != null) {
@@ -40,3 +40,4 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
+//console.log(dataBase);
