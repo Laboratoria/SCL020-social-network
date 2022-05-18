@@ -1,14 +1,6 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
-// Este es el punto de entrada de tu aplicacion
-
-// import { myFunction } from './lib/index.js';
-
-// myFunction();
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -26,18 +18,12 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-onAuthStateChanged(auth, (user) => {
-  if (user != null) {
-    console.log('Loged in');
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-    const uid = user.uid;
-    // ...
-  } else {
-    console.log('no user');
-    // User is signed out
-    // ...
-  }
-});
-
-//console.log(dataBase);
+const form = document.getElementById('form');
+form.addEventListener('submit',(e)=>{
+  e.preventDefault();
+  let name = document.getElementById('name').value;
+  let password = document.getElementById('password').value;
+  createUserWithEmailAndPassword(auth, name, password).then((userCredential) => {
+    console.log(userCredential.user);
+  })
+})
