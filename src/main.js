@@ -1,6 +1,8 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
+
+//console.log(createUserWithEmailAndPassword);
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -18,12 +20,31 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-const form = document.getElementById('form');
-form.addEventListener('submit',(e)=>{
-  e.preventDefault();
-  let name = document.getElementById('name').value;
-  let password = document.getElementById('password').value;
-  createUserWithEmailAndPassword(auth, name, password).then((userCredential) => {
-    console.log(userCredential.user);
-  })
-})
+// Creando modal de Sign Up
+const modal = document.querySelector('#modal-signup');
+const openModal = document.querySelector('.open-btn');
+
+openModal.addEventListener('click', () => {
+  modal.showModal();
+
+  const form = document.getElementById('form');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    // Firebase
+    createUserWithEmailAndPassword(auth, email, password).then(
+      function(user) {
+        user.updateProfile({
+          displayName: name
+        })}
+  );
+    modal.close()
+    form.reset()
+});
+});
+
+
+
