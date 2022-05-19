@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
-  <title>Document</title>
+  <title>junkTube</title>
 </head>
+
 <body>
-  <form id="form">
+  <button id="signup-btn" class="open-btn">Sign Up</button>
 
-
-name:
-  <input text required id="name">
-  password:
-  <input text id="password">
-
-  <input type="submit" value="Submit">
-
-</form>
+  <!--SIGN UP MODAL-->
+  <dialog id="modal-signup" class="modal"> <!--dialog tag elimina la necesidad de toogle(classList) la clase show/hidden de un modal-->
+    <div class="modal-content">
+      <form id="form" class="form" method="dialog"> <!--este método permite que el modal se cierre en automático con el submit del form-->
+        <label for="name">Name: </label>
+        <input id="name" type="text" placeholder="Your name">
+        <br>
+        <label for="email">Email: </label>
+        <input id="email" type="email" placeholder="Your email">
+        <br>
+        <label for="password">Password: </label>
+        <input id="password" type="password" placeholder="Your password"> <!--el atributo type password enmascara el input-->
+        <br>
+        <button id="submit-btn" class="submit-btn" type="submit">Submit</button>
+      </form>
+    </div>
+  </dialog>
 
   <script type="module" defer src="./main.js"></script>
 </body>
+
 </html>

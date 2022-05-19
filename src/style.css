@@ -1,3 +1,19 @@
+
+.modal {
+    padding: 1em;
+    max-width: 50ch;
+    border: 0;
+    box-shadow: 0 0 1em rgb(0 0 0 / .3); /*.3 es la opacidad*/
+
+    & > * {
+        margin: 0 0 0.5rem 0;
+    }
+}
+
+.modal::backdrop { /*backdrop es un seudo element, funciona similar a overlay*/
+    background: rgb(0 0 0 / .4) 
+}
+
 body{
     background-color: #f8edeb;
     display: flex;
@@ -18,3 +34,4 @@ body{
 .container :hover{
     fill: yellow;
 }
+
