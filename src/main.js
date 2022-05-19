@@ -35,12 +35,24 @@ openModal.addEventListener('click', () => {
     const password = document.getElementById('password').value;
 
     // Firebase
-    createUserWithEmailAndPassword(auth, email, password).then(
-      function(user) {
-        user.updateProfile({
-          displayName: name
-        })}
-  );
+    createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
+      // Signed in
+      updateProfile(userCredential.user, {
+        displayName: name
+      }).then(() => {
+        // Profile updated!
+        // ...
+      }).catch((error) => {
+        // An error occurred
+        // ...
+      });
+      // ...
+      console.log(auth.currentUser)
+      console.log(auth.currentUser.email)
+      console.log(auth.currentUser.displayName)
+    })
+
+  
     modal.close()
     form.reset()
 });
