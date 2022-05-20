@@ -4,6 +4,9 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
+  signInWithRedirect,
+  getRedirectResult,
+  GoogleAuthProvider,
   signOut,
   updateProfile,
 } from 'firebase/auth';
@@ -24,11 +27,13 @@ const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 const db = getFirestore(app);
+const provider = new GoogleAuthProvider(app);
 
 // Creando modal de Sign Up
 const modal = document.querySelector('#modal-signup');
 const openModal = document.querySelector('.open-btn');
 
+// State of user
 onAuthStateChanged(auth, (user) => {
   if (user) {
     console.log('user logged in:', user);
@@ -37,6 +42,7 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
+// Modal form sign up
 openModal.addEventListener('click', () => {
   modal.showModal();
 
@@ -47,19 +53,44 @@ openModal.addEventListener('click', () => {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-    // Firebase
-    createUserWithEmailAndPassword(auth, email, password).then(
-      () => {
-        updateProfile(auth.currentUser, {
-          displayName: name,
-        });
-      },
-    );
+    // Create user with email and password
+    createUserWithEmailAndPassword(auth, email, password).then(() => {
+      updateProfile(auth.currentUser, {
+        displayName: name,
+      });
+    });
     modal.close();
     form.reset();
   });
 });
 
+// Signing up with redirect Google
+const googleBtn = document.querySelector('#google-btn');
+googleBtn.addEventListener('click', () => {
+  signInWithRedirect(auth, provider);
+
+  getRedirectResult(auth)
+    .then((result) => {
+      // This gives you a Google Access Token. We can use tu access Google APIs
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+
+      // The signed-in user info
+      const user = result.user;
+    })
+    .catch((error) => {
+      // Handle Errors here
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the users account used
+      const email = error.customData.email;
+      // The AuthCredential type that was used
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      // ...
+    });
+});
+
+// Log in modal
 const openLoginModal = document.querySelector('.login-btn');
 
 const loginModal = document.querySelector('#modal-login');
@@ -72,13 +103,14 @@ openLoginModal.addEventListener('click', () => {
     const email = document.getElementById('login-email').value;
     const password = document.getElementById('login-password').value;
 
-    signInWithEmailAndPassword(auth, email, password).then(() => {
-    });
+    // Log in with email and password
+    signInWithEmailAndPassword(auth, email, password).then(() => {});
     loginForm.reset();
     loginModal.close();
   });
 });
 
+// Log out
 const logout = document.getElementById('signOut');
 logout.addEventListener('click', (e) => {
   e.preventDefault();
