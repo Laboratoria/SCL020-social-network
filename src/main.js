@@ -1,8 +1,13 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+  updateProfile,
+} from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
-
-//console.log(createUserWithEmailAndPassword);
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -24,6 +29,14 @@ const db = getFirestore(app);
 const modal = document.querySelector('#modal-signup');
 const openModal = document.querySelector('.open-btn');
 
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    console.log('user logged in:', user);
+  } else {
+    console.log('user logged out');
+  }
+});
+
 openModal.addEventListener('click', () => {
   modal.showModal();
 
@@ -36,15 +49,38 @@ openModal.addEventListener('click', () => {
 
     // Firebase
     createUserWithEmailAndPassword(auth, email, password).then(
-      function(user) {
-        user.updateProfile({
-          displayName: name
-        })}
-  );
-    modal.close()
-    form.reset()
+      () => {
+        updateProfile(auth.currentUser, {
+          displayName: name,
+        });
+      },
+    );
+    modal.close();
+    form.reset();
+  });
 });
+
+const openLoginModal = document.querySelector('.login-btn');
+
+const loginModal = document.querySelector('#modal-login');
+openLoginModal.addEventListener('click', () => {
+  loginModal.showModal();
+
+  const loginForm = document.getElementById('login-form');
+  loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+
+    signInWithEmailAndPassword(auth, email, password).then(() => {
+    });
+    loginForm.reset();
+    loginModal.close();
+  });
 });
 
-
-
+const logout = document.getElementById('signOut');
+logout.addEventListener('click', (e) => {
+  e.preventDefault();
+  signOut(auth).then(() => {});
+});
