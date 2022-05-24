@@ -11,7 +11,7 @@ Decidimos hacer una red social dirigida al usuario plant lover.
 
 <img src = "PALETA DE COLORES.jpeg">
 <img src = "PALETA DE COLORES 1.jpg">
-<img src = "PALETA DE COLORES 2.jpG">
+<img src = "PALETA DE COLORES 2.jpg">
 
 ## DESCRIPCIÓN DE PRODUCTO
 
