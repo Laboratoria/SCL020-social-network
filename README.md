@@ -24,3 +24,4 @@ Decidimos hacer una red social dirigida al usuario plant lover.
 * Definimos algunas tareas en Trello y adjuntamos información.
 * Comenzamos a trabajar el prototipo de baja en Excalidraw
 * Elegimos nuestra paleta de colores añadiendola a trello.
+* Estructuramos nuestro DOM para comenzar a trabajar con firebase, router y templates.
