@@ -10,16 +10,27 @@ onAuthStateChanged(auth, (user) => {
 });
 
 // Create user with email and password
-signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in
-    const user = userCredential.user;
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-  });
+const create = async (email, password)=>{
+    try {
+        await createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
+            console.log(userCredential);
+          })
+    } catch(error) {
+        throw error.message
+    }
+}
+
+
+// Sign in with email and password, la persona ya existe
+const login = async(email, password)=> {
+    try {
+        await signInWithEmailAndPassword(auth, email, password)
+        
+    } catch(error) {
+        throw error.message
+    }
+}
+
 
   function google (){
     signInWithRedirect(auth, provider);
@@ -43,14 +54,18 @@ signInWithEmailAndPassword(auth, email, password)
         // ...
       });
   }
-    // Sign in with email and password, la persona ya existe
-  signInWithEmailAndPassword(auth, email, password).then(() => {});
+    
+
   // Sign out, la persona existe
     signOut(auth).then(() => {console.log("salió")});
+  
+    
 
 
 
 
-export {createUserWithEmailAndPassword,google,signInWithEmailAndPassword,signOut}
+export {login,google,create,signOut}
+
+//  signInWithEmailAndPassword(auth, email, password).then(() => {});
 
 
