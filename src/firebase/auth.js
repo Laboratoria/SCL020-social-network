@@ -64,12 +64,13 @@ function google() {
 }
 
 // Sign out, la persona existe
-signOut(auth).then(() => {
-  console.log('salió');
-});
+const out =()=>{
+  signOut(auth).then(() => {
+    console.log('salió');
+  });
+}
 
 export {
-  login, google, create, signOut,
-};
+  login, google, create, out};
 
 //  signInWithEmailAndPassword(auth, email, password).then(() => {});

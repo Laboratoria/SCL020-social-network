@@ -1,10 +1,12 @@
-import { login } from './login.js';
-import { Home } from './home.js';
+import Login from '../views/login.js';
+import  Home  from '../views/home.js';
 
 const routes = {
-  '/': login,
-  '/home': Home,
+  '/': Login(),
+  '/home': Home(),
 };
+
+const root = document.getElementById('root');
 
 const navigate = (pathname) => {
   window.history.pushState(
@@ -12,7 +14,9 @@ const navigate = (pathname) => {
     pathname,
     window.location.origin + pathname,
   );
-  document.getElementById('root').innerHTML = routes[pathname];
+ 
+  root.innerHTML="";
+  root.appendChild(routes[pathname]);
 };
 
 export { routes, navigate };
