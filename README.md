@@ -10,9 +10,7 @@ RESULTADOS
 <img src = "Encuesta1.png">
 <img src = "Encuesta 2.png">
 
-* Historias de usuario
-1. yo como usuario quiero participar en la app pudiendo conectar a gmail, para acceder a contenido general sobre plantas.
-2. yo como usuario quiero usar la app a través de Google chrome, para participar en grupos, foros o comentarios sobre plantas.
+* 
 
 ## PALETA DE COLORES
 
@@ -23,6 +21,9 @@ RESULTADOS
 ## DESCRIPCIÓN DE PRODUCTO
 
 
+## PROTOTIPO DE BAJA
+
+<img src = "PROTOTIPO DE BAJA.png">
 
 ## DESARROLLO DEL PROYECTO
 
@@ -31,4 +32,8 @@ RESULTADOS
 * Definimos algunas tareas en Trello y adjuntamos información.
 * Comenzamos a trabajar el prototipo de baja en Excalidraw
 * Elegimos nuestra paleta de colores añadiendola a trello.
+* Creamos nuestro proyecto en firebase y lo unimos.
 * Estructuramos nuestro DOM para comenzar a trabajar con firebase, router y templates.
+* Resumimos los resultados de nuestra encuesta, dejandolo en info de trello.
+* Terminamos nuestro prototipo de baja.
+* 
