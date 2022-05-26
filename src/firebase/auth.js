@@ -7,6 +7,7 @@ import {
   signInWithRedirect,
   getRedirectResult,
   signOut,
+  sendEmailVerification,
 } from './init.js';
 
 // State of user
@@ -22,14 +23,21 @@ onAuthStateChanged(auth, (user) => {
 const create = async (email, password) => {
   try {
     await createUserWithEmailAndPassword(auth, email, password).then(
-      (userCredential) => {
-        console.log(userCredential);
+      () => {
+        sendEmailVerification(auth.currentUser);
       },
     );
   } catch (error) {
     throw error.message;
   }
 };
+
+// email validation
+sendEmailVerification(auth.currentUser)
+  .then(() => {
+    console.log('revisa tu inbox');
+    // ...
+  }); 
 
 // Sign in with email and password, la persona ya existe
 const login = async (email, password) => {
@@ -64,13 +72,13 @@ function google() {
 }
 
 // Sign out, la persona existe
-const out =()=>{
+const out = () => {
   signOut(auth).then(() => {
     console.log('salió');
   });
-}
+};
 
 export {
-  login, google, create, out};
+  login, google, create, out,
+};
 
-//  signInWithEmailAndPassword(auth, email, password).then(() => {});
