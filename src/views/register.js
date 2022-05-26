@@ -34,7 +34,7 @@ const Register = () => {
     const password = container.querySelector('#password1').value;
     create(email, password);
     form1.reset();
-    navigate('/home');
+    navigate('/post');
   });
   return container;
 };
