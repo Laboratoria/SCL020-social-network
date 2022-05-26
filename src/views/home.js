@@ -1,7 +1,8 @@
-import { navigate } from "../router/router.js";
-import { out } from "../firebase/auth.js";
+/* eslint-disable import/no-cycle */
+import { navigate } from '../router/router.js';
+import { out } from '../firebase/auth.js';
 
-const Home =()=>{
+const Home = () => {
   const template = `
   <h1>home</h1>
   <button id="sign-out">Sign Out</button>`;
@@ -12,7 +13,6 @@ const Home =()=>{
 
   const button = container.querySelector('#sign-out');
   button.addEventListener('click', () => {
-    console.log('BOTON SIGN OUT');
     out();
     navigate('/');
   });
@@ -20,4 +20,4 @@ const Home =()=>{
   return container;
 };
 
-export default Home ;
+export default Home;

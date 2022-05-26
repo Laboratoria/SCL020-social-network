@@ -1,9 +1,12 @@
+/* eslint-disable import/no-cycle */
 import Login from '../views/login.js';
-import  Home  from '../views/home.js';
+import Home from '../views/home.js';
+import Register from '../views/register.js';
 
 const routes = {
   '/': Login(),
   '/home': Home(),
+  '/register': Register(),
 };
 
 const root = document.getElementById('root');
@@ -14,8 +17,8 @@ const navigate = (pathname) => {
     pathname,
     window.location.origin + pathname,
   );
- 
-  root.innerHTML="";
+
+  root.innerHTML = '';
   root.appendChild(routes[pathname]);
 };
 
