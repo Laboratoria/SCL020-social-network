@@ -20,7 +20,7 @@ const Post = () => {
   const postBtn = container.querySelector('#post-submit');
   postBtn.addEventListener('click', () => { // cambiarlo a submit y activar el prevent default
     // e.preventDefault();
-    navigate('/');
+    navigate('/home');
   });
 
   return container;
