@@ -1,4 +1,4 @@
-/* eslint-disable import/no-unresolved */
+/* eslint-disable import/no-cycle */
 import { navigate } from '../router/router.js';
 
 const Post = () => {
@@ -18,7 +18,7 @@ const Post = () => {
   container.innerHTML = template;
 
   const postBtn = container.querySelector('#post-submit');
-  postBtn.addEventListener('click', () => { // cambiarlo a submit y activar el prevent default
+  postBtn.addEventListener('click', () => { // cuando tengamos la funcionalidad esto hay que cambiarlo a submit y activar el prevent default
     // e.preventDefault();
     navigate('/home');
   });

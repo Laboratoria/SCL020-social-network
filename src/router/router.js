@@ -24,4 +24,5 @@ const navigate = (pathname) => {
   root.appendChild(routes[pathname]);
 };
 
+
 export { routes, navigate };

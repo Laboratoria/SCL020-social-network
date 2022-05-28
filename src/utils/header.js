@@ -1,7 +1,7 @@
 export const Header = () => {
   const template = `
   <div class="header">
-    <img class="brand-logo" src="../img/brand-logo"/>
+    <img class="brand-logo" src="../img/brand-logo.png"/>
     
       <div class="search-box">
          <input type="text" class="search-input" placeholder="Search..">
@@ -13,7 +13,7 @@ export const Header = () => {
     <img class="main-avatar" src="../img/main-avatar.png"/>
   </div>`;
 
-  const container = document.createElement('div');
+  const container = document.createElement('header');
   container.innerHTML = template;
 
   const searchBtn = container.querySelector('.search-button');

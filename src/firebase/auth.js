@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+//import { navigate } from '../router/router.js';
 import {
   auth,
   provider,
@@ -28,8 +29,10 @@ import {
 onAuthStateChanged(auth, (user) => {
   if (user) {
     console.log('user logged in:', user);
+    // navigate('/post');
   } else {
     console.log('user logged out');
+    // navigate('/');
   }
 });
 
