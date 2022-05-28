@@ -32,8 +32,9 @@ const Login = () => {
     </div>`;
 
   const container = document.createElement('div');
-  container.innerHTML = Header + template;
+  container.innerHTML = template;
   container.classList.add = 'container';
+  container.appendChild(Header());
 
   // Log in ENTRAR
   const form = container.querySelector('#form');
@@ -43,7 +44,7 @@ const Login = () => {
     const password = container.querySelector('#password').value;
     login(email, password);
     form.reset();
-    navigate('/home');
+    navigate('/home'); // este creo que habría que sacarlo, porque la redirección la debería hacer la validación si está log in o no en auth
   });
 
   // Sign Up REGISTRAR button, to register view
