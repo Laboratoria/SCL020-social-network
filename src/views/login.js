@@ -1,6 +1,7 @@
 /* eslint-disable import/no-cycle */
 import { login, google, create } from '../firebase/auth.js';
 import { navigate } from '../router/router';
+import { Header } from '../utils/header.js';
 
 const Login = () => {
   const template = `
@@ -31,7 +32,7 @@ const Login = () => {
     </div>`;
 
   const container = document.createElement('div');
-  container.innerHTML = template;
+  container.innerHTML = Header + template;
   container.classList.add = 'container';
 
   // Log in ENTRAR
