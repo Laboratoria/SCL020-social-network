@@ -1,16 +1,16 @@
-// Este es el punto de entrada de tu aplicacion
+// Este es el punto de entrada de tu aplicación
 
 // import { myFunction } from './lib/index.js';
 
 // myFunction();
 
-console.log(window.location.pathname);
+// console.log(window.location.pathname);
 
-const home = '<h1>Home</h1>'
+const home = '<h1>Home</h1>';
 
-const contact = '<h1>Contact</h1>'
+const contact = '<h1>Contact</h1>';
 
-const routes = {'/home' : home, '/contact' : contact}
+const routes = { '/home': home, '/contact': contact };
 
 const root = document.getElementById('root');
 
