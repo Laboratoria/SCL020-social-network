@@ -10,19 +10,18 @@ const Home = () => {
   <button id="sign-out">Sign Out</button>`;
 
   const container = document.createElement('div');
-  container.className = "home-page";
-  //container.innerHTML = template;
+  container.className = 'home-page';
+  container.innerHTML = template;
   container.classList.add = 'container';
 
   container.appendChild(Header());
   container.appendChild(Footer());
-  
 
-/*   const buttonOut = container.querySelector('#sign-out');
+  const buttonOut = container.querySelector('#sign-out');
   buttonOut.addEventListener('click', () => {
     out();
     navigate('/');
-  }); */
+  });
 
   return container;
 };
