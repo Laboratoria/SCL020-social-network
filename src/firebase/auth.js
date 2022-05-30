@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-//import { navigate } from '../router/router.js';
+// import { navigate } from '../router/router.js';
 import {
   auth,
   provider,
@@ -11,19 +11,6 @@ import {
   signOut,
   sendEmailVerification,
 } from './init.js';
-
-// INTERPRETANDO LOS MÉTODO DE FIREBASE;
-/* createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {           comentario:  // El then() es la promesa que nos entrega Firebase
-    // Signed in
-    const user = userCredential.user;   comentario: // Esto es lo que entrega la promesa, su resultado, es lo que espera con el await
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // ..
-  }); */
 
 // State of user
 onAuthStateChanged(auth, (user) => {
@@ -41,13 +28,9 @@ const create = async (email, password) => {
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password); // La Promesa que recibimos se vuelve el callback al método del Firebase
     await sendEmailVerification(auth.currentUser);
-    return userCredential.user.uid; // retornamos el resultado de la Promesa, según lo que vayamos a usar para nuestro programa
+    return userCredential.user;
   } catch (error) {
-    if (email === '') {
-      console.log('debes poner un email');
-    } if (password.length < 6) {
-      console.log('debes ingresar contraseña de al menos 6 caracteres');
-    }
+    console.log('error de sistema en crear cuenta', error);
     return null;
   }
 };
@@ -65,8 +48,8 @@ const login = async (email, password) => {
 
 // Sign in with Google
 const google = async () => {
-  signInWithRedirect(auth, provider);
   try {
+    await signInWithRedirect(auth, provider);
     const userCredential = await getRedirectResult(auth);
     return userCredential.user.uid;
   } catch (error) {
