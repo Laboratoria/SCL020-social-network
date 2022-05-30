@@ -8,7 +8,7 @@ const Post = () => {
       <img class ="user-avatar" src="../img/main-avatar.png" />
       <h3 id="user-name" class="user-name">Carlota Roma</h3>
       <textarea placeholder="What's in your mind"></textarea>
-      <input id="post-submit" class="post-submit" type="submit" value="post" />
+      <input id="post-submit" class="main-btn" type="submit" value="post" />
     </div>
   </section>
 
