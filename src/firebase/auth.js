@@ -13,11 +13,14 @@ import {
 } from './init.js';
 
 // State of user
-const validateState = async () => onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, (user) => {
   if (user) {
-    return true;
+    console.log('user logged in:', user);
+    // navigate('/post');
+  } else {
+    console.log('user logged out');
+    // navigate('/');
   }
-  return false;
 });
 
 // Create user with email and password
@@ -73,4 +76,4 @@ const out = async () => {
   }
 };
 
-export { login, google, create, out, validateState };
+export { login, google, create, out};
