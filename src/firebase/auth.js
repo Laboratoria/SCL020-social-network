@@ -45,7 +45,7 @@ const create = async (email, password) => {
   } catch (error) {
     if (email === '') {
       console.log('debes poner un email');
-    } if (password.length <= 5) {
+    } if (password.length < 6) {
       console.log('debes ingresar contraseña de al menos 6 caracteres');
     }
     return null;
