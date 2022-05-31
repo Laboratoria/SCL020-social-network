@@ -1,5 +1,7 @@
 /* eslint-disable import/no-cycle */
 import { navigate } from '../router/router.js';
+import { Header } from "../utils/header.js"
+import { Footer } from "../utils/footer.js"
 
 const Post = () => {
   const template = `
@@ -16,6 +18,7 @@ const Post = () => {
 
   const container = document.createElement('div');
   container.innerHTML = template;
+  container.append(Header(), Footer());
 
   const postBtn = container.querySelector('#post-submit');
   postBtn.addEventListener('click', () => { // cuando tengamos la funcionalidad esto hay que cambiarlo a submit y activar el prevent default

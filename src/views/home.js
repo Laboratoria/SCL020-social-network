@@ -7,15 +7,14 @@ import { Footer } from '../utils/footer.js';
 const Home = () => {
   const template = `
   
-  <button id="sign-out">Sign Out</button>`;
+  <button id="sign-out" class="main-btn">Sign Out</button>`;
 
   const container = document.createElement('div');
   container.className = 'home-page';
   container.innerHTML = template;
   container.classList.add = 'container';
 
-  container.appendChild(Header());
-  container.appendChild(Footer());
+  container.append(Header(), Footer());
 
   const buttonOut = container.querySelector('#sign-out');
   buttonOut.addEventListener('click', () => {
