@@ -12,17 +12,6 @@ import {
   sendEmailVerification,
 } from './init.js';
 
-// State of user
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    console.log('user logged in:', user);
-    // navigate('/post');
-  } else {
-    console.log('user logged out');
-    // navigate('/');
-  }
-});
-
 // Create user with email and password
 const create = async (email, password) => {
   try {
@@ -76,4 +65,4 @@ const out = async () => {
   }
 };
 
-export { login, google, create, out};
+export { login, google, create, out, onAuthStateChanged, auth};

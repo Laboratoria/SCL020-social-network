@@ -37,6 +37,7 @@ const Register = () => {
     form1.reset();
     navigate('/home');
   });
+
   return container;
 };
 

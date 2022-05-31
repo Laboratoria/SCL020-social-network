@@ -1,12 +1,12 @@
-import { navigate } from './router/router.js';
-//import { validateState} from './firebase/auth.js';
+import { navigate } from "./router/router.js"
+import {onAuthStateChanged, auth} from './firebase/auth.js';
 
-// VISTA LOGIN
-/* const validation = validateState();
-console.log(validation)
-if(validation){
-  navigate("/home")
-} else{
-  navigate("/")
-} */
-navigate("/")
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    console.log('user logged in:', user.uid);
+    navigate(window.location.pathname);
+  } else {
+    console.log('user logged out');
+    navigate('/');
+  }
+});
