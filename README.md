@@ -11,26 +11,26 @@ Resumimos la información en:
 3. yo como usuario quiero usar la app en navegador Google chrome, para participar en grupos, foros o comentarios sobre plantas.
 
 RESULTADOS
-<img src = "Encuesta1.png">
-<img src = "Encuesta 2.png">
+<img src = "PICS/Encuesta1.png">
+<img src = "PICS/Encuesta 2.png">
 
 
 ## PALETA DE COLORES
 
-<img src = "PALETA DE COLORES.jpeg">
-<img src = "PALETA DE COLORES 1.jpg">
-<img src = "PALETA DE COLORES 2.jpg">
+<img src = "PICS/PALETA DE COLORES.jpeg">
+<img src = "PICS/PALETA DE COLORES 1.jpg">
+<img src = "PICS/PALETA DE COLORES 2.jpg">
 
 ## DESCRIPCIÓN DE PRODUCTO
 
 
 ## PROTOTIPO DE BAJA
 
-<img src = "PROTOTIPO DE BAJA.png">
+<img src = "PICS/PROTOTIPO DE BAJA.png">
 
 ## PROTOTIPO DE ALTA
 Ver prototipo con interacciones [aquí](https://www.figma.com/proto/oGMhwqudUs2YRRP0nJoPxF/SOCIAL-NETWORK?node-id=3%3A3&scaling=scale-down&page-id=0%3A1&starting-point-node-id=3%3A3)
-<img src = "PROTOTIPO DE ALTA.png">
+<img src = "PICS/PROTOTIPO DE ALTA.png">
 
 ## DESARROLLO DEL PROYECTO
 

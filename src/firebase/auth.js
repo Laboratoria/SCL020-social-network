@@ -8,6 +8,7 @@ import {
   getRedirectResult,
 } from './init.js';
 
+// CREATE USER WITH EMAIL
 // const createUser = getAuth();
 // createUserWithEmailAndPassword(auth, email, password)
 //   .then((userCredential) => {
@@ -34,6 +35,7 @@ const createUser = async (email, password) => {
   }
 };
 
+// SIGN IN WITH EMAIL
 // const signIn = getAuth();
 // signInWithEmailAndPassword(auth, email, password)
 //   .then((userCredential) => {
@@ -54,6 +56,7 @@ const signIn = async (email, password) => {
   }
 };
 
+// SIGN OUT WITH EMAIL
 // const signOutWithEmail = getAuth();
 // signOut(auth)
 //   .then(() => {
@@ -71,6 +74,7 @@ const signOutWithEmail = async () => {
   }
 };
 
+// REDIRECT GOOGLE ACCESS
 getRedirectResult(auth)
   .then((result) => {
     // This gives you a Google Access Token. You can use it to access Google APIs.
@@ -97,4 +101,6 @@ const redirectEmail = async (auth) => {
   } catch (error) {}
 };
 
-export { getAuth, createUser, signIn, signOutWithEmail };
+export {
+  getAuth, createUser, signIn, signOutWithEmail,
+};
