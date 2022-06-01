@@ -45,3 +45,4 @@ Ver prototipo con interacciones [aquí](https://www.figma.com/proto/oGMhwqudUs2Y
 * Terminamos nuestro prototipo de baja.
 * Terminamos nuestro prototipo de alta.
 * Comenzamos a transformar las funciones de firebase. 
+* Agregamos función navigate, login y profile, para poder redirigir a cada una de esas rutas y pusimos un pequeño html para probar.
