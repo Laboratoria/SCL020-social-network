@@ -1,8 +1,9 @@
-import { login, google, create } from '../firebase/auth.js';
-import { navigate } from '../router/router';
+import { login, google } from '../firebase/auth.js';
+import { navigate, next } from '../router/router';
 
 const Login = () => {
-  const template = `
+  const template = // HTML 
+  `
   <div id="login-box" class="login-box">
     <img src="img/brand-logo.png" id="logo" class="logo">
     <h2 class="title-form">Sign In or Register</h2>
@@ -32,7 +33,6 @@ const Login = () => {
   const container = document.createElement('div');
   container.innerHTML = template;
   container.classList.add = 'container';
-  //container.appendChild(Header());
 
   // Log in ENTRAR
   const form = container.querySelector('#form');
@@ -41,20 +41,29 @@ const Login = () => {
     const email = container.querySelector('#email').value;
     const password = container.querySelector('#password').value;
 
-    const user = await login(email, password);
-    console.log(user, 'valor de user en login');
-    if (user) {
+    try {
+      await login(email, password); // const user = await login(email, password)
       form.reset();
       navigate('/home');
-    } else {
-      console.log('error log in user', user);
+    } catch (error) {
+      if (error === 'auth/invalid-email') {
+        alert('Ingresa un correo válido: ejemplo@hotmail.com');
+      } else if (error === 'auth/missing-email') {
+        alert('Debes ingresar un correo');
+      } else if (error === 'auth/internal-error') {
+        alert('Debes llenar todos los campos');
+      } else if (error === 'auth/wrong-password') {
+        alert('Contraseña incorrecta');
+      } else if (error === 'auth/user-not-found') {
+        alert('Ups! aún no tienes cuenta, regístrate');
+      }
     }
   });
 
   // Sign Up REGISTRAR button, to register view
   const signUpBtn = container.querySelector('#sign-up');
   signUpBtn.addEventListener('click', () => {
-    navigate('/register');
+    next('/register');
   });
 
   // Signing up with redirect Google

@@ -4,7 +4,7 @@ import Home from '../views/home.js';
 import Register from '../views/register.js';
 import Post from '../views/post.js';
 import Map from '../views/map.js';
-import {validateState} from '../firebase/auth.js';
+import { validateState } from '../firebase/auth.js';
 
 const routes = {
   '/': Login(),
@@ -22,14 +22,14 @@ const next = (pathname) => {
   root.appendChild(routes[pathname]);
 };
 
-const navigate =(pathname)=>{validateState(next,pathname);}
+const navigate = (pathname) => { validateState(next, pathname); };
 
 window.onpopstate = () => {
   root.innerHTML = '';
   root.appendChild(routes[window.location.pathname]);
 };
 
-export {navigate};
+export { navigate, next };
 
 /* onAuthStateChanged(auth, (user) => {
   if (user) {

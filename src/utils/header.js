@@ -2,7 +2,8 @@ import { navigate } from '../router/router.js';
 import { out } from "../firebase/auth.js";
 
 export const Header = () => {
-  const template = `
+  const template = // HTML
+  `
   <img class="brand-logo" src="../img/brand-logo.png" />
   <div class="search-box">
       <input type="text" class="search-input" placeholder="Search..">
