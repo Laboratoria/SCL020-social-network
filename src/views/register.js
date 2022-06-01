@@ -9,9 +9,10 @@ const Register = () => {
   <h2 class="signup-tittle">Create your account</h2>
   <form id="form1">
       <div>
+          <!-- 
           <label for="name">Name: </label>
           <input id="name" type="name" placeholder="Your name">
-          <br>
+          <br> -->
           <label for="email">Email: </label>
           <input id="email1" type="email" placeholder="Your email">
           <br>
@@ -29,13 +30,16 @@ const Register = () => {
 
   // sign up REGISTRAR
   const form1 = container.querySelector('#form1');
-  form1.addEventListener('submit', (e) => {
+  form1.addEventListener('submit', async (e) => {
     e.preventDefault();
+//const name = container.querySelector('#name').value;
     const email = container.querySelector('#email1').value;
     const password = container.querySelector('#password1').value;
-    create(email, password);
-    form1.reset();
-    navigate('/home');
+    const user = await create(email, password);
+    if (user){
+      form1.reset();
+      navigate('/home');
+    }
   });
 
   return container;

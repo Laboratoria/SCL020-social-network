@@ -12,6 +12,8 @@ import {
   sendEmailVerification,
 } from './init.js';
 
+
+
 // Create user with email and password
 const create = async (email, password) => {
   try {
@@ -23,7 +25,19 @@ const create = async (email, password) => {
     await sendEmailVerification(auth.currentUser);
     return userCredential.user;
   } catch (error) {
-    console.log('error de sistema en crear cuenta', error);
+    const errorCode = error.code;
+    console.log(errorCode)
+     if (errorCode === 'auth/invalid-email') {
+      alert('Ingresa un correo válido: ejemplo@hotmail.com');
+    } else if (errorCode === 'auth/missing-email') {
+      alert('Debes ingresar un correo');
+    } else if (errorCode === 'auth/internal-error') {
+      alert('Debes llenar todos los campos');
+    } else if (errorCode === 'auth/email-already-in-use') {
+      alert('Usuario ya registrado, ingresa otro correo');
+    } else if (errorCode === 'auth/weak-password'){
+      alert('la contraseña debe tener mínimo 6 caracteres')
+    }
     return null;
   }
 };
@@ -38,7 +52,18 @@ const login = async (email, password) => {
     );
     return userCredential.user.uid;
   } catch (error) {
-    console.log('error login', error);
+    const errorCode = error.code;
+    if (errorCode === 'auth/invalid-email') {
+      alert('Ingresa un correo válido: ejemplo@hotmail.com');
+    } else if (errorCode === 'auth/missing-email') {
+      alert('Debes ingresar un correo');
+    } else if (errorCode === 'auth/internal-error') {
+      alert('Debes llenar todos los campos');
+    } else if (errorCode === 'auth/wrong-password') {
+      alert ('Contraseña incorrecta');
+    } else if (errorCode === 'auth/user-not-found') {
+      alert('Ups! aún no tienes cuenta, regístrate');
+    }
     return null;
   }
 };
@@ -50,7 +75,7 @@ const google = async () => {
     const userCredential = await getRedirectResult(auth);
     return userCredential.user.uid;
   } catch (error) {
-    console.log('error signin with Google', error);
+    alert('Falló la conexión con Google', error);
     return null;
   }
 };
