@@ -11,13 +11,13 @@ const Register = () => {
       <div>
           <!-- 
           <label for="name">Name: </label>
-          <input id="name" type="name" placeholder="Your name">
+          <input id="name" class="input-form" type="name" placeholder="Your name">
           <br> -->
           <label for="email">Email: </label>
-          <input id="email1" type="email" placeholder="Your email">
+          <input id="email1" class="input-form" type="email" placeholder="Your email">
           <br>
           <label for="password">Password: </label>
-          <input id="password1" type="password" placeholder="Your password">
+          <input id="password1" class="input-form" type="password" placeholder="Your password">
       </div>
       <div class="create-account-info">
           <button id="create-account" class="main-btn" type="submit">Crear Cuenta</button>
@@ -32,11 +32,11 @@ const Register = () => {
   const form1 = container.querySelector('#form1');
   form1.addEventListener('submit', async (e) => {
     e.preventDefault();
-//const name = container.querySelector('#name').value;
+    // const name = container.querySelector('#name').value;
     const email = container.querySelector('#email1').value;
     const password = container.querySelector('#password1').value;
     const user = await create(email, password);
-    if (user){
+    if (user) {
       form1.reset();
       navigate('/home');
     }

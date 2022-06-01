@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 /* eslint-disable max-len */
 // import { navigate } from '../router/router.js';
 import {
@@ -12,22 +13,20 @@ import {
   sendEmailVerification,
 } from './init.js';
 
-
-
 // Create user with email and password
 const create = async (email, password) => {
   try {
     const userCredential = await createUserWithEmailAndPassword(
       auth,
       email,
-      password
+      password,
     ); // La Promesa que recibimos se vuelve el callback al método del Firebase
     await sendEmailVerification(auth.currentUser);
     return userCredential.user;
   } catch (error) {
     const errorCode = error.code;
-    console.log(errorCode)
-     if (errorCode === 'auth/invalid-email') {
+    console.log(errorCode);
+    if (errorCode === 'auth/invalid-email') {
       alert('Ingresa un correo válido: ejemplo@hotmail.com');
     } else if (errorCode === 'auth/missing-email') {
       alert('Debes ingresar un correo');
@@ -35,8 +34,8 @@ const create = async (email, password) => {
       alert('Debes llenar todos los campos');
     } else if (errorCode === 'auth/email-already-in-use') {
       alert('Usuario ya registrado, ingresa otro correo');
-    } else if (errorCode === 'auth/weak-password'){
-      alert('la contraseña debe tener mínimo 6 caracteres')
+    } else if (errorCode === 'auth/weak-password') {
+      alert('la contraseña debe tener mínimo 6 caracteres');
     }
     return null;
   }
@@ -48,7 +47,7 @@ const login = async (email, password) => {
     const userCredential = await signInWithEmailAndPassword(
       auth,
       email,
-      password
+      password,
     );
     return userCredential.user.uid;
   } catch (error) {
@@ -60,7 +59,7 @@ const login = async (email, password) => {
     } else if (errorCode === 'auth/internal-error') {
       alert('Debes llenar todos los campos');
     } else if (errorCode === 'auth/wrong-password') {
-      alert ('Contraseña incorrecta');
+      alert('Contraseña incorrecta');
     } else if (errorCode === 'auth/user-not-found') {
       alert('Ups! aún no tienes cuenta, regístrate');
     }
@@ -90,4 +89,6 @@ const out = async () => {
   }
 };
 
-export { login, google, create, out, onAuthStateChanged, auth};
+export {
+  login, google, create, out, onAuthStateChanged, auth,
+};

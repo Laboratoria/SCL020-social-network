@@ -1,4 +1,5 @@
 import { navigate } from '../router/router.js';
+
 export const Header = () => {
   const template = `
     <img class="brand-logo" src="../img/brand-logo.png"/>
@@ -11,7 +12,7 @@ export const Header = () => {
     <img class="main-avatar" src="../img/main-avatar.png"/>`;
 
   const container = document.createElement('header');
-  container.className="header";
+  container.className = 'header';
   container.innerHTML = template;
 
   const searchBtn = container.querySelector('.search-button');
@@ -20,9 +21,9 @@ export const Header = () => {
   });
 
   const logoHome = container.querySelector('.brand-logo');
-  logoHome.addEventListener('click', ()=>{
-    navigate('/home')
-  })
+  logoHome.addEventListener('click', () => {
+    navigate('/home');
+  });
 
   return container;
 };

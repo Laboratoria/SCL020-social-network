@@ -10,11 +10,11 @@ const Login = () => {
         <div id="user-info" class="user-info">
             <div class="email-info">
                 <label for="email">Email: </label>
-                <input id="email" class="email" type="email" placeholder="Your email">
+                <input id="email" class="input-form" type="email" placeholder="Your email">
             </div>
             <div class="password-info">
                 <label for="password">Password: </label>
-                <input id="password" class="password" type="password" placeholder="Your password">
+                <input id="password" class="input-form" type="password" placeholder="Your password">
             </div>
         </div>
         <div id="login-btns" class="login-btns">
