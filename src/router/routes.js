@@ -1,7 +1,10 @@
+import { login } from '../templates/login.js';
+import { profile } from '../templates/profile.js';
+
 const routes = {
   login: {
     path: '/',
-    template: '<h1>Inicia sesión</h1>',
+    template: login(),
   },
   register: {
     path: '/register',
@@ -17,8 +20,18 @@ const routes = {
   },
   profile: {
     path: '/profile',
-    template: '<h1>Perfil</h1>',
+    template: profile(),
   },
 };
 
-export { routes };
+function navigate(route) {
+  const template = routes[route].template;
+  const path = routes[route].path;
+  history.pushState({}, route, path);
+  const root = document.getElementById('root');
+  root.innerHTML = ' ';
+  root.appendChild(template);
+  console.log(template);
+}
+
+export { navigate };
