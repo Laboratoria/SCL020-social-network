@@ -34,3 +34,5 @@ export const Footer = () => {
 
   return container;
 };
+
+export default Footer;

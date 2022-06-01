@@ -1,5 +1,5 @@
 import { navigate } from '../router/router.js';
-import { out } from "../firebase/auth.js";
+import { out } from '../firebase/auth.js';
 
 export const Header = () => {
   const template = // HTML
@@ -11,7 +11,7 @@ export const Header = () => {
           <i class="fas fa-search"></i>
       </button>
   </div>
-  <img class="main-avatar" src="../img/main-avatar.png" />
+  <img id="main-avatar" class="main-avatar" src="../img/main-avatar.png" />
   <button id="sign-out" class="signout-btn">Sign Out</button>`;
 
   const container = document.createElement('header');
@@ -30,6 +30,12 @@ export const Header = () => {
     navigate('/home');
   });
 
+  // Avatar btn to profile view
+  const userAvatar = container.querySelector('#main-avatar');
+  userAvatar.addEventListener('click', () => {
+    navigate('/profile');
+  });
+
   // Sign out btn
   const buttonOut = container.querySelector('#sign-out');
   buttonOut.addEventListener('click', () => {
@@ -39,3 +45,5 @@ export const Header = () => {
 
   return container;
 };
+
+export default Header;

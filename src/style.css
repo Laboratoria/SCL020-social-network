@@ -350,6 +350,20 @@ footer button {
   justify-content: space-between;
 }
 
+/* PROFILE PAGE CSS */
+.profile-page {
+  min-width: 100vw;
+  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+
 /* 
 están siendo usados?
 .modal {
