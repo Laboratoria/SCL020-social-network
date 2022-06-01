@@ -13,6 +13,17 @@ import {
   sendEmailVerification,
 } from './init.js';
 
+const validateState = (next,pathname) =>{
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      next(pathname);
+    } else {
+      next('/');
+    }
+  });
+}
+
+
 // Create user with email and password
 const create = async (email, password) => {
   try {
@@ -90,5 +101,5 @@ const out = async () => {
 };
 
 export {
-  login, google, create, out, onAuthStateChanged, auth,
+  login, google, create, out, auth, validateState
 };
