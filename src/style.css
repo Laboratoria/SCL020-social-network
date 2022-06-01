@@ -6,6 +6,7 @@
   margin:0;
   padding:0;
 }
+
 body {
   background: #FAFAEB;
   min-height: 100vh;
@@ -20,8 +21,71 @@ body {
   height:100vh;
 }
 
-/*FORM CSS*/
-/* LOG IN VIEW */
+/* HEADER CSS */
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 7%;
+  background: white;
+  align-items: center;
+  align-content: center;
+  order: -1;
+}
+.brand-logo {
+  height: 80%;
+}
+.search-box {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  align-self: center;
+  box-shadow: 0.5px 1px 5px grey;
+}
+
+.search-input {
+  width: 100%;
+  border-right: none;
+  font-size: 15px;
+  border:none;
+  background:#EFEFEF;
+  padding:10px;
+}
+.search-button {
+  text-align: center;
+  width:10%;
+  cursor: pointer;
+  border-left: none;
+  font-size: 20px;  
+  border:none;
+  color:grey;
+  
+}
+.main-avatar {
+  height: 80%;
+}
+
+.signout-btn {
+  background: #FBC4F3;
+  border-radius: 999px;
+  box-shadow: #FBC4F3 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: "Monrope", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 6px 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+
 /* LOG IN FORM */
 .login-box {
   position: relative;
@@ -61,7 +125,7 @@ label {
   margin-bottom: 5%; /*8px*/
 }
 
-input {
+.input-form {
   margin-bottom: 3vh;
   padding: 13px 0px 13px 25px;
   width: 100%;
@@ -133,7 +197,6 @@ p {
 }
 
 /* REGISTER FORM */ 
-
 .signup-tittle {
   margin-bottom: 5%;
   text-align: center;
@@ -153,13 +216,14 @@ p {
   min-width: 100vw;
   min-height: 100vh;
   width: 100vw;
-  height: 100vh;
+  height: 100vh; 
   display:flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.new-post div {
-  width: 90%;
+
+.new-post .post-box {
+  width: auto;
   margin: 50px auto;
   background-color: #fff;
   overflow: hidden;
@@ -167,8 +231,8 @@ p {
   border-radius: 3px;
   box-shadow: 2px 5px 10px grey;
   z-index: 3;
-  position: relative;
 }
+
 .new-post div img {
   float: left;
   width: 60px;
@@ -179,7 +243,7 @@ p {
   height: 150px;
   border: none;
   padding: 5px 10px;
-  font-family: arial;
+  font-family: karla;
   resize: none;
   outline: none;
   border-bottom: 1px solid grey;
@@ -201,7 +265,7 @@ textarea::-webkit-scrollbar-thumb {
   font-weight: bold;
   padding: 10px 15px;
   border-radius: 3px;
-  font-size: 16px;
+  font-size: 1rem;
 }
 .overlay {
   background-color: rgba(225, 57, 57, 0.5);
@@ -212,59 +276,6 @@ textarea::-webkit-scrollbar-thumb {
   bottom: 0;
   z-index: 2;
   display: none;
-}
-.post {
-  background-color: #fff;
-  width: 500px;
-  margin: 10px auto;
-  padding: 10px;
-  color: #333;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-  border-radius: 3px;
-}
-
-/* HEADER CSS */
-.header {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  height: 7%;
-  background: white;
-  align-items: center;
-  order: -1;
-}
-.brand-logo {
-  height: 80%;
-}
-.search-box {
-  width: 50%;
-  height:50%;
-  position: relative;
-  display: flex;
-  align-self: center;
-  box-shadow: 0.5px 1px 5px grey;
-}
-.search-input {
-  width: 90%;
-  border-right: none;
-  font-size: 15px;
-  border:none;
-  background:#EFEFEF;
-  padding:10px;
-}
-.search-button {
-  text-align: center;
-  width:10%;
-  cursor: pointer;
-  border-left: none;
-  font-size: 20px;  
-  border:none;
-  color:grey;
-  
-}
-
-.main-avatar {
-  height: 80%;
 }
 
 /* MAP CSS */
@@ -295,6 +306,7 @@ svg{
 .map :hover{
   fill: #f7f1ed;
 }
+
 /* FOOTER CSS */
 footer{
   display: flex;

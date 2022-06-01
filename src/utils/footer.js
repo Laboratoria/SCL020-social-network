@@ -10,7 +10,7 @@ export const Footer = () => {
     `;
 
   const container = document.createElement('footer');
-  container.className="footer";
+  container.className = 'footer';
   container.innerHTML = template;
 
   const buttonMap = container.querySelector('#mapButton');
@@ -20,7 +20,7 @@ export const Footer = () => {
 
   const postBtn = container.querySelector('#postButton');
   postBtn.addEventListener('click', () => {
-      navigate('/post');
+    navigate('/post');
   });
 
   const searchBtn = container.querySelector('#searchImg');
