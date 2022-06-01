@@ -5,18 +5,17 @@ import { Footer } from "../utils/footer.js"
 
 const Post = () => {
   const template = `
-<section id="new-post" class="new-post">
     <div class="post-box">
       <img class ="user-avatar" src="../img/main-avatar.png" />
       <h3 id="user-name" class="user-name">Carlota Roma</h3>
       <textarea placeholder="What's in your mind"></textarea>
       <input id="post-submit" class="main-btn" type="submit" value="post" />
     </div>
-  </section>
-
   <div class="overlay"></div>`;
 
-  const container = document.createElement('div');
+  const container = document.createElement('section');
+  container.className = "new-post";
+  container.id= 'new-post';
   container.innerHTML = template;
   container.append(Header(), Footer());
 

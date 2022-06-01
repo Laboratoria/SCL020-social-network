@@ -17,7 +17,6 @@ const root = document.getElementById('root');
 
 const navigate = (pathname) => {
   window.history.pushState({}, pathname, window.location.origin + pathname);
-
   root.innerHTML = '';
   root.appendChild(routes[pathname]);
 };
@@ -27,4 +26,4 @@ window.onpopstate = () => {
   root.appendChild(routes[window.location.pathname]);
 };
 
-export { routes, navigate };
+export {navigate};
