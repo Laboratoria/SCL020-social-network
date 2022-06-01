@@ -24,11 +24,12 @@ body {
 /* HEADER CSS */
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 100%;
   height: 7%;
   background: white;
   align-items: center;
+  align-content: center;
   order: -1;
 }
 .brand-logo {
@@ -64,6 +65,26 @@ body {
   height: 80%;
 }
 
+.signout-btn {
+  background: #FBC4F3;
+  border-radius: 999px;
+  box-shadow: #FBC4F3 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: "Monrope", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 6px 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
 
 /* LOG IN FORM */
 .login-box {
@@ -176,7 +197,6 @@ p {
 }
 
 /* REGISTER FORM */ 
-
 .signup-tittle {
   margin-bottom: 5%;
   text-align: center;
@@ -202,7 +222,7 @@ p {
   justify-content: space-between;
 }
 
-.new-post div {
+.new-post .post-box {
   width: auto;
   margin: 50px auto;
   background-color: #fff;
