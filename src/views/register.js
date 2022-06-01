@@ -3,7 +3,8 @@ import { create } from '../firebase/auth.js';
 import { navigate } from '../router/router.js';
 
 const Register = () => {
-  const template = `
+  const template = // HTML
+  `
   <div id="login-box" class="login-box">
   <img src="img/brand-logo.png" id="logo" class="logo">
   <h2 class="signup-tittle">Create your account</h2>
@@ -35,10 +36,23 @@ const Register = () => {
     // const name = container.querySelector('#name').value;
     const email = container.querySelector('#email1').value;
     const password = container.querySelector('#password1').value;
-    const user = await create(email, password);
-    if (user) {
+
+    try {
+      await create(email, password); // const user = await create(email, password)
       form1.reset();
       navigate('/home');
+    } catch (error) {
+      if (error === 'auth/invalid-email') {
+        alert('Ingresa un correo válido: ejemplo@hotmail.com');
+      } else if (error === 'auth/missing-email') {
+        alert('Debes ingresar un correo');
+      } else if (error === 'auth/internal-error') {
+        alert('Debes llenar todos los campos');
+      } else if (error === 'auth/email-already-in-use') {
+        alert('Usuario ya registrado, ingresa otro correo');
+      } else if (error === 'auth/weak-password') {
+        alert('la contraseña debe tener mínimo 6 caracteres');
+      }
     }
   });
 

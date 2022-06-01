@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-catch */
 /* eslint-disable no-alert */
 /* eslint-disable max-len */
 // import { navigate } from '../router/router.js';
@@ -13,7 +14,7 @@ import {
   sendEmailVerification,
 } from './init.js';
 
-const validateState = (next,pathname) =>{
+const validateState = (next, pathname) =>{
   onAuthStateChanged(auth, (user) => {
     if (user) {
       next(pathname);
@@ -35,20 +36,8 @@ const create = async (email, password) => {
     await sendEmailVerification(auth.currentUser);
     return userCredential.user;
   } catch (error) {
-    const errorCode = error.code;
-    console.log(errorCode);
-    if (errorCode === 'auth/invalid-email') {
-      alert('Ingresa un correo válido: ejemplo@hotmail.com');
-    } else if (errorCode === 'auth/missing-email') {
-      alert('Debes ingresar un correo');
-    } else if (errorCode === 'auth/internal-error') {
-      alert('Debes llenar todos los campos');
-    } else if (errorCode === 'auth/email-already-in-use') {
-      alert('Usuario ya registrado, ingresa otro correo');
-    } else if (errorCode === 'auth/weak-password') {
-      alert('la contraseña debe tener mínimo 6 caracteres');
-    }
-    return null;
+    //console.log(error);
+    throw error.code;
   }
 };
 
@@ -62,19 +51,8 @@ const login = async (email, password) => {
     );
     return userCredential.user.uid;
   } catch (error) {
-    const errorCode = error.code;
-    if (errorCode === 'auth/invalid-email') {
-      alert('Ingresa un correo válido: ejemplo@hotmail.com');
-    } else if (errorCode === 'auth/missing-email') {
-      alert('Debes ingresar un correo');
-    } else if (errorCode === 'auth/internal-error') {
-      alert('Debes llenar todos los campos');
-    } else if (errorCode === 'auth/wrong-password') {
-      alert('Contraseña incorrecta');
-    } else if (errorCode === 'auth/user-not-found') {
-      alert('Ups! aún no tienes cuenta, regístrate');
-    }
-    return null;
+    //console.log(error);
+    throw error.code;
   }
 };
 

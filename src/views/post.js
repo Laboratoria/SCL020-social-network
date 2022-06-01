@@ -4,7 +4,8 @@ import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
 
 const Post = () => {
-  const template = `
+  const template = // HTML
+  `
     <div class="post-box">
       <img class ="user-avatar" src="../img/main-avatar.png" />
       <h3 id="user-name" class="user-name">Carlota Roma</h3>
@@ -17,8 +18,7 @@ const Post = () => {
   container.className = 'new-post';
   container.id = 'new-post';
   container.innerHTML = template;
-  container.appendChild(Header());
-  container.appendChild(Footer());
+  container.append(Header(), Footer());
 
   const postBtn = container.querySelector('#post-submit');
   postBtn.addEventListener('click', () => { // cuando tengamos la funcionalidad esto hay que cambiarlo a submit y activar el prevent default

@@ -3,7 +3,8 @@ import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
 
 const Map = () => {
-  const template = `
+  const template = // HTML
+  `
     <div class="map">
         <svg id="svg" version="1.2" viewBox="0 0 1000 857"  xmlns="http://www.w3.org/2000/svg">
         <path class="Argentina" d="M 669.1 851.7 666.1 851.5 661.1 851.5 655.1 837.9 658.2 840.7 662.5 845.3 670.3 849 677.6 850.5 676.8 853.5 672.4 853.8 669.1 851.7 Z">
@@ -255,11 +256,12 @@ const Map = () => {
    </svg>
    </div>
     `;
+
   const container = document.createElement('div');
   container.className = 'map-page';
   container.innerHTML = template;
-  container.appendChild(Header());
-  container.appendChild(Footer());
+  container.append(Header(), Footer());
+
   const pathLink = container.querySelector('#svg');
   pathLink.addEventListener('click', () => {
     navigate('/home');
