@@ -7,14 +7,13 @@ function register() {
 <div class="background login">
     <div class="group background-green">
         <h1>PlantGram</h1>
-        <p>Bienvenid@ a la mayor comunidad de plant lovers</p>
-        <h2>Inicia sesión</h2>
-
-        
+        <h2>Regístrate</h2>
         <input type="email" placeholder="Usuario" />
         <input type="password" placeholder="Contraseña" />
-        
-        <button> HOLA </button>
+        <input type="repPassword" placeholder="Repite la contraseña" />
+        <button class="createAccountButton" > CREAR CUENTA </button>
+        <h2>¿Ya tienes una cuenta?</h2>
+        <button class="backButton" > Inicia sesión aquí </button>
     </div>
 </div>`;
   const container = document.createElement("div");
