@@ -12,9 +12,12 @@ import {
   getRedirectResult,
   signOut,
   sendEmailVerification,
+  db,
+  collection,
+  doc
 } from './init.js';
 
-const validateState = (next, pathname) =>{
+const validateState = (next, pathname) => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       next(pathname);
@@ -22,21 +25,32 @@ const validateState = (next, pathname) =>{
       next('/');
     }
   });
-}
+};
 
+const createDoc = async (userId) => {
+  try {
+    return await db.collection('users').doc(userId).set({
+      name: userId,
+    });
+  } catch (error) {
+    console.log('esta wea no funciona');
+    return null;
+  }
+};
 
 // Create user with email and password
-const create = async (email, password) => {
+const create = async (userName, email, password) => {
   try {
     const userCredential = await createUserWithEmailAndPassword(
       auth,
       email,
       password,
     ); // La Promesa que recibimos se vuelve el callback al método del Firebase
-    await sendEmailVerification(auth.currentUser);
+    // await sendEmailVerification(auth.currentUser);
+    await createDoc(userCredential.user.uid);
     return userCredential.user;
   } catch (error) {
-    //console.log(error);
+    // console.log(error);
     throw error.code;
   }
 };
@@ -51,7 +65,7 @@ const login = async (email, password) => {
     );
     return userCredential.user.uid;
   } catch (error) {
-    //console.log(error);
+    // console.log(error);
     throw error.code;
   }
 };
@@ -79,5 +93,5 @@ const out = async () => {
 };
 
 export {
-  login, google, create, out, auth, validateState
+  login, google, create, out, auth, validateState,
 };
