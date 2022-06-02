@@ -38,14 +38,14 @@ function login() {
         <input type="email" placeholder="Usuario" />
         <input type="password" placeholder="Contraseña" />
         
-        <button> HOLA </button>
+        <button> INGRESAR </button>
     </div>
 </div>`;
   const container = document.createElement("div");
   container.innerHTML = html;
   const button = container.querySelector("button");
   button.addEventListener("click", () => {
-    navigate("profile");
+    navigate("register");
   });
   return container;
 }
