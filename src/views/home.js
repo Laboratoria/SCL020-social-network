@@ -2,20 +2,29 @@
 //import { out } from '../firebase/auth.js';
 import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
-import { readingPost } from '../firebase/firestore.js';
 
-const Home = () => {
+import { printingPost } from "../firebase/firestore.js";
 
-  const container = document.createElement('div');
+const container = document.createElement('div');
+
+const home = () => {
+  const template = `
+  
+  <h1 style="text-align:center">Por ahora soy vista Home</h1>`;
+
   container.className = 'home-page';
-  const printing =async()=>{
-    container.innerHTML = await readingPost();
-    container.append(Header(), Footer());
-  }
-  printing();
-  //container.classList.add = 'container';
+
+  container.innerHTML = template;
+
 
   return container;
 };
 
-export default Home;
+const printing = async () => {
+  container.innerHTML = await readingPost();
+  container.append(Header(), Footer());
+};
+printing();
+
+
+export { home, printing }
