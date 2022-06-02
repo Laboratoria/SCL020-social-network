@@ -1,28 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Ingrid+Darling&display=swap');
+
 a {
-    outline: none;
-    text-decoration: none;
-    padding: 2px 1px 0;
-  }
-  
-  a:link {
-    color: #265301;
-  }
-  
-  a:visited {
-    color: #437A16;
-  }
-  
-  a:focus {
-    border-bottom: 1px solid;
-    background: #BAE498;
-  }
-  
-  a:hover {
-    border-bottom: 1px solid;
-    background: #CDFEAA;
-  }
-  
-  a:active {
-    background: #265301;
-    color: #CDFEAA;
-  }
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+}
+
+a:link {
+  color: #265301;
+}
+
+a:visited {
+  color: #437A16;
+}
+
+a:focus {
+  border-bottom: 1px solid;
+  background: #BAE498;
+}
+
+a:hover {
+  border-bottom: 1px solid;
+  background: #CDFEAA;
+}
+
+a:active {
+  background: #265301;
+  color: #CDFEAA;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/*
+  Login  
+*/
+
+.background {
+  background-image: url('./assets/background.png');
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.background-green {
+  background-color: #01474ddc;
+  padding: 16px 64px;
+  border-radius: 16px;
+}
+
+.login {
+  text-align: center;
+}
+
+.login h1 {
+  font-size: 64px;
+  text-align: center;
+  color: white;
+  font-family: 'Ingrid Darling', cursive;
+}
+.login h2{
+  color: #BCE4D7;
+  font-size: 12px;
+}
+
+.login p {
+  color: #BCE4D7;
+}
+
+.login input {
+  background: #F8F9F9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  height: 43px;
+  width: 100%;
+  margin-bottom: 16px;
+  text-align: center;
+}

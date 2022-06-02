@@ -1,9 +1,14 @@
-import { root } from './router/router.js';// Este es el punto de entrada de tu aplicación
+// import { root } from './router/router.js';// Este es el punto de entrada de tu aplicación
 
-import { routes } from './router/routes.js';
-// import { myFunction } from './lib/index.js';
+import { navigate } from './router/routes.js';
 
-// myFunction();
+navigate('login');
+// // import { myFunction } from './lib/index.js';
 
-const splitPath = window.location.pathname.split('/')[1];
-root.innerHTML = routes[splitPath].template;
+// const splitPath = window.location.pathname.split('/')[1];
+// root.innerHTML = routes[splitPath].template;
+// // myFunction();
+
+// // console.log(window.location.pathname);
+
+// root.innerHTML = routes[window.location.pathname];
