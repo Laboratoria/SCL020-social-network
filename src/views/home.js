@@ -2,6 +2,7 @@
 //import { out } from '../firebase/auth.js';
 import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
+
 import { printingPost } from "../firebase/firestore.js";
 
 const container = document.createElement('div');
@@ -12,7 +13,9 @@ const home = () => {
   <h1 style="text-align:center">Por ahora soy vista Home</h1>`;
 
   container.className = 'home-page';
+
   container.innerHTML = template;
+
 
   return container;
 };

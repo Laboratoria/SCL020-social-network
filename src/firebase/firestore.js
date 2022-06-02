@@ -47,3 +47,4 @@ const printingPost = async (textPost) => {
 };
   
 export { createDoc, printingPost };
+
