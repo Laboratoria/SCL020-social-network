@@ -2,27 +2,26 @@
 //import { out } from '../firebase/auth.js';
 import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
+import { printingPost } from "../firebase/firestore.js";
 
-const Home = () => {
+const container = document.createElement('div');
+
+const home = () => {
   const template = `
   
-  <!--<button id="sign-out" class="main-btn">Sign Out</button>-->
   <h1 style="text-align:center">Por ahora soy vista Home</h1>`;
 
-  const container = document.createElement('div');
   container.className = 'home-page';
   container.innerHTML = template;
-  container.classList.add = 'container';
-
-  container.append(Header(), Footer());
-
-/*   const buttonOut = container.querySelector('#sign-out');
-  buttonOut.addEventListener('click', () => {
-    out();
-    navigate('/');
-  }); */
 
   return container;
 };
 
-export default Home;
+const printing = async () => {
+  container.innerHTML = await readingPost();
+  container.append(Header(), Footer());
+};
+printing();
+
+
+export { home, printing }
