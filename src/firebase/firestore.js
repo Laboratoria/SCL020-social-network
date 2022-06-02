@@ -16,13 +16,32 @@ const createDoc = async (userId,userName) => {
     }
   };
 
-  export {createDoc}
+  const createPost = async (textPost) => {
+    try {
+      const postRef = await addDoc(collection(db, 'posts'), {
+          description:textPost,
+        });
 
-const readingData = async () => {
-    const querySnapshot = await getDocs(collection(db, 'users'));
+      return postRef.description;
+    } catch (error) {
+      console.log('post no funciona');
+      return null;
+    }
+  };
+
+const readingPost = async () => {
+    debugger
+    const querySnapshot = await getDocs(collection(db, 'posts'));
+    let list ="";
     querySnapshot.forEach((doc) => {
-    console.log(`${doc.id} => ${JSON.stringify(doc.data())}`);
+        console.log(doc.data());
+        list+=
+            `
+            ${JSON.stringify(doc.data().description)}
+            <br>
+            `;
     });
+    return list;
 };
 
-readingData();
+export {createDoc,createPost,readingPost}
