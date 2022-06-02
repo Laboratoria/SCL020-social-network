@@ -2,15 +2,17 @@
 import { navigate } from '../router/router.js';
 import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
+import { createPost } from '../firebase/firestore.js';
 
 const Post = () => {
   const template = // HTML
-  `
-    <div class="post-box">
+  ` <div class="post-box" >
+  <form id="postBox">
       <img class ="user-avatar" src="../img/main-avatar.png" />
       <h3 id="user-name" class="user-name">Carlota Roma</h3>
-      <textarea placeholder="What's in your mind"></textarea>
+      <textarea id="textPost" placeholder="What's in your mind"></textarea>
       <input id="post-submit" class="main-btn" type="submit" value="post" />
+    </form>
     </div>
   <div class="overlay"></div>`;
 
@@ -20,10 +22,18 @@ const Post = () => {
   container.innerHTML = template;
   container.append(Header(), Footer());
 
-  const postBtn = container.querySelector('#post-submit');
-  postBtn.addEventListener('click', () => { // cuando tengamos la funcionalidad esto hay que cambiarlo a submit y activar el prevent default
-    // e.preventDefault();
-    navigate('/home');
+  const postBtn = container.querySelector('#postBox');
+  postBtn.addEventListener('submit', async (e) => { 
+    e.preventDefault();
+    const textPost = container.querySelector('#textPost').value;
+    try {
+      await createPost(textPost);
+      navigate('/home');
+    } catch(error){
+      console.log(error)
+    }
+    
+   
   });
 
   return container;
