@@ -1,5 +1,6 @@
 import { login } from '../templates/login.js';
 import { profile } from '../templates/profile.js';
+import { register } from '../templates/register.js';
 
 const routes = {
   login: {
@@ -8,7 +9,7 @@ const routes = {
   },
   register: {
     path: '/register',
-    template: '<h1>Regístrate</h1>',
+    template: register(),
   },
   news: {
     path: '/news',
