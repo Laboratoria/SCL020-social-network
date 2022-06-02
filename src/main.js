@@ -1,5 +1,5 @@
-// Este es el punto de entrada de tu aplicacion
+import { home } from './lib/Views/templateHome.js';
+import { registration } from './lib/Views/templateRegister.js'
 
-import { myFunction } from './lib/index.js';
-
-myFunction();
+document.getElementById('root').innerHTML = home ();
+document.getElementById('root').innerHTML += registration ();
