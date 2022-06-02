@@ -22,17 +22,32 @@
 // <input type="password" name="password" id="password">
 // <button type="submit" id="loginBtn">iniciar sesión</button>
 // </form>
-import {navigate} from '../router/routes.js';
+import { navigate } from "../router/routes.js";
 
 function login() {
-  const html = //html
-`<h2>Ingresa</h2>
-<button> HOLA </button>`;
-const container= document.createElement('div');
-container.innerHTML = html;
-const button = container.querySelector('button');
-button.addEventListener('click', () =>{navigate('profile')});
-return container;
+  const html =
+    //html
+    `
+<div class="background login">
+    <div class="group background-green">
+        <h1>PlantGram</h1>
+        <p>Bienvenid@ a la mayor comunidad de plant lovers</p>
+        <h2>Inicia sesión</h2>
+
+        
+        <input type="email" placeholder="Usuario" />
+        <input type="password" placeholder="Contraseña" />
+        
+        <button> HOLA </button>
+    </div>
+</div>`;
+  const container = document.createElement("div");
+  container.innerHTML = html;
+  const button = container.querySelector("button");
+  button.addEventListener("click", () => {
+    navigate("profile");
+  });
+  return container;
 }
 
-export {login};
+export { login };

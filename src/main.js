@@ -5,6 +5,8 @@ import { navigate } from './router/routes.js';
 navigate('login');
 // // import { myFunction } from './lib/index.js';
 
+// const splitPath = window.location.pathname.split('/')[1];
+// root.innerHTML = routes[splitPath].template;
 // // myFunction();
 
 // // console.log(window.location.pathname);
