@@ -3,6 +3,7 @@ import { navigate } from '../router/router.js';
 import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
 import { createPost } from '../firebase/firestore.js';
+import { printing } from './home.js';
 
 const Post = () => {
   const template = // HTML
@@ -23,17 +24,17 @@ const Post = () => {
   container.append(Header(), Footer());
 
   const postBtn = container.querySelector('#postBox');
-  postBtn.addEventListener('submit', async (e) => { 
+  postBtn.addEventListener('submit', async (e) => {
     e.preventDefault();
     const textPost = container.querySelector('#textPost').value;
     try {
       await createPost(textPost);
+      await printing();
+      postBtn.reset();
       navigate('/home');
-    } catch(error){
-      console.log(error)
+    } catch (error) {
+      console.log(error);
     }
-    
-   
   });
 
   return container;

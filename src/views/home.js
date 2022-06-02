@@ -1,21 +1,23 @@
-//import { navigate } from '../router/router.js';
-//import { out } from '../firebase/auth.js';
+// import { navigate } from '../router/router.js';
+// import { out } from '../firebase/auth.js';
 import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
 import { readingPost } from '../firebase/firestore.js';
 
-const Home = () => {
+const container = document.createElement('div');
 
-  const container = document.createElement('div');
+const Home = () => {
   container.className = 'home-page';
-  const printing =async()=>{
-    container.innerHTML = await readingPost();
-    container.append(Header(), Footer());
-  }
-  printing();
-  //container.classList.add = 'container';
+  // container.classList.add = 'container';
 
   return container;
 };
 
-export default Home;
+// printing function 
+const printing = async () => {
+  container.innerHTML = await readingPost();
+  container.append(Header(), Footer());
+};
+printing();
+
+export { Home, printing };
