@@ -1,3 +1,4 @@
+//import { createData } from '../firebase/firestore.js';
 import { navigate } from '../router/router.js';
 
 export const Footer = () => {
@@ -18,6 +19,7 @@ export const Footer = () => {
   const buttonMap = container.querySelector('#mapButton');
   buttonMap.addEventListener('click', () => {
     navigate('/map');
+    //createData();
   });
 
   // Central btn to create a new post
