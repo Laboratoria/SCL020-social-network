@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #E3E3E3;
+}
+.firstView{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.logo{
+    margin-top: 110px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+.logo img{
+    width: 150px;
+    height: 120px;
+    border-radius: 50%;
+}
+.currentUserData{
+    display: flex;
+    flex-direction: column;
+   
+}
+.email{
+    width: 160px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    margin-left: 70px;
+}
+.password{
+    width: 160px;
+    padding: 10px;
+    margin-left: 70px;
+    margin-bottom: 15px;
+}
+a{
+    width: 160px;
+    padding: 10px;
+    background-color: #680E4B;
+    margin-left: 70px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+p{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
