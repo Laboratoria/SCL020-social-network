@@ -5,6 +5,5 @@ import { routes } from './router/routes.js';
 
 // myFunction();
 
-// console.log(window.location.pathname);
-
-root.innerHTML = routes[window.location.pathname];
+const splitPath = window.location.pathname.split('/')[1];
+root.innerHTML = routes[splitPath].template;

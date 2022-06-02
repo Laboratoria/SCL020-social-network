@@ -1,7 +1,8 @@
+import {init} from '../templates/login.js'
 const routes = {
   login: {
     path: '/',
-    template: '<h1>Inicia sesión</h1>',
+    template: init(),
   },
   register: {
     path: '/register',
