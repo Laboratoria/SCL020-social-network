@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Ingrid+Darling&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Ingrid+Darling:regular);
+@import url(https://fonts.googleapis.com/css?family=Kite+One:regular);
 
 a {
   outline: none;
@@ -50,8 +51,14 @@ body {
 
 .background-green {
   background-color: #01474ddc;
-  padding: 16px 64px;
-  border-radius: 16px;
+  padding: 1rem 4rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  margin-right: 2rem;
+  width: 14rem;
+  height: 30rem;
 }
 
 .login {
@@ -67,10 +74,12 @@ body {
 .login h2{
   color: #BCE4D7;
   font-size: 12px;
+  font-family:'Kite One', regular;
 }
 
 .login p {
   color: #BCE4D7;
+  font-family:'Kite One', regular;
 }
 
 .login input {
@@ -81,4 +90,64 @@ body {
   width: 100%;
   margin-bottom: 16px;
   text-align: center;
+}
+
+/* REGISTER */
+
+.register {
+  text-align: center;
+}
+
+.register h1 {
+  font-size: 64px;
+  text-align: center;
+  color: white;
+  font-family: 'Ingrid Darling', cursive;
+  margin-bottom: 20px;
+}
+.register h2{
+  color: #BCE4D7;
+  font-size: 12px;
+  font-family:'Kite One', regular;
+}
+
+.register p {
+  color: #BCE4D7;
+  font-family:'Kite One', regular;
+}
+
+.register input {
+  background: #F8F9F9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  height: 43px;
+  width: 0.5rem;
+  margin-bottom: 16px;
+  text-align: center;
+  font-family:'Kite One', regular;
+}
+
+.createAccountButton{
+  background-color:#F8AD67;
+  font-family:'Kite One', regular;
+  color: black;
+  letter-spacing: 0.4vh;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5vh;
+  margin-bottom: auto;
+  padding: 0.4vh 1.7vh;
+  text-align: center;
+  font-size: 2.3vw;
+  border-radius: 1.4vh;
+  text-shadow: black; 
+  }
+
+.backButton {
+  background-color: #01474ddc;
+  box-shadow: none;
+  font-family:'Kite One', regular;
+  color: black;
 }
