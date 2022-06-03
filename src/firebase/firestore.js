@@ -2,7 +2,6 @@ import {
   db, collection, addDoc, getDocs,
 } from './init.js';
 
-// Creating User Collection
 const createDoc = async (userId, userName) => {
   try {
     const docRef = await addDoc(collection(db, 'users'), {
@@ -16,14 +15,14 @@ const createDoc = async (userId, userName) => {
   }
 };
 
-// Creating Post
 const createPost = async (textPost) => {
   try {
-    const docRef = await addDoc(collection(db, 'posts'), {
+    const postRef = await addDoc(collection(db, 'posts'), {
       description: textPost,
     });
-    console.log('Document written with ID: ', docRef.id);
-    return docRef.description;
+
+    return postRef.description;
+
   } catch (error) {
     console.log('post no funciona');
     return null;
@@ -32,19 +31,23 @@ const createPost = async (textPost) => {
 
 // Reading Post
 const readingPost = async () => {
-  let list = '';
+
   const querySnapshot = await getDocs(collection(db, 'posts'));
+  let list = '';
   querySnapshot.forEach((doc) => {
-    list += `<li> ${JSON.stringify(doc.data().description)} </li>`;
+    console.log(doc.data());
+    list
+            += `
+            ${JSON.stringify(doc.data().description)}
+            <br>
+            `;
   });
   return list;
-};
 
-// Printing Post
-const printingPost = async (textPost) => {
-  await createPost(textPost);
-  readingPost();
 };
   
 export { createDoc, printingPost };
+
+
+export { createDoc, createPost, readingPost };
 

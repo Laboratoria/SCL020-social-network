@@ -1,24 +1,19 @@
-//import { navigate } from '../router/router.js';
-//import { out } from '../firebase/auth.js';
+// import { navigate } from '../router/router.js';
+// import { out } from '../firebase/auth.js';
 import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
 
-import { printingPost } from "../firebase/firestore.js";
-
 const container = document.createElement('div');
 
-const home = () => {
-  const template = `
-  
-  <h1 style="text-align:center">Por ahora soy vista Home</h1>`;
-
+const Home = () => {
   container.className = 'home-page';
-
-  container.innerHTML = template;
+  // container.classList.add = 'container';
 
 
   return container;
 };
+
+// printing function 
 
 const printing = async () => {
   container.innerHTML = await readingPost();
@@ -26,5 +21,5 @@ const printing = async () => {
 };
 printing();
 
+export { Home, printing };
 
-export { home, printing }

@@ -2,8 +2,9 @@
 import { navigate } from '../router/router.js';
 import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
-import { printingPost } from '../firebase/firestore.js';
-//import { printing } from './home.js';
+import { createPost } from '../firebase/firestore.js';
+import { printing } from './home.js';
+
 
 const Post = () => {
   const template =
@@ -29,12 +30,13 @@ const Post = () => {
     e.preventDefault();
     const textPost = container.querySelector('#textPost').value;
     try {
-      //await createPost(textPost);
-      await printingPost(textPost);
+      await createPost(textPost);
+      await printing();
       postBtn.reset();
       navigate('/home');
     } catch (error) {
-      console.log('error en crear post', error);
+      console.log(error);
+
     }
   });
 
