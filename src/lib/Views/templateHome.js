@@ -1,5 +1,6 @@
 export const home = () => {
-  const viewHome = `
+  const viewHome = // html
+  `
     <div class="firstView">
     <div class = "logo">
       <img src = "Social-Images/logoescuela.webp">
@@ -12,6 +13,11 @@ export const home = () => {
     <p class="registerChoice"><strong>¿No tienes una cuenta?</strong></p>
     <a href="#/register" class="register"><strong>REGISTRATE</strong></a>
     </div>
-    `;
-  return viewHome;
+    `
+  ;
+
+const container = document.createElement('div');
+container.innerHTML= viewHome;
+  return container;
 };
+

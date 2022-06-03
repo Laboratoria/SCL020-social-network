@@ -18,8 +18,7 @@ export const changeRoute = (hash) => {
 
 const showTemplates = (hash) => {
   const containerRoot = document.getElementById('root');
-  containerRoot.innerHTML = 0;
-
+  containerRoot.innerHTML = '';
   switch(hash) {
     case '#/home':
     containerRoot.appendChild(home());

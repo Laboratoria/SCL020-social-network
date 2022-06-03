@@ -13,5 +13,7 @@ export const wall = () => {
      </div>
       </div>
       `;
-  return wallP;
+    const container = document.createElement('div');
+    container.innerHTML= wallP;
+  return container;
 };
