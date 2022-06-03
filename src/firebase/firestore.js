@@ -23,7 +23,7 @@ const createPost = async (textPost) => {
     const postRef = await addDoc(collection(db, 'posts'), {
       description: textPost,
     });
-    return postRef.description;
+    return postRef;
   } catch (error) {
     console.log('post no funciona');
     return null;

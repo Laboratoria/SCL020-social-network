@@ -11,7 +11,7 @@ const Post = () => {
     `<div class="post-box">
     <form id="postBox">
       <img class ="user-avatar" src="../img/main-avatar.png" />
-      <h3 id="user-name" class="user-name">Carlota Roma</h3>
+      <h3 id="user-name" class="user-name"></h3>
       <textarea id="textPost" placeholder="What's in your mind"></textarea>
       <input id="post-submit" class="main-btn" type="submit" value="post" />
     </form>
@@ -28,6 +28,8 @@ const Post = () => {
   postForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const textPost = container.querySelector('#textPost').value;
+    //const userName = container.querySelector('#user-name');
+    //userName.innerHTML = `${userName.displayName}`;
     try {
       await createPost(textPost); // calling createPost
       await printing(); // calling printing to preserve last post

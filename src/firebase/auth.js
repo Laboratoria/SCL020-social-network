@@ -12,13 +12,15 @@ import {
   getRedirectResult,
   signOut,
   sendEmailVerification,
+  updateProfile,
 } from './init.js';
 import { createDoc } from './firestore.js';
 
-// Observer 
+// Observer
 const validateState = (next, pathname) => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
+      console.log(user);
       next(pathname);
     } else {
       next('/');
@@ -34,6 +36,7 @@ const create = async (userName, email, password) => {
       email,
       password,
     );
+    await updateProfile(auth.currentUser, { displayName: userName });
     await sendEmailVerification(auth.currentUser);
     await createDoc(userCredential.user.uid, userName);
     return userCredential.user;

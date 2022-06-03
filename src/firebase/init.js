@@ -9,6 +9,7 @@ import {
   GoogleAuthProvider,
   signOut,
   sendEmailVerification,
+  updateProfile,
 } from 'firebase/auth';
 import {
   getFirestore, collection, addDoc, getDocs, doc
@@ -23,5 +24,5 @@ const provider = new GoogleAuthProvider(app);
 
 export {
   auth, app, db, provider, createUserWithEmailAndPassword, signInWithEmailAndPassword,
-  onAuthStateChanged, signInWithRedirect, getRedirectResult, signOut, sendEmailVerification, collection, addDoc, getDocs, doc
+  onAuthStateChanged, signInWithRedirect, getRedirectResult, signOut, sendEmailVerification, collection, addDoc, getDocs, doc, updateProfile
 };
