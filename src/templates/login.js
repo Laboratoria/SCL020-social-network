@@ -28,7 +28,7 @@ function login() {
   const html =//html
     `
 <div class="background login">
-    <div class="group background-green">
+  <div class="group background-green">
         <h1>PlantGram</h1>
         <p>Bienvenid@ a la mayor comunidad de plant lovers</p>
         <h2>Inicia sesión</h2>
@@ -37,7 +37,16 @@ function login() {
         <input type="email" placeholder="Usuario" />
         <input type="password" placeholder="Contraseña" />
         
-        <button> INGRESAR </button>
+        <button class="entrar"> Entrar </button>
+        <p>¿Aún no tienes una cuenta? Regístrate aquí </p>
+        <p>O ingresa con</p>
+        <button>
+          <img width="25" src="./assets/google.png" /> Gmail
+        </button>
+        <button>
+          <img width="25" src="./assets/facebook.png" /> Facebook
+        </button>
+
     </div>
 </div>`;
   const container = document.createElement("div");
