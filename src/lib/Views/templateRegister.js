@@ -12,5 +12,7 @@ export const registration = () => {
       <a href="#/home"><strong>INICIAR SESIÓN</strong></a>
     </div>
     `;
-  return register;
+    const container = document.createElement('div');
+    container.innerHTML= register;
+  return container;
 };
