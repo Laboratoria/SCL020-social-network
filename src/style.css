@@ -49,7 +49,6 @@ body {
   align-content: center;
 
 }
-
 .background {
   background-image: url('./assets/background.png');
   height: 100vh;
@@ -57,8 +56,12 @@ body {
   background-size: cover;
   padding: 16px;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+ 
 .background-green {
   background-color: #01474ddc;
   /* display: flex;
@@ -70,23 +73,16 @@ body {
   padding: 1rem 4rem;
   border-radius: 1rem;
   margin-top: 2rem;
-  margin-left: 2rem;
+  /* margin-left: 2rem; */
   margin-bottom: 2rem;
-  margin-right: 2rem;
+  /* margin-right: 2rem; */
   width: 14rem;
-  height: 30rem;
+  /* height: 30rem; */
 }
 
 .login {
   text-align: center;
 }
-
-/* .login h1 {
-  font-size: 64px;
-  text-align: center;
-  color: white;
-  font-family: 'Ingrid Darling', cursive;
-} */
 
 .login h2{
   color: #BCE4D7;
@@ -107,8 +103,25 @@ body {
   width: 100%;
   margin-bottom: 16px;
   text-align: center;
+  border: 0px;
+
 }
 
+.login button{
+  border: 0px;
+  width: 100%;
+  height: 45px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.login .entrar{
+  background-color:#E48A7B;
+
+}
 /* REGISTER */
 
 .register {
