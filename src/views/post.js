@@ -5,16 +5,18 @@ import { Footer } from '../utils/footer.js';
 import { createPost } from '../firebase/firestore.js';
 import { printing } from './home.js';
 
+
 const Post = () => {
-  const template = // HTML
-  ` <div class="post-box" >
-  <form id="postBox">
+  const template =
+    // HTML
+    `<div class="post-box">
+    <form id="postBox">
       <img class ="user-avatar" src="../img/main-avatar.png" />
       <h3 id="user-name" class="user-name">Carlota Roma</h3>
       <textarea id="textPost" placeholder="What's in your mind"></textarea>
       <input id="post-submit" class="main-btn" type="submit" value="post" />
     </form>
-    </div>
+  </div>
   <div class="overlay"></div>`;
 
   const container = document.createElement('section');
@@ -34,6 +36,7 @@ const Post = () => {
       navigate('/home');
     } catch (error) {
       console.log(error);
+
     }
   });
 
@@ -41,17 +44,3 @@ const Post = () => {
 };
 
 export default Post;
-
-/* $(document).ready(() => {
-  $('.text').click(() => {
-    $('.overlay').fadeIn(500);
-  });
-  $('.overlay').not('.text').click(() => {
-    $('.overlay').fadeOut(500);
-  });
-  $('[type = submit]').click(() => {
-    const post = $('textarea').val();
-    $(`<p class='post'>${post}</p>`).appendTo('section');
-  });
-});
- */

@@ -22,13 +22,16 @@ const createPost = async (textPost) => {
     });
 
     return postRef.description;
+
   } catch (error) {
     console.log('post no funciona');
     return null;
   }
 };
 
+// Reading Post
 const readingPost = async () => {
+
   const querySnapshot = await getDocs(collection(db, 'posts'));
   let list = '';
   querySnapshot.forEach((doc) => {
@@ -40,6 +43,11 @@ const readingPost = async () => {
             `;
   });
   return list;
+
 };
+  
+export { createDoc, printingPost };
+
 
 export { createDoc, createPost, readingPost };
+
