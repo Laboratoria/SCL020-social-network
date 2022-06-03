@@ -25,8 +25,7 @@
 import { navigate } from "../router/routes.js";
 
 function login() {
-  const html =
-    //html
+  const html =//html
     `
 <div class="background login">
     <div class="group background-green">
