@@ -1,5 +1,15 @@
+import { myFunction } from './lib/index.js';
 import { home } from './lib/Views/templateHome.js';
-import { registration } from './lib/Views/templateRegister.js'
+import { changeRoute } from './lib/router.js';
 
-document.getElementById('root').innerHTML = home ();
-document.getElementById('root').innerHTML += registration ();
+// myFunction();
+// document.getElementById('root').innerHTML = home();
+
+const init = () => {
+    window.addEventListener('hashchange', () =>{
+    document.getElementById('root').innerHTML = home();
+    changeRoute(window.location.hash)
+    })
+}
+
+window.addEventListener('load', init)

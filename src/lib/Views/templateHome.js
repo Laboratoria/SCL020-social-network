@@ -1,17 +1,17 @@
 export const home = () => {
-   const viewHome = `
+  const viewHome = `
     <div class="firstView">
     <div class = "logo">
       <img src = "Social-Images/logoescuela.webp">
     </div>
     <input class="email" type="text" placeholder="Escribe tu correo">
     <input class="password" type="text" placeholder="Escribe tu contraseña">
-    <a href="#/wall" class="loginButton">Iniciar Sesión</a>
-    <p class="o">o</p>
-    <a href="#/loginGoogle" class="loginGoogle">Iniciar Sesión con Google</a>
-    <p class="registerChoice">¿No tienes una cuenta?</p>
-    <a href="#/register" class="register">REGISTRATE</a>
+    <a href="#/wall" class="loginButton"><strong>INICIAR SESIÓN</strong></a>
+    <p class="o"><strong>o</strong></p>
+    <a href="#/loginGoogle" class="loginGoogle"><strong>INICIAR SESIÓN CON GOOGLE</strong></a>
+    <p class="registerChoice"><strong>¿No tienes una cuenta?</strong></p>
+    <a href="#/register" class="register"><strong>REGISTRATE</strong></a>
     </div>
-    `
-    return viewHome;
-}
+    `;
+  return viewHome;
+};
