@@ -13,6 +13,7 @@ function profile() {
     <p>Mis Plantas</p>
     <p>Mis Grupos</p>
     <p>Mis Likes</p>
+    <button> News </button>
   </div>
 </div>
 `;
@@ -20,7 +21,7 @@ function profile() {
   container.innerHTML = html;
   const button = container.querySelector("button");
   button.addEventListener("click", () => {
-    navigate("profile");
+    navigate("news");
   });
   return container;
 }
