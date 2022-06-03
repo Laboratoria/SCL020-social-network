@@ -11,13 +11,13 @@ const Register = () => {
   <form id="form1">
       <div>
           <label for="name">Name: </label>
-          <input id="name" class="input-form" type="name" placeholder="Your name">
+          <input required id="name" class="input-form" type="name" placeholder="Your name">
           <br>
           <label for="email">Email: </label>
-          <input id="email1" class="input-form" type="email" placeholder="Your email">
+          <input required id="email1" class="input-form" type="email" placeholder="Your email">
           <br>
           <label for="password">Password: </label>
-          <input id="password1" class="input-form" type="password" placeholder="Your password">
+          <input required id="password1" class="input-form" type="password" placeholder="Your password">
       </div>
       <div class="create-account-info">
           <button id="create-account" class="main-btn" type="submit">Crear Cuenta</button>
@@ -37,8 +37,8 @@ const Register = () => {
     const password = container.querySelector('#password1').value;
 
     try {
-      await create(userName, email, password);
-      console.log('entré'); // const user = await create(email, password)
+      await create(userName, email, password); // const user = await create(email, password)
+      //console.log('entré');
       form1.reset();
       navigate('/home');
     } catch (error) {
