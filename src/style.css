@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Ingrid+Darling:regular);
 @import url(https://fonts.googleapis.com/css?family=Kite+One:regular);
 
-a {
+/* a {
   outline: none;
   text-decoration: none;
   padding: 2px 1px 0;
@@ -28,7 +28,7 @@ a:hover {
 a:active {
   background: #265301;
   color: #CDFEAA;
-}
+} */
 
 html,
 body {
@@ -39,6 +39,16 @@ body {
 /*
   Login  
 */
+
+.root{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+}
 
 .background {
   background-image: url('./assets/background.png');
@@ -51,6 +61,12 @@ body {
 
 .background-green {
   background-color: #01474ddc;
+  /* display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center; */
   padding: 1rem 4rem;
   border-radius: 1rem;
   margin-top: 2rem;
@@ -65,12 +81,13 @@ body {
   text-align: center;
 }
 
-.login h1 {
+/* .login h1 {
   font-size: 64px;
   text-align: center;
   color: white;
   font-family: 'Ingrid Darling', cursive;
-}
+} */
+
 .login h2{
   color: #BCE4D7;
   font-size: 12px;
@@ -95,23 +112,30 @@ body {
 /* REGISTER */
 
 .register {
+  display: flex;
   text-align: center;
 }
 
-.register h1 {
+h1 {
+  display: flex;
   font-size: 64px;
   text-align: center;
   color: white;
   font-family: 'Ingrid Darling', cursive;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  margin-top: 10px;
+  padding: 10px;
+  text-shadow: 5px 5px 10px black;
 }
 .register h2{
+  display: flex;
   color: #BCE4D7;
   font-size: 12px;
   font-family:'Kite One', regular;
 }
 
 .register p {
+  display: flex;
   color: #BCE4D7;
   font-family:'Kite One', regular;
 }
@@ -128,6 +152,7 @@ body {
 }
 
 .createAccountButton{
+  display: flex;
   background-color:#F8AD67;
   font-family:'Kite One', regular;
   color: black;
