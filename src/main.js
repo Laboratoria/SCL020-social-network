@@ -3,7 +3,9 @@ import { home } from './lib/Views/templateHome.js';
 import { changeRoute } from './lib/router.js';
 
 // myFunction();
-// document.getElementById('root').innerHTML = home();
+window.addEventListener('load', () =>{
+    window.history.replaceState({}, '', window.location.origin+'#/home' )
+})
 
 const init = () => {
     
