@@ -5,7 +5,6 @@ import { Footer } from '../utils/footer.js';
 import { createPost } from '../firebase/firestore.js';
 import { printing } from './home.js';
 
-
 const Post = () => {
   const template =
     // HTML
@@ -25,18 +24,17 @@ const Post = () => {
   container.innerHTML = template;
   container.append(Header(), Footer());
 
-  const postBtn = container.querySelector('#postBox');
-  postBtn.addEventListener('submit', async (e) => {
+  const postForm = container.querySelector('#postBox');
+  postForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const textPost = container.querySelector('#textPost').value;
     try {
-      await createPost(textPost);
-      await printing();
-      postBtn.reset();
+      await createPost(textPost); // calling createPost
+      await printing(); // calling printing to preserve last post
+      postForm.reset();
       navigate('/home');
     } catch (error) {
       console.log(error);
-
     }
   });
 

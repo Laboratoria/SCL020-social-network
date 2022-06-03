@@ -15,6 +15,7 @@ import {
 } from './init.js';
 import { createDoc } from './firestore.js';
 
+// Observer 
 const validateState = (next, pathname) => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -34,7 +35,7 @@ const create = async (userName, email, password) => {
       password,
     );
     await sendEmailVerification(auth.currentUser);
-    await createDoc(userCredential.user.uid,userName);
+    await createDoc(userCredential.user.uid, userName);
     return userCredential.user;
   } catch (error) {
     // console.log(error);
