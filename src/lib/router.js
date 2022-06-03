@@ -12,14 +12,43 @@ import { signUp } from './views/templateSignUp.js';
 import { welcome } from './views/templateWelcome.js';
 
 export const changeRoute = (hash) => {
-    if(hash === '#/profile'){
-        return showTemplate(hash)
-    } else if (hash=== '#/feed'){
-        return showTemplate(hash)
-    } else if (hash=== '#/sign-out'){
-        return showTemplate(hash)
-    }else {
-        return showTemplate(hash)
+    // if(hash === '#/profile'){
+    //    return showTemplate(hash)
+    // } else if (hash=== '#/feed'){
+    //    return showTemplate(hash)
+    // } else if (hash=== '#/sign-out'){
+    //    return showTemplate(hash)
+    // } else if (hash==='#/home'){
+    //    return showTemplate(hash)
+    // }else {
+    //    return showTemplate(hash)
+    // }
+    if (hash === '#/login'){
+        return showTemplate(hash);
+    }else if (hash==='#/home'){
+        return showTemplate (hash);
+    }else if (hash==='#/age'){
+        return showTemplate (hash);
+    }else if (hash==='#/ageRedirect'){
+        return showTemplate (hash);
+    }else if (hash==='#/sign-up'){
+        return showTemplate (hash);
+    }else if (hash==='#/welcome'){
+        return showTemplate (hash);
+    }else if (hash==='#/err404'){
+        return showTemplate (hash);
+    }else if (hash==='#/feed'){
+        return showTemplate (hash);
+    }else if (hash==='#/menu'){
+        return showTemplate (hash);
+    }else if (hash==='#/logoutConfirmation'){
+        return showTemplate (hash);
+    }else if (hash==='#/profile'){
+        return showTemplate (hash);
+    }else if (hash==='#/deleteComment'){
+        return showTemplate (hash);
+    } else {
+        return showTemplate(hash);
     }
 }
 
@@ -28,17 +57,49 @@ const showTemplate = (hash)=>{
     containerRoot.innerHTML=menu();
     
     switch(hash){
-        case '#/profile':
-            containerRoot.appendChild(menu());
+        // case '#/profile':
+        //     containerRoot.appendChild(menu());
+        //     break;
+        // case '#/feed':
+        //     containerRoot.appendChild(menu());
+        //      break;
+        // case '#/sign-out':
+        //     containerRoot.appendChild(menu());
+        //      break;
+        // default:
+        //     containerRoot.appendChild(err404());
+        case '#/login':
+            containerRoot.appendChild(login());
             break;
+        case '#/home':
+            containerRoot.appendChild(home());
+            break;
+        case '#/age':
+            containerRoot.appendChild(age());
+            break;       
+        case '#/ageRedirect':
+            containerRoot.appendChild(ageRedirect());
+            break;
+        case '#/sign-up':
+            containerRoot.appendChild(signUp());
+            break;       
+        case '#/welcome':
+            containerRoot.appendChild(welcome());
+            break;    
         case '#/feed':
+            containerRoot.appendChild(feed());
+            break;    
+        case '#/menu':
             containerRoot.appendChild(menu());
-             break;
-        case '#/sign-out':
-            containerRoot.appendChild(menu());
-             break;
+            break;  
+        case '#/logoutConfirmation':
+            containerRoot.appendChild(logoutConfirmation());
+            break;   
+        case '#/profile':
+            containerRoot.appendChild(profile());
+            break; 
         default:
-            containerRoot.appendChild(err404());
+            containerRoot.appendChild(err404());                             
     }
 }
 

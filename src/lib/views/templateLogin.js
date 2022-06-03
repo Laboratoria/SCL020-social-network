@@ -10,8 +10,8 @@ export const login = () => {
             <div class="btns-login">
                 <button class="btn-loginGoogle">google</button>
                 <button class="btn-loginIMDb">IMDb</button>
-            </div>
-            <button class="btn-login-login">Login</button>
+            </div> 
+            <a href="#/feed"><button class="btn-login">Login</button></a>
         </div>    
     `
     divLogin.innerHTML = viewLogin;

@@ -3,8 +3,8 @@
 import { myFunction } from './lib/index.js';
 import { login } from './lib/views/templateLogin.js';
 import { err404 } from './lib/views/template404.js';
-import { age } from './lib/iews/templateAge.js';
-import { ageRedirect } from './lib/iews/templateAgeRedirect.js';
+import { age } from './lib/views/templateAge.js';
+import { ageRedirect } from './lib/views/templateAgeRedirect.js';
 import { deleteComment } from './lib/views/templateDeleteComment.js';
 import { feed } from './lib/views/templateFeed.js';
 import { home } from './lib/views/templateHome.js';
