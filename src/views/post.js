@@ -13,7 +13,10 @@ const Post = () => {
     <form id="postBox">
       <img class ="user-avatar" src="../img/main-avatar.png" />
       <h3 id="user-name" class="user-name">${userName}</h3>
-      <textarea id="textPost" placeholder="What's in your mind"></textarea>
+      <textarea id="review" placeholder="Movie review"></textarea>
+      <p>Película<input type="text" id="movie"></p>
+      <p>País<input type="text" id="country"></p>
+    
       <input id="post-submit" class="main-btn" type="submit" value="post" />
     </form>
   </div>
@@ -28,11 +31,12 @@ const Post = () => {
   const postForm = container.querySelector('#postBox');
   postForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const textPost = container.querySelector('#textPost').value;
-    //const userName = container.querySelector('#user-name');
-    //userName.innerHTML = `${userName.displayName}`;
+    const review = container.querySelector('#review').value;
+    const movie = container.querySelector('#movie').value;
+    const country = container.querySelector('#country').value;
+  
     try {
-      await createPost(textPost); // calling createPost
+      await createPost(review,movie,country); // calling createPost
       await refetch(); // calling printing to preserve last post
       postForm.reset();
       navigate('/home');
