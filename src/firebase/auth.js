@@ -54,7 +54,7 @@ const login = async (email, password) => {
       email,
       password,
     );
-    return userCredential.user.uid;
+    return userCredential.user;
   } catch (error) {
     // console.log(error);
     throw error.code;
@@ -77,6 +77,7 @@ const google = async () => {
 const out = async () => {
   try {
     await signOut(auth);
+    localStorage.clear();
     console.log('salió');
   } catch (error) {
     console.log('error signout', error);

@@ -26,7 +26,8 @@ body {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-  height: 7%;
+  height: 8%;
+  min-height: 60px;
   background: white;
   align-items: center;
   align-content: center;
@@ -312,31 +313,36 @@ footer{
   display: flex;
   justify-content: space-around;
   width: 100%;
-  height: 7%;
+  height: 8%;
+  min-height: 60px;
   background: white;
   align-items: center;
 }
+
 footer button {
   height: 50%;
   color: #FBC4F3;
   font-size: 20px; 
   background-color: white; 
-  border:none;
+  border: none;
 }
+
 #postButton{
-  border-radius: 50%;
-  padding:1%;
   background-color: #FBC4F3; 
   color: black;
+  position: relative;
+  min-height: 35px;
+  min-width: 35px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
   text-align: center;
-  box-shadow:  2px 5px 10px grey;
 }
 .home-page{
   min-width: 100vw;
   min-height: 100vh;
   width: 100vw;
   height: 100vh;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
 }

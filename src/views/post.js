@@ -3,15 +3,16 @@ import { navigate } from '../router/router.js';
 import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
 import { createPost } from '../firebase/firestore.js';
-import { printing } from './home.js';
+import { refetch } from './home.js';
 
 const Post = () => {
+  const userName = localStorage.getItem('user') || 'User';
   const template =
     // HTML
     `<div class="post-box">
     <form id="postBox">
       <img class ="user-avatar" src="../img/main-avatar.png" />
-      <h3 id="user-name" class="user-name"></h3>
+      <h3 id="user-name" class="user-name">${userName}</h3>
       <textarea id="textPost" placeholder="What's in your mind"></textarea>
       <input id="post-submit" class="main-btn" type="submit" value="post" />
     </form>
@@ -32,7 +33,7 @@ const Post = () => {
     //userName.innerHTML = `${userName.displayName}`;
     try {
       await createPost(textPost); // calling createPost
-      await printing(); // calling printing to preserve last post
+      await refetch(); // calling printing to preserve last post
       postForm.reset();
       navigate('/home');
     } catch (error) {

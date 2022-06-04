@@ -42,7 +42,8 @@ const Login = () => {
     const password = container.querySelector('#password').value;
 
     try {
-      await login(email, password); // const user = await login(email, password)
+      const user = await login(email, password);
+      localStorage.setItem('user', user.displayName);
       form.reset();
       navigate('/home');
     } catch (error) {
