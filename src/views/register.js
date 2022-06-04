@@ -37,8 +37,8 @@ const Register = () => {
     const password = container.querySelector('#password1').value;
 
     try {
-      await create(userName, email, password); // const user = await create(email, password)
-      //console.log('entré');
+      const user = await create(userName, email, password);
+      localStorage.setItem('user', user.displayName);
       form1.reset();
       navigate('/home');
     } catch (error) {

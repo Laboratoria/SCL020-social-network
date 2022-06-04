@@ -32,13 +32,16 @@ const createPost = async (textPost) => {
 
 // Reading Post
 const readingPost = async () => {
-  const querySnapshot = await getDocs(collection(db, 'posts'));
-  let list = '';
-  querySnapshot.forEach((doc) => {
-    //console.log(doc.data());
-    list += `
-            <li> ${JSON.stringify(doc.data().description)} </li>`;
+  const results = await getDocs(collection(db, 'posts'));
+  const list = document.createElement('ul');
+
+  results.forEach((doc) => {
+    const listItem = document.createElement('li');
+    listItem.innerHTML = doc.data().description;
+
+    list.appendChild(listItem);
   });
+
   return list;
 };
 

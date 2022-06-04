@@ -13,10 +13,10 @@ const Home = () => {
 };
 
 // Printing posts, header and footer to home page
-const printing = async () => {
-  container.innerHTML = await readingPost();
-  container.append(Header(), Footer());
+const refetch = async () => {
+  const list = await readingPost();
+  container.append(Header(), list, Footer());
 };
-printing();
+refetch();
 
-export { Home, printing };
+export { Home, refetch };
