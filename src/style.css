@@ -404,6 +404,7 @@ footer button {
    border-radius:.5em;
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.10); 
    margin: 5%;
+   padding: 5%;
  }
 
  .date {
@@ -427,26 +428,25 @@ footer button {
   justify-content:end;
   margin: 1%;
   gap: 2%;
+
 }
  
 /*Botones edit, delete and like*/
 .btn-updatepost {
-  align-items: center;
   background-color: #fff;
   border: 2px solid #FFE3A9;
-  box-sizing: border-box;
   color: #FF8C8C;
   cursor: pointer;
-  display: inline-flex;
   fill: #FFE3A9;
   font-family: Karla;
-  height: auto;
   justify-content: center;
   padding: 0 3%;
   text-align: center;
   transition: all .3s;
   -webkit-user-select: none;
   touch-action: manipulation;
+  width: auto;
+  height: 2em;
 }
 
 .btn-updatepost:hover {
@@ -456,7 +456,7 @@ footer button {
 }
 
 @media (min-width: 768px) {
-  .button-59 {
+  .btn-updatepost {
     min-width: 170px;
   }
 } 

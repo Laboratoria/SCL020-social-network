@@ -22,8 +22,8 @@ const createPost = async (review, movie, country) => {
 
 // Reading Post
 const readingPost = async () => {
-  const result = await getDocs(collection(db, 'posts'));
-  const q = query(result.query, orderBy('date', 'desc'));
+  const result = await getDocs(collection(db, 'posts')); // result es querySnapshot, devuelve la colección completa
+  const q = query(result.query, orderBy('date', 'desc')); // q hace una búsqueda, a lo que hay que aplicar filtro para que devuelva una colección filtrada
   // console.log(q);
   const filterQ = await getDocs(q);
   // console.log(filterQ);
