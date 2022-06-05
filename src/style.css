@@ -5,6 +5,9 @@
 *{
   margin:0;
   padding:0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
  
 body {
@@ -182,7 +185,7 @@ p {
   box-sizing: border-box;
   color: #FFFFFF;
   cursor: pointer;
-  font-family: "Monrope", sans-serif;
+  font-family: karla;
   font-size: 1rem;
   font-weight: 500;
   line-height: 24px;
@@ -233,11 +236,6 @@ p {
 }
  
 /* POST */
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
 .new-post {
   min-width: 100vw;
   min-height: 100vh;
@@ -370,7 +368,7 @@ footer button {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
 }
 .map-page{
   min-width: 100vw;
@@ -395,9 +393,118 @@ footer button {
   justify-content: space-between;
 }
  
+ /* POST EN HOME */
+ .post-border {
+   display: flex;
+   flex-direction: column;
+   width: fit-content;
+   height: auto;
+   background-color: #ffffff;
+   font-family: karla;
+   border-radius:.5em;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.10); 
+   margin: 5%;
+ }
+
+ .date {
+  font-size: 0.9rem; 
+  opacity: 0.3;
+
+}
  
+ .movie-title {
+  color:coral;
+ }
  
+ .likes-border {
+   display: flex;
+   justify-content: end;
+ }
+
+ /*Div que contiene botones edit and delete*/
+ .btns-updateDiv {
+  display: flex;
+  justify-content:end;
+  margin: 1%;
+  gap: 2%;
+}
  
+/*Botones edit, delete and like*/
+.btn-updatepost {
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #FFE3A9;
+  box-sizing: border-box;
+  color: #FF8C8C;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #FFE3A9;
+  font-family: Karla;
+  height: auto;
+  justify-content: center;
+  padding: 0 3%;
+  text-align: center;
+  transition: all .3s;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn-updatepost:hover {
+  border-color: #420516;
+  color: #420516;
+  fill: #420516;
+}
+
+@media (min-width: 768px) {
+  .button-59 {
+    min-width: 170px;
+  }
+} 
+ 
+/* .btn-updatepost {
+  background: #FBC4F3;
+  border-radius:.5em ;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: karla;
+  font-size: 0.7rem;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 3px 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 están siendo usados?
 .modal {
