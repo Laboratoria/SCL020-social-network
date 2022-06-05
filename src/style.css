@@ -363,7 +363,9 @@ footer button {
   flex-direction: column;
   justify-content: space-between;
 }
- 
+#map {
+  height: 100%;
+}
 /* PROFILE PAGE CSS */
 .profile-page {
   min-width: 100vw;

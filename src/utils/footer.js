@@ -3,7 +3,7 @@ import { navigate } from '../router/router.js';
 export const Footer = () => {
   const template = // HTML
   `
-  <button id="mapButton">map</button>
+  <button id="mapButton"><i class="fas fa-map"></i></button>
   <button id="postButton">+</button>
   <button id="searchImg">
     <i class="fas fa-search"></i>
