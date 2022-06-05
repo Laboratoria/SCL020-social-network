@@ -6,7 +6,7 @@
   margin:0;
   padding:0;
 }
-
+ 
 body {
   background: #FAFAEB;
   min-height: 100vh;
@@ -14,15 +14,22 @@ body {
   font-family: karla;
 }
 #root{
+  flex-wrap: nowrap;
   display: flex;
   place-content: center center;
   align-items: center;
   width: 100vw;
   height:100vh;
 }
-
+/* MIDDLE CSS */
+.middle{
+  flex-grow: 1;
+  overflow: auto;
+  min-height: 2em;
+}
 /* HEADER CSS */
 .header {
+  flex-shrink: 0;
   display: flex;
   justify-content: space-evenly;
   width: 100%;
@@ -43,7 +50,7 @@ body {
   align-self: center;
   box-shadow: 0.5px 1px 5px grey;
 }
-
+ 
 .search-input {
   width: 100%;
   border-right: none;
@@ -60,12 +67,12 @@ body {
   font-size: 20px;  
   border:none;
   color:grey;
-  
+ 
 }
 .main-avatar {
   height: 80%;
 }
-
+ 
 .signout-btn {
   background: #FBC4F3;
   border-radius: 999px;
@@ -86,7 +93,7 @@ body {
   word-break: break-word;
   border: 0;
 }
-
+ 
 /* LOG IN FORM */
 .login-box {
   position: relative;
@@ -99,7 +106,7 @@ body {
   border-radius: 8px;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
 }
-
+ 
 .logo {
   position: relative;
   top: -50px;
@@ -112,20 +119,20 @@ body {
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   text-align: center;
 }
-
+ 
 .title-form {
   margin-top: -5%;
   text-align: center;
   font-family: "Monrope", sans-serif;
   color: #484747;
 }
-
+ 
 label {
   display: block;
   color: #555555;
   margin-bottom: 5%; /*8px*/
 }
-
+ 
 .input-form {
   margin-bottom: 3vh;
   padding: 13px 0px 13px 25px;
@@ -138,17 +145,17 @@ label {
   font-size: 0.9rem;
   color: #555555;
 }
-
+ 
 p {
   color: #555555;
 }
-
+ 
 /*Entrar btn*/
 .login-btns {
   text-align: center;
   align-items: center;
 }
-
+ 
 /*Entrar y Registrar btn*/
 .main-btn {
   background: #FBC4F3;
@@ -172,9 +179,9 @@ p {
   border: 0;
   margin-bottom: 5%;
 }
-
+ 
 .google-btn {
-  transition: background-color .3s, box-shadow .3s;   
+  transition: background-color .3s, box-shadow .3s;  
   padding: 12px 16px 12px 42px;
   border: none;
   border-radius: 999px;
@@ -190,23 +197,23 @@ p {
   cursor: pointer;
   margin: 5%;
 }
-
+ 
 .signup-link {
   align-items: center;
   text-align: center;
   margin: 5%;
 }
-
-/* REGISTER FORM */ 
+ 
+/* REGISTER FORM */
 .signup-tittle {
   margin-bottom: 5%;
   text-align: center;
 }
-
+ 
 .create-account-info {
   text-align: center;
 }
-
+ 
 /* POST */
 * {
   -webkit-box-sizing: border-box;
@@ -217,12 +224,12 @@ p {
   min-width: 100vw;
   min-height: 100vh;
   width: 100vw;
-  height: 100vh; 
+  height: 100vh;
   display:flex;
   flex-direction: column;
   justify-content: space-between;
 }
-
+ 
 .new-post .post-box {
   width: auto;
   margin: 50px auto;
@@ -233,7 +240,7 @@ p {
   box-shadow: 2px 5px 10px grey;
   z-index: 3;
 }
-
+ 
 .new-post div img {
   float: left;
   width: 60px;
@@ -278,7 +285,7 @@ textarea::-webkit-scrollbar-thumb {
   z-index: 2;
   display: none;
 }
-
+ 
 /* MAP CSS */
 .map-page{
   margin:0;
@@ -307,9 +314,10 @@ svg{
 .map :hover{
   fill: #f7f1ed;
 }
-
+ 
 /* FOOTER CSS */
 footer{
+  flex-shrink: 0;
   display: flex;
   justify-content: space-around;
   width: 100%;
@@ -318,17 +326,17 @@ footer{
   background: white;
   align-items: center;
 }
-
+ 
 footer button {
   height: 50%;
   color: #FBC4F3;
-  font-size: 20px; 
-  background-color: white; 
+  font-size: 20px;
+  background-color: white;
   border: none;
 }
-
+ 
 #postButton{
-  background-color: #FBC4F3; 
+  background-color: #FBC4F3;
   color: black;
   position: relative;
   min-height: 35px;
@@ -355,7 +363,7 @@ footer button {
   flex-direction: column;
   justify-content: space-between;
 }
-
+ 
 /* PROFILE PAGE CSS */
 .profile-page {
   min-width: 100vw;
@@ -366,11 +374,11 @@ footer button {
   flex-direction: column;
   justify-content: space-between;
 }
-
-
-
-
-/* 
+ 
+ 
+ 
+ 
+/*
 están siendo usados?
 .modal {
   padding: 1em;
