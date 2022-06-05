@@ -23,7 +23,7 @@ const createPost = async (review, movie, country) => {
 // Reading Post
 const readingPost = async () => {
   const result = await getDocs(collection(db, 'posts'));
-  const q = query(result.query, orderBy('date', 'desc'), limit(5));
+  const q = query(result.query, orderBy('date', 'desc'));
   // console.log(q);
   const filterQ = await getDocs(q);
   // console.log(filterQ);
