@@ -14,10 +14,10 @@ const Home = () => {
 
 // Printing posts, header and footer to home page
 const refetch = async () => {
-  container.innerHTML="";
+  container.innerHTML = '';
   let postStructure = '';
   const list = await readingPost();
-  list.forEach((doc)=>{
+  list.forEach((doc) => {
     const posts = doc.data();
     postStructure += `
     <div class="post-border">
@@ -42,9 +42,9 @@ const refetch = async () => {
         </button>
       </div>
     </div>
-    `
- })
- container.innerHTML = postStructure;
+    `;
+  });
+  container.innerHTML = postStructure;
   container.append(Header(), Footer());
 };
 refetch();
