@@ -377,9 +377,10 @@ footer button {
   height: 100vh;
   display:flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: end;
 }
-#map {
+.map-image {
+
   height: 100%;
 }
 /* PROFILE PAGE CSS */
