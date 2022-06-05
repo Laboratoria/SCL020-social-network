@@ -23,13 +23,19 @@ const createPost = async (review, movie, country) => {
 // Reading Post
 const readingPost = async () => {
   const result = await getDocs(collection(db, 'posts'));
-  const q = query(result.query, orderBy('date', 'desc'), limit(5)); // , limit(n)
+  const q = query(result.query, orderBy('date', 'desc'));
   //console.log(q);
   const filterQ = await getDocs(q);
   //console.log(filterQ);
-  const listItem = [];
-
   return filterQ.docs;
 };
 
-export { createPost, readingPost };
+const countryPosts = async (country) => {
+  const q = query(collection(db, "posts"), where("country", "==", country), orderBy('date','desc'));
+  const querySnapshot = await getDocs(q);
+  return filterQ.docs;
+}
+
+export { createPost, readingPost, countryPosts };
+
+//const q = query(result.query, orderBy('date', 'desc'), limit(5)); // , limit(n)
