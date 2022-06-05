@@ -64,27 +64,48 @@ body {
 }
 .main-avatar {
   height: 80%;
+  max-height: 50px;
 }
 
-.signout-btn {
-  background: #FBC4F3;
-  border-radius: 999px;
-  box-shadow: #FBC4F3 0 10px 20px -10px;
-  box-sizing: border-box;
-  color: #FFFFFF;
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  font-family: karla;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
   cursor: pointer;
-  font-family: "Monrope", sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  opacity: 1;
-  outline: 0 solid transparent;
-  padding: 6px 16px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: fit-content;
-  word-break: break-word;
-  border: 0;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-left: 2px
+}
+
+.dropdown-content a:hover {
+  background-color: #ffffff;
+  padding-left: 20px;
+  border-left: 2px solid #43aaf3;
+  transition: all 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 /* LOG IN FORM */

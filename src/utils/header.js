@@ -11,8 +11,15 @@ export const Header = () => {
           <i class="fas fa-search"></i>
       </button>
   </div>
-  <img id="main-avatar" class="main-avatar" src="../img/main-avatar.png" />
-  <button id="sign-out" class="signout-btn">Sign Out</button>`;
+  <div class="dropdown">
+    <img type="checkbox" id="main-avatar" class="main-avatar" src="../img/main-avatar.png" />
+     <div class="dropdown-content">
+     <a id="profile">Profile</a>
+     <a href="#">Likes</a>
+     <a id="sign-out">Sign Out</a>
+    </div>
+  </div>
+  `;
 
   const container = document.createElement('header');
   container.className = 'header';
@@ -31,7 +38,7 @@ export const Header = () => {
   });
 
   // Avatar btn to profile view
-  const userAvatar = container.querySelector('#main-avatar');
+  const userAvatar = container.querySelector('#profile');
   userAvatar.addEventListener('click', () => {
     navigate('/profile');
   });
