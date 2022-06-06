@@ -12,7 +12,7 @@ import {
   updateProfile,
 } from 'firebase/auth';
 import {
-  getFirestore, collection, addDoc, getDocs, doc, serverTimestamp, query, orderBy, limit
+  getFirestore, collection, addDoc, getDocs, doc, serverTimestamp, query, orderBy, limit, updateDoc, getDoc
 } from 'firebase/firestore';
 import { firebaseConfig } from './configFirebase.js';
 
@@ -24,5 +24,5 @@ const provider = new GoogleAuthProvider(app);
 
 export {
   auth, app, db, provider, createUserWithEmailAndPassword, signInWithEmailAndPassword,
-  onAuthStateChanged, signInWithRedirect, getRedirectResult, signOut, sendEmailVerification, collection, addDoc, getDocs, doc, updateProfile, serverTimestamp, query, orderBy, limit
+  onAuthStateChanged, signInWithRedirect, getRedirectResult, signOut, sendEmailVerification, collection, addDoc, getDocs, doc, updateProfile, serverTimestamp, query, orderBy, limit, updateDoc, getDoc
 };
