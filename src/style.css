@@ -84,13 +84,16 @@ body {
 .background-white {
   background-image: linear-gradient(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93)),
     url('./assets/background.png');
-  backdrop-filter: opacity(0.3);
+  /* backdrop-filter: opacity(0.3); */
   height: 100vh;
   width: 100%;
   background-size: cover;
   padding: 16px;
-  box-sizing: border-box;
   display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 
 }
 
@@ -153,7 +156,7 @@ h1 {
   display: flex;
   font-size: 64px;
   text-align: center;
-  color: white;
+  color: #F8F9F9;
   font-family: 'Ingrid Darling', cursive;
   margin-bottom: 25px;
   margin-top: 10px;
@@ -216,12 +219,15 @@ h2 {
 }
 
 /* SANDWICH MENU */
+
 #navMenu>span {
   display: block;
+  justify-content: center;
+  align-content: center;
   width: 28px;
   height: 2px;
   border-radius: 9999px;
-  background-color: black;
+  background-color: #F8AD67;
 }
 
 #navMenu>span:not(:last-child) {
@@ -262,16 +268,19 @@ h2 {
   display: flex;
   align-self: flex-start;
   justify-content: space-between;
-  width: 100%;
+  width: 500px;
+  margin: 0;
+  padding: 0;
 }
 
 .news h1 {
   opacity: 1;
   display: flex;
-  font-size: 64px;
+  font-size: 48px;
+  text-align: center;
   align-self: center;
   justify-content: center;
-  color: white;
+  color: #F8F9F9;
   font-family: 'Ingrid Darling', cursive;
   margin-bottom: 25px;
   margin-top: 10px;
@@ -287,6 +296,27 @@ h2 {
   justify-content: center;
   font-size: 12px;
   font-family: 'Kite One', regular;
+}
+
+.newsPost{
+  background-color: #BCE4D7;
+  display: grid;
+  grid-row: auto;
+  justify-content: center;
+  font-size: 12px;
+  font-family: 'Kite One', regular;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.post-header{
+  display: flex;
+  justify-content: space-between;
+  background-color: #BCE4D7;
+}
+
+.dashboard{
+  width: 400px;
+  margin: 0 auto;
 }
 
 .publicationsButton {
