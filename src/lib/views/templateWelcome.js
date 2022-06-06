@@ -8,7 +8,7 @@ export const welcome = () => {
             <p>Your account has been created successfully!</p>
             <p>Now you have access to the best content online</p>
         </div>
-        <button class="btn-continue">Continue</button>
+        <a href="#/login"><button class="btn-continue">Continue</button></a>
     
     `
     divWelcome.innerHTML = viewWelcome;

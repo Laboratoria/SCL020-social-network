@@ -4,9 +4,8 @@ export const age = () => {
     const viewAge = `
         <img src="" alt="logo-ticket">
         <p>Are you over 18?</p>
-        <button class="btn-yes">Yes</button>
-        <button class="btn-no">No</button>
-
+        <a href="#/sign-up"><button class="btn-yes">Yes</button></a>
+        <a href="#/ageRedirect"><button class="btn-no">No</button></a>
     `
     divAge.innerHTML = viewAge;
     return divAge;

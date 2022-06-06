@@ -12,12 +12,13 @@ import { signUp } from './views/templateSignUp.js';
 import { welcome } from './views/templateWelcome.js';
 
 export const changeRoute = (hash) => {
-
     if (hash === '#/login'){
         return showTemplate(hash);
-    }else if (hash==='#/home'){
-        return showTemplate (hash);
-    }else if (hash==='#/age'){
+    }
+    // else if (hash==='#/home'){
+    //     return showTemplate (hash);
+    // }
+    else if (hash==='#/age'){
         return showTemplate (hash);
     }else if (hash==='#/ageRedirect'){
         return showTemplate (hash);
@@ -50,7 +51,7 @@ const showTemplate = (hash)=>{
         case '#/login':
             containerRoot.appendChild(login());
             break;
-        case '#/home':
+        case '#/':
             containerRoot.appendChild(home());
             break;
         case '#/age':
@@ -76,6 +77,9 @@ const showTemplate = (hash)=>{
             break;   
         case '#/profile':
             containerRoot.appendChild(profile());
+            break;
+        case '#/deleteComment':
+            containerRoot.appendChild(deleteComment());
             break; 
         default:
             containerRoot.appendChild(err404());                             

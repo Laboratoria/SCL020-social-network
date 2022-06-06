@@ -5,7 +5,7 @@ export const ageRedirect = () => {
         <img src="" alt="logo-ticket">
         <p>Sorry come back when you have +18</p>
         <video src=""></video>
-        <button class="btn-return">Return</button>
+        <a href=""><button class="btn-return">Return</button></a>
         
     `
     divAgeRedirect.innerHTML = viewAgeRedirect;

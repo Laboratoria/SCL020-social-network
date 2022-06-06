@@ -5,8 +5,8 @@ export const deleteComment = () => {
         <div>
             <img src="" alt="logo-ticket">
             <p>Are you sure you want to delete your comment? </p>
-            <button class="btn-yes">Yes</button>
-            <button class="btn-no">No</button>
+            <a href="#/profile"><button class="btn-yes">Yes</button></a>
+            <a href="#/profile"><button class="btn-no">No</button></a>
         </div>
     `
     divDeleteComment.innerHTML = viewDeleteComment;

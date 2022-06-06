@@ -26,4 +26,4 @@ const init = ()=> {
         changeRoute(window.location.hash);
     })
 }
-window.addEventListener('load', init) 
+window.addEventListener('load', init); 
