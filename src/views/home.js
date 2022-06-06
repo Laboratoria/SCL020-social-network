@@ -40,7 +40,7 @@ const refetch = async () => {
         </div>
     </div>
     <div class="likes-border">
-        <button class="btn-updatepost" value=${doc.id}>
+        <button class="btn-like" value=${doc.id}>
           <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="2em" height="2em"
                 preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                 <path fill="currentColor"
