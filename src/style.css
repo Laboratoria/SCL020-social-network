@@ -67,3 +67,89 @@ input{
     text-align: center;
     color: gray;
 }
+
+/* ******************************** */
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 430px;  
+    height: 770px;
+    background: #FFD5E5;
+    min-height: 100vh;
+}
+
+#logotipo{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  }
+
+  .messageInit{
+  border: solid 1px #F34573;
+  border-radius: 10px;
+  background: #F34573;
+  text-align: center;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  line-height: 0.5; 
+  width: 350px; 
+  }
+
+  .login{
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      
+  }
+  #email, #pass{
+      background: white;
+      border: solid 1px white;
+      border-radius: 10px;
+      width: 300px;  
+      height: 30px;
+      padding-left: 20px;
+  }
+
+#pass{
+  margin-top: 20px;
+}
+
+.msgInitSesion{
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border: solid 1px #F34573;
+  border-radius: 10px;
+  background: #F34573;
+  text-align: center;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 6px;
+  line-height: 0.5; 
+  width: 130px; 
+  height: 30px;
+  }
+
+.notAcount{
+  color: #226B80;
+  font-size: 18px;
+}
+
+.msgRegistrate{
+  margin-bottom: 10px;
+  border: solid 1px #F34573;
+  border-radius: 10px;
+  background: #F34573;
+  text-align: center;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 6px;
+  line-height: 0.5; 
+  width: 200px; 
+  height: 30px;
+}
