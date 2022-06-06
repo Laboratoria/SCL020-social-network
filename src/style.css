@@ -218,74 +218,110 @@ h2 {
   color: black;
 }
 
-/* SANDWICH MENU */
+/* FLOWER MENU */
+#navMenu{
+  margin: 0px;
+  padding-top: 0px;
+  padding-left: 10px;
+  position: fixed;
+  font-family: 'Kite One', regular;
+  width:10%;
+  height:9%;
+  transition:4s all;
+  z-index:1;
+}
 
-#navMenu>span {
+#navMenu ul{
+  padding:0px;
+  text-align:center;
+}
+
+#navMenu li{
+    transition:.3s all;
+}
+
+#navMenu a{
+  text-decoration: none;
+  list-style: none;
+  transition: .3s all;
+  font-size:0px;
+  padding: 0px;
+  
+}
+#navMenu h4{
+  font-family: 'Ingrid Darling', cursive;
+  text-align: center;
+  color: #01474D;
+  padding: 7px;
+  padding-bottom: 7px;
+  font-size: 0px;
+}
+#navMenu img{
+  padding-top: 15px;
+  padding-left: 10px;
+  height: 50px;
+  width: 50px;
+}
+
+#navMenu:hover {
+  width: 70%;
+  height: 100%;
+  background-color: #BCE4D7;
+}
+
+#navMenu:hover h4{
+  padding: 15px;
+  font-size: 35px;
+}
+
+#navMenu:hover a{
+  padding: 20px;
+  font-size: 20px;
+  color: #5F6C65;
   display: block;
-  justify-content: center;
-  align-content: center;
-  width: 28px;
-  height: 2px;
-  border-radius: 9999px;
-  background-color: #F8AD67;
 }
 
-#navMenu>span:not(:last-child) {
-  margin-bottom: 7px;
+#navMenu:hover img{
+  height: 0px;
 }
 
-#navMenu,
-#navMenu>span {
-  transition: all .4s ease-in-out;
+#navMenu:hover li{
+  border-top: 1px solid black;
+  width: 100%;
 }
 
-#navMenu.active {
-  transition-delay: 0.8s;
-  transform: rotate(45deg);
+#navMenu:hover ul:last-of-type{
+  border-bottom: 1px solid black;
 }
 
-#navMenu.active>span:nth-child(2) {
-  width: 0;
-}
-
-#navMenu.active>span:nth-child(1),
-#navMenu.active>span:nth-child(3) {
-  transition-delay: .4s;
-}
-
-#navMenu.active>span:nth-child(1) {
-  transform: translateY(9px);
-}
-
-#navMenu.active>span:nth-child(3) {
-  transform:translateY(-9px)rotate(90deg);
+#navMenu:hover a:hover{
+  font-size: 25px;
+  padding: 30px 0px;
+  background-color: #E48A7B;
 }
 
 /* NEWS */
-
 .bar {
   background-color: #01474D;
-  display: flex;
-  align-self: flex-start;
-  justify-content: space-between;
-  width: 500px;
+  color: #5F6C65;
+  display: inline-block;
+  width: 580px;
+  height: 100px;
   margin: 0;
   padding: 0;
 }
 
-.news h1 {
+h5 {
   opacity: 1;
-  display: flex;
   font-size: 48px;
   text-align: center;
-  align-self: center;
-  justify-content: center;
   color: #F8F9F9;
   font-family: 'Ingrid Darling', cursive;
   margin-bottom: 25px;
   margin-top: 10px;
   padding: 10px;
   text-shadow: 5px 5px 10px black;
+  
 }
 
 .news h2 {
