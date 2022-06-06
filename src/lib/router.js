@@ -12,17 +12,7 @@ import { signUp } from './views/templateSignUp.js';
 import { welcome } from './views/templateWelcome.js';
 
 export const changeRoute = (hash) => {
-    // if(hash === '#/profile'){
-    //    return showTemplate(hash)
-    // } else if (hash=== '#/feed'){
-    //    return showTemplate(hash)
-    // } else if (hash=== '#/sign-out'){
-    //    return showTemplate(hash)
-    // } else if (hash==='#/home'){
-    //    return showTemplate(hash)
-    // }else {
-    //    return showTemplate(hash)
-    // }
+
     if (hash === '#/login'){
         return showTemplate(hash);
     }else if (hash==='#/home'){
@@ -54,20 +44,9 @@ export const changeRoute = (hash) => {
 
 const showTemplate = (hash)=>{
     const containerRoot = document.getElementById('root');
-    containerRoot.innerHTML=menu();
+    containerRoot.innerHTML = '';
     
     switch(hash){
-        // case '#/profile':
-        //     containerRoot.appendChild(menu());
-        //     break;
-        // case '#/feed':
-        //     containerRoot.appendChild(menu());
-        //      break;
-        // case '#/sign-out':
-        //     containerRoot.appendChild(menu());
-        //      break;
-        // default:
-        //     containerRoot.appendChild(err404());
         case '#/login':
             containerRoot.appendChild(login());
             break;
@@ -103,5 +82,3 @@ const showTemplate = (hash)=>{
     }
 }
 
-
-document.getElementById("root").appendChild(home());

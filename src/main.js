@@ -19,7 +19,7 @@ myFunction();
 
 
 const init = ()=> {
-    document.getElementById("root").innerHTML = menu();
+    document.getElementById("root").innerHTML = home();
     window.addEventListener('hashchange',()=>{
         myFunction();
         console.log (window.location.hash);
