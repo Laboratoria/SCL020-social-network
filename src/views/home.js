@@ -2,7 +2,7 @@
 // import { out } from '../firebase/auth.js';
 import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
-import { readingPost } from '../firebase/firestore.js';
+import { readingPost, editPost } from '../firebase/firestore.js';
 
 const container = document.createElement('div');
 
@@ -23,7 +23,7 @@ const refetch = async () => {
     <div class="post-border">
     <div class='post'>
         <div class="btns-updateDiv">
-            <button class='btn-updatepost' data-id='${doc.id}'>Edit</button>
+            <button class='btn-Edit' data-id='${doc.id}'>Edit</button>
             <button class='btn-updatepost' data-id='${doc.id}'>Delete<i class="fa-solid fa-circle-trash"></i></button>
         </div>
         <span>
@@ -55,6 +55,13 @@ const refetch = async () => {
   middle.className = 'middle';
   middle.innerHTML = postStructure;
   container.append(Header(), middle, Footer());
+
+  const editBtn = container.querySelectorAll('.btn-Edit');
+  editBtn.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      editPost(btn.dataset.id);
+    });
+  });
 };
 refetch();
 

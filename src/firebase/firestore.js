@@ -1,5 +1,5 @@
 import {
-  db, collection, addDoc, getDocs, auth, serverTimestamp, query, orderBy, limit,
+  db, collection, addDoc, getDocs, auth, serverTimestamp, query, orderBy, limit, doc, updateDoc, getDoc,
 } from './init.js';
 
 // Creating Posts collection and adding new docs to collection
@@ -37,6 +37,22 @@ const countryPosts = async (country) => {
   return filterQ.docs;
 };
 
-export { createPost, readingPost, countryPosts };
+// Edit Post
+const editPost = async (id) => {
+  const postRef = doc(db, 'posts', id);
+  await updateDoc(postRef, {
+    review: 'soy un nuevo review',
+  });
+};
+
+// Get one Doc
+const gettingDoc = async (id) => {
+  const refDoc = doc(db, 'posts', id);
+  await getDoc(refDoc);
+};
+
+export {
+  createPost, readingPost, countryPosts, editPost, gettingDoc,
+};
 
 // const q = query(result.query, orderBy('date', 'desc'), limit(5)); // , limit(n)
