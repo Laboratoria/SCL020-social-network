@@ -1,6 +1,7 @@
 import { login } from '../templates/login.js';
 import { profile } from '../templates/profile.js';
 import { register } from '../templates/register.js';
+import { news } from '../templates/news.js';
 
 const routes = {
   login: {
@@ -13,7 +14,7 @@ const routes = {
   },
   news: {
     path: '/news',
-    template: '<h1>Noticias</h1>',
+    template: news(),
   },
   publications: {
     path: '/publications',
