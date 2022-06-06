@@ -26,9 +26,13 @@ body {
 }
 /* MIDDLE CSS */
 .middle{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   flex-grow: 1;
   overflow: auto;
   min-height: 2em;
+  width: 100%;
 }
 /* HEADER CSS */
 .header {
@@ -398,14 +402,15 @@ footer button {
  .post-border {
    display: flex;
    flex-direction: column;
-   width: fit-content;
+   width: 30%;
+   min-width: 300px;
    height: auto;
    background-color: #ffffff;
    font-family: karla;
    border-radius:.5em;
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.10); 
-   margin: 5%;
-   padding: 5%;
+   margin: 1%;
+   padding: 2%;
  }
 
  .date {
@@ -456,55 +461,35 @@ footer button {
   fill: #420516;
 }
 
-@media (min-width: 768px) {
+.btn-like {
+  background-color: #fff;
+  border: none;
+  color: #FF8C8C;
+  cursor: pointer;
+  fill: #FFE3A9;
+  font-family: Karla;
+  justify-content: center;
+  padding: 0 3%;
+  text-align: center;
+  transition: all .3s;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  height: 2em;
+}
+
+.btn-like:hover {
+  border-color: #420516;
+  color: #420516;
+  fill: #420516;
+}
+
+/* @media (min-width: 768px) {
   .btn-updatepost {
     min-width: 170px;
   }
-} 
+}  */
  
-/* .btn-updatepost {
-  background: #FBC4F3;
-  border-radius:.5em ;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  font-family: karla;
-  font-size: 0.7rem;
-  opacity: 1;
-  outline: 0 solid transparent;
-  padding: 3px 10px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: fit-content;
-  word-break: break-word;
-  border: 0;
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*
 están siendo usados?
