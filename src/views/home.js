@@ -2,22 +2,20 @@
 // import { out } from '../firebase/auth.js';
 import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
-import { readingPost, editPost } from '../firebase/firestore.js';
+import { readingPost, editPost, gettingDoc } from '../firebase/firestore.js';
+import { navigate } from '../router/router.js';
 
-const container = document.createElement('div');
+
 
 const Home = () => {
+  const container = document.createElement('div');
   container.className = 'home-page';
-
-  return container;
-};
-
-// Printing posts, header and footer to home page
-const refetch = async () => {
-  container.innerHTML = '';
-  let postStructure = '';
-  const list = await readingPost();
-  list.forEach((doc) => {
+  
+  readingPost((post)=>{
+    container.innerHTML = '';
+    let postStructure = '';
+  
+    post.forEach((doc) => {
     const posts = doc.data();
     postStructure += `
     <div class="post-border">
@@ -62,7 +60,9 @@ const refetch = async () => {
       editPost(btn.dataset.id);
     });
   });
+})
+  return container;
 };
-refetch();
 
-export { Home, refetch };
+
+export { Home };
