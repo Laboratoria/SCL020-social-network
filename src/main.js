@@ -1,5 +1,5 @@
 import { myFunction } from './lib/index.js';
-import { creatUser } from './lib/view/templateCreateUser.js';
+import { login } from './lib/view/templateLogIn.js';
 
 myFunction();
-document.getElementById('root').innerHTML = creatUser();
+document.getElementById('root').innerHTML = login();
