@@ -3,7 +3,7 @@ export const login = () => {
 
     const viewLogin = `
         <div>
-            <img src="" alt="logo-ticket">
+            <img src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-tickets.png?raw=true" alt="logo-ticket">
             <h2>Login to your account</h2>
             <input type="text">
             <input type="password">
