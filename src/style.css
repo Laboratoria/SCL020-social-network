@@ -40,7 +40,7 @@ body {
   Login  
 */
 
-.root{
+.root {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -49,6 +49,7 @@ body {
   align-content: center;
 
 }
+
 .background {
   background-image: url('./assets/background.png');
   height: 100vh;
@@ -61,15 +62,15 @@ body {
   justify-content: center;
 }
 
- 
+
 .background-green {
   background-color: #01474ddc;
-  /* display: flex;
+  display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  align-content: center; */
+  align-content: center;
   padding: 1rem 4rem;
   border-radius: 1rem;
   margin-top: 2rem;
@@ -80,19 +81,35 @@ body {
   /* height: 30rem; */
 }
 
-.login {
-  text-align: center;
+.background-white {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93)),
+    url('./assets/background.png');
+  backdrop-filter: opacity(0.3);
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+
 }
 
-.login h2{
+.login {
+  display: flex;
+  align-content: center;
+  text-align: center;
+  justify-content: center;
+}
+
+/* .login h2{
   color: #BCE4D7;
   font-size: 12px;
   font-family:'Kite One', regular;
-}
+} */
 
 .login p {
   color: #BCE4D7;
-  font-family:'Kite One', regular;
+  font-family: 'Kite One', regular;
 }
 
 .login input {
@@ -107,7 +124,7 @@ body {
 
 }
 
-.login button{
+.login button {
   border: 0px;
   width: 100%;
   height: 45px;
@@ -118,10 +135,12 @@ body {
   justify-content: center;
   gap: 10px;
 }
-.login .entrar{
-  background-color:#E48A7B;
+
+.login .entrar {
+  background-color: #E48A7B;
 
 }
+
 /* REGISTER */
 
 .register {
@@ -130,6 +149,7 @@ body {
 }
 
 h1 {
+  opacity: 1;
   display: flex;
   font-size: 64px;
   text-align: center;
@@ -140,17 +160,20 @@ h1 {
   padding: 10px;
   text-shadow: 5px 5px 10px black;
 }
-.register h2{
+
+h2 {
+  opacity: 1;
   display: flex;
+  text-align: center;
   color: #BCE4D7;
   font-size: 12px;
-  font-family:'Kite One', regular;
+  font-family: 'Kite One', regular;
 }
 
 .register p {
   display: flex;
   color: #BCE4D7;
-  font-family:'Kite One', regular;
+  font-family: 'Kite One', regular;
 }
 
 .register input {
@@ -161,13 +184,15 @@ h1 {
   width: 0.5rem;
   margin-bottom: 16px;
   text-align: center;
-  font-family:'Kite One', regular;
+  font-family: 'Kite One', regular;
 }
 
-.createAccountButton{
+
+
+.createAccountButton {
   display: flex;
-  background-color:#F8AD67;
-  font-family:'Kite One', regular;
+  background-color: #F8AD67;
+  font-family: 'Kite One', regular;
   color: black;
   letter-spacing: 0.4vh;
   display: flex;
@@ -180,12 +205,91 @@ h1 {
   text-align: center;
   font-size: 2.3vw;
   border-radius: 1.4vh;
-  text-shadow: black; 
-  }
+  text-shadow: black;
+}
 
 .backButton {
   background-color: #01474ddc;
   box-shadow: none;
-  font-family:'Kite One', regular;
+  font-family: 'Kite One', regular;
   color: black;
+}
+
+/* SANDWICH MENU */
+#navMenu>span {
+  display: block;
+  width: 28px;
+  height: 2px;
+  border-radius: 9999px;
+  background-color: black;
+}
+
+#navMenu>span:not(:last-child) {
+  margin-bottom: 7px;
+}
+
+#navMenu,
+#navMenu>span {
+  transition: all .4s ease-in-out;
+}
+
+#navMenu.active {
+  transition-delay: 0.8s;
+  transform: rotate(45deg);
+}
+
+#navMenu.active>span:nth-child(2) {
+  width: 0;
+}
+
+#navMenu.active>span:nth-child(1),
+#navMenu.active>span:nth-child(3) {
+  transition-delay: .4s;
+}
+
+#navMenu.active>span:nth-child(1) {
+  transform: translateY(9px);
+}
+
+#navMenu.active>span:nth-child(3) {
+  transform:translateY(-9px)rotate(90deg);
+}
+
+/* NEWS */
+
+.bar {
+  background-color: #01474D;
+  display: flex;
+  align-self: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.news h1 {
+  opacity: 1;
+  display: flex;
+  font-size: 64px;
+  align-self: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Ingrid Darling', cursive;
+  margin-bottom: 25px;
+  margin-top: 10px;
+  padding: 10px;
+  text-shadow: 5px 5px 10px black;
+}
+
+.news h2 {
+  color: #00A57A;
+  opacity: 1;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  font-size: 12px;
+  font-family: 'Kite One', regular;
+}
+
+.publicationsButton {
+  align-self: center;
+  justify-content: center;
 }
