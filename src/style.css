@@ -84,7 +84,7 @@ input{
     min-height: 100vh;
 }
 
-#logotipo{
+#logoTipo{
   display: flex;
   justify-content: center;
   margin-top: 20px;
@@ -121,7 +121,7 @@ input{
   margin-top: 20px;
 }
 
-.msgInitSesion{
+.msgInitSession{
   margin-top: 25px;
   margin-bottom: 25px;
   border: solid 1px #F34573;

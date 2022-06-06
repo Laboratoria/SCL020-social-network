@@ -2,7 +2,7 @@ export const login = () => {
 
     const viewLogin = `
     <div class="container">
-                <div id="logotipo">
+                <div id="logoTipo">
                     <img src="img/FindYourCake.png" alt="FindYourCake"  width=200px/>
                 </div>
                 <article class="messageInit">
