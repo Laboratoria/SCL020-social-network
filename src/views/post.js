@@ -2,8 +2,7 @@
 import { navigate } from '../router/router.js';
 import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
-import { createPost } from '../firebase/firestore.js';
-import { refetch } from './home.js';
+import { createPost} from '../firebase/firestore.js';
 
 const Post = () => {
   const userName = localStorage.getItem('user') || 'User';
@@ -36,8 +35,7 @@ const Post = () => {
     const country = container.querySelector('#country').value;
   
     try {
-      await createPost(review,movie,country); // calling createPost
-      await refetch(); // calling printing to preserve last post
+      await createPost(review,movie,country); 
       postForm.reset();
       navigate('/home');
     } catch (error) {
