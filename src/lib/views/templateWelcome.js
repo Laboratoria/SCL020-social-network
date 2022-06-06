@@ -2,7 +2,7 @@ export const welcome = () => {
     const divWelcome = document.createElement("div");
 
     const viewWelcome = `
-        <img src="" alt="logo-ticket">
+        <img src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-tickets.png?raw=true" alt="logo-ticket">
         <div>
             <h2>Congratulations!</h2>
             <p>Your account has been created successfully!</p>
