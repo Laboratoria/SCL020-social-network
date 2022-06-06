@@ -8,7 +8,7 @@
  //onpopstate es el que copia la URL y lo mete en el history list (historial de navegacion) permitiendo ir a la pagina anterior o adelante segun corresponda
 
 
-let a= document.createElement("button");
+/*let a= document.createElement("button");
 a.innerText ="Home"
 let b= document.createElement("button");
 b.innerText ="Registro"
@@ -40,3 +40,4 @@ window.onpopstate= (e1)=>{
 window.onpopstate= (e2)=>{
   e2.state.page2
 }
+*/

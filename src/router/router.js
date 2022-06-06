@@ -1,26 +1,26 @@
-import { navGuard} from './firebase/auth.js'
+/*/*import { navGuard} from './firebase/auth.js'
 
 import Home from '../views/home.js'
 
-import Login from '../views/login.js'
+import Welcome from '../views/welcome.js'
 
 const routes = [
     { path:'/',
-      name:'Home',
-      template: Home()
+      name:'Welcome',
+      template: Welcome()
 
       },  
 
-    { path:'login',
+   /* { path:'login',
       name:'Login',
       template: Login()
 
-    }
-]    
+    }*/
+/*]    
     
 const renderTemplate = () => {
     const view = routes.filter(route => route.path === window.location.pathname)[0]
-    const container = document.getElementById('app')
+    const container = document.getElementById('body')
     container.innerHTML = ''
     container.appendChild(view.template)
 
@@ -33,11 +33,11 @@ const next = (path) => {
 
 }
 
-const navigate = (path) => { navGuard (next, path, '/login') }
+//const navigate = (path) => { navGuard (next, path, '/login') }//
 
 
 const initRouter = () => {
-    navGuard(next,'/', 'login' )
+    //navGuard(next,'/', 'login' )//
     renderTemplate()
     window.onpopstate = ()=> {renderTemplate()}
 
