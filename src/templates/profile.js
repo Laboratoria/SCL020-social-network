@@ -3,19 +3,24 @@ import { navigate } from "../router/routes.js";
 function profile() {
   const html = //html
     `
-<div class="background login">
-  <div class="group background-green">
-    <h2>Tu Perfil</h2>
-    <h3>Nombre del usuario</h3>
-    <h4>correo@email.com</h4>
-    <img src="assets/perfil.jpg" alt="">
-    <p>Mis Intereses</p>
-    <p>Mis Plantas</p>
-    <p>Mis Grupos</p>
-    <p>Mis Likes</p>
-    <button> News </button>
+    <div class="background-white">
+    <div class="image-perfil">
+      <div>
+        <img src="assets/perfil.jpg" id="img-perfil" alt="">
+      </div>
+      <div class="profileName">
+        <h3>Nombre del usuario</h3>
+        <h4>correo@email.com</h4>
+      </div>
+      <div class="profileData">
+        <p class="list">Mis Intereses</p>
+        <p class="list">Mis Plantas</p>
+        <p class="list">Mis Grupos</p>
+        <p class="list">Mis Likes</p>
+      </div>
+      <button> News </button>
+    </div>
   </div>
-</div>
 `;
   const container = document.createElement("div");
   container.innerHTML = html;
