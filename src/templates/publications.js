@@ -49,7 +49,7 @@ function publications() {
   const linkGroups = container.querySelector("#linkGroups");
   linkGroups.addEventListener("click", (event) => {
     event.preventDefault();
-    navigate("grupos");
+    navigate("groups");
   });
   const linkPublic = container.querySelector("#linkPublic");
   linkPublic.addEventListener("click", (event) => {

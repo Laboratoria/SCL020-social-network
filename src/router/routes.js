@@ -3,7 +3,7 @@ import { profile } from '../templates/profile.js';
 import { register } from '../templates/register.js';
 import { news } from '../templates/news.js';
 import { publications } from '../templates/publications.js'; 
-import { groups } from '../templates/grupos.js';
+import { groups } from '../templates/groups.js';
 
 const routes = {
   login: {
