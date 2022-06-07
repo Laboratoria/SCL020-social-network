@@ -88,74 +88,161 @@ input{
 }
 
 #logoTipo{
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  }
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    }
 
-  .messageInit{
-  border: solid 1px #F34573;
-  border-radius: 10px;
-  background: #F34573;
-  text-align: center;
-  color: white;
-  padding-left: 10px;
-  padding-right: 10px;
-  line-height: 0.5; 
-  width: 350px; 
-  }
+.messageInit{
+    border: solid 1px #F34573;
+    border-radius: 10px;
+    background: #F34573;
+    text-align: center;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 0.5; 
+    width: 350px; 
+}
 
-  .login{
-      display: flex;
-      flex-direction: column;
-      margin-top: 20px;
-      
-  }
-  #email, #pass{
-      background: white;
-      border: solid 1px white;
-      border-radius: 10px;
-      width: 300px;  
-      height: 30px;
-      padding-left: 20px;
-  }
+.login{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+#email, #pass{
+    background: white;
+    border: solid 1px white;
+    border-radius: 10px;
+    width: 300px;  
+    height: 30px;
+    padding-left: 20px;
+}
 
 #pass{
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .msgInitSession{
-  margin-top: 25px;
-  margin-bottom: 25px;
-  border: solid 1px #F34573;
-  border-radius: 10px;
-  background: #F34573;
-  text-align: center;
-  color: white;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 6px;
-  line-height: 0.5; 
-  width: 130px; 
-  height: 30px;
-  }
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border: solid 1px #F34573;
+    border-radius: 10px;
+    background: #F34573;
+    text-align: center;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 6px;
+    line-height: 0.5; 
+    width: 130px; 
+    height: 30px;
+}
 
 .notAcount{
-  color: #226B80;
-  font-size: 18px;
+    color: #F34573;
+    font-size: 18px;
 }
 
 .msgRegistrate{
-  margin-bottom: 10px;
-  border: solid 1px #F34573;
-  border-radius: 10px;
-  background: #F34573;
-  text-align: center;
-  color: white;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 6px;
-  line-height: 0.5; 
-  width: 200px; 
-  height: 30px;
+    margin-bottom: 10px;
+    border: solid 1px #F34573;
+    border-radius: 10px;
+    background: #F34573;
+    text-align: center;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 6px;
+    line-height: 0.5; 
+    width: 200px; 
+    height: 30px;
+}
+                                        
+.containerHome{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 430px;  
+    height: 770px;
+    background: #c5a72e;
+    min-height: 100vh;
+}
+.menu__side{
+    width: 150px;
+    height: 100%;
+    background: #F34573;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+    font-size: 18px;
+    border-right: 20px solid white;
+    border-radius: 0px 5px 0px 0px;
+    transition: all 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.options__menu{
+    padding: 20px 30px;
+    position: absolute;
+    top: 80px;
+}
+
+.options__menu a{
+    color:white;
+    cursor: default;
+    display: block;
+    position: relative;
+    transition: color 300ms;
+    text-decoration: none;
+}
+
+.options__menu a:hover{
+    color: #F2D8B9;
+}
+
+.options__menu .option{
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.options__menu .option i{
+    width: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+.options__menu .option h4{
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.postMain{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #FFFFFF;
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 271px;
+    width: 910px;
+    border-radius: 12px;
+}
+.userNav {
+    display: flex;
+    align-items: stretch;
+    background-color: #F34573;
+    align-self: stretch;
+    font-size: 12px;
+    color: #FFFFFF;
+    width: auto;
+}
+.like{
+    display: flex;
+    background-color: #FFD5E5;
+    width: auto;
 }
