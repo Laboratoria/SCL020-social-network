@@ -33,20 +33,21 @@ export const home = () => {
         </a>
         </div>
     </div>
+    <div class="postMain">
+        <div class="userNav">
+            <i class="fa-solid fa-circle-user"></i>
+            <h1>Nombre de usuario</h1>
+            <h2>Titulo baker o eater</h2>
+            <i class="fa-solid fa-pencil"></i>
+        </div>
+        <div class="post">
+            <h2> aqui va el post</h2> 
+        </div>
+        <div class="like">
+            <img src="img/cuplike.png" alt="cuplike">
+        </div>
+    </div>
 `
 divHome.innerHTML = viewHome;
 return divHome;
 };
-// line 39-50
-/* <div class="postMain">
-<div class="userNav">
-    <i class="fa-solid fa-circle-user"></i>
-    <h1>Nombre de usuario</h1>
-</div>
-<div class="post">
-    <h2> aqui va el post</h2> 
-</div>
-<div class="like">
-    <img src="img/cuplike.png" alt="cuplike">
-</div>
-</div> */
