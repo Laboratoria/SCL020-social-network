@@ -1,3 +1,4 @@
+import { app } from "../../firebase/init.js";
 export const signUp = () => {
     const divSignUp = document.createElement("div");
 
@@ -20,3 +21,4 @@ export const signUp = () => {
     return divSignUp;
     
 }
+console.log(app);

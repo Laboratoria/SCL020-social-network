@@ -1,2 +1,4 @@
-import{signInWithEmailAndPassword, auth} from "./init.js"
+import{app} from "./init.js"
+console.log(app);
+
 

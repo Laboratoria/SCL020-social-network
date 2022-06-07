@@ -3,5 +3,5 @@ import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/fir
 
 import config from './config.js'
 
-const app = initializeApp(config);
-const db = getFirestore(app);
+export const app = initializeApp(config);
+//const db = getFirestore(app);
