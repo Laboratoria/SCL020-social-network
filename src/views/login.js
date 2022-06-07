@@ -1,5 +1,5 @@
-import {login} from '../firebase/auth.js'
-import { navigate} from '../router/router.js'
+/*import {login} from '../firebase/auth.js'
+import { navigate} from '../router/router.js'*/
 
 const Login = () => {
 
@@ -24,10 +24,11 @@ const template = // html
   </section>
 </main>
 `
+/*const container = document.getElementById("login-page").innerHTML=template;*/
 const container = document.createElement('div')
-container.innerHTML = template
+container.innerHTML = template;
 
-const form = container.querySelector('#login-form')
+/*const form = container.querySelector('#login-form')
 form.addEventListener('submit', (e)=> {
     e.preventDefault()
 
@@ -36,7 +37,7 @@ form.addEventListener('submit', (e)=> {
     const msg = container.querySelector('#error-msg')
 
     if(!email || !pass) return
-})
+})*/
 
     return container
   

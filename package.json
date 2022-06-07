@@ -9,6 +9,8 @@
     "jest"
   ],
   "license": "MIT",
+  "type": "module",
+
   "scripts": {
     "htmlhint": "htmlhint dist/*.html ",
     "eslint": "eslint --ext .js src/ test/",

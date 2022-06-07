@@ -1,3 +1,8 @@
+import {initRouter} from "./router/router.js"
+
+  initRouter()
+
+/*initRouter()*/
 // Este es el punto de entrada de tu aplicacion
 
 // import { myFunction } from './lib/index.js';
