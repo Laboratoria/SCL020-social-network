@@ -5,7 +5,7 @@ export const ageRedirect = () => {
         <img src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-tickets.png?raw=true" alt="logo-ticket">
         <p>Sorry come back when you have +18</p>
         <video src=""></video>
-        <a href=""><button class="btn-return">Return</button></a>
+        <a href=""><button class="btn">Return</button></a>
         
     `
     divAgeRedirect.innerHTML = viewAgeRedirect;

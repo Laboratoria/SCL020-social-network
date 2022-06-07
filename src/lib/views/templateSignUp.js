@@ -1,3 +1,4 @@
+//import { register } from "../../firebase/init.js"; 
 import { app } from "../../firebase/init.js";
 export const signUp = () => {
     const divSignUp = document.createElement("div");
@@ -7,8 +8,9 @@ export const signUp = () => {
             <img src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-tickets.png?raw=true" alt="logo-ticket">
             <h2>Create your account</h2>
             <input type="text">
-            <input type="email">
-            <input type="password">
+            <input type="text" id="email" required>
+            <input type="password" id="password" required>
+            <button class="btn-create" onclick="register()">Create Account</button>
             <div class="btns-signUp">
                 <button class="btn-signUp-Google">google</button>
                 <button class="btn-signUp-IMDb">IMDb</button>
@@ -22,3 +24,4 @@ export const signUp = () => {
     
 }
 console.log(app);
+//register();
