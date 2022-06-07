@@ -42,7 +42,6 @@ body{
     width: 748px;
     border-radius: 17px;
     text-align: center;
-    padding: 30px 0;
     color: #226B80;
 }
 
@@ -55,7 +54,7 @@ body{
     padding-top: 14px;
 }
 
-#creatUserBt{
+.creatUserBt{
     width: 210px;
     height: 45px;
     border-radius: 16px;
@@ -63,6 +62,7 @@ body{
     color: #FFFFFF;
     background-color: #F34573;
     font-size: 20px;
+    margin-bottom: 14px;
 }
 
 input{
@@ -74,88 +74,51 @@ input{
     color: gray;
 }
 
-/* ******************************** */
+/*ViewLogIn*/
 
 .container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 430px;  
-    height: 770px;
     background: #FFD5E5;
     min-height: 100vh;
 }
 
 #logoTipo{
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  }
-
-  .messageInit{
-  border: solid 1px #F34573;
-  border-radius: 10px;
-  background: #F34573;
-  text-align: center;
-  color: white;
-  padding-left: 10px;
-  padding-right: 10px;
-  line-height: 0.5; 
-  width: 350px; 
-  }
-
-  .login{
-      display: flex;
-      flex-direction: column;
-      margin-top: 20px;
-      
-  }
-  #email, #pass{
-      background: white;
-      border: solid 1px white;
-      border-radius: 10px;
-      width: 300px;  
-      height: 30px;
-      padding-left: 20px;
-  }
-
-#pass{
-  margin-top: 20px;
+    padding-top: 10px;
+    width: 160px;
+    height: 164px;
 }
 
-.msgInitSession{
-  margin-top: 25px;
-  margin-bottom: 25px;
-  border: solid 1px #F34573;
-  border-radius: 10px;
-  background: #F34573;
-  text-align: center;
-  color: white;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 6px;
-  line-height: 0.5; 
-  width: 130px; 
-  height: 30px;
-  }
+.messageInit{
+    border-radius: 17px;
+    background: #F34573;
+    text-align: center;
+    color: white;
+    line-height: 0.5; 
+    width: 427px; 
+    height: 145px;
+    font-size: 17px;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    margin: 14px;  
+}
+
+#password{
+    margin-top: 20px;
+}
 
 .notAcount{
-  color: #226B80;
-  font-size: 18px;
+    color: #226B80;
+    font-size: 16px;
 }
 
-.msgRegistrate{
-  margin-bottom: 10px;
-  border: solid 1px #F34573;
-  border-radius: 10px;
-  background: #F34573;
-  text-align: center;
-  color: white;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 6px;
-  line-height: 0.5; 
-  width: 200px; 
-  height: 30px;
+#msgRegistrate{
+    font-size: 20px;
+    color: #226B80;
+    text-decoration: underline;
 }
