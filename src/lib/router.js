@@ -1,5 +1,6 @@
-import { createUser } from './lib/view/templateCreateUser.js';
-import { login } from './view/templateLogIn.js';
+import { createUser } from './view/templateCreateUser.js';
+import { logIn } from './view/templateLogIn.js';
+import { home } from './view/templateHome.js';
 
 export const changeRoute = (hash) => {
     if (hash === '#/') {
@@ -14,15 +15,18 @@ export const changeRoute = (hash) => {
 
 const showTemplates = (hash) => {
     const containerRoot = document.getElementById('root');
-    containerRoot.innerHTML = login();
+    containerRoot.innerHTML = '';
     switch(hash) {
-    case '#/':
+    case '#/createNewUser':
+    containerRoot.appendChild(createUser());
+        break;
+    case '#/home':
     containerRoot.appendChild(home());
         break;
-    case '#/personajes':
-    containerRoot.appendChild(personajes());
+    case '#/userProfile':
+    containerRoot.appendChild(createUser());
         break;
     default:
-    containerRoot.innerHTML = `<h2>No existe</h2>`
+    containerRoot.innerHTML = `<h2>No existe 404</h2>`
     }
 }

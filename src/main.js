@@ -1,7 +1,15 @@
 import { myFunction } from './lib/index.js';
-import { login } from './lib/view/templateLogIn.js';
+import { logIn } from './lib/view/templateLogIn.js';
 import { createUser } from './lib/view/templateCreateUser.js';
+import { home } from './lib/view/templateHome.js';
+import { changeRoute } from './lib/router.js';
 
-myFunction();
-document.getElementById('root').innerHTML = login();
-document.getElementById('root').appendChild(createUser());
+const init = () => {
+    document.getElementById('root').innerHTML = login();
+    window.addEventListener('hashchange', () => {
+        myFunction();
+        changeRoute(window.location.hash)
+    })
+}
+
+window.addEventListener('load', init)

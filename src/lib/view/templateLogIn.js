@@ -1,6 +1,6 @@
-export const login = () => {
+export const logIn = () => {
 
-    const viewLogin = `
+    const viewLogIn = `
     <div class="container">
         <div>
             <img src="img/FindYourCake.png" alt="FindYourCake" id="logoTipo"/>
@@ -17,7 +17,7 @@ export const login = () => {
             <input type="password" name="pass" placeholder="Contraseña" id="password">
         </form>
         <div>
-            <input type="button" value="Inicia Sesión" class="creatUserBt">
+        <a href="#/home"<button class="creatUserBt">Inicia Sesión</button></a>
         </div>
         <div id="InitGoogle">
             <img src="img/SignUpGoogle.png" alt="SignUpGoogle" width=200px  height="35px" />
@@ -25,10 +25,10 @@ export const login = () => {
         <div class="notAcount">
             <p>No tienes cuenta?</p>
         </div>
-        <div id="msgRegistrate" href="#/crearUsuario">
-            <p>Regístrate</p>
+        <div id="msgRegistrate">
+            <a href="#/createNewUser"<button>Regístrate</button></a>
         </div>
     </div>
     `
-    return viewLogin;
-}
+    return viewLogIn;
+};
