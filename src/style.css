@@ -501,7 +501,7 @@ ul li {
 }
 .grupo .lista-grupos{
   margin: 0 auto;
-  padding: 0;
+  padding: 0 16px;
   max-width: 600px;
 }
 .grupo .lista-grupos li{
