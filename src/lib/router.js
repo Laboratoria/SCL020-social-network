@@ -26,6 +26,9 @@ const showTemplates = (hash) => {
     case '#/userProfile':
     containerRoot.appendChild(createUser());
         break;
+    case '#/logIn':
+    containerRoot.appendChild(home());
+        break;
     default:
     containerRoot.innerHTML = `<h2>No existe 404</h2>`
     }
