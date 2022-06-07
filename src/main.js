@@ -2,7 +2,7 @@
 
 import { navigate } from './router/routes.js';
 
-navigate('login');
+navigate('groups');
 // // import { myFunction } from './lib/index.js';
 
 // const splitPath = window.location.pathname.split('/')[1];
