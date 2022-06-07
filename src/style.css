@@ -438,7 +438,7 @@ footer button {
 }
  
 /*Botones edit, delete and like*/
-.btn-updatepost {
+.btn-Edit, .btn-Delete {
   background-color: #fff;
   border: 2px solid #FFE3A9;
   color: #FF8C8C;
@@ -455,7 +455,9 @@ footer button {
   height: 2em;
 }
 
-.btn-updatepost:hover {
+.btn-Edit:hover, 
+.btn-Delete:hover,
+.btn-like:hover {
   border-color: #420516;
   color: #420516;
   fill: #420516;
@@ -489,7 +491,7 @@ footer button {
     min-width: 170px;
   }
 }  */
- 
+
 
 /*
 están siendo usados?

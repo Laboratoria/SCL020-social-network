@@ -1,6 +1,17 @@
-
 import {
-  db, collection, addDoc, getDocs, auth, serverTimestamp, query, orderBy, limit, doc, updateDoc, getDoc, onSnapshot
+  db,
+  collection,
+  addDoc,
+  getDocs,
+  auth,
+  Timestamp,
+  query,
+  orderBy,
+  limit,
+  doc,
+  updateDoc,
+  getDoc,
+  onSnapshot,
 } from './init.js';
 
 // Creating Posts collection and adding new docs to collection
@@ -17,41 +28,45 @@ const createPost = async (review, movie, country) => {
     review,
     movie,
     country,
-    date: Date(Date.now()), // cambiar por TIMESTAMP
+    date: Timestamp.fromDate(new Date()),
   });
+  // console.log(docRef);
   return docRef.id;
 };
 
 // Reading Post
 const readingPost = (callback) => {
-  const result = onSnapshot(collection(db, 'posts'),callback); // result es querySnapshot, devuelve la colección completa
-  //const q = query(result.query, orderBy('date', 'desc')); // q hace una búsqueda, a lo que hay que aplicar filtro para que devuelva una colección filtrada
-  // console.log(q);
-  //const filterQ = await getDocs(q);
-  // console.log(filterQ);
-  return result;
-};
-
-// Country View Posts
-const countryPosts = async (country) => {
-  const q = query(collection(db, 'posts'), where('country', '==', country), orderBy('date', 'desc'));
-  const querySnapshot = await getDocs(q);
-  return filterQ.docs;
-};
-
-// Edit Post
-const editPost = async (id) => {
-  const postRef = doc(db, 'posts', id);
-  await updateDoc(postRef, {
-    review: 'soy un n',
-  });
+  const q = query(collection(db, 'posts'), orderBy('date', 'desc'));
+  onSnapshot(q, (callback));
 };
 
 // Get one Doc
 const gettingDoc = async (id) => {
-  const postRef = doc(db,'posts',id);
-  const result = await getDoc(postRef)
+  const postRef = doc(db, 'posts', id);
+  const result = await getDoc(postRef);
+
   return result.data();
+};
+
+// Edit Post
+const editPost = async (id, review, movie, country) => {
+  const postRef = doc(db, 'posts', id);
+  await updateDoc(postRef, {
+    review,
+    movie,
+    country,
+  });
+};
+
+// Country View Posts
+const countryPosts = async (country) => {
+  const q = query(
+    collection(db, 'posts'),
+    where('country', '==', country),
+    orderBy('date', 'desc'),
+  );
+  const querySnapshot = await getDocs(q);
+  return filterQ.docs;
 };
 
 export {
