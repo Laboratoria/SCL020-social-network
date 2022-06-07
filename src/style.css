@@ -10,6 +10,122 @@
 
 /*      --    HOME VIEW     --      */
 
+.container-home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center; 
+    width: 320px;
+    height: 568px;
+}
+
+.containter-logo-ticket{
+    padding: 15px 30px;
+    background-color: lightgray;
+    border-radius: 30px;
+}
+
+.logo-ticket{
+    width: 80px;
+    height: auto;
+}
+
+.container-home p{
+    text-align: center;
+    width: 200px;
+    margin-top: 50px;
+    margin-bottom:20px;
+    padding: 20px;
+    background-color: lightgray;
+    border-radius: 15px;
+}
+
+.btn{
+    border-radius: 15px;
+    padding: 10px 20px;
+    letter-spacing: 3px;
+    border: none;
+    margin-top: 20px;
+    font-weight: 400;
+    width: 200px;
+}
+/*      --      LOGIN VIEW      --      */
+
+.container-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 568px;
+}
+
+.sub-container-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center; 
+    margin: 20px;
+    height: 500px;
+    background-color: #9a9a9a;
+    border-radius: 30px;
+}
+
+.container-s-logo-ticket{
+    padding: 10px 20px;
+    background-color: lightgray;
+    border-radius: 30px;
+    margin-bottom: 30px;
+}
+
+.s-logo-ticket{
+    width: 60px;
+    height: auto;
+}
+
+.sub-container-login h2{
+    padding: 5px 20px;
+    background-color: lightgray;
+    border-radius: 30px;
+    margin-bottom: 30px;
+}
+
+.sub-container-login label{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.sub-container-login input{
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    background-color: lightgray;
+    letter-spacing: 5;
+    font-size: medium;
+    color: black;
+    width: 250px;
+    height: 30px;
+    border-radius: 30px;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+.btns-login{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 250px;
+}
+
+.btns-login button{
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    border: none;
+    margin-bottom: 30px;
+}
+
+
 /*      --    404 VIEW     --      */
 
 .div-404{
@@ -51,5 +167,4 @@
     border: none;
     margin-top: 20px;
     font-weight: 400;
-
 }
