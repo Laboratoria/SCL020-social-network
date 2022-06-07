@@ -359,3 +359,45 @@ h5 {
   align-self: center;
   justify-content: center;
 }
+
+ul li {
+  list-style: none;
+}
+
+/* PROFILE */
+.image-perfil {
+  margin: 0 auto;
+}
+#img-perfil {
+  display: block;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  padding: 50px;
+  border-radius: 100%; 
+}
+
+.profileName {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileData {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: left;
+  align-items: left;
+  padding: 30px;
+}
+
+.profile .line {
+  border-top: 1px solid black;
+  height: 2px;
+  padding: 0;
+  margin: 20px auto 0 auto;
+}
