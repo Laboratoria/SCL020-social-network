@@ -1,8 +1,9 @@
 export const registration = () => {
-  const register = `
+  const register = //html
+  `
     <div class="secondView">
       <div class = "logo">
-        <img src = "Social-Images/logoescuela.webp">
+        <img src = "Social-Images/logo.jpeg">
       </div>
       <input class="userName" type="text" placeholder="Escribe tu nombre completo">
       <input class="userEmail" type="text" placeholder="Escribe tu correo electrónico">
