@@ -78,9 +78,9 @@ const deletePost = async (id) => {
 
 const profilePosts = async (callback) => {
   try {
-    const userUid = localStorage.getItem('userUid');
-    console.log(userUid);
-    const q = query(collection(db, 'posts'), orderBy('date', 'desc'));
+    const userId = localStorage.getItem('userUid');
+    console.log(userId);
+    const q = query(collection(db, 'posts'), where('userId', '==', userId));
     onSnapshot(q, (callback));
   } catch (error) {
     console.log(error, 'malo');

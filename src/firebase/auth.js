@@ -76,7 +76,6 @@ const out = async () => {
   try {
     await signOut(auth);
     localStorage.clear();
-    console.log('salió');
   } catch (error) {
     console.log('error signout', error);
   }
