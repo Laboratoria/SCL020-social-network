@@ -1,9 +1,10 @@
-//import { register } from "../../firebase/init.js"; 
-import { app } from "../../firebase/init.js";
+import { register } from "../../firebase/auth.js";
+//import { app } from "../../firebase/init.js";
 export const signUp = () => {
     const divSignUp = document.createElement("div");
 
-    const viewSignUp = `
+    const viewSignUp = //html
+    `
         <div>
             <img src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-tickets.png?raw=true" alt="logo-ticket">
             <h2>Create your account</h2>
@@ -20,8 +21,15 @@ export const signUp = () => {
         </div>            
     `
     divSignUp.innerHTML = viewSignUp;
+    const btn = divSignUp.querySelector(".btn-create")
+    btn.addEventListener("click", () => {
+        const email = divSignUp.querySelector("#email").value;
+        const password = divSignUp.querySelector("#password").value;
+        
+    })
     return divSignUp;
-    
 }
+
+
 console.log(app);
 //register();
