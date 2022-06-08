@@ -50,14 +50,13 @@ const gettingDoc = async (id) => {
 
 // Edit Post
 const editPost = async (id, review, movie, country) => {
-  try {
-    const postRef = doc(db, 'posts', id);
+  try {const postRef = doc(db, 'posts', id);
     await updateDoc(postRef, {
       review,
       movie,
       country,
-    });
-  } catch (error) {
+    });} 
+    catch (error) {
     console.log(error);
   }
 };
