@@ -22,16 +22,13 @@ const Home = () => {
       <div class='post'>
           <div class="btns-updateDiv">
               <button class='btn-Edit' data-id='${doc.id}'>Edit</button>
-              <dialog class="modal" id="modal">
+              <dialog class="dialog-modal" data-id="${doc.id}" id="dialog-modal">
                   <div class="post-box">
-                      <form id="edit-modal" data-id="${doc.id}" class="edit-modal">
-                          <h3 id="user-name" class="user-name">${posts.userName}</h3>
-                          <textarea id="new-review">${posts.review}</textarea>
-                          <p>Película<input type="text" id="new-movie" value="${posts.movie}"></p>
-                          <p>País<input type="text" id="new-country" value="${posts.country}"></p>
-  
-                          <input id="edit-submit" class="main-btn" type="submit" value="Done" />
-                      </form>
+                      <h3 id="user-name" class="user-name">${posts.userName}</h3>
+                      <textarea id="new-review">${posts.review}</textarea>
+                      <p>Película<input type="text" id="new-movie" value="${posts.movie}"></p>
+                      <p>País<input type="text" id="new-country" value="${posts.country}"></p>
+                      <input id="done-button" class="main-btn" type="button" value="Done">
                   </div>
               </dialog>
               <button class='btn-Delete' data-id='${doc.id}'>Delete</button>
@@ -41,7 +38,6 @@ const Home = () => {
           </span>
           <p class="user-container">
               <i class="user-name">${posts.userName}</i>
-              dijo:
           </p>
           <div class"movie-info">
               <h3 class="movie-title">${posts.movie}</h3>
@@ -68,32 +64,27 @@ const Home = () => {
     container.append(Header(), middle, Footer());
 
     const editBtn = container.querySelectorAll('.btn-Edit');
-    const modal = container.querySelector('.modal');
-    const editForm = container.querySelectorAll('.edit-modal');
-    console.log(editForm[0], editForm[1]);
+    const modal = container.querySelectorAll('.dialog-modal');
 
     // Open Modal
     editBtn.forEach((btn) => {
       btn.addEventListener('click', () => {
-        // console.log(doc);
-        modal.showModal();
-
-        // Edit Form
-        editForm.forEach((form) => {
-          form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const newReview = container.querySelector('#new-review').value;
-            const newMovie = container.querySelector('#new-movie').value;
-            const newCountry = container.querySelector('#new-country').value;
-            await editPost(form.dataset.id, newReview, newMovie, newCountry);
-            modal.close();
-          });
+        modal.forEach((post)=>{
+          if (post.dataset.id === btn.dataset.id){
+            post.showModal();
+            const doneBtn = post.querySelector('#done-button');
+            doneBtn.addEventListener('click', async () => {
+              const newReview = post.querySelector('#new-review').value;
+              const newMovie = post.querySelector('#new-movie').value;
+              const newCountry = post.querySelector('#new-country').value;
+              await editPost(post.dataset.id, newReview, newMovie, newCountry);
+                });
+          }
+        })
         });
       });
     });
-  });
 
-  console.log(container);
   return container;
 };
 
