@@ -60,6 +60,7 @@ function profile() {
     event.preventDefault();
     navigate("publications");
   });
+
   return container;
 }
 
