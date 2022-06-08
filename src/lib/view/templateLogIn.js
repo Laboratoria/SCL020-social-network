@@ -13,11 +13,11 @@ export const logIn = () => {
             <p>#singluten #sinlactosa</p>
         </article>
         <form class="login">
-            <input type="email" name="email" placeholder="Correo electrónico"  >
+            <input type="email" name="email" placeholder="Correo electrónico" id="email" >
             <input type="password" name="pass" placeholder="Contraseña" id="password">
         </form>
         <div class= "divButtons">
-        <a href="#/home" class="buttons">Inicia Sesión</a>
+        <a href="#/home" class="buttons" id="login">Inicia Sesión</a>
         </div>
         <div id="InitGoogle">
             <img src="img/SignUpGoogle.png" alt="SignUpGoogle" width=200px  height="35px" />
