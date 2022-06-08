@@ -5,19 +5,23 @@ export const signUp = () => {
 
     const viewSignUp = //html
     `
-        <div>
-            <img src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-tickets.png?raw=true" alt="logo-ticket">
-            <h2>Create your account</h2>
-            <input type="text">
-            <input type="text" id="email" required>
-            <input type="password" id="password" required>
-            <button class="btn-create" onclick="register()">Create Account</button>
-            <div class="btns-signUp">
-                <button class="btn-signUp-Google">google</button>
-                <button class="btn-signUp-IMDb">IMDb</button>
+        <div class="container-signUp">
+            <div class ="sub-container-signUp">
+                <div class="container-s-logo-ticket"><img class="s-logo-ticket" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-tickets.png?raw=true" alt="logo-ticket"></div>
+                <h2>Create your account</h2>
+                <label><input type="text" id="user" required placeholder="User Name"></label>
+                <label><input type="email" id="email" required placeholder="email@something.com"></label>
+                <label><input type="password" id="password" required placeholder="password"></label>
+                <button class="btn-create">Create Account</button>
+                <div class="btn-access">
+                    <button>google</button>
+                    <button>IMDb</button>
+                </div>
+                <div class="container-btn">
+                    <a href="#/welcome"><button>Confirm</button></a>
+                    <a href=""><button>Cancel</button></a>
+                </div>
             </div>
-            <a href="#/welcome"><button class="btn-confirm">Confirm</button></a>
-            <a href=""><button class="btn-cancel">Cancel</button></a>
         </div>            
     `
     divSignUp.innerHTML = viewSignUp;
@@ -25,11 +29,11 @@ export const signUp = () => {
     btn.addEventListener("click", () => {
         const email = divSignUp.querySelector("#email").value;
         const password = divSignUp.querySelector("#password").value;
-        
+        register(email, password);
     })
     return divSignUp;
 }
 
 
-console.log(app);
-//register();
+
+

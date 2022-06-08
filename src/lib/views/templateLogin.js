@@ -1,14 +1,17 @@
+import { logIn } from "../../firebase/auth.js";
+
 export const login = () => {
     const divLogin = document.createElement("div");
 
-    const viewLogin = `
+    const viewLogin = //html 
+    `
         <div class="container-login"> 
             <div class ="sub-container-login">
                 <div class="container-s-logo-ticket"><img class="s-logo-ticket" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-tickets.png?raw=true" alt="logo-ticket"></div>
                     <h2>Login to your account</h2>
                     <label><input type="text" id="email" required placeholder="email@something.com"></label>
                     <label><input type="password" id="password" required placeholder="password"></label>
-                    <div class="btns-login">
+                    <div class="btn-access">
                         <button>google</button>
                         <button>IMDb</button>
                     </div> 
@@ -17,5 +20,11 @@ export const login = () => {
         </div>     
     `
     divLogin.innerHTML = viewLogin;
+    const btn = divLogin.querySelector(".btn")
+    btn.addEventListener("click", () => {
+        const email = divLogin.querySelector("#email").value;
+        const password = divLogin.querySelector("#password").value;
+        logIn(email, password);
+    })
     return divLogin;
 }
