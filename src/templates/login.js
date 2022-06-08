@@ -1,28 +1,5 @@
-// const enterB = document.createButton("Iniciar Sesión");
-// document.addEventListener("DOMContentLoaded", function() {
-//     var element = document.createElement("button");
-//     element.appendChild(document.createTextNode("Click Me!"));
-//     var page = document.getElementById("btn");
-//     page.appendChild(element);
-//     console.log(element);
-// });
-// const path = '/news';
-// const enterButton = document.getElementById('btn');
-// if (enterButton) {
-//   enterButton.addEventListener('click', () => {
-//     // window.location.href = '/news';
-//     window.history.pushState({}, 'news', path);
-//   });
-// }
-
-// <form action="POST">
-// <label for="email">email</label>
-// <input type="email" name="email" id="email">
-// <label for="password">password</label>
-// <input type="password" name="password" id="password">
-// <button type="submit" id="loginBtn">iniciar sesión</button>
-// </form>
 import { navigate } from "../router/routes.js";
+import { logIn, redirectResult } from "../firebase/auth.js";
 
 function login() {
   const html =//html
@@ -40,7 +17,7 @@ function login() {
         <button class="entrar"> Entrar </button>
         <p>¿Aún no tienes una cuenta? Regístrate aquí </p>
         <p>O ingresa con</p>
-        <button>
+        <button id="logInButton">
           <img width="25" src="./assets/google.png" /> Gmail
         </button>
         <button>
@@ -55,7 +32,19 @@ function login() {
   button.addEventListener("click", () => {
     navigate("register");
   });
-  return container;
+
+  const logInWithGmail = container.querySelector("#logInButton")
+  let currentUser;
+  logInWithGmail.addEventListener("click",async(e)=>{
+    try{
+    currentUser = await logIn();
+    } catch (error){
+  throw error.message;
+  console.log (error);
+    }}
+)
+  redirectResult()
+  return container
 }
 
 export { login };
