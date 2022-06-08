@@ -354,6 +354,16 @@
     border-radius: 0px 30px 30px 0px;
 }
 
+.sub-container-menu ul{
+    text-decoration: none;
+}
+
+.img-menu {
+    width: 60px;
+    height: auto;
+}
+
+
 /*      --    404 VIEW     --      */
 
 .div-404{
