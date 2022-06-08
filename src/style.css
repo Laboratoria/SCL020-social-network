@@ -218,3 +218,9 @@ input{
     background-color: #FFD5E5;
     width: auto;
 }
+                        /* error404 */
+#errorContent{
+    display: flex;
+    background-color: #FFD5E5;
+    align-content: center;
+}
