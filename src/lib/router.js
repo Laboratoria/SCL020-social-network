@@ -1,6 +1,7 @@
 import { home } from './Views/templateHome.js';
 import { registration } from './Views/templateRegister.js';
 import { wall } from './Views/templateWall.js';
+import { bForm } from './Views/templateBullyingForm.js';
 
 export const changeRoute = (hash) => {
   if ( hash === '#/') {
@@ -30,7 +31,7 @@ const showTemplates = (hash) => {
     containerRoot.appendChild(wall());
       break;
     case '#/bullyingForm':
-    containerRoot.appendChild(bullyingForm());
+    containerRoot.appendChild(bForm());
       break;
     default:
     containerRoot.innerHTML = `<h2>Esta página no existe</h2>`

@@ -3,7 +3,7 @@ export const home = () => {
   `
     <div class="firstView">
     <div class = "logo">
-      <img src = "Social-Images/logoescuela.webp">
+      <img src = "Social-Images/logo.jpeg">
     </div>
     <input class="email" type="text" placeholder="Escribe tu correo">
     <input class="password" type="text" placeholder="Escribe tu contraseña">

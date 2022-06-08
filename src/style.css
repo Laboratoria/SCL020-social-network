@@ -18,7 +18,7 @@ body{
 }
 .logo img{
     width: 150px;
-    height: 120px;
+    height: 150px;
     border-radius: 50%;
 }
 .currentUserData{
@@ -94,7 +94,7 @@ margin-left: 70px;
 header{
     background-color: #680E4B;
     width: 100%;
-    height: 45px;
+    height: 50px;
     align-content: space-between;
     display: flex;
     justify-content: flex-start;
@@ -117,7 +117,18 @@ header img{
     text-decoration: none;
     position:absolute;
     left: 50%;
-    bottom: 93%;
+    bottom: 94%;
+    margin-right: 40px;
+}
+
+#bForm{
+    width: 90px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    position:absolute;
+    left: 10%;
+    bottom: 94%;
+   
 }
 
 textarea{
@@ -128,6 +139,8 @@ textarea{
     border: none;
     text-align: left;
 }
+
+
 .publicar{
     width: 130px;
     padding: 4px;
@@ -141,7 +154,6 @@ textarea{
 }
 
 div .wall{
-    background-color: aqua;
     width: 100%;
     height: 500px;
 }
