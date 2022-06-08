@@ -22,6 +22,8 @@ const Home = () => {
       <div class='post'>
           <div class="btns-updateDiv">
               <button class='btn-Edit' data-id='${doc.id}'>Edit</button>
+
+              <!--MODAL-->
               <dialog class="dialog-modal" data-id="${doc.id}" id="dialog-modal">
                   <div class="post-box">
                       <h3 id="user-name" class="user-name">${posts.userName}</h3>
@@ -31,6 +33,8 @@ const Home = () => {
                       <input id="done-button" class="main-btn" type="button" value="Done">
                   </div>
               </dialog>
+              <!--MODAL-->
+              
               <button class='btn-Delete' data-id='${doc.id}'>Delete</button>
           </div>
           <span>
@@ -69,21 +73,23 @@ const Home = () => {
     // Open Modal
     editBtn.forEach((btn) => {
       btn.addEventListener('click', () => {
-        modal.forEach((post)=>{
-          if (post.dataset.id === btn.dataset.id){
-            post.showModal();
-            const doneBtn = post.querySelector('#done-button');
+        modal.forEach((mod) => {
+          if (mod.dataset.id === btn.dataset.id) {
+            mod.showModal();
+
+            // Editing post
+            const doneBtn = mod.querySelector('#done-button');
             doneBtn.addEventListener('click', async () => {
-              const newReview = post.querySelector('#new-review').value;
-              const newMovie = post.querySelector('#new-movie').value;
-              const newCountry = post.querySelector('#new-country').value;
-              await editPost(post.dataset.id, newReview, newMovie, newCountry);
-                });
+              const newReview = mod.querySelector('#new-review').value;
+              const newMovie = mod.querySelector('#new-movie').value;
+              const newCountry = mod.querySelector('#new-country').value;
+              await editPost(mod.dataset.id, newReview, newMovie, newCountry);
+            });
           }
-        })
         });
       });
     });
+  });
 
   return container;
 };
