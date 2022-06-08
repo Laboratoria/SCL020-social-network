@@ -4,7 +4,7 @@ export const error404 = () => {
     const viewError404 = `
         <div id="errorContent">
             <img src="img/404.png" alt="Error 404">
-            <a href="#/home"> <button class="button"></button></a>
+            <a href="#/home"><button class="button"></button></a>
         </div>
         `
         divError404.innerHTML= viewError404;
