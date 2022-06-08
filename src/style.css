@@ -50,19 +50,18 @@ body{
     width: 100px;
 }
 
-#submitBt{
-    padding-top: 14px;
+.divButtons{
+    padding: 4px 0px 14px 0px;
 }
 
-.creatUserBt{
-    width: 210px;
-    height: 45px;
-    border-radius: 16px;
+.buttons{
+    border-radius: 13px;
     border: solid #A4455E;
     color: #FFFFFF;
     background-color: #F34573;
-    font-size: 20px;
-    margin-bottom: 14px;
+    font-size: 17px;
+    text-decoration: none;
+    padding: 2px 10px 2px 10px;
 }
 
 input{
@@ -118,9 +117,8 @@ input{
 }
 
 #msgRegistrate{
-    font-size: 20px;
+    font-size: 17px;
     color: #226B80;
-    text-decoration: underline;
 }
 
 /*ViewHome*/

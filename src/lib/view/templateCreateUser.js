@@ -17,8 +17,8 @@ export const createUser = () => {
             </form>
             <p class="instruction">Quieres ingresar como:</p>
             <img id=bakerImg src="img/Baker.png" alt="Baker" class="bakerEaterImg"><img id="eaterImg" src="img/eater.png" alt="Eater" class="bakerEaterImg">
-            <div id="submitBt">
-                <a href="#/home"><button value="Crear usuario" class="creatUserBt"></button></a>
+            <div class="divButtons">
+                <a href="#/home" class="buttons">Crear usuario</a></a>
             </div>
         </div>
         `

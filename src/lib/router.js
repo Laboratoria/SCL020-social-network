@@ -1,6 +1,7 @@
 import { createUser } from './view/templateCreateUser.js';
 import { logIn } from './view/templateLogIn.js';
 import { home } from './view/templateHome.js';
+import { error404 } from './view/template404.js';
 
 export const changeRoute = (hash) => {
     if (hash === '#/') {
@@ -30,6 +31,6 @@ const showTemplates = (hash) => {
     containerRoot.appendChild(home());
         break;
     default:
-    containerRoot.innerHTML = `<h2>No existe 404</h2>`
+    containerRoot.appendChild(error404());
     }
 }

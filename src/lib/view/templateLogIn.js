@@ -16,8 +16,8 @@ export const logIn = () => {
             <input type="email" name="email" placeholder="Correo electrónico"  >
             <input type="password" name="pass" placeholder="Contraseña" id="password">
         </form>
-        <div>
-        <a href="#/home"<button class="creatUserBt">Inicia Sesión</button></a>
+        <div class= "divButtons">
+        <a href="#/home" class="buttons">Inicia Sesión</a>
         </div>
         <div id="InitGoogle">
             <img src="img/SignUpGoogle.png" alt="SignUpGoogle" width=200px  height="35px" />
