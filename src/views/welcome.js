@@ -2,7 +2,7 @@ import {initRouter, next} from "../router/router.js"
 
 const Welcome = () => {
 
-    const template = 
+    const template = //html
     `   <header>
     <img src= "./img/logofon.png" alt="logo" class="logo1">
     </header>

@@ -1,0 +1,39 @@
+body{
+    background-color: #3BACB6;
+    background-image:url("../img/fondo.png") 
+ }
+ 
+  header{
+ display: flex;
+ justify-content: center;
+ margin-top: 40px;
+ }
+ 
+ div h1{
+     color: white;
+     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     text-align: center; 
+     margin-top: 100px;
+ }
+ div section{
+     display:flex;
+     justify-content: center;
+     margin-top: 80px;
+ }
+ 
+ div button{
+     width: 90px;
+     height: 60px;
+     background: #3BACB6;
+     border-radius: 10px 10px 10px 10px;
+     border-color: #3BACB6;
+     color: white;
+ 
+ }
+ div h2{
+     color: white;
+     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     text-align: center; 
+     margin-top: 80px; 
+ }
+ 
