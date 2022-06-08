@@ -50,15 +50,12 @@ const gettingDoc = async (id) => {
 
 // Edit Post
 const editPost = async (id, review, movie, country) => {
-  try {const postRef = doc(db, 'posts', id);
-    await updateDoc(postRef, {
-      review,
-      movie,
-      country,
-    });} 
-    catch (error) {
-    console.log(error);
-  }
+  const postRef = doc(db, 'posts', id);
+  await updateDoc(postRef, {
+    review,
+    movie,
+    country,
+  });
 };
 
 // Country View Posts
