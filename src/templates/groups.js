@@ -17,9 +17,6 @@ function groups() {
     <h5>PlantGram</h5>
     </div>
     <div class="background-white-grupo grupo">
-    <header>
-    PlantGram
-    </header>
     <p class="titulo-grupos">
         Grupos
     </p>
@@ -67,8 +64,6 @@ function groups() {
         </li>
         
     </ul>
-    
-      <button> News </button>
       <div class="copyright">
         By Daniela Aedo, Heike Tineo & Carolina Zapata.i
       </div>
@@ -76,10 +71,6 @@ function groups() {
 `;
   const container = document.createElement("div");
   container.innerHTML = html;
-  // const button = container.querySelector("button");
-  // button.addEventListener("click", () => {
-  //   navigate("news");
-  // });
   const linkNews = container.querySelector("#linkNews");
 linkNews.addEventListener("click", (event) => {
   event.preventDefault();
@@ -104,3 +95,4 @@ linkPublic.addEventListener("click", (event) => {
 }
 
 export { groups };
+
