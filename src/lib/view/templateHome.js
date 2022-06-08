@@ -9,25 +9,25 @@ export const home = () => {
     <div class="options__menu">	
         <a href="#/userProfile" class="selected">
             <div class="option">
-                <i class="fa-solid fa-circle-user" title="Perfil" ></i>
+                <i class="fa-solid fa-circle-user fa-xl" title="Perfil" ></i>
                 <h4> nombre usuario titulo</h4>
             </div>
         </a>
         <a href="#/home">
             <div class="option">
-                <i class="fa-solid fa-house" title="Inicio"></i>
+                <i class="fa-solid fa-house fa-xl" title="Inicio"></i>
                 <h4>Inicio</h4>
             </div>
         </a>
         <a href="#/search">
             <div class="option">
-                <i class="fa-solid fa-magnifying-glass" title="Buscar"></i>
+                <i class="fa-solid fa-magnifying-glass fa-xl" title="Buscar"></i>
                 <h4>Buscar</h4>
             </div>
         </a>
         <a href="#/logIn">
             <div class="option">
-                <i class="fa-solid fa-arrow-right-from-bracket" title="Cerrar sesión"></i>
+                <i class="fa-solid fa-arrow-right-from-bracket fa-xl" title="Cerrar sesión"></i>
                 <h4>Cerrar cesion</h4>
             </div>
         </a>
@@ -35,11 +35,18 @@ export const home = () => {
     </div>
     <div class="postMain">
         <div class="userNav">
-            <i class="fa-solid fa-circle-user"></i>
+            <div>
+            <i class="fa-solid fa-circle-user fa-2xl"></i>
+            </div>
+            <div>
             <h1>Nombre de usuario</h1>
+            </div>
+            <div>
             <h2>Titulo baker o eater</h2>
-            <i class="fa-solid fa-pencil"></i>
-        </div>
+            </div>
+            <div>
+            <i class="fa-solid fa-pencil fa-2xl"></i>
+            </div>
         <div class="post">
             <h2> aqui va el post</h2> 
         </div>
