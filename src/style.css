@@ -51,7 +51,7 @@
 }
 /*      --      LOGIN VIEW      --      */
 
-.container-login{
+.container-login {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,7 +65,8 @@
     justify-content: center;
     align-items:center; 
     margin: 20px;
-    height: 500px;
+    height: 530px;
+    width: 310px;
     background-color: #9a9a9a;
     border-radius: 30px;
 }
@@ -110,14 +111,14 @@
     margin-bottom: 20px;
 }
 
-.btns-login{
+.btn-access{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     width: 250px;
 }
 
-.btns-login button{
+.btn-access button{
     width: 60px;
     height: 60px;
     border-radius: 15px;
@@ -125,6 +126,233 @@
     margin-bottom: 30px;
 }
 
+/*      --    AGE VIEW     --      */
+
+
+.container-age {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 568px;
+}
+
+.container-age p{
+    text-align: center;
+    width: 200px;
+    margin-top: 50px;
+    margin-bottom:20px;
+    padding: 20px;
+    background-color: lightgray;
+    border-radius: 15px;
+}
+
+
+/*      --    AGE REDIRECT VIEW     --      */
+
+
+.container-ageRedirect {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 568px;
+}
+
+.container-ageRedirect p{
+    text-align: center;
+    width: 200px;
+    margin-top: 50px;
+    margin-bottom:20px;
+    padding: 20px;
+    background-color: lightgray;
+    border-radius: 15px;
+}
+
+/*      --    SIGN UP VIEW     --      */
+
+.container-signUp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 568px;
+}
+
+.sub-container-signUp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center; 
+    margin: 20px;
+    height: 530px;
+    width: 310px;
+    background-color: #9a9a9a;
+    border-radius: 30px;
+}
+
+.sub-container-signUp h2{
+    font-size: 20px;
+    padding: 5px 20px;
+    background-color: lightgray;
+    border-radius: 30px;
+    margin-bottom: 30px;
+}
+
+.sub-container-signUp label{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.sub-container-signUp input{
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    background-color: lightgray;
+    letter-spacing: 5;
+    font-size: medium;
+    color: black;
+    width: 225px;
+    height: 25px;
+    border-radius: 30px;
+    margin: 5px;
+}
+
+
+.btn-create{
+    border-radius: 15px;
+    padding: 10px 20px;
+    letter-spacing: 3px;
+    border: none;
+    margin-top: 20px;
+    font-weight: 400;
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.container-btn {
+    display: flex;
+    flex-direction: row;
+}
+
+.container-btn button{
+    border-radius: 15px;
+    padding: 10px 20px;
+    letter-spacing: 3px;
+    border: none;
+    margin: 5px;
+    margin-top: 20px;
+    font-weight: 400;
+    width: 100px;
+    font-size: small;
+}
+
+/*      --    WELCOME VIEW     --      */
+
+.container-welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 568px;
+}
+
+.sub-container-welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center; 
+    margin: 20px;
+    height: 530px;
+    width: 310px;
+    background-color: #9a9a9a;
+    border-radius: 30px;
+}
+
+.container-p {
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 10px 20px;
+    width: 230px;
+    background-color: lightgray;
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.container-p p {
+    margin: 5px 0px;
+}
+
+/*      --    LOG OUT CONFIRMATION VIEW     --      */
+
+.container-logOutConfirm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 568px;
+}
+
+.sub-container-logOutConfirm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center; 
+    margin: 20px;
+    height: 530px;
+    width: 310px;
+    background-color: #9a9a9a;
+    border-radius: 30px;
+}
+
+/*      --    DELETE CONFIRMATION VIEW     --      */
+
+.container-deleteComment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 568px;
+}
+
+.sub-container-deleteComment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center; 
+    margin: 20px;
+    height: 530px;
+    width: 310px;
+    background-color: #9a9a9a;
+    border-radius: 30px;
+}
+
+/*      --    MENU VIEW     --      */
+
+.container-menu {
+    background: transparent;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 320px;
+    height: 568px;
+    margin: 0px;
+}
+
+.sub-container-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center; 
+    height: 568px;
+    width: 240px;
+    background-color: #9a9a9a;
+    border-radius: 0px 30px 30px 0px;
+}
 
 /*      --    404 VIEW     --      */
 
