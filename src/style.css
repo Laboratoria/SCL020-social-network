@@ -414,11 +414,19 @@ footer button {
  .date {
   font-size: 0.9rem; 
   opacity: 0.3;
-
 }
+
+.user-name {
+  color:rgba(37, 9, 59, 0.798);
+  font-family: karla;
+  font-style: normal;
+  line-height: 200%;
+}
+
  
  .movie-title {
   color:coral;
+  line-height: 200%;
  }
  
  .likes-border {

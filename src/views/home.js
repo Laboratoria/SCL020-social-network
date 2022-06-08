@@ -3,7 +3,9 @@
 import { orderBy } from 'firebase/firestore';
 import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
-import { readingPost, editPost, gettingDoc } from '../firebase/firestore.js';
+import {
+  readingPost, editPost, gettingDoc, deletePost,
+} from '../firebase/firestore.js';
 import { navigate } from '../router/router.js';
 
 const Home = () => {
@@ -41,7 +43,7 @@ const Home = () => {
               <p class="date">${posts.date.toDate().toLocaleString()}</p>
           </span>
           <p class="user-container">
-              <i class="user-name">${posts.userName}</i>
+              <i class="user-name">${posts.userName}: </i>
           </p>
           <div class"movie-info">
               <h3 class="movie-title">${posts.movie}</h3>
@@ -87,6 +89,12 @@ const Home = () => {
             });
           }
         });
+      });
+    });
+    const deleteBtn = container.querySelectorAll('.btn-Delete');
+    deleteBtn.forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        await deletePost(btn.dataset.id);
       });
     });
   });

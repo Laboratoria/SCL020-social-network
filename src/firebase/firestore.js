@@ -1,3 +1,4 @@
+import { async } from 'regenerator-runtime';
 import {
   db,
   collection,
@@ -12,6 +13,8 @@ import {
   updateDoc,
   getDoc,
   onSnapshot,
+  deleteDoc,
+  where,
 } from './init.js';
 
 // Creating Posts collection and adding new docs to collection
@@ -69,8 +72,23 @@ const countryPosts = async (country) => {
   return filterQ.docs;
 };
 
+const deletePost = async (id) => {
+  await deleteDoc(doc(db, 'posts', id));
+};
+
+const profilePosts = async (callback) => {
+  try {
+    const userUid = localStorage.getItem('userUid');
+    console.log(userUid);
+    const q = query(collection(db, 'posts'), orderBy('date', 'desc'));
+    onSnapshot(q, (callback));
+  } catch (error) {
+    console.log(error, 'malo');
+  }
+};
+
 export {
-  createPost, readingPost, countryPosts, editPost, gettingDoc,
+  createPost, readingPost, countryPosts, editPost, gettingDoc, deletePost, profilePosts,
 };
 
 // const q = query(result.query, orderBy('date', 'desc'), limit(5)); // , limit(n)
