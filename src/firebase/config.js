@@ -1,4 +1,4 @@
-export default {
+export const firebaseConfig = {
   apiKey: 'AIzaSyB7l2-n9snHaRiopFrAOL5cKh1iUleW8mM',
   authDomain: 'social-networkscl20.firebaseapp.com',
   projectId: 'social-networkscl20',
