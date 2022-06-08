@@ -1,6 +1,6 @@
 import { navigate } from "../router/routes.js";
 
-function profile() {
+function post() {
   const html = //html
     `
     <div class="background-white">
@@ -16,28 +16,22 @@ function profile() {
       </div>
       <h5>PlantGram</h5>
     </div>
-    <div class="image-perfil">
-      <img src="assets/perfil.jpg" id="img-perfil" alt="">
-    </div>
-    <div class="profileName">
-      <h3 id="nameProfile">Nombre del usuario</h3>
-      <h4 id="emailProfile">correo@email.com</h4>
-    </div>
-    <div class="profileData">
-      <p>Mis Intereses</p>
-      <hr>
-      <p>Mis Plantas</p>
-      <hr>
-      <p>Mis Grupos</p>
-      <hr>
-      <p>Mis Likes</p>
-      <hr>
+    <div class="post">
+    <p>¿Qué quieres contarle al mundo?</p>
+    <input type="text" placeholder="Título del post" />
+    <input type="text" placeholder="Contenido del post" />
+    <button id="newPost"> Publicar </button>
     </div>
   </div>
   </div>
 `;
   const container = document.createElement("div");
   container.innerHTML = html;
+  const linkPublications = container.querySelector("#newPost");
+  linkPublications.addEventListener("click", (event) => {
+    event.preventDefault();
+    navigate("publications");
+  });
   const linkNews = container.querySelector("#linkNews");
   linkNews.addEventListener("click", (event) => {
     event.preventDefault();
@@ -61,4 +55,4 @@ function profile() {
   return container;
 }
 
-export { profile };
+export { post };

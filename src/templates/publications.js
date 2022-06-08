@@ -6,7 +6,7 @@ function publications() {
 <div class="background-white">
     <div class="bar">
         <div id="navMenu">
-        <h4> PlantGram <img src="flower (1).png"></h4>
+        <h4> PlantGram <img src="./assets/flower (1).png"></h4>
             <ul>
             <li><a href='#' id='linkNews'> NOTICIAS </a></li>
             <li><a href='#' id='linkProfile'> MI PERFIL </a></li>
@@ -18,24 +18,30 @@ function publications() {
     </div>
     <div class="dashboard">
         <h2>PUBLICACIONES</h2>
-        <div class="newsPost">
-            <div class="post-header">
-                <h3>Nombre usuario</h3>
+        <div class="createPost">
+          <button id="btnCreatePost">Crear nuevo post</button>
+        </div>
+        <div class="public">
+        <div class="image-public">
+          <img src="assets/perfil.jpg" id="img-public" alt="">
+        </div>
+            <div class="public-header">
+                <h3 id="namePublic">Nombre usuario</h3>
             </div>
             <div>
                 <img src="https://picsum.photos/200/300"alt="
-                el pirineo">
+                el pirineo" id="imgPublications">
             </div>
         </div>
     </div>
-    <button> News </button>
 </div>`;
   const container = document.createElement("div");
   container.innerHTML = html;
-//   const button = container.querySelector("button");
-//   button.addEventListener("click", () => {
-//     navigate("news");
-//   });
+  const linkNewPost = container.querySelector("#btnCreatePost");
+  linkNewPost.addEventListener("click", (event) => {
+    event.preventDefault();
+    navigate("post");
+  });
   const linkNews = container.querySelector("#linkNews");
   linkNews.addEventListener("click", (event) => {
     event.preventDefault();

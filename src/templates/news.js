@@ -32,14 +32,9 @@ function news() {
             </div>
         </div>
     </div>
-    <button class="publicationsButton" > PUBLICACIONES </button>
 </div>`;
   const container = document.createElement("div");
   container.innerHTML = html;
-//   const button = container.querySelector("button");
-//   button.addEventListener("click", () => {
-//     navigate("publications");
-//   });
 const linkNews = container.querySelector("#linkNews");
 linkNews.addEventListener("click", (event) => {
   event.preventDefault();
