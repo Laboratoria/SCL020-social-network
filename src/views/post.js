@@ -5,7 +5,7 @@ import { Footer } from '../utils/footer.js';
 import { createPost} from '../firebase/firestore.js';
 
 const Post = () => {
-  const userName = localStorage.getItem('user') || 'User';
+  const userName = localStorage.getItem('userName') || 'User';
   const template =
     // HTML
     `<div class="post-box">

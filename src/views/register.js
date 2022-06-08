@@ -38,7 +38,8 @@ const Register = () => {
 
     try {
       const user = await create(userName, email, password);
-      localStorage.setItem('user', user.displayName);
+      localStorage.setItem('userName', user.displayName);
+      localStorage.setItem('userUid', user.uid);
       form1.reset();
       navigate('/home');
     } catch (error) {

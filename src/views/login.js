@@ -43,7 +43,8 @@ const Login = () => {
 
     try {
       const user = await login(email, password);
-      localStorage.setItem('user', user.displayName);
+      localStorage.setItem('userName', user.displayName);
+      localStorage.setItem('userUid', user.uid);
       form.reset();
       navigate('/home');
     } catch (error) {
