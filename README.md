@@ -10,7 +10,9 @@ Resumimos la información en:
 2. yo como usuario quiero registrarme en la app, para acceder a contenido de cuidado sobre plantas.
 3. yo como usuario quiero usar la app en navegador Google chrome, para participar en grupos, foros o comentarios sobre plantas.
 
+
 RESULTADOS
+
 <img src = "PICS/Encuesta1.png">
 <img src = "PICS/Encuesta 2.png">
 
@@ -46,3 +48,8 @@ Ver prototipo con interacciones [aquí](https://www.figma.com/proto/oGMhwqudUs2Y
 * Terminamos nuestro prototipo de alta.
 * Comenzamos a transformar las funciones de firebase. 
 * Agregamos función navigate, login y profile, para poder redirigir a cada una de esas rutas y pusimos un pequeño html para probar.
+* No funcionó este primer intento y decidimos avanzar lo más posible con nuestros templates para poder ir conectando directamente firebase a cada template.
+* Creamos un menú activo para moverse por la app.
+* Logramos integrar la redirección para iniciar sesión con gmail.
+* Logramos mostrar posts en el template de publications.
+* 

@@ -1,3 +1,5 @@
+import { auth, firestore } from "../firebase/init.js";
+import { readData } from "../firebase/store.js";
 import { navigate } from "../router/routes.js";
 
 function publications() {
@@ -21,27 +23,11 @@ function publications() {
         <div class="createPost">
           <button id="btnCreatePost">Crear nuevo post</button>
         </div>
-        <div class="public">
-        <div class="image-public">
-          <img src="assets/perfil.jpg" id="img-public" alt="">
-        </div>
-            <div class="public-header">
-                <h3 id="namePublic">Nombre usuario</h3>
-            </div>
-            <div>
-                <img src="https://picsum.photos/200/300"alt="
-                el pirineo" id="imgPublications">
-            </div>
-        </div>
     </div>
 </div>`;
   const container = document.createElement("div");
   container.innerHTML = html;
-  const linkNewPost = container.querySelector("#btnCreatePost");
-  linkNewPost.addEventListener("click", (event) => {
-    event.preventDefault();
-    navigate("post");
-  });
+//  MENÚ ACTIVO
   const linkNews = container.querySelector("#linkNews");
   linkNews.addEventListener("click", (event) => {
     event.preventDefault();
@@ -62,7 +48,32 @@ function publications() {
     event.preventDefault();
     navigate("publications");
   });
+
+  // POSTS
+  const postList = container.querySelector(".createPost");
+  const setupPosts = async() => {
+    let data= await readData()
+    // console.log(data);
+    if(data.length){
+      let html= '';
+      data.forEach(doc =>{
+        const post = doc.data
+        const li = `
+          <li>
+            <h6> ${post.title}</h6>
+            <p> ${post.description} </p>
+          </li>
+        `;
+        html += li;
+      });
+      postList.innerHTML = html;
+    } else {
+      postList.innerHTML = '<p>Ingresa para ver tus posts</p>';
+    }
+    }
+  setupPosts()
+
   return container;
 }
-
+// }
 export { publications };

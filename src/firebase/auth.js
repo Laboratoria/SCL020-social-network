@@ -82,7 +82,7 @@ const redirectResult = function(){
 getRedirectResult(auth)
   .then((result) => {
     navigate("news")
-    console.log(result)
+    // console.log(result)
 // This gives you a Google Access Token. You can use it to access Google APIs.
 const credential = GoogleAuthProvider.credentialFromResult(result);
  const token = credential.accessToken;
@@ -91,7 +91,7 @@ const credential = GoogleAuthProvider.credentialFromResult(result);
 const user = result.user;
 })
 .catch((error) => {
-  console.log(error)
+  // console.log(error)
 // Handle Errors here.
 const errorCode = error.code;
 const errorMessage = error.message;
