@@ -999,7 +999,7 @@ const Map = () => {
         });
         postContainer.innerHTML = postStructure;
 
-        // Linking Posts in Map View
+        // Liking Posts in Map View
         const likeBtn = container.querySelectorAll('.btn-like-map');
         likeBtn.forEach((btn) => {
           btn.addEventListener('click', async () => {
