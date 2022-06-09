@@ -403,7 +403,11 @@
 
 /*      --    FEED VIEW     --      */
 
-main nav{
+.feed {
+    width: 320px;
+}
+
+.feed nav {
     display: flex;
     justify-content: space-between;
     background-color: red;
@@ -411,6 +415,41 @@ main nav{
 
 }
 
+.menu-burger {
+    margin-left: 10px;
+    width: 20px;
+    height: auto;
+}
+
+.movies {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: grey;
+    height: 50px;
+    width: 320px;
+}
+
+.movies button {
+    background-color: white;
+    text-align: center;
+    border-radius: 15px;
+    width: 50px;
+}
+
+.container-post {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.post {
+    background-color: #9a9a9a;
+    width: 300px;
+    height: 150px;
+    margin: 10px 0px;
+}
 
 
 /*      --    404 VIEW     --      */
