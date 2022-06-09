@@ -5,7 +5,6 @@ import { navigate } from '../router/router.js';
 const Register = () => {
   const template = // HTML
   `
-  <div id="login-box" class="login-box">
   <img src="img/brand-logo.png" id="logo" class="logo">
   <h2 class="signup-tittle">Create your account</h2>
   <form id="form1">
@@ -23,10 +22,11 @@ const Register = () => {
           <button id="create-account" class="main-btn" type="submit">Crear Cuenta</button>
       </div>
   </form>
-</div>`;
+  `;
 
   const container = document.createElement('div');
   container.innerHTML = template;
+  container.className = 'login-box';
 
   // sign up REGISTRAR
   const form1 = container.querySelector('#form1');
