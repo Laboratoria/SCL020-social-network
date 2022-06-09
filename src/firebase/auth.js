@@ -75,7 +75,7 @@ const google = async () => {
 const out = async () => {
   try {
     await signOut(auth);
-    localStorage.clear();
+    localStorage.clear(); // al hacer sign out se limpia localstorage (limpia sesión)
   } catch (error) {
     console.log('error signout', error);
   }

@@ -4,7 +4,7 @@
 import { orderBy } from 'firebase/firestore';
 import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
-import { readingPost, editPost, gettingDoc, likingPost } from '../firebase/firestore.js';
+import { readingPost, editPost, gettingDoc, deletePost, likingPost } from '../firebase/firestore.js';
 import { navigate } from '../router/router.js';
 
 const Home = () => {
@@ -34,17 +34,8 @@ const Home = () => {
           </div>
       </div>
       <div class="likes-border">
-
           <button class="btn-like" id="btn-like" data-id="${doc.id}" value=${doc.id}>
-              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="2em" height="2em"
-                  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                  <path fill="currentColor"
-                      d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10s10-4.486 10-10S17.514 2 12 2zm4.186 10.74L12 16.926L7.814 12.74a2.745 2.745 0 0 1 0-3.907a2.745 2.745 0 0 1 3.906 0l.28.279l.279-.279a2.745 2.745 0 0 1 3.906 0a2.745 2.745 0 0 1 .001 3.907z" />
-              </svg>
-
-          <button class="btn-like" value=${doc.id}>
           <i class="fas fa-heart"></i>
-
           </button>
           <span id="like-count" class="like-count"> ${posts.previousLike} Likes</span>
       </div>
@@ -80,6 +71,14 @@ const Home = () => {
       });
     });
 
+    // Deleting Post
+    const deleteBtn = container.querySelectorAll('.btn-Delete');
+    deleteBtn.forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        await deletePost(btn.dataset.id);
+      });
+    });
+
     // Liking a Post
     const likeBtn = container.querySelectorAll('.btn-like');
     likeBtn.forEach((btn) => {
@@ -90,6 +89,7 @@ const Home = () => {
         await likingPost(btn.dataset.id);
       });
     });
+    
   });
 
   return container;
