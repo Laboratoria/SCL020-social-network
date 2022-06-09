@@ -18,6 +18,9 @@ const showTemplates = (hash) => {
     const containerRoot = document.getElementById('root');
     containerRoot.innerHTML = '';
     switch(hash) {
+    case '':
+    containerRoot.appendChild(logIn());
+        break;
     case '#/createNewUser':
     containerRoot.appendChild(createUser());
         break;
@@ -26,9 +29,6 @@ const showTemplates = (hash) => {
         break;
     case '#/userProfile':
     containerRoot.appendChild(createUser());
-        break;
-    case '#/logIn':
-    containerRoot.appendChild(home());
         break;
     default:
     containerRoot.appendChild(error404());
