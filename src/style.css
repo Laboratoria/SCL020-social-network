@@ -128,7 +128,6 @@ input{
 #containerHome{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     background: #F2D8B9;
     min-height: 100vh;
@@ -207,13 +206,24 @@ input{
     border-radius: 12px;
 }
 .userNav {
-    display: flex;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: auto auto auto;
     background-color: #F34573;
-    align-self: stretch;
     font-size: 12px;
     color: #FFFFFF;
     width: auto;
+}
+#postIcon {
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+#postName{
+    grid-column-start: 2;
+    grid-column-end: 6;
+}
+#postTitle{
+    grid-column-start: 2;
+    grid-column-end: 6;
 }
 .like{
     display: flex;

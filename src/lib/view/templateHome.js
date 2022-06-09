@@ -35,18 +35,19 @@ export const home = () => {
     </div>
     <div class="postMain">
         <div class="userNav">
-            <div>
-            <i class="fa-solid fa-circle-user fa-2xl"></i>
+            <div id="postIcon">
+                <i class="fa-solid fa-circle-user fa-2xl"></i>
             </div>
-            <div>
-            <h1>Nombre de usuario</h1>
+            <div id="postName">
+                <h1>Nombre de usuario</h1>
             </div>
-            <div>
-            <h2>Titulo baker o eater</h2>
+            <div id="postTitle>
+                <h2>Titulo baker o eater</h2>
             </div>
-            <div>
-            <i class="fa-solid fa-pencil fa-2xl"></i>
-            </div>
+        </div>
+        <div>
+            <input type='text' class='post'>
+        </div>
         <div class="post">
             <h2> aqui va el post</h2> 
         </div>

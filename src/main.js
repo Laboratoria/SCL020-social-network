@@ -20,8 +20,8 @@ const txtEmail = document.getElementById("email")
 const txtPassword = document.getElementById("password")
 const btnLogin = document.getElementById("login")
 
-btnLogin.addEventListener("click", () => {
-    const email = txtEmail.value
-    const password = txtPassword.value
-    login(email, password)
-})
+// btnLogin.addEventListener("click", () => {
+//     const email = txtEmail.value
+//     const password = txtPassword.value
+//     login(email, password)
+// })
