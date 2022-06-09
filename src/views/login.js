@@ -2,9 +2,9 @@ import { login, google } from '../firebase/auth.js';
 import { navigate, next } from '../router/router';
 
 const Login = () => {
-  const template = // HTML 
+  const template = // HTML
   `
-  <div id="login-box" class="login-box">
+  
     <img src="img/brand-logo.png" id="logo" class="logo">
     <h2 class="title-form">Sign In or Register</h2>
     <form id="form" class="form">
@@ -28,11 +28,12 @@ const Login = () => {
         <p>Don't you have an account?</p>
         <a href="#" id="sign-up" class="sign-up">SIGN UP</a>
     </div>
-</div>`;
+    `;
 
   const container = document.createElement('div');
   container.innerHTML = template;
-  container.classList.add = 'container';
+  container.className = 'login-box';
+  container.id = 'login-box';
 
   // Log in ENTRAR
   const form = container.querySelector('#form');
