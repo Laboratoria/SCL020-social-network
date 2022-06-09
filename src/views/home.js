@@ -22,23 +22,6 @@ const Home = () => {
       postStructure += `
       <div class="post-border">
       <div class='post'>
-          <div class="btns-updateDiv">
-              <button class='btn-Edit' data-id='${doc.id}'>Edit</button>
-
-              <!--MODAL-->
-              <dialog class="dialog-modal" data-id="${doc.id}" id="dialog-modal">
-                  <div class="post-box">
-                      <h3 id="user-name" class="user-name">${posts.userName}</h3>
-                      <textarea id="new-review">${posts.review}</textarea>
-                      <p>Película<input type="text" id="new-movie" value="${posts.movie}"></p>
-                      <p>País<input type="text" id="new-country" value="${posts.country}"></p>
-                      <input id="done-button" class="main-btn" type="button" value="Done">
-                  </div>
-              </dialog>
-              <!--MODAL-->
-              
-              <button class='btn-Delete' data-id='${doc.id}'>Delete</button>
-          </div>
           <span>
               <p class="date">${posts.date.toDate().toLocaleString()}</p>
           </span>
@@ -53,11 +36,7 @@ const Home = () => {
       </div>
       <div class="likes-border">
           <button class="btn-like" value=${doc.id}>
-              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="2em" height="2em"
-                  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                  <path fill="currentColor"
-                      d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10s10-4.486 10-10S17.514 2 12 2zm4.186 10.74L12 16.926L7.814 12.74a2.745 2.745 0 0 1 0-3.907a2.745 2.745 0 0 1 3.906 0l.28.279l.279-.279a2.745 2.745 0 0 1 3.906 0a2.745 2.745 0 0 1 .001 3.907z" />
-              </svg>
+          <i class="fas fa-heart"></i>
           </button>
       </div>
   </div>
