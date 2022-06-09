@@ -85,10 +85,10 @@ const Profile = () => {
     const deleteBtn = container.querySelectorAll('.btn-Delete');
     deleteBtn.forEach((btn) => {
       btn.addEventListener('click', async () => {
-        const deleteAlert = confirm('¿Seguro que quieres eliminar este post?')
-        if(deleteAlert == true){
+        const deleteAlert = confirm('¿Estás seguro que quieres eliminar este post?')
+        if(deleteAlert === true){
           await deletePost(btn.dataset.id);
-      alert('se borro tu post')}
+      alert('Post eliminado')}
       });
     });
   });
