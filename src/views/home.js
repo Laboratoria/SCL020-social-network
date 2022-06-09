@@ -1,11 +1,10 @@
 // import { navigate } from '../router/router.js';
 // import { out } from '../firebase/auth.js';
+
 import { orderBy } from 'firebase/firestore';
 import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
-import {
-  readingPost, editPost, gettingDoc, deletePost,
-} from '../firebase/firestore.js';
+import { readingPost, editPost, gettingDoc, likingPost } from '../firebase/firestore.js';
 import { navigate } from '../router/router.js';
 
 const Home = () => {
@@ -43,7 +42,7 @@ const Home = () => {
               <p class="date">${posts.date.toDate().toLocaleString()}</p>
           </span>
           <p class="user-container">
-              <i class="user-name">${posts.userName}: </i>
+              <i class="user-name">${posts.userName}</i>
           </p>
           <div class"movie-info">
               <h3 class="movie-title">${posts.movie}</h3>
@@ -52,7 +51,7 @@ const Home = () => {
           </div>
       </div>
       <div class="likes-border">
-          <button class="btn-like" value=${doc.id}>
+          <button class="btn-like" id="btn-like" data-id="${doc.id}" value=${doc.id}>
               <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="2em" height="2em"
                   preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                   <path fill="currentColor"
@@ -91,10 +90,15 @@ const Home = () => {
         });
       });
     });
-    const deleteBtn = container.querySelectorAll('.btn-Delete');
-    deleteBtn.forEach((btn) => {
+
+    // Liking a Post
+    const likeBtn = container.querySelectorAll('.btn-like');
+    likeBtn.forEach((btn) => {
       btn.addEventListener('click', async () => {
-        await deletePost(btn.dataset.id);
+        // console.log('click btn like, home');
+        //const userId = auth.currentUser.uid;
+        //console.log(userId);
+        await likingPost(btn.dataset.id);
       });
     });
   });
