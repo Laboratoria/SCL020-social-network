@@ -12,18 +12,15 @@ import {
   getRedirectResult,
 } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js';
 
-import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js';
+import { getFirestore, doc, getDoc, getDocs, collection } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js';
 
 import { firebaseConfig } from './config.js';
 
 initializeApp(firebaseConfig);
 const auth = getAuth();
 const provider = new GoogleAuthProvider();
+const firestore = getFirestore()
 // signInWithRedirect(auth, provider);
-
-export {
-  initializeApp, getAnalytics, getAuth, firebaseConfig,
-};
 
 export {
   createUserWithEmailAndPassword,
@@ -33,6 +30,15 @@ export {
   provider,
   getRedirectResult,
   getFirestore,
+  firestore,
   GoogleAuthProvider,
   signInWithRedirect,
+  doc,
+  getDoc,
+  getDocs,
+  collection,
+  initializeApp,
+  getAnalytics,
+  getAuth,
+  firebaseConfig, 
 };

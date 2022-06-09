@@ -7,10 +7,8 @@ function login() {
 <div class="background login">
   <div class="group background-green">
         <h1>PlantGram</h1>
-        <p>Bienvenid@ a la mayor comunidad de plant lovers</p>
+        <p>Bienvenidos a la mayor comunidad de plant lovers</p>
         <h2>Inicia sesión</h2>
-
-        
         <input type="email" placeholder="Usuario" />
         <input type="password" placeholder="Contraseña" />
         
@@ -20,10 +18,6 @@ function login() {
         <button id="logInButton">
           <img width="25" src="./assets/google.png" /> Gmail
         </button>
-        <button>
-          <img width="25" src="./assets/facebook.png" /> Facebook
-        </button>
-
     </div>
 </div>`;
   const container = document.createElement("div");
