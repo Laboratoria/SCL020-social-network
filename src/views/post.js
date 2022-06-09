@@ -3,6 +3,8 @@ import { navigate } from '../router/router.js';
 import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
 import { createPost} from '../firebase/firestore.js';
+import avatarUrl from '../img/main-avatar.png'
+
 
 const Post = () => {
   const userName = localStorage.getItem('userName') || 'User';
@@ -11,7 +13,7 @@ const Post = () => {
     `<div class="post-box">
     <button id="dicardButton" class="btn-discard">X</button>
     <form id="postBox">
-      <img class ="user-avatar" src="../img/main-avatar.png" />
+      <img class ="user-avatar" src="${avatarUrl}" />
       <h3 id="user-name" class="user-name">${userName}</h3>
       <textarea required id="review" placeholder="Movie review"></textarea>
       <p>Película<input type="text" id="movie"></p>

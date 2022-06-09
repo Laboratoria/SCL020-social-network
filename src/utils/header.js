@@ -1,10 +1,12 @@
 import { navigate } from '../router/router.js';
 import { out } from '../firebase/auth.js';
+import logoUrl from '../img/brand-logo.png';
+import avatarUrl from '../img/main-avatar.png'
 
 export const Header = () => {
   const template = // HTML
   `
-  <img class="brand-logo" src="../img/brand-logo.png" />
+  <img class="brand-logo" src="${logoUrl}" />
   <div class="search-box">
       <input type="text" class="search-input" placeholder="Search..">
       <button class="search-button">
@@ -12,7 +14,7 @@ export const Header = () => {
       </button>
   </div>
   <div class="dropdown">
-    <img type="checkbox" id="main-avatar" class="main-avatar" src="../img/main-avatar.png" />
+    <img type="checkbox" id="main-avatar" class="main-avatar" src="${avatarUrl}" />
      <div class="dropdown-content">
      <a id="profile">Profile</a>
      <a href="#">Likes</a>

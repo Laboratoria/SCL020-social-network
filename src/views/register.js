@@ -1,11 +1,12 @@
 /* eslint-disable import/no-cycle */
 import { create } from '../firebase/auth.js';
 import { navigate } from '../router/router.js';
+import logoUrl from '../img/brand-logo.png'
 
 const Register = () => {
   const template = // HTML
   `
-  <img src="img/brand-logo.png" id="logo" class="logo">
+  <img src="${logoUrl}" id="logo" class="logo">
   <h2 class="signup-tittle">Create your account</h2>
   <form id="form1">
       <div>
