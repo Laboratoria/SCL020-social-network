@@ -77,18 +77,24 @@ const deletePost = async (id) => {
 };
 
 const profilePosts = async (callback) => {
-  try {
     const userId = localStorage.getItem('userUid');
-    console.log(userId);
     const q = query(collection(db, 'posts'), where('userId', '==', userId));
     onSnapshot(q, (callback));
-  } catch (error) {
-    console.log(error, 'malo');
-  }
 };
 
+const mapPosts = async (countryName, callback) => {
+  try{
+    const q = query(collection(db, 'posts'), where('country', '==', countryName));
+    onSnapshot(q, (callback));
+  }catch(error){
+    console.log(error);
+  }
+
+};
+
+
 export {
-  createPost, readingPost, countryPosts, editPost, gettingDoc, deletePost, profilePosts,
+  createPost, readingPost, editPost, gettingDoc, deletePost, profilePosts, mapPosts
 };
 
 // const q = query(result.query, orderBy('date', 'desc'), limit(5)); // , limit(n)

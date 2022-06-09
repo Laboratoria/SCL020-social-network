@@ -1,11 +1,17 @@
 import { navigate } from '../router/router.js';
 import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
+import { mapPosts } from '../firebase/firestore.js';
 
 const Map = () => {
+
+  const container = document.createElement('div');
+  container.className = 'map-page';
+  const postContainer = document.createElement('div');
+  postContainer.className= "map-feed";
+
   const template = //HTML
   `
-
   <svg class='map'version="1.2" viewbox="0 0 2000 857" xmlns="http://www.w3.org/2000/svg">
  <path d="M1383 261.6l1.5 1.8-2.9 0.8-2.4 1.1-5.9 0.8-5.3 1.3-2.4 2.8 1.9 2.7 1.4 3.2-2 2.7 0.8 2.5-0.9 2.3-5.2-0.2 3.1 4.2-3.1 1.7-1.4 3.8 1.1 3.9-1.8 1.8-2.1-0.6-4 0.9-0.2 1.7-4.1 0-2.3 3.7 0.8 5.4-6.6 2.7-3.9-0.6-0.9 1.4-3.4-0.8-5.3 1-9.6-3.3 3.9-5.8-1.1-4.1-4.3-1.1-1.2-4.1-2.7-5.1 1.6-3.5-2.5-1 0.5-4.7 0.6-8 5.9 2.5 3.9-0.9 0.4-2.9 4-0.9 2.6-2-0.2-5.1 4.2-1.3 0.3-2.2 2.9 1.7 1.6 0.2 3 0 4.3 1.4 1.8 0.7 3.4-2 2.1 1.2 0.9-2.9 3.2 0.1 0.6-0.9-0.2-2.6 1.7-2.2 3.3 1.4-0.1 2 1.7 0.3 0.9 5.4 2.7 2.1 1.5-1.4 2.2-0.6 2.5-2.9 3.8 0.5 5.4 0z" id="AF" name="Afghanistan">
  </path>
@@ -955,26 +961,53 @@ const Map = () => {
  </circle>
 </svg>
   `
-//<iframe class ="map-image"src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d50079925.30361331!2d-57.02526875907844!3d39.99423763844563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2scl!4v1654391258444!5m2!1ses-419!2scl" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-  const container = document.createElement('div');
-  container.className = 'map-page';
-
   const middle = document.createElement('div');
-  middle.className ="middle";
+  middle.className ="middle-map";
   middle.innerHTML = template;
+  const country = middle.querySelectorAll('path');
+  country.forEach((p)=>{
+    p.addEventListener('click',function(){
+       let countryName = p.classList.value;
+       if (countryName===""){
+        countryName=this.attributes.name.value;
+       }
+       console.log(countryName)
+
+  mapPosts((countryName),(post) => {
+    postContainer.innerHTML = '';
+    let postStructure = '';
+    // console.log(post);
+    post.forEach((doc) => {
+      const posts = doc.data();
+      postStructure += `
+      <div class="post-border-map">
+        <div class='post-map'>
+          <p class="user-container-map"><i class="user-name-map">${posts.userName} posted: </i></p>
+          <p class="movie-review-map">${posts.review}</p>
+          <p class="date-map">${posts.date.toDate().toLocaleString()}</p>
+          <div class="movie-info-map">
+            <div class="movie-title-map"><h3 >${posts.movie}</h3> </div>
+            <p class='movie-country-map'><b>País:</b> ${posts.country} </p>
+          </div>
+          <button class="btn-like-map" data-id=${doc.id}>
+            <i class="fas fa-heart"></i>
+          </button>
+      </div>
+         
+  </div>
+    `;
+    });
+    postContainer.innerHTML = postStructure;
+  });
+})
+})
+
+
+  middle.appendChild(postContainer)
+  
    container.append(Header(),middle, Footer());
 
-   const country = container.querySelectorAll('path');
-   country.forEach((path)=>{
-     path.addEventListener('click',()=>{
-       let countryName = path.class;
-       if (countryName===undefined){
-        countryName=path.name;
-       }
-       console.log(path.getAttributeNames())
-     })
-   })
+
 
 
   return container;
