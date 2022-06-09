@@ -97,7 +97,7 @@ const profilePosts = async (callback) => {
 };
 
 
-// Liking Posts in Home
+// Liking Posts 
 const likingPost = async (id) => {
   const postRef = doc(db, 'posts', id);
   const userUid = auth.currentUser.uid;

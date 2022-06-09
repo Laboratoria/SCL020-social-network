@@ -1,16 +1,15 @@
 import { navigate } from '../router/router.js';
 import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
-import { mapPosts } from '../firebase/firestore.js';
+import { mapPosts, likingPost } from '../firebase/firestore.js';
 
 const Map = () => {
-
   const container = document.createElement('div');
   container.className = 'map-page';
   const postContainer = document.createElement('div');
-  postContainer.className= "map-feed";
+  postContainer.className = 'map-feed';
 
-  const template = //HTML
+  const template = // HTML
   `
   <svg class='map'version="1.2" viewbox="0 0 2000 857" xmlns="http://www.w3.org/2000/svg">
  <path d="M1383 261.6l1.5 1.8-2.9 0.8-2.4 1.1-5.9 0.8-5.3 1.3-2.4 2.8 1.9 2.7 1.4 3.2-2 2.7 0.8 2.5-0.9 2.3-5.2-0.2 3.1 4.2-3.1 1.7-1.4 3.8 1.1 3.9-1.8 1.8-2.1-0.6-4 0.9-0.2 1.7-4.1 0-2.3 3.7 0.8 5.4-6.6 2.7-3.9-0.6-0.9 1.4-3.4-0.8-5.3 1-9.6-3.3 3.9-5.8-1.1-4.1-4.3-1.1-1.2-4.1-2.7-5.1 1.6-3.5-2.5-1 0.5-4.7 0.6-8 5.9 2.5 3.9-0.9 0.4-2.9 4-0.9 2.6-2-0.2-5.1 4.2-1.3 0.3-2.2 2.9 1.7 1.6 0.2 3 0 4.3 1.4 1.8 0.7 3.4-2 2.1 1.2 0.9-2.9 3.2 0.1 0.6-0.9-0.2-2.6 1.7-2.2 3.3 1.4-0.1 2 1.7 0.3 0.9 5.4 2.7 2.1 1.5-1.4 2.2-0.6 2.5-2.9 3.8 0.5 5.4 0z" id="AF" name="Afghanistan">
@@ -960,26 +959,27 @@ const Map = () => {
  <circle cx="1798.2" cy="719.3" id="2">
  </circle>
 </svg>
-  `
+  `;
   const middle = document.createElement('div');
-  middle.className ="middle-map";
+  middle.className = 'middle-map';
   middle.innerHTML = template;
-  const country = middle.querySelectorAll('path');
-  country.forEach((p)=>{
-    p.addEventListener('click',function(){
-       let countryName = p.classList.value;
-       if (countryName===""){
-        countryName=this.attributes.name.value;
-       }
-       console.log(countryName)
 
-  mapPosts((countryName),(post) => {
-    postContainer.innerHTML = '';
-    let postStructure = '';
-    // console.log(post);
-    post.forEach((doc) => {
-      const posts = doc.data();
-      postStructure += `
+  const country = middle.querySelectorAll('path');
+  country.forEach((p) => {
+    p.addEventListener('click', function () {
+      let countryName = p.classList.value;
+      if (countryName === '') {
+        countryName = this.attributes.name.value;
+      }
+      console.log(countryName);
+
+      mapPosts((countryName), (post) => {
+        postContainer.innerHTML = '';
+        let postStructure = '';
+        // console.log(post);
+        post.forEach((doc) => {
+          const posts = doc.data();
+          postStructure += `
       <div class="post-border-map">
         <div class='post-map'>
           <p class="user-container-map"><i class="user-name-map">${posts.userName} posted: </i></p>
@@ -991,27 +991,30 @@ const Map = () => {
           </div>
           <button class="btn-like-map" data-id=${doc.id}>
             <i class="fas fa-heart"></i>
+            <span id="like-count" class="like-count"> ${posts.previousLike} Likes</span>
           </button>
       </div>
-         
   </div>
     `;
+        });
+        postContainer.innerHTML = postStructure;
+
+        // Linking Posts in Map View
+        const likeBtn = container.querySelectorAll('.btn-like-map');
+        likeBtn.forEach((btn) => {
+          btn.addEventListener('click', async () => {
+            //console.log('dando click like btn en map');
+            await likingPost(btn.dataset.id);
+          });
+        });
+      });
     });
-    postContainer.innerHTML = postStructure;
   });
-})
-})
 
-
-  middle.appendChild(postContainer)
-  
-   container.append(Header(),middle, Footer());
-
-
-
+  middle.appendChild(postContainer);
+  container.append(Header(), middle, Footer());
 
   return container;
 };
-
 
 export default Map;

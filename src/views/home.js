@@ -34,7 +34,7 @@ const Home = () => {
           </div>
       </div>
       <div class="likes-border">
-          <button class="btn-like" id="btn-like" data-id="${doc.id}" value=${doc.id}>
+          <button class="btn-like" id="btn-like" data-id="${doc.id}">
           <i class="fas fa-heart"></i>
           </button>
           <span id="like-count" class="like-count"> ${posts.previousLike} Likes</span>
@@ -84,12 +84,9 @@ const Home = () => {
     likeBtn.forEach((btn) => {
       btn.addEventListener('click', async () => {
         // console.log('click btn like, home');
-        //const userId = auth.currentUser.uid;
-        //console.log(userId);
         await likingPost(btn.dataset.id);
       });
     });
-    
   });
 
   return container;
