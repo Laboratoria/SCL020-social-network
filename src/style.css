@@ -243,3 +243,148 @@ input{
 #img404{
     width: 500px;
 }
+
+/* ***************Edit */
+
+.postEditContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #FFD5E5;
+    margin-left: 150px;
+    padding: 1px 16px;
+    height: 900px;
+    width: 1200px;
+ 
+}
+
+
+.userEditContain{
+    display: flex;
+    flex-direction: column;
+    
+    background-color: #F2D8B9;
+    margin-left: 120px;
+    margin-right: 350px;
+    height: 900px;
+    width: 80%;
+}
+
+#editImg{
+    display: flex;
+    z-index: 1;
+    position: absolute;
+    align-items: center;
+    background-color: #F34573;
+    margin-left: 45px;
+    margin-right: 350px;
+    margin-top: 30px;
+    height: 130px;
+    width: 870px;
+    border-radius: 20px;
+}
+
+#logo3{
+margin-left: 20px;
+}
+
+.articlesEdit{
+    margin-left: 20px;
+    font-size: 20px;
+    color: #FFFFFF;
+
+}
+
+.misPublicaciones{
+    margin-top: 200px;
+    font-size: 30px;
+    color: #F34573;
+    
+    margin-left: 45px;
+}
+#editCuadro2{
+    display: flex;
+    z-index: 1;
+    position: absolute;
+    align-items: center;
+    background-color: #F34573;
+    margin-left: 45px;
+    margin-right: 350px;
+    margin-top: 260px;
+    height: 50px;
+    width: 870px;
+    border-radius: 20px 20px 0px 0px;
+
+}
+.articlesEdit{
+    margin-left: 20px;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+.articlesEdit2{
+    margin-left: 20px;
+    font-size: 15px;
+    color: #FFFFFF;
+    line-height: 0.5;
+    margin-left: 20px;
+}
+
+#editBlanco{
+    display: flex;
+    z-index: 1;
+    position: absolute;
+    background-color: #FFFFFF;
+    margin-left: 45px;
+    margin-right: 350px;
+    margin-top: 311px;
+    height: 180px;
+    width: 870px;
+}
+
+.articlesEdit3{
+        margin-left: 20px;
+        font-size: 15px;
+        color: black;
+        line-height: 0.5;
+        margin-left: 20px;
+        
+}
+#editCuadro3{
+    display: flex;
+    z-index: 1;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFD5E5;
+    margin-left: 45px;
+    margin-right: 350px;
+    margin-top: 480px;
+    height: 60px;
+    width: 870px;
+    border-radius: 0px 0px 20px 20px;
+
+}
+
+.eliminar, .cancelar{
+    margin-right: 50px;
+    height: 30px;
+    width: 150px;
+    border-radius: 15px;
+    background-color: #F34573;
+    color: #FFFFFF;
+    font-size: 15px;
+
+}
+
+.publicar{
+    margin-right: 50px;
+    height: 30px;
+    width: 150px;
+    border-radius: 15px;
+    background-color: #35B0AB;
+    color: #FFFFFF;
+    font-size: 15px;
+
+}
+
