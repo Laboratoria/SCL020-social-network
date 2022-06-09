@@ -32,7 +32,7 @@ const createPost = async (review, movie, country) => {
     movie,
     country,
     likesArr: [],
-    previousLike: false,
+    previousLike: 0,
     date: Timestamp.fromDate(new Date()),
   });
   // console.log(docRef);
@@ -91,46 +91,31 @@ const profilePosts = async (callback) => {
   }
 };
 
-// Rendering current likes count
-const renderLike = (id) => {
-  // let count = 0;
-  const postRef = doc(db, 'posts', id);
-  const result = onSnapshot(postRef, (doc) => {
-    const likesCounter = doc.data().likesArr.length;
-    console.log(likesCounter);
-  });
-
-  return result;
-};
-
-// Fetching likes
-const fetchLikes = async (userUid, postRef, likesPost, callback) => {
-  if (likesPost.includes(userUid)) {
-    await updateDoc(postRef, {
-      likesArr: arrayRemove(userUid),
-      previousLike: true,
-    });
-  } else {
-    await updateDoc(postRef, {
-      likesArr: arrayUnion(userUid),
-      previousLike: false,
-    });
-  }
-
-  callback();
-};
 
 // Liking Posts in Home
 const likingPost = async (id) => {
   const postRef = doc(db, 'posts', id);
   const userUid = auth.currentUser.uid;
-  // console.log(userUid, 'en liking post home');
   const post = await getDoc(postRef);
-  // console.log(post, "post en liking post")
   const likesPost = post.data().likesArr;
-  await fetchLikes(userUid, postRef, likesPost, () => {
-    renderLike(id);
-  });
+  const likesCounter = post.data().previousLike;
+
+  if (likesPost.includes(userUid)) {
+    await updateDoc(postRef, {
+      likesArr: arrayRemove(userUid),
+      previousLike: likesCounter - 1,
+    });
+  } else {
+    await updateDoc(postRef, {
+      likesArr: arrayUnion(userUid),
+      previousLike: likesCounter + 1,
+    });
+  }
+
+  const currentLikes = likesPost.length;
+  console.log(currentLikes);
+
+
 };
 
 export {
