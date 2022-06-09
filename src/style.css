@@ -264,7 +264,7 @@ p {
   z-index: 3;
 }
  
-.new-post div img {
+.avatar-new-post {
   float: left;
   width: 60px;
   height: 60px;

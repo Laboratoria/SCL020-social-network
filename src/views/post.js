@@ -13,7 +13,7 @@ const Post = () => {
     `<div class="post-box">
     <button id="dicardButton" class="btn-discard">X</button>
     <form id="postBox">
-      <img class ="user-avatar" src="${avatarUrl}" />
+      <img class ="avatar-new-post" src="${avatarUrl}" />
       <h3 id="user-name" class="user-name">${userName}</h3>
       <textarea required id="review" placeholder="Movie review"></textarea>
       <p>Película<input type="text" id="movie"></p>
