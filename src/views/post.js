@@ -13,7 +13,7 @@ const Post = () => {
     <form id="postBox">
       <img class ="user-avatar" src="../img/main-avatar.png" />
       <h3 id="user-name" class="user-name">${userName}</h3>
-      <textarea id="review" placeholder="Movie review"></textarea>
+      <textarea required id="review" placeholder="Movie review"></textarea>
       <p>Película<input type="text" id="movie"></p>
       <p>País
       <select id="country" name="country" class="form-control">
