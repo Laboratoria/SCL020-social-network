@@ -379,6 +379,7 @@ svg{
 .post-map{
   display: flex;
   flex-direction: column;
+  height: 100%;
 
 }
 /* post-map */
