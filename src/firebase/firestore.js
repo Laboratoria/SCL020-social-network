@@ -1,4 +1,3 @@
-import { async } from 'regenerator-runtime';
 import {
   db,
   collection,
@@ -15,6 +14,7 @@ import {
   onSnapshot,
   deleteDoc,
   where,
+  arrayRemove, arrayUnion,
 } from './init.js';
 
 // Creating Posts collection and adding new docs to collection
@@ -31,6 +31,8 @@ const createPost = async (review, movie, country) => {
     review,
     movie,
     country,
+    likesArr: [],
+    previousLike: 0,
     date: Timestamp.fromDate(new Date()),
   });
   // console.log(docRef);
@@ -72,13 +74,22 @@ const countryPosts = async (country) => {
   return filterQ.docs;
 };
 
+// Deleting Posts
 const deletePost = async (id) => {
   await deleteDoc(doc(db, 'posts', id));
 };
 
+// Profile Posts to delete posts
 const profilePosts = async (callback) => {
+
+  try {
+    const userUid = localStorage.getItem('userUid');
+    // console.log(userUid);
+    const q = query(collection(db, 'posts'), orderBy('date', 'desc'));
+
     const userId = localStorage.getItem('userUid');
     const q = query(collection(db, 'posts'), where('userId', '==', userId));
+
     onSnapshot(q, (callback));
 };
 
@@ -93,8 +104,35 @@ const mapPosts = async (countryName, callback) => {
 };
 
 
+// Liking Posts in Home
+const likingPost = async (id) => {
+  const postRef = doc(db, 'posts', id);
+  const userUid = auth.currentUser.uid;
+  const post = await getDoc(postRef);
+  const likesPost = post.data().likesArr;
+  const likesCounter = post.data().previousLike;
+
+  if (likesPost.includes(userUid)) {
+    await updateDoc(postRef, {
+      likesArr: arrayRemove(userUid),
+      previousLike: likesCounter - 1,
+    });
+  } else {
+    await updateDoc(postRef, {
+      likesArr: arrayUnion(userUid),
+      previousLike: likesCounter + 1,
+    });
+  }
+
+  const currentLikes = likesPost.length;
+  console.log(currentLikes);
+
+
+};
+
+
 export {
-  createPost, readingPost, editPost, gettingDoc, deletePost, profilePosts, mapPosts
+  createPost, readingPost, editPost, gettingDoc, deletePost, profilePosts, likingPost, mapPosts
 };
 
 // const q = query(result.query, orderBy('date', 'desc'), limit(5)); // , limit(n)

@@ -68,7 +68,7 @@ const Profile = () => {
           if (mod.dataset.id === btn.dataset.id) {
             mod.showModal();
 
-            // Updating Post
+            // Updating Post in Profile
             const doneBtn = mod.querySelector('#done-button');
             doneBtn.addEventListener('click', async () => {
               const newReview = mod.querySelector('#new-review').value;
@@ -80,6 +80,8 @@ const Profile = () => {
         });
       });
     });
+
+    // Deleting Posts in Profile
     const deleteBtn = container.querySelectorAll('.btn-Delete');
     deleteBtn.forEach((btn) => {
       btn.addEventListener('click', async () => {
