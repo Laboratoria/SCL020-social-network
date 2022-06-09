@@ -451,6 +451,19 @@
     margin: 10px 0px;
 }
 
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    width: 150px;
+}
+
+.user-info img {
+    width: 50px;
+    height: auto;
+}
+
 
 /*      --    404 VIEW     --      */
 

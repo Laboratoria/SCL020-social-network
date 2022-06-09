@@ -17,16 +17,20 @@ export const feed = () => {
             <div>
                 <div class="container-post">
                     <div class="post">
-                        <img src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-profile%20(1).png?raw=true" alt="user-img">
-                        <p>@user_name</p>
-                        <p>userText</p>
+                        <div class="user-info">
+                            <img src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-profile%20(1).png?raw=true" alt="user-img">
+                            <p>@user_name</p>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, modi nam!</p>
                         <button class="btn-popCorn">PopCorn</button>
                         <!-- <button class="btn-comment">Comment</button> -->
                     </div>
                     <div class="post">
-                        <img src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-profile%20(1).png?raw=true" alt="user-img">
-                        <p>@user_name</p>
-                        <p>userText</p>
+                        <div class="user-info">
+                            <img src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-profile%20(1).png?raw=true" alt="user-img">
+                            <p>@user_name</p>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, modi nam!</p>
                         <button class="btn-popCorn">PopCorn</button>
                         <!-- <button class="btn-comment">Comment</button> -->
                     </div>
