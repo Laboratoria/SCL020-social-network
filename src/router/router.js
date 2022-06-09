@@ -8,12 +8,12 @@ import Profile from '../views/profile.js';
 import { validateState } from '../firebase/auth.js';
 
 const routes = {
-  '/': Login(),
-  '/home': Home(),
-  '/register': Register(),
-  '/post': Post(),
-  '/map': Map(),
-  '/profile': Profile(),
+  '/': Login,
+  '/home': Home,
+  '/register': Register,
+  '/post': Post,
+  '/map': Map,
+  '/profile': Profile,
 };
 
 const root = document.getElementById('root');
@@ -21,14 +21,15 @@ const root = document.getElementById('root');
 const next = (pathname) => {
   window.history.pushState({}, pathname, window.location.origin + pathname);
   root.innerHTML = '';
-  root.appendChild(routes[pathname]);
+  root.appendChild(routes[pathname]());
+
 };
 
 const navigate = (pathname) => { validateState(next, pathname); };
 
 window.onpopstate = () => {
   root.innerHTML = '';
-  root.appendChild(routes[window.location.pathname]);
+  root.appendChild(routes[window.location.pathname]());
 };
 
 export { navigate, next };

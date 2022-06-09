@@ -15,8 +15,8 @@
     "stylelint": "stylelint --aei src/**/*.css",
     "pretest": "npm run htmlhint && npm run eslint && npm run stylelint",
     "test": "jest --coverage",
-    "start": "serve -s src/",
-    "dev": "vite src",
+    "start": "vite --host",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -31,10 +31,10 @@
     "htmlhint": "^1.0.0",
     "jest": "^27.0.1",
     "regenerator-runtime": "^0.13.1",
-    "serve": "^13.0.2",
+    
     "stylelint": "^14.1.0",
     "stylelint-config-recommended": "^6.0.0",
-    "vite": "^2.9.8"
+    "vite": "^2.9.10"
   },
   "engines": {
     "node": ">=14"
