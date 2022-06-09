@@ -126,6 +126,7 @@ const likingPost = async (id) => {
   const userUid = auth.currentUser.uid;
   // console.log(userUid, 'en liking post home');
   const post = await getDoc(postRef);
+  // console.log(post, "post en liking post")
   const likesPost = post.data().likesArr;
   await fetchLikes(userUid, postRef, likesPost, () => {
     renderLike(id);
