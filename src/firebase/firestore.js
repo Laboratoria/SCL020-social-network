@@ -81,14 +81,26 @@ const deletePost = async (id) => {
 
 // Profile Posts to delete posts
 const profilePosts = async (callback) => {
+
   try {
     const userUid = localStorage.getItem('userUid');
     // console.log(userUid);
     const q = query(collection(db, 'posts'), orderBy('date', 'desc'));
+
+    const userId = localStorage.getItem('userUid');
+    const q = query(collection(db, 'posts'), where('userId', '==', userId));
+
     onSnapshot(q, (callback));
-  } catch (error) {
-    console.log(error, 'malo');
+};
+
+const mapPosts = async (countryName, callback) => {
+  try{
+    const q = query(collection(db, 'posts'), where('country', '==', countryName));
+    onSnapshot(q, (callback));
+  }catch(error){
+    console.log(error);
   }
+
 };
 
 
@@ -118,8 +130,9 @@ const likingPost = async (id) => {
 
 };
 
+
 export {
-  createPost, readingPost, countryPosts, editPost, gettingDoc, deletePost, profilePosts, likingPost,
+  createPost, readingPost, editPost, gettingDoc, deletePost, profilePosts, likingPost, mapPosts
 };
 
 // const q = query(result.query, orderBy('date', 'desc'), limit(5)); // , limit(n)
