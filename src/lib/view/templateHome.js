@@ -3,13 +3,13 @@ export const home = () => {
     divHome.setAttribute('id', 'containerHome')
     const viewHome = `
     <div class="menu__side" id="menu_side">
-    <div id="containImg">
-    <img src="img/logo2.png" id="logo2">
-    </div>
-    <div class="options__menu">	
-        <a href="#/userProfile" class="selected">
-            <div class="option">
-                <i class="fa-solid fa-circle-user fa-xl" title="Perfil" ></i>
+        <div id="containImg">
+            <img src="img/logo2.png" id="logo2">
+        </div>
+        <div class="options__menu">	
+            <a href="#/userProfile" class="selected">
+                <div class="option">
+                    <i class="fa-solid fa-circle-user fa-xl" title="Perfil" ></i>
                 <h4> nombre usuario titulo</h4>
             </div>
         </a>
@@ -25,7 +25,7 @@ export const home = () => {
                 <h4>Buscar</h4>
             </div>
         </a>
-        <a href="">
+        <a href="#/logIn">
             <div class="option">
                 <i class="fa-solid fa-arrow-right-from-bracket fa-xl" title="Cerrar sesión"></i>
                 <h4>Cerrar cesion</h4>
@@ -34,27 +34,50 @@ export const home = () => {
         </div>
     </div>
     <div class="postMain">
-        <div class="userNav">
-            <div id="postIcon">
-                <i class="fa-solid fa-circle-user fa-2xl"></i>
+        <div class="postBody">
+            <div class="userNav">
+                <div>
+                    <i class="fa-solid fa-circle-user fa-2xl"></i>
+                </div>
+                <div>
+                    <h1>Nombre de usuario</h1>
+                </div>
+                <div>
+                    <h2>Titulo baker o eater</h2>
+                </div>
             </div>
-            <div id="postName">
-                <h1>Nombre de usuario</h1>
+            <div class="post">
+                <h2> aqui va el post</h2> 
             </div>
-            <div id="postTitle>
-                <h2>Titulo baker o eater</h2>
+            <div class="like">
+                <img class ="cupcakeImg" src="img/cuplike.png" alt="cuplike">
             </div>
         </div>
-        <div>
-            <input type='text' class='post'>
+    <div class="postBody">
+        <div class="userNav">
+            <div>
+                <i class="fa-solid fa-circle-user fa-2xl"></i>
+            </div>
+            <div>
+                <h1>Nombre de usuario</h1>
+            </div>
+            <div>
+                <h2>Titulo baker o eater</h2>
+            </div>
         </div>
         <div class="post">
             <h2> aqui va el post</h2> 
         </div>
         <div class="like">
-            <img src="img/cuplike.png" alt="cuplike">
+            <div>
+                <img src="img/cuplike.png" class ="cupcakeImg" alt="cuplike">
+            </div>
+            <div class="pencilIcon">
+                <i class="fa-solid fa-pencil fa-2xl"></i>
+            </div>
         </div>
     </div>
+</div>
 `
 divHome.innerHTML = viewHome;
 return divHome;
