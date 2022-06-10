@@ -60,6 +60,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-position: 0% 10%;
 }
 
 
@@ -190,33 +191,20 @@ h2 {
   font-family: 'Kite One', regular;
 }
 
-
-
-.createAccountButton {
-  display: flex;
-  background-color: #F8AD67;
-  font-family: 'Kite One', regular;
-  color: black;
-  letter-spacing: 0.4vh;
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1.5vh;
-  margin-bottom: auto;
-  padding: 0.4vh 1.7vh;
-  text-align: center;
-  font-size: 2.3vw;
-  border-radius: 1.4vh;
-  text-shadow: black;
+.message{
+  font-size: 12px;
 }
+.createAccountButton {
+  background-color: #E48A7B;
+} 
 
-.backButton {
-  background-color: #01474ddc;
+.backButton, .btn-registrate { 
   box-shadow: none;
   font-family: 'Kite One', regular;
-  color: black;
+  color: #BCE4D7;
+  text-decoration: none;
 }
+ 
 
 /* FLOWER MENU */
 #navMenu{
@@ -229,6 +217,7 @@ h2 {
   height:9%;
   transition:4s all;
   z-index:1;
+  max-width: 250px;
 }
 
 #navMenu ul{
@@ -305,10 +294,11 @@ h2 {
   background-color: #01474D;
   color: #5F6C65;
   display: inline-block;
-  width: 580px;
+  width: 100%;
   height: 100px;
   margin: 0;
   padding: 0;
+  position: fixed;
 }
 
 h5 {
@@ -353,6 +343,7 @@ h5 {
 .dashboard{
   width: 400px;
   margin: 0 auto;
+  margin-top: 100px;
 }
 
 .publicationsButton {
@@ -370,6 +361,7 @@ ul li {
   text-align: center;
   justify-content: center;
   align-items: center;
+  margin-top: 100px;
 }
 
 #img-perfil {
@@ -468,7 +460,9 @@ hr {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-
+}
+.grupo{
+  margin-top: 100px;
 }
 .grupo header{
   background: #01474D;
