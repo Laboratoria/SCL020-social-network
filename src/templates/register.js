@@ -11,8 +11,8 @@ function register() {
         <input type="password" placeholder="Contraseña" />
         <input type="repPassword" placeholder="Repite la contraseña" />
         <button class="createAccountButton" id="createAccount"> CREAR CUENTA </button>
-        <h2>¿Ya tienes una cuenta?</h2>
-        <button class="backButton"> <a href="#" id="signIn">Inicia sesión aquí</a></button>
+        <h2>¿Ya tienes una cuenta?  <a href="#" id="signIn" class="backButton"> Inicia sesión aquí</a></h2>
+        
     </div>
 </div>`;
   const container = document.createElement("div");

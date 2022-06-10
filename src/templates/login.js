@@ -13,7 +13,7 @@ function login() {
         <input type="password" placeholder="Contraseña" />
         
         <button class="entrar"> Entrar </button>
-        <p>¿Aún no tienes una cuenta? <a href="#" id="register">Regístrate aquí </a></p>
+        <p class="message">¿Aún no tienes una cuenta? <a href="#" id="register" class="btn-registrate">Regístrate aquí </a></p>
         <p>O ingresa con</p>
         <button id="logInButton">
           <img width="25" src="./assets/google.png" /> Gmail
