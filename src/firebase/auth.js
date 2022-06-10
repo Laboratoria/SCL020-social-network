@@ -28,43 +28,29 @@ const createUser = async (auth, email, password) => {
 };
 
 // SIGN IN WITH EMAIL
-// const signIn = getAuth();
-// signInWithEmailAndPassword(auth, email, password)
-//   .then((userCredential) => {
-//     // Signed in
-//     const user = userCredential.user;
-//     // ...
-//   })
-//   .catch((error) => {
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-//   });
-
-// const signIn = async (email, password) => {
-//   try {
-//     await signInWithEmailAndPassword(auth, email, password);
-//   } catch (error) {
-//     throw error.message;
-//   }
-// };
+const signIn = async (email, password) => {
+  try {
+    const response = await signInWithEmailAndPassword(auth, email, password);
+    console.log('user login with email and password')
+    return response;
+  } catch (error) {
+    console.log(error);
+    throw error.message;
+  }
+};
 
 // SIGN OUT WITH EMAIL
-// const signOutWithEmail = getAuth();
-// signOut(auth)
-//   .then(() => {
-//     // Sign-out successful.
-//   })
-//   .catch((error) => {
-//     // An error happened.
-//   });
+const signOutWithEmail = async (auth) =>{
+  try {
+    const response = await signOut(auth);
+    console.log('user logout');
+    return response;
+  } catch (error) {
+    console.log(error);
+    return error.message;
+  }
+}
 
-// const signOutWithEmail = async () => {
-//   try {
-//    await signOut(auth);
-//   } catch (error) {
-//     throw error.message;
-//   }
-// };
 
 // REDIRECT GOOGLE ACCESS
 const redirectResult = function(){
@@ -126,6 +112,6 @@ const logIn = async function(){
 // });
 
 export {
-  logIn, redirectResult, createUser, onAuthStateChanged
+  logIn, redirectResult, createUser, onAuthStateChanged, signOutWithEmail, signIn
 };
 // getAuth, signIn, signOutWithEmail,

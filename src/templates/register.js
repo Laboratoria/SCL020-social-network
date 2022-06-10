@@ -11,6 +11,7 @@ function register() {
     <h2>Regístrate</h2>
       <input type="email" id="email" placeholder="Usuario" />
       <input type="password" id="password" placeholder="Contraseña" />
+      <p id="alert"></p>
       <button class="createAccountButton" id="createAccount"> CREAR CUENTA </button>
       <h2>¿Ya tienes una cuenta?  <a href="#" id="signIn" class="backButton"> Inicia sesión aquí</a></h2>
   </div>
@@ -30,11 +31,15 @@ function register() {
     console.log(email, password);
     try {
       await createUser(auth, email, password);
-      console.log(auth, email, password);
+      // console.log(auth, email, password);
+      navigate("news"); 
     } catch (error) {
-      throw error.message;
+      const alertError = container.querySelector("#alert");
+      console.log(error);
+      if(error.includes('auth/email-already-in-use')){
+        alertError.innerHTML = 'Usuario registrado!';
+      }
     }
-    navigate("news");
   });
   return container;
 }
