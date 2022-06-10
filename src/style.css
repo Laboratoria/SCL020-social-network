@@ -405,14 +405,24 @@
 
 .feed {
     width: 320px;
+    height: 568px;
 }
 
 .feed nav {
     display: flex;
     justify-content: space-between;
-    background-color: red;
+    align-items: center;
     width: 320px;
+    height: 60px;
+    margin: 0px 5px;
+}
 
+nav input{
+    height: 20px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+    border: 1px solid green;
 }
 
 .menu-burger {
@@ -423,18 +433,23 @@
 
 .movies {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    background-color: grey;
-    height: 50px;
+    background: rgba(217, 217, 217, 0.3);
+    height: 80px;
     width: 320px;
 }
 
 .movies button {
-    background-color: white;
+    background-color: transparent;
     text-align: center;
     border-radius: 15px;
     width: 50px;
+}
+
+.movie-rank {
+    width: 60px;
+    height: auto;
 }
 
 .container-post {
@@ -445,18 +460,23 @@
 }
 
 .post {
-    background-color: #9a9a9a;
-    width: 300px;
-    height: 150px;
-    margin: 10px 0px;
+    background: rgba(217, 217, 217, 0.3);
+    width: 270px;
+    height: 180px;
+    margin: 10px 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 15px;
 }
 
 .user-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px;
-    width: 150px;
+    width: 160px;
+    margin-bottom: 8px;
 }
 
 .user-info img {
@@ -464,6 +484,48 @@
     height: auto;
 }
 
+.post-p {
+    background: rgba(217, 217, 217, 1);
+    width: 230px;
+    height: 80px;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 0px auto;
+}
+
+.btn-popCorn {
+    background: transparent;
+    margin: 5px 0px 0px 6px;
+}
+
+
+/*      --    PROFILE VIEW     --      */
+
+.profile {
+    width: 320px;
+    height: 568px;
+}
+
+.profile nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 320px;
+    height: 60px;
+    margin: 0px 5px;
+}
+
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-profile img {
+    width: 50px;
+    height: auto;
+}
 
 /*      --    404 VIEW     --      */
 
