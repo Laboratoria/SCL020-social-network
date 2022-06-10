@@ -1,5 +1,5 @@
 import { navigate } from "../router/routes.js";
-import { logIn, redirectResult } from "../firebase/auth.js";
+import { logIn, redirectResult, signIn } from "../firebase/auth.js";
 
 function login() {
   const html =//html
@@ -9,10 +9,10 @@ function login() {
         <h1>PlantGram</h1>
         <p>Bienvenidos a la mayor comunidad de plant lovers</p>
         <h2>Inicia sesión</h2>
-        <input type="email" placeholder="Usuario" />
-        <input type="password" placeholder="Contraseña" />
+        <input type="email" id="email" placeholder="Usuario" />
+        <input type="password" id="password" placeholder="Contraseña" />
         
-        <button class="entrar"> Entrar </button>
+        <button class="entrar" id="loginUser"> Entrar </button>
         <p class="message">¿Aún no tienes una cuenta? <a href="#" id="register" class="btn-registrate">Regístrate aquí </a></p>
         <p>O ingresa con</p>
         <button id="logInButton">
@@ -28,21 +28,33 @@ function login() {
   // });
   const linkRegister = container.querySelector("#register");
   linkRegister.addEventListener("click", (event) => {
-  event.preventDefault();
-  navigate("register");
+    event.preventDefault();
+    navigate("register");
   });
-  const logInWithGmail = container.querySelector("#logInButton")
+  const loginUser = container.querySelector("#loginUser");
+  loginUser.addEventListener("click", async () =>  {
+    const email = container.querySelector("#email").value;
+    const password = container.querySelector("#password").value;
+    try {
+      await signIn(email, password);
+      navigate("news");
+    } catch (error) {
+      console.log(error);
+      throw error.message;
+    }
+  });
+  const logInWithGmail = container.querySelector("#logInButton");
   let currentUser;
-  logInWithGmail.addEventListener("click",async(e)=>{
-    try{
-    currentUser = await logIn();
-    } catch (error){
-  throw error.message;
-  console.log (error);
-    }}
-)
-  redirectResult()
-  return container
+  logInWithGmail.addEventListener("click", async (e) => {
+    try {
+      currentUser = await logIn();
+    } catch (error) {
+      throw error.message;
+      console.log(error);
+    }
+  });
+  redirectResult();
+  return container;
 }
 
 export { login };
