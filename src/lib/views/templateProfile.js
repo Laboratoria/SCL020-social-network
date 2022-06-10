@@ -12,14 +12,14 @@ export const profile = () => {
                 <p>@user_name</p>
                 <button>Follow</button>   
             </div>
-            <div>
-                <button class="followers">Followers</button>
-                <button class="following">Following</button> 
-                <button class="likes">Likes</button>
+            <div class="user-data">
+                <button class="data">Followers</button>
+                <button class="data">Following</button> 
+                <button class="data">Likes</button>
             </div>
-            <div>
+            <div class="feed-post">
                 <input type="text" placeholder="Write here about your favorite movie...">
-                <button class="btn-post">Post</button>
+                <button>Post</button>
             </div>
             <div>
                 <div>

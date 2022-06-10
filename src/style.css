@@ -20,7 +20,7 @@
 }
 
 .containter-logo-ticket{
-    padding: 15px 30px;
+    padding: 10px 20px;
     background-color: lightgray;
     border-radius: 30px;
 }
@@ -526,6 +526,49 @@ nav input{
     width: 50px;
     height: auto;
 }
+
+.user-data {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 320px;
+    height: 50px;
+    margin: 5px 0px;
+    background-color: #9a9a9a;
+}
+
+.data {
+    width: 50px;
+    height: 30px;   
+}
+
+.feed-post {
+    background-color: green;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.feed-post input {
+    background: rgba(217, 217, 217, 1);
+    width: 230px;
+    height: 80px;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 0px auto;
+}
+
+.feed-post button {
+    margin: 20px 50px 0px 0px;
+}
+
+
+
+
+
+
+
 
 /*      --    404 VIEW     --      */
 
