@@ -7,7 +7,7 @@ export const signUp = () => {
     `
         <div class="container-signUp">
             <div class ="sub-container-signUp">
-                <div class="container-s-logo-ticket"><img class="s-logo-ticket" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-tickets.png?raw=true" alt="logo-ticket"></div>
+                <div class="container-s-logo-ticket"><img class="s-logo-ticket" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-removebg-preview.png?raw=true" alt="logo-ticket"></div>
                 <h2>Create your account</h2>
                 <label><input type="text" id="user" required placeholder="User Name"></label>
                 <label><input type="email" id="email" required placeholder="email@something.com"></label>
