@@ -221,7 +221,6 @@
     margin: 5px;
 }
 
-
 .btn-create{
     border-radius: 15px;
     padding: 10px 20px;
@@ -408,7 +407,7 @@
     flex-direction: column;
     width: 320px;
     height: 568px;
-    border: 2px solid green;
+    /* border: 2px solid green; */
 }
 
 .nav-burguer-search{
@@ -417,9 +416,9 @@
     justify-content: space-between;
     align-items: center;
     width: auto;
-    height: 60px;
+    height: 70px;
     margin: 0px 5px;
-    border: 5px solid red;
+    /* border: 5px solid red; */
 }
 
 .menu-feed{
@@ -437,21 +436,26 @@
 
 /*      --    Search     --      */
 
-
 .search-box {
-    
-    top: 50%;
-    left: 50%;
+    position: absolute;
+    /* top: 50%;
+    left: 50%; */
     transform:  translate(-50%, -50%);
     background: #fff;
     height: 40px;
     border-radius: 40px;
-    padding: 10px;
+    /* padding: 10px; */
+    margin-left: 40px;
+    /* border: 2px solid magenta;  */
+    width: 200px;
+    margin-top: 3px;
 }
 
 .search-box:hover > .search-input {
-    width: 100px;
+    width: 150px;
     padding: 0 10px;
+    border-radius: 100px;
+    border: 1px solid lightgray; 
 }
 
 .search-box:hover > .search-button {
@@ -460,15 +464,16 @@
 }
 
 .search-input {
+    
     width: 0px;
     border:none;
     padding: 0;
     background: none;
     outline:none;
-    color: #fff;
+    color: black;
     font-size: 1.1rem;
     transition: 0.5s ease;
-    line-height: 40px;
+    line-height: 30px;
 }
 
 .search-button {
@@ -479,13 +484,15 @@
     color: #5391F4;
     float: right;
     width: 40px;
-    font-size: 1.3rem;
     height: 40px;
-    border-radius: 50%;
-    transition: 0.4s;
-    cursor: pointer;
+    font-size: 1rem;
     text-decoration: none;
+    border-radius: 50%;
+    transition: 0.6s;
+    cursor: pointer;
     border:none;
+    /* border: orange 2px solid; */
+
 }
 
 .search-button:hover {

@@ -10,7 +10,7 @@ export const feed = () => {
                     <div class="search-box">
                         <input class="search-input"type="text" name="" placeholder="Search...">
                         <button class="search-button" href="#">
-                            <i class="material-icons">s</i>
+                            <i class="material-icons">🔍︎</i>
                         </button>
                     </div>
                 </div>
