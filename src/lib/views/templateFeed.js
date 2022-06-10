@@ -4,9 +4,14 @@ export const feed = () => {
     const viewFeed = //html
     `
         <main class="feed">
-            <nav>
+            <nav class="nav-burguer-search">
                 <a href="#/menu"><img class="menu-burger" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/lista.png?raw=true" alt="logo-ticket"></a>
-                <input type="text" placeholder="Search">
+                <div class="search-box">
+                    <input class="search-input"type="text" name="" placeholder="Search...">
+                    <button class="search-button" href="#">
+                        <i class="material-icons">search</i>
+                    </button>
+                </div>
             </nav>
             <div class="movies">
                 <button><img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-profile%20(1).png?raw=true" alt="movie-rank"></button>

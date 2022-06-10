@@ -5,7 +5,12 @@ export const profile = () => {
         <main class="profile">
             <nav>
                 <a href="#/menu"><img class="menu-burger" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/lista.png?raw=true" alt="logo-ticket"></a>
-                <input type="text" placeholder="Search">
+                <div class="search-box">
+                    <input class="search-input"type="text" name="" placeholder="Search...">
+                    <button class="search-button" href="#">
+                        <i class="material-icons">search</i>
+                    </button>
+                </div>
             </nav>
             <div class="user-profile">
                 <img src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-profile%20(1).png?raw=true" alt="img-user">
@@ -19,7 +24,7 @@ export const profile = () => {
             </div>
             <div class="feed-post">
                 <input type="text" placeholder="Write here about your favorite movie...">
-                <button>Post</button>
+                <button class="btn-post">Post</button>
             </div>
             <div>
                 <div>

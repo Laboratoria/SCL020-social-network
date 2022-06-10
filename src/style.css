@@ -408,15 +408,6 @@
     height: 568px;
 }
 
-.feed nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 320px;
-    height: 60px;
-    margin: 0px 5px;
-}
-
 nav input{
     height: 20px;
     border: none;
@@ -425,11 +416,84 @@ nav input{
     border: 1px solid green;
 }
 
+/*      --    nav     --      */
+
+.nav-burguer-search{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 320px;
+    height: 60px;
+    margin: 0px 5px;
+}
+
+/*      --    Menu burguer     --      */
 .menu-burger {
     margin-left: 10px;
     width: 20px;
     height: auto;
 }
+
+/*      --    Search     --      */
+
+
+.search-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:  translate(-50%, -50%);
+    background: #fff;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.search-box:hover > .search-input {
+    width: 200px;
+    padding: 0 10px;
+}
+
+.search-box:hover > .search-button {
+    background: #518FF4;
+    color : #fff;
+}
+
+.search-input {
+    width: 0px;
+    border:none;
+    padding: 0;
+    background: none;
+    outline:none;
+    color: #fff;
+    font-size: 1.1rem;
+    transition: 0.5s ease;
+    line-height: 40px;
+}
+
+.search-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    color: #5391F4;
+    float: right;
+    width: 40px;
+    font-size: 1.3rem;
+    height: 40px;
+    border-radius: 50%;
+    transition: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+    border:none;
+}
+
+.search-button:hover {
+    transform: rotate(360deg)
+    scale(0.8);
+}
+
+
 
 .movies {
     display: flex;
@@ -543,11 +607,15 @@ nav input{
 }
 
 .feed-post {
-    background-color: green;
-    width: 320px;
+    width: 260px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    background: rgba(217, 217, 217, 0.3);
+    margin: 0px auto;
+    padding: 20px;
+    border-radius: 15px;
+    
 }
 
 .feed-post input {
@@ -557,13 +625,12 @@ nav input{
     padding: 10px;
     border-radius: 15px;
     margin: 0px auto;
+    border: none;
 }
 
 .feed-post button {
-    margin: 20px 50px 0px 0px;
+    margin: 0px 50px 0px 0px;
 }
-
-
 
 
 
