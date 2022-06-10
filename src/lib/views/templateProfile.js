@@ -3,13 +3,15 @@ export const profile = () => {
     const viewProfile = //html
     `
         <main class="profile">
-            <nav>
-                <a href="#/menu"><img class="menu-burger" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/lista.png?raw=true" alt="logo-ticket"></a>
-                <div class="search-box">
-                    <input class="search-input"type="text" name="" placeholder="Search...">
-                    <button class="search-button" href="#">
-                        <i class="material-icons">search</i>
-                    </button>
+            <nav class="nav-burguer-search">
+                <div class="menu-feed"><a href="#/menu"><img class="menu-burger" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/lista.png?raw=true" alt="logo-ticket"></a></div>
+                <div class="search-bar">
+                    <div class="search-box">
+                        <input class="search-input"type="text" name="" placeholder="Search...">
+                        <button class="search-button" href="#">
+                            <i class="material-icons">🔍︎</i>
+                        </button>
+                    </div>
                 </div>
             </nav>
             <div class="user-profile">
