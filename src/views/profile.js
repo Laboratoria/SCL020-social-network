@@ -1,6 +1,8 @@
-import {Header} from "../utils/header.js";
-import {Footer} from "../utils/footer.js";
-import { editPost, deletePost, profilePosts } from "../firebase/firestore.js";
+import { Header } from '../utils/header.js';
+import { Footer } from '../utils/footer.js';
+import {
+  editPost, deletePost, profilePosts, likingPost,
+} from '../firebase/firestore.js';
 
 const Profile = () => {
   const container = document.createElement('div');
@@ -45,9 +47,10 @@ const Profile = () => {
           </div>
       </div>
       <div class="likes-border">
-          <button class="btn-like" value=${doc.id}>
+          <button class="btn-like" data-id="${doc.id}">
           <i class="fas fa-heart"></i>
           </button>
+          <span id="like-count" class="like-count"> ${posts.likesSum} Likes</span>
       </div>
   </div>
     `;
@@ -85,10 +88,20 @@ const Profile = () => {
     const deleteBtn = container.querySelectorAll('.btn-Delete');
     deleteBtn.forEach((btn) => {
       btn.addEventListener('click', async () => {
-        const deleteAlert = confirm('¿Estás seguro que quieres eliminar este post?')
-        if(deleteAlert === true){
+        const deleteAlert = confirm('Are you sure that you want to delete this post?');
+        if (deleteAlert === true) {
           await deletePost(btn.dataset.id);
-      alert('Post eliminado')}
+          alert('Post has been deleted');
+        }
+      });
+    });
+
+    // Liking a Post in Profile
+    const likeBtn = container.querySelectorAll('.btn-like');
+    likeBtn.forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        // console.log(likeBtn, "dando click btn like en profile");
+        await likingPost(btn.dataset.id);
       });
     });
   });

@@ -5,6 +5,7 @@ import Register from '../views/register.js';
 import Post from '../views/post.js';
 import Map from '../views/map.js';
 import Profile from '../views/profile.js';
+import Liked from '../views/liked.js';
 import { validateState } from '../firebase/auth.js';
 
 const routes = {
@@ -14,6 +15,7 @@ const routes = {
   '/post': Post,
   '/map': Map,
   '/profile': Profile,
+  '/liked': Liked,
 };
 
 const root = document.getElementById('root');
@@ -22,7 +24,6 @@ const next = (pathname) => {
   window.history.pushState({}, pathname, window.location.origin + pathname);
   root.innerHTML = '';
   root.appendChild(routes[pathname]());
-
 };
 
 const navigate = (pathname) => { validateState(next, pathname); };
@@ -33,4 +34,3 @@ window.onpopstate = () => {
 };
 
 export { navigate, next };
-
