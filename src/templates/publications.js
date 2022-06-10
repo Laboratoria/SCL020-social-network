@@ -72,7 +72,6 @@ function publications() {
     }
     }
   setupPosts()
-
   return container;
 }
 // }

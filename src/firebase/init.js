@@ -10,9 +10,10 @@ import {
   GoogleAuthProvider,
   signInWithRedirect,
   getRedirectResult,
+  onAuthStateChanged
 } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js';
 
-import { getFirestore, doc, getDoc, getDocs, collection } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js';
+import { getFirestore, addDoc, doc, getDoc, getDocs, collection } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js';
 
 import { firebaseConfig } from './config.js';
 
@@ -34,6 +35,7 @@ export {
   GoogleAuthProvider,
   signInWithRedirect,
   doc,
+  addDoc,
   getDoc,
   getDocs,
   collection,
@@ -41,4 +43,5 @@ export {
   getAnalytics,
   getAuth,
   firebaseConfig, 
+  onAuthStateChanged
 };
