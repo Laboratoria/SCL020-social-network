@@ -13,10 +13,10 @@ const Post = () => {
     <button id="dicardButton" class="btn-discard">X</button>
     <form id="postBox">
       <img class ="avatar-new-post" src="${avatarUrl}" />
-      <h3 id="user-name" class="user-name">${userName}</h3>
+      <h3 id="user-name-post" class="user-name-post">${userName}:</h3>
       <textarea required id="review" placeholder="Movie review"></textarea>
-      <p>Película<input type="text" id="movie"></p>
-      <p>País
+      <p class="movie-imput">Movie<input type="text" id="movie"></p>
+      <p class="country-imput">Country
       <select id="country" name="country" class="form-control">
       <option value="Afghanistan">Afghanistan</option>
       <option value="Åland Islands">Åland Islands</option>
@@ -262,20 +262,20 @@ const Post = () => {
       <option value="Yemen">Yemen</option>
       <option value="Zambia">Zambia</option>
       <option value="Zimbabwe">Zimbabwe</option>
-  </select>
-    
+  </select> 
       </p>
-    
-      <input id="post-submit" class="main-btn" type="submit" value="post" />
+      <input id="post-submit" type="submit" value="Post" />
     </form>
   </div>
   <div class="overlay"></div>`;
 
-  const container = document.createElement('section');
+  const container = document.createElement('div');
   container.className = 'new-post';
   container.id = 'new-post';
-  container.innerHTML = template;
-  container.append(Header(), Footer());
+  const middle = document.createElement('div');
+  middle.className = 'middle';
+  middle.innerHTML = template;
+  container.append(Header(), middle, Footer());
 
   // Creating a Post
   const postForm = container.querySelector('#postBox');
