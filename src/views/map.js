@@ -973,6 +973,7 @@ const Map = () => {
       }
       console.log(countryName);
 
+      // Rendering view
       mapPosts((countryName), (post) => {
         postContainer.innerHTML = '';
         let postStructure = '';
@@ -991,7 +992,7 @@ const Map = () => {
           </div>
           <button class="btn-like-map" data-id=${doc.id}>
             <i class="fas fa-heart"></i>
-            <span id="like-count" class="like-count"> ${posts.previousLike} Likes</span>
+            <span id="like-count" class="like-count"> ${posts.likesSum} Likes</span>
           </button>
       </div>
   </div>
@@ -1003,7 +1004,6 @@ const Map = () => {
         const likeBtn = container.querySelectorAll('.btn-like-map');
         likeBtn.forEach((btn) => {
           btn.addEventListener('click', async () => {
-            //console.log('dando click like btn en map');
             await likingPost(btn.dataset.id);
           });
         });

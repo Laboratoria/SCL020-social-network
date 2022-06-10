@@ -32,14 +32,14 @@ const createPost = async (review, movie, country) => {
     movie,
     country,
     likesArr: [],
-    previousLike: 0,
+    likesSum: 0,
     date: Timestamp.fromDate(new Date()),
   });
   // console.log(docRef);
   return docRef.id;
 };
 
-// Reading Post
+// Reading Posts
 const readingPost = (callback) => {
   const q = query(collection(db, 'posts'), orderBy('date', 'desc'));
   onSnapshot(q, (callback));
@@ -53,7 +53,7 @@ const gettingDoc = async (id) => {
   return result.data();
 };
 
-// Edit Post
+// Editing Posts
 const editPost = async (id, review, movie, country) => {
   const postRef = doc(db, 'posts', id);
   await updateDoc(postRef, {
@@ -79,53 +79,57 @@ const deletePost = async (id) => {
   await deleteDoc(doc(db, 'posts', id));
 };
 
-// Profile Posts to delete posts
+// Profile Posts
 const profilePosts = async (callback) => {
   const userId = localStorage.getItem('userUid');
   const q = query(collection(db, 'posts'), where('userId', '==', userId));
   onSnapshot(q, (callback));
 };
 
- // Map view
- const mapPosts = async (countryName, callback) => {
+// Map Posts
+const mapPosts = async (countryName, callback) => {
   try {
     const q = query(collection(db, 'posts'), where('country', '==', countryName));
     onSnapshot(q, (callback));
-  } catch (error){
+  } catch (error) {
     console.log(error);
   }
 };
 
-
-// Liking Posts 
+// Liking Posts
 const likingPost = async (id) => {
   const postRef = doc(db, 'posts', id);
   const userUid = auth.currentUser.uid;
   const post = await getDoc(postRef);
   const likesPost = post.data().likesArr;
-  const likesCounter = post.data().previousLike;
+  const likesCounter = post.data().likesSum;
 
   if (likesPost.includes(userUid)) {
     await updateDoc(postRef, {
       likesArr: arrayRemove(userUid),
-      previousLike: likesCounter - 1,
+      likesSum: likesCounter - 1,
     });
   } else {
     await updateDoc(postRef, {
       likesArr: arrayUnion(userUid),
-      previousLike: likesCounter + 1,
+      likesSum: likesCounter + 1,
     });
   }
-
-  const currentLikes = likesPost.length;
-  console.log(currentLikes);
-
-
+  // const currentLikes = likesPost.length;
+  // console.log(currentLikes);
 };
 
+// Liked Posts by user (favorites)
+const likedPosts = async (callback) => {
+  const userId = localStorage.getItem('userUid');
+  console.log(userId, 'user id en liked view');
+  const q = query(collection(db, 'posts'), where('likesArr', 'array-contains', userId));
+  onSnapshot(q, (callback));
+};
 
 export {
-  createPost, readingPost, editPost, gettingDoc, deletePost, profilePosts, likingPost, mapPosts
+  createPost, readingPost, editPost, gettingDoc, deletePost, profilePosts, likingPost, mapPosts, likedPosts,
 };
 
 // const q = query(result.query, orderBy('date', 'desc'), limit(5)); // , limit(n)
+

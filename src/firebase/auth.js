@@ -84,7 +84,3 @@ const out = async () => {
 export {
   login, google, create, out, auth, validateState,
 };
-
-/* db.collection('users').doc(userId).set({
-  name: userId,
-}); */

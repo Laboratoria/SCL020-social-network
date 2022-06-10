@@ -1,11 +1,10 @@
 import { login, google } from '../firebase/auth.js';
 import { navigate, next } from '../router/router';
-import logoUrl from '../img/brand-logo.png'
+import logoUrl from '../img/brand-logo.png';
 
 const Login = () => {
   const template = // HTML
   `
-  
     <img src="${logoUrl}" id="logo" class="logo">
     <h2 class="title-form">Sign In or Register</h2>
     <form id="form" class="form">

@@ -2,9 +2,8 @@
 import { navigate } from '../router/router.js';
 import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
-import { createPost} from '../firebase/firestore.js';
-import avatarUrl from '../img/main-avatar.png'
-
+import { createPost } from '../firebase/firestore.js';
+import avatarUrl from '../img/main-avatar.png';
 
 const Post = () => {
   const userName = localStorage.getItem('userName') || 'User';
@@ -264,9 +263,7 @@ const Post = () => {
       <option value="Zambia">Zambia</option>
       <option value="Zimbabwe">Zimbabwe</option>
   </select>
-      
-      
-      
+    
       </p>
     
       <input id="post-submit" class="main-btn" type="submit" value="post" />
@@ -280,6 +277,7 @@ const Post = () => {
   container.innerHTML = template;
   container.append(Header(), Footer());
 
+  // Creating a Post
   const postForm = container.querySelector('#postBox');
   postForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -287,24 +285,24 @@ const Post = () => {
     const movie = container.querySelector('#movie').value;
     const country = container.querySelector('#country').value;
     try {
-      const postRef = await createPost(review,movie,country); 
+      const postRef = await createPost(review, movie, country);
       const pin = postRef;
       postForm.reset();
       navigate('/home');
     } catch (error) {
       console.log(error);
     }
-
   });
 
+  // Btn to close Post
   const discard = container.querySelector('.btn-discard');
-  console.log(discard)
-discard.addEventListener('click', () => {
-    console.log('hola')
+  console.log(discard);
+  discard.addEventListener('click', () => {
+    console.log('hola');
     postForm.reset();
     navigate('/home');
-  })
- 
+  });
+
   return container;
 };
 

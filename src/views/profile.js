@@ -50,7 +50,7 @@ const Profile = () => {
           <button class="btn-like" data-id="${doc.id}">
           <i class="fas fa-heart"></i>
           </button>
-          <span id="like-count" class="like-count"> ${posts.previousLike} Likes</span>
+          <span id="like-count" class="like-count"> ${posts.likesSum} Likes</span>
       </div>
   </div>
     `;
