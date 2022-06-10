@@ -1,4 +1,4 @@
-import { navigate } from '../router/routes.js';
+// import { navigate } from '../router/routes.js';
 import {
   getAuth,
   auth,
@@ -8,35 +8,24 @@ import {
   provider,
   getRedirectResult,
   signInWithRedirect,
-  GoogleAuthProvider
+  GoogleAuthProvider,
+  onAuthStateChanged
 } from './init.js';
+import { savedUser } from './store.js';
 
 // CREATE USER WITH EMAIL
-// const createUser = getAuth();
-// createUserWithEmailAndPassword(auth, email, password)
-//   .then((userCredential) => {
-//     // Signed in
-//     const user = userCredential.user;
-//     // ...
-//   })
-//   .catch((error) => {
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-//     // ..
-//   });
-
-// const createUser = async (email, password) => {
-//   try {
-//     const userCredential = await createUserWithEmailAndPassword(
-//       auth,
-//       email,
-//       password,
-//     );
-//     // console.log(userCredential);
-//   } catch (error) {
-//     throw error.message;
-//   }
-// };
+const createUser = async (auth, email, password) => {
+  try {
+    const response = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password,
+    );
+    return response;
+  } catch (error) {
+    throw error.message;
+  }
+};
 
 // SIGN IN WITH EMAIL
 // const signIn = getAuth();
@@ -121,8 +110,22 @@ const logIn = async function(){
 //     }
 }
 
+// User is signed in, see docs for a list of available properties
+// https://firebase.google.com/docs/reference/js/firebase.User
+
+
+// obtener el usuario actual con un observador en el objeto auth 
+// onAuthStateChanged(auth, async (user) => {
+//   if (user) {
+//     const uid = await (user.uid);
+//     console.log('logged user')
+//     return savedUser(uid, email)
+//   } else {
+//     console.log('user logout')
+//   }
+// });
 
 export {
-   logIn, redirectResult
+  logIn, redirectResult, createUser, onAuthStateChanged
 };
-// getAuth, createUser, signIn, signOutWithEmail,
+// getAuth, signIn, signOutWithEmail,
