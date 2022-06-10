@@ -1,6 +1,7 @@
 import { auth, firestore } from "../firebase/init.js";
 import { readData } from "../firebase/store.js";
 import { navigate } from "../router/routes.js";
+import { signOutWithEmail } from "../firebase/auth.js";
 
 function publications() {
   const html =//html
@@ -14,6 +15,7 @@ function publications() {
             <li><a href='#' id='linkProfile'> MI PERFIL </a></li>
             <li><a href='#' id='linkGroups'> GRUPOS </a></li>
             <li><a href='#' id='linkPublic'> PUBLICACIONES </a></li>
+            <li><a href='#' id='signOut'> Cerrar sesión </a></li>
             </ul>
         </div>
         <h5>PlantGram</h5>
@@ -48,6 +50,15 @@ function publications() {
     event.preventDefault();
     navigate("publications");
   });
+  const signOut = container.querySelector("#signOut");
+  signOut.addEventListener("click", async () => {
+    try {
+      await signOutWithEmail(auth);
+      navigate("login"); 
+    } catch (error) {
+      throw error.message;
+    }
+  });
 
   // POSTS
   const postList = container.querySelector(".createPost");
@@ -73,6 +84,6 @@ function publications() {
     }
   setupPosts()
   return container;
-}
-// }
+}; 
 export { publications };
+
