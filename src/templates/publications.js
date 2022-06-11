@@ -1,5 +1,5 @@
 import { auth, firestore } from "../firebase/init.js";
-import { readData } from "../firebase/store.js";
+import { readData, createPost, editPost, time, deletePost } from "../firebase/store.js";
 import { navigate } from "../router/routes.js";
 import { signOutWithEmail } from "../firebase/auth.js";
 
@@ -50,6 +50,8 @@ function publications() {
     event.preventDefault();
     navigate("publications");
   });
+
+  //SIGN OUT WITH EMAIL
   const signOut = container.querySelector("#signOut");
   signOut.addEventListener("click", async () => {
     try {

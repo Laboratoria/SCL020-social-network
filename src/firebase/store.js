@@ -6,6 +6,11 @@ import {
   getDoc,
   getDocs,
   collection,
+  setDoc,
+  Timestamp,
+  serverTimestamp,
+  updateDoc,
+  deleteDoc
 } from "./init.js";
 
 // const docRef = doc(firestore, "cities", "SF");
@@ -29,4 +34,49 @@ const savedUser = async (email, uid) => {
   });
 };
 
-export { readData, savedUser };
+//DATA TYPE
+const docData = {
+  stringExample: "Hello world!",
+  booleanExample: true,
+  numberExample: 3.14159265,
+  dateExample: Timestamp.fromDate(new Date("December 10, 1815")),
+  arrayExample: [5, true, "hello"],
+  nullExample: null,
+  objectExample: {
+      a: 5,
+      b: {
+          nested: "foo"
+      }
+  }
+};
+
+// Add a new document with a generated id.
+const createPost = async (title, description) => {
+const docRef = await setDoc(collection(firestore, "Posts"), {
+  title: "Tokyo",
+  description: "Japan"
+});
+console.log("Document written with ID: ", docRef.id);
+}
+
+// Set the "capital" field of the city 'DC'-DOC UPDATE
+const editPost = async (title, description) => {
+await updateDoc(docRef, {
+  title: true,
+  description:true
+});
+}
+
+// Update the timestamp field with the value from the server
+const time = async (timestamp) => {
+const updateTimestamp = await updateDoc(docRef, {
+  timestamp: serverTimestamp()
+});
+}
+
+//DELETE POST
+const deletePost = async () => {
+await deleteDoc(doc(firestore, "Posts", "id"));
+}
+
+export { readData, savedUser, createPost, editPost, time, deletePost };
