@@ -57,25 +57,35 @@ body {
   height: 50%;
   display: flex;
   align-self: center;
-  box-shadow: 0.5px 1px 5px grey;
+  border-radius: 40%;
 }
  
 .search-input {
   width: 100%;
   border-right: none;
-  font-size: 15px;
+  font-size: 0.9rem;
   border:none;
   background:#EFEFEF;
   padding:10px;
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
 }
+
+.search-box input::placeholder {
+  font-size: 0.9rem;
+  color: rgba(236, 0, 140, 0.5);
+}
+
 .search-button {
   text-align: center;
   width:10%;
   cursor: pointer;
   border-left: none;
-  font-size: 20px;  
+  font-size: 0.9rem;  
   border:none;
-  color:grey;
+  color:rgba(236, 0, 140, 0.5);
+  border-bottom-right-radius: 30px;
+  border-top-right-radius: 30px;
  
 }
 .main-avatar {
@@ -87,6 +97,7 @@ body {
   position: relative;
   display:inline-block;
 }
+
 .dropdown-content {
   display: none;
   font-family: karla;
