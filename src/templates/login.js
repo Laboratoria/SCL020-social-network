@@ -31,6 +31,8 @@ function login() {
     event.preventDefault();
     navigate("register");
   });
+
+  //LOGIN WITH EMAIL AND PASSWORD
   const loginUser = container.querySelector("#loginUser");
   loginUser.addEventListener("click", async () =>  {
     const email = container.querySelector("#email").value;
@@ -43,17 +45,21 @@ function login() {
       throw error.message;
     }
   });
+
+  //LOGIN WITH GMAIL
   const logInWithGmail = container.querySelector("#logInButton");
   let currentUser;
   logInWithGmail.addEventListener("click", async (e) => {
     try {
       currentUser = await logIn();
+      navigate("news");
     } catch (error) {
       throw error.message;
       console.log(error);
     }
   });
   redirectResult();
+
   return container;
 }
 

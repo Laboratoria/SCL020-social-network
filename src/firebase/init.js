@@ -13,7 +13,17 @@ import {
   onAuthStateChanged
 } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js';
 
-import { getFirestore, addDoc, doc, getDoc, getDocs, collection } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js';
+import { getFirestore, 
+  addDoc, 
+  doc, 
+  getDoc, 
+  getDocs, 
+  collection,
+  setDoc,
+  Timestamp,
+  updateDoc,
+  serverTimestamp,
+  deleteDoc } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js';
 
 import { firebaseConfig } from './config.js';
 
@@ -39,6 +49,11 @@ export {
   getDoc,
   getDocs,
   collection,
+  setDoc,
+  Timestamp,
+  serverTimestamp,
+  updateDoc,
+  deleteDoc,
   initializeApp,
   getAnalytics,
   getAuth,
