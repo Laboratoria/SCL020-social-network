@@ -7,6 +7,7 @@ import {
 const Profile = () => {
   const container = document.createElement('div');
   container.className = 'profile-page';
+  const userPhoto = localStorage.getItem('userPhoto');
 
   profilePosts((post) => {
     container.innerHTML = '';
@@ -15,46 +16,41 @@ const Profile = () => {
     post.forEach((doc) => {
       const posts = doc.data();
       postStructure += `
-      <div class="post-border">
-      <div class='post'>
+      <div class="post">
+        <div class='post-header'>
           <div class="btns-updateDiv">
-              <button class='btn-Edit' data-id='${doc.id}'>Edit</button>
-
-              <!--MODAL-->
-              <dialog class="dialog-modal" data-id="${doc.id}" id="dialog-modal">
-                  <form class="post-box-modal" method="dialog">
-                      <button id="dicardButton" data-id="${doc.id}" class="btn-discard">X</button>
-                      <h3 id="user-name" class="user-name-modal">${posts.userName}</h3>
-                      <label for="new-review">Review: </label>
-                      <textarea id="new-review" class="new-review">${posts.review}</textarea>
-                      <p>Movie: <input type="text" id="new-movie" class="movie-input" value="${posts.movie}"></p>
-                      <p>Country: <input type="text" id="new-country" class="country-input" value="${posts.country}"></p>
-                      <button id="done-button" class="main-btn">Done</button>
-                  </form>
+            <button class='btn-Edit' data-id='${doc.id}'>Edit</button>
+            <!--MODAL-->
+             <dialog class="dialog-modal" data-id="${doc.id}" id="dialog-modal">
+                <form class="post-box-modal" method="dialog">
+                    <button id="dicardButton" data-id="${doc.id}" class="btn-discard">X</button>
+                    <h3 id="user-name" class="user-name-modal">${posts.userName}</h3>
+                    <label for="new-review">Review: </label>
+                    <textarea id="new-review" class="new-review">${posts.review}</textarea>
+                    <p>Movie: <input type="text" id="new-movie" class="movie-input" value="${posts.movie}"></p>
+                    <p>Country: <input type="text" id="new-country" class="country-input" value="${posts.country}"></p>
+                    <button id="done-button" class="main-btn">Done</button>
+                 </form>
               </dialog>
               <!--MODAL-->
-              
               <button class='btn-Delete' data-id='${doc.id}'>Delete</button>
-          </div>
-          <span>
-              <p class="date">${posts.date.toDate().toLocaleString()}</p>
-          </span>
-          <p class="user-container">
-              <i class="user-name">${posts.userName} posted: </i>
-          </p>
-          <div class"movie-info">
-              <h3 class="movie-title">${posts.movie}</h3>
-              <p class="movie-review">${posts.review}</p>
-              <p class='info'><b>Country:</b> ${posts.country} </p>
-          </div>
+        </div>
+        <p class='user-info'><img class="user-photo" src="${userPhoto}">
+        <span class="user-name">${posts.userName} posted: </span> </p>
+        <p class="movie-review">${posts.review}</p>
+        <p class="date">${posts.date.toDate().toLocaleString()}</p>
       </div>
-      <div class="likes-border">
-          <button class="btn-like" data-id="${doc.id}">
+      <div class="post-main">       
+        <div class="movie-title">${posts.movie}</div>
+        <p class='movie-country'>Country: ${posts.country} </p>
+      </div>
+      <div class="post-footer">
+        <button class="btn-like" id="btn-like" data-id="${doc.id}">
           <i class="fas fa-heart"></i>
-          </button>
-          <span id="like-count" class="like-count"> ${posts.likesSum} Likes</span>
+          <span id="like-count" class="like-count"> ${posts.likesSum} </span>
+        </button>
       </div>
-  </div>
+    </div>
     `;
     });
 

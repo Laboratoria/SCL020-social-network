@@ -971,6 +971,7 @@ const Map = () => {
       if (countryName === '') {
         countryName = this.attributes.name.value;
       }
+      const userPhoto = localStorage.getItem('userPhoto');
       console.log(countryName);
 
       // Rendering view
@@ -981,22 +982,25 @@ const Map = () => {
         post.forEach((doc) => {
           const posts = doc.data();
           postStructure += `
-      <div class="post-border-map">
-        <div class='post-map'>
-          <p class="user-container-map"><i class="user-name-map">${posts.userName} posted: </i></p>
-          <p class="movie-review-map">${posts.review}</p>
-          <p class="date-map">${posts.date.toDate().toLocaleString()}</p>
-          <div class="movie-info-map">
-            <div class="movie-title-map"><h3 >${posts.movie}</h3> </div>
-            <p class='info'><b>Country:</b> ${posts.country} </p>
+          <div class="post">
+          <div class='post-header'>
+            <p class='user-info'><img class="user-photo" src="${userPhoto}">
+            <span class="user-name">${posts.userName} posted: </span> </p>
+            <p class="movie-review">${posts.review}</p>
+            <p class="date">${posts.date.toDate().toLocaleString()}</p>
           </div>
-          <button class="btn-like-map" data-id=${doc.id}>
-            <i class="fas fa-heart"></i>
-            <span id="like-count" class="like-count"> ${posts.likesSum} Likes</span>
-          </button>
-      </div>
-  </div>
-    `;
+          <div class="post-main">       
+            <div class="movie-title">${posts.movie}</div>
+            <p class='movie-country'>Country: ${posts.country} </p>
+          </div>
+          <div class="post-footer">
+            <button class="btn-like" id="btn-like" data-id="${doc.id}">
+              <i class="fas fa-heart"></i>
+              <span id="like-count" class="like-count"> ${posts.likesSum} </span>
+            </button>
+          </div>
+        </div>
+        `;
         });
         postContainer.innerHTML = postStructure;
 
