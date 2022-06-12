@@ -2,7 +2,6 @@
   font-family: karla;
   src: url('/font/karla.ttf');
 }
-
 *{
   margin:0;
   padding:0;
@@ -10,43 +9,29 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
- 
 body {
-  background: #FAFAEB;
   min-height: 100vh;
   min-width: 100vw;
   font-family: karla;
-  }
-
+  background: linear-gradient(rgb(197, 154, 204), rgb(205, 177, 206), rgb(213, 199, 207), rgb(220, 222, 208), rgb(226, 245, 209));
+}
 #root{
+  display: flex;
   flex-wrap: nowrap;
-  display: flex;
-  place-content: center center;
-  align-items: center;
-  width: 100vw;
-  height:100vh;
-}
-/* MIDDLE CSS */
-.middle{
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  flex-grow: 1;
-  overflow: auto;
-  min-height: 2em;
   width: 100%;
+  height:100%;
 }
+
 /* HEADER CSS */
 .header {
   flex-shrink: 0;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  align-items: center;
   width: 100%;
   height: 8%;
-  min-height: 60px;
   background: white;
-  align-items: center;
-  align-content: center;
   order: -1;
 }
 .brand-logo {
@@ -57,9 +42,8 @@ body {
   height: 50%;
   display: flex;
   align-self: center;
-  box-shadow: 0.5px 1px 5px grey;
+
 }
- 
 .search-input {
   width: 100%;
   border-right: none;
@@ -73,23 +57,22 @@ body {
   width:10%;
   cursor: pointer;
   border-left: none;
-  font-size: 20px;  
+  font-size: 15px;  
   border:none;
   color:grey;
- 
 }
 .main-avatar {
   height: 80%;
-  max-height: 50px;
-}
 
+}
 .dropdown {
   position: relative;
   display:inline-block;
+  height: 100%;
+  margin-top: 10px;
 }
 .dropdown-content {
   display: none;
-  font-family: karla;
   position: absolute;
   background-color: #f9f9f9;
   min-width: 180px;
@@ -100,7 +83,6 @@ body {
   right: 0;
   left: auto;
 }
-
 .dropdown-content a {
   color: black;
   padding: 16px 16px;
@@ -109,19 +91,45 @@ body {
   display: block;
   border-left: 2px;
 }
-
 .dropdown-content a:hover {
   background-color: #ffffff;
   padding-left: 20px;
   border-left: 2px solid #43aaf3;
   transition: all 0.3s ease;
 }
-
 .dropdown:hover .dropdown-content {
   display: block;
 }
+/* MIDDLE CSS */
+.middle{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  overflow: auto;
+  min-height: 2em;
+  width: 100%;
+}
+/* FOOTER CSS */
+footer{
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 8%;
+  min-height: 60px;
+  background: white;
+  align-items: center;
+}
+footer button {
+  height: 50%;
+  color: #FBC4F3;
+  font-size: 20px;
+  background-color: white;
+  border: none;
+}
  
-/* LOG IN FORM */
+/* LOG IN */
 .login-box {
   display: flex;
   flex-direction: column;
@@ -134,7 +142,6 @@ body {
   border-radius: 8px;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
 }
- 
 .logo {
   position: relative;
   top: -50px;
@@ -147,20 +154,17 @@ body {
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   text-align: center;
 }
- 
 .title-form {
   margin-top: -5%;
   text-align: center;
   font-family: "Monrope", sans-serif;
   color: #484747;
 }
- 
 label {
   display: block;
   color: #555555;
   margin-bottom: 5%; /*8px*/
 }
- 
 .input-form {
   margin-bottom: 3vh;
   padding: 13px 0px 13px 25px;
@@ -173,17 +177,14 @@ label {
   font-size: 0.9rem;
   color: #555555;
 }
- 
-p {
+.or {
   color: #555555;
 }
- 
 /*Entrar btn*/
 .login-btns {
   text-align: center;
   align-items: center;
 }
- 
 /*Entrar y Registrar btn*/
 .main-btn {
   background: #FBC4F3;
@@ -207,7 +208,6 @@ p {
   border: 0;
   margin-bottom: 5%;
 }
- 
 .google-btn {
   transition: background-color .3s, box-shadow .3s;  
   padding: 12px 16px 12px 42px;
@@ -225,24 +225,22 @@ p {
   cursor: pointer;
   margin: 5%;
 }
- 
 .signup-link {
   align-items: center;
   text-align: center;
   margin: 5%;
 }
  
-/* REGISTER FORM */
+/* REGISTER */
 .signup-tittle {
   margin-bottom: 5%;
   text-align: center;
 }
- 
 .create-account-info {
   text-align: center;
 }
  
-/* POST */
+/* NEW POST */
 .new-post {
   min-width: 100vw;
   min-height: 100vh;
@@ -252,7 +250,6 @@ p {
   flex-direction: column;
   justify-content: center;
 }
- 
 .post-box {
   width: 40%;
   height: auto;
@@ -268,14 +265,12 @@ p {
   box-shadow: 2px 5px 10px grey;
   z-index: 3;
 }
-
 #postBox {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content:flex-start;
 }
-
 .btn-discard {
   border: none;
   background-color: #FFFFFF;
@@ -283,18 +278,15 @@ p {
   font-size: 1.2em;
   color: #9e9e9e;
 }
-
 .btn-discard:hover {
   color: black;
   transform: translateY(1px);
   cursor: pointer;
-}
- 
+} 
 .avatar-new-post {
   width: 60px;
   height: 60px;
 }
-
 .user-name-post {
   margin: 0.5em;
   font-size: 1.1rem;
@@ -303,7 +295,6 @@ p {
   font-weight: bolder;
   color: rgb(0, 0, 0);
 }
-
 .new-post div textarea {
   width: 100%;
   height: 70%;
@@ -313,7 +304,6 @@ p {
   outline: none;
   font-size: 1rem;
 }
-
 .movie-imput, .country-imput {
   width: 100%;
   margin-top: 1em;
@@ -323,7 +313,6 @@ p {
   font-weight: bold;
   color: rgb(0, 0, 0);
 }
-
 .movie-imput input[type=text], select {
   width: 100%;
   padding: 0.7em;
@@ -336,7 +325,6 @@ p {
   -webkit-appearance: none;
   background-color: #FFFFFF;
 }
-
 #post-submit {
   background: #FBC4F3;
   border-radius: 10px;
@@ -368,7 +356,6 @@ p {
   flex-direction: column;
   align-items: end;
 }
-
 .middle-map{
   display: flex;
   flex-direction: row-reverse;
@@ -390,7 +377,6 @@ p {
 .map-feed::-webkit-scrollbar {
   -webkit-appearance: none;
 }
-
 .map{
   width: 100%;
   height: 100%;
@@ -412,111 +398,8 @@ svg{
 .map :hover{
   fill: #f7f1ed;
 }
-/* POST EN MAP */
-.post-border-map {
-  display: flex;
-  flex-direction: column;
-  margin: 2%;
-/*   margin-left: 20%;
-  margin-right: 10%; */
-  width: 247px;
-  height: 237.14px;
-  left: 87px;
-  top: 104px; 
-  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
-  padding: 5%;
-  background: white;
-}
-.post-map{
-  display: flex;
-  flex-direction: column;
-  height: 100%;
 
-}
-/* post-map */
-.date-map {
- font-style: normal;
-font-weight: 400;
-font-size: 10px;
-line-height: 16px;
-letter-spacing: -0.3px;
-/* Darken text */
-color: #687684;
-align-self: end;
-justify-self: end;
-margin:2%;
-margin-right: 9%;
-}
-.user-name-map {
- color:rgba(37, 9, 59, 0.798);
- font-size: 0.7rem; 
- font-weight: 600;
- font-size: 13px;
- line-height: 18px;
- letter-spacing: -0.3px;
- font-style: normal;
- line-height: 200%;
-}
-.movie-info-map{
-  display:flex;
-  flex-direction: column;
-  width: 178px;
-  height: 120px;
-  background: #CDDADE;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  align-self: center;
-}
-.movie-title-map {
-  align-self: center;
- color:black;
- line-height: 200%;
-}
-.btn-like-map{
-  align-self: end;
-  color:#CE395F;
-  background-color: #fff;
-  border: none;
-  margin:5%;
-  margin-right: 9%;
-}
-.likes-border-map {
-  margin-top:10%;
-  display: flex;
-  justify-content: end;
-}
- 
-/* FOOTER CSS */
-footer{
-  flex-shrink: 0;
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  height: 8%;
-  min-height: 60px;
-  background: white;
-  align-items: center;
-
-}
- 
-footer button {
-  height: 50%;
-  color: #FBC4F3;
-  font-size: 20px;
-  background-color: white;
-  border: none;
-}
- 
-/* fin footer */
-#postButton{
-  background-color: #FBC4F3;
-  color: black;
-  position: relative;
-  min-height: 35px;
-  min-width: 35px;
-  border-radius: 50%;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  text-align: center;
-}
+/* HOME */
 .home-page{
   min-width: 100vw;
   min-height: 100vh;
@@ -525,8 +408,103 @@ footer button {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
 
+}
+ /* post en home */
+ .post {
+   display: flex;
+   flex-direction: column;
+   width: 25%;
+   min-width: 250px;
+   height: 100%;
+   background-color: #ffffff;
+   filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+   margin: 1%;
+   padding: 2%;
+ 
+ }
+ .post-header{
+  display: flex;
+  flex-direction: column;
+/*   min-height: 35%; */
+  height: auto;
+ }
+ .user-info{
+   display: flex;
+align-items: center;
+ }
+ .user-photo{
+/*   height: 50%; */
+  max-height: 35px;
+ }
+ .user-name {
+  color:rgba(37, 9, 59, 0.798);
+  font-style: normal;
+  font-size: 0.9rem;
+  margin-bottom: 2%;
+  margin-left: 3%;
+}
+.movie-review{
+  font-size: 0.7rem;
+ /*  min-height: 40%; */
+  height: auto;
+  margin-bottom: 2%;
+  margin-left: 18%;
+}
+ .date {
+  font-size: 10px;
+  color: #687684;
+  justify-self: end;
+  align-self: end;
+  margin-bottom: 2%;
+}
+ .post-main{
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  background: #FAFAEB;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 2%;
+ }
+ .movie-title {
+  font-size: 0.9rem;
+ font-weight: bold;
+ border-bottom:#687684 solid;
+ border-width:thin;
+ align-self: center;
+ margin-top: 3%;
+ }
+ .movie-country{
+   margin: 2%;
+  font-size: 0.8rem;
+ }
+ .post-footer {
+    display: flex;
+    height: 15%;
+    justify-content: end;
+    align-items: end;
+ }
+ .btn-like {
+  background-color: #fff;
+  border: none;
+  color:#CE395F;
+  cursor: pointer;
+  transition: all .3s;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+/*   width: auto;
+  height: 2em; */
+}
+.btn-like:hover {
+  border-color: #420516;
+  color: #420516;
+  fill: #420516;
+}
+.like-count{
+  font-size: 0.9rem;
+  color:black;
+  font-family: karla;
+}
 
 /* PROFILE PAGE CSS */
 .profile-page {
@@ -538,55 +516,13 @@ footer button {
   flex-direction: column;
   justify-content: space-between;
 }
- 
- /* POST EN HOME */
- .post-border {
-   display: flex;
-   flex-direction: column;
-   width: 30%;
-   min-width: 300px;
-   height: auto;
-   background-color: #ffffff;
-   font-family: karla;
-   border-radius:.5em;
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.10); 
-   margin: 1%;
-   padding: 2%;
- }
-
- .date {
-  font-size: 0.9rem; 
-  opacity: 0.3;
-}
-
-.user-name {
-  color:rgba(37, 9, 59, 0.798);
-  font-family: karla;
-  font-style: normal;
-  line-height: 200%;
-}
-
- 
- .movie-title {
-  color:coral;
-  line-height: 200%;
- }
- 
- .likes-border {
-   display: flex;
-   justify-content: end;
- }
-
  /*Div que contiene botones edit and delete*/
  .btns-updateDiv {
   display: flex;
   justify-content:end;
   margin: 1%;
   gap: 2%;
-
 }
- 
-/*Botones edit, delete and like*/
 .btn-Edit, .btn-Delete {
   background-color: #fff;
   border: 2px solid #FFE3A9;
@@ -603,38 +539,13 @@ footer button {
   width: auto;
   height: 2em;
 }
-
 .btn-Edit:hover, 
-.btn-Delete:hover,
-.btn-like:hover {
+.btn-Delete:hover
+{
   border-color: #420516;
   color: #420516;
   fill: #420516;
 }
-
-.btn-like {
-  background-color: #fff;
-  border: none;
-  color:#CE395F;
-  cursor: pointer;
-  fill: #FFE3A9;
-  font-family: Karla;
-  justify-content: center;
-  padding: 0 3%;
-  text-align: center;
-  transition: all .3s;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: auto;
-  height: 2em;
-}
-
-.btn-like:hover {
-  border-color: #420516;
-  color: #420516;
-  fill: #420516;
-}
-
 .dialog-modal {
     position: absolute;
     left: 50%;
@@ -643,36 +554,11 @@ footer button {
     margin-top: -150px;
  }
 
- 
-/* @media (min-width: 768px) {
-  .btn-updatepost {
-    min-width: 170px;
+ @media (max-width: 600px) {
+  .middle-map{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
-}  */
+ }
 
-
-/*
-están siendo usados?
-.modal {
-  padding: 1em;
-  max-width: 50ch;
-  border: 0;
-  box-shadow: 0 0 1em rgb(0 0 0 / 0.3); .3 es la opacidad
-  & > * {
-    margin: 0 0 0.5rem 0;
-  }
-}
-.modal::backdrop {
-  backdrop es un seudo element, funciona similar a overlay
-  background: rgb(0 0 0 / 0.4);
-}
-.container {
-  width: 80%;
-}
-.container path {
-  fill: #83c5be;
-  stroke: black;
-}
-.container :hover {
-  fill: yellow;
-} */

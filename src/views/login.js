@@ -20,7 +20,7 @@ const Login = () => {
         </div>
         <div id="login-btns" class="login-btns">
             <button id="log-in" class="main-btn" type="submit">Entrar</button>
-            <p>Or?</p>
+            <p class="or">Or?</p>
             <button id="google-btn" class="google-btn">Sign In with Google</button>
         </div>
     </form>

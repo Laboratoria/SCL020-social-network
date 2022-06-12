@@ -4,7 +4,7 @@ import { navigate } from '../router/router.js';
 import logoUrl from '../img/brand-logo.png'
 
 const Register = () => {
-  const template = // HTML
+  const template = //HTML
   `
   <img src="${logoUrl}" id="logo" class="logo">
   <h2 class="signup-tittle">Create your account</h2>
@@ -41,6 +41,7 @@ const Register = () => {
       const user = await create(userName, email, password);
       localStorage.setItem('userName', user.displayName);
       localStorage.setItem('userUid', user.uid);
+      localStorage.setItem('userPhoto',user.photoURL)
       form1.reset();
       navigate('/home');
     } catch (error) {

@@ -3,18 +3,19 @@ import { navigate } from '../router/router.js';
 import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
 import { createPost } from '../firebase/firestore.js';
-import avatarUrl from '../img/main-avatar.png';
+
 
 const Post = () => {
   const userName = localStorage.getItem('userName') || 'User';
+  const userPhoto = localStorage.getItem('userPhoto');
   const template =
     // HTML
     `<div class="post-box">
     <button id="dicardButton" class="btn-discard">X</button>
     <form id="postBox">
-      <img class ="avatar-new-post" src="${avatarUrl}" />
+      <img class ="avatar-new-post" src="${userPhoto}" />
       <h3 id="user-name-post" class="user-name-post">${userName}:</h3>
-      <textarea required id="review" placeholder="Movie review"></textarea>
+      <textarea required id="review" placeholder="Movie review" maxlength="150"></textarea>
       <p class="movie-imput">Movie<input type="text" id="movie"></p>
       <p class="country-imput">Country
       <select id="country" name="country" class="form-control">
