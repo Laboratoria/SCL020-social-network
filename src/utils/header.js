@@ -9,9 +9,7 @@ export const Header = () => {
   <img class="brand-logo" src="${logoUrl}" />
   <div class="search-box">
       <input type="text" class="search-input" placeholder="Search..">
-      <button class="search-button">
-          <i class="fas fa-search"></i>
-      </button>
+      <button class="search-button"><i class="fas fa-search"></i></button>
   </div>
   <div class="dropdown">
     <img type="checkbox" id="main-avatar" class="main-avatar" src="${avatarUrl}" />

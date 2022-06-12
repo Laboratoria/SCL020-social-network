@@ -1,15 +1,21 @@
-// import { navigate } from '../router/router.js';
-// import { out } from '../firebase/auth.js';
-
-import { orderBy } from 'firebase/firestore';
 import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
-import { readingPost, editPost, gettingDoc, deletePost, likingPost } from '../firebase/firestore.js';
-import { navigate } from '../router/router.js';
+import {
+  readingPost, editPost, gettingDoc, deletePost, likingPost,
+} from '../firebase/firestore.js';
 
 const Home = () => {
   const container = document.createElement('div');
   container.className = 'home-page';
+
+  const homeIntro = document.createElement('div');
+  homeIntro.className = 'home-intro';
+
+  const template = `
+  <h3 class="brand-slogan">Travel through films!</h3>
+  <h2 class="brand-intro">Truly unique. Usually whimsy 🤩</h2>
+  <h3 class="brand-info">Share film locations around the world. Inpire others to visit!</h3>
+  `;
 
   readingPost((post) => {
     container.innerHTML = '';
@@ -30,7 +36,7 @@ const Home = () => {
           <div class"movie-info">
               <h3 class="movie-title">${posts.movie}</h3>
               <p class="movie-review">${posts.review}</p>
-              <p class='info'><b>País:</b> ${posts.country} </p>
+              <p class='info'><b>Country:</b> ${posts.country} </p>
           </div>
       </div>
       <div class="likes-border">
@@ -43,9 +49,12 @@ const Home = () => {
     `;
     });
 
+    homeIntro.innerHTML = template;
+
     const middle = document.createElement('div');
     middle.className = 'middle';
     middle.innerHTML = postStructure;
+    middle.prepend(homeIntro);
     container.append(Header(), middle, Footer());
 
     const editBtn = container.querySelectorAll('.btn-Edit');

@@ -22,13 +22,15 @@ const Profile = () => {
 
               <!--MODAL-->
               <dialog class="dialog-modal" data-id="${doc.id}" id="dialog-modal">
-                  <div class="post-box">
-                      <h3 id="user-name" class="user-name">${posts.userName}</h3>
-                      <textarea id="new-review">${posts.review}</textarea>
-                      <p>Película<input type="text" id="new-movie" value="${posts.movie}"></p>
-                      <p>País<input type="text" id="new-country" value="${posts.country}"></p>
-                      <input id="done-button" class="main-btn" type="button" value="Done">
-                  </div>
+                  <form class="post-box-modal" method="dialog">
+                      <button id="dicardButton" data-id="${doc.id}" class="btn-discard">X</button>
+                      <h3 id="user-name" class="user-name-modal">${posts.userName}</h3>
+                      <label for="new-review">Review: </label>
+                      <textarea id="new-review" class="new-review">${posts.review}</textarea>
+                      <p>Movie: <input type="text" id="new-movie" class="movie-input" value="${posts.movie}"></p>
+                      <p>Country: <input type="text" id="new-country" class="country-input" value="${posts.country}"></p>
+                      <button id="done-button" class="main-btn">Done</button>
+                  </form>
               </dialog>
               <!--MODAL-->
               
@@ -38,12 +40,12 @@ const Profile = () => {
               <p class="date">${posts.date.toDate().toLocaleString()}</p>
           </span>
           <p class="user-container">
-              <i class="user-name">${posts.userName}: </i>
+              <i class="user-name">${posts.userName} posted: </i>
           </p>
           <div class"movie-info">
               <h3 class="movie-title">${posts.movie}</h3>
               <p class="movie-review">${posts.review}</p>
-              <p class='info'><b>País:</b> ${posts.country} </p>
+              <p class='info'><b>Country:</b> ${posts.country} </p>
           </div>
       </div>
       <div class="likes-border">
@@ -79,6 +81,20 @@ const Profile = () => {
               const newCountry = mod.querySelector('#new-country').value;
               await editPost(mod.dataset.id, newReview, newMovie, newCountry);
             });
+          }
+        });
+      });
+    });
+
+    // Closing/discarding modal
+    const discardBtn = container.querySelectorAll('#dicardButton');
+    discardBtn.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        console.log('clicking before');
+        modal.forEach((mod) => {
+          if (mod.dataset.id === btn.dataset.id) {
+            console.log('clicking after');
+            mod.close();
           }
         });
       });
