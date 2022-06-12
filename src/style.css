@@ -13,7 +13,7 @@ body {
   min-height: 100vh;
   min-width: 100vw;
   font-family: karla;
-  background: linear-gradient(rgb(197, 154, 204), rgb(205, 177, 206), rgb(213, 199, 207), rgb(220, 222, 208), rgb(226, 245, 209));
+  background-image: linear-gradient(to bottom, #d7fffa, #defef4, #e5fdef, #ecfceb, #f3fbea, #eef9e9, #e9f7e9, #e5f5e8, #d6f1eb, #caebf0, #c7e3f4, #cddaf3);
 }
 #root{
   display: flex;
@@ -43,7 +43,7 @@ body {
   height: 35%;
   box-sizing: content-box;
   /* background-color: #ff24ff; */
-  background-color: #FBC4F3;
+  background-color:white;
   border: 2px solid #111;
   border-radius: 8px;
   cursor: pointer;
@@ -494,7 +494,8 @@ svg{
    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
    margin: 1%;
    padding: 2%;
- 
+  min-height: 200px;
+  padding-bottom: 1%; 
  }
  .post-header{
   display: flex;
@@ -565,8 +566,6 @@ svg{
   transition: all .3s;
   -webkit-user-select: none;
   touch-action: manipulation;
-/*   width: auto;
-  height: 2em; */
 }
 .btn-like:hover {
   border-color: #420516;
@@ -588,15 +587,28 @@ svg{
   height: 100vh;
   display:flex;
   flex-direction: column;
-  justify-content: space-between;
+justify-content: center;
+  align-items: center;
+}
+
+.post-box-modal {
+display: flex;
+  flex-direction: column;
+  align-self: center; 
+}
+
+.post-box-modal button {
+  align-self: flex-end;
+  margin-top: 3%;
 }
  
 .dialog-modal {
-  position: absolute;
+  z-index: 11;
+position: absolute;
   align-items: center;
   justify-content: center;
   align-self: center;
-  align-content: center;
+  justify-self: center;
   min-width: 350px;
   padding: 2%;
   border: none;
@@ -611,41 +623,27 @@ svg{
   background: rgb(0 0 0 / 0.4);
 }
 
-.post-box-modal {
+/* new-post div textarea, .dialog-modal div textarea */
+.post-footer-profile {
   display: flex;
-  flex-direction: column;
-}
-
-.post-box-modal button {
-  align-self: flex-end;
+  height: 15%;
+  justify-content: space-around;
+  align-items: end;
   margin-top: 3%;
 }
 
-/* new-post div textarea, .dialog-modal div textarea */
-
- /*Div que contiene botones edit and delete*/
- .btns-updateDiv {
-  display: flex;
-  justify-content:end;
-  margin: 1%;
-  gap: 2%;
-}
 .btn-Edit, .btn-Delete {
   background-color: #fff;
-  border: 2px solid #FFE3A9;
-  color: #FF8C8C;
+  border: none;
+  color: grey;
   cursor: pointer;
-  fill: #FFE3A9;
-  font-family: Karla;
-  justify-content: center;
   padding: 0 3%;
-  text-align: center;
-  transition: all .3s;
-  -webkit-user-select: none;
-  touch-action: manipulation;
   width: auto;
-  height: 2em;
+  transition: all .3s;
+-webkit-user-select: none;
+touch-action: manipulation;
 }
+
 .btn-Edit:hover, 
 .btn-Delete:hover
 .main-btn:hover,
@@ -653,6 +651,31 @@ svg{
   border-color: #420516;
   color: #420516;
   fill: #420516;
+}
+
+/* LIKED CSS */
+
+.middle-liked{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  overflow: auto;
+  min-height: 2em;
+  width: 100%;
+}
+.post-liked {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  min-width: 250px;
+  background-color: #ffffff;
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+  margin: 1%;
+  padding: 2%;
+ min-height: 200px;
+ padding-bottom: 1%; 
 }
 
  @media (max-width: 600px) {

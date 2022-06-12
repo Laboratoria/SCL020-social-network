@@ -7,6 +7,7 @@ import { likingPost, likedPosts } from '../firebase/firestore.js';
 const Liked = () => {
   const container = document.createElement('div');
   container.className = 'home-page';
+  const userPhoto = localStorage.getItem('userPhoto');
 
   likedPosts((post) => {
     container.innerHTML = '';
@@ -16,32 +17,29 @@ const Liked = () => {
     post.forEach((doc) => {
       const posts = doc.data();
       postStructure += `
-      <div class="post-border">
-      <div class='post'>
-          <span>
-              <p class="date">${posts.date.toDate().toLocaleString()}</p>
-          </span>
-          <p class="user-container">
-              <i class="user-name">${posts.userName}</i>
-          </p>
-          <div class"movie-info">
-              <h3 class="movie-title">${posts.movie}</h3>
-              <p class="movie-review">${posts.review}</p>
-              <p class='info'><b>País:</b> ${posts.country} </p>
-          </div>
-      </div>
-      <div class="likes-border">
+      <div class="post-liked">
+        <div class='post-header'>
+          <p class='user-info'><img class="user-photo" src="${userPhoto}">
+          <span class="user-name">${posts.userName} posted: </span> </p>
+          <p class="movie-review">${posts.review}</p>
+          <p class="date">${posts.date.toDate().toLocaleString()}</p>
+        </div>
+        <div class="post-main">       
+          <div class="movie-title">${posts.movie}</div>
+          <p class='movie-country'>Country: ${posts.country} </p>
+        </div>
+        <div class="post-footer">
           <button class="btn-like" id="btn-like" data-id="${doc.id}">
-          <i class="fas fa-heart"></i>
+            <i class="fas fa-heart"></i>
+            <span id="like-count" class="like-count"> ${posts.likesSum} </span>
           </button>
-          <span id="like-count" class="like-count"> ${posts.likesSum} Likes</span>
+        </div>
       </div>
-  </div>
-    `;
+      `;
     });
 
     const middle = document.createElement('div');
-    middle.className = 'middle';
+    middle.className = 'middle-liked';
     middle.innerHTML = postStructure;
     container.append(Header(), middle, Footer());
 

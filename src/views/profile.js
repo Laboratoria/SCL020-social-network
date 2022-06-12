@@ -16,41 +16,40 @@ const Profile = () => {
     post.forEach((doc) => {
       const posts = doc.data();
       postStructure += `
-      <div class="post">
+      <div class="post"> 
         <div class='post-header'>
-          <div class="btns-updateDiv">
-            <button class='btn-Edit' data-id='${doc.id}'>Edit</button>
-            <!--MODAL-->
-             <dialog class="dialog-modal" data-id="${doc.id}" id="dialog-modal">
-                <form class="post-box-modal" method="dialog">
-                    <button id="dicardButton" data-id="${doc.id}" class="btn-discard">X</button>
-                    <h3 id="user-name" class="user-name-modal">${posts.userName}</h3>
-                    <label for="new-review">Review: </label>
-                    <textarea id="new-review" class="new-review">${posts.review}</textarea>
-                    <p>Movie: <input type="text" id="new-movie" class="movie-input" value="${posts.movie}"></p>
-                    <p>Country: <input type="text" id="new-country" class="country-input" value="${posts.country}"></p>
-                    <button id="done-button" class="main-btn">Done</button>
-                 </form>
-              </dialog>
-              <!--MODAL-->
-              <button class='btn-Delete' data-id='${doc.id}'>Delete</button>
-        </div>
         <p class='user-info'><img class="user-photo" src="${userPhoto}">
         <span class="user-name">${posts.userName} posted: </span> </p>
         <p class="movie-review">${posts.review}</p>
         <p class="date">${posts.date.toDate().toLocaleString()}</p>
       </div>
-      <div class="post-main">       
+      <div class="post-main"> 
+   
         <div class="movie-title">${posts.movie}</div>
         <p class='movie-country'>Country: ${posts.country} </p>
       </div>
-      <div class="post-footer">
+      <div class="post-footer-profile">
+      <button class='btn-Edit' data-id='${doc.id}'><i class="fas fa-edit"></i></button>
+      <button class='btn-Delete' data-id='${doc.id}'><i class="fas fa-trash"></i></button>
         <button class="btn-like" id="btn-like" data-id="${doc.id}">
           <i class="fas fa-heart"></i>
           <span id="like-count" class="like-count"> ${posts.likesSum} </span>
         </button>
       </div>
     </div>
+    <!--MODAL-->
+    <dialog class="dialog-modal" data-id="${doc.id}" id="dialog-modal">
+       <form class="post-box-modal" method="dialog">
+           <button id="dicardButton" data-id="${doc.id}" class="btn-discard">x</button>
+           <h3 id="user-name" class="user-name-modal">${posts.userName}</h3>
+           <label for="new-review">Review: </label>
+           <textarea id="new-review" class="new-review">${posts.review}</textarea>
+           <p>Movie: <input type="text" id="new-movie" class="movie-input" value="${posts.movie}"></p>
+           <p>Country: <input type="text" id="new-country" class="country-input" value="${posts.country}"></p>
+           <button id="done-button" class="main-btn">Done</button>
+        </form>
+     </dialog>
+     <!--MODAL-->  
     `;
     });
 
@@ -67,7 +66,7 @@ const Profile = () => {
       btn.addEventListener('click', () => {
         modal.forEach((mod) => {
           if (mod.dataset.id === btn.dataset.id) {
-            mod.showModal();
+            mod.show();
 
             // Updating Post in Profile
             const doneBtn = mod.querySelector('#done-button');
