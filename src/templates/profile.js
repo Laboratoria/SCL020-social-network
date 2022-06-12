@@ -10,7 +10,8 @@ function profile() {
       <div id="navMenu">
         <h4> PlantGram <img src="./assets/flower (1).png"></h4>
         <ul>
-          <li><a href='#' id='linkNews'> NOTICIAS </a></li>
+          <li>
+          <a href='#' id='linkNews'> NOTICIAS </a></li>
           <li><a href='#' id='linkProfile'> MI PERFIL </a></li>
           <li><a href='#' id='linkGroups'> GRUPOS </a></li>
           <li><a href='#' id='linkPublic'> PUBLICACIONES </a></li>
@@ -27,13 +28,13 @@ function profile() {
       <h4 id="emailProfile">correo@email.com</h4>
     </div>
     <div class="profileData">
-      <p>Mis Intereses</p>
+      <p><i class="fa-solid fa-thumbs-up"></i>Mis Intereses</p>
       <hr>
-      <p>Mis Plantas</p>
+      <p><i class="fa-solid fa-thumbs-up"></i>Mis Plantas</p>
       <hr>
-      <p>Mis Grupos</p>
+      <p><i class="fa-solid fa-thumbs-up"></i>Mis Grupos</p>
       <hr>
-      <p>Mis Likes</p>
+      <p><i class="fa-solid fa-thumbs-up"></i>Mis Likes</p>
       <hr>
     </div>
   </div>

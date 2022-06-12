@@ -574,3 +574,9 @@ hr {
   text-decoration-line: underline;
   color: #E28B7A;
 }
+
+.fa-thumbs-up {
+  color: #E28B7A;
+  padding: 8px;
+}
+
