@@ -312,7 +312,7 @@ p {
   text-align: center;
 }
  
-/* POST CSS */
+/* NEW POST CSS */
 .new-post {
   min-width: 100vw;
   min-height: 100vh;
@@ -365,7 +365,7 @@ p {
   height: 60px;
 }
 
-.user-name-post {
+.user-name-new-post, .user-name-modal {
   margin: 0.5em;
   font-size: 1.1rem;
   font-style: normal;
@@ -374,9 +374,9 @@ p {
   color: rgb(0, 0, 0);
 }
 
-.new-post div textarea {
+.new-post div textarea, .dialog-modal div textarea {
   width: 100%;
-  height: 70%;
+  height: 50%;
   border: none;
   font-family: karla;
   margin-top: 1em;
@@ -384,7 +384,7 @@ p {
   font-size: 1rem;
 }
 
-.movie-imput, .country-imput {
+.movie-input, .country-input {
   width: 100%;
   margin-top: 1em;
   font-size: 0.8rem;
@@ -394,7 +394,7 @@ p {
   color: rgb(0, 0, 0);
 }
 
-.movie-imput input[type=text], select {
+.movie-input input[type=text], select {
   width: 100%;
   padding: 0.7em;
   margin-top: 0.4em;
@@ -605,6 +605,38 @@ footer button {
   justify-content: space-between;
 }
  
+.dialog-modal {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  align-content: center;
+  min-width: 350px;
+  padding: 2%;
+  border: none;
+  border-radius: 2%;
+  padding: 1em;
+  max-width: 50ch;
+  border: 0;
+  box-shadow: 0 0 1em rgb(0 0 0 / 0.3);
+}
+
+.dialog-modal::backdrop {
+  background: rgb(0 0 0 / 0.4);
+}
+
+.post-box-modal {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-box-modal button {
+  align-self: flex-end;
+  margin-top: 3%;
+}
+
+/* new-post div textarea, .dialog-modal div textarea */
+
  /* POST EN HOME */
  .post-border {
    display: flex;
@@ -702,20 +734,7 @@ footer button {
   fill: #420516;
 }
 
-.dialog-modal {
-    position: absolute;
-    left: 50%;
-    top: 50%; 
-    margin-left: -150px;
-    margin-top: -150px;
- }
 
- 
-/* @media (min-width: 768px) {
-  .btn-updatepost {
-    min-width: 170px;
-  }
-}  */
 
 
 /*

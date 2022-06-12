@@ -14,8 +14,8 @@ const Post = () => {
     <form id="postBox">
       <img class ="avatar-new-post" src="${avatarUrl}" />
       <h3 id="user-name-post" class="user-name-post">${userName}:</h3>
-      <p class="movie-imput">Movie<input type="text" id="movie"></p>
-      <p class="country-imput">Country
+      <p class="movie-input">Movie<input type="text" id="movie"></p>
+      <p class="country-input">Country
       <select id="country" name="country" class="form-control">
       <option value="Afghanistan">Afghanistan</option>
       <option value="Åland Islands">Åland Islands</option>
