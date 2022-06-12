@@ -11,7 +11,7 @@ const Post = () => {
   const template =
     // HTML
     `<div class="post-box">
-    <button id="dicardButton" class="btn-discard">X</button>
+    <button id="dicardButton" class="btn-discard">x</button>
     <form id="postBox">
       <img class ="avatar-new-post" src="${userPhoto}" />
       <h3 id="user-name-post" class="user-name-post">${userName}:</h3>
