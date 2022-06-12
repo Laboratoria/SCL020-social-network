@@ -988,7 +988,7 @@ const Map = () => {
           <p class="date-map">${posts.date.toDate().toLocaleString()}</p>
           <div class="movie-info-map">
             <div class="movie-title-map"><h3 >${posts.movie}</h3> </div>
-            <p class='movie-country-map'><b>País:</b> ${posts.country} </p>
+            <p class='info'><b>Country:</b> ${posts.country} </p>
           </div>
           <button class="btn-like-map" data-id=${doc.id}>
             <i class="fas fa-heart"></i>

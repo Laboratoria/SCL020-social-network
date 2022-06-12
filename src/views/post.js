@@ -14,7 +14,6 @@ const Post = () => {
     <form id="postBox">
       <img class ="avatar-new-post" src="${avatarUrl}" />
       <h3 id="user-name-post" class="user-name-post">${userName}:</h3>
-      <textarea required id="review" placeholder="Movie review"></textarea>
       <p class="movie-imput">Movie<input type="text" id="movie"></p>
       <p class="country-imput">Country
       <select id="country" name="country" class="form-control">
@@ -263,6 +262,7 @@ const Post = () => {
       <option value="Zambia">Zambia</option>
       <option value="Zimbabwe">Zimbabwe</option>
   </select> 
+  <textarea required id="review" placeholder="Share a movie review"></textarea>
       </p>
       <input id="post-submit" type="submit" value="Post" />
     </form>

@@ -35,7 +35,66 @@ body {
   overflow: auto;
   min-height: 2em;
   width: 100%;
+  transition: top 0.3s;
 }
+/* HOME PAGE CSS */
+.home-page{
+  min-width: 100vw;
+  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 60%;
+  height: 35%;
+  box-sizing: content-box;
+  /* background-color: #ff24ff; */
+  background-color: #FBC4F3;
+  border: 2px solid #111;
+  border-radius: 8px;
+  cursor: pointer;
+  justify-content: center;
+  padding: 0 25px;
+  margin-bottom: 1%;
+  position: relative;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.home-intro:after {
+  background-color: #111;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+.home-intro:hover:after {
+  transform: translate(0, 0);
+}
+
+.brand-slogan, .brand-intro, .brand-info {
+  margin: 0.4%;
+  color: #2B2B2B;
+}
+
 /* HEADER CSS */
 .header {
   flex-shrink: 0;
@@ -132,7 +191,7 @@ body {
   display: block;
 }
  
-/* LOG IN FORM */
+/* LOG IN FORM CSS */
 .login-box {
   display: flex;
   flex-direction: column;
@@ -243,7 +302,7 @@ p {
   margin: 5%;
 }
  
-/* REGISTER FORM */
+/* REGISTER FORM CSS */
 .signup-tittle {
   margin-bottom: 5%;
   text-align: center;
@@ -253,7 +312,7 @@ p {
   text-align: center;
 }
  
-/* POST */
+/* POST CSS */
 .new-post {
   min-width: 100vw;
   min-height: 100vh;
@@ -423,6 +482,7 @@ svg{
 .map :hover{
   fill: #f7f1ed;
 }
+
 /* POST EN MAP */
 .post-border-map {
   display: flex;
@@ -458,6 +518,7 @@ justify-self: end;
 margin:2%;
 margin-right: 9%;
 }
+
 .user-name-map {
  color:rgba(37, 9, 59, 0.798);
  font-size: 0.7rem; 
@@ -468,6 +529,7 @@ margin-right: 9%;
  font-style: normal;
  line-height: 200%;
 }
+
 .movie-info-map{
   display:flex;
   flex-direction: column;
@@ -477,11 +539,13 @@ margin-right: 9%;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   align-self: center;
 }
+
 .movie-title-map {
   align-self: center;
  color:black;
  line-height: 200%;
 }
+
 .btn-like-map{
   align-self: end;
   color:#CE395F;
@@ -490,6 +554,7 @@ margin-right: 9%;
   margin:5%;
   margin-right: 9%;
 }
+
 .likes-border-map {
   margin-top:10%;
   display: flex;
@@ -528,16 +593,6 @@ footer button {
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   text-align: center;
 }
-.home-page{
-  min-width: 100vw;
-  min-height: 100vh;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 
 /* PROFILE PAGE CSS */
 .profile-page {
@@ -558,7 +613,6 @@ footer button {
    min-width: 300px;
    height: auto;
    background-color: #ffffff;
-   font-family: karla;
    border-radius:.5em;
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.10); 
    margin: 1%;
@@ -617,7 +671,9 @@ footer button {
 
 .btn-Edit:hover, 
 .btn-Delete:hover,
-.btn-like:hover {
+.btn-like:hover,
+.main-btn:hover,
+.google-btn:hover {
   border-color: #420516;
   color: #420516;
   fill: #420516;

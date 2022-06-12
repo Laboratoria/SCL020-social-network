@@ -38,12 +38,12 @@ const Profile = () => {
               <p class="date">${posts.date.toDate().toLocaleString()}</p>
           </span>
           <p class="user-container">
-              <i class="user-name">${posts.userName}: </i>
+              <i class="user-name">${posts.userName} posted: </i>
           </p>
           <div class"movie-info">
               <h3 class="movie-title">${posts.movie}</h3>
               <p class="movie-review">${posts.review}</p>
-              <p class='info'><b>País:</b> ${posts.country} </p>
+              <p class='info'><b>Country:</b> ${posts.country} </p>
           </div>
       </div>
       <div class="likes-border">
