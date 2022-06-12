@@ -988,7 +988,6 @@ const Map = () => {
             <span class="user-name">${posts.userName} posted: </span> </p>
             <p class="movie-review">${posts.review}</p>
             <p class="date">${posts.date.toDate().toLocaleString()}</p>
-  
           </div>
           <div class="post-main">       
             <div class="movie-title">${posts.movie}</div>

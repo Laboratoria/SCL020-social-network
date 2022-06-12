@@ -17,27 +17,28 @@ const Profile = () => {
       const posts = doc.data();
       postStructure += `
       <div class="post">
-      <div class='post-header'>
-      <div class="btns-updateDiv">
-      <button class='btn-Edit' data-id='${doc.id}'>Edit</button>
-      <!--MODAL-->
-      <dialog class="dialog-modal" data-id="${doc.id}" id="dialog-modal">
-        <div class="post-box">
-          <h3 id="user-name" class="user-name">${posts.userName}</h3>
-          <textarea id="new-review">${posts.review}</textarea>
-          <p>Película<input type="text" id="new-movie" value="${posts.movie}"></p>
-          <p>País<input type="text" id="new-country" value="${posts.country}"></p>
-          <input id="done-button" class="main-btn" type="button" value="Done">
+        <div class='post-header'>
+          <div class="btns-updateDiv">
+            <button class='btn-Edit' data-id='${doc.id}'>Edit</button>
+            <!--MODAL-->
+             <dialog class="dialog-modal" data-id="${doc.id}" id="dialog-modal">
+                <form class="post-box-modal" method="dialog">
+                    <button id="dicardButton" data-id="${doc.id}" class="btn-discard">X</button>
+                    <h3 id="user-name" class="user-name-modal">${posts.userName}</h3>
+                    <label for="new-review">Review: </label>
+                    <textarea id="new-review" class="new-review">${posts.review}</textarea>
+                    <p>Movie: <input type="text" id="new-movie" class="movie-input" value="${posts.movie}"></p>
+                    <p>Country: <input type="text" id="new-country" class="country-input" value="${posts.country}"></p>
+                    <button id="done-button" class="main-btn">Done</button>
+                 </form>
+              </dialog>
+              <!--MODAL-->
+              <button class='btn-Delete' data-id='${doc.id}'>Delete</button>
         </div>
-      </dialog>
-      <!--MODAL-->  
-      <button class='btn-Delete' data-id='${doc.id}'>Delete</button>
-    </div>
         <p class='user-info'><img class="user-photo" src="${userPhoto}">
         <span class="user-name">${posts.userName} posted: </span> </p>
         <p class="movie-review">${posts.review}</p>
         <p class="date">${posts.date.toDate().toLocaleString()}</p>
-
       </div>
       <div class="post-main">       
         <div class="movie-title">${posts.movie}</div>
@@ -51,8 +52,6 @@ const Profile = () => {
       </div>
     </div>
     `;
-    
-     
     });
 
     const middle = document.createElement('div');
@@ -78,6 +77,20 @@ const Profile = () => {
               const newCountry = mod.querySelector('#new-country').value;
               await editPost(mod.dataset.id, newReview, newMovie, newCountry);
             });
+          }
+        });
+      });
+    });
+
+    // Closing/discarding modal
+    const discardBtn = container.querySelectorAll('#dicardButton');
+    discardBtn.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        console.log('clicking before');
+        modal.forEach((mod) => {
+          if (mod.dataset.id === btn.dataset.id) {
+            console.log('clicking after');
+            mod.close();
           }
         });
       });
