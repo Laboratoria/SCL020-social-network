@@ -38,17 +38,23 @@ const Profile = () => {
       </div>
     </div>
     <!--MODAL-->
+    <div class="modal-div">
     <dialog class="dialog-modal" data-id="${doc.id}" id="dialog-modal">
        <form class="post-box-modal" method="dialog">
-           <button id="dicardButton" data-id="${doc.id}" class="btn-discard">x</button>
-           <h3 id="user-name" class="user-name-modal">${posts.userName}</h3>
-           <label for="new-review">Review: </label>
+       <div class="modal-header">
+           <h4 id="user-name" class="user-name-modal">${posts.userName}</h4>
+           <button id="discardButton" class="btn-discard-modal">x</button>
+        </div>
+           <p>Review: </p>
            <textarea id="new-review" class="new-review">${posts.review}</textarea>
-           <p>Movie: <input type="text" id="new-movie" class="movie-input" value="${posts.movie}"></p>
-           <p>Country: <input type="text" id="new-country" class="country-input" value="${posts.country}"></p>
+           <br>
+           <p>Movie:</p> <input type="text" id="new-movie" value="${posts.movie}">
+           <br>
+           <p>Country:</p> <input type="text" id="new-country" value="${posts.country}">
            <button id="done-button" class="main-btn">Done</button>
         </form>
      </dialog>
+     </div>
      <!--MODAL-->  
     `;
     });
@@ -64,7 +70,9 @@ const Profile = () => {
     // Open Modal
     editBtn.forEach((btn) => {
       btn.addEventListener('click', () => {
+        
         modal.forEach((mod) => {
+          console.log('hola')
           if (mod.dataset.id === btn.dataset.id) {
             mod.show();
 
@@ -82,7 +90,7 @@ const Profile = () => {
     });
 
     // Closing/discarding modal
-    const discardBtn = container.querySelectorAll('#dicardButton');
+    const discardBtn = container.querySelectorAll('#discardButton');
     discardBtn.forEach((btn) => {
       btn.addEventListener('click', () => {
         console.log('clicking before');
