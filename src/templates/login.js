@@ -48,10 +48,9 @@ function login() {
 
   //LOGIN WITH GMAIL
   const logInWithGmail = container.querySelector("#logInButton");
-  let currentUser;
   logInWithGmail.addEventListener("click", async (e) => {
     try {
-      currentUser = await logIn();
+      await logIn();
       navigate("news");
     } catch (error) {
       throw error.message;

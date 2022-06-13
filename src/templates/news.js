@@ -3,8 +3,7 @@ import { signOutWithEmail } from "../firebase/auth.js";
 import { auth } from "../firebase/init.js";
 
 function news() {
-  const html =
-    //html
+  const html =//html
     `
 <div class="background-white">
     <div class="bar">
