@@ -8,14 +8,20 @@ function groups() {
     <div class="background-white">
     <div class="bar">
     <div id="navMenu">
-    <h4> PlantGram <img src="./assets/flower (1).png"></h4>
+      <div>
+        <h4> PlantGram <img src="./assets/flower.png"></h4>
         <ul>
-        <li><a href='#' id='linkNews'> NOTICIAS </a></li>
-        <li><a href='#' id='linkProfile'> MI PERFIL </a></li>
-        <li><a href='#' id='linkGroups'> GRUPOS </a></li>
-        <li><a href='#' id='linkPublic'> PUBLICACIONES </a></li>
-        <li><a href='#' id='signOut'> Cerrar sesión </a></li>
+            <li><a href='#' id='linkNews'> NOTICIAS </a></li>
+            <li><a href='#' id='linkProfile'> MI PERFIL </a></li>
+            <li><a href='#' id='linkGroups'> GRUPOS </a></li>
+            <li><a href='#' id='linkPublic'> PUBLICACIONES </a></li>
         </ul>
+      </div>
+      <ul class="listaCerrarSesion">
+        <li>
+          <a href='#' id='signOut'> Cerrar sesión </a>
+        </li>
+      </ul>
     </div>
     <h5>PlantGram</h5>
     </div>
@@ -26,6 +32,7 @@ function groups() {
     
     <ul class="lista-grupos">
         <li>
+            <img class="categoria" width="45" src="./assets/categoria-1.jpg">
             <p>
             Los mejores Fertilizantes
             </p>
@@ -33,38 +40,8 @@ function groups() {
             Únete
             </a>
         </li>
-        <li>
-            <p>
-            Los mejores Fertilizantes
-            </p>
-            <a  href="#!">
-            Únete
-            </a>
-        </li>
-        <li>
-            <p>
-            Los mejores Fertilizantes
-            </p>
-            <a  href="#!">
-            Únete
-            </a>
-        </li>
-        <li>
-            <p>
-            Los mejores Fertilizantes
-            </p>
-            <a  href="#!">
-            Únete
-            </a>
-        </li>
-        <li>
-            <p>
-            Los mejores Fertilizantes
-            </p>
-            <a  href="#!">
-            Únete
-            </a>
-        </li>
+        
+
         
     </ul>
       <div class="copyright">
