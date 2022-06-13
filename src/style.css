@@ -209,7 +209,7 @@ label {
 }
 /*Entrar y Registrar btn*/
 .main-btn {
-  background: #CE395F;
+  background-image: linear-gradient(to right, #CB356B 0%, #BD3F32  51%, #CB356B  100%);
   border-radius: 999px;
   box-shadow: #CE395F 0 10px 20px -10px;
   box-sizing: border-box;
@@ -230,6 +230,7 @@ label {
   border: 0;
   margin-bottom: 5%;
 }
+
 .google-btn {
   transition: background-color .3s, box-shadow .3s;  
   padding: 12px 16px 12px 42px;
@@ -353,7 +354,7 @@ label {
   background-color: #FFFFFF;
 }
 #post-submit {
-  background: #CE395F;
+  background-image: linear-gradient(to right, #CB356B 0%, #BD3F32  51%, #CB356B  100%);
   border-radius: 10px;
   box-shadow: #CE395F 0 10px 20px -10px;
   box-sizing: border-box;
@@ -458,6 +459,9 @@ svg{
   background: rgb(0 0 0 / 0.4);
 }
 
+.brand-name {
+  color:#CB356B;
+}
 .brand-slogan, .brand-intro, .brand-info {
   margin: 0.4%;
   color: #2B2B2B;
@@ -640,7 +644,7 @@ svg{
 }
 
 .btn-Edit:hover, 
-.btn-Delete:hover
+.btn-Delete:hover,
 .main-btn:hover,
 .google-btn:hover {
   border-color: #420516;
