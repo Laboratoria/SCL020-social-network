@@ -16,7 +16,7 @@ export const menu = () =>{
                 </div>
                 <div class="sub-container-img">
                     <img class="img-menu" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-signout%20(1).png?raw=true" alt="logo-LogOut">
-                    <a href="#">Log out</a>
+                    <a href="#/logoutConfirmation">Log out</a>
                 </div>
             </div>
         </div>

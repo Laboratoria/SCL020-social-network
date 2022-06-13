@@ -29,7 +29,8 @@ export const signUp = () => {
     btn.addEventListener("click", () => {
         const email = divSignUp.querySelector("#email").value;
         const password = divSignUp.querySelector("#password").value;
-        register(email, password);
+        const user = divSignUp.querySelector("#user").value;
+        register(email, password, user);
     })
     return divSignUp;
 }
