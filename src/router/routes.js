@@ -4,6 +4,7 @@ import { register } from '../templates/register.js';
 import { news } from '../templates/news.js';
 import { publications } from '../templates/publications.js'; 
 import { groups } from '../templates/groups.js';
+import { addPost } from '../templates/addPost.js';
 
 const routes = {
   login: {
@@ -29,6 +30,10 @@ const routes = {
   groups: {
     path: '/groups',
     template: groups(),
+  },
+  addPost: {
+    path: '/addPost',
+    template: addPost(),
   }
 };
 

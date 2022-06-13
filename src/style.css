@@ -654,3 +654,11 @@ hr {
   font-family: 'Kite One', regular;
   font-size: 12px;
 }
+
+#btnCreatePost{
+  background-color: #E48A7B;
+}
+
+#addNewPost{
+  background-color: #E48A7B;
+}

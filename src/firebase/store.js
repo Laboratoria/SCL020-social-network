@@ -6,7 +6,6 @@ import {
   getDoc,
   getDocs,
   collection,
-  setDoc,
   Timestamp,
   serverTimestamp,
   updateDoc,
@@ -52,10 +51,11 @@ const docData = {
 
 // Add a new document with a generated id.
 const createPost = async (title, description) => {
-const docRef = await setDoc(collection(firestore, "Posts"), {
-  title: "Tokyo",
-  description: "Japan"
-});
+  console.log("ingresé")
+const docRef = await addDoc(collection(firestore, "Posts"), {
+  title: title,
+  description: description
+})
 console.log("Document written with ID: ", docRef.id);
 }
 
