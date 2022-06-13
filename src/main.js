@@ -17,10 +17,9 @@ import { changeRoute} from './lib/router.js';
 
 myFunction();
 
-
 const init = ()=> {
     document.getElementById("root").innerHTML = home();
-    //changeRoute(window.location.hash);
+    changeRoute(window.location.hash);
 
     window.addEventListener('hashchange',()=>{
         myFunction();

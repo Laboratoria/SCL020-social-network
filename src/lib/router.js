@@ -13,11 +13,9 @@ import { welcome } from './views/templateWelcome.js';
 
 export const changeRoute = (hash) => {
     if (hash === '#/login'){
-        return showTemplate(hash);
-    }
-    // else if (hash===''){
-    //     return showTemplate (hash);
-    // }
+        return showTemplate(hash);}
+    // else if (hash==='#/home'){
+    //     return showTemplate (hash);}
     else if (hash==='#/age'){
         return showTemplate (hash);
     }else if (hash==='#/ageRedirect'){
@@ -81,9 +79,9 @@ const showTemplate = (hash)=>{
         case '#/deleteComment':
             containerRoot.appendChild(deleteComment());
             break; 
-        // case '':
-        //     containerRoot.appendChild(home());
-        //   break;
+        case '':
+            containerRoot.appendChild(home());
+          break;
         default:
             containerRoot.appendChild(err404());                             
     }
