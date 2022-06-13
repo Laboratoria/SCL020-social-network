@@ -25,7 +25,7 @@ export const home = () => {
                 <h4>Buscar</h4>
             </div>
         </a>
-        <a href="#/logIn">
+        <a href="">
             <div class="option">
                 <i class="fa-solid fa-arrow-right-from-bracket fa-xl" title="Cerrar sesión"></i>
                 <h4>Cerrar cesion</h4>

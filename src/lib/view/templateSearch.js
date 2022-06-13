@@ -25,7 +25,7 @@ export const searchPost = () => {
                 <h4>Buscar</h4>
             </div>
         </a>
-        <a href="#/logIn">
+        <a href="">
             <div class="option">
                 <i class="fa-solid fa-arrow-right-from-bracket fa-xl" title="Cerrar sesión"></i>
                 <h4>Cerrar cesion</h4>
@@ -35,20 +35,41 @@ export const searchPost = () => {
 </div>
 <div class="postEditContainer">
     <div id="containImgSear">
-        <img src="img/logo4.png" id="logo4" width=250px">
+        <img src="img/FindYourCake.png" id="logo4" width=150px">
     </div>
-    <div class="buscador">
+    <div class="divButtons">
         <input type="search" id="search" name="search" placeholder="Buscar...">
     </div>  
-    <div id="buscadores">
-        <button class="buscadores">#sinazucar</button>
-        <button class="buscadores">#singluten</button>
-        <button class="buscadores">#sinlactosa</button>
-        <button class="buscadores">#vegano</button>
-        <button class="buscadores">#todos</button>
+    <div class="divButtons">
+        <button class="buttons">#sinazucar</button>
+        <button class="buttons">#singluten</button>
+        <button class="buttons">#sinlactosa</button>
+        <button class="buttons">#vegano</button>
+        <button class="buttons">#todos</button>
     </div> 
-    <div class="userSearContain">
-        <div id="editImg">
+    <div class="postSearch">
+    <div class="postBody">
+    <div class="userNav">
+        <div class="item1">
+            <i class="fa-solid fa-circle-user fa-3x"></i>
+        </div>
+        <div class="item2">
+            <p>Nombre de usuario</p>
+        </div>
+        <div class="item3">
+            <p>Baker</p>
+        </div>
+    </div>
+    <div class="post">
+        <h2> aqui va el post</h2> 
+    </div>
+    <div class="like">
+        <div>
+            <img src="img/cuplike.png" class ="cupcakeImg" alt="cuplike">
+        </div>
+    </div>
+</div>
+</div>
     </div>
 </div> 
 `

@@ -4,6 +4,8 @@ import { home } from './view/templateHome.js';
 import { error404 } from './view/template404.js';
 import { userProfile } from './view/templateUserProfile.js';
 import { searchPost } from './view/templateSearch.js';
+import { editPost } from './view/templateEditPost.js';
+import { newPost } from './view/templateCreatePost.js';
 
 export const changeRoute = (hash) => {
     if (hash === '#/') {
@@ -34,6 +36,12 @@ const showTemplates = (hash) => {
         break;
     case '#/search':
     containerRoot.appendChild(searchPost());
+        break;
+    case '#/editPost':
+    containerRoot.appendChild(editPost())
+        break;
+    case '#/createPost':
+    containerRoot.appendChild(newPost())
         break;
     default:
     containerRoot.appendChild(error404());

@@ -6,66 +6,72 @@ export const editPost = () => {
     <div id="containImg">
         <img src="img/logo2.png" id="logo2">
     </div>
-    <div class="options__menu">
+    <div class="options__menu">	
         <a href="#/userProfile" class="selected">
             <div class="option">
-                <i class="fa-solid fa-circle-user fa-xl" title="Perfil"></i>
-                <h4> nombre usuario titulo</h4>
-            </div>
-        </a>
-        <a href="#/home">
-            <div class="option">
-                <i class="fa-solid fa-house fa-xl" title="Inicio"></i>
-                <h4>Inicio</h4>
-            </div>
-        </a>
-        <a href="#/search">
-            <div class="option">
-                <i class="fa-solid fa-magnifying-glass fa-xl" title="Buscar"></i>
-                <h4>Buscar</h4>
-            </div>
-        </a>
-        <a href="#/logIn">
-            <div class="option">
-                <i class="fa-solid fa-arrow-right-from-bracket fa-xl" title="Cerrar sesión"></i>
-                <h4>Cerrar cesion</h4>
-            </div>
-        </a>
+                <i class="fa-solid fa-circle-user fa-xl" title="Perfil" ></i>
+            <h4> nombre usuario titulo</h4>
+        </div>
+    </a>
+    <a href="#/home">
+        <div class="option">
+            <i class="fa-solid fa-house fa-xl" title="Inicio"></i>
+            <h4>Inicio</h4>
+        </div>
+    </a>
+    <a href="#/search">
+        <div class="option">
+            <i class="fa-solid fa-magnifying-glass fa-xl" title="Buscar"></i>
+            <h4>Buscar</h4>
+        </div>
+    </a>
+    <a href="">
+        <div class="option">
+            <i class="fa-solid fa-arrow-right-from-bracket fa-xl" title="Cerrar sesión"></i>
+            <h4>Cerrar cesion</h4>
+        </div>
+    </a>
     </div>
 </div>
-<div class="postEditContainer">
-    <div class="userEditContain">
-        <div id="editImg">
-            <img src="img/ProfileNegro.png" id="logo3" width="90px">
-            <article class="articlesEdit">
-                <p>Juanita Pérez</p>
+<div class="postMain">
+    <div class="userHeader">
+        <div class="item1">
+            <i class="fa-solid fa-circle-user fa-6x"></i>
+        </div>
+        <div class="item2" id="nameHeader">
+            <h2>Nombre de usuario</h2>
+        </div>
+        <div class="item3" id="titleHeader">
+            <h3>Titulo baker o eater</h3>
+        </div>
+    </div>
+    <div class="createPostFlex">
+        <p>Mis Publicaciones:</p>
+    </div>
+    <div class="postBody">
+        <div class="userNav">
+            <div class="item1">
+                <i class="fa-solid fa-circle-user fa-3x"></i>
+            </div>
+            <div class="item2">
+                <p>Nombre de usuario</p>
+            </div>
+            <div class="item3">
                 <p>Baker</p>
-            </article>
-        </div>
-        <p class="misPublicaciones">Mis Publicaciones:</p>
-
-        <div id="editCuadro2">
-            <img src="img/ProfileNegro.png" id="logo3" width="40px">
-            <article class="articlesEdit2">
-                <p>Usuario 1</p>
-                <p>Baker</p>
-            </article>
-        </div>
-        <div id="editBlanco">
-            <article class="articlesEdit3">
-                <p>Nuevo Post :)</p>
-            </article>
-        </div>
-        <div id="editCuadro3">
-            <div class="botones">
-                <button class="eliminar">Eliminar</button>
-                <button class="publicar">Publicar</button>
-                <button class="cancelar">Cancelar</button>
             </div>
         </div>
-
+        <div class="post">
+            <h2> aqui va el post</h2> 
+        </div>
+        <div class="optionsPost">
+            <div class="divOptionsBt">
+            <a class="buttons">Eliminar</a>
+            <a class="buttonGreen">Publicar</a>
+            <a href="#/userProfile" class="buttons">Cancelar</a>
+            </div>
+        </div>
     </div>
-</div> 
+</div>
 `
     divEditPost.innerHTML = viewEditPost;
     return divEditPost;

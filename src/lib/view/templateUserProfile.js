@@ -25,7 +25,7 @@ export const userProfile = () => {
             <h4>Buscar</h4>
         </div>
     </a>
-    <a href="#/logIn">
+    <a href="">
         <div class="option">
             <i class="fa-solid fa-arrow-right-from-bracket fa-xl" title="Cerrar sesión"></i>
             <h4>Cerrar cesion</h4>
@@ -47,7 +47,7 @@ export const userProfile = () => {
     </div>
     <div class="createPostFlex">
         <p>Mis Publicaciones:</p>
-        <a class="buttonGreen">Crea un Post</a>
+        <a href="#/createPost" class="buttonGreen">Crea un Post</a>
     </div>
     <div class="postBody">
         <div class="userNav">
@@ -69,7 +69,7 @@ export const userProfile = () => {
                 <img src="img/cuplike.png" class ="cupcakeImg" alt="cuplike">
             </div>
             <div class="pencilIcon">
-                <i class="fa-solid fa-pencil fa-2xl"></i>
+                <a href="#/editPost" <i class="fa-solid fa-pencil fa-2xl"></i> </a>
             </div>
         </div>
     </div>

@@ -52,10 +52,11 @@ body{
 
 .divButtons{
     padding: 4px 0px 14px 0px;
+    margin: 0px 20px 0px 20px;
 }
 
 .buttons{
-    border-radius: 13px;
+    border-radius: 10px;
     border: solid #A4455E;
     color: #FFFFFF;
     background-color: #F34573;
@@ -66,6 +67,7 @@ body{
 
 .buttons:hover{
     background-color: #a4455e;
+    cursor: pointer;
 }
 
 input{
@@ -322,14 +324,19 @@ input{
 }
 
 .buttonGreen {
-    border-radius: 13px;
-    border: solid #FFFFDD;
+    border-radius: 10px;
+    border: solid #0e858c;
     color: #FFFFFF;
     background-color: #35B0AB;
     font-size: 17px;
     text-decoration: none;
     padding: 2px 12px 2px 12px;
     margin: auto 0px;
+}
+
+.buttonGreen:hover{
+    background-color : #0e858c;
+    cursor: pointer;
 }
 
 #nameHeader{
@@ -354,49 +361,34 @@ input{
 .postEditContainer{
     display: flex;
     flex-direction: column;
-    background-color: #FFD5E5;
-    margin-left: 150px;
-    padding: 1px 16px;
-    height: 900px;
-    width: 1200px;
+    margin-left: 200px;
+    width: 83%;
     align-items: center;
- 
+    margin-top: 40px;
 }
 
-.userSearContain{
+.postSearch{
     display: flex;
     flex-direction: column;
-    background-color: #F2D8B9;
-    margin-left: 300px;
-    margin-right: 350px;
-    margin-top: 30px;
-    height: 900px;
-    width: 90%;
-} 
-
-
-#search{
-    border-radius: 17px;
-    border: solid 1px #F34573;
-    background: #FFFFFF;
-    text-align: center;
-    color: white;
-    line-height: 0.5; 
-    width: 627px; 
-    height: 45px;
-    font-size: 17px; 
+    align-items: center;
+    width: 83%;
+    gap: 20px;
+    margin-top: 40px;
 }
 
+.optionsPost{
+    display: flex;
+    background-color: #F2D8B9;
+    border-radius: 0px 0px 15px 15px;
+    justify-content: end;
+}
 
-.buscadores{
-    border-radius: 13px;
-    border: solid #FFFFDD;
-    color: #FFFFFF;
-    background-color: #F34573;
-    width: 200px; 
-    height: 40px;
-    font-size: 17px;
+.divOptionsBt{
+    padding: 4px 0px 14px 0px;
+    margin: 14px 20px 2px 20px;
+}
+
+.pencilIcon a {
     text-decoration: none;
-    padding: 2px 12px 2px 12px;
-    margin-top: 30px;
+    color: #F34573;
 }
