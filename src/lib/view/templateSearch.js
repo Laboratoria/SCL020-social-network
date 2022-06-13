@@ -38,14 +38,14 @@ export const searchPost = () => {
         <img src="img/logo4.png" id="logo4" width=250px">
     </div>
     <div class="buscador">
-     <input type="search" id="search" name="search" placeholder="Buscar...">
+        <input type="search" id="search" name="search" placeholder="Buscar...">
     </div>  
     <div id="buscadores">
-     <button class="buscadores">#sinazucar</button>
-     <button class="buscadores">#singluten</button>
-     <button class="buscadores">#sinlactosa</button>
-     <button class="buscadores">#vegano</button>
-     <button class="buscadores">#todos</button>
+        <button class="buscadores">#sinazucar</button>
+        <button class="buscadores">#singluten</button>
+        <button class="buscadores">#sinlactosa</button>
+        <button class="buscadores">#vegano</button>
+        <button class="buscadores">#todos</button>
     </div> 
     <div class="userSearContain">
         <div id="editImg">

@@ -34,35 +34,37 @@ export const home = () => {
         </div>
     </div>
     <div class="postMain">
-        <div class="postBody">
-            <div class="userNav">
-                <div>
-                    <i class="fa-solid fa-circle-user fa-2xl"></i>
-                </div>
-                <div>
-                    <h1>Nombre de usuario</h1>
-                </div>
-                <div>
-                    <h2>Titulo baker o eater</h2>
-                </div>
-            </div>
-            <div class="post">
-                <h2> aqui va el post</h2> 
-            </div>
-            <div class="like">
-                <img class ="cupcakeImg" src="img/cuplike.png" alt="cuplike">
-            </div>
-        </div>
     <div class="postBody">
+    <div class="userNav">
+        <div class="item1">
+            <i class="fa-solid fa-circle-user fa-3x"></i>
+        </div>
+        <div class="item2">
+            <p>Nombre de usuario</p>
+        </div>
+        <div class="item3">
+            <p>Baker</p>
+        </div>
+    </div>
+    <div class="post">
+        <h2> aqui va el post</h2> 
+    </div>
+    <div class="like">
+        <div>
+            <img src="img/cuplike.png" class ="cupcakeImg" alt="cuplike">
+        </div>
+    </div>
+</div>
+<div class="postBody">
         <div class="userNav">
-            <div>
-                <i class="fa-solid fa-circle-user fa-2xl"></i>
+            <div class="item1">
+                <i class="fa-solid fa-circle-user fa-3x"></i>
             </div>
-            <div>
-                <h1>Nombre de usuario</h1>
+            <div class="item2">
+                <p>Nombre de usuario</p>
             </div>
-            <div>
-                <h2>Titulo baker o eater</h2>
+            <div class="item3">
+                <p>Baker</p>
             </div>
         </div>
         <div class="post">
@@ -71,9 +73,6 @@ export const home = () => {
         <div class="like">
             <div>
                 <img src="img/cuplike.png" class ="cupcakeImg" alt="cuplike">
-            </div>
-            <div class="pencilIcon">
-                <i class="fa-solid fa-pencil fa-2xl"></i>
             </div>
         </div>
     </div>
