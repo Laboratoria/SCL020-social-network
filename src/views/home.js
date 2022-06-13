@@ -9,15 +9,6 @@ const Home = () => {
   container.className = 'home-page';
   const userPhoto = localStorage.getItem('userPhoto');
 
-  const homeIntro = document.createElement('div');
-  homeIntro.className = 'home-intro';
-
-  const template = `
-  <h3 class="brand-slogan">Travel through films!</h3>
-  <h2 class="brand-intro">Truly unique. Usually whimsy 🤩</h2>
-  <h3 class="brand-info">Share film locations around the world. Inpire others to visit!</h3>
-  `;
-
   readingPost((post) => {
     container.innerHTML = '';
     let postStructure = '';
@@ -47,12 +38,9 @@ const Home = () => {
       `;
     });
 
-    homeIntro.innerHTML = template;
-
     const middle = document.createElement('div');
     middle.className = 'middle';
     middle.innerHTML = postStructure;
-    middle.prepend(homeIntro);
     container.append(Header(), middle, Footer());
 
     const editBtn = container.querySelectorAll('.btn-Edit');

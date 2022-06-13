@@ -13,9 +13,7 @@ body {
   min-height: 100vh;
   min-width: 100vw;
   font-family: karla;
-  background-image: linear-gradient(to bottom, #d7fffa, #defef4, #e5fdef, #ecfceb, #f3fbea, #eef9e9, #e9f7e9, #e5f5e8, #d6f1eb, #caebf0, #c7e3f4, #cddaf3);
-}
-#root{
+  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -136,7 +134,7 @@ footer{
 }
 footer button {
   height: 50%;
-  color: #FBC4F3;
+  color: #A91079;
   font-size: 20px;
   background-color: white;
   border: none;
@@ -200,9 +198,9 @@ label {
 }
 /*Entrar y Registrar btn*/
 .main-btn {
-  background: #FBC4F3;
+  background: #A91079;
   border-radius: 999px;
-  box-shadow: #FBC4F3 0 10px 20px -10px;
+  box-shadow: #A91079 0 10px 20px -10px;
   box-sizing: border-box;
   color: #FFFFFF;
   cursor: pointer;
@@ -344,9 +342,9 @@ label {
   background-color: #FFFFFF;
 }
 #post-submit {
-  background: #FBC4F3;
+  background: #A91079;
   border-radius: 10px;
-  box-shadow: #FBC4F3 0 10px 20px -10px;
+  box-shadow: #A91079 0 10px 20px -10px;
   box-sizing: border-box;
   color: #FFFFFF;
   cursor: pointer;
@@ -427,45 +425,28 @@ svg{
   flex-direction: column;
   align-items: center;
 }
-.home-intro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 60%;
-  height: 35%;
-  box-sizing: content-box;
-  /* background-color: #ff24ff; */
-  background-color:white;
-  border: 2px solid #111;
-  border-radius: 8px;
-  cursor: pointer;
-  justify-content: center;
-  padding: 0 25px;
-  margin-bottom: 1%;
-  position: relative;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-.home-intro:after {
-  background-color: #111;
-  border-radius: 8px;
-  content: "";
-  display: block;
-  height: 100%;
+
+.infoModal {
+  width: 50%;
+  min-width: 200px;
+  border-radius: 2%;
+  padding: 1em;
+  max-width: 500px;
+  border: none;
+  box-shadow: 0 0 1em rgb(0 0 0 / 0.3);
+  position:fixed;
   left: 0;
-  width: 100%;
-  position: absolute;
-  top: -2px;
-  transform: translate(8px, 8px);
-  transition: transform .2s ease-out;
-  z-index: -1;
+  top: 35%;
+  right: 0;
+  margin-left: 35%;
+  margin-right: 35%;
+  text-align: center;
 }
-.home-intro:hover:after {
-  transform: translate(0, 0);
+
+.infoModal::backdrop {
+  background: rgb(0 0 0 / 0.4);
 }
+
 .brand-slogan, .brand-intro, .brand-info {
   margin: 0.4%;
   color: #2B2B2B;
@@ -574,30 +555,36 @@ svg{
   height: 100vh;
   display:flex;
   flex-direction: column;
-justify-content: center;
+  justify-content: center;
   align-items: center;
 }
-.modal-div{
-  z-index: 1;
-  position: absolute;
-}
+
 .dialog-modal {
+  width: 30%;
   min-width: 300px;
   border-radius: 2%;
   padding: 1em;
-  max-width: 50ch;
+  max-width: 350px;
   border: none;
   box-shadow: 0 0 1em rgb(0 0 0 / 0.3);
-  position:relative;
+  position:fixed;
+  left: 0;
+  top: 20%;
+  right: 0;
+  margin-left: 38%;
+  margin-right: 38%;
 }
+
 .dialog-modal::backdrop {
   background: rgb(0 0 0 / 0.4);
 }
+
 .post-box-modal {
   display: flex;
   flex-direction: column;
   align-self: center; 
 }
+
 .modal-header{
   display: flex;
   width:100%;
@@ -613,13 +600,13 @@ justify-content: center;
   cursor: pointer;
   width:10%;
 }
+
 #done-button{
   margin-top: 7%;
   margin-bottom: 2%;
   align-self: end;
   cursor: pointer;
 }
-
 
 .post-footer-profile {
   display: flex;
@@ -637,8 +624,8 @@ justify-content: center;
   padding: 0 3%;
   width: auto;
   transition: all .3s;
--webkit-user-select: none;
-touch-action: manipulation;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
 .btn-Edit:hover, 
@@ -662,6 +649,7 @@ touch-action: manipulation;
   min-height: 2em;
   width: 100%;
 }
+
 .post-liked {
   display: flex;
   flex-direction: column;
@@ -680,6 +668,16 @@ touch-action: manipulation;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+  }
+  .infoModal {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .dialog-modal {
+    width: 90%;
+    margin-left:5%;
+    margin-right: 5%;
   }
  }
 

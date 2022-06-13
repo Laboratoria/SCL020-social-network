@@ -38,9 +38,8 @@ const Profile = () => {
       </div>
     </div>
     <!--MODAL-->
-    <div class="modal-div">
     <dialog class="dialog-modal" data-id="${doc.id}" id="dialog-modal">
-       <form class="post-box-modal" method="dialog">
+       <div class="post-box-modal">
        <div class="modal-header">
            <h4 id="user-name" class="user-name-modal">${posts.userName}</h4>
            <button id="discardButton" class="btn-discard-modal">x</button>
@@ -52,9 +51,8 @@ const Profile = () => {
            <br>
            <p>Country:</p> <input type="text" id="new-country" value="${posts.country}">
            <button id="done-button" class="main-btn">Done</button>
-        </form>
+        </div>
      </dialog>
-     </div>
      <!--MODAL-->  
     `;
     });
@@ -70,11 +68,10 @@ const Profile = () => {
     // Open Modal
     editBtn.forEach((btn) => {
       btn.addEventListener('click', () => {
-        
         modal.forEach((mod) => {
-          console.log('hola')
+          console.log('hola');
           if (mod.dataset.id === btn.dataset.id) {
-            mod.show();
+            mod.showModal();
 
             // Updating Post in Profile
             const doneBtn = mod.querySelector('#done-button');
@@ -95,10 +92,8 @@ const Profile = () => {
       btn.addEventListener('click', () => {
         console.log('clicking before');
         modal.forEach((mod) => {
-          if (mod.dataset.id === btn.dataset.id) {
-            console.log('clicking after');
-            mod.close();
-          }
+          console.log('clicking after');
+          mod.close();
         });
       });
     });
