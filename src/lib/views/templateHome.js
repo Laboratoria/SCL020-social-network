@@ -1,6 +1,6 @@
 export const home = () => {
-   // const divHome = document.createElement("div");
-    const viewHome =//html
+   const divHome = document.createElement("div");
+   const viewHome = //html
     `
         <div class="container-home">
             <div class="containter-logo-ticket"><img class ="logo-ticket" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-removebg-preview.png?raw=true" alt="logo-ticket"></div>
@@ -9,7 +9,7 @@ export const home = () => {
             <a href="#/age"><button class="btn">Sign Up</button></a>
         </div>
     `
-    //divHome.innerHTML = viewHome;
-    //return divHome;
-    return viewHome;
+    divHome.innerHTML = viewHome;
+    return divHome;
+    //return viewHome;
 }

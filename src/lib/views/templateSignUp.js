@@ -1,4 +1,4 @@
-import { register } from "../../firebase/auth.js";
+import { register, signInGoogle } from "../../firebase/auth.js";
 //import { app } from "../../firebase/init.js";
 export const signUp = () => {
     const divSignUp = document.createElement("div");
@@ -14,7 +14,7 @@ export const signUp = () => {
                 <label><input type="password" id="password" required placeholder="password"></label>
                 <button class="btn-create">Create Account</button>
                 <div class="btn-access">
-                    <button>google</button>
+                    <button id="loginGoogle">google</button>
                     <button>IMDb</button>
                 </div>
                 <div class="container-btn">
@@ -24,13 +24,21 @@ export const signUp = () => {
             </div>
         </div>            
     `
+
+
     divSignUp.innerHTML = viewSignUp;
+
+    const btnGoogle =divSignUp.querySelector("#loginGoogle")
+    btnGoogle.addEventListener("click", ()=> {
+        signInGoogle()
+    })
+
+
     const btn = divSignUp.querySelector(".btn-create")
     btn.addEventListener("click", () => {
         const email = divSignUp.querySelector("#email").value;
         const password = divSignUp.querySelector("#password").value;
-        const user = divSignUp.querySelector("#user").value;
-        register(email, password, user);
+        register(email, password);
     })
     return divSignUp;
 }
