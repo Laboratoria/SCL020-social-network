@@ -203,7 +203,7 @@ h2 {
   background-color: #E48A7B;
 } 
 
-.backButton, .btn-registrate { 
+.backButton, .btn-register { 
   box-shadow: none;
   font-family: 'Kite One', regular;
   color: #BCE4D7;
@@ -297,10 +297,10 @@ h2 {
   padding: 30px 0px;
   background-color: #E48A7B;
 }
-#navMenu .listaCerrarSesion{
+#navMenu .logOutList{
   border: none;
 }
-#navMenu .listaCerrarSesion a:hover{
+#navMenu .logOutList a:hover{
   background-color: #01474D;
   color: white;
 }
@@ -403,7 +403,7 @@ ul li {
   margin-top: 130px;
 }
 
-#img-perfil {
+#profile-img {
   width: 100%;
   max-width: 100px;
   border-radius: 100%; 
@@ -504,10 +504,10 @@ hr {
   padding: 0;
   margin: 0;
 }
-.grupo{
+.groups{
   margin-top: 100px;
 }
-.grupo header{
+.groups header{
   background: #01474D;
   width: 100%;
   height: 56px;
@@ -522,7 +522,7 @@ hr {
 
 }
 
-.grupo .image-grupo{
+.groups .image-grupo{
   display: flex;
   width: 100%;
   height: 150px; 
@@ -532,17 +532,17 @@ hr {
   max-width: 600px;
   margin: 0 auto;
 }
-.grupo .image-circulo{
+.groups .image-circulo{
   border-radius: 50%;
   overflow: hidden;
   width: 90px;
   height: 90px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.grupo .profileName{
+.groups .profileName{
   width: 80%;
 }
-.lista-grupo{
+.groupsList{
   margin: 0 auto;
   padding: 0;
   width: 100%;
@@ -551,33 +551,19 @@ hr {
   max-width: 600px;
 
 }
-.lista-grupo li{
+.groupsList li{
   border-bottom: 1px solid #CECECE;
   display: flex;
   justify-content: space-between; 
   align-items: center;
 }
 
-.lista-grupo li p{
+.groupsList li p{
   margin: 0;
   padding: 10px 0; 
 }
-.lista-grupos .categoria{
+.groupsList .category{
   border-radius: 50%;
-}
-.grupo .grupos-favoritos{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 16px 0;
-}
-.grupo .grupos-favoritos a{
-  width: 80px;
-}
-.grupo .grupos-favoritos a img{
-  width: 100%;
 }
 
 .copyright{
@@ -589,16 +575,16 @@ hr {
 }
 
 /* Lista de Grupos */
-.grupo .titulo-grupos{
+.groups .groupsTitle{
   text-align: center;
   color: #00A57A;
 }
-.grupo .lista-grupos{
+.groups .groupsList{
   margin: 0 auto;
   padding: 0 16px;
   max-width: 600px;
 }
-.grupo .lista-grupos li{
+.groups .groupsList li{
   background: #BCE4D7;
   box-shadow: 0px 6px 6px -1px rgba(0, 0, 0, 0.25); 
   border-radius: 8px;
@@ -609,13 +595,13 @@ hr {
   margin-bottom: 16px;
 
 }
-.grupo .lista-grupos li p{
+.groups .groupsList li p{
   font-family: 'Kite One';
   color: #02474E;
   font-size: 15px;
 
 }
-.grupo .lista-grupos li a{
+.groups .groupsList li a{
   font-family: 'Kite One'; 
   text-decoration-line: underline;
   color: #E28B7A;
@@ -626,3 +612,45 @@ hr {
   padding: 8px;
 }
 
+.createPost{
+  display: grid;
+  grid-row: auto;
+  justify-content: center;
+}
+
+.postList{
+  marker: none;
+  margin: 10px;
+  padding: 10px;
+  background-color: #BCE4D7;
+  /* display: grid;
+  grid-row: auto; */
+  justify-content: center;
+  /* font-size: 12px; */
+  font-family: 'Kite One', regular;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+  
+.postTitle {
+  /* display: flex;
+  justify-content: space-between; */
+  /* display: grid;
+  grid-row: auto; */
+  margin: 0;
+  padding: 0;
+  background-color: #BCE4D7;
+  font-family: 'Kite One', regular;
+  font-size: 20px;
+}
+  
+.postBody {
+  background-color: #BCE4D7; 
+  margin: 0;
+  padding: 0;
+   /* display: flex; */
+  /* display: grid;
+  grid-row: auto; */
+  color: black;
+  font-family: 'Kite One', regular;
+  font-size: 12px;
+}

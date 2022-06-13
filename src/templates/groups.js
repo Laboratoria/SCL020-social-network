@@ -17,7 +17,7 @@ function groups() {
             <li><a href='#' id='linkPublic'> PUBLICACIONES </a></li>
         </ul>
       </div>
-      <ul class="listaCerrarSesion">
+      <ul class="logOutList">
         <li>
           <a href='#' id='signOut'> Cerrar sesión </a>
         </li>
@@ -26,13 +26,13 @@ function groups() {
     <h5>PlantGram</h5>
     </div>
     <div class="background-white-grupo grupo">
-    <p class="titulo-grupos">
+    <p class="groupsTitle">
         Grupos
     </p>
     
-    <ul class="lista-grupos">
+    <ul class="groupsList">
         <li>
-            <img class="categoria" width="45" src="./assets/categoria-1.jpg">
+            <img class="category" width="45" src="./assets/category.jpg">
             <p>
             Los mejores Fertilizantes
             </p>

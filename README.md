@@ -52,4 +52,6 @@ Ver prototipo con interacciones [aquí](https://www.figma.com/proto/oGMhwqudUs2Y
 * Creamos un menú activo para moverse por la app.
 * Logramos integrar la redirección para iniciar sesión con gmail.
 * Logramos mostrar posts en el template de publications.
-* 
+* Logramos crear el login con email y contraseña.
+* Logramos reservar el usuario mientras se está en la app.
+* Agregamos el log out con su botón correspondiente.

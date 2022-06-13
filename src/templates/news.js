@@ -18,7 +18,7 @@ function news() {
                 <li><a href='#' id='linkPublic'> PUBLICACIONES </a></li>
             </ul>
           </div>
-          <ul class="listaCerrarSesion">
+          <ul class="logOutList">
             <li>
               <a href='#' id='signOut'> Cerrar sesión </a>
             </li>

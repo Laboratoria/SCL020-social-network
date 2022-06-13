@@ -17,7 +17,7 @@ function profile() {
               <li><a href='#' id='linkPublic'> PUBLICACIONES </a></li>
           </ul>
         </div>
-        <ul class="listaCerrarSesion">
+        <ul class="logOutList">
           <li>
             <a href='#' id='signOut'> Cerrar sesión </a>
           </li>
@@ -26,7 +26,7 @@ function profile() {
       <h5>PlantGram</h5>
     </div>
     <div class="image-perfil">
-      <img src="assets/perfil-3.png" id="img-perfil" alt="">
+      <img src="assets/profile3.png" id="profile.img" alt="">
     </div>
     <div class="profileName">
       <h3 id="nameProfile">Nombre del usuario</h3>

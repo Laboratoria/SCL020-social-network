@@ -18,7 +18,7 @@ function publications() {
               <li><a href='#' id='linkPublic'> PUBLICACIONES </a></li>
           </ul>
         </div>
-        <ul class="listaCerrarSesion">
+        <ul class="logOutList">
           <li>
             <a href='#' id='signOut'> Cerrar sesión </a>
           </li>
@@ -77,13 +77,13 @@ function publications() {
       let html= '';
       data.forEach(doc =>{
         const post = doc.data
-        const li = `
-          <li>
-            <h6> ${post.title}</h6>
-            <p> ${post.description} </p>
-          </li>
+        const ul = `
+          <ul class="postList">
+            <h class="postTitle"> ${post.title}</h>
+            <p class="postBody"> ${post.description} </p>
+          </ul>
         `;
-        html += li;
+        html += ul;
       });
       postList.innerHTML = html;
     } else {
