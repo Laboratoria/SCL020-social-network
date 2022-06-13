@@ -8,7 +8,7 @@ function post() {
     <div class="background-white">
     <div class="bar">
       <div id="navMenu">
-        <h4> PlantGram <img src="./assets/flower (1).png"></h4>
+        <h4> PlantGram <img src="./assets/flower.png"></h4>
         <ul>
           <li><a href='#' id='linkNews'> NOTICIAS </a></li>
           <li><a href='#' id='linkProfile'> MI PERFIL </a></li>

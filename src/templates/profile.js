@@ -8,20 +8,25 @@ function profile() {
     <div class="background-white">
     <div class="bar">
       <div id="navMenu">
-        <h4> PlantGram <img src="./assets/flower (1).png"></h4>
-        <ul>
+        <div>
+          <h4> PlantGram <img src="./assets/flower.png"></h4>
+          <ul>
+              <li><a href='#' id='linkNews'> NOTICIAS </a></li>
+              <li><a href='#' id='linkProfile'> MI PERFIL </a></li>
+              <li><a href='#' id='linkGroups'> GRUPOS </a></li>
+              <li><a href='#' id='linkPublic'> PUBLICACIONES </a></li>
+          </ul>
+        </div>
+        <ul class="listaCerrarSesion">
           <li>
-          <a href='#' id='linkNews'> NOTICIAS </a></li>
-          <li><a href='#' id='linkProfile'> MI PERFIL </a></li>
-          <li><a href='#' id='linkGroups'> GRUPOS </a></li>
-          <li><a href='#' id='linkPublic'> PUBLICACIONES </a></li>
-          <li><a href='#' id='signOut'> Cerrar sesión </a></li>
+            <a href='#' id='signOut'> Cerrar sesión </a>
+          </li>
         </ul>
       </div>
       <h5>PlantGram</h5>
     </div>
     <div class="image-perfil">
-      <img src="assets/perfil.jpg" id="img-perfil" alt="">
+      <img src="assets/perfil-3.png" id="img-perfil" alt="">
     </div>
     <div class="profileName">
       <h3 id="nameProfile">Nombre del usuario</h3>

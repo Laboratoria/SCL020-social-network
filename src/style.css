@@ -169,9 +169,14 @@ h2 {
   opacity: 1;
   display: flex;
   text-align: center;
-  color: #BCE4D7;
+  color: #01474D;
   font-size: 12px;
   font-family: 'Kite One', regular;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .register p {
@@ -218,6 +223,9 @@ h2 {
   transition:4s all;
   z-index:1;
   max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #navMenu ul{
@@ -272,6 +280,7 @@ h2 {
 
 #navMenu:hover img{
   height: 0px;
+  display: none;
 }
 
 #navMenu:hover li{
@@ -287,6 +296,13 @@ h2 {
   font-size: 25px;
   padding: 30px 0px;
   background-color: #E48A7B;
+}
+#navMenu .listaCerrarSesion{
+  border: none;
+}
+#navMenu .listaCerrarSesion a:hover{
+  background-color: #01474D;
+  color: white;
 }
 
 /* NEWS */
@@ -332,14 +348,36 @@ h5 {
   font-size: 12px;
   font-family: 'Kite One', regular;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  margin-bottom: 15px;
 }
-
+.postAction{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.postLikes{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.postLikes span{
+  color: #E48A7B;
+  margin-right: 5px;
+  display: block;
+  font-size: 15px;
+}
 .post-header{
   display: flex;
   justify-content: space-between;
   background-color: #BCE4D7;
+  width: 100%;
 }
-
+.post-header h3{
+  font-size: 15px;
+}
 .dashboard{
   width: 400px;
   margin: 0 auto;
@@ -361,11 +399,13 @@ ul li {
   text-align: center;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  margin: 0 auto;
+  margin-top: 130px;
 }
 
 #img-perfil {
-  width: 30%;
+  width: 100%;
+  max-width: 100px;
   border-radius: 100%; 
 }
 
@@ -386,14 +426,17 @@ ul li {
 
 #nameProfile {
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 18px;
   font-family: 'Kite One', regular;
+  margin: 0;
+  margin-top: 35px;
 }
 
 #emailProfile {
   color: gray;
   font-size: 15px;
   font-family: 'Kite One', regular;
+  margin: 0;
 }
 
 hr {
@@ -518,6 +561,9 @@ hr {
 .lista-grupo li p{
   margin: 0;
   padding: 10px 0; 
+}
+.lista-grupos .categoria{
+  border-radius: 50%;
 }
 .grupo .grupos-favoritos{
   display: flex;
