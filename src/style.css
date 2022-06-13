@@ -346,3 +346,57 @@ input{
 #titleHeader h3{
     margin: 0px;
 }
+
+
+/* **********Buscar***** */
+
+
+.postEditContainer{
+    display: flex;
+    flex-direction: column;
+    background-color: #FFD5E5;
+    margin-left: 150px;
+    padding: 1px 16px;
+    height: 900px;
+    width: 1200px;
+    align-items: center;
+ 
+}
+
+.userSearContain{
+    display: flex;
+    flex-direction: column;
+    background-color: #F2D8B9;
+    margin-left: 300px;
+    margin-right: 350px;
+    margin-top: 30px;
+    height: 900px;
+    width: 90%;
+} 
+
+
+#search{
+    border-radius: 17px;
+    border: solid 1px #F34573;
+    background: #FFFFFF;
+    text-align: center;
+    color: white;
+    line-height: 0.5; 
+    width: 627px; 
+    height: 45px;
+    font-size: 17px; 
+}
+
+
+.buscadores{
+    border-radius: 13px;
+    border: solid #FFFFDD;
+    color: #FFFFFF;
+    background-color: #F34573;
+    width: 200px; 
+    height: 40px;
+    font-size: 17px;
+    text-decoration: none;
+    padding: 2px 12px 2px 12px;
+    margin-top: 30px;
+}
