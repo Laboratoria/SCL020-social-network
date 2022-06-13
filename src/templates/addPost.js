@@ -3,7 +3,7 @@ import { readData, createPost, editPost, time, deletePost } from "../firebase/st
 import { navigate } from "../router/routes.js";
 import { signOutWithEmail } from "../firebase/auth.js";
 
-function publications() {
+function addPost() {
   const html =//html
     `
 <div class="background-white">
@@ -28,10 +28,10 @@ function publications() {
     </div>
     <div class="dashboard">
         <h2>PUBLICACIONES</h2>
-        <button id="btnCreatePost">Nuevo post</button>
-        <div class="createPost">
-          
-        </div>
+  
+        <div class="newPost">
+        </div>      
+        <button id="addNewPost">Agregar nuevo post</button>
     </div>
 </div>`;
   const container = document.createElement("div");
@@ -70,36 +70,36 @@ function publications() {
   });
 
   // POSTS
-  const postList = container.querySelector(".createPost");
+  const writePost = container.querySelector(".newPost");
   const setupPosts = async() => {
-    let data= await readData()
+    // let post= await createPost()
     // console.log(data);
-    if(data.length){
       let html= '';
-      data.forEach(doc =>{
-        const post = doc.data
+      // post.forEach(doc =>{
+      //   const lastPost = doc.post
         const ul = `
           <ul class="postList">
-            <h class="postTitle"> ${post.title}</h>
-            <p class="postBody"> ${post.description} </p>
+            <input id="newPostTitle">  </input>
+            <textarea id="newPostDescription"> </textarea>
           </ul>
         `;
         html += ul;
-      });
-      postList.innerHTML = html;
-    } else {
-      postList.innerHTML = '<p>Ingresa para ver tus posts</p>';
+      // });
+      writePost.innerHTML = html;
     }
-    }
+    
   setupPosts()
+  
 
-  const addPost = container.querySelector("#btnCreatePost");
+  const addPost = container.querySelector("#addNewPost");
   if (addPost){
     addPost.addEventListener("click", function() {
-    navigate("addPost")
+      const title = container.querySelector("#newPostTitle").value
+      const description = container.querySelector("#newPostDescription").value
+      createPost(title, description)
   })}
 
   return container;
 }; 
-export { publications };
+export { addPost };
 

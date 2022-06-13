@@ -23,7 +23,8 @@ import { getFirestore,
   Timestamp,
   updateDoc,
   serverTimestamp,
-  deleteDoc } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js';
+  deleteDoc,
+  } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js';
 
 import { firebaseConfig } from './config.js';
 
