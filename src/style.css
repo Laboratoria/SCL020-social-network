@@ -13,7 +13,9 @@ body {
   min-height: 100vh;
   min-width: 100vw;
   font-family: karla;
-  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+  background-image: url("./img/bg.png");
+  background-repeat: no-repeat;
+
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -56,7 +58,7 @@ body {
 
 .search-box input::placeholder {
   font-size: 0.9rem;
-  color: rgba(236, 0, 140, 0.5);
+  color: grey;
 }
 
 .search-button {
@@ -134,10 +136,19 @@ footer{
 }
 footer button {
   height: 50%;
-  color: #A91079;
+  color: #CE395F;
   font-size: 20px;
   background-color: white;
   border: none;
+}
+
+#postButton{
+  background-color: #CE395F;
+  color: white;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+
 }
  
 /* LOG IN FORM CSS */
@@ -198,9 +209,9 @@ label {
 }
 /*Entrar y Registrar btn*/
 .main-btn {
-  background: #A91079;
+  background: #CE395F;
   border-radius: 999px;
-  box-shadow: #A91079 0 10px 20px -10px;
+  box-shadow: #CE395F 0 10px 20px -10px;
   box-sizing: border-box;
   color: #FFFFFF;
   cursor: pointer;
@@ -342,9 +353,9 @@ label {
   background-color: #FFFFFF;
 }
 #post-submit {
-  background: #A91079;
+  background: #CE395F;
   border-radius: 10px;
-  box-shadow: #A91079 0 10px 20px -10px;
+  box-shadow: #CE395F 0 10px 20px -10px;
   box-sizing: border-box;
   color: #FFFFFF;
   cursor: pointer;
