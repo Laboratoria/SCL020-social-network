@@ -8,7 +8,7 @@ const Login = () => {
     <img src="${logoUrl}" id="logo" class="logo">
     <h2 class="title-form">Sign In or Register</h2>
     <form id="form" class="form">
-        <div id="user-info" class="user-info">
+        <div id="user-info" >
             <div class="email-info">
                 <label for="email">Email: </label>
                 <input id="email" class="input-form" type="email" placeholder="Your email">
@@ -46,6 +46,7 @@ const Login = () => {
       const user = await login(email, password);
       localStorage.setItem('userName', user.displayName);
       localStorage.setItem('userUid', user.uid);
+      localStorage.setItem('userPhoto',user.photoURL)
       form.reset();
       navigate('/home');
     } catch (error) {

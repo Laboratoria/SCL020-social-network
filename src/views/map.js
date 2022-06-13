@@ -8,6 +8,8 @@ const Map = () => {
   container.className = 'map-page';
   const postContainer = document.createElement('div');
   postContainer.className = 'map-feed';
+  const userPhoto = localStorage.getItem('userPhoto');
+  console.log(userPhoto)
 
   const template = // HTML
   `
@@ -971,7 +973,7 @@ const Map = () => {
       if (countryName === '') {
         countryName = this.attributes.name.value;
       }
-      const userPhoto = localStorage.getItem('userPhoto');
+      
       console.log(countryName);
 
       // Rendering view

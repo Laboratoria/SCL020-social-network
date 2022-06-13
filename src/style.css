@@ -23,63 +23,6 @@ body {
   height:100%;
   transition: top 0.3s;
 }
-/* HOME PAGE CSS */
-.home-page{
-  min-width: 100vw;
-  min-height: 100vh;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.home-intro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 60%;
-  height: 35%;
-  box-sizing: content-box;
-  /* background-color: #ff24ff; */
-  background-color:white;
-  border: 2px solid #111;
-  border-radius: 8px;
-  cursor: pointer;
-  justify-content: center;
-  padding: 0 25px;
-  margin-bottom: 1%;
-  position: relative;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.home-intro:after {
-  background-color: #111;
-  border-radius: 8px;
-  content: "";
-  display: block;
-  height: 100%;
-  left: 0;
-  width: 100%;
-  position: absolute;
-  top: -2px;
-  transform: translate(8px, 8px);
-  transition: transform .2s ease-out;
-  z-index: -1;
-}
-
-.home-intro:hover:after {
-  transform: translate(0, 0);
-}
-
-.brand-slogan, .brand-intro, .brand-info {
-  margin: 0.4%;
-  color: #2B2B2B;
-}
 
 /* HEADER CSS */
 .header {
@@ -358,7 +301,7 @@ label {
   height: 60px;
 }
 
-.user-name-new-post, .user-name-modal {
+.user-name-new-post {
   margin: 0.5em;
   font-size: 1.1rem;
   font-style: normal;
@@ -382,7 +325,8 @@ label {
   margin-top: 1em;
   font-size: 0.8rem;
   font-style: normal;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+  font-family: karla;
   font-weight: bold;
   color: rgb(0, 0, 0);
 }
@@ -483,19 +427,62 @@ svg{
   flex-direction: column;
   align-items: center;
 }
+.home-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 60%;
+  height: 35%;
+  box-sizing: content-box;
+  /* background-color: #ff24ff; */
+  background-color:white;
+  border: 2px solid #111;
+  border-radius: 8px;
+  cursor: pointer;
+  justify-content: center;
+  padding: 0 25px;
+  margin-bottom: 1%;
+  position: relative;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.home-intro:after {
+  background-color: #111;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+.home-intro:hover:after {
+  transform: translate(0, 0);
+}
+.brand-slogan, .brand-intro, .brand-info {
+  margin: 0.4%;
+  color: #2B2B2B;
+}
  /* post en home */
  .post {
-   display: flex;
-   flex-direction: column;
-   width: 25%;
-   min-width: 250px;
-   height: 100%;
-   background-color: #ffffff;
-   filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
-   margin: 1%;
-   padding: 2%;
-  min-height: 200px;
-  padding-bottom: 1%; 
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    min-width: 250px;
+    height: 100%;
+    background-color: #ffffff;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+    margin: 1%;
+    padding: 2%;
+    max-height: 300px;
+    padding-bottom: 1%; 
  }
  .post-header{
   display: flex;
@@ -590,40 +577,50 @@ svg{
 justify-content: center;
   align-items: center;
 }
-
-.post-box-modal {
-display: flex;
-  flex-direction: column;
-  align-self: center; 
+.modal-div{
+  z-index: 1;
+  position: absolute;
 }
-
-.post-box-modal button {
-  align-self: flex-end;
-  margin-top: 3%;
-}
- 
 .dialog-modal {
-  z-index: 11;
-position: absolute;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-  justify-self: center;
-  min-width: 350px;
-  padding: 2%;
-  border: none;
+  min-width: 300px;
   border-radius: 2%;
   padding: 1em;
   max-width: 50ch;
-  border: 0;
+  border: none;
   box-shadow: 0 0 1em rgb(0 0 0 / 0.3);
+  position:relative;
 }
-
 .dialog-modal::backdrop {
   background: rgb(0 0 0 / 0.4);
 }
+.post-box-modal {
+  display: flex;
+  flex-direction: column;
+  align-self: center; 
+}
+.modal-header{
+  display: flex;
+  width:100%;
+  height: auto;
+  justify-content: space-between;
+  margin-bottom: 5%;
+  margin-top:5%;
+}
 
-/* new-post div textarea, .dialog-modal div textarea */
+.btn-discard-modal{
+  background: white;
+  border:none;
+  cursor: pointer;
+  width:10%;
+}
+#done-button{
+  margin-top: 7%;
+  margin-bottom: 2%;
+  align-self: end;
+  cursor: pointer;
+}
+
+
 .post-footer-profile {
   display: flex;
   height: 15%;
