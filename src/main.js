@@ -20,6 +20,8 @@ myFunction();
 
 const init = ()=> {
     document.getElementById("root").innerHTML = home();
+    //changeRoute(window.location.hash);
+
     window.addEventListener('hashchange',()=>{
         myFunction();
         console.log (window.location.hash);

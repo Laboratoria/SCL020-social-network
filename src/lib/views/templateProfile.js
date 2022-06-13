@@ -4,7 +4,17 @@ export const profile = () => {
     `
         <main class="profile">
             <nav class="nav-burguer-search">
-                <div class="menu-feed"><a href="#/menu"><img class="menu-burger" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/lista.png?raw=true" alt="logo-ticket"></a></div>
+           
+                <div class="menu-feed">
+                    <a href="#/menu">
+                        <div class="hamburger">
+                            <span class="top-bun"></span>
+                            <span class="stuffing"></span>
+                            <span class="bottom-bun"></span>
+                        </div>
+                    </a>
+                </div> 
+
                 <div class="search-bar">
                     <div class="search-box">
                         <input class="search-input"type="text" name="" placeholder="Search...">

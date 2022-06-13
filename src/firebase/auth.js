@@ -1,17 +1,21 @@
 import { createUserWithEmailAndPassword , auth, /*provider,*/ signInWithEmailAndPassword } from "./init.js";
 
+
 export const register = (email,password) => {
     createUserWithEmailAndPassword(auth, email, password)
-    .then ((res) => {
-        //const user = userCredential.user;
-        console.log(res.user)
+    .then ((userCredential) => {
+        const user = userCredential.user;
+        //console.log(userCredential.user);
     })
-    .catch((err)=> {
-        console.log(err.code)
-        console.log(err.message)
-        throw err.message;
+    .catch((error)=> {
+        alert(error.message)
+        const errorCode = error.code;
+        // console.log(error.code)
+        const errorMessage = error.message;
+        // console.log(error.message)
+        //throw error.message;
     })
-}
+};
 
 
 export const logIn = (email,password) => {
@@ -22,16 +26,30 @@ export const logIn = (email,password) => {
     console.log(userCredential.user)
     // ...
     })
-    .catch((err) => {
-        console.log(err.code)
-        console.log(err.message)
+    .catch((error) => {
+        alert(error.message)
+        console.log(error.code)
+        console.log(error.message)
         throw err.message;
     })
 }
 
 
 
+// const saveData = () => {
+//     db.collection("users")
+//     .add ({
+//         email: email,
+//         password: password
+//     })
+//     .then ((docRef) => {
+//         console.log("Document written with ID: ", docRef.id)
+//     })
+//     .catch((error) => {
+//         console.error("Error adding document: ", error)
+//     })
 
+// }
 
 /*export const signInGoogle = (provider) => {
     signInWithPopup(auth, provider)

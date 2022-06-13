@@ -15,7 +15,7 @@ export const changeRoute = (hash) => {
     if (hash === '#/login'){
         return showTemplate(hash);
     }
-    // else if (hash==='#/home'){
+    // else if (hash===''){
     //     return showTemplate (hash);
     // }
     else if (hash==='#/age'){
@@ -81,6 +81,9 @@ const showTemplate = (hash)=>{
         case '#/deleteComment':
             containerRoot.appendChild(deleteComment());
             break; 
+        // case '':
+        //     containerRoot.appendChild(home());
+        //   break;
         default:
             containerRoot.appendChild(err404());                             
     }

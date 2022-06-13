@@ -683,3 +683,20 @@
     margin-top: 20px;
     font-weight: 400;
 }
+
+
+/* -- Boton Hamburguesa -- */
+
+.hamburger {
+    width: 30px;
+    cursor: pointer;
+}
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    display: block;
+    background: black;
+}
+.stuffing{
+    margin: 5px 0;
+}
