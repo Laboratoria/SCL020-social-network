@@ -81,7 +81,7 @@ const showTemplate = (hash)=>{
             break; 
         case '':
             containerRoot.appendChild(home());
-          break;
+            break;
         default:
             containerRoot.appendChild(err404());                             
     }
