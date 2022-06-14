@@ -80,10 +80,10 @@ function publications() {
         const post = doc.data
         const ul = `
           <ul class="postList">
-            <h class="postTitle"> ${post.title}</h>
+            <h class="postTitle"> ${post.title} </h>
             <p class="postBody"> ${post.description} </p>
-            <button id="btnDeletePost">Eliminar post</button>
-            <button id="btnUpdatePost">Actualizar post</button>
+            <button id="btnDeletePost"><img class="deleteButton" src="../assets/delete.png"></button>
+            <button id="btnUpdatePost"><img class="editButton" src="../assets/edit.png"></button>
           </ul>
         `;
         html += ul;

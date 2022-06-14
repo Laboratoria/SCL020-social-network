@@ -595,12 +595,56 @@ hr {
   color: black;
   font-family: 'Kite One', regular;
   font-size: 12px;
+  align-items: center;
 }
 
 #btnCreatePost{
   background-color: #E48A7B;
+  font-family: 'Kite One', regular;
+  justify-content: center;
+  align-self: center;
 }
 
 #addNewPost{
   background-color: #E48A7B;
+  font-family: 'Kite One', regular;
+  justify-content: center;
+  align-items: center;
+}
+
+.newPostList{
+  display: grid;
+  grid-row: auto;
+  justify-content: center;
+  background-color: #BCE4D7;
+  font-family: 'Kite One', regular;
+  font-size: 12px;
+}
+
+#newPostTitle{
+  justify-content:center;
+  width: 200px;
+  height: 20px;
+  margin: 10px;
+  font-family: 'Kite One', regular;
+  font-size: 12px;
+}
+
+#newPostDescription{
+  justify-content:center;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  font-family: 'Kite One', regular;
+  font-size: 12px;
+}
+
+.deleteButton{
+  width: 15px;
+  height: 15px;
+}
+
+.editButton{
+  width: 15px;
+  height: 15px;
 }
