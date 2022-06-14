@@ -9,8 +9,9 @@ function login() {
         <h1>PlantGram</h1>
         <p>Bienvenidos a la mayor comunidad de plant lovers</p>
         <h2>Inicia sesión</h2>
-        <input type="email" id="email" placeholder="Usuario" />
+        <input type="email" id="email" placeholder="Correo electrónico" />
         <input type="password" id="password" placeholder="Contraseña" />
+        <p id="alertRegister"></p>
         
         <button class="entrar" id="loginUser"> Entrar </button>
         <p class="message">¿Aún no tienes una cuenta? <a href="#" id="register" class="btn-register">Regístrate aquí </a></p>
@@ -42,7 +43,20 @@ function login() {
       navigate("news");
     } catch (error) {
       console.log(error);
-      throw error.message;
+      // throw error.message;
+      const alertError = container.querySelector("#alertRegister");
+      console.log(error);
+      if(error.includes('auth/email-already-in-use')){
+        alertError.innerHTML = '¡Este usuario ya ha sido registrado, prueba con otro correo!';
+      } else if(error.includes('auth/invalid-email')){
+        alertError.innerHTML = '¡Ingresa un correo válido!';
+      }  else if(error.includes('auth/user-not-found')){
+        alertError.innerHTML = '¡No existe el usuario ingresado!';
+      } else if(error.includes('auth/wrong-password')){
+        alertError.innerHTML = '¡Contraseña inválida!';
+      }else{
+        alertError.innerHTML = '¡Algo salió mal, ingresa tus datos nuevamente!';
+      }
     }
   });
 
