@@ -1,3 +1,6 @@
+import { signingInWithgoogle } from "../firebase-doc/authentication.js";
+import { changeRoute } from "../lib/router.js";
+
 export const home = () => {
   const viewHome = // html
   `
@@ -9,7 +12,7 @@ export const home = () => {
     <input class="password" type="text" placeholder="Escribe tu contraseña">
     <a href="#/wall" class="loginButton"><strong>INICIAR SESIÓN</strong></a>
     <p class="o"><strong>o</strong></p>
-    <a href="#/loginGoogle" class="loginGoogle"><strong>INICIAR SESIÓN CON GOOGLE</strong></a>
+    <button type='submit' class="loginGoogle"><strong>INICIAR SESIÓN CON GOOGLE</strong></button>
     <p class="registerChoice"><strong>¿No tienes una cuenta?</strong></p>
     <a href="#/register" class="register"><strong>REGISTRATE</strong></a>
     </div>
@@ -18,6 +21,15 @@ export const home = () => {
 
 const container = document.createElement('div');
 container.innerHTML= viewHome;
+const googleButton = container.querySelector('.loginGoogle');
+googleButton.addEventListener('click', async (e) => {
+  const user = await signingInWithgoogle();
+  if (user) {
+    changeRoute('/#wall')
+  }
+  else (console.log('todo mal xD'))
+})
+
   return container;
 };
 
