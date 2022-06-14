@@ -94,9 +94,18 @@ function addPost() {
   const addPost = container.querySelector("#addNewPost");
   if (addPost){
     addPost.addEventListener("click", function() {
-      const title = container.querySelector("#newPostTitle").value
-      const description = container.querySelector("#newPostDescription").value
-      createPost(title, description)
+      const title = container.querySelector("#newPostTitle").value;
+      const description = container.querySelector("#newPostDescription").value;
+      if (title && description) {
+        createPost(title, description);
+        navigate("publications"); 
+      } else if(!title) {
+        alert('Debe ingresar un título para el post');
+      } else if(!description){
+        alert('Debe ingresar un contenido para el post');
+      } else{
+        alert('Algo no está bien, inténtalo nuevamente');
+      }
   })}
 
   return container;
