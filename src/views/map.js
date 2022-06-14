@@ -1007,7 +1007,7 @@ const Map = () => {
         postContainer.innerHTML = postStructure;
 
         // Liking Posts in Map View
-        const likeBtn = container.querySelectorAll('.btn-like-map');
+        const likeBtn = container.querySelectorAll('.btn-like');
         likeBtn.forEach((btn) => {
           btn.addEventListener('click', async () => {
             await likingPost(btn.dataset.id);
