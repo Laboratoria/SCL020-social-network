@@ -27,7 +27,7 @@ function addPost() {
       <h5>PlantGram</h5>
     </div>
     <div class="dashboard">
-        <h2>PUBLICACIONES</h2>
+        <h2>NUEVO POST</h2>
   
         <div class="newPost">
         </div>      
@@ -78,9 +78,9 @@ function addPost() {
       // post.forEach(doc =>{
       //   const lastPost = doc.post
         const ul = `
-          <ul class="postList">
-            <input id="newPostTitle">  </input>
-            <textarea id="newPostDescription"> </textarea>
+          <ul class="newPostList"> Ingresa título
+            <input id="newPostTitle"> </input>
+            <textarea id="newPostDescription"> Ingresa descripción </textarea>
           </ul>
         `;
         html += ul;
