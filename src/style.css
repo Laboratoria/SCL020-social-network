@@ -678,6 +678,50 @@ svg{
  padding-bottom: 1%; 
 }
 
+.likedPostsDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 30%;
+  box-sizing: content-box;
+  /* background-color: #ff24ff; */
+  background-color: #FFFFFF;
+  border: 2px solid #111;
+  border-radius: 8px;
+  cursor: pointer;
+  justify-content: center;
+  padding: 0 25px;
+  margin-bottom: 1%;
+  position: relative;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-top: 1%;
+}
+
+.likedPostsDiv:after {
+  background-color: #111;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+.likedPostsDiv:hover:after {
+  transform: translate(0, 0);
+}
+
+
+
  @media (max-width: 600px) {
   .middle-map{
     display: flex;
