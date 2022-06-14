@@ -20,13 +20,13 @@ Yo como usuario quiero poder crear una cuenta con más de una alternativa, y pod
 #### Criterios de aceptación:
 - El usuario debe tener la posibilidad de crear su cuenta con su correo y contraseña.
 - El usuario debe tener la posiblidad de crear su cuenta a través de su cuenta de Google. 
-- El usuario debe poder ingresar/log in a la app por el medio deseado (correo y contraseña o Google).
+- El usuario debe poder ingresar/login a la app por el medio deseado (correo y contraseña o Google).
 - Para crear cuenta, el usuario no podrá dejar campos sin completar en su registro (nombre, correo y contraseña).
 - La contraseña ingresada no podrá ser menor de 6 caracteres.
 
 #### Definición de terminado:
 - Validación de registro de usuario con correo y contraseña a través de Firebase Auth exitosa.
-- Validación de registro de suario a través de cuenta de correo Google, a través de Firebase Auth exitosa. 
+- Validación de registro de uario a través de cuenta de correo Google, a través de Firebase Auth exitosa. 
 - Si contraseña creada por el usuario u otro de los campos de registro no cumple con los requerimientos, se muestra mensaje de alerta, informando al usuario de los campos a cambiar. 
 - La app es SpA y reponsive, optimizando la experiencia del usuario. 
 - Se aprueban test unitarios.
