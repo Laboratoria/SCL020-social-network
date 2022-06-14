@@ -87,22 +87,22 @@ Yo como usuario quiero poder dar like a otros posts.
 En esta primera instancia decidimos los viajes del usuario principales, por ejemplo, vista de Home o Feed y Vista de Perfil del Usuario. Así como el estilo base que tendrían nuestra app y posts. 
 
 También decidimos enfocarnos primero en su versión móvil (mobile first):
-![Prototype-Low-Quality](img/prototipo-baja.png)
+![Prototype-Low-Quality](/src/img/prototipo-baja.png/)
 
 ### Prototipo en alta:
 Realizamos el prototipado en la plataforma Figma, en la cual definimos nuestra paleta de colores inicial y estilo visual de la app, así como las vistas finales que se presentarían al usuario: vista de home, vista de perfil, y vista de historial de likes.
 
 <b>Vistas Log-In/Sign Out, y Feed:</b>
-![Prototype-High-Quality](img/prototipo-alta1.png)
+![Prototype-High-Quality](/src/img/prototipo-alta1.png)
 
 <b>Vistas Feed, interacción en Feed y Perfil Usuario:</b>
-![Prototype-High-Quality](img/prototipo-alta2.png)
+![Prototype-High-Quality](/src/img/prototipo-alta2.png)
 
 <b>Vista Geolocalización y Post:</b>
-![Prototype-High-Quality](img/prototipo-alta3.png)
+![Prototype-High-Quality](/src/img/prototipo-alta3.png)
 
 <b>Prototipo Versión Escritorio:</b>
-![Prototype-High-Quality](img/prototipo-alta4.png)
+![Prototype-High-Quality](/src/img/prototipo-alta4.png)
 
 ## Investigación Testeo de Prototipado
 
@@ -121,12 +121,12 @@ Las preguntas realizadas fueron:
 Gracias al feedack proporcionado en la etapa previa por las personas entrevistadas, así como feedback de nuestras compañeras y coaches, realizamos cambios a nuestra app, por ejemplo, paleta de colores seleccionado.
 
 <b>App Vistas Registro, Ingreso y Bienvenida:</b>
-![Prototype-High-Quality](img/mobile-1.png)
+![Prototype-High-Quality](/src/img/mobile-1.png)
 
 <b>App Vistas Home/Feed, Nuevo Post y Perfil Usuario:</b>
-![Prototype-High-Quality](img/mobile-2.png)
+![Prototype-High-Quality](/src/img/mobile-2.png)
 
 <b>App Vistas Perfil Likes/Favoritos del usuario, y Vista Búsqueda por País:</b>
-![Prototype-High-Quality](img/mobile-3.png)
+![Prototype-High-Quality](/src/img/mobile-3.png)
 
 

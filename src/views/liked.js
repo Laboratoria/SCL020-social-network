@@ -5,9 +5,12 @@ import { Footer } from '../utils/footer.js';
 import { likingPost, likedPosts } from '../firebase/firestore.js';
 
 const Liked = () => {
-  const container = document.createElement('div');
+  const container = document.createElement('h3');
   container.className = 'home-page';
   const userPhoto = localStorage.getItem('userPhoto');
+
+  const likedPostsDiv = document.createElement('div');
+  likedPostsDiv.className = 'likedPostsDiv';
 
   likedPosts((post) => {
     container.innerHTML = '';
@@ -38,10 +41,13 @@ const Liked = () => {
       `;
     });
 
+    likedPostsDiv.innerHTML = 'Checkout your favorite posts!';
+
     const middle = document.createElement('div');
     middle.className = 'middle-liked';
     middle.innerHTML = postStructure;
-    container.append(Header(), middle, Footer());
+
+    container.append(Header(), likedPostsDiv, middle, Footer());
 
     // Liking a Post
     const likeBtn = container.querySelectorAll('.btn-like');
@@ -57,4 +63,3 @@ const Liked = () => {
 };
 
 export default Liked;
-
