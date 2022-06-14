@@ -76,12 +76,14 @@ function publications() {
     // console.log(data);
     if(data.length){
       let html= '';
-      data.forEach(doc =>{
+      data.forEach(doc =>{ //html
         const post = doc.data
         const ul = `
           <ul class="postList">
             <h class="postTitle"> ${post.title}</h>
             <p class="postBody"> ${post.description} </p>
+            <button id="btnDeletePost">Eliminar post</button>
+            <button id="btnUpdatePost">Actualizar post</button>
           </ul>
         `;
         html += ul;
