@@ -1,6 +1,5 @@
 // Este es el punto de entrada de tu aplicacion
 
-import { myFunction } from './lib/index.js';
 import { login } from './lib/views/templateLogin.js';
 import { err404 } from './lib/views/template404.js';
 import { age } from './lib/views/templateAge.js';
@@ -15,14 +14,13 @@ import { signUp } from './lib/views/templateSignUp.js';
 import { welcome } from './lib/views/templateWelcome.js';
 import { changeRoute} from './lib/router.js';
 
-myFunction();
 
 const init = ()=> {
     document.getElementById("root").innerHTML = home();
     changeRoute(window.location.hash);
 
     window.addEventListener('hashchange',()=>{
-        myFunction();
+        
         console.log (window.location.hash);
         changeRoute(window.location.hash);
     })

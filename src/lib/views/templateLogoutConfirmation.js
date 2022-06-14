@@ -1,3 +1,4 @@
+import { logout } from "../../firebase/auth.js";
 export const logoutConfirmation = () => {
     const divlogoutConfirmation = document.createElement("div");
 
@@ -15,5 +16,18 @@ export const logoutConfirmation = () => {
         </div>
     `
     divlogoutConfirmation.innerHTML = viewLogoutConfirmation;
+    
+    const btnLogout = divlogoutConfirmation.querySelector(".btn-yes")
+    btnLogout.addEventListener("click", () => {
+        logout()
+    })
     return divlogoutConfirmation;
 }
+
+
+// const btn = divSignUp.querySelector(".btn-create")
+// btn.addEventListener("click", () => {
+//     const email = divSignUp.querySelector("#email").value;
+//     const password = divSignUp.querySelector("#password").value;
+//     register(email, password);
+// })
