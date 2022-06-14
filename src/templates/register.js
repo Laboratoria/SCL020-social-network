@@ -9,7 +9,7 @@ function register() {
   <div class="group background-green">
     <h1>PlantGram</h1>
     <h2>Regístrate</h2>
-      <input type="email" id="email" placeholder="Usuario" />
+      <input type="email" id="email" placeholder="Correo electrónico" />
       <input type="password" id="password" placeholder="Contraseña" />
       <p id="alertRegister"></p>
       <button class="createAccountButton" id="createAccount"> CREAR CUENTA </button>

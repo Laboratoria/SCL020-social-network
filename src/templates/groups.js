@@ -25,7 +25,7 @@ function groups() {
     </div>
     <h5>PlantGram</h5>
     </div>
-    <div class="background-white-grupo grupo">
+    <div class="backgroundWhiteGroup groups">
     <p class="groupsTitle">
         Grupos
     </p>
@@ -39,10 +39,7 @@ function groups() {
             <a href="#!">
             Únete
             </a>
-        </li>
-        
-
-        
+        </li>     
     </ul>
       <div class="copyright">
         By Daniela Aedo, Heike Tineo & Carolina Zapata.i

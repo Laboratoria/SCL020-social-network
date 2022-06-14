@@ -492,7 +492,7 @@ hr {
 }
 
 /* Mis GRUPOs */
-.background-white-grupo {
+.backgroundWhiteGroup {
   background-image: linear-gradient(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93)),
     url('./assets/background.png');
   /* backdrop-filter: opacity(0.3); */
@@ -506,64 +506,6 @@ hr {
 }
 .groups{
   margin-top: 100px;
-}
-.groups header{
-  background: #01474D;
-  width: 100%;
-  height: 56px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  color: white;
-  font-size: 36px;
-  font-family: 'Ingrid Darling', cursive;
-
-}
-
-.groups .image-grupo{
-  display: flex;
-  width: 100%;
-  height: 150px; 
-  align-items: center;
-  padding: 1rem;
-  box-sizing: border-box;
-  max-width: 600px;
-  margin: 0 auto;
-}
-.groups .image-circulo{
-  border-radius: 50%;
-  overflow: hidden;
-  width: 90px;
-  height: 90px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-.groups .profileName{
-  width: 80%;
-}
-.groupsList{
-  margin: 0 auto;
-  padding: 0;
-  width: 100%;
-  padding: 0 16px;
-  box-sizing: border-box;
-  max-width: 600px;
-
-}
-.groupsList li{
-  border-bottom: 1px solid #CECECE;
-  display: flex;
-  justify-content: space-between; 
-  align-items: center;
-}
-
-.groupsList li p{
-  margin: 0;
-  padding: 10px 0; 
-}
-.groupsList .category{
-  border-radius: 50%;
 }
 
 .copyright{
