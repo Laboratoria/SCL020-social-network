@@ -1,7 +1,7 @@
-import { home } from './Views/templateHome.js';
-import { registration } from './Views/templateRegister.js';
-import { wall } from './Views/templateWall.js';
-import { bForm } from './Views/templateBullyingForm.js';
+import { home } from '../templates/templateHome.js';
+import { registration } from '../templates/templateRegister.js';
+import { wall } from '../templates/templateWall.js';
+import { bForm } from '../templates/templateBullyingForm.js';
 
 export const changeRoute = (hash) => {
   if ( hash === '#/') {
