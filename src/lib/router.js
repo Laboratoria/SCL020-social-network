@@ -10,16 +10,16 @@ import { newPost } from './view/templateCreatePost.js';
 export const changeRoute = (hash) => {
     if (hash === '#/') {
         return showTemplates(hash)
-    }
-    else if (hash === '#/crearUsuario'){
-        return showTemplates(hash)
+    // }
+    // else if (hash === '#/crearUsuario'){
+    //     return showTemplates(hash)
     } else {
         return showTemplates(hash)
     }
 }
 
-const showTemplates = (hash) => {
-    const containerRoot = document.getElementById('root');
+export const showTemplates = (hash) => {
+    const containerRoot = document.querySelector('#root');
     containerRoot.innerHTML = '';
     switch(hash) {
     case '':
