@@ -23,10 +23,6 @@ function login() {
 </div>`;
   const container = document.createElement("div");
   container.innerHTML = html;
-  // const button = container.querySelector("button");
-  // button.addEventListener("click", () => {
-  //   navigate("news");
-  // });
   const linkRegister = container.querySelector("#register");
   linkRegister.addEventListener("click", (event) => {
     event.preventDefault();
@@ -40,7 +36,7 @@ function login() {
     const password = container.querySelector("#password").value;
     try {
       await signIn(email, password);
-      navigate("news");
+      navigate("publications");
     } catch (error) {
       console.log(error);
       // throw error.message;
@@ -65,7 +61,7 @@ function login() {
   logInWithGmail.addEventListener("click", async (e) => {
     try {
       await logIn();
-      navigate("news");
+      navigate("publications");
     } catch (error) {
       throw error.message;
       console.log(error);

@@ -32,7 +32,7 @@ function register() {
     try {
       await createUser(auth, email, password);
       // console.log(auth, email, password);
-      navigate("news"); 
+      navigate("publications"); 
     } catch (error) {
       const alertError = container.querySelector("#alertRegister");
       console.log(error);

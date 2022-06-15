@@ -2,7 +2,7 @@
 
 import { navigate } from './router/routes.js';
 
-navigate('news');
+navigate('publications');
 // // import { myFunction } from './lib/index.js';
 
 // const splitPath = window.location.pathname.split('/')[1];
