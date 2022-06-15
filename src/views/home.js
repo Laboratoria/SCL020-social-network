@@ -1,7 +1,7 @@
 import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
 import {
-  readingPost, editPost, gettingDoc, deletePost, likingPost,
+  readingPost, editPost, deletePost, likingPost,
 } from '../firebase/firestore.js';
 
 const Home = () => {
@@ -78,7 +78,6 @@ const Home = () => {
     const likeBtn = container.querySelectorAll('.btn-like');
     likeBtn.forEach((btn) => {
       btn.addEventListener('click', async () => {
-        // console.log('click btn like, home');
         await likingPost(btn.dataset.id);
       });
     });
