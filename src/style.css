@@ -1,0 +1,650 @@
+@import url(https://fonts.googleapis.com/css?family=Ingrid+Darling:regular);
+@import url(https://fonts.googleapis.com/css?family=Kite+One:regular);
+
+/* a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+}
+
+a:link {
+  color: #265301;
+}
+
+a:visited {
+  color: #437A16;
+}
+
+a:focus {
+  border-bottom: 1px solid;
+  background: #BAE498;
+}
+
+a:hover {
+  border-bottom: 1px solid;
+  background: #CDFEAA;
+}
+
+a:active {
+  background: #265301;
+  color: #CDFEAA;
+} */
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/*
+  Login  
+*/
+
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+}
+
+.background {
+  background-image: url('./assets/background.png');
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: 0% 10%;
+}
+
+
+.background-green {
+  background-color: #01474ddc;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 1rem 4rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  /* margin-left: 2rem; */
+  margin-bottom: 2rem;
+  /* margin-right: 2rem; */
+  width: 14rem;
+  /* height: 30rem; */
+}
+
+.background-white {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93)),
+    url('./assets/background.png');
+  /* backdrop-filter: opacity(0.3); */
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+}
+
+.login {
+  display: flex;
+  align-content: center;
+  text-align: center;
+  justify-content: center;
+}
+
+/* .login h2{
+  color: #BCE4D7;
+  font-size: 12px;
+  font-family:'Kite One', regular;
+} */
+
+.login p {
+  color: #BCE4D7;
+  font-family: 'Kite One', regular;
+}
+
+.login input {
+  background: #F8F9F9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  height: 43px;
+  width: 100%;
+  margin-bottom: 16px;
+  text-align: center;
+  border: 0px;
+
+}
+
+.login button {
+  border: 0px;
+  width: 100%;
+  height: 45px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.login .entrar {
+  background-color: #E48A7B;
+
+}
+
+/* REGISTER */
+
+.register {
+  display: flex;
+  text-align: center;
+}
+
+h1 {
+  opacity: 1;
+  display: flex;
+  font-size: 64px;
+  text-align: center;
+  color: #F8F9F9;
+  font-family: 'Ingrid Darling', cursive;
+  margin-bottom: 25px;
+  margin-top: 10px;
+  padding: 10px;
+  text-shadow: 5px 5px 10px black;
+}
+
+h2 {
+  opacity: 1;
+  display: flex;
+  text-align: center;
+  color: #01474D;
+  font-size: 12px;
+  font-family: 'Kite One', regular;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.register p {
+  display: flex;
+  color: #BCE4D7;
+  font-family: 'Kite One', regular;
+}
+
+.register input {
+  background: #F8F9F9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  height: 43px;
+  width: 0.5rem;
+  margin-bottom: 16px;
+  text-align: center;
+  font-family: 'Kite One', regular;
+}
+
+.message{
+  font-size: 12px;
+}
+.createAccountButton {
+  background-color: #E48A7B;
+} 
+
+.backButton, .btn-register { 
+  box-shadow: none;
+  font-family: 'Kite One', regular;
+  color: #BCE4D7;
+  text-decoration: none;
+}
+ 
+
+/* FLOWER MENU */
+#navMenu{
+  margin: 0px;
+  padding-top: 0px;
+  padding-left: 10px;
+  position: fixed;
+  font-family: 'Kite One', regular;
+  width:10%;
+  height:9%;
+  transition:4s all;
+  z-index:1;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#navMenu ul{
+  padding:0px;
+  text-align:center;
+}
+
+#navMenu li{
+    transition:.3s all;
+}
+
+#navMenu a{
+  text-decoration: none;
+  list-style: none;
+  transition: .3s all;
+  font-size:0px;
+  padding: 0px;
+  
+}
+#navMenu h4{
+  font-family: 'Ingrid Darling', cursive;
+  text-align: center;
+  color: #01474D;
+  padding: 7px;
+  padding-bottom: 7px;
+  font-size: 0px;
+}
+#navMenu img{
+  padding-top: 15px;
+  padding-left: 10px;
+  height: 50px;
+  width: 50px;
+}
+
+#navMenu:hover {
+  width: 70%;
+  height: 100%;
+  background-color: #BCE4D7;
+}
+
+#navMenu:hover h4{
+  padding: 15px;
+  font-size: 35px;
+}
+
+#navMenu:hover a{
+  padding: 20px;
+  font-size: 20px;
+  color: #5F6C65;
+  display: block;
+}
+
+#navMenu:hover img{
+  height: 0px;
+  display: none;
+}
+
+#navMenu:hover li{
+  border-top: 1px solid black;
+  width: 100%;
+}
+
+#navMenu:hover ul:last-of-type{
+  border-bottom: 1px solid black;
+}
+
+#navMenu:hover a:hover{
+  font-size: 25px;
+  padding: 30px 0px;
+  background-color: #E48A7B;
+}
+#navMenu .logOutList{
+  border: none;
+}
+#navMenu .logOutList a:hover{
+  background-color: #01474D;
+  color: white;
+}
+
+/* NEWS */
+.bar {
+  background-color: #01474D;
+  color: #5F6C65;
+  display: inline-block;
+  width: 100%;
+  height: 100px;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+}
+
+h5 {
+  opacity: 1;
+  font-size: 48px;
+  text-align: center;
+  color: #F8F9F9;
+  font-family: 'Ingrid Darling', cursive;
+  margin-bottom: 25px;
+  margin-top: 10px;
+  padding: 10px;
+  text-shadow: 5px 5px 10px black;
+  
+}
+
+.news h2 {
+  color: #00A57A;
+  opacity: 1;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  font-size: 12px;
+  font-family: 'Kite One', regular;
+}
+
+.newsPost{
+  background-color: #BCE4D7;
+  display: grid;
+  grid-row: auto;
+  justify-content: center;
+  font-size: 12px;
+  font-family: 'Kite One', regular;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+.postAction{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.postLikes{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.postLikes span{
+  color: #E48A7B;
+  margin-right: 5px;
+  display: block;
+  font-size: 15px;
+}
+.post-header{
+  display: flex;
+  justify-content: space-between;
+  background-color: #BCE4D7;
+  width: 100%;
+}
+.post-header h3{
+  font-size: 15px;
+}
+.dashboard{
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.publicationsButton {
+  align-self: center;
+  justify-content: center;
+}
+
+ul li {
+  list-style: none;
+}
+
+/* PROFILE */
+.image-perfil {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 130px;
+}
+
+#profile-img {
+  width: 100%;
+  max-width: 100px;
+  border-radius: 100%; 
+}
+
+.profileName {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.profileData {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 50px;
+  font-family: 'Kite One', regular;
+}
+
+#nameProfile {
+  text-transform: uppercase;
+  font-size: 18px;
+  font-family: 'Kite One', regular;
+  margin: 0;
+  margin-top: 35px;
+}
+
+#emailProfile {
+  color: gray;
+  font-size: 15px;
+  font-family: 'Kite One', regular;
+  margin: 0;
+}
+
+hr {
+  height: 0.5px;
+  width: 100%;
+  background-color: #5F6C65;
+}
+
+/* PUBLICATIONS*/
+.image-public {
+  display: flex;
+  text-align:left;
+  justify-content: left;
+  align-items: left;
+  margin: 30px 5px 2px 45px;
+}
+
+#img-public {
+  width: 20%;
+  border-radius: 100%; 
+}
+
+#namePublic {
+  font-size: 15px;
+  display: flex;
+  justify-content: right;
+  margin-right: 55px;
+}
+#imgPublications {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.public {
+  background-color: #BCE4D7;
+  display: grid;
+  grid-row: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 12px;
+  font-family: 'Kite One', regular;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.public-header {
+  display: inline-block;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+/* Mis GRUPOs */
+.backgroundWhiteGroup {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93)),
+    url('./assets/background.png');
+  /* backdrop-filter: opacity(0.3); */
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  padding: 16px;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.groups{
+  margin-top: 100px;
+}
+
+.copyright{
+  position: absolute;
+  bottom: 9px;
+  width: 100%;
+  text-align: center;
+  font-size: 8px;
+}
+
+/* Lista de Grupos */
+.groups .groupsTitle{
+  text-align: center;
+  color: #00A57A;
+}
+.groups .groupsList{
+  margin: 0 auto;
+  padding: 0 16px;
+  max-width: 600px;
+}
+.groups .groupsList li{
+  background: #BCE4D7;
+  box-shadow: 0px 6px 6px -1px rgba(0, 0, 0, 0.25); 
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+  align-items: center;
+  margin-bottom: 16px;
+
+}
+.groups .groupsList li p{
+  font-family: 'Kite One';
+  color: #02474E;
+  font-size: 15px;
+
+}
+.groups .groupsList li a{
+  font-family: 'Kite One'; 
+  text-decoration-line: underline;
+  color: #E28B7A;
+}
+
+.fa-thumbs-up {
+  color: #E28B7A;
+  padding: 8px;
+}
+
+.createPost{
+  display: grid;
+  grid-row: auto;
+  justify-content: center;
+}
+
+.postList{
+  marker: none;
+  margin: 10px;
+  padding: 10px;
+  background-color: #BCE4D7;
+  /* display: grid;
+  grid-row: auto; */
+  justify-content: center;
+  /* font-size: 12px; */
+  font-family: 'Kite One', regular;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+  
+.postTitle {
+  /* display: flex;
+  justify-content: space-between; */
+  /* display: grid;
+  grid-row: auto; */
+  margin: 0;
+  padding: 0;
+  background-color: #BCE4D7;
+  font-family: 'Kite One', regular;
+  font-size: 20px;
+}
+  
+.postBody {
+  background-color: #BCE4D7; 
+  margin: 0;
+  padding: 0;
+   /* display: flex; */
+  /* display: grid;
+  grid-row: auto; */
+  color: black;
+  font-family: 'Kite One', regular;
+  font-size: 12px;
+  align-items: center;
+}
+
+#btnCreatePost{
+  background-color: #E48A7B;
+  font-family: 'Kite One', regular;
+  justify-content: center;
+  align-self: center;
+}
+
+#addNewPost{
+  background-color: #E48A7B;
+  font-family: 'Kite One', regular;
+  justify-content: center;
+  align-items: center;
+}
+
+.newPostList{
+  display: grid;
+  grid-row: auto;
+  justify-content: center;
+  background-color: #BCE4D7;
+  font-family: 'Kite One', regular;
+  font-size: 12px;
+}
+
+#newPostTitle{
+  justify-content:center;
+  width: 200px;
+  height: 20px;
+  margin: 10px;
+  font-family: 'Kite One', regular;
+  font-size: 12px;
+}
+
+#newPostDescription{
+  justify-content:center;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  font-family: 'Kite One', regular;
+  font-size: 12px;
+}
+
+.deleteButton{
+  width: 15px;
+  height: 15px;
+}
+
+.editButton{
+  width: 15px;
+  height: 15px;
+}
