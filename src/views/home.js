@@ -86,4 +86,4 @@ const Home = () => {
   return container;
 };
 
-export { Home };
+export default Home;

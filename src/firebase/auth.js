@@ -1,10 +1,4 @@
-/* eslint-disable no-useless-catch */
-/* eslint-disable no-alert */
-/* eslint-disable max-len */
-// import { navigate } from '../router/router.js';
 import {
-  auth,
-  provider,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
@@ -13,6 +7,8 @@ import {
   signOut,
   sendEmailVerification,
   updateProfile,
+} from 'firebase/auth';
+import { auth, provider } from './init.js';
 } from './init.js';
 import avatarUrl from '../img/main-avatar.png';
 
@@ -85,5 +81,5 @@ const out = async () => {
 };
 
 export {
-  login, google, create, out, auth, validateState,
+  login, google, create, out, validateState,
 };

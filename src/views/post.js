@@ -6,7 +6,8 @@ import { createPost } from '../firebase/firestore.js';
 const Post = () => {
   const userName = localStorage.getItem('userName') || 'User';
   const userPhoto = localStorage.getItem('userPhoto');
-  const template = `<div class="post-box">
+  const template = `
+  <div class="post-box">
     <button id="dicardButton" class="btn-discard">x</button>
     <form id="postBox">
       <img class ="avatar-new-post" src="${userPhoto}" />

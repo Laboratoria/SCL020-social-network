@@ -1,8 +1,7 @@
 import {
-  db,
   collection,
   addDoc,
-  auth,
+  getDocs,
   Timestamp,
   query,
   orderBy,
@@ -13,7 +12,9 @@ import {
   deleteDoc,
   where,
   arrayRemove, arrayUnion,
-} from './init.js';
+} from 'firebase/firestore';
+
+import { db, auth } from './init';
 
 // Creating Posts collection and adding new docs to collection
 const createPost = async (review, movie, country) => {
@@ -119,4 +120,3 @@ export {
   profilePosts, likingPost, mapPosts, likedPosts,
 };
 
-// const q = query(result.query, orderBy('date', 'desc'), limit(5)); // , limit(n)
