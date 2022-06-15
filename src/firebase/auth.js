@@ -16,7 +16,6 @@ import {
 } from './init.js';
 import avatarUrl from '../img/main-avatar.png';
 
-
 // Observer
 const validateState = (next, pathname) => {
   onAuthStateChanged(auth, (user) => {
@@ -36,10 +35,10 @@ const create = async (userName, email, password) => {
       email,
       password,
     );
-    await updateProfile(auth.currentUser, { 
+    await updateProfile(auth.currentUser, {
       displayName: userName,
-      photoURL : avatarUrl,
-     });
+      photoURL: avatarUrl,
+    });
     await sendEmailVerification(auth.currentUser);
     return userCredential.user;
   } catch (error) {

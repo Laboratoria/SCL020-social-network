@@ -4,7 +4,6 @@ import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
 import { createPost } from '../firebase/firestore.js';
 
-
 const Post = () => {
   const userName = localStorage.getItem('userName') || 'User';
   const userPhoto = localStorage.getItem('userPhoto');
