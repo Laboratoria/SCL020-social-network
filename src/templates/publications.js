@@ -12,9 +12,7 @@ function publications() {
         <div>
           <h4> PlantGram <img src="./assets/flower.png"></h4>
           <ul>
-              <li><a href='#' id='linkNews'> NOTICIAS </a></li>
               <li><a href='#' id='linkProfile'> MI PERFIL </a></li>
-              <li><a href='#' id='linkGroups'> GRUPOS </a></li>
               <li><a href='#' id='linkPublic'> PUBLICACIONES </a></li>
           </ul>
         </div>
@@ -37,20 +35,10 @@ function publications() {
   const container = document.createElement("div");
   container.innerHTML = html;
 //  MENÚ ACTIVO
-  const linkNews = container.querySelector("#linkNews");
-  linkNews.addEventListener("click", (event) => {
-    event.preventDefault();
-    navigate("news");
-  });
   const linkProfile = container.querySelector("#linkProfile");
   linkProfile.addEventListener("click", (event) => {
     event.preventDefault();
     navigate("profile");
-  });
-  const linkGroups = container.querySelector("#linkGroups");
-  linkGroups.addEventListener("click", (event) => {
-    event.preventDefault();
-    navigate("groups");
   });
   const linkPublic = container.querySelector("#linkPublic");
   linkPublic.addEventListener("click", (event) => {
@@ -73,7 +61,7 @@ function publications() {
   const postList = container.querySelector(".createPost");
   const setupPosts = async() => {
     let data= await readData()
-    // console.log(data);
+    console.log(data);
     if(data.length){
       let html= '';
       data.forEach(doc =>{ //html
@@ -82,13 +70,25 @@ function publications() {
           <ul class="postList">
             <h class="postTitle"> ${post.title} </h>
             <p class="postBody"> ${post.description} </p>
-            <button class="btnDeletePost" data-id="${doc.id}"><img class="deleteButton" src="../assets/delete.png"></button>
-            <button class="btnUpdatePost" data-id="${doc.id}"><img class="editButton" src="../assets/edit.png"></button>
+            <button class="btnDeletePost" id="${doc.id}"><img class="deleteButton" src="../assets/delete.png"></button>
+            <button class="btnUpdatePost"><img class="editButton" src="../assets/edit.png"></button>
           </ul>
         `;
         html += ul;
       });
       postList.innerHTML = html;
+      const btnDeletePost = container.querySelectorAll(".btnDeletePost");
+      console.log(btnDeletePost);
+  // if(btnDeletePost.length > 0){
+    btnDeletePost.forEach(btnDelete => {
+      console.log(btnDelete)
+      btnDelete.addEventListener("click", function(event) {
+        console.log(btnDelete.id)
+        deletePost(btnDelete.id); 
+
+      })
+  })
+// }
     } else {
       postList.innerHTML = '<p>Ingresa para ver tus posts</p>';
     }
@@ -101,20 +101,14 @@ function publications() {
     navigate("addPost")
   })}
 
-  const btnDeletePost = container.querySelectorAll(".btnDeletePost");
-  btnDeletePost.forEach(btn => {
-    btn.addEventListener("click", event => {
-      deletePost(event.target.dataset.id); 
-    })
-  })
-
-  const btnUpdatePost = container.querySelectorAll(".btnUpdatePost");
-  btnUpdatePost.forEach(btn => {
-    btn.addEventListener("click", ({target: { dataset }}) => {
-      console.log(dataset)
-      deletePost(dataset.id); 
-    })
-  })
+  // const btnUpdatePost = container.querySelectorAll(".btnUpdatePost");
+  // btnUpdatePost.forEach(btnUpdate => {
+  //   btnUpdate.addEventListener("click", event => {
+  //     event.preventDefault();
+  //     console.log(dataset);
+  //     editPost(firebase, data.id); 
+  //   })
+  // })
 
 
   return container;
