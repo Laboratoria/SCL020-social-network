@@ -1,3 +1,4 @@
+import { signup } from '../../firebase/auth.js';
 export const createUser = () => {
     const divCreateUser = document.createElement('div')
     divCreateUser.setAttribute('id', 'userCreationView')
@@ -18,10 +19,18 @@ export const createUser = () => {
             <p class="instruction">Quieres ingresar como:</p>
             <img id=bakerImg src="img/Baker.png" alt="Baker" class="bakerEaterImg"><img id="eaterImg" src="img/eater.png" alt="Eater" class="bakerEaterImg">
             <div class="divButtons">
-                <a href="#/home" class="buttons">Crear usuario</a></a>
+                <a class="buttons" id="newUser">Crear usuario</a>
             </div>
         </div>
         `
-    divCreateUser.innerHTML = viewCreateUser;
+        divCreateUser.innerHTML = viewCreateUser;
+        const btn = divCreateUser.querySelector("#newUser")
+        btn.addEventListener("click", () => {
+            const email = divCreateUser.querySelector("#userMail_id").value;
+            const password = divCreateUser.querySelector("#userPassword_id").value;
+            signup(email, password);
+        })
+        
+
     return divCreateUser;
 };
