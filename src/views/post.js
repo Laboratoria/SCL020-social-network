@@ -1,4 +1,3 @@
-/* eslint-disable import/no-cycle */
 import { navigate } from '../router/router.js';
 import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
@@ -285,7 +284,7 @@ const Post = () => {
     const country = container.querySelector('#country').value;
     try {
       const postRef = await createPost(review, movie, country);
-      const pin = postRef;
+      console.log(postRef);
       postForm.reset();
       navigate('/home');
     } catch (error) {

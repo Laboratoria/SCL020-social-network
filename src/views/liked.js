@@ -1,5 +1,3 @@
-// import { navigate } from '../router/router.js';
-// import { out } from '../firebase/auth.js';
 import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
 import { likingPost, likedPosts } from '../firebase/firestore.js';
@@ -18,7 +16,6 @@ const Liked = () => {
   likedPosts((post) => {
     container.innerHTML = '';
     let postStructure = '';
-    // console.log(post);
 
     post.forEach((doc) => {
       const posts = doc.data();
@@ -49,7 +46,6 @@ const Liked = () => {
     const middle = document.createElement('div');
     middle.className = 'middle-liked';
     middle.innerHTML = postStructure;
-
 
     middle.prepend(likedPostsDiv);
 

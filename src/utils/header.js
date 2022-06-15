@@ -1,7 +1,7 @@
 import { navigate } from '../router/router.js';
 import { out } from '../firebase/auth.js';
 import logoUrl from '../img/brand-logo.png';
-import avatarUrl from '../img/main-avatar.png'
+import avatarUrl from '../img/main-avatar.png';
 
 export const Header = () => {
   const template = // HTML
@@ -48,7 +48,6 @@ export const Header = () => {
   likedToBtn.addEventListener('click', () => {
     navigate('/liked');
   });
-
 
   // Hamburguer Sign out btn
   const buttonOut = container.querySelector('#sign-out');

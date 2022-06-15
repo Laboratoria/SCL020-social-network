@@ -9,6 +9,8 @@ import {
   updateProfile,
 } from 'firebase/auth';
 import { auth, provider } from './init.js';
+} from './init.js';
+import avatarUrl from '../img/main-avatar.png';
 
 // Observer
 const validateState = (next, pathname) => {
