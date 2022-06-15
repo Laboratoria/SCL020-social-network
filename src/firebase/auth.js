@@ -9,40 +9,30 @@ import {
     onAuthStateChanged } from "./init.js";
 
 //Crea nueva cuenta de usuario
-export const signup = async(email, password) => {
+export const signup = async (auth, email, password) => {
+    debugger
+    console.log(email);
+    console.log(password);
     try {
-        const userCredential =  await createUserWithEmailAndPassword(auth, email, password);
-        showTemplate("#/welcome");
-        console.log("cuenta creada");
-        return userCredential;
+        const createUser = await createUserWithEmailAndPassword(auth, email, password);
+        //showTemplate("#/welcome");
+        //console.log(createUser);
+        return createUser;
+        //return userCredential;
     }
     catch (error) {
-        showTemplate("#/sign-up");
+        console.log(error.code);
+        console.log(error.message);
         alert(`Error al crear la cuenta ${error.code}`);
-        console.log(error.code)
-        console.log(error.message)
         throw error.message;
-        
     }
 }
 
-export const obs = () => {
-    onAuthStateChanged(auth, (user) => {
-        if (user) {
-                //User is signed in, see docs for a list of available properties
-                //https://firebase.google.com/docs/reference/js/firebase.User
-            const uid = user.uid;
-            console.log("user is signed out")
-        }
-            else {
-                //user is signed out
-                console.log("user is signed out")
-            }
-        })
-}
 
 // export const logIn = (email,password) => {
+
 //     signInWithEmailAndPassword(auth, email, password)
+
 //     .then((userCredential) => {
 //     // Signed in
 //     //const user = userCredential.user;
@@ -56,10 +46,14 @@ export const obs = () => {
 //     })
 // }
 
+//Inicia sesion
 
 export const logIn = async(email,password) => {
     try {
-        await signInWithEmailAndPassword(auth, email, password)
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        showTemplate("#/feed");
+        console.log("inicio sesion");
+        return userCredential;
     } catch(error){
         throw error.message
     }
@@ -100,3 +94,18 @@ export const logout = async () => {
         throw error.message;
     }
 };
+
+export const obs = () => {
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+                //User is signed in, see docs for a list of available properties
+                //https://firebase.google.com/docs/reference/js/firebase.User
+            const uid = user.uid;
+            console.log("user is signed out")
+        }
+            else {
+                //user is signed out
+                console.log("user is signed out")
+            }
+        })
+}

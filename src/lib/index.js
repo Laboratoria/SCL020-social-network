@@ -1,7 +1,11 @@
-//aqui exportaras las funciones que necesites
+import { signup } from "../firebase/auth";
 
-//export const myFunction = () => {
-  // aqui tu codigo
-  //console.log('Hola mundo!');
-//};
+const btn = divSignUp.querySelector(".btn-create")
+btn.addEventListener("click", async (e) => {
+    e.preventDefault()
+    const email = divSignUp.querySelector("#email").value;
+    const password = divSignUp.querySelector("#password").value;
+    signup(email, password);
+    showTemplate("#/welcome");
+})
 

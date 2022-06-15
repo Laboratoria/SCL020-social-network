@@ -9,13 +9,15 @@ export const login = () => {
             <div class ="sub-container-login">
                 <div class="containter-logo-ticket"><img class ="logo-ticket" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-removebg-preview.png?raw=true" alt="logo-ticket"></div>
                 <h2>Login to your account</h2>
-                <label><input type="text" id="email" required placeholder="email@something.com"></label>
-                <label><input type="password" id="password" required placeholder="password"></label>
-                <div class="btn-access">
-                    <button>google</button>
-                    <button>IMDb</button>
-                </div> 
-                <a href="#/feed"><button class="btn">Login</button></a>
+                <form>
+                    <label><input type="text" id="email" required placeholder="email@something.com"></label>
+                    <label><input type="password" id="password" required placeholder="password"></label>
+                    <div class="btn-access">
+                        <button>google</button>
+                        <button>IMDb</button>
+                    </div> 
+                    <a><button class="btn">Login</button></a>
+                </form>
             </div>
         </div>     
     `

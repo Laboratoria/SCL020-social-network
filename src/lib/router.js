@@ -15,7 +15,7 @@ export const changeRoute = (hash) => {
     if (hash ==="#/login"){
         return showTemplate(hash);}
     else if (hash==="#/age"){
-        return showTemplate (hash);
+        return showTemplate (hash); 
     }else if (hash==="#/ageRedirect"){
         return showTemplate (hash);
     }else if (hash==="#/sign-up"){
