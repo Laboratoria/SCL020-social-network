@@ -15,8 +15,8 @@ import {
 // const docRef = doc(firestore, "cities", "SF");
 // const docSnap = await getDoc(docRef);
 
-const readData = async function (type = "Posts") {
-  const querySnapshot = await getDocs(collection(firestore, type));
+const readData = async function () {
+  const querySnapshot = await getDocs(collection(firestore, "Posts"));
   const dataArray = [];
   querySnapshot.forEach((doc) => {
     dataArray.push({ id: doc.id, data: doc.data() });
@@ -76,7 +76,7 @@ const updateTimestamp = await updateDoc(docRef, {
 
 //DELETE POST
 const deletePost = async () => {
-await deleteDoc(doc(firestore, "Posts", "id"));
+await deleteDoc(doc(firestore, "Posts", id));
 }
 
 export { readData, savedUser, createPost, editPost, time, deletePost };

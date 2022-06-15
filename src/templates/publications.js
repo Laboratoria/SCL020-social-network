@@ -82,8 +82,8 @@ function publications() {
           <ul class="postList">
             <h class="postTitle"> ${post.title} </h>
             <p class="postBody"> ${post.description} </p>
-            <button id="btnDeletePost"><img class="deleteButton" src="../assets/delete.png"></button>
-            <button id="btnUpdatePost"><img class="editButton" src="../assets/edit.png"></button>
+            <button class="btnDeletePost" data-id="${doc.id}"><img class="deleteButton" src="../assets/delete.png"></button>
+            <button class="btnUpdatePost" data-id="${doc.id}"><img class="editButton" src="../assets/edit.png"></button>
           </ul>
         `;
         html += ul;
@@ -101,7 +101,22 @@ function publications() {
     navigate("addPost")
   })}
 
+  const btnDeletePost = container.querySelectorAll(".btnDeletePost");
+  btnDeletePost.forEach(btn => {
+    btn.addEventListener("click", event => {
+      deletePost(event.target.dataset.id); 
+    })
+  })
+
+  const btnUpdatePost = container.querySelectorAll(".btnUpdatePost");
+  btnUpdatePost.forEach(btn => {
+    btn.addEventListener("click", ({target: { dataset }}) => {
+      console.log(dataset)
+      deletePost(dataset.id); 
+    })
+  })
+
+
   return container;
 }; 
 export { publications };
-
