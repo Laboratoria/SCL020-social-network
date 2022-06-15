@@ -1,5 +1,4 @@
-import { register, signInGoogle } from "../../firebase/auth.js";
-//import { app } from "../../firebase/init.js";
+import { signup, signInGoogle } from "../../firebase/auth.js";
 export const signUp = () => {
     const divSignUp = document.createElement("div");
 
@@ -13,21 +12,18 @@ export const signUp = () => {
                     <label><input type="text" id="user" required placeholder="User Name"></label>
                     <label><input type="email" id="email" required placeholder="email@something.com"></label>
                     <label><input type="password" id="password" required placeholder="password"></label>
-                    <button class="btn-create">Create Account</button>
+                    <div class="btn-access">
+                        <a id="loginGoogle">google</a>
+                        <a>IMDb</a>
+                    </div>
+                    <div class="container-btn">
+                        <button type="submit" class="btn-create">Create</button>
+                        <button><a href="#/">Cancel</a></button>
+                    </div>
                 </form>
-                <div class="btn-access">
-                    <button id="loginGoogle">google</button>
-                    <button>IMDb</button>
-                </div>
-                <div class="container-btn">
-                    <a href="#/welcome"><button>Confirm</button></a>
-                    <a href=""><button>Cancel</button></a>
-                </div>
             </div>
         </div>            
     `
-
-
     divSignUp.innerHTML = viewSignUp;
 
     const btnGoogle =divSignUp.querySelector("#loginGoogle")
@@ -40,10 +36,11 @@ export const signUp = () => {
     btn.addEventListener("click", () => {
         const email = divSignUp.querySelector("#email").value;
         const password = divSignUp.querySelector("#password").value;
-        register(email, password);
+        signup(email, password);
     })
     return divSignUp;
 }
 
 
 
+/*<a href="#/welcome"><button>Confirm</button></a>*/
