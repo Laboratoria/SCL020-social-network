@@ -1,9 +1,7 @@
 import { login } from '../templates/login.js';
 import { profile } from '../templates/profile.js';
 import { register } from '../templates/register.js';
-import { news } from '../templates/news.js';
 import { publications } from '../templates/publications.js'; 
-import { groups } from '../templates/groups.js';
 import { addPost } from '../templates/addPost.js';
 
 const routes = {
@@ -15,10 +13,6 @@ const routes = {
     path: '/register',
     template: register(),
   },
-  news: {
-    path: '/news',
-    template: news(),
-  },
   publications: {
     path: '/publications',
     template: publications(),
@@ -27,10 +21,6 @@ const routes = {
     path: '/profile',
     template: profile(),
   }, 
-  groups: {
-    path: '/groups',
-    template: groups(),
-  },
   addPost: {
     path: '/addPost',
     template: addPost(),
