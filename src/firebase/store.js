@@ -75,8 +75,26 @@ const updateTimestamp = await updateDoc(docRef, {
 }
 
 //DELETE POST
-const deletePost = async () => {
-await deleteDoc(doc(firestore, "Posts", id));
+
+// const deletePost = async function (id) {
+//   // const querySnapshot = await getDoc(doc.id);
+//   // querySnapshot((doc) => {
+//   //   doc.deleteDoc(doc(firestore, "Posts", "id")); 
+//   // });
+//   const deleteRef = await doc(firestore, "Posts", id);
+//   await deleteDoc(deleteRef);
+//   // return dataArray;
+// };
+
+
+const deletePost = async (id) => {
+  try {
+    await deleteDoc(doc(firestore, "Posts", id));
+    console.log('chan chan');
+  } catch (error) {
+    console.log(error);
+    throw error.message; 
+  }
 }
 
 export { readData, savedUser, createPost, editPost, time, deletePost };
