@@ -1,10 +1,4 @@
-/* eslint-disable no-useless-catch */
-/* eslint-disable no-alert */
-/* eslint-disable max-len */
-// import { navigate } from '../router/router.js';
 import {
-  auth,
-  provider,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
@@ -13,9 +7,8 @@ import {
   signOut,
   sendEmailVerification,
   updateProfile,
-} from './init.js';
-import avatarUrl from '../img/main-avatar.png';
-
+} from 'firebase/auth';
+import { auth, provider } from './init.js';
 
 // Observer
 const validateState = (next, pathname) => {
@@ -36,10 +29,10 @@ const create = async (userName, email, password) => {
       email,
       password,
     );
-    await updateProfile(auth.currentUser, { 
+    await updateProfile(auth.currentUser, {
       displayName: userName,
-      photoURL : avatarUrl,
-     });
+      photoURL: avatarUrl,
+    });
     await sendEmailVerification(auth.currentUser);
     return userCredential.user;
   } catch (error) {
@@ -86,5 +79,5 @@ const out = async () => {
 };
 
 export {
-  login, google, create, out, auth, validateState,
+  login, google, create, out, validateState,
 };
