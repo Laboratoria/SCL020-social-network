@@ -1,23 +1,23 @@
 // Este es el punto de entrada de tu aplicacion
 
-import { myFunction } from './lib/index.js';
-import { introduccion } from './lib/views/introduccion.js';
-import { loguearse } from './lib/views/loguearse.js';
+import { intro } from './lib/views/templateintro.js';
+/*import { users } from './lib/views/templateusers';*/
 import { changeRouter } from './lib/router.js';
 //myFunction();
 
 
 
-
+//document.getElementById("root").innerHTML = loguearse();
 
 
 const init = () => {
-    document.getElementById("root").innerHTML = introduccion();
-    document.getElementById("root").innerHTML = loguearse();
+    document.getElementById("root").innerHTML = intro();
+    changeRouter(window.location.hash);
     window.addEventListener("hashchange", () => {
-        myFunction();
-        console.log(window.location.hash);
+        
         changeRouter(window.location.hash);
     })
 }
 window.addEventListener('load', init);
+console.log(window.location.hash);
+
