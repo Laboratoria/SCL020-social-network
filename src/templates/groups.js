@@ -1,9 +1,11 @@
 import { navigate } from "../router/routes.js";
 import { signOutWithEmail } from "../firebase/auth.js";
-import {auth} from "../firebase/init.js"
+import { auth } from "../firebase/init.js";
+import { readData  } from "../firebase/store.js";
 
 function groups() {
-  const html = //html
+  const html =
+    //html
     `
     <div class="background-white">
     <div class="bar">
@@ -30,17 +32,9 @@ function groups() {
         Grupos
     </p>
     
-    <ul class="groupsList">
-        <li>
-            <img class="category" width="45" src="./assets/category.jpg">
-            <p>
-            Los mejores Fertilizantes
-            </p>
-            <a href="#!">
-            Únete
-            </a>
-        </li>     
+    <ul id="groupsList" class="groupsList">
     </ul>
+
       <div class="copyright">
         By Daniela Aedo, Heike Tineo & Carolina Zapata.i
       </div>
@@ -48,37 +42,66 @@ function groups() {
 `;
   const container = document.createElement("div");
   container.innerHTML = html;
-  const linkNews = container.querySelector("#linkNews");
-linkNews.addEventListener("click", (event) => {
-  event.preventDefault();
-  navigate("news");
-});
-const linkProfile = container.querySelector("#linkProfile");
-linkProfile.addEventListener("click", (event) => {
-  event.preventDefault();
-  navigate("profile");
-});
-const linkGroups = container.querySelector("#linkGroups");
-linkGroups.addEventListener("click", (event) => {
-  event.preventDefault();
-  navigate("groups");
-});
-const linkPublic = container.querySelector("#linkPublic");
-linkPublic.addEventListener("click", (event) => {
-  event.preventDefault();
-  navigate("publications");
-});
-const signOut = container.querySelector("#signOut");
-signOut.addEventListener("click", async () => {
-  try {
-    await signOutWithEmail(auth);
-    navigate("login"); 
-  } catch (error) {
-    throw error.message;
+
+  let listId = container.querySelector("#groupsList");
+  const getList = async() => {
+    let data= await readData("Groups")
+    console.log(data);
+    if(data.length){
+      let html= '';
+      data.forEach(doc =>{
+        let getData = doc.data; 
+        let li = `
+        <li>
+          <img class="category" width="45" src="${getData.image}">
+          <p>
+          ${getData.title}
+          </p>
+          <a href="#!">
+          Únete
+          </a>
+        </li>  
+        `;
+        html += li;
+      });
+      console.log('html', listId)
+      listId.innerHTML = html;
+    } else {
+      listId.innerHTML = '<li>Ingresa para ver tus Grupos</li>';
+    }
   }
-});
+  getList();
+
+  const linkNews = container.querySelector("#linkNews");
+  linkNews.addEventListener("click", (event) => {
+    event.preventDefault();
+    navigate("news");
+  });
+  const linkProfile = container.querySelector("#linkProfile");
+  linkProfile.addEventListener("click", (event) => {
+    event.preventDefault();
+    navigate("profile");
+  });
+  const linkGroups = container.querySelector("#linkGroups");
+  linkGroups.addEventListener("click", (event) => {
+    event.preventDefault();
+    navigate("groups");
+  });
+  const linkPublic = container.querySelector("#linkPublic");
+  linkPublic.addEventListener("click", (event) => {
+    event.preventDefault();
+    navigate("publications");
+  });
+  const signOut = container.querySelector("#signOut");
+  signOut.addEventListener("click", async () => {
+    try {
+      await signOutWithEmail(auth);
+      navigate("login");
+    } catch (error) {
+      throw error.message;
+    }
+  });
   return container;
 }
 
 export { groups };
-
