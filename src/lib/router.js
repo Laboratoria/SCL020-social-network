@@ -7,22 +7,14 @@ import { searchPost } from './view/templateSearch.js';
 import { editPost } from './view/templateEditPost.js';
 import { newPost } from './view/templateCreatePost.js';
 
-export const changeRoute = (hash) => {
-    if (hash === '#/') {
-        return showTemplates(hash)
-    // }
-    // else if (hash === '#/crearUsuario'){
-    //     return showTemplates(hash)
-    } else {
-        return showTemplates(hash)
-    }
-}
-
 export const showTemplates = (hash) => {
     const containerRoot = document.querySelector('#root');
     containerRoot.innerHTML = '';
     switch(hash) {
     case '':
+    containerRoot.appendChild(logIn());
+        break;
+    case '#/':
     containerRoot.appendChild(logIn());
         break;
     case '#/createNewUser':
