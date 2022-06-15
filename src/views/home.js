@@ -1,7 +1,7 @@
 import { Header } from '../utils/header.js';
 import { Footer } from '../utils/footer.js';
 import {
-  readingPost, editPost, gettingDoc, deletePost, likingPost,
+  readingPost, editPost, deletePost, likingPost,
 } from '../firebase/firestore.js';
 
 const Home = () => {

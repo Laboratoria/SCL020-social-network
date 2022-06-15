@@ -1,11 +1,10 @@
 /* eslint-disable import/no-cycle */
 import { create } from '../firebase/auth.js';
 import { navigate } from '../router/router.js';
-import logoUrl from '../img/brand-logo.png'
+import logoUrl from '../img/brand-logo.png';
 
 const Register = () => {
-  const template = //HTML
-  `
+  const template = `
   <img src="${logoUrl}" id="logo" class="logo">
   <h2 class="signup-tittle">Create your account</h2>
   <form id="form1">
@@ -41,7 +40,7 @@ const Register = () => {
       const user = await create(userName, email, password);
       localStorage.setItem('userName', user.displayName);
       localStorage.setItem('userUid', user.uid);
-      localStorage.setItem('userPhoto',user.photoURL)
+      localStorage.setItem('userPhoto', user.photoURL);
       form1.reset();
       navigate('/home');
     } catch (error) {

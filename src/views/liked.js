@@ -50,7 +50,6 @@ const Liked = () => {
     middle.className = 'middle-liked';
     middle.innerHTML = postStructure;
 
-
     middle.prepend(likedPostsDiv);
 
     container.append(Header(), middle, Footer());

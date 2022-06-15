@@ -2,12 +2,10 @@ import {
   db,
   collection,
   addDoc,
-  getDocs,
   auth,
   Timestamp,
   query,
   orderBy,
-  limit,
   doc,
   updateDoc,
   getDoc,
@@ -63,17 +61,6 @@ const editPost = async (id, review, movie, country) => {
   });
 };
 
-// Country View Posts
-const countryPosts = async (country) => {
-  const q = query(
-    collection(db, 'posts'),
-    where('country', '==', country),
-    orderBy('date', 'desc'),
-  );
-  const querySnapshot = await getDocs(q);
-  return filterQ.docs;
-};
-
 // Deleting Posts
 const deletePost = async (id) => {
   await deleteDoc(doc(db, 'posts', id));
@@ -89,7 +76,7 @@ const profilePosts = async (callback) => {
 // Map Posts
 const mapPosts = async (countryName, callback) => {
   try {
-    const q = query(collection(db,'posts'), where('country', '==', countryName), orderBy('date', 'desc'));
+    const q = query(collection(db, 'posts'), where('country', '==', countryName), orderBy('date', 'desc'));
     onSnapshot(q, (callback));
   } catch (error) {
     console.log(error);
@@ -128,8 +115,8 @@ const likedPosts = async (callback) => {
 };
 
 export {
-  createPost, readingPost, editPost, gettingDoc, deletePost, profilePosts, likingPost, mapPosts, likedPosts,
+  createPost, readingPost, editPost, gettingDoc, deletePost,
+  profilePosts, likingPost, mapPosts, likedPosts,
 };
 
 // const q = query(result.query, orderBy('date', 'desc'), limit(5)); // , limit(n)
-
