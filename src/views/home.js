@@ -78,7 +78,6 @@ const Home = () => {
     const likeBtn = container.querySelectorAll('.btn-like');
     likeBtn.forEach((btn) => {
       btn.addEventListener('click', async () => {
-        // console.log('click btn like, home');
         await likingPost(btn.dataset.id);
       });
     });
