@@ -34,7 +34,9 @@ body {
   height: 8%;
   background: white;
   order: -1;
+  box-shadow: 0 0 1em rgb(0 0 0 / 0.3);
 }
+
 .brand-logo {
   height: 80%;
 }
@@ -133,7 +135,9 @@ footer{
   min-height: 60px;
   background: white;
   align-items: center;
+  box-shadow: 0 0 1em rgb(0 0 0 / 0.3);
 }
+
 footer button {
   height: 50%;
   color: #CE395F;
@@ -683,7 +687,7 @@ svg{
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 30%;
+  width: 70%;
   box-sizing: content-box;
   /* background-color: #ff24ff; */
   background-color: #FFFFFF;
@@ -720,7 +724,9 @@ svg{
   transform: translate(0, 0);
 }
 
-
+.tittle-liked {
+  width: 100%;
+}
 
  @media (max-width: 600px) {
   .middle-map{
