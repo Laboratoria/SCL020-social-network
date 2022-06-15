@@ -1,5 +1,6 @@
 export const logIn = () => {
-
+    const divLogIn = document.createElement('div')
+    divLogIn.setAttribute('id', 'newDivLogIn')
     const viewLogIn = `
     <div class="container">
         <div>
@@ -30,5 +31,12 @@ export const logIn = () => {
         </div>
     </div>
     `
-    return viewLogIn;
+    divLogIn.innerHTML = viewLogIn;
+    const btn = divLogIn.querySelector("#login")
+    btn.addEventListener("click", () => {
+        const email = divLogIn.querySelector("#email").value;
+        const password = divLogIn.querySelector("#password").value;
+        logIn(email, password);
+    })
+    return divLogIn;
 };

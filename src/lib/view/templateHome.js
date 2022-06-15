@@ -1,6 +1,8 @@
+import { logout } from "../../firebase/auth.js";
+
 export const home = () => {
     const divHome = document.createElement('div')
-    divHome.setAttribute('id', 'containerHome')
+    divHome.setAttribute('id', 'divContainerHome')
     const viewHome = `
     <div class="menu__side" id="menu_side">
         <div id="containImg">
@@ -25,7 +27,7 @@ export const home = () => {
                 <h4>Buscar</h4>
             </div>
         </a>
-        <a href="">
+        <a id= "btnLogOut">
             <div class="option">
                 <i class="fa-solid fa-arrow-right-from-bracket fa-xl" title="Cerrar sesión"></i>
                 <h4>Cerrar cesion</h4>
@@ -79,5 +81,9 @@ export const home = () => {
 </div>
 `
 divHome.innerHTML = viewHome;
+const btn = divHome.querySelector("#btnLogOut")
+btn.addEventListener("click", () => {
+    logout();
+})
 return divHome;
 };

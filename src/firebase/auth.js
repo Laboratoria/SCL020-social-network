@@ -12,6 +12,7 @@ import {
 const login = async (auth, email, password) => {
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    console.log(userCredential)
     showTemplates('#/home')
     return userCredential;
   } catch (error) {
@@ -30,7 +31,6 @@ const signup = async (email, password) => {
     if (error == 'FirebaseError: Firebase: Error (auth/invalid-email).'){
       alert('Invalido')
     }
-    
     throw error.message;
   }
 };
@@ -52,6 +52,7 @@ const signup = async (email, password) => {
 const logout = async () => {
   try {
     const response = await signOut (auth);
+    showTemplates('#/')
     return response;
   } catch (error) {
     throw error.message;
@@ -61,5 +62,3 @@ const logout = async () => {
 export { login, logout, signup };
 
 //Iniciar sesion con google
-
-
