@@ -15,7 +15,6 @@ jest.mock('../src/firebase/init.js', () => {
         if(!email || !password) {
             throw new Error('ERROR')
         }
-
         Promise.resolve({ user: 'admin' })
     })
 }

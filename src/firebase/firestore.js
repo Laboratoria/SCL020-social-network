@@ -19,10 +19,13 @@ import { db, auth } from './init';
 // Creating Posts collection and adding new docs to collection
 const createPost = async (review, movie, country) => {
   let userName;
+  let userPhoto;
   if (auth.currentUser.displayName === null) {
     userName = auth.currentUser.email;
+    
   } else {
     userName = auth.currentUser.displayName;
+    userPhoto=auth.currentUser.photoURL;
   }
   const docRef = await addDoc(collection(db, 'posts'), {
     userName,
@@ -33,6 +36,7 @@ const createPost = async (review, movie, country) => {
     likesArr: [],
     likesSum: 0,
     date: Timestamp.fromDate(new Date()),
+    photo: userPhoto,
   });
   // console.log(docRef);
   return docRef.id;

@@ -1,4 +1,4 @@
-import { initializeApp } from 'firebase/app';
+/* import { initializeApp } from 'firebase/app';
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -26,10 +26,9 @@ export {
   auth, app, db, provider, createUserWithEmailAndPassword, signInWithEmailAndPassword,
   onAuthStateChanged, signInWithRedirect, getRedirectResult, signOut, sendEmailVerification, collection, 
   addDoc, getDocs, doc, updateProfile, Timestamp, query, orderBy, limit, updateDoc, getDoc, onSnapshot, deleteDoc, where, arrayRemove, arrayUnion
-};
+}; */
 
-
-/* import { initializeApp } from 'firebase/app';
+import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import { firebaseConfig } from './configFirebase.js';
@@ -43,4 +42,4 @@ const provider = new GoogleAuthProvider(app);
 
 export {
   auth, app, db, provider,
-}; */
+};

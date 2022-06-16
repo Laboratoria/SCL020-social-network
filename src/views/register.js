@@ -1,11 +1,11 @@
 /* eslint-disable import/no-cycle */
 import { create } from '../firebase/auth.js';
 import { navigate } from '../router/router.js';
-// import logoUrl from '../img/brand-logo.png';
+import logoUrl from '../img/brand-logo.png';
 
 const Register = () => {
   const template = `
-  <img src='../img/brand-logo.png' id="logo" class="logo">
+  <img src='${logoUrl}' id="logo" class="logo">
   <h2 class="signup-tittle">Create your account</h2>
   <form id="form1">
       <div>
@@ -35,6 +35,8 @@ const Register = () => {
     const userName = container.querySelector('#name').value;
     const email = container.querySelector('#email1').value;
     const password = container.querySelector('#password1').value;
+    const initials = userName.slice(0, -(userName.length - 1));
+    console.log(initials)
 
     try {
       const user = await create(userName, email, password);

@@ -1,17 +1,17 @@
 import { navigate } from '../router/router.js';
 import { out } from '../firebase/auth.js';
-// import logoUrl from '../img/brand-logo.png';
-// import avatarUrl from '../img/main-avatar.png';
+import logoUrl from '../img/brand-logo.png';
+import avatarUrl from '../img/main-avatar.png';
 
 export const Header = () => {
   const template = `
-  <img class='../img/brand-logo.png' src='../img/brand-logo.png' />
+  <img class='brand-logo' src='${logoUrl}' />
   <div class="search-box">
       <input type="text" class="search-input" placeholder="Search..">
       <button class="search-button"><i class="fas fa-search"></i></button>
   </div>
   <div class="dropdown">
-    <img type="checkbox" id="main-avatar" class="main-avatar" src='../img/main-avatar.png' />
+    <img type="checkbox" id="main-avatar" class="main-avatar" src='${avatarUrl}' />
      <div class="dropdown-content">
      <a id="profile">Profile</a>
      <a id="liked">Liked</a>
