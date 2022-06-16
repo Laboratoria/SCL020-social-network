@@ -16,6 +16,7 @@ initializeApp(config);
 const auth = getAuth();
 const provider = new GoogleAuthProvider();
 
+//console.log(provider)
 
 //const db = getFirestore(app);
 
@@ -25,7 +26,8 @@ export {
     signInWithEmailAndPassword, 
     createUserWithEmailAndPassword, 
     signInWithPopup, 
-    provider, 
+    provider,
+    GoogleAuthProvider, 
     onAuthStateChanged, 
     signOut }
 
