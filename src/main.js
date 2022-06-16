@@ -1,5 +1,5 @@
 // Este es el punto de entrada de tu aplicacion
 
-import { interpIndex } from "./lib/views/index";
+import { interpIndex } from "./lib/views/index.js";
 
-interpIndex();
+const inter = (document.getElementById("screen1").innerHTML = interpIndex());
