@@ -73,7 +73,6 @@ export const showTemplate = (hash)=>{
             } else { containerRoot.appendChild(home())
                     alert("no iniciaste sesion ctm") }
             break;
-                
         case "#/menu":
             if (obs()){
                 containerRoot.appendChild(menu());
