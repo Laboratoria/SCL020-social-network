@@ -4,6 +4,7 @@ import { wall } from '../templates/templateWall.js';
 import { bForm } from '../templates/templateBullyingForm.js';
 
 export const changeRoute = (hash) => {
+  console.log(hash)
   if ( hash === '#/') {
     return showTemplates(hash)
   } else if ( hash === '#/register' ) {

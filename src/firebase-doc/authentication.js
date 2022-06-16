@@ -4,11 +4,12 @@ import { auth, getRedirectResult, signInWithRedirect, createUserWithEmailAndPass
 // Observador
 const gettingActiveUser = (changeRoute, hash) => {
     onAuthStateChanged(auth, (user) => {
-        if (user) {
+      console.log(user)
+       /* if (user) {
           changeRoute(hash);
         } else {
           changeRoute('/#home');
-        }
+        }*/
       });
     }
     const creatingNewUser = async (userName, email, password) => {
@@ -34,17 +35,9 @@ const gettingActiveUser = (changeRoute, hash) => {
         const signingInWithgoogle = async () => {
             try {
               await signInWithRedirect(auth, provider);
-              const userCredential = await getRedirectResult(auth);
-              /*then((result) => {
-                // This gives you a Google Access Token. You can use it to access Google APIs.
-                const credential = provider.credentialFromResult(result);
-                const token = credential.accessToken;
-            
-                // The signed-in user info.
-                const user = result.user;
-              })*/
-              return userCredential.user.uid;
+              
             } catch (error) {
+              console.log(error)
               alert('Error al intentar ingresar con tu cuenta de Google', error);
               return null;
             }
