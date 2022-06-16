@@ -1,7 +1,7 @@
 import { createUser } from './view/templateCreateUser.js';
-import { logIn } from './view/templateLogIn.js';
+import { logInTemplate } from './view/templateLogIn.js';
 import { home } from './view/templateHome.js';
-import { error404 } from './view/template404.js';
+import { error404Template } from './view/template404.js';
 import { userProfile } from './view/templateUserProfile.js';
 import { searchPost } from './view/templateSearch.js';
 import { editPost } from './view/templateEditPost.js';
@@ -12,10 +12,10 @@ export const showTemplates = (hash) => {
     containerRoot.innerHTML = '';
     switch(hash) {
     case '':
-    containerRoot.appendChild(logIn());
+    containerRoot.appendChild(logInTemplate());
         break;
     case '#/':
-    containerRoot.appendChild(logIn());
+    containerRoot.appendChild(logInTemplate());
         break;
     case '#/createNewUser':
     containerRoot.appendChild(createUser());
@@ -36,6 +36,6 @@ export const showTemplates = (hash) => {
     containerRoot.appendChild(newPost())
         break;
     default:
-    containerRoot.appendChild(error404());
+    containerRoot.appendChild(error404Template());
     }
 }
