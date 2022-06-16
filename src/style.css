@@ -94,6 +94,10 @@ input{
     min-height: 100vh;
 }
 
+#logInGoogle{
+    cursor: pointer;
+}
+
 #logoTipo{
     padding-top: 10px;
     width: 160px;

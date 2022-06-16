@@ -26,7 +26,6 @@ export const logInTemplate = () => {
         </div>
         <div id="InitGoogle">
             <img id="logInGoogle" src="img/SignUpGoogle.png" alt="SignUpGoogle" width=200px  height="35px" />
-            <button id="logInGoogle2">GOOGLE</button>
         </div>
         <div class="notAcount">
             <p>No tienes cuenta?</p>
@@ -45,7 +44,7 @@ export const logInTemplate = () => {
         login(email, password);
     })
 
-    const btnGoogle = divLogIn.querySelector("#logInGoogle2")
+    const btnGoogle = divLogIn.querySelector("#logInGoogle")
     btnGoogle.addEventListener("click", () => {
         googleLogin();
     })
