@@ -32,14 +32,14 @@ body{
 #insertProfilePic{
     background-color: #F34573;
     height: 180px;
-    width: 600px;
+    width: 385px;
     border-radius: 20px;
     text-align: center;
 }
 
 #userCreationContainer{
     background-color: #F2D8B9;
-    width: 600px;
+    width: 385px;
     border-radius: 17px;
     text-align: center;
     color: #226B80;
@@ -65,6 +65,11 @@ body{
     padding: 2px 12px 2px 12px;
 }
 
+input[type="date" i] {
+    cursor: default;
+    color: rgb(118, 118, 118);
+}
+
 .buttons:hover{
     background-color: #a4455e;
     cursor: pointer;
@@ -76,7 +81,6 @@ input{
     border-radius: 17px;
     border: 0;
     text-align: center;
-    color: gray;
 }
 
 /*ViewLogIn*/
@@ -102,7 +106,7 @@ input{
     text-align: center;
     color: white;
     line-height: 0.5; 
-    width: 427px; 
+    width: 385px; 
     height: 145px;
     font-size: 17px;
 }
