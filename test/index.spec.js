@@ -1,17 +1,21 @@
+import { describe, expect, it, vi } from 'vitest';
 import { login } from '../src/firebase/auth.js';
 import { auth, signInWithEmailAndPassword } from '../src/firebase/init.js';
+// import { vi as jest } from 'vitest';
+
+
 
 /* import { signInWithEmailAndPassword } from 'firebase/auth';
 import { login } from '../src/firebase/auth.js';
 import { auth } from '../src/firebase/init.js'; */
 
-jest.mock('../src/firebase/init.js', () => {
+vi.mock('../src/firebase/init.js', () => {
   return {
-      auth: jest.fn(()=> { // La funcion jest.fn <- Crea una funcion interceptada por JEST
+      auth: vi.fn(()=> { // La funcion jest.fn <- Crea una funcion interceptada por JEST
           return { auth: 'TEST' }
       }),
 
-      signInWithEmailAndPassword: jest.fn((auth, email, password)=> {
+      signInWithEmailAndPassword: vi.fn((auth, email, password)=> {
         if(!email || !password) {
             throw new Error('ERROR')
         }
@@ -32,7 +36,7 @@ describe('Tests for the login function', () => {
       expect(signInWithEmailAndPassword).toHaveBeenCalled()
   });
 
-  it('Should call signInWithEmailAndPassword with the auth, email and pass arguments', async()=> {
+  it('Should call signInWithEmailAndPassword with the auth, email and pass arguments', async () => {
     await login(email, pass)
     expect(signInWithEmailAndPassword).toHaveBeenCalledWith(auth, email, pass)
 })
