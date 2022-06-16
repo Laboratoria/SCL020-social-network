@@ -63,7 +63,7 @@ export const showTemplate = (hash)=>{
             break;
         case "#/sign-up":
             containerRoot.appendChild(signUp());
-            break;       tm
+            break;     
         case "#/welcome":
             containerRoot.appendChild(welcome());
             break;    
@@ -75,18 +75,29 @@ export const showTemplate = (hash)=>{
             break;
                 
         case "#/menu":
-            containerRoot.appendChild(menu());
+            if (obs()){
+                containerRoot.appendChild(menu());
+            } else { containerRoot.appendChild(home())
+                    alert("no iniciaste sesion ctm") }
             break;  
         case "#/logoutConfirmation":
-            containerRoot.appendChild(logoutConfirmation());
+            if (obs()){
+                containerRoot.appendChild(logoutConfirmation());
+            } else { containerRoot.appendChild(home())
+                    alert("no iniciaste sesion ctm") }
             break;   
         case "#/profile":
-            containerRoot.appendChild(profile());
+            if (obs()){
+                containerRoot.appendChild(profile());
+            } else { containerRoot.appendChild(home())
+                    alert("no iniciaste sesion ctm") }
             break;
         case "#/deleteComment":
-            containerRoot.appendChild(deleteComment());
+            if (obs()){
+                containerRoot.appendChild(deleteComment());
+            } else { containerRoot.appendChild(home())
+                    alert("no iniciaste sesion ctm") }
             break; 
-        
         default:
             containerRoot.appendChild(err404());                             
     }
