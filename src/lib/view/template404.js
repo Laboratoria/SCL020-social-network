@@ -1,4 +1,4 @@
-export const error404 = () => {
+export const error404Template = () => {
     const divError404 = document.createElement('div')
     divError404.setAttribute('id', 'error404View')
     const viewError404 = `
