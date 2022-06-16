@@ -2,7 +2,7 @@ import { intro } from './views/templateintro.js';
 import { login } from './views/templatelogin.js';
 import { users } from './views/templateusers.js';
 import {error} from'./views/error.js';
-
+import {wall} from'./views/templatewall.js';
 
 export const changeRouter = (hash) => {
     if (hash === '#/login') {
@@ -10,6 +10,8 @@ export const changeRouter = (hash) => {
     } else if (hash === '#/intro'){
         return showTemplate(hash)
     } else if (hash === '#/users'){
+        return showTemplate(hash)
+     } else if (hash === '#/wall'){
         return showTemplate(hash)
      } else if (hash === '#/'){
         return showTemplate(hash)
@@ -30,6 +32,9 @@ const showTemplate = (hash) => {
             break;
         case '#/users':
             containerRoot.appendChild(users());
+            break;
+        case '#/wall':
+            containerRoot.appendChild(wall());
             break;
         case '#/':
             containerRoot.appendChild(intro());
