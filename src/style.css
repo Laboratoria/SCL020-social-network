@@ -1,14 +1,29 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 body{
-    background-color: #E3E3E3;
+    background-color: #e6e2e2;
+    height: 100%;
+    width: auto;
+    outline: 2px solid black;
+}
+.firstViewContainer{
+    height: 100vh;
+    width: auto;
+    outline: 2px solid green;
+}
+#root{
+    height: auto;
 }
 .firstView{
+    background: rgb(141,63,251);
+    background: radial-gradient(circle, rgba(141,63,251,1) 0%, rgba(19,2,71,1) 100%);
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 .logo{
     margin-top: 50px;
@@ -31,24 +46,56 @@ body{
     margin-top: 10px;
     margin-bottom: 15px;
     padding: 10px;
-    margin-left: 70px;
+    margin-left: 130px;
+    border-radius: 10px;
+    border: 3px solid rgb(239, 10, 148);
 }
 .password{
     width: 160px;
     padding: 10px;
-    margin-left: 70px;
+    margin-left: 130px;
     margin-bottom: 15px;
+    border-radius: 10px;
+    border: 3px solid rgb(239, 10, 148);
 }
-a{
+.loginButton{
     width: 160px;
     padding: 10px;
     background-color: #680E4B;
-    margin-left: 70px;
+    margin-left: 130px;
     color: white;
     display: flex;
     justify-content: center;
     text-decoration: none;
     font-size: 13px;
+    border-radius: 10px;
+    border: 2px solid rgb(239, 10, 148);
+}
+.register{
+    width: 160px;
+    padding: 10px;
+    background-color: #680E4B;
+    margin-left: 130px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 13px;
+    border-radius: 10px;
+    border: 2px solid rgb(239, 10, 148);
+}
+.loginGoogle{
+    width: 160px;
+    padding: 10px;
+    background-color: #680E4B;
+    margin-left: 130px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 13px;
+    border-radius: 10px;
+    border: 2px solid rgb(239, 10, 148);
 }
 p{
     display: flex;

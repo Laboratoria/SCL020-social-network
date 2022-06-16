@@ -1,4 +1,5 @@
 import { signingInWithgoogle } from "../firebase-doc/authentication.js";
+import { getRedirectResult, auth } from '../firebase-doc/firebase.js'
 import { changeRoute } from "../lib/router.js";
 
 export const home = () => {
@@ -21,15 +22,23 @@ export const home = () => {
 
 const container = document.createElement('div');
 container.innerHTML= viewHome;
+container.className = 'firstViewContainer';
 const googleButton = container.querySelector('.loginGoogle');
 googleButton.addEventListener('click', async (e) => {
   const user = await signingInWithgoogle();
+  console.log(user)
   if (user) {
     changeRoute('/#wall')
   }
-  else (console.log('todo mal xD'))
+  else (console.log('error'))
 })
-
+const inWithGoogle = async () =>  {const redirected = await getRedirectResult(auth)
+ 
+if (redirected){changeRoute('#/wall') }};
+              
+             // console.log(inWithGoogle)
+             // return inWithGoogle.user.uid;
+            inWithGoogle()
   return container;
 };
 
