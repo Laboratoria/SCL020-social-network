@@ -18,7 +18,7 @@ const Profile = () => {
       postStructure += `
       <div class="post"> 
         <div class='post-header'>
-        <p class='user-info'><img class="user-photo" src="${userPhoto}">
+        <p class='user-info'><img class="user-photo" src="${posts.photoURL}">
         <span class="user-name">${posts.userName} posted: </span> </p>
         <p class="movie-review">${posts.review}</p>
         <p class="date">${posts.date.toDate().toLocaleString()}</p>

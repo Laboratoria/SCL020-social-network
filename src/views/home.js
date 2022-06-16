@@ -7,7 +7,6 @@ import {
 const Home = () => {
   const container = document.createElement('div');
   container.className = 'home-page';
-  const userPhoto = localStorage.getItem('userPhoto');
 
   readingPost((post) => {
     container.innerHTML = '';
@@ -19,7 +18,7 @@ const Home = () => {
       postStructure += `
       <div class="post">
         <div class='post-header'>
-          <p class='user-info'><img class="user-photo" src="${userPhoto}">
+          <p class='user-info'><img class="user-photo" src="${posts.photo}">
           <span class="user-name">${posts.userName} posted: </span> </p>
           <p class="movie-review">${posts.review}</p>
           <p class="date">${posts.date.toDate().toLocaleString()}</p>

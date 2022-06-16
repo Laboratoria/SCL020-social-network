@@ -1,4 +1,4 @@
-import {
+/* import {
   auth,
   provider,
   createUserWithEmailAndPassword,
@@ -9,9 +9,9 @@ import {
   signOut,
   sendEmailVerification,
   updateProfile,
-} from './init.js';
+} from './init.js'; */
 
-/* import {
+import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
@@ -22,7 +22,7 @@ import {
   updateProfile,
 } from 'firebase/auth';
 import { auth, provider } from './init.js';
-//import avatarUrl from '../img/main-avatar.png'; */
+import avatarUrl from '../img/main-avatar.png';
 
 // Observer
 const validateState = (next, pathname) => {
@@ -45,7 +45,7 @@ const create = async (userName, email, password) => {
     );
     await updateProfile(auth.currentUser, {
       displayName: userName,
-      photoURL: '../img/main-avatar.png',
+      photoURL: avatarUrl,
     });
     await sendEmailVerification(auth.currentUser);
     return userCredential.user;
@@ -58,11 +58,13 @@ const create = async (userName, email, password) => {
 // Sign in with email and password, la persona ya existe
 const login = async (email, password) => {
   try {
-    await signInWithEmailAndPassword(
+   const user= await signInWithEmailAndPassword(
       auth,
       email,
       password,
     );
+    console.log(typeof user)
+    return user;
   } catch (error) {
     // console.log(error);
     throw error.message;
