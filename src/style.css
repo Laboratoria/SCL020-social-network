@@ -67,7 +67,7 @@
     margin: 20px;
     height: 530px;
     width: 310px;
-    background-color: #9a9a9a;
+    background-color: #FFFFFF;
     border-radius: 30px;
 }
 
@@ -189,7 +189,7 @@
     margin: 20px;
     height: 530px;
     width: 310px;
-    background-color: #9a9a9a;
+    background-color: #FFFFFF;
     border-radius: 30px;
 }
 
@@ -268,7 +268,7 @@
     margin: 20px;
     height: 530px;
     width: 310px;
-    background-color: #9a9a9a;
+    background-color: #FFFFFF;
     border-radius: 30px;
 }
 
@@ -305,7 +305,7 @@
     margin: 20px;
     height: 530px;
     width: 310px;
-    background-color: #9a9a9a;
+    background-color: #FFFFFF;
     border-radius: 30px;
 }
 
@@ -327,7 +327,7 @@
     margin: 20px;
     height: 530px;
     width: 310px;
-    background-color: #9a9a9a;
+    background-color: #FFFFFF;
     border-radius: 30px;
 }
 
@@ -350,7 +350,7 @@
     align-items:center; 
     height: 568px;
     width: 240px;
-    background-color: #9a9a9a;
+    background-color: #FFFFFF;
     border-radius: 0px 30px 30px 0px;
 }
 
@@ -603,7 +603,7 @@
     width: 320px;
     height: 50px;
     margin: 5px 0px;
-    background-color: #9a9a9a;
+    background-color: #FFFFFF;
 }
 
 .data {
@@ -700,4 +700,27 @@
 }
 .stuffing{
     margin: 5px 0;
+}
+
+/*  GRADIENT BACKGROUND  */
+
+body {
+	background: linear-gradient(-45deg, #5492F5, #5391F6, #ED829E, #FFCA2C);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 0%;
+	}
+	25%{
+		background-position: 50% 25%
+	}
+	50% {
+		background-position: 75% 50%;
+	}
+	100% {
+		background-position: 10% 100%;
+	}
 }
