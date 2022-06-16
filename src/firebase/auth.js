@@ -38,20 +38,20 @@ const validateState = (next, pathname) => {
 // Create user with email and password
 const create = async (userName, email, password) => {
   try {
-    const userCredential = await createUserWithEmailAndPassword(
+    const user = await createUserWithEmailAndPassword(
       auth,
       email,
       password,
     );
-    await updateProfile(auth.currentUser, {
+/*     await updateProfile(auth.currentUser, {
       displayName: userName,
       photoURL: avatarUrl,
-    });
-    await sendEmailVerification(auth.currentUser);
-    return userCredential.user;
+    }); */
+/*     await sendEmailVerification(auth.currentUser); */
+    return user;
   } catch (error) {
     // console.log(error);
-    throw error.code;
+    throw error.message;
   }
 };
 
@@ -63,7 +63,6 @@ const login = async (email, password) => {
       email,
       password,
     );
-    console.log(typeof user)
     return user;
   } catch (error) {
     // console.log(error);
