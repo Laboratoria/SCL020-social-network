@@ -1,6 +1,5 @@
-import { signup, signInGoogle} from "../../firebase/auth.js";
+import { signup } from "../../firebase/auth.js";
 import { auth } from "../../firebase/init.js";
-import { showTemplate } from "../router.js";
 export const signUp = () => {
     const divSignUp = document.createElement("div");
 
@@ -14,10 +13,6 @@ export const signUp = () => {
                     <label><input type="text" id="user" required placeholder="User Name"></label>
                     <label><input type="email" id="email" required placeholder="email@something.com"></label>
                     <label><input type="password" id="password" required placeholder="password"></label>
-                    <div class="btn-access">
-                        <a id="loginGoogle">google</a>
-                        <a>IMDb</a>
-                    </div>
                     <div class="container-btn">
                         <button type="submit" class="btn-create">Create</button>
                         <button><a href="#/">Cancel</a></button>
@@ -28,27 +23,12 @@ export const signUp = () => {
     `
     divSignUp.innerHTML = viewSignUp;
 
-    const btnGoogle =divSignUp.querySelector("#loginGoogle")
-    btnGoogle.addEventListener("click", ()=> {
-        signInGoogle()
-    })
-
-
     const btn = divSignUp.querySelector(".btn-create")
     btn.addEventListener("click", async (e) => {
         e.preventDefault();
         const email = divSignUp.querySelector("#email").value;
         const password = divSignUp.querySelector("#password").value;
-        try {
-            const useer = await signup(auth, email, password);
-            console.log(useer);
-            
-            showTemplate("#/welcome");
-            return useer
-        }
-        catch (error){
-            console.log(error);
-        }
+        signup(auth, email, password);
     })
     return divSignUp;
 }

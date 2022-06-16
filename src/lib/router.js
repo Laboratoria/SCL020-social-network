@@ -10,34 +10,36 @@ import { menu } from "./views/templateMenu.js";
 import { profile } from "./views/templateProfile.js";
 import { signUp } from "./views/templateSignUp.js";
 import { welcome } from "./views/templateWelcome.js";
+import { obs } from "../firebase/auth.js";
 
-export const changeRoute = (hash) => {
-    if (hash ==="#/login"){
-        return showTemplate(hash);}
-    else if (hash==="#/age"){
-        return showTemplate (hash); 
-    }else if (hash==="#/ageRedirect"){
-        return showTemplate (hash);
-    }else if (hash==="#/sign-up"){
-        return showTemplate (hash);
-    }else if (hash==="#/welcome"){
-        return showTemplate (hash);
-    }else if (hash==="#/err404"){
-        return showTemplate (hash);
-    }else if (hash==="#/feed"){
-        return showTemplate (hash);
-    }else if (hash==="#/menu"){
-        return showTemplate (hash);
-    }else if (hash==="#/logoutConfirmation"){
-        return showTemplate (hash);
-    }else if (hash==="#/profile"){
-        return showTemplate (hash);
-    }else if (hash==="#/deleteComment"){
-        return showTemplate (hash);
-    } else {
-        return showTemplate(hash);
-    }
-}
+
+// export const changeRoute = (hash) => {
+//     if (hash ==="#/login"){
+//         return showTemplate(hash);}
+//     else if (hash==="#/age"){
+//         return showTemplate (hash); 
+//     }else if (hash==="#/ageRedirect"){
+//         return showTemplate (hash);
+//     }else if (hash==="#/sign-up"){
+//         return showTemplate (hash);
+//     }else if (hash==="#/welcome"){
+//         return showTemplate (hash);
+//     }else if (hash==="#/err404"){
+//         return showTemplate (hash);
+//     }else if (hash==="#/feed"){
+//         return showTemplate (hash);
+//     }else if (hash==="#/menu"){
+//         return showTemplate (hash);
+//     }else if (hash==="#/logoutConfirmation"){
+//         return showTemplate (hash);
+//     }else if (hash==="#/profile"){
+//         return showTemplate (hash);
+//     }else if (hash==="#/deleteComment"){
+//         return showTemplate (hash);
+//     } else {
+//         return showTemplate(hash);
+//     }
+// }
 
 export const showTemplate = (hash)=>{
     const containerRoot = document.getElementById("root");
@@ -61,13 +63,17 @@ export const showTemplate = (hash)=>{
             break;
         case "#/sign-up":
             containerRoot.appendChild(signUp());
-            break;       
+            break;       tm
         case "#/welcome":
             containerRoot.appendChild(welcome());
             break;    
         case "#/feed":
-            containerRoot.appendChild(feed());
-            break;    
+            if (obs()){
+                containerRoot.appendChild(feed());
+            } else { containerRoot.appendChild(home())
+                    alert("no iniciaste sesion ctm") }
+            break;
+                
         case "#/menu":
             containerRoot.appendChild(menu());
             break;  
@@ -85,4 +91,3 @@ export const showTemplate = (hash)=>{
             containerRoot.appendChild(err404());                             
     }
 }
-

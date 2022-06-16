@@ -1,4 +1,5 @@
-import { logIn } from "../../firebase/auth.js";
+import { logIn, signInGoogle } from "../../firebase/auth.js";
+
 
 export const login = () => {
     const divLogin = document.createElement("div");
@@ -10,23 +11,34 @@ export const login = () => {
                 <div class="containter-logo-ticket"><img class ="logo-ticket" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-removebg-preview.png?raw=true" alt="logo-ticket"></div>
                 <h2>Login to your account</h2>
                 <form>
-                    <label><input type="text" id="email" required placeholder="email@something.com"></label>
-                    <label><input type="password" id="password" required placeholder="password"></label>
+                    <label><input type="text" id="email"  placeholder="email@something.com"></label>
+                    <label><input type="password" id="password"  placeholder="password"></label>
                     <div class="btn-access">
-                        <button>google</button>
-                        <button>IMDb</button>
+                    <a id="loginGoogle">google</a>
                     </div> 
-                    <a><button class="btn">Login</button></a>
+                    <a><button id="btn" class="btn">Login</button></a>
+
+                    <input type="button" value="Back" class="btn" onClick="history.go(-1);">
+
                 </form>
             </div>
         </div>     
     `
     divLogin.innerHTML = viewLogin;
-    const btn = divLogin.querySelector(".btn")
-    btn.addEventListener("click", () => {
+    
+
+    const btnGoogle = divLogin.querySelector("#loginGoogle")
+    btnGoogle.addEventListener("click", ()=> {
+        signInGoogle()
+    })
+
+    const btn = divLogin.querySelector("#btn")
+    btn.addEventListener("click", (e) => {
+        e.preventDefault()
         const email = divLogin.querySelector("#email").value;
         const password = divLogin.querySelector("#password").value;
         logIn(email, password);
+        
     })
     return divLogin;
 }
