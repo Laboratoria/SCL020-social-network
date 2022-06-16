@@ -71,31 +71,31 @@ export const showTemplate = (hash)=>{
             if (obs()){
                 containerRoot.appendChild(feed());
             } else { containerRoot.appendChild(home())
-                    alert("no iniciaste sesion ctm") }
+                    alert("You are not signed it") }
             break;
         case "#/menu":
             if (obs()){
                 containerRoot.appendChild(menu());
             } else { containerRoot.appendChild(home())
-                    alert("no iniciaste sesion ctm") }
+                    alert("You are not signed it") }
             break;  
         case "#/logoutConfirmation":
             if (obs()){
                 containerRoot.appendChild(logoutConfirmation());
             } else { containerRoot.appendChild(home())
-                    alert("no iniciaste sesion ctm") }
+                    alert("You are not signed in") }
             break;   
         case "#/profile":
             if (obs()){
                 containerRoot.appendChild(profile());
             } else { containerRoot.appendChild(home())
-                    alert("no iniciaste sesion ctm") }
+                    alert("You are not signed in") }
             break;
         case "#/deleteComment":
             if (obs()){
                 containerRoot.appendChild(deleteComment());
             } else { containerRoot.appendChild(home())
-                    alert("no iniciaste sesion ctm") }
+                    alert("You are not signed in") }
             break; 
         default:
             containerRoot.appendChild(err404());                             
