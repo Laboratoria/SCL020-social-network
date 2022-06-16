@@ -21,8 +21,6 @@ export const wall = () => {
 
     const publication = container.querySelector('#publication');
     const publishButton = container.querySelector('#publish');
-    console.log(publication);
-
     /*const publicating = () =>{
     publishButton.addEventListener('submit', savePublication(publication.value)) ;
 
