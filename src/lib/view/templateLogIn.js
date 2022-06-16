@@ -16,8 +16,8 @@ export const logInTemplate = () => {
             <p>#singluten #sinlactosa</p>
         </article>
         <form class="login">
-            <input type="email" name="email" placeholder="Correo electrónico" id="loginEmail" >
-            <input type="password" name="pass" placeholder="Contraseña" id="loginPassword">
+            <input type="email" name="email" placeholder="Correo electrónico" id="email" >
+            <input type="password" name="pass" placeholder="Contraseña" id="password">
         </form>
         <div class= "divButtons">
             <a class="buttons" id="login">Inicia Sesión</a>
@@ -36,7 +36,7 @@ export const logInTemplate = () => {
     divLogIn.innerHTML = viewLogIn;
     const btn = divLogIn.querySelector("#login")
     btn.addEventListener("click", () => {
-        const email = divLogIn.querySelector("#loginEmail").value;
+        const email = divLogIn.querySelector("#email").value;
         const password = divLogIn.querySelector("#loginPassword").value;
 
         login(email, password);
