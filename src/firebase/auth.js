@@ -3,10 +3,13 @@ import {
   auth,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
+  GoogleAuthProvider,
   signOut,
   provider,
-  signInWithRedirect
+  signInWithRedirect,
+  signInWithPopup
 } from "./init.js";
+
 
 // Iniciar Sesión
 const login = async (email, password) => {
@@ -35,6 +38,68 @@ const signup = async (email, password) => {
     throw error.message;
   }
 };
+//ORIGINAL
+//Regristro con google
+// const googleLogin = () => {
+//   signInWithRedirect(auth, provider)
+//   .then((result) => {
+//     // This gives you a Google Access Token. You can use it to access Google APIs.
+//     const credential = GoogleAuthProvider.credentialFromResult(result);
+//     const token = credential.accessToken;
+//     console.log(token)
+//   // The signed-in user info.
+//     const user = result.user;
+//     console.log('user', user)
+//   }).catch((error) => {
+//     console.log(error)
+//     // Handle Errors here.
+//     const errorCode = error.code;
+//     const errorMessage = error.message;
+//     // The email of the user's account used.
+//     const email = error.customData.email;
+//     // The AuthCredential type that was used.
+//     const credential = GoogleAuthProvider.credentialFromError(error);
+//     // ...
+//   });
+// }
+
+//Fer
+// const googleLogin = async () => {
+//   try {
+//     const response = await signInWithRedirect(auth, provider);
+//     console.log(response);
+//     return response.user;
+//   } catch (error) {
+//     console.log(error.message)
+//     throw error.message;
+//   }
+// };
+
+const googleLogin = () => {
+  signInWithPopup(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+  const credential = GoogleAuthProvider.credentialFromResult(result);
+  const token = credential.accessToken;
+    // The signed-in user info.
+  const user = result.user;
+  console.log("user", user)
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+  const errorCode = error.code;
+  const errorMessage = error.message;
+    // The email of the user's account used.
+  const email = error.customData.email;
+  
+    // The AuthCredential type that was used.
+  const credential = GoogleAuthProvider.credentialFromError(error);
+  console.log("error", errorMessage)
+    // ...
+  });    
+}
+
+
 
 // Cerrar sesion
 const logout = async () => {
@@ -48,6 +113,6 @@ const logout = async () => {
   }
 };
 
-export { login, logout, signup };
+export { login, logout, signup, googleLogin };
 
 //Iniciar sesion con google
