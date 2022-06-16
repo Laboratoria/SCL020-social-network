@@ -27,12 +27,10 @@ export const home = () => {
                 <h4>Buscar</h4>
             </div>
         </a>
-        <a id= "btnLogOut">
-            <div class="option">
-                <i class="fa-solid fa-arrow-right-from-bracket fa-xl" title="Cerrar sesión"></i>
-                <h4>Cerrar cesion</h4>
-            </div>
-        </a>
+        <button id="logoutButton" class="option">
+            <i class="fa-solid fa-arrow-right-from-bracket fa-xl" title="Cerrar sesión"></i>
+            <h4>Cerrar cesion</h4>
+        </button>
         </div>
     </div>
     <div class="postMain">
@@ -81,7 +79,7 @@ export const home = () => {
 </div>
 `
 divHome.innerHTML = viewHome;
-const btn = divHome.querySelector("#btnLogOut")
+const btn = divHome.querySelector("#logoutButton")
 btn.addEventListener("click", () => {
     logout();
 })

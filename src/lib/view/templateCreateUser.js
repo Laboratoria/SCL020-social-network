@@ -19,7 +19,7 @@ export const createUser = () => {
             <p class="instruction">Quieres ingresar como:</p>
             <img id=bakerImg src="img/Baker.png" alt="Baker" class="bakerEaterImg"><img id="eaterImg" src="img/eater.png" alt="Eater" class="bakerEaterImg">
             <div class="divButtons">
-                <a class="buttons" id="newUser">Crear usuario</a>
+                <button class="buttons" id="newUser">Crear usuario</button>
             </div>
         </div>
         `

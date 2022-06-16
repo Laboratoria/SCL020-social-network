@@ -9,11 +9,12 @@ import {
 } from "./init.js";
 
 // Iniciar Sesión
-const login = async (auth, email, password) => {
+const login = async (email, password) => {
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     console.log(userCredential)
     showTemplates('#/home')
+    alert('Sesión iniciada correctamente')
     return userCredential;
   } catch (error) {
     console.log(error.message)
@@ -35,24 +36,12 @@ const signup = async (email, password) => {
   }
 };
 
-// const signup = (email,password) => {
-//   createUserWithEmailAndPassword(auth, email, password)
-//   .then ((res) => {
-//       console.log(res.user)
-//   })
-//   .catch((err)=> {
-//       console.log(err.code)
-//       console.log(err.message)
-//       throw err.message;
-//   })
-// }
-
-
 // Cerrar sesion
 const logout = async () => {
   try {
-    const response = await signOut (auth);
+    const response = await signOut(auth);
     showTemplates('#/')
+    alert('La sesión se cerró exitosamente')
     return response;
   } catch (error) {
     throw error.message;
