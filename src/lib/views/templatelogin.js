@@ -1,17 +1,19 @@
-import { login } from "../../firebase/auth.js";
-
-export const register = () => {
+export const login = () => {
     const divLogin = document.createElement("div")
     const viewLogin =
         `<div class="login">
            
             <h1>Gluten Free Food</h1>
-           <input type="text" id="email" required placeholder="E-mail">
-           <input type="text" id="contraseña" required placeholder="Contraseña">
-              <button class = "btn">Continuar</button>
-            
+            <input type="text" id="email" placeholder="E-mail">
+            <input type="text" id="contraseña" placeholder="Contraseña">
+            <button class = "btn"><a href='#/wall'>Continuar</a></button>
+            <button ><a href='#/register'>Registrar</a></button>
+            <p>¿Has olvidado tu contraseña?</p>
+            <div>
+                <img></img>
+                <button><a href='#/wall'>Iniciar Sesion con Google</a></button>
+            </div>
         </div>`
-
     divLogin.innerHTML = viewLogin;
 
     const btn = divLogin.querySelector(".btn")
@@ -22,10 +24,10 @@ export const register = () => {
         // const masking = psw.replace(g, '.') ;
 
 
-        login(email, psw);
+        userLogin(email, psw);
 
     })
 
-    return divLogin;
 
+    return divLogin;
 };

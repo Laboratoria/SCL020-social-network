@@ -1,7 +1,7 @@
 import { signInWithEmailAndPassword, auth, createUserWithEmailAndPassword } from "./init.js"
 console.log(auth)
 
-const register = async(email, password) => {
+const userRegister = async(email, password) => {
     try {
         const userRegistration = await createUserWithEmailAndPassword(auth, email, password)
         console.log(userRegistration);
@@ -12,11 +12,12 @@ const register = async(email, password) => {
 
 }
 
-const login = async(email, password) => {
+const userLogin = async(email, password) => {
     try {
-        const prueba = await signInWithEmailAndPassword(auth, email, password)
-        console.log(prueba);
+        let result = await signInWithEmailAndPassword(auth, email, password)
+        console.log(result);
     } catch (error) {
+        console.log(error);
         const errorCode = error.code;
         throw error.message
     }
@@ -50,7 +51,4 @@ signInWithPopup(auth, provider)
     // ...
     console.log('error', errorMessage)
   })};*/
-export {
-    register,
-    login
-}
+export { userRegister, userLogin }
