@@ -14,10 +14,9 @@ const init = () => {
     document.getElementById("root").innerHTML = intro();
     changeRouter(window.location.hash);
     window.addEventListener("hashchange", () => {
-        
+
         changeRouter(window.location.hash);
     })
 }
 window.addEventListener('load', init);
 console.log(window.location.hash);
-
