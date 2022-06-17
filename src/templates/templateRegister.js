@@ -33,9 +33,8 @@ export const registration = () => {
       try {
         const createdUser = await creatingNewUser(userName, userEmail, password);
         
-        localStorage.setItem('userName', createdUser.displayName);
+        //localStorage.setItem('userName', userName);
         localStorage.setItem('userUid', createdUser.uid);
-        localStorage.setItem('userPhoto',createdUser.photoURL)
         registrationForm.reset();
         changeRoute('#/wall');
       } catch (error) {

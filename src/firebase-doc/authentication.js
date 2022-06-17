@@ -1,4 +1,4 @@
-import { auth, signInWithRedirect, createUserWithEmailAndPassword, updateProfile, sendEmailVerification, onAuthStateChanged, provider } from './firebase.js';
+import { auth, signInWithEmailAndPassword, signInWithRedirect, createUserWithEmailAndPassword, updateProfile, sendEmailVerification, onAuthStateChanged, provider } from './firebase.js';
 import { changeRoute } from '../lib/router.js';
 
 // Observador
@@ -19,13 +19,13 @@ const creatingNewUser = async (userName, email, password) => {
       email,
       password,
     );
-    console.log(userData);
-    // console.log(userData)
-    // const prueba1 = await updateProfile(auth.currentUser, { 
-    //   displayName: localStorage.getItem(userName),
-    //   //photoURL : localStorage.getItem(userPhoto),
-    // });
-    // console.log(prueba1)
+     console.log(userData)
+     const prueba1 = await updateProfile(auth.currentUser, { 
+       displayName: userName,
+       photoURL : "https://png.pngtree.com/png-clipart/20191121/original/pngtree-user-icon-isolated-on-abstract-background-png-image_5150068.jpg",
+      
+      });
+     console.log(prueba1)
     const prueba2 = await sendEmailVerification(userData.user);
     console.log(prueba2);
     return userData.user;
@@ -34,6 +34,21 @@ const creatingNewUser = async (userName, email, password) => {
     throw error.code;
   }
 };
+
+
+const logIn = async (email, password) => {
+  try {
+    const userLogIn = await signInWithEmailAndPassword(auth, email, password);
+    console.log(userLogIn)
+    return userLogIn
+  } catch (error) {
+    console.log(error)
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  }
+  
+}
+
 const signingInWithgoogle = async () => {
   try {
     const userInWithGoogle = await signInWithRedirect(auth, provider);
@@ -46,4 +61,6 @@ const signingInWithgoogle = async () => {
   }
 };
 
-export { creatingNewUser, gettingActiveUser, signingInWithgoogle };
+
+
+export { creatingNewUser, gettingActiveUser, signingInWithgoogle, logIn };
