@@ -1,23 +1,23 @@
 import { intro } from './views/templateintro.js';
-import { login } from './views/templatelogin.js';
+import { register } from './views/templatelogin.js';
 import { users } from './views/templateusers.js';
-import {error} from'./views/error.js';
-import {wall} from'./views/templatewall.js';
+import { error } from './views/error.js';
+import { wall } from './views/templatewall.js';
 
 export const changeRouter = (hash) => {
     if (hash === '#/login') {
         return showTemplate(hash)
-    } else if (hash === '#/intro'){
+    } else if (hash === '#/intro') {
         return showTemplate(hash)
-    } else if (hash === '#/users'){
+    } else if (hash === '#/users') {
         return showTemplate(hash)
-     } else if (hash === '#/wall'){
+    } else if (hash === '#/wall') {
         return showTemplate(hash)
-     } else if (hash === '#/'){
+    } else if (hash === '#/') {
         return showTemplate(hash)
-     } else if (hash === ''){
+    } else if (hash === '') {
         return showTemplate(hash)
-     } else {
+    } else {
         return showTemplate(hash)
     }
 };
@@ -28,7 +28,7 @@ const showTemplate = (hash) => {
 
     switch (hash) {
         case '#/login':
-            containerRoot.appendChild(login());
+            containerRoot.appendChild(register());
             break;
         case '#/users':
             containerRoot.appendChild(users());

@@ -1,29 +1,29 @@
-import {/*signInWithEmailAndPassword,*/ auth, createUserWithEmailAndPassword} from "./init.js"
+import { signInWithEmailAndPassword, auth, createUserWithEmailAndPassword } from "./init.js"
 console.log(auth)
 
-const register = async(auth, email, password)=>{
-try {
- const userRegistration = await createUserWithEmailAndPassword(auth, email, password)
- return userRegistration;
-} catch(error){
-     console.log(error);
-    throw error.code;
-  };
- 
+const register = async(email, password) => {
+    try {
+        const userRegistration = await createUserWithEmailAndPassword(auth, email, password)
+        console.log(userRegistration);
+    } catch (error) {
+        console.log(error);
+        throw error.code;
+    };
+
 }
 
-// // const login = async(email, password)=> {  
-//     try {
-//         await signInWithEmailAndPassword(auth, email, password)
-       
-//     } catch(error) {
-//       const errorCode = error.code;
-//         throw error.message
-//     }
-// }
+const login = async(email, password) => {
+    try {
+        const prueba = await signInWithEmailAndPassword(auth, email, password)
+        console.log(prueba);
+    } catch (error) {
+        const errorCode = error.code;
+        throw error.message
+    }
+}
 
 
-// export { login }
+
 
 
 /*export const usersGoogle = () => {
@@ -50,7 +50,7 @@ signInWithPopup(auth, provider)
     // ...
     console.log('error', errorMessage)
   })};*/
-export{ register
-
+export {
+    register,
+    login
 }
- 
