@@ -22,10 +22,9 @@ const createPost = async (review, movie, country) => {
   let userPhoto;
   if (auth.currentUser.displayName === null) {
     userName = auth.currentUser.email;
-    
   } else {
     userName = auth.currentUser.displayName;
-    userPhoto=auth.currentUser.photoURL;
+    userPhoto = auth.currentUser.photoURL;
   }
   const docRef = await addDoc(collection(db, 'posts'), {
     userName,
@@ -46,14 +45,6 @@ const createPost = async (review, movie, country) => {
 const readingPost = (callback) => {
   const q = query(collection(db, 'posts'), orderBy('date', 'desc'));
   onSnapshot(q, (callback));
-};
-
-// Get one Doc
-const gettingDoc = async (id) => {
-  const postRef = doc(db, 'posts', id);
-  const result = await getDoc(postRef);
-
-  return result.data();
 };
 
 // Editing Posts
@@ -120,7 +111,6 @@ const likedPosts = async (callback) => {
 };
 
 export {
-  createPost, readingPost, editPost, gettingDoc, deletePost,
+  createPost, readingPost, editPost, deletePost,
   profilePosts, likingPost, mapPosts, likedPosts,
 };
-
