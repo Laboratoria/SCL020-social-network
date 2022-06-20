@@ -43,10 +43,11 @@ const create = async (userName, email, password) => {
       email,
       password,
     );
-/*     await updateProfile(auth.currentUser, {
+    console.log(auth.currentUser)
+     await updateProfile(auth.currentUser, {
       displayName: userName,
       photoURL: avatarUrl,
-    }); */
+    }); 
 /*     await sendEmailVerification(auth.currentUser); */
     return user;
   } catch (error) {
