@@ -1,5 +1,7 @@
 // aqui exportaras las funciones que necesites
 
+
+//Funcion que crea el template de la pantalla 
 export const templateIndex = () => {
   const screenIndex =  `<section>
     <section>
@@ -24,11 +26,32 @@ export const templateIndex = () => {
     </section>
   </section>
   `;
-return screenIndex;
-  
+return screenIndex; 
 };
 
-export const myFunction = () => {
-  // aqui tu codigo
-  console.log('Hola mundo!');
+export const templateLogin = () => {
+  const screenLogin = `<section>
+  <section>
+    <img src="" alt="">
+  </section>
+  <form action="">
+    <label for="Correo">
+      <input type="text">
+    </label>
+    <label for="Contraseña">
+      <input type="text">
+    </label>
+  </form>
+  <section>
+  <button>
+    INICIAR SESIÓN
+  </button>
+  <p>
+    ¿No tienes cuenta aún? Regístrate <a href="">aquí.</a>  
+  </p>
+  </section>
+</section>
+`;
+
+  //console.log('Hola mundo!');
 };
