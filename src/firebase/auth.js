@@ -1,16 +1,3 @@
-/* import {
-  auth,
-  provider,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-  signInWithRedirect,
-  getRedirectResult,
-  signOut,
-  sendEmailVerification,
-  updateProfile,
-} from './init.js'; */
-
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -48,26 +35,25 @@ const create = async (userName, email, password) => {
       displayName: userName,
       photoURL: avatarUrl,
     }); 
-/*     await sendEmailVerification(auth.currentUser); */
+    await sendEmailVerification(auth.currentUser);
     return user;
   } catch (error) {
     // console.log(error);
-    throw error.message;
+    throw error.code;
   }
 };
 
 // Sign in with email and password, la persona ya existe
 const login = async (email, password) => {
   try {
-   const user= await signInWithEmailAndPassword(
+   const user = await signInWithEmailAndPassword(
       auth,
       email,
       password,
     );
     return user;
   } catch (error) {
-    // console.log(error);
-    throw error.message;
+    throw error.code;
   }
 };
 
@@ -75,11 +61,10 @@ const login = async (email, password) => {
 const google = async () => {
   try {
     await signInWithRedirect(auth, provider);
-    const userCredential = await getRedirectResult(auth);
-    return userCredential.user.uid;
+    const user = await getRedirectResult(auth);
+    return user;
   } catch (error) {
-    alert('Falló la conexión con Google', error);
-    return null;
+    console.log('falla');
   }
 };
 

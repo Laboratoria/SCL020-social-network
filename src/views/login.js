@@ -43,9 +43,9 @@ const Login = () => {
 
     try {
       const user = await login(email, password);
-      localStorage.setItem('userName', user.displayName);
-      localStorage.setItem('userUid', user.uid);
-      localStorage.setItem('userPhoto', user.photoURL);
+      localStorage.setItem('userName', user.user.displayName);
+      localStorage.setItem('userUid', user.user.uid);
+      localStorage.setItem('userPhoto', user.user.photoURL);
       form.reset();
       navigate('/home');
     } catch (error) {

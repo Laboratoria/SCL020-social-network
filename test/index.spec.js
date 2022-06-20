@@ -1,55 +1,21 @@
 import {
   describe, expect, it, vi,
 } from 'vitest';
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
-import { login, create } from '../src/firebase/auth.js';
-import { auth } from '../src/firebase/init.js';
-// import { vi as jest } from 'vitest';
- 
-/* import { signInWithEmailAndPassword } from 'firebase/auth';
-import { login } from '../src/firebase/auth.js';
-import { auth } from '../src/firebase/init.js'; */
- 
-/*  */
- 
- 
-/* const objetoDisplay = {displayName: 'chao'} */
-vi.mock('../src/firebase/init.js', () => ({
-  auth: vi.fn(() => // La funcion jest.fn <- Crea una funcion interceptada por JEST
-    ({ user: 'authTEST', currentUser: 'current' })),
- 
-}));
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, signOut, signInWithRedirect, getRedirectResult } from 'firebase/auth';
+import { login, create, out, google } from '../src/firebase/auth.js';
+import { auth, provider } from '../src/firebase/init.js';
  
 vi.mock('firebase/auth', () => ({
   getAuth: vi.fn(() => // La funcion jest.fn <- Crea una funcion interceptada por JEST
     ({ getAuth: 'TEST' })),
-  GoogleAuthProvider: vi.fn(() => // La funcion jest.fn <- Crea una funcion interceptada por JEST
-    ({ getAuth: 'TEST' })),
-  signInWithEmailAndPassword: vi.fn((auth, email, password) => {
-    if (!email || !password) {
-      throw new Error('ERROR');
-    }
-    Promise.resolve({ user: 'admin' });
-  }),
-  createUserWithEmailAndPassword: vi.fn((auth, email, password) => {
-    if (!email || !password) {
-      throw new Error('ERROR');
-    }
-    Promise.resolve({ currentUser: 'admin' });
-  }),
-  updateProfile: vi.fn((auth, object) => {
-  /*if (!auth) {
-    throw new Error('ERROR');
-    } */
-    Promise.resolve({ currentUser: 'admin' });
-  }),
- sendEmailVerification: vi.fn((auth) => {
-    if (!auth) {
-      throw new Error('ERROR');
-    }
-    Promise.resolve({ currentUser: 'admin' });
-  }),
- 
+  GoogleAuthProvider: vi.fn(),
+  signInWithEmailAndPassword: vi.fn(),
+  createUserWithEmailAndPassword: vi.fn(),
+  updateProfile: vi.fn(),
+  sendEmailVerification: vi.fn(),
+  signOut:vi.fn(),
+  signInWithRedirect: vi.fn(),
+  getRedirectResult: vi.fn(),
 }));
  
  
@@ -82,7 +48,8 @@ describe('Tests for the create function', () => {
   const userName = 'admin';
   const email = 'admin@test.com';
   const pass = 'admin123';
-  const avatarURL = 'img.png'
+  const user = 'adminUser';
+  const objetDisplay = 'userObj';
  
   it('Should call createUserWithEmailAndPassword', async () => {
     await create(userName, email, pass);
@@ -100,22 +67,41 @@ describe('Tests for the create function', () => {
       expect(error).toMatch('ERROR');
     }
   });
-  it('Should call updateProfile',async () => {
-    await create(userName,email,pass);
+  it('Should call updateProfile', async () => {
+    await create(userName, email, pass);
     expect(updateProfile).toHaveBeenCalled();
   })
-}); 
- 
-/* it('Should call updateProfile with the currentUser and objetoDisplay arguments', async () => {
-     const currentUser = 'admin';
-    await create(userName, email, pass);
-    expect(updateProfile).toHaveBeenCalledWith(auth.currentUser, {userName, avatarURL});
-  });
-}); */
-  /*
-  it('Should call sendEmailVerification with currentUser arguments', async () => {
-    const currentUser = 'admin';
-    await create(userName, email, pass);
-    expect(sendEmailVerification).toHaveBeenCalledWith(currentUser);
-  }); */
+  it('Should call updateProfile', async () => {
+    await create(userName,email,pass);
+    expect(updateProfile).toHaveBeenCalledWith({user: 'hola'}, auth);
+  })
+});
 
+describe('Tests for the signOut function', () => {
+  it('it should call signOut', async () => {
+    await out();
+    expect(signOut).toHaveBeenCalled();
+  });
+  it('it should call signOut with auth argument', async () => {
+    await out();
+    expect(signOut).toHaveBeenCalledWith(auth);
+  });
+  it('Should throw an error if executed without arguments', async () => {
+    try {
+      await out();
+    } catch (error) {
+      expect(error).toMatch('ERROR');
+    }
+  });
+});
+
+describe('Tests for the google function', () => {
+  it('it should call signInWithRedirect function', async () => {
+    await google();
+    expect(signInWithRedirect).toHaveBeenCalled();
+  });
+  it('it should call getRedirectResult function', async () => {
+    await google();
+    expect(getRedirectResult).toHaveBeenCalled();
+  });
+});
