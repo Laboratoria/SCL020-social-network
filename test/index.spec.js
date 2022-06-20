@@ -48,8 +48,6 @@ describe('Tests for the create function', () => {
   const userName = 'admin';
   const email = 'admin@test.com';
   const pass = 'admin123';
-  const user = 'adminUser';
-  const objetDisplay = 'userObj';
  
   it('Should call createUserWithEmailAndPassword', async () => {
     await create(userName, email, pass);
@@ -73,7 +71,10 @@ describe('Tests for the create function', () => {
   })
   it('Should call updateProfile', async () => {
     await create(userName,email,pass);
-    expect(updateProfile).toHaveBeenCalledWith({user: 'hola'}, auth);
+    expect(updateProfile).toHaveBeenCalledWith(auth.currentUser, {
+      displayName: userName,
+      photoURL: '/img/main-avatar.png',
+    });
   })
 });
 
