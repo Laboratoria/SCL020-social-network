@@ -4,6 +4,7 @@ import {
   onAuthStateChanged,
   signInWithRedirect,
   getRedirectResult,
+  signInWithPopup,
   signOut,
   sendEmailVerification,
   updateProfile,
@@ -30,11 +31,11 @@ const create = async (userName, email, password) => {
       email,
       password,
     );
-    console.log(auth.currentUser)
-     await updateProfile(auth.currentUser, {
+    console.log(auth.currentUser);
+    await updateProfile(auth.currentUser, {
       displayName: userName,
       photoURL: avatarUrl,
-    }); 
+    });
     await sendEmailVerification(auth.currentUser);
     return user;
   } catch (error) {
@@ -46,7 +47,7 @@ const create = async (userName, email, password) => {
 // Sign in with email and password, la persona ya existe
 const login = async (email, password) => {
   try {
-   const user = await signInWithEmailAndPassword(
+    const user = await signInWithEmailAndPassword(
       auth,
       email,
       password,
@@ -60,11 +61,13 @@ const login = async (email, password) => {
 // Sign in with Google
 const google = async () => {
   try {
-    await signInWithRedirect(auth, provider);
-    const user = await getRedirectResult(auth);
-    return user;
+    const result = await signInWithPopup(auth, provider);
+    console.log(result.user, 'user en Google function');
+    const userPhotoGoogle = result.photoURL;
+    console.log(userPhotoGoogle);
+    return result.user;
   } catch (error) {
-    console.log('falla');
+    throw error.code;
   }
 };
 
