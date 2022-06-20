@@ -1,4 +1,9 @@
-body{
-
-background-color: peachpuff;
-}
+body {
+    background-color: peachpuff;
+background-image: linear-gradient(to bottom,
+        Color/ rgba(245, 246, 252, 1),
+        color/ rgba(117, 19, 93, 0.3)
+      ),
+      url(https://images.pexels.com/photos/5966631/pexels-photo-5966631.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background-size: cover;
+  }
