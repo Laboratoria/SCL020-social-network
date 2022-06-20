@@ -5,7 +5,7 @@ export const interpIndex = () => {
   const formIndex = `
   <div id="root">
     <nav>
-      <input type="button" id="SignUp" class="ButtonSingUp" value="Registrarse">
+      <input type="button" id="signUp" class="ButtonSingUp" value="Registrarse">
     </nav>
     <div class="containerFormIndex">
       <h1>SESHATLAB</h1>
@@ -21,6 +21,5 @@ export const interpIndex = () => {
   </div>
   `;
   // aqui tu codigo
-  console.log(formIndex);
   return formIndex;
 };
