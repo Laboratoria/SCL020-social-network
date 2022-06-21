@@ -67,7 +67,7 @@ const google = async () => {
     console.log(userPhotoGoogle);
     return result.user;
   } catch (error) {
-    throw error.code;
+    console.log('Falló conexión de Google');
   }
 };
 

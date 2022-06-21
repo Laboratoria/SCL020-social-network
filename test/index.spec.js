@@ -2,7 +2,7 @@ import {
   describe, expect, it, vi,
 } from 'vitest';
 import {
-  signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, signOut, signInWithRedirect, getRedirectResult, onAuthStateChanged,
+  signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, signOut, signInWithPopup, onAuthStateChanged,
 } from 'firebase/auth';
 import {
   login, create, out, google, validateState,
@@ -18,8 +18,7 @@ vi.mock('firebase/auth', () => ({
   updateProfile: vi.fn(),
   sendEmailVerification: vi.fn(),
   signOut: vi.fn(),
-  signInWithRedirect: vi.fn(),
-  getRedirectResult: vi.fn(),
+  signInWithPopup: vi.fn(),
   onAuthStateChanged: vi.fn(),
 }));
 
@@ -105,13 +104,20 @@ describe('Tests for the signOut function', () => {
 
 // google function
 describe('Tests for the google function', () => {
-  it('it should call signInWithRedirect function', async () => {
+  it('it should call signInWithPopup function', async () => {
     await google();
-    expect(signInWithRedirect).toHaveBeenCalled();
+    expect(signInWithPopup).toHaveBeenCalled();
   });
-  it('it should call getRedirectResult function', async () => {
+  it('it should call signInWithPopup with auth and provider arguments', async () => {
     await google();
-    expect(getRedirectResult).toHaveBeenCalled();
+    expect(signInWithPopup).toHaveBeenCalledWith(auth, provider);
+  });
+  it('Should throw an error if executed without arguments', async () => {
+    try {
+      await google();
+    } catch (error) {
+      expect(error).toMatch('ERROR');
+    }
   });
 });
 
