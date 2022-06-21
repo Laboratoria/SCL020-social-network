@@ -1,16 +1,108 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
-/*ESTILO PRIMERA VISTA*/
+#screen1 {
+	background-image: url(../images/fondo_oscuro_page1.png);
+	background-size: cover;
+	height: 100vh;
+}
 
-.ButtonSingUp{
-    background-color: #1b283a;
-    font-style: italic;
-    color: white;
-    font-size: 3vh;
-    padding: 5px 10px;
-    border-radius: 30px;
+#nav_screen1 {
+	display: flex;
+	justify-content: end;
+}
+
+.containerFormIndex,
+#form_login {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
+	/* margin: 2%;
+	padding-top: 20%; */
+}
+
+.ButtonSingUp {
+	background-color: #1b283a;
+	font-family: 'Montserrat classic', sans-serif;
+	color: white;
+	font-size: 15px;
+	padding: 5px 10px;
+	border-radius: 7px;
+	margin-right: 40px;
+	margin-top: 50px;
+	border-color: #1fc074;
+	border-style: solid;
+}
+
+.title_page1 {
+	margin-bottom: 10px;
+	font-family: 'Georgia', sans-serif;
+	margin-top: 40px;
+	font-size: 45px;
+	letter-spacing: -2px;
+	color: #ffffff;
+	text-shadow: 5px 5px 10px #ffffff;
+}
+
+#form_login {
+	margin-top: 10px;
+}
+
+.campotxt {
+	background-color: #3d2e80;
+	font-family: 'Montserrat classic', sans-serif;
+	font-size: 20px;
+	padding: 5px 10px;
+	border-radius: 7px;
+	margin-bottom: 15px;
+	border-color: #3d2e80;
+	border-style: solid;
+	font-weight: bold;
+}
+.campotxt::placeholder {
+	color: #644fc2;
+}
+
+#start {
+	background-color: #f2865f;
+	font-family: 'Montserrat classic', sans-serif;
+	color: white;
+	font-size: 20px;
+	padding: 5px 10px;
+	border-radius: 7px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	border-color: #f2865f;
+	border-style: solid;
+	font-weight: bold;
+}
+
+#button_google {
+	background-color: #e7f0f1;
+	font-family: 'Montserrat classic', sans-serif;
+	color: #9d9f9f;
+	font-size: 20px;
+	padding: 5px 10px;
+	border-radius: 7px;
+	border-color: #e7f0f1;
+	font-weight: bold;
+	border-style: solid;
+}
+
+.olvido_contraseña {
+	font-size: 20px;
+	color: #ffffff;
+	margin-top: 15px;
+	font-family: 'Montserrat classic', sans-serif;
+}
+
+@media (min-width: 450px) {
+	.ButtonSingUp {
+		color: black;
+	}
 }
