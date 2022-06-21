@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Lobster+Two&family=Oswald:wght@700&display=swap');
+@media screen and (max-width: 428px) {
+    body {
+        background-image: url(imagenes/fondo-app.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .container-intro {
+        display: grid;
+        background-color: white;
+        opacity: 87%;
+        width: 335px;
+        height: 610px;
+        margin-top: 40px;
+        margin-bottom: 80px;
+        border-radius: 35px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .container-intro h1 {
+        font-family: 'Lobster Two';
+        text-align: center;
+        font-size: 65px;
+        line-height: 81.25px;
+        color: #095E00;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .container-orange {
+        height: 200px;
+        width: 308px;
+        background: #E28413;
+        border-radius: 10px;
+        margin-bottom: 65px;
+        align-self: flex-end;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .container-orange h2 {
+        color: #FFFFFF;
+        font-family: 'Jockey One';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 8px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .container-orange p {
+        color: #FFFFFF;
+        font-family: 'Jockey One';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 25px;
+        text-align: center;
+    }
+}
