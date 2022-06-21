@@ -18,6 +18,6 @@ console.log('prueba')
 const db = getFirestore(app)
 const provider = new GoogleAuthProvider();
 export {
-    auth, app, db, provider, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, sendEmailVerification, onAuthStateChanged, getRedirectResult, signInWithRedirect};
+    auth, app, db, provider, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, sendEmailVerification, onAuthStateChanged, getRedirectResult, signInWithRedirect};
 
 
