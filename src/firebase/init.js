@@ -1,6 +1,6 @@
 import{
     initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js"
-import{ } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js"
+import{collection, getFirestore, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js"
 import {
     getAuth,
     signInWithEmailAndPassword,
@@ -11,14 +11,13 @@ import {
     signOut} from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
 import config from "./config.js"
 
-initializeApp(config);
+const app = initializeApp(config);
 
 const auth = getAuth();
 const provider = new GoogleAuthProvider();
+const db = getFirestore(app);
 
-//console.log(provider)
 
-//const db = getFirestore(app);
 
 export {
     initializeApp, 
@@ -29,5 +28,10 @@ export {
     provider,
     GoogleAuthProvider, 
     onAuthStateChanged, 
-    signOut }
+    signOut,
+    collection,
+    db,
+    addDoc,
+    getDocs
+}
 
