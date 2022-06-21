@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Koulen&family=Lobster+Two&family=Oswald:wght@700&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
 @media screen and (max-width: 428px) {
     body {
         background-image: url(imagenes/fondo-app.jpg);
@@ -13,9 +18,8 @@
         background-color: white;
         opacity: 87%;
         width: 335px;
-        height: 610px;
-        margin-top: 40px;
-        margin-bottom: 80px;
+        height: 690px;
+        margin-top: 70px;
         border-radius: 35px;
         margin-left: auto;
         margin-right: auto;
@@ -38,8 +42,8 @@
         width: 308px;
         background: #E28413;
         border-radius: 10px;
-        margin-bottom: 65px;
-        align-self: flex-end;
+        margin-top: 30px;
+        margin-bottom: 85px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -54,6 +58,7 @@
         font-size: 25px;
         line-height: 8px;
         text-align: center;
+        padding-top: 15px;
     }
 }
 
@@ -63,8 +68,11 @@
         font-family: 'Jockey One';
         font-style: normal;
         font-weight: 400;
-        font-size: 25px;
-        line-height: 25px;
+        font-size: 23.5px;
+        line-height: 35px;
         text-align: center;
+        margin-top: 10px;
     }
 }
+
+@media screen and (max-width: 428px) {}
