@@ -30,23 +30,23 @@ export const profile = () => {
                 <button>Follow</button>   
             </div>
             <div class="user-data">
-                <button class="data">Followers</button>
-                <button class="data">Following</button> 
-                <button class="data">Likes</button>
+                <p class="data">2.4k Followers</p>
+                <p class="data">1.6k Following</p> 
+                <p class="data">25.9k Likes</p>
             </div>
             <div class="feed-post">
                 <input type="text" placeholder="Write here about your favorite movie...">
                 <button class="btn-post">Post</button>
             </div>
-            <div>
-                <div>
-                <button class="btn-edit">Edit</button>
-                <a href="#/deleteComment"><button class="btn-delete">Delete</button></a>
-                <p></p>
+            <div class="feed-post">
+                <div class="p-post">
+                    <button class="btn-edit">Edit</button>
+                    <a href="#/deleteComment"><button class="btn-delete">Delete</button></a>
+                    <p>My favorite movie is the incredibl life of walter mitty</p>
                 </div>
                 <button class="btn-popCorn">PopCorn</button>
-                <!-- <button class="btn-comment">Comment</button> -->
             </div>
+                <!-- <button class="btn-comment">Comment</button> -->
         </main>
     `
     divProfile.innerHTML = viewProfile;
