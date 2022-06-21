@@ -1,4 +1,4 @@
-import { auth, signInWithEmailAndPassword, signInWithRedirect, createUserWithEmailAndPassword, updateProfile, sendEmailVerification, onAuthStateChanged, provider } from './firebase.js';
+import { auth, signOut, signInWithEmailAndPassword, signInWithRedirect, createUserWithEmailAndPassword, updateProfile, sendEmailVerification, onAuthStateChanged, provider } from './firebase.js';
 import { changeRoute } from '../lib/router.js';
 
 // Observador
@@ -61,6 +61,13 @@ const signingInWithgoogle = async () => {
   }
 };
 
+  const logOut = async () => {
+    try {
+      await signOut(auth);
+        } catch (error) {
+      console.log('error signout', error);
+    }
+  };
+  
 
-
-export { creatingNewUser, gettingActiveUser, signingInWithgoogle, logIn };
+export { creatingNewUser, gettingActiveUser, signingInWithgoogle, logIn, logOut };

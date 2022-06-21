@@ -7,7 +7,7 @@ export const home = () => {
   `
     <div class="firstView">
     <div class = "logo">
-      <img src = "Social-Images/logo.jpeg">
+      <img src = "Social-images/logoNuevo.png">
     </div>
     <input class = "email" type="text" placeholder="Escribe tu correo">
     <input type = 'password'  class = "password" type="text" placeholder="Escribe tu contraseña">
@@ -34,17 +34,16 @@ export const home = () => {
   };
   inWithGoogle();
 
-const loginButton = container.querySelector('.loginButton');
+  const loginButton = container.querySelector('.loginButton');
 
-loginButton.addEventListener('click', async () => {
-  
-const loginEmail = container.querySelector('.email').value;
-const userPassword = container.querySelector('.password').value;
-  const userIn = await logIn( loginEmail, userPassword);
-  //console.log(userIn)
-  if (userIn) {
-    changeRoute('#/wall');
-  } else (console.log('error'));
-})
+  loginButton.addEventListener('click', async () => {
+    const loginEmail = container.querySelector('.email').value;
+    const userPassword = container.querySelector('.password').value;
+    const userIn = await logIn(loginEmail, userPassword);
+    //console.log(userIn)
+    if (userIn) {
+      changeRoute('#/wall');
+    } else (console.log('error'));
+  })
   return container;
 };
