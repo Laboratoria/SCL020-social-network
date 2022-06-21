@@ -12,7 +12,7 @@ export const intro = () => {
         <p>¡sin duda alguna el compañero 
         de cocina perfecto!</p>
         </div>
-        <button><a href='#/login'>¡Unete!</a></button>
+        <button class= "botonUnete"><a href='#/login'>¡Unete!</a></button>
     </div>`
     divIntro.innerHTML = viewIntro;
     return divIntro;
