@@ -635,7 +635,7 @@
     border-radius: 15px; 
 }
 
-.feed-post input {
+.feed-post textarea {
     background: rgba(217, 217, 217, 1);
     width: 230px;
     height: 80px;
