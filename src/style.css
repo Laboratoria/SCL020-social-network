@@ -592,8 +592,16 @@
 }
 
 .user-profile img {
-    width: 50px;
+    margin: 5px;
+    width: 65px;
     height: auto;
+}
+
+.user-profile button {
+    width: 70px;
+    height: 25px;
+    border-radius: 20px;
+    margin: 5px;
 }
 
 .user-data {
@@ -601,29 +609,51 @@
     justify-content: space-around;
     align-items: center;
     width: 320px;
-    height: 50px;
+    height: 55px;
     margin: 5px 0px;
-    background-color: #FFFFFF;
 }
 
 .data {
-    width: 50px;
-    height: 30px;   
+    background: rgba(217, 217, 217, 1);
+    text-align: center;
+    width: 75px;
+    height: 45px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
 }
 
 .feed-post {
+    background: rgba(217, 217, 217, 0.3);
     width: 260px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    background: rgba(217, 217, 217, 0.3);
-    margin: 0px auto;
+    justify-content: flex-end;
+    margin: 10px auto;
     padding: 20px;
-    border-radius: 15px;
-    
+    border-radius: 15px; 
 }
 
 .feed-post input {
+    background: rgba(217, 217, 217, 1);
+    width: 230px;
+    height: 80px;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 0px auto;
+    border: none;
+}
+
+.btn-post {
+    width: 40px;
+    height: 20px;
+    
+}
+
+
+
+.p-post {
     background: rgba(217, 217, 217, 1);
     width: 230px;
     height: 80px;
