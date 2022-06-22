@@ -70,7 +70,7 @@ const profilePosts = async (callback) => {
 };
 
 // Map Posts
-const mapPosts = async (countryName, callback) => {
+const mapPosts = (countryName, callback) => {
   try {
     const q = query(collection(db, 'posts'), where('country', '==', countryName), orderBy('date', 'desc'));
     onSnapshot(q, (callback));

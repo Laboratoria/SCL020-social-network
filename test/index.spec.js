@@ -20,7 +20,6 @@ vi.mock('firebase/auth', () => ({
   signOut: vi.fn(),
   signInWithPopup: vi.fn(),
   onAuthStateChanged: vi.fn(),
-  User: vi.fn(),
 }));
 
 // login function
@@ -126,19 +125,8 @@ describe('Tests for the google function', () => {
 describe('Tests for the validateState function', () => {
   const next = 'route';
   const pathname = 'path';
-  
   it('it should call onAuthStateChanged function', () => {
     validateState(next, pathname);
     expect(onAuthStateChanged).toHaveBeenCalled();
-  });
-  it('it should call onAuthStateChanged function with auth and callback ', () => {
-    validateState(next, pathname);
-    expect(onAuthStateChanged).toHaveBeenCalledWith(auth, (User) => {
-      if (User) {
-        next(pathname);
-      } else {
-        next('/');
-      }
-    });
   });
 });
