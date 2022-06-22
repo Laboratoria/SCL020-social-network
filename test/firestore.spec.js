@@ -100,19 +100,19 @@ describe('Tests for the deletePost function', () => {
 });
 
 // profilePosts function
-/* describe('Tests for the profilePosts function', () => {
+describe('Tests for the profilePosts function', () => {
   const callback = 'someCallbackFunction';
-
+  const userId = 'someUserId';
   it('Should call onSnapshot', async () => {
-    await profilePosts(callback);
+    await profilePosts(userId, callback);
     expect(onSnapshot).toHaveBeenCalled();
   });
-it('Should call onSnapshot with the query reference argument', async () => {
+  it('Should call onSnapshot with the query reference argument', async () => {
     const q = query(collection(db, 'posts'), where('userId', '==', userId), orderBy('date', 'desc'));
     await profilePosts(callback);
     expect(onSnapshot).toHaveBeenCalledWith(q, (callback));
   });
-}); */
+});
 
 // MapPost function - DONE
 describe('Tests for the mapPost function', () => {
