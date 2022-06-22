@@ -33,8 +33,7 @@ export const userProfile = () => {
     </a>
     </div>
 </div>
-<div class="userProfileMain">
-    <div class="userContainer">
+    <div class="userMain">
         <div class="userHeader">
             <div class="userIcon">
                 <i class="fa-solid fa-circle-user fa-6x"></i>
@@ -43,10 +42,9 @@ export const userProfile = () => {
                 <p>Nombre de usuario<p>
             </div>
             <div class="userTitle" id="titleHeader">
-                <h3>Titulo baker o eater</h3>
+                <p>Titulo baker o eater</p>
             </div>
         </div>
-    </div>
         <div class="createPostFlex">
             <p>Mis Publicaciones:</p>
             <a href="#/createPost" class="buttonGreen">Nuevo post</a>

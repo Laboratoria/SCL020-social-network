@@ -196,10 +196,6 @@ input{
     cursor: pointer;
 }
 
-.userContainer{
-    display: flex;
-    flex-direction: column;
-}
 
 .postBody{
     display: flex;
@@ -217,8 +213,7 @@ input{
     align-items: center;
     gap: 20px;
     margin-top: 40px;
-    
-    
+    margin-left: 200px;
 }
 
 .pencilIcon{
@@ -285,12 +280,6 @@ input{
     flex-direction: row;
     
 }
-.userProfileMain{
-    display: flex;
-    flex-direction: column;
-    width: 83%;
-    margin-left: 250px;
-}
 .headerName_Title{
     display: flex;
     flex-direction: column;
@@ -302,9 +291,10 @@ input{
     border-radius: 15px;
     grid-template-columns: 165px auto auto;
     height: 181px;
+    width: 73%;
     color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
+    margin-left: 330px
 }
 
 .userIcon {
@@ -336,8 +326,10 @@ input{
 
 .createPostFlex{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     font-size: 17px;
+    margin: 20px 0px 15px 357px;
+    width: 69%;
     color: #F34573;
 }
 
@@ -475,6 +467,7 @@ input{
         height: 150px;
         width: 85%;
         color: white;
+        margin-bottom: 20px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
     .buttonGreen {
@@ -498,7 +491,6 @@ input{
         gap: 20px;
         margin-top: 40px;
         }
-
     .cupcakeImg{
         width: auto;
         height: 40px;
