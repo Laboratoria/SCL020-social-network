@@ -283,8 +283,7 @@ const Post = () => {
     const movie = container.querySelector('#movie').value;
     const country = container.querySelector('#country').value;
     try {
-      const postRef = await createPost(review, movie, country);
-      console.log(postRef);
+      await createPost(review, movie, country);
       postForm.reset();
       navigate('/home');
     } catch (error) {
@@ -296,7 +295,6 @@ const Post = () => {
   const discard = container.querySelector('.btn-discard');
   console.log(discard);
   discard.addEventListener('click', () => {
-    console.log('hola');
     postForm.reset();
     navigate('/home');
   });

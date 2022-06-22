@@ -7,8 +7,7 @@ const Map = () => {
   container.className = 'map-page';
   const postContainer = document.createElement('div');
   postContainer.className = 'map-feed';
-  const userPhoto = localStorage.getItem('userPhoto');
-  console.log(userPhoto);
+  const userUid = localStorage.getItem('userUid');
 
   const template = `
   <svg class='map'version="1.2" viewbox="0 0 2000 857" xmlns="http://www.w3.org/2000/svg">
@@ -971,7 +970,6 @@ const Map = () => {
       if (countryName === '') {
         countryName = this.attributes.name.value;
       }
-
       console.log(countryName);
 
       // Rendering view
@@ -984,7 +982,7 @@ const Map = () => {
           postStructure += `
           <div class="post">
           <div class='post-header'>
-            <p class='user-info'><img class="user-photo" src="${userPhoto}">
+            <p class='user-info'><img class="user-photo" src="${posts.photo}">
             <span class="user-name">${posts.userName} posted: </span> </p>
             <p class="movie-review">${posts.review}</p>
             <p class="date">${posts.date.toDate().toLocaleString()}</p>
@@ -994,7 +992,7 @@ const Map = () => {
             <p class='movie-country'>Country: ${posts.country} </p>
           </div>
           <div class="post-footer">
-            <button class="btn-like" id="btn-like" data-id="${doc.id}">
+            <button class="btn-like" data-id="${doc.id}">
               <i class="fas fa-heart"></i>
               <span id="like-count" class="like-count"> ${posts.likesSum} </span>
             </button>
@@ -1008,7 +1006,7 @@ const Map = () => {
         const likeBtn = container.querySelectorAll('.btn-like');
         likeBtn.forEach((btn) => {
           btn.addEventListener('click', async () => {
-            await likingPost(btn.dataset.id);
+            await likingPost(btn.dataset.id,userUid);
           });
         });
       });

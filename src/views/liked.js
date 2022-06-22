@@ -3,18 +3,16 @@ import { Footer } from '../utils/footer.js';
 import { likingPost, likedPosts } from '../firebase/firestore.js';
 
 const Liked = () => {
-  const userId = localStorage.getItem('userUid');
   const container = document.createElement('div');
   container.className = 'home-page';
-
-
   const likedPostsDiv = document.createElement('div');
   likedPostsDiv.className = 'likedPostsDiv';
+  const userUid = localStorage.getItem('userUid');
   const template = `
   <h1 class="tittle-liked">Checkout your favorite posts!</h1>
   `;
 
-  likedPosts(userId,(post) => {
+  likedPosts(userUid,(post) => {
     container.innerHTML = '';
     let postStructure = '';
 
@@ -33,7 +31,7 @@ const Liked = () => {
           <p class='movie-country'>Country: ${posts.country} </p>
         </div>
         <div class="post-footer">
-          <button class="btn-like" id="btn-like" data-id="${doc.id}">
+          <button class="btn-like" data-id="${doc.id}">
             <i class="fas fa-heart"></i>
             <span id="like-count" class="like-count"> ${posts.likesSum} </span>
           </button>
@@ -56,8 +54,7 @@ const Liked = () => {
     const likeBtn = container.querySelectorAll('.btn-like');
     likeBtn.forEach((btn) => {
       btn.addEventListener('click', async () => {
-        // console.log('click btn like, home');
-        await likingPost(btn.dataset.id);
+        await likingPost(btn.dataset.id,userUid);
       });
     });
   });

@@ -29,11 +29,11 @@ const create = async (userName, email, password) => {
       email,
       password,
     );
-    console.log(auth.currentUser);
     await updateProfile(auth.currentUser, {
       displayName: userName,
       photoURL: avatarUrl,
     });
+    console.log(auth.currentUser)
     await sendEmailVerification(auth.currentUser);
     return user;
   } catch (error) {
@@ -62,7 +62,6 @@ const google = async () => {
     const result = await signInWithPopup(auth, provider);
     console.log(result.user, 'user en Google function');
     const userPhotoGoogle = result.user.photoURL;
-    console.log(userPhotoGoogle);
     return result.user;
   } catch (error) {
     console.log('Falló conexión de Google');

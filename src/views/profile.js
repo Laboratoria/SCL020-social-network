@@ -7,10 +7,8 @@ import {
 const Profile = () => {
   const container = document.createElement('div');
   container.className = 'profile-page';
-  const userPhoto = localStorage.getItem('userPhoto');
-  const userId = localStorage.getItem('userUid');
-
-  profilePosts(userId, (post) => {
+  const userUid = localStorage.getItem('userUid');
+  profilePosts(userUid, (post) => {
     container.innerHTML = '';
     let postStructure = '';
 
@@ -25,14 +23,13 @@ const Profile = () => {
         <p class="date">${posts.date.toDate().toLocaleString()}</p>
       </div>
       <div class="post-main"> 
-   
         <div class="movie-title">${posts.movie}</div>
         <p class='movie-country'>Country: ${posts.country} </p>
       </div>
       <div class="post-footer-profile">
       <button class='btn-Edit' data-id='${doc.id}'><i class="fas fa-edit"></i></button>
       <button class='btn-Delete' data-id='${doc.id}'><i class="fas fa-trash"></i></button>
-        <button class="btn-like" id="btn-like" data-id="${doc.id}">
+        <button class="btn-like" data-id="${doc.id}">
           <i class="fas fa-heart"></i>
           <span id="like-count" class="like-count"> ${posts.likesSum} </span>
         </button>
@@ -115,8 +112,7 @@ const Profile = () => {
     const likeBtn = container.querySelectorAll('.btn-like');
     likeBtn.forEach((btn) => {
       btn.addEventListener('click', async () => {
-        // console.log(likeBtn, "dando click btn like en profile");
-        await likingPost(btn.dataset.id);
+        await likingPost(btn.dataset.id,userUid);
       });
     });
   });
