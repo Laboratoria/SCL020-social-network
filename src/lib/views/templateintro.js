@@ -2,10 +2,10 @@ export const intro = () => {
     const divIntro = document.createElement("div")
     const viewIntro =
 
-        `<div class="container-intro">
+        `<div class="container-inicio">
         
         <h1>Gluten Free Food</h1>
-        <img></img>
+        <img src= "imagenes/logo.png" class= "logo"></img>
         <div class="container-orange">
        <h2> Bienvenido </h2>
         <p>Explora diferentes recetas con características increibles</p> 
@@ -13,7 +13,8 @@ export const intro = () => {
         de cocina perfecto!</p>
         </div>
         <button class= "botonUnete"><a href='#/login'>¡Unete!</a></button>
-    </div>`
+    </div>
+    `
     divIntro.innerHTML = viewIntro;
     return divIntro;
 };

@@ -3,7 +3,7 @@ import { userRegister } from "../../firebase/auth.js";
 export const register = () => {
     const divRegister = document.createElement("div")
     const viewRegister =
-        `<div class="register">
+        `<div>
            
             <h1>Gluten Free Food</h1>
            <input type="text" id="email" required placeholder="E-mail">
