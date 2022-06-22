@@ -64,6 +64,7 @@
 	border-style: solid;
 	font-weight: bold;
 }
+
 .campotxt::placeholder {
 	color: #644fc2;
 }
@@ -101,8 +102,67 @@
 	font-family: 'Montserrat classic', sans-serif;
 }
 
-@media (min-width: 450px) {
-	.ButtonSingUp {
-		color: black;
-	}
+/*VISTA SEGUNDA VISTA SIGN UP*/
+.containerSignUp {
+	display: flex;
+	justify-content: center;
+	background-color: #281E52;
 }
+
+.buttomSingUp {
+	background-color: #1b283a;
+	font-family: 'Montserrat classic', sans-serif;
+	color: white;
+	font-size: 15px;
+	padding: 5px 10px;
+	border-radius: 7px;
+	margin-right: 40px;
+	margin-top: 50px;
+	border-color: #1fc074;
+	border-style: solid;
+}
+
+.containerFormSignUp {
+	position: relative;
+	top: 80px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
+}
+
+.REGISTRO {
+	margin-bottom: 10px;
+	font-family: 'Georgia', sans-serif;
+	margin-top: 40px;
+	font-size: 30px;
+	letter-spacing: -2px;
+	color: #ffffff;
+}
+
+.DATE {
+	margin-bottom: 10px;
+	font-family: 'Georgia', sans-serif;
+	font-weight: bold;
+	margin-top: 10px;
+	font-size: 25px;
+	color: #ffffff;
+}
+
+.NEXT {
+	background-color: #f2865f;
+	font-family: 'Montserrat classic', sans-serif;
+	color: white;
+	font-size: 20px;
+	padding: 5px 10px;
+	border-radius: 7px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	border-color: #f2865f;
+	border-style: solid;
+	font-weight: bold;
+}
+
+
+@media (min-width: 450px) {}
