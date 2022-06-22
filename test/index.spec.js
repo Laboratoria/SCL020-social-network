@@ -9,6 +9,7 @@ import {
 } from '../src/firebase/auth.js';
 import { auth, provider } from '../src/firebase/init.js';
 
+
 vi.mock('firebase/auth', () => ({
   getAuth: vi.fn(() => // La funcion jest.fn <- Crea una funcion interceptada por JEST
     ({ getAuth: 'TEST' })),

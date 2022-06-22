@@ -20,9 +20,7 @@ import { db, auth } from './init';
 const createPost = async (review, movie, country) => {
   let userName;
   let userPhoto;
-  if (auth.currentUser.displayName === null) {
-    userName = auth.currentUser.email;
-  } else {
+  if(auth.currentUser){
     userName = auth.currentUser.displayName;
     userPhoto = auth.currentUser.photoURL;
   }
@@ -82,7 +80,7 @@ const mapPosts = (countryName, callback) => {
 // Liking Posts
 const likingPost = async (id) => {
   const postRef = doc(db, 'posts', id);
-  const userUid = auth.currentUser.uid;
+const userUid = auth.currentUser.uid;
   const post = await getDoc(postRef);
   const likesPost = post.data().likesArr;
   const likesCounter = post.data().likesSum;
@@ -103,9 +101,8 @@ const likingPost = async (id) => {
 };
 
 // Liked Posts by user (favorites)
-const likedPosts = async (callback) => {
-  const userId = localStorage.getItem('userUid');
-  console.log(userId, 'user id en liked view');
+const likedPosts = async (userId, callback) => {
+/*   console.log(userId, 'user id en liked view'); */
   const q = query(collection(db, 'posts'), where('likesArr', 'array-contains', userId));
   onSnapshot(q, (callback));
 };

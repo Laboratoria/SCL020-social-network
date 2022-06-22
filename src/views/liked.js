@@ -3,9 +3,10 @@ import { Footer } from '../utils/footer.js';
 import { likingPost, likedPosts } from '../firebase/firestore.js';
 
 const Liked = () => {
+  const userId = localStorage.getItem('userUid');
   const container = document.createElement('div');
   container.className = 'home-page';
-  const userPhoto = localStorage.getItem('userPhoto');
+
 
   const likedPostsDiv = document.createElement('div');
   likedPostsDiv.className = 'likedPostsDiv';
@@ -13,7 +14,7 @@ const Liked = () => {
   <h1 class="tittle-liked">Checkout your favorite posts!</h1>
   `;
 
-  likedPosts((post) => {
+  likedPosts(userId,(post) => {
     container.innerHTML = '';
     let postStructure = '';
 
@@ -22,7 +23,7 @@ const Liked = () => {
       postStructure += `
       <div class="post-liked">
         <div class='post-header'>
-          <p class='user-info'><img class="user-photo" src="${userPhoto}">
+          <p class='user-info'><img class="user-photo" src="${posts.photo}">
           <span class="user-name">${posts.userName} posted: </span> </p>
           <p class="movie-review">${posts.review}</p>
           <p class="date">${posts.date.toDate().toLocaleString()}</p>
