@@ -74,6 +74,9 @@ const Login = () => {
   googleBtn.addEventListener('click', async () => {
     const user = await google();
     if (user) {
+      localStorage.setItem('userName', user.displayName);
+      localStorage.setItem('userUid', user.uid);
+      localStorage.setItem('userPhoto', user.photoURL);
       navigate('/home');
     } else {
       console.log('falló tu conexión con google');
