@@ -1,5 +1,7 @@
 //Este archivo es para registrarse
 export const interpSignUp = () => {
+    const divSignUp = document.createElement("div");
+
     const formSignUp = `
     <div id="rootSingnUp">
       <div>
@@ -16,7 +18,8 @@ export const interpSignUp = () => {
             <button id="next">Siguiente</button>
         </form>        
       </div>
-    `;
-    // aqui tu codigo
-    return formSignUp;
+    `
+    divSignUp.innerHTML = formSignUp;
+    
+    return divSignUp;
   };
