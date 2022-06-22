@@ -18,7 +18,6 @@ const login = async (email, password) => {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     console.log(userCredential)
     showTemplates('#/home')
-    alert('Sesión iniciada correctamente')
     return userCredential;
   } catch (error) {
     console.log(error.message)
