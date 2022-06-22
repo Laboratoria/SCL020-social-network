@@ -1,9 +1,10 @@
 import { navigate } from '../router/router.js';
 import { out } from '../firebase/auth.js';
 import logoUrl from '../img/brand-logo.png';
-import avatarUrl from '../img/main-avatar.png';
 
 export const Header = () => {
+  const userName = localStorage.getItem('userName') || 'User';
+  const userPhoto = localStorage.getItem('userPhoto');
   const template = `
   <img class='brand-logo' src='${logoUrl}' />
   <div class="search-box">
@@ -11,7 +12,7 @@ export const Header = () => {
       <button class="search-button"><i class="fas fa-search"></i></button>
   </div>
   <div class="dropdown">
-    <img type="checkbox" id="main-avatar" class="main-avatar" src='${avatarUrl}' />
+    <img type="checkbox" id="main-avatar" class="main-avatar" src='${userPhoto}' />
      <div class="dropdown-content">
      <a id="profile">Profile</a>
      <a id="liked">Liked</a>

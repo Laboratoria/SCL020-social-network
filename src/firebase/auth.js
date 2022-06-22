@@ -63,7 +63,7 @@ const google = async () => {
   try {
     const result = await signInWithPopup(auth, provider);
     console.log(result.user, 'user en Google function');
-    const userPhotoGoogle = result.photoURL;
+    const userPhotoGoogle = result.user.photoURL;
     console.log(userPhotoGoogle);
     return result.user;
   } catch (error) {
