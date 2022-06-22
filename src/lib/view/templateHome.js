@@ -37,27 +37,90 @@ export const home = () => {
     </div>
     <div class="postMain">
     <div class="postBody">
-    <div class="userNav">
-        <div class="item1">
-            <i class="fa-solid fa-circle-user fa-3x"></i>
+        <div class="userNav">
+            <div class="item1">
+                <i class="fa-solid fa-circle-user fa-3x"></i>
+            </div>
+            <div class="item2">
+                <p>Nombre de usuario</p>
+            </div>
+            <div class="item3">
+                <p>Baker</p>
+            </div>
         </div>
-        <div class="item2">
-            <p>Nombre de usuario</p>
+        <div class="post">
+            <h2> aqui va el post</h2> 
         </div>
-        <div class="item3">
-            <p>Baker</p>
+        <div class="like">
+            <div>
+                <img src="img/cuplike.png" class ="cupcakeImg" alt="cuplike">
+            </div>
         </div>
     </div>
-    <div class="post">
-        <h2> aqui va el post</h2> 
-    </div>
-    <div class="like">
-        <div>
-            <img src="img/cuplike.png" class ="cupcakeImg" alt="cuplike">
-        </div>
-    </div>
-</div>
 <div class="postBody">
+        <div class="userNav">
+            <div class="item1">
+                <i class="fa-solid fa-circle-user fa-3x"></i>
+            </div>
+            <div class="item2">
+                <p>Nombre de usuario</p>
+            </div>
+            <div class="item3">
+                <p>Baker</p>
+            </div>
+        </div>
+        <div class="post">
+            <h2> aqui va el post</h2> 
+        </div>
+        <div class="like">
+            <div>
+                <img src="img/cuplike.png" class ="cupcakeImg" alt="cuplike">
+            </div>
+        </div>
+    </div>
+    <div class="postBody">
+        <div class="userNav">
+            <div class="item1">
+                <i class="fa-solid fa-circle-user fa-3x"></i>
+            </div>
+            <div class="item2">
+                <p>Nombre de usuario</p>
+            </div>
+            <div class="item3">
+                <p>Baker</p>
+            </div>
+        </div>
+        <div class="post">
+            <h2> aqui va el post</h2> 
+        </div>
+        <div class="like">
+            <div>
+                <img src="img/cuplike.png" class ="cupcakeImg" alt="cuplike">
+            </div>
+        </div>
+    </div>
+    <div class="postBody">
+        <div class="userNav">
+            <div class="item1">
+                <i class="fa-solid fa-circle-user fa-3x"></i>
+            </div>
+            <div class="item2">
+                <p>Nombre de usuario</p>
+            </div>
+            <div class="item3">
+                <p>Baker</p>
+            </div>
+        </div>
+        <div class="post">
+            <h2> aqui va el post</h2> 
+        </div>
+        <div class="like">
+            <div>
+                <img src="img/cuplike.png" class ="cupcakeImg" alt="cuplike">
+            </div>
+        </div>
+    </div>
+    <div class="postBody">
         <div class="userNav">
             <div class="item1">
                 <i class="fa-solid fa-circle-user fa-3x"></i>
