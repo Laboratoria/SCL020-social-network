@@ -1,6 +1,7 @@
 import { showTemplates } from './../lib/router.js';
 import {
   auth,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
@@ -114,6 +115,6 @@ const logout = async () => {
   }
 };
 
-export { login, logout, signup, googleLogin };
+export { login, logout, signup, googleLogin, auth, onAuthStateChanged }; /* */
 
 //Iniciar sesion con google
