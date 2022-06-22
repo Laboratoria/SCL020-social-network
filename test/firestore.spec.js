@@ -5,9 +5,15 @@ import {
   addDoc, onSnapshot, query, collection, orderBy, doc, updateDoc, deleteDoc, where, getDoc, arrayRemove, arrayUnion
 } from 'firebase/firestore';
 import {
-  createPost, readingPost, editPost, deletePost, profilePosts, mapPosts, likingPost
+  createPost, readingPost, editPost, deletePost, profilePosts, mapPosts, likingPost, likedPosts
 } from '../src/firebase/firestore.js';
-import { db } from '../src/firebase/init.js';
+import { db, auth, provider } from '../src/firebase/init.js';
+
+vi.mock('firebase/auth', () => ({
+  getAuth: vi.fn(() => // La funcion jest.fn <- Crea una funcion interceptada por JEST
+    ({ getAuth: 'TEST' })),
+    GoogleAuthProvider: vi.fn(),
+}));
 
 vi.mock('firebase/firestore', () => ({
   getFirestore: vi.fn(),
@@ -24,6 +30,22 @@ vi.mock('firebase/firestore', () => ({
   arrayRemove: vi.fn(),
   arrayUnion: vi.fn(),
 }));
+
+//createPost function 
+/* describe('Tests for the createPost function', () => {
+  it('Should call addDoc', () => {
+    const review = '';
+    const movie = '';
+    const country = '';
+    createPost(review, movie, country);
+    expect(addDoc).toHaveBeenCalled();
+  }); */
+/*   it('Should call onSnapshot with the query reference argument', () => {
+    const q = query(collection(db, 'posts'), orderBy('date', 'desc'));
+    readingPost(callback);
+    expect(onSnapshot).toHaveBeenCalledWith(q, (callback));
+  }); */
+/* }); */
 
 // readingPost function -- DONE
 describe('Tests for the readingPost function', () => {
@@ -80,13 +102,12 @@ describe('Tests for the deletePost function', () => {
 // profilePosts function
 /* describe('Tests for the profilePosts function', () => {
   const callback = 'someCallbackFunction';
-  const userId = 'someRandomStringofChars';
 
   it('Should call onSnapshot', async () => {
     await profilePosts(callback);
     expect(onSnapshot).toHaveBeenCalled();
   });
-  it('Should call onSnapshot with the query reference argument', async () => {
+it('Should call onSnapshot with the query reference argument', async () => {
     const q = query(collection(db, 'posts'), where('userId', '==', userId), orderBy('date', 'desc'));
     await profilePosts(callback);
     expect(onSnapshot).toHaveBeenCalledWith(q, (callback));
@@ -110,11 +131,25 @@ describe('Tests for the mapPost function', () => {
 });
 
 // LikingPost function
-describe('Tests for the likingPost function', () => {
-  const id = '';
-
+/* describe('Tests for the likingPost function', () => {
+  const id = '18628726726'
   it('Should call upDateDoc', async () => {
     await likingPost(id);
     expect(updateDoc).toHaveBeenCalled();
+  });
+}); */
+
+//LikedPost function
+describe('Tests for the likedPosts function', () => {
+  const callback = 'someCallbackFunction';
+  const userId = 'someUserId';
+  it('Should call onSnapshot', () => {
+    likedPosts(userId, callback);
+    expect(onSnapshot).toHaveBeenCalled();
+  });
+  it('Should call onSnapshot with the query reference argument', () => {
+    const q = query(collection(db, 'posts'), where('likesArr', 'array-contains', userId));
+    mapPosts(userId, callback);
+    expect(onSnapshot).toHaveBeenCalledWith(q, (callback));
   });
 });
