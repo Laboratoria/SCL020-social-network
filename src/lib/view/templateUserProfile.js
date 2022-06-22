@@ -35,29 +35,29 @@ export const userProfile = () => {
 </div>
 <div class="postMain">
     <div class="userHeader">
-        <div class="item1">
+        <div class="userIcon">
             <i class="fa-solid fa-circle-user fa-6x"></i>
         </div>
-        <div class="item2" id="nameHeader">
-            <h2>Nombre de usuario</h2>
+        <div class="userName" id="nameHeader">
+            <p>Nombre de usuario<p>
         </div>
-        <div class="item3" id="titleHeader">
+        <div class="userTitle" id="titleHeader">
             <h3>Titulo baker o eater</h3>
         </div>
     </div>
     <div class="createPostFlex">
         <p>Mis Publicaciones:</p>
-        <a href="#/createPost" class="buttonGreen">Crea un Post</a>
+        <a href="#/createPost" class="buttonGreen">Nuevo post</a>
     </div>
     <div class="postBody">
         <div class="userNav">
-            <div class="item1">
+            <div class="userIcon">
                 <i class="fa-solid fa-circle-user fa-3x"></i>
             </div>
-            <div class="item2">
+            <div class="userName">
                 <p>Nombre de usuario</p>
             </div>
-            <div class="item3">
+            <div class="userTitle">
                 <p>Baker</p>
             </div>
         </div>
