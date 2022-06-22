@@ -406,19 +406,21 @@ input{
 
 @media only screen and (max-width: 500px) {
     .menu__side{
+        width: 100%;
+        border-right: 0px solid white;
+        border-radius: 25px 25px 0px 0px;
+        top: 93vh;
+        box-shadow: none;
+    }
+    .options__menu .option {
+        padding: 22px 26px;
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        width: 50px;
-        height: 400px;
-        background: #F34573;
-        position: fixed;
-        top: 0;
-        left: 0;
-        font-size: 18px;
-        border-right: 10px solid white;
-        border-radius: 0px 25px 25px 0px;
+    }
+
+    .options__menu {
+        display: flex;
+        top: 0px;
+        padding: 0px;
     }
     .options__menu a{
         color:white;
