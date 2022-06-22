@@ -2,7 +2,7 @@ import {
   describe, expect, it, vi,
 } from 'vitest';
 import {
-  addDoc, onSnapshot, query, collection, orderBy, doc, updateDoc, deleteDoc, where, getDoc, arrayRemove, arrayUnion
+  addDoc, onSnapshot, query, collection, orderBy, doc, updateDoc, deleteDoc, where, getDoc, arrayRemove, arrayUnion, Timestamp
 } from 'firebase/firestore';
 import {
   createPost, readingPost, editPost, deletePost, profilePosts, mapPosts, likingPost, likedPosts
@@ -29,23 +29,37 @@ vi.mock('firebase/firestore', () => ({
   getDoc: vi.fn(),
   arrayRemove: vi.fn(),
   arrayUnion: vi.fn(),
+  Timestamp: {
+    fromDate:vi.fn()}
 }));
 
 //createPost function 
-/* describe('Tests for the createPost function', () => {
-  it('Should call addDoc', () => {
-    const review = '';
-    const movie = '';
-    const country = '';
-    createPost(review, movie, country);
+describe('Tests for the createPost function', () => {
+  const review = '';
+  const movie = '';
+  const country = '';
+
+  it('Should call addDoc', async () => {
+    await createPost(review, movie, country);
     expect(addDoc).toHaveBeenCalled();
-  }); */
-/*   it('Should call onSnapshot with the query reference argument', () => {
-    const q = query(collection(db, 'posts'), orderBy('date', 'desc'));
-    readingPost(callback);
-    expect(onSnapshot).toHaveBeenCalledWith(q, (callback));
-  }); */
-/* }); */
+  });
+/*   it('Should call addDoc with collectionRef argument', async () => {
+    const collectionRef = doc(db, 'posts');
+    await createPost(userId, review, movie, country);
+    expect(addDoc).toHaveBeenCalledWith(collectionRef, {
+      userName: '',
+      userId: userId,
+      review: review,
+      movie: movie,
+      country: country,
+      likesArr: [],
+      likesSum: 0,
+      date: Timestamp.fromDate(new Date()),
+      photo: '/img/main-avatar.png',
+      }
+    );
+  });  */
+});
 
 // readingPost function -- DONE
 describe('Tests for the readingPost function', () => {
@@ -131,13 +145,13 @@ describe('Tests for the mapPost function', () => {
 });
 
 // LikingPost function
-/* describe('Tests for the likingPost function', () => {
+describe('Tests for the likingPost function', () => {
   const id = '18628726726'
   it('Should call upDateDoc', async () => {
     await likingPost(id);
     expect(updateDoc).toHaveBeenCalled();
   });
-}); */
+});
 
 //LikedPost function
 describe('Tests for the likedPosts function', () => {

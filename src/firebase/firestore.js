@@ -19,14 +19,16 @@ import { db, auth } from './init';
 // Creating Posts collection and adding new docs to collection
 const createPost = async (review, movie, country) => {
   let userName;
+  let userId;
   let userPhoto;
   if(auth.currentUser){
     userName = auth.currentUser.displayName;
+    userId = auth.currentUser.uid;
     userPhoto = auth.currentUser.photoURL;
   }
-  const docRef = await addDoc(collection(db, 'posts'), {
+ await addDoc(collection(db, 'posts'), {
     userName,
-    userId: auth.currentUser.uid,
+    userId,
     review,
     movie,
     country,
@@ -35,8 +37,6 @@ const createPost = async (review, movie, country) => {
     date: Timestamp.fromDate(new Date()),
     photo: userPhoto,
   });
-  // console.log(docRef);
-  return docRef.id;
 };
 
 // Reading Posts
@@ -77,9 +77,10 @@ const mapPosts = (countryName, callback) => {
 };
 
 // Liking Posts
-const likingPost = async (id) => {
-  const postRef = doc(db, 'posts', id);
-const userUid = auth.currentUser.uid;
+const likingPost = async (idPost,idUser) => {
+  const postRef = doc(db, 'posts', idPost);
+  const userUid = idUser;
+  console.log(idUser)
   const post = await getDoc(postRef);
   const likesPost = post.data().likesArr;
   const likesCounter = post.data().likesSum;

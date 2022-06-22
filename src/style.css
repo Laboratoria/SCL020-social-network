@@ -314,6 +314,7 @@ label {
 .avatar-new-post {
   width: 60px;
   height: 60px;
+  border-radius: 50%;
 }
 
 .user-name-new-post {

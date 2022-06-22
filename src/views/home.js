@@ -7,12 +7,10 @@ import {
 const Home = () => {
   const container = document.createElement('div');
   container.className = 'home-page';
-
+  const userUid = localStorage.getItem('userUid');
   readingPost((post) => {
     container.innerHTML = '';
     let postStructure = '';
-    // console.log(post);
-
     post.forEach((doc) => {
       const posts = doc.data();
       postStructure += `
@@ -28,7 +26,7 @@ const Home = () => {
           <p class='movie-country'>Country: ${posts.country} </p>
         </div>
         <div class="post-footer">
-          <button class="btn-like" id="btn-like" data-id="${doc.id}">
+          <button class="btn-like" data-id="${doc.id}">
             <i class="fas fa-heart"></i>
             <span id="like-count" class="like-count"> ${posts.likesSum} </span>
           </button>
@@ -77,7 +75,7 @@ const Home = () => {
     const likeBtn = container.querySelectorAll('.btn-like');
     likeBtn.forEach((btn) => {
       btn.addEventListener('click', async () => {
-        await likingPost(btn.dataset.id);
+        await likingPost(btn.dataset.id,userUid);
       });
     });
   });
