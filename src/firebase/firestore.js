@@ -11,22 +11,19 @@ import {
   onSnapshot,
   deleteDoc,
   where,
-  arrayRemove, arrayUnion,
+  arrayRemove,
+  arrayUnion,
 } from 'firebase/firestore';
 
 import { db, auth } from './init';
 
 // Creating Posts collection and adding new docs to collection
 const createPost = async (review, movie, country) => {
-  let userName;
-  let userId;
-  let userPhoto;
-  if(auth.currentUser){
-    userName = auth.currentUser.displayName;
-    userId = auth.currentUser.uid;
-    userPhoto = auth.currentUser.photoURL;
-  }
- await addDoc(collection(db, 'posts'), {
+  let userName = auth.currentUser.displayName;
+  let userId = auth.currentUser.uid;
+  let photo = auth.currentUser.photoURL;
+
+  await addDoc(collection(db, 'posts'), {
     userName,
     userId,
     review,
@@ -35,14 +32,14 @@ const createPost = async (review, movie, country) => {
     likesArr: [],
     likesSum: 0,
     date: Timestamp.fromDate(new Date()),
-    photo: userPhoto,
+    photo,
   });
 };
 
 // Reading Posts
 const readingPost = (callback) => {
   const q = query(collection(db, 'posts'), orderBy('date', 'desc'));
-  onSnapshot(q, (callback));
+  onSnapshot(q, callback);
 };
 
 // Editing Posts
@@ -61,26 +58,34 @@ const deletePost = async (id) => {
 };
 
 // Profile Posts
-const profilePosts = async (userId,callback) => {
-  const q = query(collection(db, 'posts'), where('userId', '==', userId), orderBy('date', 'desc'));
-  onSnapshot(q, (callback));
+const profilePosts = async (userId, callback) => {
+  const q = query(
+    collection(db, 'posts'),
+    where('userId', '==', userId),
+    orderBy('date', 'desc')
+  );
+  onSnapshot(q, callback);
 };
 
 // Map Posts
 const mapPosts = (countryName, callback) => {
   try {
-    const q = query(collection(db, 'posts'), where('country', '==', countryName), orderBy('date', 'desc'));
-    onSnapshot(q, (callback));
+    const q = query(
+      collection(db, 'posts'),
+      where('country', '==', countryName),
+      orderBy('date', 'desc')
+    );
+    onSnapshot(q, callback);
   } catch (error) {
     console.log(error);
   }
 };
 
 // Liking Posts
-const likingPost = async (idPost,idUser) => {
+const likingPost = async (idPost, idUser) => {
   const postRef = doc(db, 'posts', idPost);
   const userUid = idUser;
-  console.log(idUser)
+  console.log(idUser);
   const post = await getDoc(postRef);
   const likesPost = post.data().likesArr;
   const likesCounter = post.data().likesSum;
@@ -102,11 +107,20 @@ const likingPost = async (idPost,idUser) => {
 
 // Liked Posts by user (favorites)
 const likedPosts = async (userId, callback) => {
-  const q = query(collection(db, 'posts'), where('likesArr', 'array-contains', userId));
-  onSnapshot(q, (callback));
+  const q = query(
+    collection(db, 'posts'),
+    where('likesArr', 'array-contains', userId)
+  );
+  onSnapshot(q, callback);
 };
 
 export {
-  createPost, readingPost, editPost, deletePost,
-  profilePosts, likingPost, mapPosts, likedPosts,
+  createPost,
+  readingPost,
+  editPost,
+  deletePost,
+  profilePosts,
+  likingPost,
+  mapPosts,
+  likedPosts,
 };

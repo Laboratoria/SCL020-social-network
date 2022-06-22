@@ -30,7 +30,7 @@ vi.mock('firebase/firestore', () => ({
   arrayRemove: vi.fn(),
   arrayUnion: vi.fn(),
   Timestamp: {
-    fromDate:vi.fn()}
+    fromDate:vi.fn()},
 }));
 
 //createPost function 
@@ -38,27 +38,30 @@ describe('Tests for the createPost function', () => {
   const review = '';
   const movie = '';
   const country = '';
+  const userId = auth.currentUser;
+  const userName = '';
+  const photo = auth.currentUser;
 
   it('Should call addDoc', async () => {
     await createPost(review, movie, country);
     expect(addDoc).toHaveBeenCalled();
   });
-/*   it('Should call addDoc with collectionRef argument', async () => {
+ it('Should call addDoc with collectionRef argument', async () => {
     const collectionRef = doc(db, 'posts');
     await createPost(userId, review, movie, country);
     expect(addDoc).toHaveBeenCalledWith(collectionRef, {
-      userName: '',
-      userId: userId,
-      review: review,
-      movie: movie,
-      country: country,
-      likesArr: [],
-      likesSum: 0,
-      date: Timestamp.fromDate(new Date()),
-      photo: '/img/main-avatar.png',
+    userName,
+    userId,
+    review,
+    movie,
+    country,
+    likesArr: [],
+    likesSum: 0,
+    date: Timestamp.fromDate(new Date()),
+    photo,
       }
     );
-  });  */
+  });
 });
 
 // readingPost function -- DONE
@@ -145,13 +148,13 @@ describe('Tests for the mapPost function', () => {
 });
 
 // LikingPost function
-describe('Tests for the likingPost function', () => {
-  const id = '18628726726'
-  it('Should call upDateDoc', async () => {
-    await likingPost(id);
-    expect(updateDoc).toHaveBeenCalled();
-  });
-});
+// describe('Tests for the likingPost function', () => {
+//   const id = '18628726726'
+//   it('Should call upDateDoc', async () => {
+//     await likingPost(id);
+//     expect(updateDoc).toHaveBeenCalled();
+//   });
+// });
 
 //LikedPost function
 describe('Tests for the likedPosts function', () => {
