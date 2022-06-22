@@ -1,7 +1,9 @@
 export const wall = () => {
-  const divWall = document.createElement("div")
-  const viewWall =
-    `<div class="wall">
+    const divWall = document.createElement("div")
+    const viewWall =
+
+        `
+    <div class="wall">
          
       </div>
 
@@ -27,7 +29,8 @@ export const wall = () => {
   
   
       </div>
-      </div>`
-  divWall.innerHTML = viewWall;
-  return divWall;
+      </div>
+      `
+    divWall.innerHTML = viewWall;
+    return divWall;
 };
