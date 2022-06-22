@@ -61,8 +61,7 @@ const deletePost = async (id) => {
 };
 
 // Profile Posts
-const profilePosts = async (callback) => {
-  const userId = localStorage.getItem('userUid');
+const profilePosts = async (userId,callback) => {
   const q = query(collection(db, 'posts'), where('userId', '==', userId), orderBy('date', 'desc'));
   onSnapshot(q, (callback));
 };
@@ -102,7 +101,6 @@ const userUid = auth.currentUser.uid;
 
 // Liked Posts by user (favorites)
 const likedPosts = async (userId, callback) => {
-/*   console.log(userId, 'user id en liked view'); */
   const q = query(collection(db, 'posts'), where('likesArr', 'array-contains', userId));
   onSnapshot(q, (callback));
 };

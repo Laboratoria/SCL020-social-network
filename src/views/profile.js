@@ -8,8 +8,9 @@ const Profile = () => {
   const container = document.createElement('div');
   container.className = 'profile-page';
   const userPhoto = localStorage.getItem('userPhoto');
+  const userId = localStorage.getItem('userUid');
 
-  profilePosts((post) => {
+  profilePosts(userId, (post) => {
     container.innerHTML = '';
     let postStructure = '';
 
