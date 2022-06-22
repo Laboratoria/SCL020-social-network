@@ -1,6 +1,7 @@
 import { showTemplates } from './../lib/router.js';
 import {
   auth,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
@@ -17,7 +18,6 @@ const login = async (email, password) => {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     console.log(userCredential)
     showTemplates('#/home')
-    alert('Sesión iniciada correctamente')
     return userCredential;
   } catch (error) {
     console.log(error.message)
@@ -114,6 +114,6 @@ const logout = async () => {
   }
 };
 
-export { login, logout, signup, googleLogin };
+export { login, logout, signup, googleLogin, auth, onAuthStateChanged }; /* */
 
 //Iniciar sesion con google
