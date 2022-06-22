@@ -2,10 +2,10 @@ import {
   describe, expect, it, vi,
 } from 'vitest';
 import {
-  addDoc, onSnapshot, query, collection, orderBy, doc, updateDoc, deleteDoc,
+  addDoc, onSnapshot, query, collection, orderBy, doc, updateDoc, deleteDoc, where, getDoc, arrayRemove, arrayUnion
 } from 'firebase/firestore';
 import {
-  createPost, readingPost, editPost, deletePost,
+  createPost, readingPost, editPost, deletePost, profilePosts, mapPosts, likingPost
 } from '../src/firebase/firestore.js';
 import { db } from '../src/firebase/init.js';
 
@@ -19,9 +19,13 @@ vi.mock('firebase/firestore', () => ({
   updateDoc: vi.fn(),
   doc: vi.fn(),
   deleteDoc: vi.fn(),
+  where: vi.fn(),
+  getDoc: vi.fn(),
+  arrayRemove: vi.fn(),
+  arrayUnion: vi.fn(),
 }));
 
-// readingPost function
+// readingPost function -- DONE
 describe('Tests for the readingPost function', () => {
   const callback = 'someCallbackFunction';
 
@@ -36,7 +40,7 @@ describe('Tests for the readingPost function', () => {
   });
 });
 
-// editPost function
+// editPost function - DONE
 describe('Tests for the editPost function', () => {
   const id = '';
   const review = '';
@@ -58,7 +62,7 @@ describe('Tests for the editPost function', () => {
   });
 });
 
-// deletePost function
+// deletePost function - DONE
 describe('Tests for the deletePost function', () => {
   const id = 'someRandomStringOfCharacters';
 
@@ -70,5 +74,47 @@ describe('Tests for the deletePost function', () => {
     const postRef = doc(db, 'posts', id);
     await deletePost(id);
     expect(deleteDoc).toHaveBeenCalledWith(postRef);
+  });
+});
+
+// profilePosts function
+/* describe('Tests for the profilePosts function', () => {
+  const callback = 'someCallbackFunction';
+  const userId = 'someRandomStringofChars';
+
+  it('Should call onSnapshot', async () => {
+    await profilePosts(callback);
+    expect(onSnapshot).toHaveBeenCalled();
+  });
+  it('Should call onSnapshot with the query reference argument', async () => {
+    const q = query(collection(db, 'posts'), where('userId', '==', userId), orderBy('date', 'desc'));
+    await profilePosts(callback);
+    expect(onSnapshot).toHaveBeenCalledWith(q, (callback));
+  });
+}); */
+
+// MapPost function - DONE
+describe('Tests for the mapPost function', () => {
+  const callback = 'someCallbackFunction';
+  const countryName = 'someCountryName';
+
+  it('Should call onSnapshot', () => {
+    mapPosts(countryName, callback);
+    expect(onSnapshot).toHaveBeenCalled();
+  });
+  it('Should call onSnapshot with the query reference argument', () => {
+    const q = query(collection(db, 'posts'), where('country', '==', countryName), orderBy('date', 'desc'));
+    mapPosts(countryName, callback);
+    expect(onSnapshot).toHaveBeenCalledWith(q, (callback));
+  });
+});
+
+// LikingPost function
+describe('Tests for the likingPost function', () => {
+  const id = '';
+
+  it('Should call upDateDoc', async () => {
+    await likingPost(id);
+    expect(updateDoc).toHaveBeenCalled();
   });
 });

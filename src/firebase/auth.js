@@ -2,8 +2,6 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
-  signInWithRedirect,
-  getRedirectResult,
   signInWithPopup,
   signOut,
   sendEmailVerification,
