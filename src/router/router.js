@@ -1,10 +1,10 @@
-import {interpIndex} from "./liv/views/index.js";
-import {viewSignUp} from "./liv/views/viewSignUp.js";
+import {interpLogIn} from "../lib/views/viewLogIn.js";
+import {interpSignUp} from "../lib/views/viewSignUp.js";
+import {interpHome} from "../lib/views/viewHome.js";
+import { interpProfile } from "../lib/views/viewProfile.js";
 
 export const changeRoute = (hash) => {
-    if (hash === "#/index") {
-        return showTemplate(hash)
-    } else if (hash === "#/viewSignUp") {
+    if (hash) {
         return showTemplate(hash)
     } else {
         return showTemplate(hash)
@@ -13,15 +13,23 @@ export const changeRoute = (hash) => {
 
 const showTemplate = (hash) => {
     const containerIndex = document.getElementById("screen1");
-    containerIndex.innerHTML = formIndex();
+    // containerIndex.innerHTML = interpLogIn();
 
     switch (hash) {
-        case "#/index":
-            containerIndex.appendChild(formIndex());
-            break;
+       
         case "#/viewSignUp":
-            containerIndex.appendChild(viewSignUp());
+            containerIndex.appendChild(interpSignUp());
             break;
+        case "#/viewHome":
+            containerIndex.appendChild(interpHome());
+            break;
+        case "#/viewProfile":
+            containerIndex.appendChild(interpProfile());
+            break;
+        case "#/":
+            containerIndex.appendChild(interpLogIn());
+            break;
+        // debo tener tantos casos como vistas hay
         default:
             containerIndex.innerHTML= `<p>no existe</p>`
     }

@@ -1,20 +1,19 @@
-// Este es el punto de entrada de tu aplicacion
+// Este es el punto de entrada de tu aplicacion, main enlasa HTML con toda la logica de  usabilidad de la pag. con router
+// y con index
 
-import { interpIndex } from "./lib/views/index.js";
+import { interpLogIn } from "./lib/views/viewLogIn.js";
 import { interpSignUp } from "./lib/views/viewSignUp.js";
-// import { changeRoute } from "./router/router.js";
+import { changeRoute } from "./router/router.js";
 
-const showIndex = (document.getElementById("screen1").innerHTML = interpIndex());
-
-// const showSignUp = (document.getElementById("screen2").innerHTML += interpSignUp());
-document.getElementById("screen1").innerHTML = interpIndex();
 
 const init = () => {
-
+    document.getElementById("screen1").innerHTML = interpLogIn();
         window.addEventListener("hashchange", () => {
             changeRoute(window.location.hash)
         })
 };
 
-// window.addEventListener("load", init)
+window.addEventListener("load", init)
+
+console.log(interpSignUp);
 
