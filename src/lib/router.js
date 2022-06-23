@@ -20,15 +20,18 @@ export const showTemplates = (hash) => {
             return
         }
         if (!user) {
-             containerRoot.appendChild(logInTemplate());
+            containerRoot.appendChild(logInTemplate());
         } else {
             switch (hash) {
+                case '':
+                    containerRoot.appendChild(logInTemplate());
+                    break;
                 case '#/home':
                 containerRoot.appendChild(home());
                     break;
                 case '#/userProfile':
                 containerRoot.appendChild(userProfile());
-                     break;
+                    break;
                 case '#/search':
                 containerRoot.appendChild(searchPost());
                     break;
