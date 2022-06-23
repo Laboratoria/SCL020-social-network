@@ -14,12 +14,10 @@ export const login = () => {
                     <label><input type="text" id="email"  placeholder="email@something.com"></label>
                     <label><input type="password" id="password"  placeholder="password"></label>
                     <div class="btn-access">
-                    <a id="loginGoogle">google</a>
+                        <a id="loginGoogle">google</a>
                     </div> 
-                    <a><button id="btn" class="btn">Login</button></a>
-
+                    <input type="button" value="Login" id="btn" class="btn">
                     <input type="button" value="Back" class="btn" onClick="history.go(-1);">
-
                 </form>
             </div>
         </div>     

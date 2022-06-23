@@ -2,9 +2,7 @@ export const home = () => {
     const divHome = document.createElement("div");
     const viewHome = //html
     `
-        <div class="container">
-            <img class ="img-movie" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/imgMovie.jpg?raw=true" alt="img-movie">
-            <div class="container-home">
+        <div class="container-home">
             <div class="containter-logo-ticket"><img class ="logo-ticket" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-removebg-preview.png?raw=true" alt="logo-ticket"></div>
                 <p>¡La mejor app para comentar tus peliculas favoritas!</p>
                 <a href="#/login"><button class="btn">Login</button></a>

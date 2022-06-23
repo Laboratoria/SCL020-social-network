@@ -5,7 +5,6 @@ export const feed = () => {
     `
         <main class="container-feed">
             <nav class="nav-burguer-search">
-
                 <div class="menu-feed">
                     <a href="#/menu">
                         <div class="hamburger">
@@ -15,7 +14,6 @@ export const feed = () => {
                         </div>
                     </a>
                 </div>
-
                 <div class="search-bar">
                     <div class="search-box">
                         <input class="search-input"type="text" name="" placeholder="Search...">
