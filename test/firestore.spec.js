@@ -11,7 +11,9 @@ import { db, auth, provider } from '../src/firebase/init.js';
 
 vi.mock('firebase/auth', () => ({
   getAuth: vi.fn(() => // La funcion jest.fn <- Crea una funcion interceptada por JEST
-    ({ getAuth: 'TEST' })),
+    ({ 
+      currentUser:{ displayName:'carla', uid:'28973937', photoUrl:'idkjdd'}  
+    })),
     GoogleAuthProvider: vi.fn(),
 }));
 
@@ -26,7 +28,15 @@ vi.mock('firebase/firestore', () => ({
   doc: vi.fn(),
   deleteDoc: vi.fn(),
   where: vi.fn(),
-  getDoc: vi.fn(),
+  getDoc: vi.fn(()=>({ 
+    data: vi.fn(()=>(
+      {likesArr:[],
+        likesSum:0,
+        likesPost:[]
+      }
+    )) 
+  })
+),
   arrayRemove: vi.fn(),
   arrayUnion: vi.fn(),
   Timestamp: {
@@ -38,9 +48,6 @@ describe('Tests for the createPost function', () => {
   const review = '';
   const movie = '';
   const country = '';
-  const userId = auth.currentUser;
-  const userName = '';
-  const photo = auth.currentUser;
 
   it('Should call addDoc', async () => {
     await createPost(review, movie, country);
@@ -48,17 +55,17 @@ describe('Tests for the createPost function', () => {
   });
  it('Should call addDoc with collectionRef argument', async () => {
     const collectionRef = doc(db, 'posts');
-    await createPost(userId, review, movie, country);
+    await createPost(review, movie, country);
     expect(addDoc).toHaveBeenCalledWith(collectionRef, {
-    userName,
-    userId,
+    userName:auth.currentUser.displayName,
+    userId:auth.currentUser.uid,
     review,
     movie,
     country,
     likesArr: [],
     likesSum: 0,
     date: Timestamp.fromDate(new Date()),
-    photo,
+    photo: auth.currentUser.photoURL
       }
     );
   });
@@ -148,13 +155,13 @@ describe('Tests for the mapPost function', () => {
 });
 
 // LikingPost function
-// describe('Tests for the likingPost function', () => {
-//   const id = '18628726726'
-//   it('Should call upDateDoc', async () => {
-//     await likingPost(id);
-//     expect(updateDoc).toHaveBeenCalled();
-//   });
-// });
+describe('Tests for the likingPost function', () => {
+   const id = '18628726726'
+   it('Should call upDateDoc', async () => {
+     await likingPost(id);
+     expect(updateDoc).toHaveBeenCalled();
+   });
+ });
 
 //LikedPost function
 describe('Tests for the likedPosts function', () => {
