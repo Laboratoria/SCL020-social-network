@@ -10,6 +10,10 @@
 
 /*      --    HOME VIEW     --      */
 
+.container {
+    display: flex;
+}
+
 .container-home{
     display: flex;
     flex-direction: column;
@@ -771,6 +775,11 @@ body {
         margin-top: 10px;
         margin-bottom:20px;
         padding: 20px;
+    }
+
+    .img-movie {
+        width: 100px;
+        height: auto;
     }
 
 }
