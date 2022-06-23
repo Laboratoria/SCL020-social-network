@@ -196,6 +196,7 @@ input{
     cursor: pointer;
 }
 
+
 .postBody{
     display: flex;
     flex-direction: column;
@@ -205,15 +206,14 @@ input{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.postMain{
-    margin-left: 200px;
+.postContainer{
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 83%;
     gap: 20px;
     margin-top: 40px;
-    
+    margin-left: 200px;
 }
 
 .pencilIcon{
@@ -280,7 +280,6 @@ input{
     flex-direction: row;
     
 }
-
 .headerName_Title{
     display: flex;
     flex-direction: column;
@@ -289,13 +288,13 @@ input{
 .userHeader{
     background-color: #F34573;
     display: grid;
-    width: 83%;
     border-radius: 15px;
     grid-template-columns: 165px auto auto;
     height: 181px;
+    width: 73%;
     color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
+    margin-left: 330px
 }
 
 .userIcon {
@@ -318,18 +317,19 @@ input{
 
 .userName p{
     margin: 8px 5px 0px;
-    font-size: 17px;
+    font-size: 15px;
 }
-.userName p{
+.userTitle p{
     margin: 5px 5px 8px;
-    font-size: 17px;
+    font-size: 13px;
 }
 
 .createPostFlex{
     display: flex;
     justify-content: space-between;
-    width: 83%;
     font-size: 17px;
+    margin: 20px 0px 15px 357px;
+    width: 69%;
     color: #F34573;
 }
 
@@ -405,6 +405,7 @@ input{
 }
 
 @media only screen and (max-width: 500px) {
+
     .menu__side{
         width: 100%;
         border-right: 0px solid white;
@@ -443,7 +444,6 @@ input{
     #logo2{
     display: none;
     }
-    
     #containImg{
         display: flex;
         justify-content: center;
@@ -461,13 +461,14 @@ input{
     .userHeader{
         background-color: #F34573;
         display: grid;
-        width: 75%;
+        margin-left: 83px;
         border-radius: 15px;
         grid-template-columns: 165px auto auto;
-        height: 181px;
+        height: 150px;
+        width: 85%;
         color: white;
+        margin-bottom: 20px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
     }
     .buttonGreen {
         border-radius: 10px;
@@ -481,5 +482,17 @@ input{
         padding: 2px 12px 2px 12px;
         margin: auto 0px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .postContainer{
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-top: 40px;
+        }
+    .cupcakeImg{
+        width: auto;
+        height: 40px;
     }
 }

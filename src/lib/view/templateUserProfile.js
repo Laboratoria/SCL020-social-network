@@ -33,43 +33,94 @@ export const userProfile = () => {
     </a>
     </div>
 </div>
-<div class="postMain">
-    <div class="userHeader">
-        <div class="userIcon">
-            <i class="fa-solid fa-circle-user fa-6x"></i>
-        </div>
-        <div class="userName" id="nameHeader">
-            <p>Nombre de usuario<p>
-        </div>
-        <div class="userTitle" id="titleHeader">
-            <h3>Titulo baker o eater</h3>
-        </div>
-    </div>
-    <div class="createPostFlex">
-        <p>Mis Publicaciones:</p>
-        <a href="#/createPost" class="buttonGreen">Nuevo post</a>
-    </div>
-    <div class="postBody">
-        <div class="userNav">
+    <div class="userMain">
+        <div class="userHeader">
             <div class="userIcon">
-                <i class="fa-solid fa-circle-user fa-3x"></i>
+                <i class="fa-solid fa-circle-user fa-6x"></i>
             </div>
-            <div class="userName">
-                <p>Nombre de usuario</p>
+            <div class="userName" id="nameHeader">
+                <p>Nombre de usuario<p>
             </div>
-            <div class="userTitle">
-                <p>Baker</p>
+            <div class="userTitle" id="titleHeader">
+                <p>Titulo baker o eater</p>
             </div>
         </div>
-        <div class="post">
-            <h2> aqui va el post</h2> 
+        <div class="createPostFlex">
+            <p>Mis Publicaciones:</p>
+            <a href="#/createPost" class="buttonGreen">Nuevo post</a>
         </div>
-        <div class="like">
-            <div>
-                <img src="img/cuplike.png" class ="cupcakeImg" alt="cuplike">
+        <div class="postContainer">
+            <div class="postBody">
+                <div class="userNav">
+                    <div class="userIcon">
+                        <i class="fa-solid fa-circle-user fa-3x"></i>
+                    </div>
+                    <div class="userName">
+                        <p>Nombre de usuario</p>
+                    </div>
+                    <div class="userTitle">
+                        <p>Baker</p>
+                    </div>
+                </div>
+                <div class="post">
+                    <h2> aqui va el post</h2> 
+                </div>
+                <div class="like">
+                    <div>
+                        <img src="img/cuplike.png" class ="cupcakeImg" alt="cuplike">
+                    </div>
+                    <div class="pencilIcon">
+                        <a href="#/editPost" <i class="fa-solid fa-pencil fa-2xl"></i> </a>
+                    </div>
+                </div>
             </div>
-            <div class="pencilIcon">
-                <a href="#/editPost" <i class="fa-solid fa-pencil fa-2xl"></i> </a>
+            <div class="postBody">
+                <div class="userNav">
+                    <div class="userIcon">
+                        <i class="fa-solid fa-circle-user fa-3x"></i>
+                    </div>
+                    <div class="userName">
+                        <p>Nombre de usuario</p>
+                    </div>
+                    <div class="userTitle">
+                        <p>Baker</p>
+                    </div>
+                </div>
+                <div class="post">
+                    <h2> aqui va el post</h2> 
+                </div>
+                <div class="like">
+                    <div>
+                        <img src="img/cuplike.png" class ="cupcakeImg" alt="cuplike">
+                    </div>
+                    <div class="pencilIcon">
+                        <a href="#/editPost" <i class="fa-solid fa-pencil fa-2xl"></i> </a>
+                    </div>
+                </div>
+            </div>
+            <div class="postBody">
+                <div class="userNav">
+                    <div class="userIcon">
+                        <i class="fa-solid fa-circle-user fa-3x"></i>
+                    </div>
+                    <div class="userName">
+                        <p>Nombre de usuario</p>
+                    </div>
+                    <div class="userTitle">
+                        <p>Baker</p>
+                    </div>
+                </div>
+                <div class="post">
+                    <h2> aqui va el post</h2> 
+                </div>
+                <div class="like">
+                    <div>
+                        <img src="img/cuplike.png" class ="cupcakeImg" alt="cuplike">
+                    </div>
+                    <div class="pencilIcon">
+                        <a href="#/editPost" <i class="fa-solid fa-pencil fa-2xl"></i> </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
