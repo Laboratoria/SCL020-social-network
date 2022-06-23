@@ -10,13 +10,19 @@
 
 /*      --    HOME VIEW     --      */
 
-.container-home{
+.container-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 568px;
+}
+
+.box-home{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items:center; 
-    width: 320px;
-    height: 568px;
 }
 
 .container-logo-ticket{
@@ -30,7 +36,7 @@
     height: auto;
 }
 
-.container-home p{
+.box-home p{
     text-align: center;
     width: 200px;
     margin-top: 50px;
@@ -763,43 +769,41 @@ body {
     .container-home{
         width: 1280px;
     }
-
+    .box-home {
+        width: 750px;
+        margin: 60px auto;
+        padding: 30px;
+        border-radius: 30px;
+        background: rgba(255, 255, 255, 0.6);
+    }
     .logo-ticket{
         width: 150px;
         height: auto;
     }    
-
     .container-home p{
         margin-top: 10px;
         margin-bottom:20px;
         padding: 20px;
     }
-
     .container-login {
         width: 1280px;
     }
-
     .container-feed {
         margin: 0px auto;
         width: 1280px;
     }
-
     .profile {
         width: 1280px;
     }
-
     .container-logOutConfirm {
         width: 1280px;
     }
-
     .container-age {
         width: 1280px;
     }
-
     .container-signUp {
         width: 1280px;
     }
-
     .container-welcome {
         width: 1280px;
     }
@@ -807,26 +811,31 @@ body {
 }
 
 @media screen and (min-width: 1920px){ /* PANTALLA COMPARTIDA CAMI */
-
     .container-home{
         width: 1920px;
     }
-
+    .box-home {
+        width: 800px;
+        margin-left: 100px auto;
+        padding: 25px;
+        background-color:F5F5F5;
+    
+    }
     .logo-ticket{
         width: 150px;
         height: auto;
-    }    
-
+    }   
+    
     .container-home p{
         margin-top: 10px;
         margin-bottom:20px;
         padding: 20px;
     }
-
+    
     .container-login {
         width: 1920px;
     }
-
+    
     .container-feed {
         margin: 0px auto;
         width: 1920px;
@@ -853,11 +862,3 @@ body {
     }
 }
 
-@media screen and (min-width: 2560px){ /* PANTALLA MAC CAMI ? NO FUNCIONA*/  
-
-    .container-home{
-        width: 2560px;
-        height: 568px;
-    }
-
-}
