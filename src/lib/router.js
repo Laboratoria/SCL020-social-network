@@ -27,6 +27,10 @@ const showTemplate = (hash) => {
     containerRoot.innerHTML = '';
 
     switch (hash) {
+        case '#/intro':
+            containerRoot.appendChild(intro());
+            break;
+
         case '#/register':
             containerRoot.appendChild(register());
             break;

@@ -1,9 +1,10 @@
+import { userSignOut } from "../../firebase/auth.js";
 export const wall = () => {
     const divWall = document.createElement("div")
     const viewWall =
 
         `
-    <div class="wall">
+    <div class="container-wall">
          
       </div>
 
@@ -27,10 +28,21 @@ export const wall = () => {
               <img>
           </footer>
   
-  
+        <button id = "btncerrar" class = "cerrar"><a href='#/intro'> Cerrar Sesión </a> </button>
       </div>
       </div>
       `
     divWall.innerHTML = viewWall;
+    const btnCerrar = divWall.querySelector("#btncerrar")
+    btnCerrar.addEventListener("click", () => {
+
+       // console.log(btnCerrar);
+        
+        // const masking = psw.replace(g, '.') ;
+
+
+        userSignOut();
+
+    })
     return divWall;
 };
