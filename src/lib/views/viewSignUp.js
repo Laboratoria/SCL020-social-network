@@ -1,13 +1,13 @@
 //Este archivo es para registrarse
 export const interpSignUp = () => {
-    const divSignUp = document.createElement("div");
-
-    const formSignUp = //html 
-    `
-    <div id="rootSingnUp" class="containerSignUp">
-      <div>
-        <button id="back" class="buttomSingUp">Atras</button>
-      </div>
+	const divSignUp = document.createElement('div');
+	const formSignUp =
+		//html
+		`
+      <div id="rootSingnUp" class="containerSignUp">
+        <div>
+          <a href="#/" id="back" class="buttonSingUp">Atras</a>
+        </div>
         <form action="" class="containerFormSignUp">
             <h1 class="REGISTRO">Registro de Usuario</h1>
             <input type="text id="mail" placeholder="CORREO ELECTRÓNICO" autofocus class="campotxt" autocomplete="off" required>
@@ -21,7 +21,7 @@ export const interpSignUp = () => {
       </div>
     `;
 
-    divSignUp.innerHTML = formSignUp;
-    
-    return divSignUp;
-  };
+	divSignUp.innerHTML = formSignUp;
+
+	return divSignUp;
+};
