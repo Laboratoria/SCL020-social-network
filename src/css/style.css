@@ -4,13 +4,13 @@
 	box-sizing: border-box;
 }
 
-#screen1 {
+#root {
 	background-image: url(../images/fondo_oscuro_page1.png);
 	background-size: cover;
 	height: 100vh;
 }
 
-#nav_screen1 {
+#nav_registration {
 	display: flex;
 	justify-content: end;
 }
@@ -26,7 +26,7 @@
 	padding-top: 20%; */
 }
 
-.ButtonSingUp {
+.buttonSingUp {
 	background-color: #1b283a;
 	font-family: 'Montserrat classic', sans-serif;
 	color: white;
@@ -37,6 +37,7 @@
 	margin-top: 50px;
 	border-color: #1fc074;
 	border-style: solid;
+	text-decoration: none;
 }
 
 .title_page1 {
@@ -106,20 +107,7 @@
 .containerSignUp {
 	display: flex;
 	justify-content: center;
-	background-color: #281E52;
-}
-
-.buttomSingUp {
-	background-color: #1b283a;
-	font-family: 'Montserrat classic', sans-serif;
-	color: white;
-	font-size: 15px;
-	padding: 5px 10px;
-	border-radius: 7px;
-	margin-right: 40px;
-	margin-top: 50px;
-	border-color: #1fc074;
-	border-style: solid;
+	background-color: #281e52;
 }
 
 .containerFormSignUp {
@@ -164,5 +152,35 @@
 	font-weight: bold;
 }
 
+.container404 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+}
 
-@media (min-width: 450px) {}
+.container404 p {
+	font-size: 30px;
+	font-family: 'Montserrat classic', sans-serif;
+	color: #e7f0f1;
+}
+
+@media (min-width: 450px) {
+	* {
+		color: #f2865f;
+		font-size: 20px !important;
+		background: #1fc074;
+		background-image: none !important;
+	}
+}
+
+@media (min-width: 800px) {
+	* {
+		/* color: #1fc074; */
+		font-size: 30px !important;
+		background: #f2865f;
+		background-image: none !important;
+	}
+}
