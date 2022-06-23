@@ -20,7 +20,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const provider = new GoogleAuthProvider();
 //firebase
-const getFirestore = require(app);
 const db = getFirestore(app);
 //require("firebase/firestore");
 
@@ -40,5 +39,4 @@ export {
   GoogleAuthProvider,
   signOut,
   sendEmailVerification,
-  getFirestore
 };
