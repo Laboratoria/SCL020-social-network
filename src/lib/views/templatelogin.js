@@ -8,11 +8,9 @@ export const login = () => {
             <input type="text" id="contraseña" class= "contraseña" placeholder="Contraseña">
             <button class = "btnContinuar"><a href='#/wall'>Continuar</a></button>
             <button class = "btnregister"><a href='#/register'>Registrar</a></button>
-            <p class = "forgot">¿Has olvidado tu contraseña?</p>
-            <div>
-                <img></img>
-                <button class = "btngoogle"><a href='#/wall'>Iniciar Sesion con Google</a></button>
-            </div>
+            <button class = "forgot">¿Has olvidado tu contraseña?</button>
+            <button class = "btngoogle"><img src= "imagenes/logogoogle.png" class= "logogoogle"></img><a href='#/wall'>Iniciar Sesión</a></button>
+            
         </div>`
     divLogin.innerHTML = viewLogin;
 
