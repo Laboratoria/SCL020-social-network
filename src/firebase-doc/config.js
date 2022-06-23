@@ -1,3 +1,5 @@
+import 'dotenv/config';
+
 export default {
   apiKey: process.env.API_KEY,
   authDomain: process.env.AUTH_DOMAIN,
