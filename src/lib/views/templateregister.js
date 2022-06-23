@@ -3,12 +3,14 @@ import { userRegister } from "../../firebase/auth.js";
 export const register = () => {
     const divRegister = document.createElement("div")
     const viewRegister =
-        `<div>
+        `<div class = container-register>
            
-            <h1>Gluten Free Food</h1>
-           <input type="text" id="email" required placeholder="E-mail">
-           <input type="text" id="contraseña" required placeholder="Contraseña">
-              <button class = "btn">Continuar</button>
+            <h1>Registrate</h1>
+            <img src= "imagenes/logo.png" class= "logo"></img>
+            <input type="text" id="email" class= "email" required placeholder="E-mail">
+            <input type="text" id="contraseña" class= "contraseña" required placeholder="Contraseña">
+            <button class = "btn"><a href='#/wall'>Continuar</a></button>
+           
             
         </div>`
 
