@@ -810,12 +810,46 @@ body {
 
     .container-home{
         width: 1920px;
-        height: 568px;
     }
 
     .logo-ticket{
-        width: 120px;
+        width: 150px;
         height: auto;
+    }    
+
+    .container-home p{
+        margin-top: 10px;
+        margin-bottom:20px;
+        padding: 20px;
+    }
+
+    .container-login {
+        width: 1920px;
+    }
+
+    .container-feed {
+        margin: 0px auto;
+        width: 1920px;
+    }
+
+    .profile {
+        width: 1920px;
+    }
+
+    .container-logOutConfirm {
+        width: 1920px;
+    }
+
+    .container-age {
+        width: 1920px;
+    }
+
+    .container-signUp {
+        width: 1920px;
+    }
+
+    .container-welcome {
+        width: 1920px;
     }
 }
 
