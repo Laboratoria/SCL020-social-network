@@ -2,12 +2,14 @@ export const home = () => {
     const divHome = document.createElement("div");
     const viewHome = //html
     `
-        <div class="container-home">
-            <img class ="img-movie" src="url(src/img/imgMovies.jpg);" alt="img-movie">
+        <div class="container">
+            <img class ="img-movie" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/imgMovie.jpg?raw=true" alt="img-movie">
+            <div class="container-home">
             <div class="containter-logo-ticket"><img class ="logo-ticket" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-removebg-preview.png?raw=true" alt="logo-ticket"></div>
-            <p>¡La mejor app para comentar tus peliculas favoritas!</p>
-            <a href="#/login"><button class="btn">Login</button></a>
-            <a href="#/age"><button class="btn">Sign Up</button></a>
+                <p>¡La mejor app para comentar tus peliculas favoritas!</p>
+                <a href="#/login"><button class="btn">Login</button></a>
+                <a href="#/age"><button class="btn">Sign Up</button></a>
+            </div>
         </div>
     `
     divHome.innerHTML = viewHome;
