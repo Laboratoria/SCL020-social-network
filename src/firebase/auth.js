@@ -1,15 +1,16 @@
 import { showTemplates } from './../lib/router.js';
+//import { collection, addDoc } from "firebase/firestore";
 import {
   auth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
-  GoogleAuthProvider,
+  //GoogleAuthProvider,
   signOut,
   provider,
-  signInWithRedirect,
   signInWithPopup
 } from "./init.js";
+//import { async } from 'regenerator-runtime';
 
 
 // Iniciar Sesión
@@ -38,32 +39,7 @@ const signup = async (email, password) => {
     throw error.message;
   }
 };
-//ORIGINAL
-//Regristro con google
-// const googleLogin = () => {
-//   signInWithRedirect(auth, provider)
-//   .then((result) => {
-//     // This gives you a Google Access Token. You can use it to access Google APIs.
-//     const credential = GoogleAuthProvider.credentialFromResult(result);
-//     const token = credential.accessToken;
-//     console.log(token)
-//   // The signed-in user info.
-//     const user = result.user;
-//     console.log('user', user)
-//   }).catch((error) => {
-//     console.log(error)
-//     // Handle Errors here.
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-//     // The email of the user's account used.
-//     const email = error.customData.email;
-//     // The AuthCredential type that was used.
-//     const credential = GoogleAuthProvider.credentialFromError(error);
-//     // ...
-//   });
-// }
 
-//Fer
 const googleLogin = async () => {
   try {
     const response = await signInWithPopup(auth, provider);
@@ -75,32 +51,6 @@ const googleLogin = async () => {
     throw error.message;
   }
 };
-
-// const googleLogin = () => {
-//   signInWithPopup(auth, provider)
-//   .then((result) => {
-//     // This gives you a Google Access Token. You can use it to access the Google API.
-//   const credential = GoogleAuthProvider.credentialFromResult(result);
-//   const token = credential.accessToken;
-//     // The signed-in user info.
-//   const user = result.user;
-//   console.log("user", user)
-//     // ...
-//   }).catch((error) => {
-//     // Handle Errors here.
-//   const errorCode = error.code;
-//   const errorMessage = error.message;
-//     // The email of the user's account used.
-//   const email = error.customData.email;
-  
-//     // The AuthCredential type that was used.
-//   const credential = GoogleAuthProvider.credentialFromError(error);
-//   console.log("error", errorMessage)
-//     // ...
-//   });    
-// }
-
-
 
 // Cerrar sesion
 const logout = async () => {
@@ -114,6 +64,18 @@ const logout = async () => {
   }
 };
 
-export { login, logout, signup, googleLogin, auth, onAuthStateChanged }; /* */
+
+const data = async () =>{
+  try {
+    const docRef = await addDoc(collection(db, "users"), {
+      userName: "Ada",
+      dateOfBirth: "Lovelace",
+    });
+      console.log("Document written with ID: ", docRef.id);
+  } catch (e) {
+      console.error("Error adding document: ", e);
+  }
+}
+export { login, logout, signup, googleLogin, auth, onAuthStateChanged, data}; /* */
 
 //Iniciar sesion con google

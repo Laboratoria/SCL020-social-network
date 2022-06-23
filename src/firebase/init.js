@@ -15,18 +15,21 @@ import {
   signInWithPopup,
 } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js";
 
-// Initialize Firebase
+// Initialize Firebase autenticacion
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const provider = new GoogleAuthProvider();
-// const db = getFirestore(app);
-// signInWithRedirect(auth, provider);
+//firebase
+const getFirestore = require(app);
+const db = getFirestore(app);
+//require("firebase/firestore");
+
 
 
 export {
   auth,
   app,
-  // db,
+  db,
   signInWithPopup,
   provider,
   createUserWithEmailAndPassword,
@@ -37,4 +40,5 @@ export {
   GoogleAuthProvider,
   signOut,
   sendEmailVerification,
+  getFirestore
 };
