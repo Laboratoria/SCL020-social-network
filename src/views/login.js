@@ -5,7 +5,7 @@ import logoUrl from '../img/brand-logo.png';
 const Login = () => {
   const template = `
     <img src='${logoUrl}' id="logo" class="logo">
-    <h2 class="title-form">Sign In or Register</h2>
+    <h2 class="title-form">JunkTube</h2>
     <form id="form" class="form">
         <div id="user-info" >
             <div class="email-info">

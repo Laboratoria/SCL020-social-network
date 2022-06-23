@@ -6,7 +6,9 @@ import logoUrl from '../img/brand-logo.png';
 const Register = () => {
   const template = `
   <img src='${logoUrl}' id="logo" class="logo">
-  <h2 class="signup-tittle">Create your account</h2>
+  <h2 class="signup-tittle">JunkTube</h2>
+  <p>Create your account</p>
+  <br>
   <form id="form1">
       <div>
           <label for="name">Name: </label>

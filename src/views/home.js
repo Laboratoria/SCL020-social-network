@@ -40,37 +40,6 @@ const Home = () => {
     middle.innerHTML = postStructure;
     container.append(Header(), middle, Footer());
 
-    const editBtn = container.querySelectorAll('.btn-Edit');
-    const modal = container.querySelectorAll('.dialog-modal');
-
-    // Open Modal
-    editBtn.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        modal.forEach((mod) => {
-          if (mod.dataset.id === btn.dataset.id) {
-            mod.showModal();
-
-            // Updating Post
-            const doneBtn = mod.querySelector('#done-button');
-            doneBtn.addEventListener('click', async () => {
-              const newReview = mod.querySelector('#new-review').value;
-              const newMovie = mod.querySelector('#new-movie').value;
-              const newCountry = mod.querySelector('#new-country').value;
-              await editPost(mod.dataset.id, newReview, newMovie, newCountry);
-            });
-          }
-        });
-      });
-    });
-
-    // Deleting Post
-    const deleteBtn = container.querySelectorAll('.btn-Delete');
-    deleteBtn.forEach((btn) => {
-      btn.addEventListener('click', async () => {
-        await deletePost(btn.dataset.id);
-      });
-    });
-
     // Liking a Post
     const likeBtn = container.querySelectorAll('.btn-like');
     likeBtn.forEach((btn) => {
