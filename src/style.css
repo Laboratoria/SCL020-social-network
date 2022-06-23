@@ -761,6 +761,18 @@ body {
         width: 1280px;
         height: 568px;
     }
+
+    .logo-ticket{
+        width: 150px;
+        height: auto;
+    }    
+
+    .container-home p{
+        margin-top: 10px;
+        margin-bottom:20px;
+        padding: 20px;
+    }
+
 }
 
 @media screen and (min-width: 1920px){ /* PANTALLA COMPARTIDA CAMI */
