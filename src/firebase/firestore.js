@@ -19,21 +19,18 @@ import { db, auth } from './init';
 
 // Creating Posts collection and adding new docs to collection
 const createPost = async (review, movie, country) => {
-  let userName = auth.currentUser.displayName;
-  let userId = auth.currentUser.uid;
-  let photo = auth.currentUser.photoURL;
-
+  
   await addDoc(collection(db, 'posts'), {
-    userName,
-    userId,
+    userName: auth.currentUser.displayName,
+    userId: auth.currentUser.uid,
     review,
     movie,
     country,
     likesArr: [],
     likesSum: 0,
     date: Timestamp.fromDate(new Date()),
-    photo,
-  });
+    photo: auth.currentUser.photoURL
+  })
 };
 
 // Reading Posts
@@ -123,4 +120,5 @@ export {
   likingPost,
   mapPosts,
   likedPosts,
+  auth,
 };

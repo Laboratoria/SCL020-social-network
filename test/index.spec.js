@@ -130,4 +130,8 @@ describe('Tests for the validateState function', () => {
     validateState(next, pathname);
     expect(onAuthStateChanged).toHaveBeenCalled();
   });
+  it('it should call onAuthStateChanged function', () => {
+    validateState(next, pathname);
+    expect(onAuthStateChanged).toHaveBeenCalledWith(auth, expect.any(Function));
+  });
 });
