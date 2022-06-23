@@ -107,12 +107,12 @@ input{
 }
 
 .messageInit{
-    border-radius: 17px;
+    border-radius: 16px;
     background: #F34573;
     text-align: center;
     color: white;
     line-height: 0.5; 
-    width: 385px; 
+    width: 357px; 
     height: 145px;
     font-size: 17px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
