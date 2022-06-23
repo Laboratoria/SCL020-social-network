@@ -10,10 +10,6 @@
 
 /*      --    HOME VIEW     --      */
 
-.container {
-    display: flex;
-}
-
 .container-home{
     display: flex;
     flex-direction: column;
@@ -49,7 +45,7 @@
     padding: 10px 20px;
     letter-spacing: 3px;
     border: none;
-    margin-top: 20px;
+    margin-top: 5px;
     font-weight: 400;
     width: 200px;
 }
@@ -410,9 +406,10 @@
 .container-feed {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 320px;
     height: 568px;
-    /* border: 2px solid green; */
 }
 
 .nav-burguer-search{
@@ -420,10 +417,9 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: auto;
+    width: 320px;
     height: 70px;
     margin: 0px 5px;
-    /* border: 5px solid red; */
 }
 
 .menu-feed{
@@ -575,6 +571,9 @@
 /*      --    PROFILE VIEW     --      */
 
 .profile {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     width: 320px;
     height: 568px;
 }
@@ -763,7 +762,6 @@ body {
 
     .container-home{
         width: 1280px;
-        height: 568px;
     }
 
     .logo-ticket{
@@ -777,11 +775,35 @@ body {
         padding: 20px;
     }
 
-    .img-movie {
-        width: 100px;
-        height: auto;
+    .container-login {
+        width: 1280px;
     }
 
+    .container-feed {
+        margin: 0px auto;
+        width: 1280px;
+    }
+
+    .profile {
+        width: 1280px;
+    }
+
+    .container-logOutConfirm {
+        width: 1280px;
+    }
+
+    .container-age {
+        width: 1280px;
+    }
+
+    .container-signUp {
+        width: 1280px;
+    }
+
+    .container-welcome {
+        width: 1280px;
+    }
+    
 }
 
 @media screen and (min-width: 1920px){ /* PANTALLA COMPARTIDA CAMI */
