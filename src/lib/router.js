@@ -6,26 +6,21 @@ import { userProfile } from './view/templateUserProfile.js';
 import { searchPost } from './view/templateSearch.js';
 import { editPost } from './view/templateEditPost.js';
 import { newPost } from './view/templateCreatePost.js';
-import { auth, onAuthStateChanged, logout } from '../firebase/auth.js'
+import { auth, onAuthStateChanged } from '../firebase/auth.js'
 
 export const showTemplates = (hash) => {
     const containerRoot = document.querySelector('#root');
     containerRoot.innerHTML = '';
 
     onAuthStateChanged(auth, (user) => {
-    console.log(user)
-
         if (!user && hash === '#/createNewUser') {
             containerRoot.appendChild(createUser());
             return
         }
-        if (!user) {
-            containerRoot.appendChild(logInTemplate());
+        else if (!user) {
+            containerRoot.appendChild(logInTemplate())
         } else {
             switch (hash) {
-                case '':
-                    containerRoot.appendChild(logInTemplate());
-                    break;
                 case '#/home':
                 containerRoot.appendChild(home());
                     break;
