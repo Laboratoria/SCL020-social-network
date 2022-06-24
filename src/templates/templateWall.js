@@ -1,6 +1,6 @@
 import { creatingNewPost, gettingAllPublications } from '../firebase-doc/firestore.js';
 import { logOut } from '../firebase-doc/authentication.js';
-import { auth } from '../firebase-doc/firebase.js';
+import { auth, getDocs, collection, db } from '../firebase-doc/firebase.js';
 import { changeRoute } from '../lib/router.js';
 
 export const wall = () => {
@@ -35,19 +35,21 @@ export const wall = () => {
     } catch (error) { return console.log('error')}
     });
 
-    const allPublications = () => {
-    publicationsContainer = container.querySelector('#wall');
-    const publicationFrame = '';
-    publications = doc.Data();
-    console.log(doc.Data())
-    publications.forEach((doc) => {
+    const allPublications = async () => {
+    let publicationsContainer = container.querySelector('#wall');
+    let publicationFrame = '';
+    /*let publications = doc.Data();
+    console.log(doc.Data())*/
+    gettingAllPublications().then(data => {
+      console.log(data)
+      publicationFrame = data.forEach((doc) => {
       publicationFrame += `
       <div class="post">
         <div class='post-header'>
-          <p class='user-info'><img class="user-photo" src="${publications.photo}">
-          <span class="user-name">${publications.name} posted: </span> </p>
-          <p class="movie-review">${publications.comment}</p>
-          <p class="date">${publications.date.toDate().toLocaleString()}</p>
+          <p class='user-info'><img class="user-photo" src="${doc?.Photo}">
+          <span class="user-name">${doc?.Name} publicó: </span> </p>
+          <p class="comment">${doc?.Comment}</p>
+          <p class="date">${doc?.Time.toDate().toLocaleString()}</p>
         </div>
         <div class="post-footer">
           <button class="btn-like" data-id="${doc.id}">
@@ -57,10 +59,13 @@ export const wall = () => {
       `;
 
     })
+  });
+    console.log(publicationFrame)
     publicationsContainer.innerHTML = publicationFrame;
     console.log('sí hice mi función chicas!')
     return allPublications;
   }
+  allPublications();
 
   
     const buttonLogOut = container.querySelector('#logOut');
