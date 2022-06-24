@@ -13,7 +13,7 @@ export const registration = () => {
       <input class="createPassword" type="password" placeholder="Crea tu contraseña">
       <button class="userRegistration" type="submit"><strong>REGISTRARME</strong></button>
       </form>
-      <p class= "pregunta"><strong>¿Ya tienes cuenta?</strong></p>
+      <p class= "question"><strong>¿Ya tienes cuenta?</strong></p>
       <a href="#/home" class = "registerlogIn"><strong>INICIAR SESIÓN</strong></a>
       
     </div>

@@ -25,9 +25,7 @@ const creatingNewUser = async (userName, email, password) => {
        photoURL : "https://png.pngtree.com/png-clipart/20191121/original/pngtree-user-icon-isolated-on-abstract-background-png-image_5150068.jpg",
       
       });
-     console.log(prueba1)
     const prueba2 = await sendEmailVerification(userData.user);
-    console.log(prueba2);
     return userData.user;
   } catch (error) {
     // console.log(error);
@@ -52,7 +50,6 @@ const logIn = async (email, password) => {
 const signingInWithgoogle = async () => {
   try {
     const userInWithGoogle = await signInWithRedirect(auth, provider);
-    console.log(userInWithGoogle);
     return userInWithGoogle.user;
   } catch (error) {
     console.log(error);
