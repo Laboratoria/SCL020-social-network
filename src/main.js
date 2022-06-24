@@ -8,11 +8,10 @@ window.addEventListener('load', () =>{
 })
 
 const init = () => {
-    
-    window.addEventListener('hashchange', () =>{
+  window.addEventListener('hashchange', () =>{
     document.getElementById('root').innerHTML = home();
     changeRoute(window.location.hash)
-    })
+ })
     changeRoute(window.location.hash)
 }
 
