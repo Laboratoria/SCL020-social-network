@@ -1,4 +1,4 @@
-import { saveTask, getTask } from "../../firebase/firestore.js";
+import { saveTask, getTask, onGetTask, deleteTask} from "../../firebase/firestore.js";
 
 export const profile = () => {
     const divProfile = document.createElement("div");
@@ -15,7 +15,6 @@ export const profile = () => {
                         </div>
                     </a>
                 </div> 
-
                 <div class="search-bar">
                     <div class="search-box">
                         <input class="search-input"type="text" name="" placeholder="Search...">
@@ -52,61 +51,43 @@ export const profile = () => {
     const formPost = divProfile.querySelector(".formPost");
     const taskContainer = divProfile.querySelector("#feed-post");
 
-    // window.addEventListener("DOMContentLoaded", async () => {
-    //     const querySnapshot = await getTask()
-
-    //     let html = "";
-
-    //     querySnapshot.forEach(doc => {
-    //         const task = doc.data();
-    //         html += //html 
-    //         `
-    //             <div class="p-post">
-    //                 <button class="btn-edit">Edit</button>
-    //                 <a href="#/deleteComment"><button class="btn-delete">Delete</button></a>
-    //                 <p>${task.contentPost}</p>
-    //             </div>
-    //         `
-    //         console.log(task.contentPost)
-    //         taskContainer.innerHTML = html
-            
-    //     });
-    // })
-
 
     formPost.addEventListener("submit", async(e) => {
         e.preventDefault();
-        debugger
-        console.log("submit");
-
+        // console.log("submit");
         const contentPost = formPost["inputForm"].value;
         saveTask(contentPost);
         formPost.reset(); 
 
-        const querySnapshot = await getTask()
-        console.log(querySnapshot)
-
-        let html = "";
-
-        querySnapshot.forEach(doc => {
-            console.log(doc);
-            const task = doc.data();
-            html += //html 
-            `
-                <div class="p-post">
-                    <button class="btn-edit">Edit</button>
-                    <a href="#/deleteComment"><button class="btn-delete">Delete</button></a>
-                    <p>${task.contentPost}</p>
-                </div>
-            `
-            console.log(task.contentPost)
-            taskContainer.innerHTML = html
+        onGetTask((querySnapshot) => {
+            let html = "";
+            querySnapshot.forEach(doc => {
+                // console.log(doc);
+                const task = doc.data();
+                html += //html 
+                `
+                    <div class="p-post">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete" data-id="${doc.id}" >Delete</button>
+                        <p>${task.contentPost}</p>
+                    </div>
+                `;
+            });
+            taskContainer.innerHTML = html;
+            
+            const btnsDelete = taskContainer.querySelectorAll(".btn-delete");
+            btnsDelete.forEach( btn => {
+                btn.addEventListener("click", async () => {
+                    //e.preventDefault();
+                    const deleteConfirm = confirm("¿Are you sure that you want to delete this post?");
+                    if(deleteConfirm === true) {
+                        await deleteTask(btn.dataset.id)
+                        alert("Post has been deleted");
+                    }
+                })
+            })
             
         })
-    })
-
-
-
-    
+    })    
     return divProfile;
 }
