@@ -769,13 +769,16 @@ body {
 
     .container-home{
         width: 1280px;
+        background-image: url(https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/foto%20home.jpg?raw=true);
+        background-size: 1280px 800px;
     }
     .box-home {
         width: 750px;
         margin: 60px auto;
         padding: 30px;
         border-radius: 30px;
-        background: rgba(255, 255, 255, 0.6);
+        background: rgba(172, 136, 186, 0.95);
+        
     }
     .logo-ticket{
         width: 150px;
