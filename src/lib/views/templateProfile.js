@@ -86,23 +86,23 @@ export const profile = () => {
         const querySnapshot = await getTask()
         console.log(querySnapshot)
 
-        // let html = "";
+        let html = "";
 
-        // querySnapshot.forEach(doc => {
-        //     console.log(doc);
-        //     const task = doc.data();
-        //     html += //html 
-        //     `
-        //         <div class="p-post">
-        //             <button class="btn-edit">Edit</button>
-        //             <a href="#/deleteComment"><button class="btn-delete">Delete</button></a>
-        //             <p>${task.contentPost}</p>
-        //         </div>
-        //     `
-        //     console.log(task.contentPost)
-        //     taskContainer.innerHTML = html
+        querySnapshot.forEach(doc => {
+            console.log(doc);
+            const task = doc.data();
+            html += //html 
+            `
+                <div class="p-post">
+                    <button class="btn-edit">Edit</button>
+                    <a href="#/deleteComment"><button class="btn-delete">Delete</button></a>
+                    <p>${task.contentPost}</p>
+                </div>
+            `
+            console.log(task.contentPost)
+            taskContainer.innerHTML = html
             
-        // })
+        })
     })
 
 

@@ -5,5 +5,5 @@ export const saveTask = contentPost => {
 }
 
 export const getTask = () => {
-    getDocs(collection(db, "task"))
+    return getDocs(collection(db, "task"))
 }

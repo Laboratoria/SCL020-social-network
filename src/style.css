@@ -670,6 +670,7 @@
     border-radius: 15px;
     margin: 0px auto;
     border: none;
+    margin-bottom: 10px;
 }
 
 .feed-post button {
