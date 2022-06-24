@@ -13,7 +13,7 @@ export const showTemplates = (hash) => {
     containerRoot.innerHTML = '';
 
     onAuthStateChanged(auth, (user) => {
-    console.log(user) // */
+    console.log(user)
 
         if (!user && hash === '#/createNewUser') {
             containerRoot.appendChild(createUser());
@@ -43,7 +43,7 @@ export const showTemplates = (hash) => {
                     break;
                 default:
                 containerRoot.appendChild(error404Template());
-             }
+            }
         }
     })
 }
