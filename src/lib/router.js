@@ -68,34 +68,34 @@ export const showTemplate = (hash)=>{
             containerRoot.appendChild(welcome());
             break;    
         case "#/feed":
-            if (obs()){
+            /*if (obs()){*/
                 containerRoot.appendChild(feed());
-            } else { containerRoot.appendChild(home())
-                    alert("You are not signed it") }
+            /*} else { containerRoot.appendChild(home())
+                    alert("You are not signed it") }*/
             break;
         case "#/menu":
-            if (obs()){
+            /*if (obs()){*/
                 containerRoot.appendChild(menu());
-            } else { containerRoot.appendChild(home())
-                    alert("You are not signed it") }
+            /*} else { containerRoot.appendChild(home())
+                    alert("You are not signed it") }*/
             break; 
         case "#/logoutConfirmation":
-             if (obs()){
+            /*if (obs()){*/
                 containerRoot.appendChild(logoutConfirmation());
-            } else { containerRoot.appendChild(home())
-                     alert("You are not signed in") }
+            /*} else { containerRoot.appendChild(home())
+                    alert("You are not signed in") }*/
             break;   
         case "#/profile":
-             if (obs()){
+            /*if (obs()){*/
                 containerRoot.appendChild(profile());
-            } else { containerRoot.appendChild(home())
-                    alert("You are not signed in") }
+            /*} else { containerRoot.appendChild(home())
+                    alert("You are not signed in") }*/
             break;
         case "#/deleteComment":
-             if (obs()){
+            /*if (obs()){*/
                 containerRoot.appendChild(deleteComment());
-             } else { containerRoot.appendChild(home())
-                     alert("You are not signed in") }
+            /*} else { containerRoot.appendChild(home())
+                    alert("You are not signed in") }*/
             break; 
         default:
             containerRoot.appendChild(err404());                             

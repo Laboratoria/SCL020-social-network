@@ -7,7 +7,7 @@ export const login = () => {
     const viewLogin = //html 
     `
         <div class="container-login"> 
-            <div class ="sub-container-login">
+            <div class ="sub-container">
                 <div class="containter-logo-ticket"><img class ="logo-ticket" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-removebg-preview.png?raw=true" alt="logo-ticket"></div>
                 <h2>Login to your account</h2>
                 <form>
