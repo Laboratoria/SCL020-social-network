@@ -18,7 +18,7 @@
     height: 568px;
 }
 
-.box-home{
+.sub-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,7 +36,7 @@
     height: auto;
 }
 
-.box-home p{
+.sub-container p{
     text-align: center;
     width: 200px;
     margin-top: 50px;
@@ -65,7 +65,7 @@
     height: 568px;
 }
 
-.sub-container-login{
+.sub-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -89,20 +89,20 @@
     height: auto;
 }
 
-.sub-container-login h2{
+.sub-container h2{
     padding: 5px 20px;
     background-color: lightgray;
     border-radius: 30px;
     margin-bottom: 30px;
 }
 
-.sub-container-login label{
+.sub-container label{
     display: flex;
     justify-content: center;
     text-align: center;
 }
 
-.sub-container-login input{
+.sub-container input{
     text-decoration: none;
     text-align: center;
     border: none;
@@ -187,45 +187,6 @@
     height: 568px;
 }
 
-.sub-container-signUp {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center; 
-    margin: 20px;
-    height: 530px;
-    width: 310px;
-    background-color: #FFFFFF;
-    border-radius: 30px;
-}
-
-.sub-container-signUp h2{
-    font-size: 20px;
-    padding: 5px 20px;
-    background-color: lightgray;
-    border-radius: 30px;
-    margin-bottom: 30px;
-}
-
-.sub-container-signUp label{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-
-.sub-container-signUp input{
-    text-decoration: none;
-    text-align: center;
-    border: none;
-    background-color: lightgray;
-    letter-spacing: 5;
-    font-size: medium;
-    color: black;
-    width: 225px;
-    height: 25px;
-    border-radius: 30px;
-    margin: 5px;
-}
 
 .btn-create{
     border-radius: 15px;
@@ -264,18 +225,6 @@
     align-items: center;
     width: 320px;
     height: 568px;
-}
-
-.sub-container-welcome {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center; 
-    margin: 20px;
-    height: 530px;
-    width: 310px;
-    background-color: #FFFFFF;
-    border-radius: 30px;
 }
 
 .container-p {
@@ -426,6 +375,10 @@
     width: 320px;
     height: 70px;
     margin: 0px 5px;
+}
+
+.nav-web {
+    display: none;
 }
 
 .menu-feed{
@@ -772,13 +725,69 @@ body {
         background-image: url(https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/foto%20home.jpg?raw=true);
         background-size: 1280px 800px;
     }
-    .box-home {
+
+    .sub-container {
         width: 750px;
         margin: 60px auto;
         padding: 30px;
+        background: rgba(255, 255, 255, 0.6);
+    }
+
+    .nav-burguer-search {
+        display: none;
+    }
+
+    .nav-web {
+        display: block;
+        background-color: white;
+        width: 1280px;
+        height: 60px;
+        margin: 0px auto;
+    }
+
+    .sub-nav-web {
+        width: 700px;
+        height: 60px;
+        border: 1px solid green;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: 0px auto;
+    }
+
+    .logo-navweb {
+        width: 80px;
+        height: auto;
+    }
+
+    .search-bar {
+        margin-left: 250px;
+    }
+
+    .profile-web {
+        margin: 0px 10px;
+    }
+
+    .feed-box {
+        width: 750px;
+        height: 520px;
+        margin: 20px 0px 0px 0px;
         border-radius: 30px;
         background: rgba(172, 136, 186, 0.95);
     }
+
+    .movies {
+        width: 750px;
+        height: 80px;
+        margin: 0px;
+        border-radius: 30px 30px 0px 0px;
+        background: rgba(117, 142, 227, 1);
+    }
+
+    .post {
+        background: rgba(141, 165, 234, 1);
+    }
+
     .logo-ticket{
         width: 150px;
         height: auto;
@@ -792,8 +801,9 @@ body {
         width: 1280px;
     }
     .container-feed {
-        margin: 0px auto;
+        margin: 0px;
         width: 1280px;
+        height: auto;
     }
     .profile {
         width: 1280px;
@@ -813,7 +823,30 @@ body {
     
 }
 
-@media screen and (min-width: 1920px){ /* PANTALLA COMPARTIDA CAMI */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @media screen and (min-width: 1920px){ PANTALLA COMPARTIDA CAMI
     .container-home{
         width: 1920px;
     }
@@ -863,5 +896,5 @@ body {
     .container-welcome {
         width: 1920px;
     }
-}
+} */
 
