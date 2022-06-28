@@ -12,8 +12,8 @@ import {
 
 //Crea nueva cuenta de usuario
 export const signup = async (auth, email, password) => {
-    console.log(email);
-    console.log(password);
+    // console.log(email);
+    // console.log(password);
     try {
         const createUser = await createUserWithEmailAndPassword(auth, email, password);
         //console.log(createUser);
@@ -22,7 +22,7 @@ export const signup = async (auth, email, password) => {
         //return userCredential;
     }
     catch (error) {
-        console.log(error.message);
+        // console.log(error.message);
         if(error == 'FirebaseError: Firebase: Error (auth/invalid-email).'){
             alert('Email Invalido')
         }
@@ -30,7 +30,7 @@ export const signup = async (auth, email, password) => {
             alert('Contraseña Invalido')
         }
         else {
-            console.log("no funciona");
+            console.log("no funciona");         /* NO LO SAQUE*/ 
         }
         throw error.message;
     }
@@ -42,10 +42,11 @@ export const logIn = async(email,password) => {
     try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         showTemplate("#/feed");
-        console.log("inicio de sesion correcto");
+            console.log("inicio de sesion correcto"); /* NO LO SAQUE*/
+            console.log(userCredential);
         return userCredential;
     } catch(error){
-        console.log("Error al iniciar sesion")
+            console.log("Error al iniciar sesion"); /* NO LO SAQUE*/
         throw error.message
     }
 }
@@ -63,11 +64,12 @@ export const signInGoogle = () => {
       // The signed-in user info.
     const user = result.user;
 
-    console.log("user", user)
+    // console.log("user", user);
+    showTemplate("#/feed");
       // ...
     }).catch((error) => {
       // Handle Errors here.
-    console.log(error)
+    console.log(error);                       /* NO LO SAQUE*/
     const errorCode = error.code;
     const errorMessage = error.message;
       // The email of the user's account used.
@@ -75,7 +77,7 @@ export const signInGoogle = () => {
     
       // The AuthCredential type that was used.
     const credential = GoogleAuthProvider.credentialFromError(error);
-    console.log("error", errorMessage)
+    console.log("error", errorMessage)        /* NO LO SAQUE*/
       // ...
     });  
 }
@@ -87,7 +89,7 @@ export const logout = async () => {
     try {
         const response = await signOut(auth);
         showTemplate("");
-        console.log("sesion cerrada");
+        console.log("sesion cerrada");        /* NO LO SAQUE*/
         return response;
     }   
     catch(error) {
@@ -95,6 +97,13 @@ export const logout = async () => {
     }
 }
 
+export const obs = () => {
+    if(auth.currentUser){
+        return true;
+    }else {
+        return false
+    }
+}
 
 /* OBSERVADOR */
 
@@ -112,11 +121,3 @@ export const logout = async () => {
 //         }
 //     })
 // }
-
-export const obs = () => {
-    if(auth.currentUser){
-        return true;
-    }else {
-        return false
-    }
-}

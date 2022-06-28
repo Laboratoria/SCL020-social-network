@@ -16,9 +16,11 @@ export const login = () => {
                     <div class="btn-access">
                         <a id="loginGoogle">google</a>
                     </div> 
+                    <p>You are not registered yet?<a href="#/age">Create Account</a></p>
                     <input type="button" value="Login" id="btn" class="btn">
-                    <input type="button" value="Back" class="btn" onClick="history.go(-1);">
                 </form>
+
+            
             </div>
         </div>     
     `
@@ -28,6 +30,7 @@ export const login = () => {
     const btnGoogle = divLogin.querySelector("#loginGoogle")
     btnGoogle.addEventListener("click", ()=> {
         signInGoogle()
+
     })
 
     const btn = divLogin.querySelector("#btn")
@@ -36,6 +39,7 @@ export const login = () => {
         const email = divLogin.querySelector("#email").value;
         const password = divLogin.querySelector("#password").value;
         logIn(email, password);
+        
         
     })
     return divLogin;

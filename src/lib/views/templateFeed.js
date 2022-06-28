@@ -6,7 +6,7 @@ export const feed = () => {
         <main class="container-feed">
                 <nav class="nav-web">
                     <div class="sub-nav-web">
-                        <div class="containter-logo-ticket"><img class ="logo-navweb" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-removebg-preview.png?raw=true" alt="logo-ticket"></div>
+                        <a href="#/feed" class="containter-logo-ticket"><img class ="logo-navweb" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-removebg-preview.png?raw=true" alt="logo-ticket"></a>
                         <div class="search-bar">
                             <div class="search-box">
                                 <input class="search-input"type="text" name="" placeholder="Search...">
@@ -54,7 +54,7 @@ export const feed = () => {
                             <p>@User_name</p>
                         </div>
                         <p class="post-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, modi nam!</p>
-                        <button class="btn-popCorn">🍿</button>
+                        <button class="btn-popCorn">🍿</button>s
                     </div>
                     <div class="post">
                         <div class="user-info">
@@ -69,9 +69,41 @@ export const feed = () => {
         </main>
     `
     divFeed.innerHTML = viewFeed;
+
+    const searchButton = divFeed.querySelector(".search-button")
+    const search = divFeed.querySelector(".search-input").value;
+    const user = "hola";
+
+        searchButton.addEventListener("click", () => {
+            console.log("funciona");
+            console.log(search);
+            const textBarFunc = (search, user) => {
+                if(search.includes(user)) {
+                    console.log("si funciona");
+                }
+                else {
+                    console.log("ño")
+                }
+                // const filteredPost = user.filter(element => {
+                // return (
+                //     element.user.toLowerCase().includes(search)
+                // );
+            }
+            textBarFunc(search, user);
+        });
+
+
     return divFeed;
 }
 
 
 
+// export const textBarFunc = (myData, searchString) => {
+//     const filteredCharaters = myData.filter(character => {
+//     return (
+//         character.name.toLowerCase().includes(searchString)
+//     );
+// });
+// return showChar(filteredCharaters);
+// }
 

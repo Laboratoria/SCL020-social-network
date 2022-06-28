@@ -9,7 +9,7 @@ const init = ()=> {
 
     window.addEventListener("hashchange",()=>{
         
-        console.log (window.location.hash);
+        // console.log (window.location.hash);
         showTemplate(window.location.hash);
     })
 }
