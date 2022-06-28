@@ -10,68 +10,73 @@ import { menu } from "./views/templateMenu.js";
 import { profile } from "./views/templateProfile.js";
 import { signUp } from "./views/templateSignUp.js";
 import { welcome } from "./views/templateWelcome.js";
-import { obs } from "../firebase/auth.js";
+
+import { onAuthStateChanged } from "../firebase/init.js";
+import { auth } from "../firebase/init.js";
 
 
 export const showTemplate = (hash)=>{
+    
     const containerRoot = document.getElementById("root");
     containerRoot.innerHTML = "";
     
-    switch(hash){
-        case "#/login":
+    onAuthStateChanged(auth, (user)=>{
+        if (!user && hash === ""){
+            containerRoot.appendChild(home());
+        }
+        else if (!user && hash === "#/login"){
             containerRoot.appendChild(login());
-            break;
-        case "#/":
-            containerRoot.appendChild(home());
-            break;
-        case "":
-            containerRoot.appendChild(home());
-            break;
-        case "#/age":
-            containerRoot.appendChild(age());
-            break;       
-        case "#/ageRedirect":
+        }
+        else if (!user && hash === "#/age"){
+            containerRoot.appendChild(age()); 
+        }
+        else if (!user && hash === "#/ageRedirect"){
             containerRoot.appendChild(ageRedirect());
-            break;
-        case "#/sign-up":
+        }
+        else if (!user && hash === "#/sign-up"){
             containerRoot.appendChild(signUp());
-            break;     
-        case "#/welcome":
+        }
+        else if (!user && hash === "#/welcome"){
             containerRoot.appendChild(welcome());
-            break;    
-        case "#/feed":
-            if (obs()){
-                containerRoot.appendChild(feed());
-            } else { containerRoot.appendChild(home())
-                    alert("You are not signed it") }
-            break;
-        case "#/menu":
-            if (obs()){
-                containerRoot.appendChild(menu());
-            } else { containerRoot.appendChild(home())
-                    alert("You are not signed it") }
-            break; 
-        case "#/logoutConfirmation":
-            if (obs()){
-                containerRoot.appendChild(logoutConfirmation());
-            } else { containerRoot.appendChild(home())
-                    alert("You are not signed in") }
-            break;   
-        case "#/profile":
-            if (obs()){
-                containerRoot.appendChild(profile());
-            } else { containerRoot.appendChild(home())
-                    alert("You are not signed in") }
-            break;
-        case "#/deleteComment":
-            if (obs()){
-                containerRoot.appendChild(deleteComment());
-            } else { containerRoot.appendChild(home())
-                    alert("You are not signed in") }
-            break; 
-        default:
-            containerRoot.appendChild(err404());                             
-    }
+        }
+        else if (!user){
+            containerRoot.appendChild(home());
+        }
+        else {
+
+        switch(hash){
+            case "#/login":  
+                containerRoot.appendChild(login());
+                break;
+            case "":
+                containerRoot.appendChild(home());
+                break;
+            case "#/sign-up":
+                containerRoot.appendChild(signUp());
+                break;     
+            case "#/welcome":
+                containerRoot.appendChild(welcome());
+                break;    
+            case "#/feed":
+                    containerRoot.appendChild(feed());
+                break;
+            case "#/menu":
+                    containerRoot.appendChild(menu());
+                break; 
+            case "#/logoutConfirmation":
+                    containerRoot.appendChild(logoutConfirmation());
+                break;   
+            case "#/profile":
+                    containerRoot.appendChild(profile());
+                break;
+            case "#/deleteComment":
+                    containerRoot.appendChild(deleteComment());
+                break; 
+            default:
+                containerRoot.appendChild(err404());                             
+                }
+        }
+    })
 }
 
 

@@ -7,7 +7,6 @@ import {
     signInWithEmailAndPassword, 
     signInWithPopup,
     GoogleAuthProvider, 
-    onAuthStateChanged,
     signOut } from "./init.js";
 
 //Crea nueva cuenta de usuario
@@ -46,7 +45,7 @@ export const logIn = async(email,password) => {
             console.log(userCredential);
         return userCredential;
     } catch(error){
-            console.log("Error al iniciar sesion"); /* NO LO SAQUE*/
+        console.log("Error al iniciar sesion"); /* NO LO SAQUE*/
         throw error.message
     }
 }
@@ -97,14 +96,6 @@ export const logout = async () => {
     }
 }
 
-export const obs = () => {
-    if(auth.currentUser){
-        return true;
-    }else {
-        return false
-    }
-}
-
 /* OBSERVADOR */
 
 // export const obs = () => {
@@ -112,12 +103,19 @@ export const obs = () => {
 //         if (user) {
 //                 //User is signed in, see docs for a list of available properties
 //                 //https://firebase.google.com/docs/reference/js/firebase.User
-//             const uid = user.uid;
+//             //const uid = user.uid;
 //             console.log("user is signed out")
 //         }
 //         else {
-//                 //user is signed out
 //                 console.log("user is signed out")
 //         }
 //     })
+// }
+
+// export const obs1 = () => {
+//     if(auth.currentUser){
+//         return true;
+//     }else {
+//         return false
+//     }
 // }

@@ -11,8 +11,8 @@ export const login = () => {
                 <div class="containter-logo-ticket"><img class ="logo-ticket" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-removebg-preview.png?raw=true" alt="logo-ticket"></div>
                 <h2>Login to your account</h2>
                 <form>
-                    <label><input type="text" id="email"  placeholder="email@something.com"></label>
-                    <label><input type="password" id="password"  placeholder="password"></label>
+                    <label><input type="text" id="email"  placeholder="email@something.com" autocomplete="on"></label>
+                    <label><input type="password" id="password"  placeholder="password" autocomplete="current-password"></label>
                     <div class="btn-access">
                         <a id="loginGoogle">google</a>
                     </div> 

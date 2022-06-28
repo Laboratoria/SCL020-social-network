@@ -44,7 +44,7 @@ export const profile = () => {
             <div class="web-box">
                 <div class="user-profile">
                     <img src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-profile%20(1).png?raw=true" alt="img-user">
-                    <p>@user_name</p>
+                    <p></p>
                     <button>Follow</button>   
                 </div>
                 <div class="user-data">
