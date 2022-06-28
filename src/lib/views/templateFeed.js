@@ -15,8 +15,8 @@ export const feed = () => {
                                 </button>
                             </div>
                         </div>
-                        <a class="profile-web" href="#/profile"><img class ="logo-navweb" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-removebg-preview.png?raw=true" alt="logo-ticket"></a>
-                        <a class="profile-web" href="#/logoutConfirmation">LogOut</a>
+                        <a class="profile-web" href="#/profile"><img class ="navweb-logos" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-profile%20(1).png?raw=true" alt="logo-ticket"></a>
+                        <a class="profile-web" href="#/logoutConfirmation"><img class ="navweb-logos" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-signout%20(1).png?raw=true" alt="logo-ticket"></a>
                     </div>
                 </nav>
                 <nav class="nav-burguer-search">
@@ -38,12 +38,14 @@ export const feed = () => {
                         </div>
                     </div>
                 </nav>
-            <div class="feed-box">
+            <div class="web-box">
                 <div class="movies">
-                    <button><img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-profile%20(1).png?raw=true" alt="movie-rank"></button>
-                    <button><img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-profile%20(1).png?raw=true" alt="movie-rank"></button>
-                    <button><img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-profile%20(1).png?raw=true" alt="movie-rank"></button>
-                    <button><img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-profile%20(1).png?raw=true" alt="movie-rank"></button>
+                    <button><img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/animales%20fantasticos.png?raw=true" alt="movie-rank"></button>
+                    <button><img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/dc%20strange.png?raw=true" alt="movie-rank"></button>
+                    <button><img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/jurassic%20wrld.png?raw=true" alt="movie-rank"></button>
+                    <button><img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/maverick.png?raw=true" alt="movie-rank"></button>
+                    <button><img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/the%20batman.png?raw=true" alt="movie-rank"></button>
+                    <button><img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/thor.png?raw=true" alt="movie-rank"></button>
                 </div>   
                 <div class="container-post">
                     <div class="post">
@@ -53,7 +55,6 @@ export const feed = () => {
                         </div>
                         <p class="post-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, modi nam!</p>
                         <button class="btn-popCorn">🍿</button>
-                            <!-- <button class="btn-comment">Comment</button> -->
                     </div>
                     <div class="post">
                         <div class="user-info">
@@ -62,8 +63,7 @@ export const feed = () => {
                         </div>
                         <p class="post-p" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, modi nam!</p>
                         <button class="btn-popCorn">🍿</button>
-                            <!-- <button class="btn-comment">Comment</button> -->
-                    </div>
+                    </div> 
                 </div>
             </div>
         </main>
@@ -71,3 +71,7 @@ export const feed = () => {
     divFeed.innerHTML = viewFeed;
     return divFeed;
 }
+
+
+
+
