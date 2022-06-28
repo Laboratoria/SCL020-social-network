@@ -629,7 +629,11 @@
     margin: 0px 50px 0px 0px;
 }
 
+/*      --    VIDEO     --      */
 
+.video-stitch{
+    width: 300px;
+}
 
 /*      --    404 VIEW     --      */
 
@@ -812,9 +816,9 @@ body {
         margin-top: 5px;
     }
 
-    .web-post {
+    /* .web-post {
         overflow: scroll;
-    }
+    } */
 
     .post-box {
         background: rgba(215, 157, 192, 1);
@@ -824,7 +828,6 @@ body {
     .post-box p {
         background: rgba(229, 207, 227, 1);
         width: 290px;
-
     }
 
     .web-box {

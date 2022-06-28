@@ -1,5 +1,5 @@
-import { saveTask, getTask, onGetTask, deleteTask} from "../../firebase/firestore.js";
-import { feed } from "./templateFeed.js";
+import { saveTask, getTask, onGetTask, deleteTask, getTasks} from "../../firebase/firestore.js";
+// import { feed } from "./templateFeed.js";
 
 export const profile = () => {
     const divProfile = document.createElement("div");
@@ -8,7 +8,7 @@ export const profile = () => {
         <main class="container-profile">
             <nav class="nav-web">
                 <div class="sub-nav-web">
-                    <div class="containter-logo-ticket"><img class ="logo-navweb" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-removebg-preview.png?raw=true" alt="logo-ticket"></div>
+                    <a href="#/feed" class="containter-logo-ticket"><img class ="logo-navweb" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-removebg-preview.png?raw=true" alt="logo-ticket"></a>
                     <div class="search-bar">
                         <div class="search-box">
                             <input class="search-input"type="text" name="" placeholder="Search...">
@@ -40,11 +40,7 @@ export const profile = () => {
                     </div>
                 </div>
             </nav>
-
-
-
-
-
+            
             <div class="web-box">
                 <div class="user-profile">
                     <img src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-profile%20(1).png?raw=true" alt="img-user">
@@ -83,18 +79,20 @@ export const profile = () => {
 
         onGetTask((querySnapshot) => {
             let html = "";
+
             querySnapshot.forEach(doc => {
                 // console.log(doc);
                 const task = doc.data();
                 html += //html 
                 `
                     <div class="post-box">
-                        <button class="btn-edit">Edit</button>
+                        <button class="btn-edit" data-id="${doc.id}">Edit</button>
                         <button class="btn-delete" data-id="${doc.id}">Delete</button>
-                        <p>${task.contentPost}</p>
+                        <p id="content">${task.contentPost}</p>
                     </div>
                 `;
             });
+            
             taskContainer.innerHTML = html;
             
             const btnsDelete = taskContainer.querySelectorAll(".btn-delete");
@@ -107,14 +105,24 @@ export const profile = () => {
                         alert("Post has been deleted");
                     }
                 })
-            })
+            });
+
+            const btnsEdit = taskContainer.querySelectorAll(".btn-edit");
+            btnsEdit.forEach( btn => {
+                btn.addEventListener("click", async (e) => {
+                    // //e.preventDefault();
+                    const doc = await getTasks(e.target.dataset.id);
+                    const task = doc.data()
+
+                    formPost[task.contentPost].value = task.contentPost;
+                    console.log(task.contentPost); /* NO LO SAQUE*/
+
+
+                })
+            });
             
         })
     })    
     return divProfile;
 }
-
-
-
-/* <button class="btn-popCorn">PopCorn</button> */
 
