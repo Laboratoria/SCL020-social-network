@@ -11,7 +11,7 @@ export const welcome = () => {
                     <p>Your account has been created successfully!</p>
                     <p>Now you have access to the best content online</p>
                 </div>
-                <a href="#/login"><button class="btn">Continue</button></a>
+                <a href="#/feed"><button class="btn">Continue</button></a>
             </div>
         </div>
     `

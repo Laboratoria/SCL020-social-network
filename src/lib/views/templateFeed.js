@@ -31,7 +31,7 @@ export const feed = () => {
                     </div>
                     <div class="search-bar">
                         <div class="search-box">
-                            <input class="search-input"type="text" name="" placeholder="Search...">
+                            <input class="search-input" type="text" name="" placeholder="Search...">
                             <button class="search-button" href="#">
                                 <i class="material-icons">🔍︎</i>
                             </button>
@@ -70,31 +70,43 @@ export const feed = () => {
     `
     divFeed.innerHTML = viewFeed;
 
-    const searchButton = divFeed.querySelector(".search-button")
-    const search = divFeed.querySelector(".search-input").value;
-    const user = "hola";
+
+    const searchButton = divFeed.querySelector(".search-button");
 
         searchButton.addEventListener("click", () => {
-            console.log("funciona");
-            console.log(search);
+            const search = divFeed.querySelector(".search-input");
+            // const searchValue = search.value;
+            const user = "hola";
             const textBarFunc = (search, user) => {
-                if(search.includes(user)) {
-                    console.log("si funciona");
-                }
-                else {
-                    console.log("ño")
-                }
-                // const filteredPost = user.filter(element => {
-                // return (
-                //     element.user.toLowerCase().includes(search)
-                // );
-            }
-            textBarFunc(search, user);
-        });
-
-
+                console.log(search.value);
+                console.log(user);
+                const filteredCharaters = taskContainer.filter(element => {
+                return (
+                element.user.toLowerCase().includes(search.value)
+                );
+            })
+            console.log("si funciona");
+            console.log(filteredCharaters);
+        }
+        textBarFunc(search,user);
+    })
     return divFeed;
 }
+
+
+        //         // if(search.value === user) {
+        //         //     console.log("si funciona");
+        //         // }
+        //         // else {
+        //         //     console.log("ño")
+        //         // }
+        //         // const filteredPost = user.filter(element => {
+        //         // return (
+        //         //     element.user.toLowerCase().includes(search)
+        //         // );
+        //     }
+        //     textBarFunc(search, user);
+        // });
 
 
 
