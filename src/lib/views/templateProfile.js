@@ -1,21 +1,14 @@
 import { saveTask, getTask, onGetTask, deleteTask} from "../../firebase/firestore.js";
+import { feed } from "./templateFeed.js";
 
 export const profile = () => {
     const divProfile = document.createElement("div");
     const viewProfile = //html
     `
-        <main class="profile">
-            <div class="sub-container">
-                <nav class="nav-burguer-search">
-                    <div class="menu-feed">
-                        <a href="#/menu">
-                            <div class="hamburger">
-                                <span class="top-bun"></span>
-                                <span class="stuffing"></span>
-                                <span class="bottom-bun"></span>
-                            </div>
-                        </a>
-                    </div> 
+        <main class="container-profile">
+            <nav class="nav-web">
+                <div class="sub-nav-web">
+                    <div class="containter-logo-ticket"><img class ="logo-navweb" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-removebg-preview.png?raw=true" alt="logo-ticket"></div>
                     <div class="search-bar">
                         <div class="search-box">
                             <input class="search-input"type="text" name="" placeholder="Search...">
@@ -24,7 +17,35 @@ export const profile = () => {
                             </button>
                         </div>
                     </div>
-                </nav>
+                    <a class="profile-web" href="#/feed"><img class ="navweb-logos" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-feed.png?raw=true" alt="logo-ticket"></a>
+                    <a class="profile-web" href="#/logoutConfirmation"><img class ="navweb-logos" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-signout%20(1).png?raw=true" alt="logo-ticket"></a>
+                </div>
+            </nav>
+            <nav class="nav-burguer-search">
+                <div class="menu-feed">
+                    <a href="#/menu">
+                        <div class="hamburger">
+                            <span class="top-bun"></span>
+                            <span class="stuffing"></span>
+                            <span class="bottom-bun"></span>
+                        </div>
+                    </a>
+                </div> 
+                <div class="search-bar">
+                    <div class="search-box">
+                        <input class="search-input"type="text" name="" placeholder="Search...">
+                        <button class="search-button" href="#">
+                            <i class="material-icons">🔍︎</i>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+
+
+
+
+
+            <div class="web-box">
                 <div class="user-profile">
                     <img src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-profile%20(1).png?raw=true" alt="img-user">
                     <p>@user_name</p>
@@ -41,10 +62,9 @@ export const profile = () => {
                         <button type="submit" class="btn-post">Post</button>
                     </form>
                 </div>
-                <form id="feed-post" class="feed-post">
-                    <button class="btn-popCorn">PopCorn</button>
-                </form>
-                    <!-- <button class="btn-comment">Comment</button> -->
+                <div id="feed-post" class="web-post">
+                </div>
+                </div>
             </div>
         </main>
     `
@@ -68,9 +88,9 @@ export const profile = () => {
                 const task = doc.data();
                 html += //html 
                 `
-                    <div class="p-post">
+                    <div class="post-box">
                         <button class="btn-edit">Edit</button>
-                        <button class="btn-delete" data-id="${doc.id}" >Delete</button>
+                        <button class="btn-delete" data-id="${doc.id}">Delete</button>
                         <p>${task.contentPost}</p>
                     </div>
                 `;
@@ -93,3 +113,8 @@ export const profile = () => {
     })    
     return divProfile;
 }
+
+
+
+/* <button class="btn-popCorn">PopCorn</button> */
+
