@@ -225,8 +225,9 @@
         font-size: 15px;
     }
 }
-@media screen and (max-width: 428px){
-    .container-register{
+
+@media screen and (max-width: 428px) {
+    .container-register {
         display: grid;
         grid-template-rows: 130px 150px 80px 80px 150px;
         background-color: white;
@@ -236,9 +237,10 @@
         margin-top: 70px;
         border-radius: 35px;
         margin-left: auto;
-        margin-right: auto;   
+        margin-right: auto;
     }
 }
+
 @media screen and (max-width: 428px) {
     .container-register h1 {
         font-family: 'Lobster Two';
@@ -271,6 +273,7 @@
         margin-right: auto;
     }
 }
+
 @media screen and (max-width: 428px) {
     .container-register .btn {
         width: 270px;
@@ -281,6 +284,7 @@
         margin-right: auto;
     }
 }
+
 @media screen and (max-width: 428px) {
     .container-register a {
         text-decoration: none;
@@ -289,6 +293,7 @@
         font-size: 18px;
     }
 }
+
 @media screen and (max-width: 428px) {
     .container-wall .btncerrar {
         width: 270px;
@@ -297,5 +302,44 @@
         background: #2BA84A;
         margin-left: auto;
         margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .container-wall {
+        display: grid;
+        grid-template-rows: 730px;
+        background-color: #FFFFFF;
+        width: 100vh;
+        height: 100vh;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .post {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .container-wall .logo {
+        Width: 150px;
+        Height: 86px;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .container-wall .iconoPublicar {
+        Width: 50px;
+        Height: 70px;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .container-wall footer {
+        display: flex;
+        justify-content: space-around;
+        align-content: space-around;
+        flex-direction: row;
     }
 }
