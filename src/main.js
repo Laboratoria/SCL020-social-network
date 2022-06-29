@@ -1,5 +1,16 @@
-// Este es el punto de entrada de tu aplicacion
+// import { myFunction } from './lib/index.js';
+import { logInTemplate } from './lib/view/templateLogIn.js';
+import { createUser } from './lib/view/templateCreateUser.js';
+import { home } from './lib/view/templateHome.js';
+import { showTemplates } from './lib/router.js';
+import { login, signup, logout } from './firebase/auth.js';
 
-import { myFunction } from './lib/index.js';
+const init = () => {
+    document.querySelector('#root').innerHTML = logInTemplate();
+    showTemplates(window.location.hash)
+    window.addEventListener('hashchange', () => {
+        showTemplates(window.location.hash)
+    })
+}
 
-myFunction();
+window.addEventListener('load', init)

@@ -1,0 +1,506 @@
+@import url('https://fonts.googleapis.com/css2?family=Arbutus+Slab&display=swap');
+*{
+    font-family: 'Arbutus Slab', serif;
+}
+
+body{
+    margin: 0;
+    background-color: #FFD5E5;
+}
+
+/*ViewCreateUser*/
+#userCreationView{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #FFD5E5;
+}
+
+#profile{
+    height: 180px;
+    width: 189px;
+}
+
+#input-container{
+    display: grid;
+    justify-content: center;
+    grid-gap: 14px;
+}
+
+#insertProfilePic{
+    background-color: #F34573;
+    height: 180px;
+    width: 385px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#userCreationContainer{
+    background-color: #F2D8B9;
+    width: 385px;
+    border-radius: 17px;
+    text-align: center;
+    color: #226B80;
+}
+
+.bakerEaterImg{
+    height: 50px;
+    width: 50px;
+}
+
+.divButtons{
+    padding: 4px 0px 14px 0px;
+    margin: 0px 20px 0px 20px;
+}
+
+.buttons{
+    border-radius: 10px;
+    border: solid #A4455E;
+    color: #FFFFFF;
+    background-color: #F34573;
+    font-size: 17px;
+    text-decoration: none;
+    padding: 2px 12px 2px 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input[type="date" i] {
+    cursor: default;
+    color: rgb(118, 118, 118);
+}
+
+.buttons:hover{
+    background-color: #a4455e;
+    cursor: pointer;
+}
+
+input{
+    width: 313px;
+    height: 49px;
+    border-radius: 17px;
+    border: 0;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*ViewLogIn*/
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #FFD5E5;
+    min-height: 100vh;
+}
+
+#logInGoogle{
+    cursor: pointer;
+}
+
+#logoTipo{
+    padding-top: 10px;
+    width: 160px;
+    height: 164px;
+}
+
+.messageInit{
+    border-radius: 16px;
+    background: #F34573;
+    text-align: center;
+    color: white;
+    line-height: 0.5; 
+    width: 357px; 
+    height: 145px;
+    font-size: 16px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    margin: 14px;  
+}
+
+#password{
+    margin-top: 20px;
+}
+
+.notAcount{
+    color: #226B80;
+    font-size: 16px;
+}
+
+#msgRegistrate{
+    font-size: 17px;
+    color: #226B80;
+}
+
+/*ViewHome*/
+.menu__side{
+    width: 200px;
+    height: 100%;
+    background: #F34573;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 18px;
+    border-right: 10px solid white;
+    border-radius: 0px 25px 0px 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#logo2{
+    width: 100px;
+    margin-top: 18px;
+}
+
+#containImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.options__menu{
+    padding: 20px 30px;
+    position: absolute;
+    top: 80px;
+}
+
+.options__menu a{
+    color:white;
+    cursor: default;
+    display: block;
+    position: relative;
+    text-decoration: none;
+}
+
+.options__menu .option{
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.options__menu .option i{
+    width: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    color: #FFFFFF;
+    
+}
+
+.options__menu .option h4{
+    font-weight: 300;
+    cursor: pointer;
+}
+
+
+.postBody{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 15px;
+    width:83%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-left: 220px;
+}
+
+.postContainer{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+    margin-left: 200px;
+}
+
+.pencilIcon{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding-right: 8px;
+}
+
+.userNav {
+    display: grid;
+    grid-template-columns: 50px auto auto;
+    background-color: #F34573;
+    font-size: 12px;
+    color: #FFFFFF;
+    width: 100%;
+    border-radius: 15px 15px 0px 0px
+}
+
+.cupcakeImg{
+    width: 50px;
+}
+#postIcon {
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+#postName{
+    grid-column-start: 2;
+    grid-column-end: 6;
+}
+#postTitle{
+    grid-column-start: 2;
+    grid-column-end: 6;
+}
+
+.post{
+    width: 100%;
+}
+
+.like{
+    display: flex;
+    background-color: #F2D8B9;
+    width: 100%;
+    border-radius: 0px 0px 15px 15px;
+    justify-content: space-between;
+}
+                        /* error404 */
+#errorContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #FFD5E5;
+}
+
+#img404{
+    width: 500px;
+}
+
+/* ***************Edit */
+.containerHeader{
+    display: flex;
+    flex-direction: row;
+    
+}
+.headerName_Title{
+    display: flex;
+    flex-direction: column;
+}
+
+.userHeader{
+    background-color: #F34573;
+    display: grid;
+    border-radius: 15px;
+    grid-template-columns: 165px auto auto;
+    height: 181px;
+    width: 73%;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-left: 330px
+}
+
+.userIcon {
+    grid-column: 1;
+    grid-row: 1/span 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.userName{
+    grid-column: 2 /span 1;
+    grid-row:  1;
+}
+
+.userTitle {
+    grid-column:  2/span 1;
+    grid-row: 2;
+}
+
+.userName p{
+    margin: 8px 5px 0px;
+    font-size: 15px;
+}
+.userTitle p{
+    margin: 5px 5px 8px;
+    font-size: 13px;
+}
+
+.createPostFlex{
+    display: flex;
+    justify-content: space-between;
+    font-size: 17px;
+    margin: 20px 0px 15px 357px;
+    width: 69%;
+    color: #F34573;
+}
+
+.buttonGreen {
+    border-radius: 10px;
+    border: solid #0e858c;
+    color: #FFFFFF;
+    background-color: #35B0AB;
+    font-size: 17px;
+    text-decoration: none;
+    padding: 2px 12px 2px 12px;
+    margin: auto 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.buttonGreen:hover{
+    background-color : #0e858c;
+    cursor: pointer;
+}
+
+#nameHeader{
+    margin: 60px 0px 0px 0px;
+}
+
+#nameHeader h2{
+    margin: 0px;
+}
+
+#titleHeader{
+    margin: 0px 0px 60px 0px;
+}
+#titleHeader h3{
+    margin: 0px;
+}
+
+
+/* **********Buscar***** */
+
+
+.postEditContainer{
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+    width: 83%;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.postSearch{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 83%;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.optionsPost{
+    display: flex;
+    background-color: #F2D8B9;
+    border-radius: 0px 0px 15px 15px;
+    justify-content: end;
+}
+
+.divOptionsBt{
+    padding: 4px 0px 14px 0px;
+    margin: 14px 20px 2px 20px;
+}
+
+.pencilIcon a {
+    text-decoration: none;
+    color: #F34573;
+}
+
+@media only screen and (max-width: 500px) {
+
+    .menu__side{
+        width: 100%;
+        border-right: 0px solid white;
+        border-radius: 0px 0px 25px 25px;
+        box-shadow: none;
+        height:60px
+    }
+    .options__menu .option {
+        padding: 22px 26px;
+        display: flex;
+    }
+
+    .options__menu {
+        display: flex;
+        top: 0px;
+        padding: 0px;
+    }
+    .options__menu a{
+        color:white;
+        cursor: default;
+        display: block;
+        padding: 10px;
+        position: relative;
+        text-decoration: none;
+    }
+    
+    .options__menu .option i{
+        width: 10px;
+        cursor: pointer;
+        color: #FFFFFF;
+    }
+    
+    .options__menu .option h4{
+        display: none;
+    }
+    #logo2{
+    display: none;
+    }
+    #containImg{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .postMain{
+        margin-left: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 75%;
+        gap: 20px;
+        margin-top: 80px;
+    }
+    .userHeader{
+        background-color: #F34573;
+        display: grid;
+        margin-left: 83px;
+        border-radius: 15px;
+        grid-template-columns: 165px auto auto;
+        height: 150px;
+        width: 85%;
+        color: white;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .buttonGreen {
+        border-radius: 10px;
+        border: solid #0e858c;
+        width: 50px;
+        height: 30px;
+        color: #FFFFFF;
+        background-color: #35B0AB;
+        font-size: 10px;
+        text-decoration: none;
+        padding: 2px 12px 2px 12px;
+        margin: auto 0px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .postContainer{
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-top: 40px;
+        }
+    .cupcakeImg{
+        width: auto;
+        height: 40px;
+    }
+}
+post__textarea{
+    width: 20px;
+}
+.titleOption {
+    width: 5px;
+
+}
