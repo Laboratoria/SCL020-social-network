@@ -1,5 +1,5 @@
 import { saveTask, getTask, onGetTask, deleteTask, getTasks} from "../../firebase/firestore.js";
-// import { feed } from "./templateFeed.js";
+import { feed } from "./templateFeed.js";
 
 export const profile = () => {
     const divProfile = document.createElement("div");
@@ -17,8 +17,8 @@ export const profile = () => {
                             </button>
                         </div>
                     </div>
-                    <a class="profile-web" href="#/feed"><img class ="navweb-logos" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-feed.png?raw=true" alt="logo-ticket"></a>
-                    <a class="profile-web" href="#/logoutConfirmation"><img class ="navweb-logos" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-signout%20(1).png?raw=true" alt="logo-ticket"></a>
+                    <a class="icons-web" href="#/feed"><img class ="navweb-logos" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-feed.png?raw=true" alt="logo-ticket"></a>
+                    <a class="icons-web" href="#/logoutConfirmation"><img class ="navweb-logos" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-signout%20(1).png?raw=true" alt="logo-ticket"></a>
                 </div>
             </nav>
             <nav class="nav-burguer-search">
@@ -58,7 +58,7 @@ export const profile = () => {
                         <button type="submit" class="btn-post">Post</button>
                     </form>
                 </div>
-                <div id="feed-post" class="web-post">
+                <div id="feed-post" class="web-post"> 
                 </div>
                 </div>
             </div>
@@ -68,6 +68,9 @@ export const profile = () => {
 
     const formPost = divProfile.querySelector(".formPost");
     const taskContainer = divProfile.querySelector("#feed-post");
+    const taskContainerFeed = feed().querySelectorAll(".post-p");
+    debugger
+    console.log(taskContainerFeed);
 
 
     formPost.addEventListener("submit", async(e) => {
@@ -94,6 +97,9 @@ export const profile = () => {
             });
             
             taskContainer.innerHTML = html;
+            taskContainerFeed.innerHTML = html;
+            
+
             
             const btnsDelete = taskContainer.querySelectorAll(".btn-delete");
             btnsDelete.forEach( btn => {

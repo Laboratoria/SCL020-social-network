@@ -87,7 +87,7 @@ export const signInGoogle = () => {
 export const logout = async () => {
     try {
         const response = await signOut(auth);
-        showTemplate("");
+        showTemplate("#/");
         console.log("sesion cerrada");        /* NO LO SAQUE*/
         return response;
     }   
