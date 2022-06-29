@@ -10,6 +10,9 @@ body{
     width: auto;
     outline: 2px solid black;
 }
+#root{
+
+}
 .firstViewContainer{
     height: 100vh;
     width: 100vw;
@@ -208,7 +211,7 @@ p{
     flex-direction: column;
 }
 .wallViewContainer{
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     outline: 10px solid green;
     display: flex;
@@ -221,7 +224,7 @@ p{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
 }
 .bullyingViewContainer{
@@ -236,11 +239,13 @@ p{
     background:  #25034c;
     display: flex;
     justify-content: center;
-    text-align: left;
     align-items: center;
     flex-direction: column;
     height: 100vh;
     width: 100vw;
+}
+.bullyingView p{
+justify-content: flex-start;
 }
 header {
     background-color: #4b309c;
@@ -289,6 +294,9 @@ header img{
 }
 .q{
     display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    font-weight: bold;
 }
 .send{
     width: 150px;
@@ -298,16 +306,24 @@ header img{
     display: flex;
     justify-content: center;
     text-decoration: none;
+    font-weight: bold;
     font-size: 13px;
     border: none;
     border-radius: 10px;
     background-color: #4cc9f0;
     transition: background-color 0.1s;
+    
 
 }
 .send:hover {
     background-color:#09fada;
   }
+.publication-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 textarea{
     width: 300px;
     height: 150px;
@@ -328,7 +344,7 @@ textarea{
     border: none;
     border-radius: 10px;
     background-color: #4cc9f0;
-    margin-top: 8px;
+    margin-top: 20px;
     transition: background-color 0.1s;
 
 }
@@ -346,7 +362,54 @@ textarea{
 }
 div .wall{
     width: 100%;
-    height: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.post{
+border: 1px solid black;
+width: 300px;
+min-height: 150px;
+border-radius: 10px;
+margin-top: 20px;
+background-color: antiquewhite;
+justify-content: left;
+display: flex;
+}
+.post-header{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.post-header img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    z-index: 1;
+}
+.user-info{
+    color: #25034c;
+    font-weight: bold;
+    height: 21px;
+    font-size: 18px;
+    margin-bottom: 3px;
+}
+.comment{
+    color: black;
+    height: 19px;
+    z-index: 3;
+    margin-left: 10px;
+}
+.date{
+    color: gray;
+    font-size: small;
+    margin: 0;
+    height: 14px;
+    z-index: 2;
+    margin-left: 50px;
 }
 @media screen and (min-width:426px) and (max-width:768px){
     .logo img{

@@ -12,8 +12,10 @@ export const wall = () => {
           <a href="#/bullyingForm" id="bForm"><strong>Te Escuchamos</strong></a>
           <button class= "logOutWall" id="logOut"><strong>Cerrar Sesión</strong></button>
       </header>
+     <div class="publication-area">
      <textarea placeholder="Ingrese su publicación" cols="40" rows="5" id="publication"></textarea>
      <button class="publish" id="publish" type="submit"><strong>PUBLICAR</strong></button>
+     </div>
      <div class= "wall" id="wall">
 
      </div>
@@ -42,14 +44,14 @@ export const wall = () => {
     console.log(doc.Data())*/
     gettingAllPublications().then(data => {
       console.log(data)
-      publicationFrame = data.forEach((doc) => {
+      data.forEach((doc) => {
       publicationFrame += `
       <div class="post">
         <div class='post-header'>
           <p class='user-info'><img class="user-photo" src="${doc?.Photo}">
           <span class="user-name">${doc?.Name} publicó: </span> </p>
-          <p class="comment">${doc?.Comment}</p>
           <p class="date">${doc?.Time.toDate().toLocaleString()}</p>
+          <p class="comment">${doc?.Comment}</p>
         </div>
         <div class="post-footer">
           <button class="btn-like" data-id="${doc.id}">
@@ -59,9 +61,11 @@ export const wall = () => {
       `;
 
     })
+    console.log(publicationFrame);
+    publicationsContainer.innerHTML = publicationFrame;
   });
     console.log(publicationFrame)
-    publicationsContainer.innerHTML = publicationFrame;
+    
     console.log('sí hice mi función chicas!')
     return allPublications;
   }
