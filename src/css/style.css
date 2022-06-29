@@ -26,7 +26,9 @@
 	padding-top: 20%; */
 }
 
-.buttonSingUp {
+.buttonSingUp,
+.buttonBack,
+.buttonInicio {
 	background-color: #1b283a;
 	font-family: 'Montserrat classic', sans-serif;
 	color: white;
@@ -57,20 +59,23 @@
 .campotxt {
 	background-color: #3d2e80;
 	font-family: 'Montserrat classic', sans-serif;
-	font-size: 20px;
+	font-size: 18px;
 	padding: 5px 10px;
 	border-radius: 7px;
 	margin-bottom: 15px;
 	border-color: #3d2e80;
 	border-style: solid;
 	font-weight: bold;
+	color: #ffffff;
+	width: 250px;
 }
 
 .campotxt::placeholder {
 	color: #644fc2;
 }
 
-#start {
+#start,
+.next {
 	background-color: #f2865f;
 	font-family: 'Montserrat classic', sans-serif;
 	color: white;
@@ -103,68 +108,57 @@
 	font-family: 'Montserrat classic', sans-serif;
 }
 
-/*VISTA SEGUNDA VISTA SIGN UP*/
-.containerSignUp {
-	display: flex;
-	justify-content: center;
-	background-color: #281e52;
-}
+/* /VISTA SEGUNDA VISTA SIGN UP/  */
 
-.containerFormSignUp {
-	position: relative;
-	top: 80px;
+.containerSignUp {
+	width: auto;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	justify-items: center;
-	align-items: center;
+	position: relative;
+	padding: 2vh;
+	margin-bottom: 10vh;
+}
+.containerButtonBack {
+	position: absolute;
+	top: 60px;
+	left: 40px;
 }
 
-.REGISTRO {
-	margin-bottom: 10px;
-	font-family: 'Georgia', sans-serif;
-	margin-top: 40px;
-	font-size: 30px;
-	letter-spacing: -2px;
-	color: #ffffff;
-}
-
-.DATE {
-	margin-bottom: 10px;
-	font-family: 'Georgia', sans-serif;
-	font-weight: bold;
-	margin-top: 10px;
-	font-size: 25px;
-	color: #ffffff;
-}
-
-.NEXT {
-	background-color: #f2865f;
-	font-family: 'Montserrat classic', sans-serif;
-	color: white;
-	font-size: 20px;
-	padding: 5px 10px;
-	border-radius: 7px;
-	margin-top: 15px;
-	margin-bottom: 15px;
-	border-color: #f2865f;
-	border-style: solid;
-	font-weight: bold;
-}
-
-.container404 {
+.containerFormSignUp {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+}
+
+.tittleRegistroUser {
+	font-family: 'Montserrat classic', sans-serif;
+	color: white;
+	font-size: 30px;
+	margin-bottom: 10vh;
+}
+
+.container404,
+.containerRegExitoso {
+	display: flex;
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
+	align-content: center;
 	flex-direction: column;
 	width: 100vw;
 	height: 100vh;
 }
 
-.container404 p {
+.container404 p,
+.regExitoso {
 	font-size: 30px;
 	font-family: 'Montserrat classic', sans-serif;
 	color: #e7f0f1;
+	padding: 2vh;
+	text-align: center;
 }
 
 @media (min-width: 450px) {
