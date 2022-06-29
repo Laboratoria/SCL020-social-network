@@ -1,4 +1,4 @@
-import { signInWithEmailAndPassword, auth } from './init.js';
+import { signInWithEmailAndPassword, auth, createUserWithEmailAndPassword} from './init.js';
 
 const login = async (email, password) => {
 	try {
@@ -7,5 +7,21 @@ const login = async (email, password) => {
 		throw error.message;
 	}
 };
+const signUp = (email, password) => {
+	createUserWithEmailAndPassword(auth, email, password)
+		.then((userCredential) => {
+			// Signed in
+			const user = userCredential.user;
+			// ...
+			// window.location.href = '/#/viewRegExitoso';
+		})
+		.catch((error) => {
+			const errorCode = error.code;
+			const errorMessage = error.message;
+			// ..
+		});
+};
+
+
 
 export { login };

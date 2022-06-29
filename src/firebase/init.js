@@ -2,6 +2,7 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.8.3/firebase
 import {
 	getAuth,
 	signInWithEmailAndPassword,
+	createUserWithEmailAndPassword
 } from 'https://www.gstatic.com/firebasejs/9.8.3/firebase-auth.js';
 
 import {
@@ -10,10 +11,10 @@ import {
 	getDocs,
 } from 'https://www.gstatic.com/firebasejs/9.8.3/firebase-firestore.js';
 
-import firebaseConfig from './firebaseConfig.js';
+import {firebaseConfig} from './firebaseConfig.js';
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore(app);
 
-export { initializeApp, signInWithEmailAndPassword, auth, db };
+export { initializeApp, signInWithEmailAndPassword, auth, db, createUserWithEmailAndPassword};

@@ -11,7 +11,7 @@ import { changeRoute } from './router/router.js';
 // } from 'https://www.gstatic.com/firebasejs/9.8.3/firebase-firestore.js';
 
 const init = () => {
-	window.location.href = '/#/';
+	window.location.href = 'http://localhost:3000/#/';
 	const root = document.getElementById('root');
 	root.innerHTML = interpLogIn();
 	window.addEventListener('hashchange', () => {

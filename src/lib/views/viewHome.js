@@ -2,11 +2,23 @@
 export const interpHome = () => {
 	const divHome = document.createElement('div');
 
-	const formHome = `
+	const formHome = //html
+  `
     <div id="rootHome">
       <div>
-        <p> aqui van los post de la pag. </p>
+        <input type="text" id="tituloPost" class="campotxt">
+        <input type="text" id="posteotexto" class="campotxt"> 
+        <a href=''>
+        <button id="Post" class="NEXT">Publicar</button>
+        </a>
       </div> 
+      <div>
+        <input type="text" id="loPosteado"class="campotxt">
+        <a href=''>
+        <button id="Post" class="NEXT">Me Gusta</button>
+        </a>
+      </div>
+      
     </div>
   `;
 	divHome.innerHTML = formHome;
