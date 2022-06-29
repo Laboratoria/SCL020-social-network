@@ -15,8 +15,8 @@ export const feed = () => {
                                 </button>
                             </div>
                         </div>
-                        <a class="profile-web" href="#/profile"><img class ="navweb-logos" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-profile%20(1).png?raw=true" alt="logo-ticket"></a>
-                        <a class="profile-web" href="#/logoutConfirmation"><img class ="navweb-logos" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-signout%20(1).png?raw=true" alt="logo-ticket"></a>
+                        <a class="icons-web" href="#/profile"><img class ="navweb-logos" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-profile%20(1).png?raw=true" alt="logo-ticket"></a>
+                        <a class="icons-web" href="#/logoutConfirmation"><img class ="navweb-logos" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-signout%20(1).png?raw=true" alt="logo-ticket"></a>
                     </div>
                 </nav>
                 <nav class="nav-burguer-search">
@@ -54,7 +54,7 @@ export const feed = () => {
                             <p>@User_name</p>
                         </div>
                         <p class="post-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, modi nam!</p>
-                        <button class="btn-popCorn">🍿</button>s
+                        <button class="btn-popCorn">🍿</button>
                     </div>
                     <div class="post">
                         <div class="user-info">
@@ -90,9 +90,13 @@ export const feed = () => {
         }
         textBarFunc(search,user);
     })
+
     return divFeed;
 }
 
+export const taskContainerFeed = () =>  {
+        
+};
 
         //         // if(search.value === user) {
         //         //     console.log("si funciona");
