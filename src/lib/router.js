@@ -3,6 +3,7 @@ import { register } from './views/templateregister.js';
 import { login } from './views/templatelogin.js';
 import { error } from './views/error.js';
 import { wall } from './views/templatewall.js';
+import { post } from './views/templatePost.js';
 
 export const changeRouter = (hash) => {
     if (hash === '#/register') {
@@ -12,6 +13,8 @@ export const changeRouter = (hash) => {
     } else if (hash === '#/login') {
         return showTemplate(hash)
     } else if (hash === '#/wall') {
+        return showTemplate(hash)
+    } else if (hash === '#/post') {
         return showTemplate(hash)
     } else if (hash === '#/') {
         return showTemplate(hash)
@@ -39,6 +42,9 @@ const showTemplate = (hash) => {
             break;
         case '#/wall':
             containerRoot.appendChild(wall());
+            break;
+        case '#/post':
+            containerRoot.appendChild(post());
             break;
         case '#/':
             containerRoot.appendChild(intro());
