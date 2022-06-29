@@ -316,8 +316,12 @@
 }
 
 @media screen and (max-width: 428px) {
-    .post {
-        display: none;
+    .container-wall header {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        top: 600px;
+        width: 370px;
     }
 }
 
@@ -325,21 +329,13 @@
     .container-wall .logo {
         Width: 150px;
         Height: 86px;
+        left: 0px;
     }
 }
 
 @media screen and (max-width: 428px) {
     .container-wall .iconoPublicar {
         Width: 50px;
-        Height: 70px;
-    }
-}
-
-@media screen and (max-width: 428px) {
-    .container-wall footer {
-        display: flex;
-        justify-content: space-around;
-        align-content: space-around;
-        flex-direction: row;
+        Height: 50px;
     }
 }
