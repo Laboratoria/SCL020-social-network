@@ -1,4 +1,4 @@
-import { createPost } from "../../firebase/posts.js";
+import { createPost, } from "../../firebase/posts.js";
 
 export const newPost = () => {
     const divNewPost = document.createElement('div')
@@ -63,42 +63,73 @@ export const newPost = () => {
                 <p>Baker</p>
             </div>
         </div>
-        <div class="post">
-        <input class="post__textarea" name="createPostInput"  id="createPostTextarea" placeholder="Escribe un texto"></input>
-        <div class="radioButtons">
-            <div class="radioButtonContainer">
-                <input type="radio" id="veganOptionId" name="postType" value="vegan" class='b' checked>
-                <label for="veganOptionId">Vegan</label>
+            <div class="post">
+                <input class="post__textarea" name="createPostInput"  id="createPostTextarea" placeholder="Escribe un texto"></input>
+                <div class="radioButtons">
+                    <div class="radioButtonContainer">
+                        <input type="radio" id="veganOptionId" name="postType" value="vegan" class='titleOption' checked>
+                        <label for="veganOptionId">Vegan</label>
+                    </div>
+                    <div class="radioButtonContainer">
+                        <input type="radio" id="fullOptionId" name="postType" value="full" class='titleOption'>
+                        <label for="fullOptionId">Full</label>
+                    </div>
             </div>
-            <div class="radioButtonContainer">
-                <input type="radio" id="fullOptionId" name="postType" value="full" class='b'>
-                <label for="fullOptionId">Full</label>
             </div>
-        </div>
-        </div>
-        <div class= "optionsPost">
-            <div class="divOptionsBt">
-                <a href="#/userProfile" class="buttons" id="login">Publicar</a>
+            <div class= "optionsPost">
+                <div class="divOptionsBt">
+                    <a href="#/userProfile" class="buttons" id="login">Publicar</a>
+                </div>
             </div>
-        </div>
-    </div>
+        
 </div>
 `
+
 divNewPost.innerHTML = viewNewPost;
-
-const createPostButton = divNewPost.querySelector('#login')
-const textarea = divNewPost.querySelector('#createPostTextarea')
-
-createPostButton.addEventListener('click', () => {
-    // const postType = divNewPost.querySelector('input[name="postType"]:checked').value;
-    const postType = divNewPost.querySelector('.b:checked').value;
+const postEvent = divNewPost.querySelector('#login')
+postEvent.addEventListener('click', () => {
+    const postValue= divNewPost.querySelector('#createPostTextarea').value
+    //const titleValue= divNewPost.querySelector('#b').checked.value 
+    const titleValue = divNewPost.querySelector('input[name="postType"]:checked').value;
+//     const postType = divNewPost.querySelector('.b:checked').value;
+    console.log(postValue, titleValue)
     const dataPost = {
-        text: textarea.value,
-        postType: postType
-    }
-
-    createPost(dataPost)
+            text: postValue,
+            postType: titleValue
+            }
+            createPost(dataPost)
+    //createPost(postValue.value, titleValue.value)
 })
-
 return divNewPost;
+
 };
+
+
+
+///////////////////////
+// divProfile.innerHTML = viewProfile;
+
+// const formPost = divProfile.querySelector(".formPost");
+// const taskContainer = divProfile.querySelector("#feed-post");
+
+
+// formPost.addEventListener("submit", async(e) => {
+//     e.preventDefault();
+//     // console.log("submit");
+//     const contentPost = formPost["inputForm"].value;
+//     saveTask(contentPost);
+//     formPost.reset(); 
+// }
+//const createPostButton = divNewPost.querySelector('#login')
+// const textarea = divNewPost.querySelector('#createPostTextarea')
+
+// createPostButton.addEventListener('click', () => {
+//     // const postType = divNewPost.querySelector('input[name="postType"]:checked').value;
+//     const postType = divNewPost.querySelector('.b:checked').value;
+//     const dataPost = {
+//         text: textarea.value,
+//         postType: postType
+//     }
+
+//     createPost(dataPost)
+// })

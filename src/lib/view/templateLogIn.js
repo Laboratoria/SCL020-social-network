@@ -1,5 +1,6 @@
 import { login } from "../../firebase/auth.js";
 import { googleLogin } from "../../firebase/auth.js"
+import { getPost } from "../../firebase/posts.js";
 
 
 export const logInTemplate = () => {
@@ -40,7 +41,6 @@ export const logInTemplate = () => {
     btn.addEventListener("click", () => {
         const email = divLogIn.querySelector("#email").value;
         const password = divLogIn.querySelector("#password").value;
-
         login(email, password);
     })
 
@@ -51,3 +51,4 @@ export const logInTemplate = () => {
 
     return divLogIn;
 };
+

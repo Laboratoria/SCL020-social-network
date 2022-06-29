@@ -1,4 +1,5 @@
 import { logout } from "../../firebase/auth.js";
+import { getPost, onGetPost } from "../../firebase/posts.js";
 
 export const home = () => {
     const divHome = document.createElement('div')
@@ -36,115 +37,9 @@ export const home = () => {
         </div>
     </div>
     <div class="postContainer">
-            <div class="postBody">
-                <div class="userNav">
-                    <div class="userIcon">
-                        <i class="fa-solid fa-circle-user fa-3x"></i>
-                    </div>
-                    <div class="userName">
-                        <p>Nombre de usuario</p>
-                    </div>
-                    <div class="userTitle">
-                        <p>Baker</p>
-                    </div>
-                </div>
-                <div class="post">
-                    <h2> aqui va el post</h2> 
-                </div>
-                <div class="like">
-                    <div>
-                        <img src="img/cuplike.png" class ="cupcakeImg" alt="cuplike">
-                    </div>
-                </div>
-            </div>
-            <div class="postBody">
-                <div class="userNav">
-                    <div class="userIcon">
-                        <i class="fa-solid fa-circle-user fa-3x"></i>
-                    </div>
-                    <div class="userName">
-                        <p>Nombre de usuario</p>
-                    </div>
-                    <div class="userTitle">
-                        <p>Baker</p>
-                    </div>
-                </div>
-                <div class="post">
-                    <h2> aqui va el post</h2> 
-                </div>
-                <div class="like">
-                    <div>
-                        <img src="img/cuplike.png" class ="cupcakeImg" alt="cuplike">
-                    </div>
-                </div>
-            </div>
-            <div class="postBody">
-                <div class="userNav">
-                    <div class="userIcon">
-                        <i class="fa-solid fa-circle-user fa-3x"></i>
-                    </div>
-                    <div class="userName">
-                        <p>Nombre de usuario</p>
-                    </div>
-                    <div class="userTitle">
-                        <p>Baker</p>
-                    </div>
-                </div>
-                <div class="post">
-                    <h2> aqui va el post</h2> 
-                </div>
-                <div class="like">
-                    <div>
-                        <img src="img/cuplike.png" class ="cupcakeImg" alt="cuplike">
-                    </div>
-                </div>
-            </div>
-            <div class="postBody">
-                <div class="userNav">
-                    <div class="userIcon">
-                        <i class="fa-solid fa-circle-user fa-3x"></i>
-                    </div>
-                    <div class="userName">
-                        <p>Nombre de usuario</p>
-                    </div>
-                    <div class="userTitle">
-                        <p>Baker</p>
-                    </div>
-                </div>
-                <div class="post">
-                    <h2> aqui va el post</h2> 
-                </div>
-                <div class="like">
-                    <div>
-                        <img src="img/cuplike.png" class ="cupcakeImg" alt="cuplike">
-                    </div>
-                </div>
-            </div>
-            <div class="postBody">
-                <div class="userNav">
-                    <div class="userIcon">
-                        <i class="fa-solid fa-circle-user fa-1x"></i>
-                    </div>
-                    <div class="userName">
-                        <p>Nombre de usuario</p>
-                    </div>
-                    <div class="userTitle">
-                        <p>Baker</p>
-                    </div>
-                </div>
-                <div class="post">
-                    <h2> aqui va el post</h2> 
-                </div>
-                <div class="like">
-                    <div>
-                        <img src="img/cuplike.png" class ="cupcakeImg" alt="cuplike">
-                    </div>
-                </div>
-            </div>
-        </div> 
     </div>
-</div>
 `
+
 divHome.innerHTML = viewHome;
 const btn = divHome.querySelector("#logoutButton")
 btn.addEventListener("click", () => {
