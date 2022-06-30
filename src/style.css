@@ -51,6 +51,18 @@
     box-shadow: 4px 4px 8px 2px rgba(85, 85, 85, 0.28);
 
 }
+.btn-returnstitch{
+    border-radius: 15px;
+    font-weight: 400;
+    padding: 10px 20px;
+    letter-spacing: 3px;
+    border: none;
+    margin-top: 5px;
+    font-size: medium;
+    width: 200px;
+    background-color: rgb(255, 255, 255, 0.75); 
+    box-shadow: 4px 4px 8px 2px rgba(85, 85, 85, 0.28);
+}
 .btn{
     border-radius: 15px;
     padding: 10px 20px;
@@ -627,16 +639,17 @@
 
 /*      --    PROFILE VIEW     --      */
 .container-profile {
-    /*display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 100vh;*/
-    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    /*display: flex;
     align-items: center;
     flex-direction: column;
     width: 320px;
-    height: 568px;*
+    height: 568px;*/
 }
 .profile nav {
     display: flex;
@@ -706,7 +719,7 @@
     text-align: center;
 }
 .feed-post button {
-    margin: 0px 50px 0px 0px;
+    margin-top: 5px;
     width: 40px;
     height: 20px; 
 }
@@ -965,6 +978,14 @@ body {
         width: 100%;
     }
     
+}
+
+@media (max-width: 420px){
+    .container-home{
+        width: 100%;
+        background-image: url(https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/foto%20home.jpg?raw=true);
+        background-size: 100%;
+    }
 }
 
 

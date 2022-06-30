@@ -11,7 +11,7 @@ export const ageRedirect = () => {
                     <video class ="video-stitch"  autoplay loop>
                         <source src="https://raw.githubusercontent.com/fabibbc/SCL020-social-network/main/src/img/Eres%20chiquita.mp4" type="video/mp4">
                     </video>
-                    <a href=""><button class="btn">Return</button></a>
+                    <a href=""><button class="btn-returnstitch">Return</button></a>
                 </div>
             </div>
         </div>
