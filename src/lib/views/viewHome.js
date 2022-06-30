@@ -2,31 +2,34 @@
 export const interpHome = () => {
 	const divHome = document.createElement('div');
 
-	const formHome = //html
-  `
+	const formHome =
+		//html
+		`
     <div id="rootHome" class="containerRootHome">
       <section class="containerHome">
-        <div class="textBox">
-          <div class="textInput">
+        <div class="textBoxContainer">
           <input type="text" id="postTittle" class="boxtxt" placeholder="Título">
           <p></p>
-          <textarea type="text" id="postText" class="boxtxt" placeholder="Escribe tu publicación aquí..."></textarea>
-          </div>
-          <a href=''>
+          <textarea type="text" id="postText" class="boxtxt" rows="5" placeholder="Escribe tu publicación aquí..."></textarea>
+         <div class="containerPublicar">
           <button id="Post" class="post">Publicar</button>
-          </a>
+          </div>
         </div> 
-        <div class="textBox">
-          <input type="text" id="forPosting"class="boxtxt">
-          <a href='' id="Post">
-          <input type="image" src="images/heart.png" class="LIKE" />
-          </a>
+        <div class="containerPostPublicado">
+          <div class="tittlePost">
+            <img class="" src="./images/perfil.png" alt="perfil" height=auto width="40"/>
+            <h3 class="textTittle">Usuario</h3>
+          </div>
+          <textarea type="text" id="forPosting" class="boxtxt" rows="5">Aqui va el Post</textarea>
+          <div class="containerlike" id="Post">
+            <input type="image" src="images/heart.png" class="LIKE" />
+          </div>
         </div>
       </section>
       <footer>
-        <input type="image" src="images/log-out.png" id="logOut" class="imageFooter">      
+        <input type="image" src="images/clima.png" id="topicChange" class="imageFooter">     
         <input type="image" src="images/home.png" id="home" class="imageFooter">      
-        <input type="image" src="images/clima.png" id="topicChange" class="imageFooter">
+        <input type="image" src="images/log-out.png" id="logOut" class="imageFooter"> 
       </footer>
     </div>
   `;

@@ -168,25 +168,48 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	width: 100%;
+	height: auto;
 }
 
-.textInput {
-	margin: 0 0 10px 0;
+.textBoxContainer,
+.containerPostPublicado {
+	background: #3d2e80;
+	margin-top: 50px;
 	display: flex;
-	flex-wrap: wrap;
+	flex-direction: column;
+	border-radius: 10px;
+}
+
+.tittlePost {
+	display: flex;
+	align-items: center;
 }
 
 .textBox {
 	background: #3d2e80;
-	max-width: 300px;
-	max-height: auto;
-	margin: 100px 0 0px 0;
-	border-radius: 5px;
+	/* width: 300px;
+	height: 200px;
+	margin: 50px 0 0px 0;
+	border-radius: 5px; */
+}
+
+.textTittle {
+	color: #ffffff;
+	padding: 10px;
+	letter-spacing: 3px;
+	font-family: 'Montserrat classic', sans-serif;
+}
+.containerPublicar,
+.containerlike {
+	display: flex;
+	justify-content: end;
+	text-decoration: none;
 }
 
 .boxtxt {
 	background: #3d2e80;
-	border: #3d2e80 solid 1px;
+	border: #3d2e80; solid 1px;
 	margin: 5px;
 	width: 290px;
 	height: auto;
@@ -194,9 +217,7 @@
 }
 
 .post {
-	display: flex;
-	justify-content: flex-end;
-	margin-left: 220px;
+	margin: 0px 10px 10px 0px;
 	background-color: #f2865f;
 	font-family: 'Montserrat classic', sans-serif;
 	color: white;
@@ -204,7 +225,6 @@
 	padding: 5px 10px;
 	border-radius: 7px;
 	border: #f2865f solid 1px;
-
 }
 
 .boxtxt::placeholder {
@@ -214,6 +234,8 @@
 #postTittle {
 	font-size: large;
 	text-decoration: none;
+	letter-spacing: 3px;
+	font-family: 'Montserrat classic', sans-serif;
 }
 
 p {
@@ -221,11 +243,10 @@ p {
 	background-color: rgb(255, 255, 255);
 }
 
-
 .LIKE {
-	display: flex;
+	/* display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: center; */
 	width: auto;
 	height: 35px;
 	margin: 5px;
@@ -248,7 +269,6 @@ footer {
 	height: 40px;
 	width: auto;
 }
-
 
 @media (min-width: 450px) {
 	* {
