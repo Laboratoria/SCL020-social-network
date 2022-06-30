@@ -1,4 +1,4 @@
-import { creatingNewPost, gettingAllPublications } from '../firebase-doc/firestore.js';
+import { creatingNewPost, gettingAllPublications, updatingPublications } from '../firebase-doc/firestore.js';
 import { logOut } from '../firebase-doc/authentication.js';
 import { auth, getDocs, collection, db } from '../firebase-doc/firebase.js';
 import { changeRoute } from '../lib/router.js';
@@ -49,9 +49,14 @@ export const wall = () => {
       <div class="post">
         <div class='post-header'>
           <p class='user-info'><img class="user-photo" src="${doc?.Photo}">
-          <span class="user-name">${doc?.Name} publicó: </span> </p>
+          <span class="user-name">${doc?.Name} </span> </p>
           <p class="date">${doc?.Time.toDate().toLocaleString()}</p>
-          <p class="comment">${doc?.Comment}</p>
+          <button class="btn-edit" id = "editButton" data-id="${doc.id}">
+          <img src = "../Social-Images/edit-icon.png">
+          </button>
+        </div>
+        <div class = "middleSection">
+        <p class="comment">${doc?.Comment}</p>
         </div>
         <div class="post-footer">
           <button class="btn-like" data-id="${doc.id}">
@@ -61,16 +66,21 @@ export const wall = () => {
       `;
 
     })
+    updatingPublications(publicationFrame);
     console.log(publicationFrame);
     publicationsContainer.innerHTML = publicationFrame;
   });
-    console.log(publicationFrame)
-    
-    console.log('sí hice mi función chicas!')
     return allPublications;
   }
   allPublications();
 
+  // const editButton = container.querySelector('#editButton');
+  // editButton.addEventListener('click', async () =>{
+  //   try { await editingPublication(doc, id)
+  //   } catch (error) {
+  //     return console.log('error')
+  //   }
+  // });
   
     const buttonLogOut = container.querySelector('#logOut');
     buttonLogOut.addEventListener('click', async () => {

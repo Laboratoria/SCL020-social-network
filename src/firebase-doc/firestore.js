@@ -1,10 +1,15 @@
+/* eslint-disable arrow-spacing */
 import {
   db,
   collection,
   addDoc,
+  doc,
+  updateDoc,
   auth,
   Timestamp,
   getDocs,
+  onSnapshot,
+  query
 } from "../firebase-doc/firebase.js";
 console.log(addDoc);
 
@@ -28,20 +33,28 @@ const gettingAllPublications = async () => {
   querySnapshot.forEach((doc) => {
     // doc.data() is never undefined for query doc snapshots
     publicationsArray.push({
-        id: doc.id,
-        ...doc.data()
-    })
+      id: doc.id,
+      ...doc.data()
+        })
   });
   return publicationsArray;
 };
 
-// Add a new document in collection "publications"
+const updatingPublications = async () => {
+  onSnapshot(query(collection(db, 'Publications')), (doc) => {
+    const array = [];
+    const post = doc.data;
+    doc.docs.forEach(() => {
+      array.push({ id: doc.id, post });
+    });
+    return array;
+  });
+};
 
-/*await setDoc(doc(db, "cities", "LA"), {
-    name: "Los Angeles",
-    state: "CA",
-    country: "USA"
-    
-  });*/
 
-export { creatingNewPost, gettingAllPublications };
+// const editingPublication = async (id) => {
+//   await updateDoc(doc(db, 'Publications', id), { comment: editingPublication });
+// };
+
+export { creatingNewPost, gettingAllPublications, updatingPublications };
+// , editingPublication 
