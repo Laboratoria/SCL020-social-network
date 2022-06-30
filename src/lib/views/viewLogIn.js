@@ -15,8 +15,8 @@ export const interpLogIn = () => {
         <h1 class ="title_page1" >SESHATLAB</h1>
         <img class="img_logo_page1" src="./images/logo.png" alt="logo" width="145"/>
         <div id="form_login" action="">
-          <input type="text id="userName" placeholder="USERNAME" autofocus class="campotxt">
-          <input type="text id="password" placeholder="PASSWORD" autofocus class="campotxt">
+          <input type="text id="userName" placeholder="Correo electrónico" autofocus class="campotxt">
+          <input type="text id="password" placeholder="Contraseña" autofocus class="campotxt">
           <a href='#/viewHome'>
           <button id="start">Iniciar sesión</button>
           </a>

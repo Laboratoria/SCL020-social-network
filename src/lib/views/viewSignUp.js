@@ -10,8 +10,8 @@ export const interpSignUp = () => {
         </div>
         <form action="" class="containerFormSignUp">
             <h1 class="tittleRegistroUser">Registro de Usuario</h1>
-            <input type="email" id="email" placeholder="CORREO ELECTRÓNICO" autofocus class="campotxt" autocomplete="off" required>
-            <input type="text" id="password" placeholder="CONTRASEÑA" autofocus class="campotxt" autocomplete="off" required minlength="6" maxlength="8">
+            <input type="email" id="email" placeholder="Correo electrónico" autofocus class="campotxt" autocomplete="off" required>
+            <input type="text" id="password" placeholder="Contraseña" autofocus class="campotxt" autocomplete="off" required minlength="6" maxlength="8">
             <button id="next" class="next">Siguiente</button>
         </form>
       </div>
