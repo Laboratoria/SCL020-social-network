@@ -1,8 +1,32 @@
+import { getTask } from "../../firebase/firestore.js";
+import { createdPost } from "../post.js";
 export const feed = () => {
     const divFeed = document.createElement("div");
+        divFeed.setAttribute("class", "divFeed");
 
     const viewFeed = //html
     `
+        <div class="menu-display">
+            <div class="container-menu">
+                <div class="sub-container-menu">
+                    <a href="#/feed"><button class="btn-backFeed"><img src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/return.png?raw=true" alt="btn-backFeed"></button></a>
+                    <div class="container-img">
+                        <div class="sub-container-img">
+                            <img class="img-menu" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-profile%20(1).png?raw=true" alt="logo-profile">
+                            <a href="#/profile">Profile</a>
+                        </div>
+                        <div class="sub-container-img">
+                            <img class="img-menu" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-feed.png?raw=true" alt="logo-feed">
+                            <a href="#/feed">Feed</a>
+                        </div>
+                        <div class="sub-container-img">
+                            <img class="img-menu" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-signout%20(1).png?raw=true" alt="logo-LogOut">
+                            <a href="#/logoutConfirmation">Log out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <main class="container-feed">
                 <nav class="nav-web">
                     <div class="sub-nav-web">
@@ -20,8 +44,8 @@ export const feed = () => {
                     </div>
                 </nav>
                 <nav class="nav-burguer-search">
-                    <div class="menu-feed">
-                        <a href="#/menu">
+                    <div href="#/menu" class="menu-feed">
+                        <a href="#/menu" class="btn-menu">
                             <div class="hamburger">
                                 <span class="top-bun"></span>
                                 <span class="stuffing"></span>
@@ -65,37 +89,86 @@ export const feed = () => {
                     </div> 
                 </div>
             </div>
+            <div class="container-menu">
+                <div class="sub-container-menu">
+                    <div class="container-img">
+                        <div class="sub-container-img">
+                        <a href="#/profile"><img class="img-menu" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-profile%20(1).png?raw=true" alt="logo-profile"></a>
+                        </div>
+                        <div class="sub-container-img">
+                        <a href="#/feed"><img class="img-menu" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-feed.png?raw=true" alt="logo-feed"></a>
+                        </div>
+                        <div class="sub-container-img">
+                        <a href="#/logoutConfirmation"><img class="img-menu" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-signout%20(1).png?raw=true" alt="logo-LogOut"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
     `
-    divFeed.innerHTML = viewFeed;
 
+    const taskContainer = divFeed.querySelector(".post");
 
-    const searchButton = divFeed.querySelector(".search-button");
-
-        searchButton.addEventListener("click", () => {
-            const search = divFeed.querySelector(".search-input");
-            // const searchValue = search.value;
-            const user = "hola";
-            const textBarFunc = (search, user) => {
-                console.log(search.value);
-                console.log(user);
-                const filteredCharaters = taskContainer.filter(element => {
-                return (
-                element.user.toLowerCase().includes(search.value)
-                );
-            })
-            console.log("si funciona");
-            console.log(filteredCharaters);
-        }
-        textBarFunc(search,user);
+    window.addEventListener("DOMContentLoaded", async () => {
+        const querySnapshot = await createdPost();
+        console.log(querySnapshot);
     })
 
+    // window.onload = function() {
+
+    //     document.querySelector(".post") = postDiv;
+
+    // };
+
+    divFeed.innerHTML = viewFeed;
     return divFeed;
 }
 
-export const taskContainerFeed = () =>  {
+
+
+
+
+
+        // BUSCADOR DE USUARIO
+
+    // const searchButton = divFeed.querySelector(".search-button");
+
+    //     searchButton.addEventListener("click", () => {
+    //         const search = divFeed.querySelector(".search-input");
+    //         // const searchValue = search.value;
+    //         const user = "hola";
+    //         const textBarFunc = (search, user) => {
+    //             console.log(search.value);
+    //             console.log(user);
+    //             const filteredCharaters = taskContainer.filter(element => {
+    //             return (
+    //             element.user.toLowerCase().includes(search.value)
+    //             );
+    //         })
+    //         console.log("si funciona");
+    //         console.log(filteredCharaters);
+    //     }
+    //     textBarFunc(search,user);
+    // })
+
+
+
+            // MENU SOBRE FEED
+    // const btnMenu = divFeed.querySelector(".btn-menu");
+    // const menuDisplay = divFeed.querySelector(".menu-display");
+    // const containerFeed = divFeed.querySelector(".container-feed");
+    
+
+    // btnMenu.addEventListener("click", () => {
+    //     console.log("si funciona");
+    //     menuDisplay.style.display = "block";
+    //     containerFeed.style.display = "block";
+    // })
+
+
+// export const taskContainerFeed = () => href="#/menu" {
         
-};
+// };
 
         //         // if(search.value === user) {
         //         //     console.log("si funciona");
@@ -113,12 +186,5 @@ export const taskContainerFeed = () =>  {
 
 
 
-// export const textBarFunc = (myData, searchString) => {
-//     const filteredCharaters = myData.filter(character => {
-//     return (
-//         character.name.toLowerCase().includes(searchString)
-//     );
-// });
-// return showChar(filteredCharaters);
-// }
+
 

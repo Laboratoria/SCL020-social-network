@@ -6,6 +6,7 @@ export const profile = () => {
     const viewProfile = //html
     `
         <main class="container-profile">
+
             <nav class="nav-web">
                 <div class="sub-nav-web">
                     <a href="#/feed" class="containter-logo-ticket"><img class ="logo-navweb" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-removebg-preview.png?raw=true" alt="logo-ticket"></a>
@@ -40,7 +41,6 @@ export const profile = () => {
                     </div>
                 </div>
             </nav>
-            
             <div class="web-box">
                 <div class="user-profile">
                     <img src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-profile%20(1).png?raw=true" alt="img-user">
@@ -62,6 +62,21 @@ export const profile = () => {
                 </div>
                 </div>
             </div>
+            <div class="container-menu">
+                <div class="sub-container-menu">
+                    <div class="container-img">
+                        <div class="sub-container-img">
+                        <a href="#/profile"><img class="img-menu" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-profile%20(1).png?raw=true" alt="logo-profile"></a>
+                        </div>
+                        <div class="sub-container-img">
+                        <a href="#/feed"><img class="img-menu" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-feed.png?raw=true" alt="logo-feed"></a>
+                        </div>
+                        <div class="sub-container-img">
+                        <a href="#/logoutConfirmation"><img class="img-menu" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-signout%20(1).png?raw=true" alt="logo-LogOut"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
     `
     divProfile.innerHTML = viewProfile;
@@ -79,54 +94,29 @@ export const profile = () => {
         saveTask(contentPost);
         formPost.reset(); 
 
-        onGetTask((querySnapshot) => {
-            let html = "";
+        const btnsDelete = taskContainer.querySelectorAll(".btn-delete");
+        btnsDelete.forEach( btn => {
+            btn.addEventListener("click", async () => {
+                //e.preventDefault();
+                const deleteConfirm = confirm("¿Are you sure that you want to delete this post?");
+                if(deleteConfirm === true) {
+                    await deleteTask(btn.dataset.id)
+                    alert("Post has been deleted");
+                }
+            })
+        });
 
-            querySnapshot.forEach(doc => {
-                // console.log(doc);
-                const task = doc.data();
-                html += //html 
-                `
-                    <div class="post-box">
-                        <button class="btn-edit" data-id="${doc.id}">&#9997;</button>
-                        <button class="btn-delete" data-id="${doc.id}">&#128465;</button>
-                        <p id="content">${task.contentPost}</p>
-                    </div>
-                `;
-            });
-            
-            taskContainer.innerHTML = html;
-            taskContainerFeed.innerHTML = html;
-            
+        const btnsEdit = taskContainer.querySelectorAll(".btn-edit");
+        btnsEdit.forEach( btn => {
+            btn.addEventListener("click", async (e) => {
+                // //e.preventDefault();
+                const doc = await getTasks(e.target.dataset.id);
+                const task = doc.data()
 
-            
-            const btnsDelete = taskContainer.querySelectorAll(".btn-delete");
-            btnsDelete.forEach( btn => {
-                btn.addEventListener("click", async () => {
-                    //e.preventDefault();
-                    const deleteConfirm = confirm("¿Are you sure that you want to delete this post?");
-                    if(deleteConfirm === true) {
-                        await deleteTask(btn.dataset.id)
-                        alert("Post has been deleted");
-                    }
-                })
-            });
-
-            const btnsEdit = taskContainer.querySelectorAll(".btn-edit");
-            btnsEdit.forEach( btn => {
-                btn.addEventListener("click", async (e) => {
-                    // //e.preventDefault();
-                    const doc = await getTasks(e.target.dataset.id);
-                    const task = doc.data()
-
-                    formPost[task.contentPost].value = task.contentPost;
-                    console.log(task.contentPost); /* NO LO SAQUE*/
-
-
-                })
-            });
-            
-        })
+                formPost[task.contentPost].value = task.contentPost;
+                console.log(task.contentPost); /* NO LO SAQUE*/
+            })
+        });
     })    
     return divProfile;
 }
