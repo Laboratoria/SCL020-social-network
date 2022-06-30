@@ -5,23 +5,25 @@ export const interpSignUp = () => {
 		//html
 		`
       <div id="rootSingnUp" class="containerSignUp">
-        <div>
-          <a href="#/" id="back" class="buttonSingUp">Atras</a>
+        <div class="containerButtonBack">
+          <a href="#/" id="back" class="buttonBack">Atrás</a>
         </div>
         <form action="" class="containerFormSignUp">
-            <h1 class="REGISTRO">Registro de Usuario</h1>
-            <input type="text id="mail" placeholder="CORREO ELECTRÓNICO" autofocus class="campotxt" autocomplete="off" required>
-            <input type="text id="name" placeholder="NOMBRE Y APELLIDO" autofocus class="campotxt" autocomplete="off" required>
-            <input type="text id="nickName" placeholder="NOMBRE DE USUARIO" autofocus class="campotxt" autocomplete="off" required>
-            <p class="DATE">FECHA DE NACIMIENTO <input type="date" name="date" min="1940-01-01" max="2010-01-01"/></p>            
-            <input type="text id="password" placeholder="CONTRASEÑA" autofocus class="campotxt" autocomplete="off" required>
-            <input type="text id="pass" placeholder="REPETIR CONTRASEÑA" autofocus class="campotxt" autocomplete="off" required>
-            <button id="next" class="NEXT">Siguiente</button>
-        </form>        
+            <h1 class="tittleRegistroUser">Registro de Usuario</h1>
+            <input type="email" id="email" placeholder="CORREO ELECTRÓNICO" autofocus class="campotxt" autocomplete="off" required>
+            <input type="text" id="password" placeholder="CONTRASEÑA" autofocus class="campotxt" autocomplete="off" required minlength="6" maxlength="8">
+            <button id="next" class="next">Siguiente</button>
+        </form>
       </div>
     `;
+	const siguiente = document.querySelector('#next');
+	const email = document.getElementById('email');
+	const password = document.querySelector('#password');
 
 	divSignUp.innerHTML = formSignUp;
-
+	// siguiente.addEventListener("submit", (event) =>{
+	//   event.preventDefault();
+	//   console.log("prueba");
+	// })
 	return divSignUp;
 };
