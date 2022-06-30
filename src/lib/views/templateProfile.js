@@ -6,7 +6,6 @@ export const profile = () => {
     const viewProfile = //html
     `
         <main class="container-profile">
-
             <nav class="nav-web">
                 <div class="sub-nav-web">
                     <a href="#/feed" class="containter-logo-ticket"><img class ="logo-navweb" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-removebg-preview.png?raw=true" alt="logo-ticket"></a>
@@ -22,25 +21,6 @@ export const profile = () => {
                     <a class="icons-web" href="#/logoutConfirmation"><img class ="navweb-logos" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-signout%20(1).png?raw=true" alt="logo-ticket"></a>
                 </div>
             </nav>
-            <nav class="nav-burguer-search">
-                <div class="menu-feed">
-                    <a href="#/menu">
-                        <div class="hamburger">
-                            <span class="top-bun"></span>
-                            <span class="stuffing"></span>
-                            <span class="bottom-bun"></span>
-                        </div>
-                    </a>
-                </div> 
-                <div class="search-bar">
-                    <div class="search-box">
-                        <input class="search-input"type="text" name="" placeholder="Search...">
-                        <button class="search-button" href="#">
-                            <i class="material-icons">🔍︎</i>
-                        </button>
-                    </div>
-                </div>
-            </nav>
             <div class="web-box">
                 <div class="user-profile">
                     <img src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-profile%20(1).png?raw=true" alt="img-user">
@@ -54,7 +34,7 @@ export const profile = () => {
                 </div>
                 <div class="feed-post">
                     <form class="formPost">
-                        <textarea id="inputForm" type="text" placeholder="Write here about your favorite movie..." required></textarea>
+                        <textarea id="inputForm" type="text" minlength="1" maxlength="56" placeholder="Write here about your favorite movie..." required></textarea>
                         <button type="submit" class="btn-post">Post</button>
                     </form>
                 </div>
@@ -121,3 +101,13 @@ export const profile = () => {
     return divProfile;
 }
 
+/* <nav class="nav-search">
+<div class="search-bar">
+    <div class="search-box">
+        <input class="search-input"type="text" name="" placeholder="Search...">
+        <button class="search-button" href="#">
+            <i class="material-icons">🔍︎</i>
+        </button>
+    </div>
+</div>
+</nav> */

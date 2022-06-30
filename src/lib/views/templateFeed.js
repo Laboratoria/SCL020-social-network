@@ -43,16 +43,7 @@ export const feed = () => {
                         <a class="icons-web" href="#/logoutConfirmation"><img class ="navweb-logos" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-signout%20(1).png?raw=true" alt="logo-ticket"></a>
                     </div>
                 </nav>
-                <nav class="nav-burguer-search">
-                    <div href="#/menu" class="menu-feed">
-                        <a href="#/menu" class="btn-menu">
-                            <div class="hamburger">
-                                <span class="top-bun"></span>
-                                <span class="stuffing"></span>
-                                <span class="bottom-bun"></span>
-                            </div>
-                        </a>
-                    </div>
+                <nav class="nav-search">
                     <div class="search-bar">
                         <div class="search-box">
                             <input class="search-input" type="text" name="" placeholder="Search...">
@@ -124,9 +115,16 @@ export const feed = () => {
     return divFeed;
 }
 
-
-
-
+// HAMBURGUESA
+/* <div href="#/menu" class="menu-feed">
+<a href="#/menu" class="btn-menu">
+    <div class="hamburger">
+        <span class="top-bun"></span>
+        <span class="stuffing"></span>
+        <span class="bottom-bun"></span>
+    </div>
+</a>
+</div> */
 
 
         // BUSCADOR DE USUARIO

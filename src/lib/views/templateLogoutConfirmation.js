@@ -11,7 +11,7 @@ export const logoutConfirmation = () => {
                 <div class="container-p"><p>Are you sure you want to log out? </p></div>
                 <div class="container-btn">
                     <button class="btn-yes">Yes</button>
-                    <a href="#/menu"><button class="btn">No</button></a>
+                    <a href="#/feed"><button class="btn">No</button></a>
                 </div>
             </div>
         </div>
