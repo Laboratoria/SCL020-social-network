@@ -3,24 +3,32 @@ export const post = () => {
     const divPost = document.createElement("div")
     const viewPost =
         `
-<div id= "post" class="post">
+<div id= "post" class="container-post">
         <h1>Nueva Receta</h1>
         <form>
-            <label>Nombre de la Receta * <input type="text" id= "nameRecipe"></label>
-            <label>Ingredientes *<textarea name="" id="ingredients" cols="30" rows="10"></textarea></label>
-            <div>
-           <h1> Preparación * </h1>
-           <label>Paso 1<input type="text" id="stepOne"></label>
-           <label>Paso 2<input type="text" id= "stepTwo"></label>
-           <label>Paso 3<input type="text" id= "stepThree"></label>
-           <label>Paso 4<input type="text" id= "stepFour"></label>
-            </div>
-           <label>Tipo de receta *<input type="text" id= "typeRecipe"></label>
+            <h4> Nombre de la Receta*</h4> 
+            <input type="text" id= "nameRecipe">
+            <h4> Ingredientes*</h4> 
+            <textarea name="" id="ingredients" cols="20" rows="6"></textarea>
+            
+           <h4> Preparación * </h4>
+           <h4> Paso 1*</h4>
+           <input type="text" id="stepOne">
+           <h4> Paso 2*</h4>
+           <input type="text" id= "stepTwo">
+           <h4> Paso 3*</h4>
+           <input type="text" id= "stepThree">
+           <h4> Paso 4*</h4>
+           <input type="text" id= "stepFour">
+            
+           <h4>Tipo de receta *</h4>
+           <input type="text" id= "typeRecipe">
             <div class="uploadImg">
                 <input type="file" value="upload" id="uploadImg" />
                 </div>
+            <a href="#/wall"><button>Publicar</button></a>
         </form>
-        <a href="#/wall"><button>Publicar</button></a>
+        
        
         </div>`
 
