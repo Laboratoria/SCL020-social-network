@@ -366,6 +366,7 @@ div .wall{
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    background-size: cover;
 }
 .post{
 border: 1px solid black;
@@ -376,6 +377,7 @@ margin-top: 20px;
 background-color: antiquewhite;
 justify-content: left;
 display: flex;
+flex-direction: column;
 }
 .post-header{
     padding: 0;
@@ -410,6 +412,22 @@ display: flex;
     height: 14px;
     z-index: 2;
     margin-left: 50px;
+}
+.btn-edit img{
+    width: 15px;
+    height: 15px;
+    border-radius: 0;
+    display: flex;
+}
+.btn-edit{
+    margin-left: 260px;
+    margin-top: -30px;
+    width: 16px;
+    height: 16px;
+    border: none;
+}
+.middleSection{
+    margin-top: 30px;
 }
 @media screen and (min-width:426px) and (max-width:768px){
     .logo img{

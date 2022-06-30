@@ -1,10 +1,10 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
 
-import { getFirestore, collection, addDoc, Timestamp, getDocs } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js";
-import { getAuth,signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword, 
-    updateProfile, sendEmailVerification, onAuthStateChanged, GoogleAuthProvider, 
-    getRedirectResult, signInWithRedirect} from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
+import { getFirestore, collection, addDoc, updateDoc, doc, Timestamp, getDocs, onSnapshot, query } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js";
+import { getAuth, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword, 
+  updateProfile, sendEmailVerification, onAuthStateChanged, GoogleAuthProvider, 
+  getRedirectResult, signInWithRedirect} from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
     
     
 import config from './config.js';
@@ -23,9 +23,10 @@ console.log('prueba')
 const db = getFirestore(app)
 const provider = new GoogleAuthProvider();
 export {
-    auth, app, db, provider, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword,
-     updateProfile, sendEmailVerification, onAuthStateChanged, getRedirectResult, signInWithRedirect, addDoc,
-     collection, Timestamp, getDocs
-    };
+  auth, app, db, provider, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword,
+  updateProfile, sendEmailVerification, onAuthStateChanged,
+  getRedirectResult, signInWithRedirect, addDoc,
+  collection, Timestamp, getDocs, updateDoc, doc, onSnapshot, query
+};
 
 
