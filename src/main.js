@@ -1,5 +1,6 @@
 // Este es el punto de entrada de tu aplicacion
 
-import { myFunction } from './lib/index.js';
+import { indexScreen } from './lib/templates.js';
 
-myFunction();
+indexScreen();
+

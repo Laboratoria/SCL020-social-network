@@ -1,17 +1,20 @@
+import { loginScreen } from './lib/templates.js';
+import { indexScreen, registerScreen } from "./templates";
 
 
 
-const PATHS = {
-    home: {
-        path: "/",
-        template: `<h1>🏠 Home</h1>`,
-    },
-    Login: {
-        path: "/about",
-        template: `<h1>👩🏻‍💻 Sobre mi</h1>`,
-    },
-    Registro: {
-        path: "/contact",
-        template: `<h1>📱 Contacto</h1>`,
-    }
+//Rutas
+export const routes = {
+   '/': indexScreen,
+   '/Login': loginScreen,
+   '/Register' : registerScreen
+}
+
+
+//Enrutador
+export const router = async () => {
+   const index = null || document.getElementById('view1');
+   const login = null || document.getElementById('view2');
+
+   index.innerHTML = await indexScreen();
 }
