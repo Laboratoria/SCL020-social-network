@@ -7,8 +7,9 @@ export const interpHome = () => {
     <div id="rootHome" class="containerHome">
       <section class="textBox">
         <div class="textInput">
-        <input type="text" id="postTittle" class="boxtxt">
-        <input type="text" id="postText" class="boxtxt"> 
+        <input type="text" id="postTittle" class="boxtxt" placeholder="Título">
+        <p></p>
+        <textarea type="text" id="postText" class="boxtxt" placeholder="Escribe tu publicación aquí..."></textarea>
         </div>
         <a href=''>
         <button id="Post" class="post">Publicar</button>
@@ -16,11 +17,11 @@ export const interpHome = () => {
       </section> 
       <div class="textBox">
         <input type="text" id="forPosting"class="boxtxt">
-        <a href=''>
-        <button id="Post" class="post">Me Gusta</button>
+        <a href='' id="Post">
+        <input type="image" src="images/heart.png" class="LIKE" />
+
         </a>
       </div>
-      
     </div>
   `;
 	divHome.innerHTML = formHome;
