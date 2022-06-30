@@ -120,6 +120,7 @@
 	padding: 2vh;
 	margin-bottom: 10vh;
 }
+
 .containerButtonBack {
 	position: absolute;
 	top: 60px;
@@ -168,28 +169,66 @@
 	justify-content: center;
 	align-items: center;
 }
+
 .textInput {
 	margin: 0 0 10px 0;
+	display: flex;
+	flex-wrap: wrap;
 }
+
 .textBox {
 	background: #3d2e80;
 	max-width: 300px;
-	max-height: 300px;
+	max-height: auto;
 	margin: 100px 0 0px 0;
+	border-radius: 5px;
 }
+
 .boxtxt {
 	background: #3d2e80;
-	border:#3d2e80 solid 1px;
+	border: #3d2e80 solid 1px;
 	margin: 5px;
 	width: 290px;
+	height: auto;
+	color: white;
 }
+
 .post {
 	display: flex;
 	justify-content: flex-end;
-	margin-left: 240px;
-	color: #ffffff;
-	background: #3d2e80;
-	border: #3d2e80 solid 1px;
+	margin-left: 220px;
+	background-color: #f2865f;
+	font-family: 'Montserrat classic', sans-serif;
+	color: white;
+	font-size: 15px;
+	padding: 5px 10px;
+	border-radius: 7px;
+	border: #f2865f solid 1px;
+
+}
+
+.boxtxt::placeholder {
+	color: floralwhite;
+}
+
+#postTittle {
+	font-size: large;
+	text-decoration: none;
+}
+
+p {
+	height: 1px;
+	background-color: rgb(255, 255, 255);
+}
+
+
+.LIKE {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: auto;
+	height: 35px;
+	margin: 5px;
 }
 
 
