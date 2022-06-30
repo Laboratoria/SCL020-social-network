@@ -8,14 +8,14 @@ export const login = () => {
     `
         <div class="container-login"> 
             <div class ="sub-container">
-                <div class="containter-logo-ticket"><img class ="logo-ticket" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-removebg-preview.png?raw=true" alt="logo-ticket"></div>
+                <div class="containter-s-logo-ticket"><img class ="s-logo-ticket" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-removebg-preview.png?raw=true" alt="logo-ticket"></div>
                 <h2>Login to your account</h2>
-                <form class="form-login">
+                <form class="form-type">
                     <label><input type="text" id="email"  placeholder="email@something.com" autocomplete="on"></label>
                     <label><input type="password" id="password"  placeholder="password" autocomplete="current-password"></label>
                     <a class="btn-g-login" id="loginGoogle">google</a>
                     <p>You are not registered yet?<a href="#/age">Create Account</a></p>
-                    <button id="btn"> Login </button>
+                    <button id="btn" class="btn"> Login </button>
                 </form>
             </div>
         </div>     

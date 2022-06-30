@@ -5,7 +5,7 @@ export const home = () => {
         <div class="container-home">
             <div class="sub-container">
                 <div class="containter-logo-ticket"><img class ="logo-ticket" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-removebg-preview.png?raw=true" alt="logo-ticket"></div>
-                <p>¡The best app to comment on your favorite movies!</p>
+                <p>The best app to comment on your favorite movies!</p>
                 <a href="#/login"><button class="btn">Login</button></a>
                 <a href="#/age"><button class="btn">Sign Up</button></a>
             </div>
