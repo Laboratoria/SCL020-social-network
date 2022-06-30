@@ -3,6 +3,27 @@ export const feed = () => {
 
     const viewFeed = //html
     `
+        <div class="menu-display">
+            <div class="container-menu">
+                <div class="sub-container-menu">
+                    <a href="#/feed"><button class="btn-backFeed"><img src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/return.png?raw=true" alt="btn-backFeed"></button></a>
+                    <div class="container-img">
+                        <div class="sub-container-img">
+                            <img class="img-menu" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-profile%20(1).png?raw=true" alt="logo-profile">
+                            <a href="#/profile">Profile</a>
+                        </div>
+                        <div class="sub-container-img">
+                            <img class="img-menu" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-feed.png?raw=true" alt="logo-feed">
+                            <a href="#/feed">Feed</a>
+                        </div>
+                        <div class="sub-container-img">
+                            <img class="img-menu" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-signout%20(1).png?raw=true" alt="logo-LogOut">
+                            <a href="#/logoutConfirmation">Log out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <main class="container-feed">
                 <nav class="nav-web">
                     <div class="sub-nav-web">
@@ -20,8 +41,8 @@ export const feed = () => {
                     </div>
                 </nav>
                 <nav class="nav-burguer-search">
-                    <div class="menu-feed">
-                        <a href="#/menu">
+                    <div href="#/menu" class="menu-feed">
+                        <a class="btn-menu">
                             <div class="hamburger">
                                 <span class="top-bun"></span>
                                 <span class="stuffing"></span>
@@ -90,12 +111,25 @@ export const feed = () => {
         textBarFunc(search,user);
     })
 
+    const btnMenu = divFeed.querySelector(".btn-menu");
+    const menuDisplay = divFeed.querySelector(".menu-display");
+    const containerFeed = divFeed.querySelector(".container-feed");
+    
+
+    btnMenu.addEventListener("click", () => {
+        console.log("si funciona");
+        menuDisplay.style.display = "block";
+        containerFeed.style.display = "block";
+    })
+
     return divFeed;
 }
 
-export const taskContainerFeed = () =>  {
+
+
+// export const taskContainerFeed = () => href="#/menu" {
         
-};
+// };
 
         //         // if(search.value === user) {
         //         //     console.log("si funciona");
