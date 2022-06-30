@@ -6,18 +6,14 @@ export const wall = () => {
         `
     <div class="container-wall">
         <header>
-            <img src="imagenes/logo.png" class="logo"></img>
-            <a href="#/post"><img id= "publicar" src="imagenes/iconoPublicar.png" class="iconoPublicar"></img></a>
-
+            <img src="imagenes/perfil.png" class="logo"></img>
+            <h1>Gluten Free Food</h1>
         </header>
 
-        
+        <a href="#/post"><img id= "publicar" src="imagenes/iconoPublicar.png" class="iconoPublicar"></img></a>
 
         <footer>
             <img src="imagenes/volverMuro.png" class="logo"></img>
-            <img src="imagenes/recetasDulces.png" class="logo"></img>
-            <img src="imagenes/recetasSaladas.png" class="logo"></img>
-            <img src="imagenes/tiendas.png" class="logo"></img>
             <img src="imagenes/perfil.png" class="logo"></img>
         </footer>
 

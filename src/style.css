@@ -294,7 +294,7 @@
     }
 }
 
-@media screen and (max-width: 428px) {
+/*@media screen and (max-width: 428px) {
     .container-wall .btncerrar {
         width: 270px;
         height: 45px;
@@ -303,7 +303,7 @@
         margin-left: auto;
         margin-right: auto;
     }
-}
+}*/
 
 @media screen and (max-width: 428px) {
     .container-wall {
@@ -318,24 +318,64 @@
 @media screen and (max-width: 428px) {
     .container-wall header {
         display: flex;
-        justify-content: space-between;
-        flex-direction: row;
+        justify-content:space-between;
+        flex-direction: row-reverse;
         top: 600px;
-        width: 370px;
+        width: 375px;
+        height: 100px;
+        background-color: rgb(230, 193, 149);
+    }
+}
+@media screen and (max-width: 428px) {
+    .container-wall h1 {
+        font-family: 'Lobster Two';
+        display: flex;
+        text-align: right;
+        font-size: 40px;
+        color: #095E00;
+        margin-top: 20px;
     }
 }
 
 @media screen and (max-width: 428px) {
     .container-wall .logo {
-        Width: 150px;
-        Height: 86px;
-        left: 0px;
+        Width: 8vh;
+        Height: 8vh;
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width: 428px) {
+    .container-wall .logo{
+        Width: 8.5vh;
+        Height: 10vh;
+        
     }
 }
 
 @media screen and (max-width: 428px) {
-    .container-wall .iconoPublicar {
-        Width: 50px;
-        Height: 50px;
+    .container-post {
+        display: grid;
+        grid-template-rows: 90px 60px 90px 90px 150px 150px 80px 80px 80px 80px 80px 80px 90px;
+        background-color: #FFFFFF;
+        height: 810px;
+        width: 375px;
+        top: 246px;
+        border-radius: 0px;
+        
+        
+    }
+}
+@media screen and (max-width: 428px) {
+    .container-post h1 {
+        font-family: 'Lobster Two';
+        font-size: 40px;
+        color: #095E00;
+        margin-top: 20px;
+    }
+}
+@media screen and (max-width: 428px) {
+    .container-post form {
+       margin-left: auto;
+       margin-right: auto;
     }
 }
