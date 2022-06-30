@@ -1,5 +1,7 @@
-import { loginScreen } from './lib/templates.js';
-import { indexScreen, registerScreen } from "./templates";
+import { indexScreen } from './lib/views/templateIndex';
+import { loginScreen } from './lib/views/templateLogin.js';
+import { registerScreen } from './lib/views/templateRegister.js';
+
 
 
 
@@ -11,10 +13,3 @@ export const routes = {
 }
 
 
-//Enrutador
-export const router = async () => {
-   const index = null || document.getElementById('view1');
-   const login = null || document.getElementById('view2');
-
-   index.innerHTML = await indexScreen();
-}
