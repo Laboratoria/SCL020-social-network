@@ -49,7 +49,6 @@
     border-radius: 15px;
     background-color: rgb(255, 255, 255, 0.75); 
     box-shadow: 4px 4px 8px 2px rgba(85, 85, 85, 0.28);
-
 }
 .btn-returnstitch{
     border-radius: 15px;
@@ -174,9 +173,23 @@
 .form-type p{
     /* border: green solid 2px; */
     text-align: center;
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom:20px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255, 0.75); ; 
+    box-shadow: 4px 4px 8px 2px rgba(85, 85, 85, 0.28);
+    /*text-align: center;
     width: 300px;
     margin-bottom:0px;
     background-color: transparent;
+    margin-top: 10px;*/
+}
+.logo-google{
+    width: 200px;
+    border-radius: 10px;
+    margin-top: 15px;
 }
 
 
@@ -236,7 +249,7 @@
     border: rgb(255, 255, 255, 0.75) inset 2px;
 }
 
-.form-type > p{
+/* .form-type > p{
     text-align: center;
     width: 200px;
     margin-top: 50px;
@@ -245,7 +258,7 @@
     border-radius: 15px;
     background-color: rgb(255, 255, 255, 0.75); ; 
     box-shadow: 4px 4px 8px 2px rgba(85, 85, 85, 0.28);
-}
+} */
 
 /*      --    SIGN UP VIEW     --      */
 .container-signUp {
@@ -601,7 +614,6 @@
     align-items: center;
     margin-left: 100px;
 }
-
 .post {
     background: rgba(217, 217, 217, 0.3);
     width: 270px;
@@ -632,7 +644,6 @@
     border-radius: 15px;
     margin: 0px auto;
 }
-
 .btn-popCorn {
     background: transparent;
 }
@@ -757,11 +768,14 @@
     margin: 10px;
 }
 
-
-
-
-
 /*      --    404 VIEW     --      */
+.container-404{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
 .div-404{
     /* background-color: purple; */
     display: flex;

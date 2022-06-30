@@ -16,6 +16,7 @@ export const deleteComment = () => {
             </div>
         </div>
     `
+    
     divDeleteComment.innerHTML = viewDeleteComment;
     return divDeleteComment;
 }
