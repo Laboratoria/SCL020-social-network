@@ -1,4 +1,8 @@
-# Creando una Red Social
+## Social Network: Movie Mate
+
+MovieMate es una aplicación enfocada para personas mayores de 18 que sean fanáticos del cine y estén dispuestos a dar sus comentarios acerca de películas que hayan visto.
+En esta aplicación cada usuario tendrá un perfil donde podrá crear sus post, editarlos y eliminarlos, estos post irán a un feed compartido donde otros usuarios puedan leer sus post y dar like a estos.
+
 
 ## Índice
 
@@ -11,41 +15,30 @@
 * [7. Entrega](#7-entrega)
 * [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
 
-## 1. Preámbulo
+## 1. Usuario:
 
-Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes
-sociales han invadido nuestras vidas. Las amamos u odiamos, y muchos no podemos
-vivir sin ellas.
+Amantes del cine mayores de 18 años, que buscan compartir con nuevos amigos referencias y opiniones de sus películas favoritas.
 
-![adem-ay-Tk9m_HP4rgQ-unsplash](https://user-images.githubusercontent.com/110297/135544666-4efa54f1-4ff6-4c4c-b398-6df04ef56117.jpg)
+## Historias de usuario:
 
-Hay redes sociales de todo tipo y para todo tipo de intereses. Por ejemplo,
-en una ronda de financiamiento con inversionistas, se presentó una red social
-para químicos en la que los usuarios podían publicar artículos sobre sus
-investigaciones, comentar en los artículos de sus colegas, y filtrar artículos
-de acuerdo a determinadas etiquetas o su popularidad, lo más reciente, o lo
-más comentado.
+Historia de usuario 1:
+Criterio de aceptación:
 
-## 2. Resumen del proyecto
+Historia de usuario 2:
+Criterio de aceptación:
 
-En este proyecto construirás una Red Social sobre lo que decidan tú y tu equipo.
-Podría ser, por ejemplo, sobre alimentación saludable, feminismo, educación,
-salud, energías renovables, amantes de las [Empanadas](https://es.wikipedia.org/wiki/Empanada)
-o de los [Tacos de Canasta](https://es.wikipedia.org/wiki/Taco), de la
-[Feijoada](https://es.wikipedia.org/wiki/Feijoada), o de lo que sea.
+Historia de usuario 3:
+Criterio de aceptación:
 
-Tu Red Social tendrá que permitir a cualquier usuario crear una cuenta de
-acceso y loguearse con ella; crear, editar, borrar y _"likear"_ publicacciones.
+Historia de usuario 4:
+Criterio de aceptación:
+## 3. Diseño de Interfaz de Usuario
 
-El objetivo principal de aprendizaje de este proyecto es construir una
-[Single-page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application)
-[_responsive_](https://curriculum.laboratoria.la/es/topics/css/02-responsive) (con más de una vista / página)
-en la que podamos **leer y escribir datos**.
+Prototipo de baja
+(Decir que nos enfocamos en mobile first)
 
-## 3. Objetivos de aprendizaje
-
-Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en tu proyecto. Piensa en eso al decidir tu estrategia de trabajo.
-
+Prototipo de alta
+(Hablar de que usamos figma, mostrar ambas versiones (web y mobile))
 ### HTML
 
 - [ ] **Uso de HTML semántico**
@@ -517,3 +510,4 @@ Otras:
 * [Mobile First: el enfoque actual del diseño web móvil - 1and1](https://www.1and1.es/digitalguide/paginas-web/diseno-web/mobile-first-la-nueva-tendencia-del-diseno-web/)
 * [Mobile First - desarrolloweb.com](https://desarrolloweb.com/articulos/mobile-first-responsive.html)
 * [Mobile First Is NOT Mobile Only - Nielsen Norman Group](https://www.nngroup.com/articles/mobile-first-not-mobile-only/)
+

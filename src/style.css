@@ -13,8 +13,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    min-height: 100vh;
+
+ /*   display: flex;
+    justify-content: center;
+    align-items: center;
     width: 320px;
-    height: 568px;
+    height: 568px;*/
 }
 .sub-container{
     display: flex;
@@ -30,6 +36,9 @@
 .logo-ticket{
     width: 80px;
     height: auto;
+    border-radius: 25%;
+    background-color: rgb(255, 255, 255, 0.75); 
+    box-shadow: 4px 4px 8px 2px rgba(85, 85, 85, 0.28);
 }
 .sub-container p{
     text-align: center;
@@ -37,8 +46,10 @@
     margin-top: 50px;
     margin-bottom:20px;
     padding: 20px;
-    background-color: lightgray;
     border-radius: 15px;
+    background-color: rgb(255, 255, 255, 0.75); 
+    box-shadow: 4px 4px 8px 2px rgba(85, 85, 85, 0.28);
+
 }
 .btn{
     border-radius: 15px;
@@ -46,9 +57,20 @@
     letter-spacing: 3px;
     border: none;
     margin-top: 5px;
-    font-weight: 400;
+    font-size: medium;
     width: 200px;
-    
+    background-color: rgb(255, 255, 255, 0.75); 
+    box-shadow: 4px 4px 8px 2px rgba(85, 85, 85, 0.28);
+}
+.btn:before{  
+    content:"";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 1s ease;
 }
 
 /*      --      LOGIN VIEW      --      */
@@ -56,8 +78,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    min-height: 100vh;
+   /* display: flex;
+    justify-content: center;
+    align-items: center;
     width: 320px;
-    height: 568px;
+    height: 568px;*/
 }
 .sub-container {
     display: flex;
@@ -72,14 +99,13 @@
 }
 .container-s-logo-ticket{
     padding: 10px 20px;
-    background-color: lightgray;
     border-radius: 30px;
-    margin-bottom: 30px;
 }
 .s-logo-ticket{
     width: 60px;
     height: auto;
-    /* background-color: rgb(255, 255, 255, 0.75);  */
+    border-radius: 25%;
+    background-color: rgb(255, 255, 255, 0.75); 
     box-shadow: 4px 4px 8px 2px rgba(85, 85, 85, 0.28);
 
 }
@@ -96,6 +122,7 @@
     display: flex;
     justify-content: center;
     text-align: center;
+    margin-top: -20px;
 }
 .sub-container input{
     text-decoration: none;
@@ -125,40 +152,35 @@
     border: none;
     margin-bottom: 30px;
 }
-.form-login{
+.form-type{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.form-login p{
+
+.form-type p{
+    /* border: green solid 2px; */
     text-align: center;
     width: 300px;
-    margin-top: 30px;
-    margin-bottom:30px;
+    margin-bottom:0px;
     background-color: transparent;
 }
-.form-login button{
-    border-radius: 15px;
-    padding: 10px 20px;
-    letter-spacing: 3px;
-    border: none;
-    margin-top: 5px;
-    font-size: medium;
-    width: 200px;
-    background-color: rgb(255, 255, 255, 0.75); 
-    box-shadow: 4px 4px 8px 2px rgba(85, 85, 85, 0.28);
-    
-}
+
 
 /*      --    AGE VIEW     --      */
 .container-age {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    /*display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 320px;
-    height: 568px;
+    height: 568px;*/
 }
 .container-age p{
     text-align: center;
@@ -166,18 +188,24 @@
     margin-top: 50px;
     margin-bottom:20px;
     padding: 20px;
-    background-color: lightgray;
     border-radius: 15px;
+    background-color: rgb(255, 255, 255, 0.75); 
+    box-shadow: 4px 4px 8px 2px rgba(85, 85, 85, 0.28);
 }
 
 /*      --    AGE REDIRECT VIEW     --      */
 .container-ageRedirect {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    /*display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 320px;
-    height: 568px;
+    height: 568px;*/
 }
 .container-ageRedirect p{
     text-align: center;
@@ -189,28 +217,53 @@
     border-radius: 15px;
 }
 
+.video-stitch{
+    width: 200px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    border: rgb(255, 255, 255, 0.75) inset 2px;
+}
+
+.form-type > p{
+    text-align: center;
+    width: 200px;
+    margin-top: 50px;
+    margin-bottom:20px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255, 0.75); ; 
+    box-shadow: 4px 4px 8px 2px rgba(85, 85, 85, 0.28);
+}
+
 /*      --    SIGN UP VIEW     --      */
 .container-signUp {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    /*display: flex;
+    justify-content: center;
+    align-items: center;
     width: 320px;
-    height: 568px;
+    height: 568px;*/
 }
-.btn-create{
+
+.container-btn {
+    display: flex;
+    flex-direction: row;
+}
+.container-btn > btn-create{
     border-radius: 15px;
     padding: 10px 20px;
     letter-spacing: 3px;
     border: none;
-    margin-top: 20px;
-    font-weight: 400;
-    width: 220px;
-    margin-bottom: 10px;
-    font-size: small;
-}
-.container-btn {
-    display: flex;
-    flex-direction: row;
+    margin-top: 5px;
+    font-size: medium;
+    width: 200px;
+    background-color: rgb(255, 255, 255, 0.75); 
+    box-shadow: 4px 4px 8px 2px rgba(85, 85, 85, 0.28);
+    
 }
 .container-btn button{
     border-radius: 15px;
@@ -223,6 +276,13 @@
     width: 100px;
     font-size: small;
 }
+.form-sign-up{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
 
 /*      --    WELCOME VIEW     --      */
 
@@ -230,11 +290,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    min-height: 100vh;
+ /*  display: flex;
+    justify-content: center;
+    align-items: center;
     width: 320px;
-    height: 568px;
+    height: 568px;*/
 }
 
-.container-p {
+/* .container-p {
     letter-spacing: 2px;
     text-align: center;
     padding: 10px 20px;
@@ -243,7 +308,8 @@
     border-radius: 15px;
     margin-top: 20px;
     margin-bottom: 30px;
-}
+} */
+
 .container-p p {
     margin: 5px 0px;
 }
@@ -253,10 +319,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    min-height: 100vh;
+ /*   display: flex;
+    justify-content: center;
+    align-items: center;
     width: 320px;
-    height: 568px;
+    height: 568px;*/
 }
-.sub-container-logOutConfirm {
+/* .sub-container-logOutConfirm {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -266,6 +337,18 @@
     width: 310px;
     background-color: #FFFFFF;
     border-radius: 30px;
+} */
+
+.btn-yes{
+    border-radius: 15px;
+    padding: 10px 20px;
+    letter-spacing: 3px;
+    border: none;
+    margin-top: 5px;
+    font-size: medium;
+    width: 200px;
+    background-color: rgb(255, 255, 255, 0.75); 
+    box-shadow: 4px 4px 8px 2px rgba(85, 85, 85, 0.28);
 }
 
 /*      --    DELETE CONFIRMATION VIEW     --      */
@@ -273,8 +356,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    /*display: flex;
+    justify-content: center;
+    align-items: center;
     width: 320px;
-    height: 568px;
+    height: 568px;*/
 }
 .sub-container-deleteComment {
     display: flex;
@@ -297,6 +385,7 @@
     width: 320px;
     height: 568px;
     margin: 0px;
+     /* border: green 2px solid; */
 }
 .sub-container-menu {
     display: flex;
@@ -305,22 +394,27 @@
     align-items:center; 
     height: 568px;
     width: 240px;
-    background-color: #FFFFFF;
+    background: rgba(217, 217, 217, 0.3);
     border-radius: 0px 30px 30px 0px;
+    /* border: purple 2px solid; */
 }
-.sub-container-menu label{
-    background-color: white;
+
+/* .sub-container-menu label{
+    background-color: rgba(255, 255, 255, 0.75);
     width: 150px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 50px 0px;
-}
+    border:red 2px solid;
+} */
+
 .container-img {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     margin-top: 30px;
+    
 }
 .sub-container-img {
     display: flex;
@@ -339,8 +433,11 @@
 .img-menu {
     width: 60px;
     height: auto;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.75);
 }
 .btn-backFeed img, button{
+
     width: 25px;
     height: auto;
     border: none;
@@ -352,11 +449,16 @@
 /*      --    FEED VIEW     --      */
 .container-feed {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    /*display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 320px;
-    height: 568px;
+    height: 568px;*/
 }
 .nav-burguer-search{
     display:flex;
@@ -398,10 +500,13 @@
     margin-top: 3px;
 }
 .search-box:hover > .search-input {
-    width: 150px;
-    padding: 0 10px;
-    border-radius: 100px;
-    border: 1px solid lightgray; 
+    position:absolute;
+    width: 200px;
+    height: 40px;
+    margin-left: 15px;
+    /* padding: 0 10px;
+    border-radius: 100px; 
+    border: 1px solid lightgray;  */
 }
 .search-box:hover > .search-button {
     background: #518FF4;
@@ -423,7 +528,7 @@
     justify-content: center;
     align-items: center;
     background: #fff;
-    color: #5391F4;
+    color: #4e5c6f;
     float: right;
     width: 40px;
     height: 40px;
@@ -439,30 +544,52 @@
     transform: rotate(360deg)
     scale(0.8);
 }
+
 .movies {
     display: flex;
     justify-content: space-around;
     align-items: center;
     background: rgba(217, 217, 217, 0.3);
-    height: 80px;
+    /* border: red solid 1px; */
+    width: 400px;
+    height: 90px;
+    gap: 15px;
+    margin-left: 110px;
+}
+.container-feed{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     width: 320px;
+    height: 568px;
+    
 }
 .movies button {
+    display: flex;
+    flex: auto;
     background-color: transparent;
     text-align: center;
-    border-radius: 15px;
-    width: 50px;
+    width: 60px;
+    height: 80px;
+     /*border: purple solid 2px; */
+    
 }
 .movie-rank {
+    display: flex;
+    flex: auto;
+    /*border: green solid 2px; */
+    border-radius: 15px;
     width: 60px;
-    height: auto;
+    height: 80px;
 }
 .container-post {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-left: 100px;
 }
+
 .post {
     background: rgba(217, 217, 217, 0.3);
     width: 270px;
@@ -486,25 +613,30 @@
     height: auto;
 }
 .post-p {
-    background: rgba(217, 217, 217, 1);
+    background: rgba(255, 255, 255, 0.75);
     width: 230px;
-    height: 80px;
+    height: 90px;
     padding: 10px;
     border-radius: 15px;
     margin: 0px auto;
 }
+
 .btn-popCorn {
     background: transparent;
-    margin: 5px 0px 0px 6px;
 }
 
 /*      --    PROFILE VIEW     --      */
 .container-profile {
+    /*display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;*/
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 320px;
-    height: 568px;
+    height: 568px;*
 }
 .profile nav {
     display: flex;
@@ -526,10 +658,11 @@
     height: auto;
 }
 .user-profile button {
-    width: 70px;
+    width: 110px;
     height: 25px;
     border-radius: 20px;
     margin: 5px;
+    padding: 5px;
 }
 .user-data {
     display: flex;
@@ -550,14 +683,17 @@
 }
 .feed-post {
     background: rgba(217, 217, 217, 0.3);
-    width: 260px;
+    width: 280px;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
-    margin: 35px auto;
+    align-items: center;
+    justify-content: center;
+    margin: 35px;
     padding: 20px;
     border-radius: 15px; 
+}
+.form-post {
+    margin: 0px auto;
 }
 .feed-post textarea {
     background: rgba(217, 217, 217, 1);
@@ -567,30 +703,50 @@
     border-radius: 15px;
     margin: 0px auto;
     border: none;
-}
-.btn-post {
-    width: 40px;
-    height: 20px; 
-}
-.post-box {
-    background: rgba(217, 217, 217, 1);
-    width: 230px;
-    height: 80px;
-    padding: 10px;
-    border-radius: 15px;
-    margin: 0px auto;
-    border: none;
-    margin-bottom: 10px;
+    text-align: center;
 }
 .feed-post button {
     margin: 0px 50px 0px 0px;
+    width: 40px;
+    height: 20px; 
+}
+.web-post {
+    background: rgba(217, 217, 217, 0.3);
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 35px auto;
+    padding: 20px;
+    border-radius: 15px; 
+}
+.post-box {
+    background: rgba(217, 217, 217, 1);
+    width: 240px;
+    height: 110px;
+    padding: 5px;
+    border-radius: 15px;
+    margin: 10px auto;
+    border: none;
+    /* display: flex;
+    justify-content: flex-end;
+    align-items: flex-start; */
+}
+.btn-edit {
+    background-color: transparent;
+    margin-left: 165px;
+}
+.btn-delete {
+    background-color: transparent;
+}
+.post-box p {
+    margin: 10px;
 }
 
-/*      --    VIDEO     --      */
-.video-stitch{
-    width: 300px;
-    border-radius: 20px;
-}
+
+
+
 
 /*      --    404 VIEW     --      */
 .div-404{
@@ -680,9 +836,11 @@ body {
         height: auto;
     }
     .container-feed {
-        margin: 0%;
-        width: 100%;
-        height: auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 320px;
+        height: 568px;
     }
     .sub-container {
         width: 50%;
@@ -724,7 +882,7 @@ body {
         width: 15%;
     }
     .user-profile img {
-        width: 70%;
+        width: 30%;
         height: auto;
     }
     .user-profile button {
@@ -767,7 +925,7 @@ body {
         justify-content: center;
         align-items: center;
         width: 750px;
-        height: 520px;
+        height: auto;
         margin: 20px 0px 0px 0px;
         border-radius: 30px;
         background: rgba(172, 136, 186, 0.95);
@@ -812,77 +970,32 @@ body {
 
 @media (min-width: 421px) and (max-width: 768px){
     .container-home{
-        width: 90%;
+        width: 100%;
         background-image: url(https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/foto%20home.jpg?raw=true);
         background-size: 100%;
     }
-
-    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* @media screen and (min-width: 1920px){ PANTALLA COMPARTIDA CAMI
-    .container-home{
-        width: 1920px;
-    }
-    .box-home {
-        width: 800px;
-        margin-left: 100px auto;
-        padding: 25px;
-        background-color:F5F5F5;
-    
-    }
-    .logo-ticket{
-        width: 150px;
-        height: auto;
-    }   
-    
-    .container-home p{
-        margin-top: 10px;
-        margin-bottom:20px;
-        padding: 20px;
-    }
-    
     .container-login {
-        width: 1920px;
+        width: 100%;
     }
-    
-    .container-feed {
-        margin: 0px auto;
-        width: 1920px;
-    }
-
-    .profile {
-        width: 1920px;
-    }
-
     .container-logOutConfirm {
-        width: 1920px;
+        width: 100%;
     }
-
     .container-age {
-        width: 1920px;
+        width: 100%;
     }
-
     .container-signUp {
-        width: 1920px;
+        width: 100%;
     }
-
     .container-welcome {
-        width: 1920px;
+        width: 100%;
     }
-} */
-
+    .container-feed {
+        width: 100%;
+    }
+    .container-deleteComment {
+        width: 100%;
+    }
+    .container-profile{
+        width: 100%;
+    }
+}

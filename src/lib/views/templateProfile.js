@@ -45,7 +45,7 @@ export const profile = () => {
                 <div class="user-profile">
                     <img src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-profile%20(1).png?raw=true" alt="img-user">
                     <p></p>
-                    <button>Follow</button>   
+                    <button class="btn">Follow</button>   
                 </div>
                 <div class="user-data">
                     <p class="data">2.4k Followers</p>
@@ -54,7 +54,7 @@ export const profile = () => {
                 </div>
                 <div class="feed-post">
                     <form class="formPost">
-                        <textarea id="inputForm" type="text" placeholder="Write here about your favorite movie..."></textarea>
+                        <textarea id="inputForm" type="text" placeholder="Write here about your favorite movie..." required></textarea>
                         <button type="submit" class="btn-post">Post</button>
                     </form>
                 </div>
@@ -69,7 +69,6 @@ export const profile = () => {
     const formPost = divProfile.querySelector(".formPost");
     const taskContainer = divProfile.querySelector("#feed-post");
     const taskContainerFeed = feed().querySelectorAll(".post-p");
-    debugger
     console.log(taskContainerFeed);
 
 
@@ -89,8 +88,8 @@ export const profile = () => {
                 html += //html 
                 `
                     <div class="post-box">
-                        <button class="btn-edit" data-id="${doc.id}">Edit</button>
-                        <button class="btn-delete" data-id="${doc.id}">Delete</button>
+                        <button class="btn-edit" data-id="${doc.id}">&#9997;</button>
+                        <button class="btn-delete" data-id="${doc.id}">&#128465;</button>
                         <p id="content">${task.contentPost}</p>
                     </div>
                 `;
