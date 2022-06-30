@@ -4,18 +4,20 @@ export const interpHome = () => {
 
 	const formHome = //html
   `
-    <div id="rootHome">
-      <div>
-        <input type="text" id="tituloPost" class="campotxt">
-        <input type="text" id="posteotexto" class="campotxt"> 
+    <div id="rootHome" class="containerHome">
+      <section class="textBox">
+        <div class="textInput">
+        <input type="text" id="postTittle" class="boxtxt">
+        <input type="text" id="postText" class="boxtxt"> 
+        </div>
         <a href=''>
-        <button id="Post" class="NEXT">Publicar</button>
+        <button id="Post" class="post">Publicar</button>
         </a>
-      </div> 
-      <div>
-        <input type="text" id="loPosteado"class="campotxt">
+      </section> 
+      <div class="textBox">
+        <input type="text" id="forPosting"class="boxtxt">
         <a href=''>
-        <button id="Post" class="NEXT">Me Gusta</button>
+        <button id="Post" class="post">Me Gusta</button>
         </a>
       </div>
       

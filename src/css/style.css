@@ -161,6 +161,38 @@
 	text-align: center;
 }
 
+/* /SEGUNDA VISTA HOME/  */
+.containerHome {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.textInput {
+	margin: 0 0 10px 0;
+}
+.textBox {
+	background: #3d2e80;
+	max-width: 300px;
+	max-height: 300px;
+	margin: 100px 0 0px 0;
+}
+.boxtxt {
+	background: #3d2e80;
+	border:#3d2e80 solid 1px;
+	margin: 5px;
+	width: 290px;
+}
+.post {
+	display: flex;
+	justify-content: flex-end;
+	margin-left: 240px;
+	color: #ffffff;
+	background: #3d2e80;
+	border: #3d2e80 solid 1px;
+}
+
+
 @media (min-width: 450px) {
 	* {
 		color: #f2865f;
