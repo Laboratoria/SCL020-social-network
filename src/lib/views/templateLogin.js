@@ -13,7 +13,7 @@ export const login = () => {
                 <form class="form-type">
                     <label><input type="text" id="email"  placeholder="email@something.com" autocomplete="on"></label>
                     <label><input type="password" id="password"  placeholder="password" autocomplete="current-password"></label>
-                    <a class="btn-g-login" id="loginGoogle">google</a>
+                    <a class="btn-g-login" id="loginGoogle"><img class ="logo-google" src="https://raw.githubusercontent.com/fabibbc/SCL020-social-network/main/src/img/sign%20in%20with%20google.png"></a>
                     <p>You are not registered yet?<a href="#/age">Create Account</a></p>
                     <button id="btn" class="btn"> Login </button>
                 </form>
