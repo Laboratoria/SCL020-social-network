@@ -230,6 +230,24 @@ p {
 	height: 35px;
 	margin: 5px;
 }
+/* estilos para el footer*/
+.containerRootHome {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+footer {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background: #f2865f;
+	margin-top: auto;
+	height: 60px;
+}
+.imageFooter {
+	height: 40px;
+	width: auto;
+}
 
 
 @media (min-width: 450px) {
