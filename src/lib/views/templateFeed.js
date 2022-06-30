@@ -1,5 +1,8 @@
+import { getTask } from "../../firebase/firestore.js";
+import { createdPost } from "../post.js";
 export const feed = () => {
     const divFeed = document.createElement("div");
+        divFeed.setAttribute("class", "divFeed");
 
     const viewFeed = //html
     `
@@ -42,7 +45,7 @@ export const feed = () => {
                 </nav>
                 <nav class="nav-burguer-search">
                     <div href="#/menu" class="menu-feed">
-                        <a class="btn-menu">
+                        <a href="#/menu" class="btn-menu">
                             <div class="hamburger">
                                 <span class="top-bun"></span>
                                 <span class="stuffing"></span>
@@ -86,45 +89,81 @@ export const feed = () => {
                     </div> 
                 </div>
             </div>
+            <div class="container-menu">
+                <div class="sub-container-menu">
+                    <div class="container-img">
+                        <div class="sub-container-img">
+                        <a href="#/profile"><img class="img-menu" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-profile%20(1).png?raw=true" alt="logo-profile"></a>
+                        </div>
+                        <div class="sub-container-img">
+                        <a href="#/feed"><img class="img-menu" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-feed.png?raw=true" alt="logo-feed"></a>
+                        </div>
+                        <div class="sub-container-img">
+                        <a href="#/logoutConfirmation"><img class="img-menu" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-signout%20(1).png?raw=true" alt="logo-LogOut"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
     `
+
+    const taskContainer = divFeed.querySelector(".post");
+
+    window.addEventListener("DOMContentLoaded", async () => {
+        const querySnapshot = await createdPost();
+        console.log(querySnapshot);
+    })
+
+    // window.onload = function() {
+
+    //     document.querySelector(".post") = postDiv;
+
+    // };
+
     divFeed.innerHTML = viewFeed;
-
-
-    const searchButton = divFeed.querySelector(".search-button");
-
-        searchButton.addEventListener("click", () => {
-            const search = divFeed.querySelector(".search-input");
-            // const searchValue = search.value;
-            const user = "hola";
-            const textBarFunc = (search, user) => {
-                console.log(search.value);
-                console.log(user);
-                const filteredCharaters = taskContainer.filter(element => {
-                return (
-                element.user.toLowerCase().includes(search.value)
-                );
-            })
-            console.log("si funciona");
-            console.log(filteredCharaters);
-        }
-        textBarFunc(search,user);
-    })
-
-    const btnMenu = divFeed.querySelector(".btn-menu");
-    const menuDisplay = divFeed.querySelector(".menu-display");
-    const containerFeed = divFeed.querySelector(".container-feed");
-    
-
-    btnMenu.addEventListener("click", () => {
-        console.log("si funciona");
-        menuDisplay.style.display = "block";
-        containerFeed.style.display = "block";
-    })
-
     return divFeed;
 }
 
+
+
+
+
+
+        // BUSCADOR DE USUARIO
+
+    // const searchButton = divFeed.querySelector(".search-button");
+
+    //     searchButton.addEventListener("click", () => {
+    //         const search = divFeed.querySelector(".search-input");
+    //         // const searchValue = search.value;
+    //         const user = "hola";
+    //         const textBarFunc = (search, user) => {
+    //             console.log(search.value);
+    //             console.log(user);
+    //             const filteredCharaters = taskContainer.filter(element => {
+    //             return (
+    //             element.user.toLowerCase().includes(search.value)
+    //             );
+    //         })
+    //         console.log("si funciona");
+    //         console.log(filteredCharaters);
+    //     }
+    //     textBarFunc(search,user);
+    // })
+
+
+
+            // MENU SOBRE FEED
+    // const btnMenu = divFeed.querySelector(".btn-menu");
+    // const menuDisplay = divFeed.querySelector(".menu-display");
+    // const containerFeed = divFeed.querySelector(".container-feed");
+    
+
+    // btnMenu.addEventListener("click", () => {
+    //     console.log("si funciona");
+    //     menuDisplay.style.display = "block";
+    //     containerFeed.style.display = "block";
+    // })
 
 
 // export const taskContainerFeed = () => href="#/menu" {
@@ -147,12 +186,5 @@ export const feed = () => {
 
 
 
-// export const textBarFunc = (myData, searchString) => {
-//     const filteredCharaters = myData.filter(character => {
-//     return (
-//         character.name.toLowerCase().includes(searchString)
-//     );
-// });
-// return showChar(filteredCharaters);
-// }
+
 

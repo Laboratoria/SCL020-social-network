@@ -11,8 +11,8 @@ export const signUp = () => {
                 <h2>Create your account</h2>
                 <form class="form-type">
                     <label><input type="text" id="user" required placeholder="User Name"></label>
-                    <label><input type="email" id="email" required placeholder="email@something.com"></label>
-                    <label><input type="password" id="password" required placeholder="password"></label>
+                    <label><input type="email" id="email" autocomplete="on" placeholder="email@something.com"></label>
+                    <label><input type="password" id="password" autocomplete="current-password" required placeholder="password"></label>
                     <p>Do you already have an account?<a href="#/login">Login</a></p>
                     <div class="container-btn">
                         <button type="submit" class="btn-create">Create</button>
