@@ -14,78 +14,68 @@ import { welcome } from "./views/templateWelcome.js";
 import { onAuthStateChanged } from "../firebase/init.js";
 import { auth } from "../firebase/init.js";
 
+export const showTemplate = (hash) => {
+  const containerRoot = document.getElementById("root");
+  containerRoot.innerHTML = "";
 
-export const showTemplate = (hash)=>{
-    
-    const containerRoot = document.getElementById("root");
-    containerRoot.innerHTML = "";
-    
-    onAuthStateChanged(auth, (user)=>{
-        if (!user && hash === ""){
-            containerRoot.appendChild(home());
-        }
-        else if (!user && hash === "#/login"){
-            containerRoot.appendChild(login());
-        }
-        else if (!user && hash === "#/age"){
-            containerRoot.appendChild(age()); 
-        }
-        else if (!user && hash === "#/ageRedirect"){
-            containerRoot.appendChild(ageRedirect());
-        }
-        else if (!user && hash === "#/sign-up"){
-            containerRoot.appendChild(signUp());
-        }
-        else if (!user && hash === "#/welcome"){
-            containerRoot.appendChild(welcome());
-        }
-        else if (!user){
-            containerRoot.appendChild(home());
-        }
-        else {
-
-        switch(hash){
-            case "#/login":  
-                containerRoot.appendChild(login());
-                break;
-            case "":
-                containerRoot.appendChild(home());
-                break;
-            case "#/sign-up":
-                containerRoot.appendChild(signUp());
-                break;     
-            case "#/welcome":
-                containerRoot.appendChild(welcome());
-                break;    
-            case "#/feed":
-                    containerRoot.appendChild(feed());
-                break;
-            case "#/menu":
-                    containerRoot.appendChild(menu());
-                break; 
-            case "#/logoutConfirmation":
-                    containerRoot.appendChild(logoutConfirmation());
-                break;   
-            case "#/profile":
-                    containerRoot.appendChild(profile());
-                break;
-            case "#/deleteComment":
-                    containerRoot.appendChild(deleteComment());
-                break; 
-            default:
-                containerRoot.appendChild(err404());                             
-                }
-        }
-    })
-}
-
-
+  onAuthStateChanged(auth, (user) => {
+    if (!user && hash === "") {
+      containerRoot.appendChild(home());
+    } else if (!user && hash === "#/login") {
+      containerRoot.appendChild(login());
+    } else if (!user && hash === "#/age") {
+      containerRoot.appendChild(age());
+    } else if (!user && hash === "#/ageRedirect") {
+      containerRoot.appendChild(ageRedirect());
+    } else if (!user && hash === "#/sign-up") {
+      containerRoot.appendChild(signUp());
+    } else if (!user && hash === "#/welcome") {
+      containerRoot.appendChild(welcome());
+    } else if (!user) {
+      containerRoot.appendChild(home());
+    } else {
+      switch (hash) {
+        case "#/login":
+          containerRoot.appendChild(login());
+          break;
+        case "":
+          containerRoot.appendChild(home());
+          break;
+        case "#/sign-up":
+          containerRoot.appendChild(signUp());
+          break;
+        case "#/welcome":
+          containerRoot.appendChild(welcome());
+          break;
+        case "#/feed":
+          feed(containerRoot);
+          // containerRoot.appendChild(feed());
+          break;
+        case "#/menu":
+          containerRoot.appendChild(menu());
+          break;
+        case "#/logoutConfirmation":
+          containerRoot.appendChild(logoutConfirmation());
+          break;
+        case "#/profile":
+          profile(containerRoot);
+          // containerRoot.appendChild();
+          break;
+        case "#/deleteComment":
+          containerRoot.appendChild(deleteComment());
+          break;
+        default:
+          containerRoot.appendChild(err404());
+      }
+    }
+  });
+};
 
 // export const changeRoute = (hash) => {
 //     if (hash ==="#/login"){
 //         return showTemplate(hash);}
 //     else if (hash==="#/age"){
-//         return showTemplate (hash); 
+//         return showTemplate (hash);
 //     }else if (hash==="#/ageRedirect"){
 //         return showTemplate (hash);
 //     }else if (hash==="#/sign-up"){

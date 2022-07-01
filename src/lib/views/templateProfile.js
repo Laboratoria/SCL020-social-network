@@ -1,7 +1,9 @@
 import { saveTask, getTask, onGetTask, deleteTask, getTasks} from "../../firebase/firestore.js";
 import { feed } from "./templateFeed.js";
+import { createdPost } from "../post.js";
 
-export const profile = () => {
+export const profile = (containerRoot) => {
+    
     const divProfile = document.createElement("div");
     const viewProfile = //html
     `
@@ -38,8 +40,7 @@ export const profile = () => {
                         <button type="submit" class="btn-post">Post</button>
                     </form>
                 </div>
-                <div id="feed-post" class="web-post"> 
-                </div>
+                <div id="feed-post" class="container-post"> 
                 </div>
             </div>
             <div class="container-menu">
@@ -63,8 +64,8 @@ export const profile = () => {
 
     const formPost = divProfile.querySelector(".formPost");
     const taskContainer = divProfile.querySelector("#feed-post");
-    const taskContainerFeed = feed().querySelectorAll(".post-p");
-    console.log(taskContainerFeed);
+    // const taskContainerFeed = feed().querySelectorAll(".post-p");
+    // console.log(taskContainerFeed);
 
 
     formPost.addEventListener("submit", async(e) => {
@@ -73,6 +74,7 @@ export const profile = () => {
         const contentPost = formPost["inputForm"].value;
         saveTask(contentPost);
         formPost.reset(); 
+
 
         const btnsDelete = taskContainer.querySelectorAll(".btn-delete");
         btnsDelete.forEach( btn => {
@@ -94,11 +96,13 @@ export const profile = () => {
                 const task = doc.data()
 
                 formPost[task.contentPost].value = task.contentPost;
-                console.log(task.contentPost); /* NO LO SAQUE*/
+                // console.log(task.contentPost); /* NO LO SAQUE*/
             })
         });
     })    
-    return divProfile;
+    debugger;
+    createdPost(divProfile, containerRoot);
+    // return divProfile;
 }
 
 /* <nav class="nav-search">
