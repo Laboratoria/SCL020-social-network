@@ -8,8 +8,8 @@ export const register = () => {
             <h1>Registrate</h1>
             <img src= "imagenes/logo.png" class= "logo"></img>
             <input type="text" id="email" class= "email" required placeholder="E-mail">
-            <input type="text" id="contraseña" class= "contraseña" required placeholder="Contraseña">
-            <button class = "btn"><a href='#/wall'>Continuar</a></button>
+            <input type="password" id="contraseña" class= "contraseña"  placeholder="Contraseña" required />
+            <button class = "btn">Continuar</button>
            
             
         </div>`
