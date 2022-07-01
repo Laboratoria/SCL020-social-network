@@ -12,7 +12,7 @@ export const interpLogIn = () => {
         </a>
       </nav>
       <div class="containerFormIndex">
-        <h1 class ="title_page1" >SESHATLAB</h1>
+        <h1 class="title_page1" >SESHATLAB</h1>
         <img class="img_logo_page1" src="./images/logo.png" alt="logo" width="145"/>
         <div id="form_login" action="">
           <input type="text id="userName" placeholder="Correo electrónico" autofocus class="campotxt">
