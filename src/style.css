@@ -460,6 +460,9 @@ div .wall{
     border: none;
     background-color: #ffffff;
 }
+.liked{
+    background: purple;
+}
 .btn-comment img{
     width: 22px;
     height: 22px;

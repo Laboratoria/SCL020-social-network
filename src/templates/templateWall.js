@@ -1,12 +1,16 @@
-import { creatingNewPost, updatingPublications/*, editingPublication */,
- deletingPublication, getPublication} from '../firebase-doc/firestore.js';
-import { logOut } from '../firebase-doc/authentication.js';
-import { auth, getDocs, collection, db } from '../firebase-doc/firebase.js';
-import { changeRoute } from '../lib/router.js';
+import {
+  creatingNewPost,
+  updatingPublications /*, editingPublication */,
+  deletingPublication,
+  getPublication,
+  editingComment,
+} from "../firebase-doc/firestore.js";
+import { logOut } from "../firebase-doc/authentication.js";
+import { auth, getDocs, collection, db } from "../firebase-doc/firebase.js";
+import { changeRoute } from "../lib/router.js";
 
 export const wall = () => {
-  const wallP = 
-  `
+  const wallP = `
 <div class="wallView">
       <header>
           <img src = "Social-Images/logoWall.png">
@@ -24,31 +28,34 @@ export const wall = () => {
      </div>
       </div>
       `;
-    const container = document.createElement('div');
-    container.innerHTML = wallP;
-    container.className = "wallViewContainer";
-    
-    const publishButton = container.querySelector('#publish');
+  const container = document.createElement("div");
+  container.innerHTML = wallP;
+  container.className = "wallViewContainer";
 
-    publishButton.addEventListener('click', async () => {
-      const commentContainer = container.querySelector('#publication');
-      let comment = commentContainer.value;
-      try { await creatingNewPost ( comment );
-      commentContainer.value = '';
-      console.log('prueba')
+  const publishButton = container.querySelector("#publish");
+
+  publishButton.addEventListener("click", async () => {
+    const commentContainer = container.querySelector("#publication");
+    let comment = commentContainer.value;
+    try {
+      await creatingNewPost(comment);
+      commentContainer.value = "";
+      console.log("prueba");
       return creatingNewPost;
-    } catch (error) { return console.log('error')}
-    });
+    } catch (error) {
+      return console.log("error");
+    }
+  });
 
-    const allPublications = async () => {
-    let publicationsContainer = container.querySelector('#wall');
-    publicationsContainer.innerHTML = '';
-    let publicationFrame = '';
+  const allPublications = async () => {
+    let publicationsContainer = container.querySelector("#wall");
+    publicationsContainer.innerHTML = "";
+    let publicationFrame = "";
     updatingPublications((publications) => {
-      publicationFrame = '';
+      publicationFrame = "";
       publications.forEach((doc) => {
-        const pub = doc.data()
-      publicationFrame += `
+        const pub = doc.data();
+        publicationFrame += `
       <div class="post">
         <div class='post-header'>
           <p class='user-info'><img class="user-photo" src="${pub.Photo}">
@@ -74,66 +81,68 @@ export const wall = () => {
         </div>
       </div>
       `;
+      });
+      publicationsContainer.innerHTML = publicationFrame;
+      const btnDelete = container.querySelectorAll(".btn-delete");
+      btnDelete.forEach((btn) => {
+        btn.addEventListener("click", ({ target: { dataset } }) => {
+          deletingPublication(dataset.id);
+        });
+      });
 
-    })
-    publicationsContainer.innerHTML = publicationFrame;
-    const btnDelete = container.querySelectorAll('.btn-delete');
-    btnDelete.forEach(btn => {
-         btn.addEventListener('click', ({target: {dataset}}) => {
-           deletingPublication(dataset.id)
-         })
-       })
-
-    const btnEdit = container.querySelectorAll('.btn-edit');
-    btnEdit.forEach((btn) => {
-      btn.addEventListener('click', async (e) => {
-        const publi = await getPublication(e.target.dataset.id);
-        const publiInfo = publi.data()
-        console.log(publiInfo)
-
-      const editingAreaEl = document.createElement('textarea');
-      editingAreaEl.value = {publiInfo};
-      const postEl = btn.closest('.post');
-      const paragraphEl = postEl.querySelector('.comment');
-      console.log(paragraphEl)
-      paragraphEl.classList.add('hide');
-      postEl.appendChild(editingAreaEl);
+      /*const btnLikes = container.querySelectorAll('.btn-like');
+    btnLikes.forEach(btn => {
+      btn.addEventListener('click', ({target: {dataset}}) => {
+        btn.classList.add('liked');
+        addLike(dataset.id);
+        console.log('jelou')
       })
-    })
+    })*/
+      //Mostrar el comentario de la publicación
+      //Usuario pueda dar click en el boton y que se muestre en el text area y se oculte el comment
+      //Crear boton para guardar cambios
+      //Usuario puede editar texto
+      //Dar click al boton de guardar cambios
+      //Esconder text area y boton para guardar cambios
+      //Ejecutar funcion UpdateDoc Firestore
+      //Refrescar vista de publicacion con nuevo Comment de Firestore ( ver si onSnapshot actualiza el nuevo comment)
+      const btnEdit = container.querySelectorAll(".btn-edit");
+      btnEdit.forEach((btn) => {
+        btn.addEventListener("click", async (e) => {
+          const publi = await getPublication(e.target.dataset.id);
+          const publiInfo = publi.data();
+          console.log(publiInfo);
 
-  });
+          const editingAreaEl = document.createElement("textarea");
+          editingAreaEl.classList.add('editing-area');
+          editingAreaEl.value = publiInfo.Comment;
+          const postEl = btn.closest(".post");
+          const paragraphEl = postEl.querySelector(".comment");
+          console.log(paragraphEl);
+          paragraphEl.classList.add("hide");
+          postEl.appendChild(editingAreaEl);
+          const saveChanges = document.createElement('button');
+          saveChanges.classList.add('save-changes-btn');
+          saveChanges.textContent = 'Guardar';
+          postEl.appendChild(saveChanges);
+          editingComment(id, editingAreaEl.value)
+        });
+      });
+    });
     return allPublications;
-  }
+  };
   allPublications();
 
-  // const btnDelete = container.querySelectorAll('.btn-delete');
-  // btnDelete.forEach(btn => {
-  //   btn.addEventListener('click', () => {
-  //     console.log('borrando')
-  //   })
-  // })
-  
+  const buttonLogOut = container.querySelector("#logOut");
+  buttonLogOut.addEventListener("click", async () => {
+    try {
+      await logOut(auth);
+      changeRoute("#/home");
+      return logOut;
+    } catch (error) {
+      return console.log("error");
+    }
+  });
 
-  /* const editButton = container.querySelectorAll('#editButton');
-   editButton.addEventListener('click', async () =>{
-     try { await editingPublication(doc, id)
-     } catch (error) {
-       return console.log('error')
-     }
-   });*/
-  
-    const buttonLogOut = container.querySelector('#logOut');
-    buttonLogOut.addEventListener('click', async () => {
-      try { await logOut(auth);
-        changeRoute('#/home');
-        return logOut;
-      } catch (error) {
-        return console.log('error')
-      }
-    });
-  
   return container;
 };
-
-
-
