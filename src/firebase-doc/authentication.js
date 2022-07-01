@@ -1,4 +1,4 @@
-import { auth, signOut, signInWithEmailAndPassword, signInWithRedirect, createUserWithEmailAndPassword, updateProfile, sendEmailVerification, onAuthStateChanged, provider } from './firebase.js';
+import { auth, signOut, signInWithEmailAndPassword, signInWithPopup, createUserWithEmailAndPassword, updateProfile, sendEmailVerification, onAuthStateChanged, provider } from './firebase.js';
 import { changeRoute } from '../lib/router.js';
 
 // Observador
@@ -49,12 +49,11 @@ const logIn = async (email, password) => {
 
 const signingInWithgoogle = async () => {
   try {
-    const userInWithGoogle = await signInWithRedirect(auth, provider);
+    const userInWithGoogle = await signInWithPopup(auth, provider);
     return userInWithGoogle.user;
   } catch (error) {
     console.log(error);
-    alert('Error al intentar ingresar con tu cuenta de Google', error);
-    return null;
+    alert('Error al intentar ingresar con tu cuenta de Google', error)
   }
 };
 

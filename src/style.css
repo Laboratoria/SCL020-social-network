@@ -351,14 +351,16 @@ textarea{
 .publish:hover {
     background-color:#09fada;
 }
+.logOutWall img{
+    width: 35px;
+    height: 35px;
+    border-radius: 0;
+    display: flex;
+}
 .logOutWall{
-    min-width: 100px;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    background-color: #4b309c;
     border: none;
-    font-size: 15px;
-
+    background-color: #4b309c;
+    margin-right: 12px;
 }
 div .wall{
     width: 100%;
@@ -369,15 +371,15 @@ div .wall{
     background-size: cover;
 }
 .post{
-border: 1px solid black;
-width: 300px;
-min-height: 150px;
-border-radius: 10px;
-margin-top: 20px;
-background-color: antiquewhite;
-justify-content: left;
-display: flex;
-flex-direction: column;
+        border: 1px solid black;
+        width: 300px;
+        min-height: 150px;
+        border-radius: 10px;
+        margin-top: 20px;
+        background-color: #ffffff;
+        justify-content: left;
+        display: flex;
+        flex-direction: column;
 }
 .post-header{
     padding: 0;
@@ -432,18 +434,45 @@ flex-direction: column;
     border: none;
 }
 .btn-delete img{
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
     border-radius: 0;
     display: flex;
     pointer-events: none;
 }
 .btn-delete{
-    width: 16px;
-    height: 16px;
+    width: 19px;
+    height: 19px;
     border: none;
     margin-top: 40px;
     margin-left: 8px;
+}
+.btn-like img{
+    width: 22px;
+    height: 22px;
+    border-radius: 0;
+    display: flex;
+}
+.btn-like{
+    margin-left: 190px;
+    width: 22px;
+    height: 22px;
+    border: none;
+    background-color: #ffffff;
+}
+.btn-comment img{
+    width: 22px;
+    height: 22px;
+    border-radius: 0;
+    display: flex;
+}
+.btn-comment{
+    margin-left: 20px;
+    margin-top: -30px;
+    width: 22px;
+    height: 22px;
+    border: none;
+    background-color: #ffffff;
 }
 .middleSection{
     margin-top: 30px;

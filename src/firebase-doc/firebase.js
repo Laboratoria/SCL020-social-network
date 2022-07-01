@@ -5,7 +5,7 @@ import { getFirestore, collection, addDoc, updateDoc, doc, Timestamp, getDocs, o
    query, orderBy, deleteDoc, getDoc } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js";
 import { getAuth, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword, 
   updateProfile, sendEmailVerification, onAuthStateChanged, GoogleAuthProvider, 
-  getRedirectResult, signInWithRedirect} from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
+  getRedirectResult, signInWithPopup} from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
     
     
 import config from './config.js';
@@ -26,7 +26,7 @@ const provider = new GoogleAuthProvider();
 export {
   auth, app, db, provider, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword,
   updateProfile, sendEmailVerification, onAuthStateChanged,
-  getRedirectResult, signInWithRedirect, addDoc,
+  getRedirectResult, signInWithPopup, addDoc,
   collection, Timestamp, getDocs, updateDoc, doc, onSnapshot, query, orderBy, deleteDoc, getDoc
 };
 
