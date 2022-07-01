@@ -28,8 +28,14 @@ export const interpHome = () => {
       </section>
       <footer>
         <input type="image" src="images/clima.png" id="topicChange" class="imageFooter">     
-        <input type="image" src="images/home.png" id="home" class="imageFooter">      
-        <input type="image" src="images/log-out.png" id="logOut" class="imageFooter"> 
+        <a href='#/viewProfile'>
+          <button class="buttomimageFooter">
+          <img class="imageFooter" id="home" src="images/home.png" alt="home" /> </button>
+        </a>
+        <a href='#/'>
+          <button class="buttomimageFooter">
+          <img class="imageFooter" id="logOut" src="images/log-out.png" alt="logOut"/> </button>
+        </a>
       </footer>
     </div>
   `;
