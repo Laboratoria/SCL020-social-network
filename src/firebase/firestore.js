@@ -1,11 +1,11 @@
 import { db, collection, addDoc, getDocs, } from './init.js'
 
-export const posting = async(nameRecipe, ingredients, stepOne, stepTwo, stepThree, stepFour, typeRecipe, uploadImg) => {
+export const posting = async(nameRecipe, ingredients, stepOne, stepTwo, stepThree, typeRecipe, uploadImg) => {
     try {
         const docRef = await addDoc(collection(db, "pots"), {
             nombre: nameRecipe,
             ingredientes: [ingredients, ],
-            preparacion: [{ stepOne }, { stepTwo }, { stepThree }, { stepFour }],
+            preparacion: [{ stepOne }, { stepTwo }, { stepThree }],
             tipo: typeRecipe,
             img: uploadImg,
 
