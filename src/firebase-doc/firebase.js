@@ -2,7 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
 
 import { getFirestore, collection, addDoc, updateDoc, doc, Timestamp, getDocs, onSnapshot,
-   query, orderBy, deleteDoc, getDoc } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js";
+   query, orderBy, deleteDoc, getDoc, arrayRemove, arrayUnion } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js";
 import { getAuth, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword, 
   updateProfile, sendEmailVerification, onAuthStateChanged, GoogleAuthProvider, 
   getRedirectResult, signInWithPopup} from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
@@ -27,7 +27,8 @@ export {
   auth, app, db, provider, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword,
   updateProfile, sendEmailVerification, onAuthStateChanged,
   getRedirectResult, signInWithPopup, addDoc,
-  collection, Timestamp, getDocs, updateDoc, doc, onSnapshot, query, orderBy, deleteDoc, getDoc
+  collection, Timestamp, getDocs, updateDoc, doc, onSnapshot, query, orderBy, deleteDoc,
+   getDoc, arrayRemove, arrayUnion
 };
 
 
