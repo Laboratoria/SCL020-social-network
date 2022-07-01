@@ -1,6 +1,3 @@
-// aqui exportaras las funciones que necesites
+import { router } from "./routes";
 
-export const myFunction = () => {
-  // aqui tu codigo
-  console.log('Hola mundo!');
-};
+let loadPage = window.addEventListener('load', router);
