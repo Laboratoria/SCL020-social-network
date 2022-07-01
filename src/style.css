@@ -19,8 +19,8 @@
         grid-template-rows: 180px 150px 230px;
         background-color: white;
         opacity: 87%;
-        width: 335px;
-        height: 690px;
+        width: 90vw;
+        height: 80vh;
         margin-top: 70px;
         border-radius: 35px;
         margin-left: auto;
@@ -48,8 +48,8 @@
 
 @media screen and (max-width: 428px) {
     .container-orange {
-        height: 200px;
-        width: 308px;
+        height: 27vh;
+        width: 77vw;
         background: #E28413;
         border-radius: 10px;
         margin-top: 5px;
@@ -65,7 +65,7 @@
         font-family: 'Jockey One';
         font-style: normal;
         font-weight: 400;
-        font-size: 25px;
+        font-size: 22px;
         line-height: 8px;
         text-align: center;
         padding-top: 15px;
@@ -78,7 +78,7 @@
         font-family: 'Jockey One';
         font-style: normal;
         font-weight: 400;
-        font-size: 23.5px;
+        font-size: 22px;
         line-height: 35px;
         text-align: center;
         margin-top: 10px;
@@ -112,8 +112,8 @@
         grid-template-rows: 200px 60px 70px 60px 100px 80px 80px;
         background-color: white;
         opacity: 87%;
-        width: 335px;
-        height: 690px;
+        width: 90vw;
+        height: 85vh;
         margin-top: 70px;
         border-radius: 35px;
         margin-left: auto;
@@ -229,11 +229,11 @@
 @media screen and (max-width: 428px) {
     .container-register {
         display: grid;
-        grid-template-rows: 130px 150px 80px 80px 150px;
+        grid-template-rows: 130px 170px 80px 80px 150px;
         background-color: white;
         opacity: 87%;
-        width: 335px;
-        height: 690px;
+        width: 90vw;
+        height: 80vh;
         margin-top: 70px;
         border-radius: 35px;
         margin-left: auto;
@@ -310,7 +310,7 @@
         display: grid;
         grid-template-rows: 730px;
         background-color: #FFFFFF;
-        width: 100vh;
+        width: 100vw;
         height: 100vh;
     }
 }
@@ -318,7 +318,7 @@
 @media screen and (max-width: 428px) {
     .container-wall header {
         display: flex;
-        justify-content:space-between;
+        justify-content:space-around;
         flex-direction: row-reverse;
         top: 600px;
         width: 375px;
@@ -338,31 +338,47 @@
 }
 
 @media screen and (max-width: 428px) {
-    .container-wall .logo {
-        Width: 8vh;
+    .container-wall .logoperfil {
+        Width: 12vw;
         Height: 8vh;
         margin-top: 10px;
     }
 }
+
 @media screen and (max-width: 428px) {
-    .container-wall .logo{
-        Width: 8.5vh;
-        Height: 10vh;
+    .container-wall footer{
+        display: flex;
+        justify-content:space-around;
+        flex-direction: row-reverse;
+        align-items: center;
+        align-content: center;
+        top: 600px;
+        width: 375px;
+        height: 100px;
+        background-color: rgb(230, 193, 149);
+    }
+}
+@media screen and (max-width: 428px) {
+    .container-wall .logomuro{
+        Width: 12vw;
+        Height: 7vh;
         
     }
 }
-
+@media screen and (max-width: 428px) {
+    .container-wall .logopublicar{
+        Width: 10vw;
+        Height: 7vh;
+        
+    }
+}
 @media screen and (max-width: 428px) {
     .container-post {
-        display: grid;
-        grid-template-rows: 90px 60px 90px 90px 150px 150px 80px 80px 80px 80px 80px 80px 90px;
         background-color: #FFFFFF;
-        height: 810px;
-        width: 375px;
+        width: 100vw;
+        height: 100vh;
         top: 246px;
-        border-radius: 0px;
-        
-        
+        border-radius: 0px; 
     }
 }
 @media screen and (max-width: 428px) {
@@ -371,11 +387,38 @@
         font-size: 40px;
         color: #095E00;
         margin-top: 20px;
+        text-align: center;
     }
 }
 @media screen and (max-width: 428px) {
     .container-post form {
+       display: grid;
+       grid-template-rows: 50px 30px 50px 50px 20px 50px 50px 50px 50px 50px 50px 50px 30px 60px;
        margin-left: auto;
        margin-right: auto;
+       padding: auto;
+       height: 700px;
+       width: 320px;
+       background: #D9D9D9;
+       left: 35px;
+       top: 146px;
+    }
+}
+@media screen and (max-width: 428px) {
+    .container-post h4 {
+        font-family: 'Lobster Two';
+        font-size: 20px;
+        color: black;
+        margin-top: 20px;
+    }
+}
+@media screen and (max-width: 428px) {
+    .container-post .btnpublicar {
+        width: 30vw;
+        height: 5vh;
+        background: #E28413;
+        font-family: 'Lobster Two';
+        font-size: 20px;
+        color: black;
     }
 }
