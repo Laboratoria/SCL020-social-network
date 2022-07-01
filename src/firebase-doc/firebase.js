@@ -1,7 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
 
-import { getFirestore, collection, addDoc, updateDoc, doc, Timestamp, getDocs, onSnapshot, query } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js";
+import { getFirestore, collection, addDoc, updateDoc, doc, Timestamp, getDocs, onSnapshot,
+   query, orderBy, deleteDoc, getDoc } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js";
 import { getAuth, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword, 
   updateProfile, sendEmailVerification, onAuthStateChanged, GoogleAuthProvider, 
   getRedirectResult, signInWithRedirect} from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
@@ -26,7 +27,7 @@ export {
   auth, app, db, provider, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword,
   updateProfile, sendEmailVerification, onAuthStateChanged,
   getRedirectResult, signInWithRedirect, addDoc,
-  collection, Timestamp, getDocs, updateDoc, doc, onSnapshot, query
+  collection, Timestamp, getDocs, updateDoc, doc, onSnapshot, query, orderBy, deleteDoc, getDoc
 };
 
 
