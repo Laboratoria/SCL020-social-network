@@ -551,7 +551,7 @@ a{
 .container-feed {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     text-align: center;
     width: auto;
@@ -746,7 +746,7 @@ a{
 /*      --    PROFILE VIEW     --      */
 .container-profile {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     text-align: center;
     max-height: 100vh;
@@ -975,7 +975,7 @@ a{
 /*  GRADIENT BACKGROUND  */
 body {
 	background: linear-gradient(-45deg, #5492F5, #5391F6, #ED829E, #FFCA2C, #ED829E);
-	background-size: 400% 400%;
+	background-size: 900% 900%;
 	animation: gradient 30s ease infinite;
     animation-direction: alternate;
 	height: 100vh;
@@ -1050,6 +1050,11 @@ body {
         height: 300px;
     }
 
+    /* PROFILE  */
+
+    .container-profile {
+        width: auto;
+    }
 
 
 
