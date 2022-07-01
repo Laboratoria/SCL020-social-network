@@ -25,9 +25,9 @@ export const home = () => {
   googleButton.addEventListener('click', async (e) => {
     const user = await signingInWithgoogle();
     if (user) {
-      changeRoute('/#wall');
+      changeRoute('#/wall');
     } else (console.log('error'));
-  });
+  })
   const inWithGoogle = async () => {
     const redirected = await getRedirectResult(auth);
     if (redirected) { changeRoute('#/wall'); }

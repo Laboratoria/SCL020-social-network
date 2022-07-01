@@ -11,7 +11,9 @@ export const wall = () => {
       <header>
           <img src = "Social-Images/logoWall.png">
           <a href="#/bullyingForm" id="bForm"><strong>Te Escuchamos</strong></a>
-          <button class= "logOutWall" id="logOut"><strong>Cerrar Sesión</strong></button>
+          <button class= "logOutWall" id="logOut">
+          <img src = "../Social-Images/log-Out-icon.png">
+          </button>
       </header>
      <div class="publication-area">
      <textarea placeholder="Ingrese su publicación" cols="40" rows="5" id="publication"></textarea>
@@ -60,11 +62,15 @@ export const wall = () => {
         <p class="comment">${pub.Comment}</p>
         </div>
         <div class="post-footer">
-          <button class="btn-like" data-id="${doc.id}">
-          </button>
-          <button class="btn-delete" data-id="${doc.id}">
+        <button class="btn-delete" data-id="${doc.id}">
           <img src = "../Social-Images/delete-btn.png">
           </button>
+        <button class="btn-like" data-id="${doc.id}">
+        <img src = "../Social-Images/like-icon.png">
+        </button>
+        <button class="btn-comment" data-id="${doc.id}">
+        <img src = "../Social-Images/comment-icon.png">
+        </button>
         </div>
       </div>
       `;
