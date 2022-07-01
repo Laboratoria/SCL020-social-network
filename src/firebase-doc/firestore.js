@@ -1,4 +1,3 @@
-/* eslint-disable arrow-spacing */
 import {
   db,
   collection,
@@ -9,7 +8,10 @@ import {
   Timestamp,
   getDocs,
   onSnapshot,
-  query
+  query,
+  orderBy,
+  deleteDoc,
+  getDoc
 } from "../firebase-doc/firebase.js";
 console.log(addDoc);
 
@@ -18,6 +20,7 @@ const creatingNewPost = async (comment) => {
     const docRef = await addDoc(collection(db, "Publications"), {
       Photo: auth.currentUser.photoURL,
       Name: auth.currentUser.displayName,
+      UserId: auth.currentUser.uid,
       Time: Timestamp.fromDate(new Date()),
       Comment: comment,
     });
@@ -27,34 +30,18 @@ const creatingNewPost = async (comment) => {
   }
 };
 
-const gettingAllPublications = async () => {
-  const querySnapshot = await getDocs(collection(db, "Publications"));
-  const publicationsArray = [];
-  querySnapshot.forEach((doc) => {
-    // doc.data() is never undefined for query doc snapshots
-    publicationsArray.push({
-      id: doc.id,
-      ...doc.data()
-        })
-  });
-  return publicationsArray;
+const updatingPublications = (callback) => {
+  const q = query(collection(db, 'Publications'), orderBy('Time', 'desc'));
+  onSnapshot(q, callback);
 };
 
-const updatingPublications = async () => {
-  onSnapshot(query(collection(db, 'Publications')), (doc) => {
-    const array = [];
-    const post = doc.data;
-    doc.docs.forEach(() => {
-      array.push({ id: doc.id, post });
-    });
-    return array;
-  });
-};
+const getPublication = id => getDoc(doc(db, 'Publications', id));
+
+const deletingPublication = (id) => deleteDoc(doc(db, 'Publications', id));
 
 
-// const editingPublication = async (id) => {
-//   await updateDoc(doc(db, 'Publications', id), { comment: editingPublication });
-// };
+ /*const editingPublication = async (id, editPublication) => {
+     await updateDoc(doc(db, 'Publications', id), { comment: editPublication });
+};*/
 
-export { creatingNewPost, gettingAllPublications, updatingPublications };
-// , editingPublication 
+export { creatingNewPost, updatingPublications/* editingPublication*/, deletingPublication, getPublication };

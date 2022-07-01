@@ -405,6 +405,10 @@ flex-direction: column;
     z-index: 3;
     margin-left: 10px;
 }
+.comment.hide{
+    display: none;
+
+}
 .date{
     color: gray;
     font-size: small;
@@ -418,6 +422,7 @@ flex-direction: column;
     height: 15px;
     border-radius: 0;
     display: flex;
+    pointer-events: none;
 }
 .btn-edit{
     margin-left: 260px;
@@ -425,6 +430,20 @@ flex-direction: column;
     width: 16px;
     height: 16px;
     border: none;
+}
+.btn-delete img{
+    width: 15px;
+    height: 15px;
+    border-radius: 0;
+    display: flex;
+    pointer-events: none;
+}
+.btn-delete{
+    width: 16px;
+    height: 16px;
+    border: none;
+    margin-top: 40px;
+    margin-left: 8px;
 }
 .middleSection{
     margin-top: 30px;
