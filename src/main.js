@@ -18,6 +18,7 @@ const init = () => {
 		// console.log('hash', window.location.hash);
 		root.innerHTML = '';
 		changeRoute(window.location.hash);
+		
 	});
 };
 
