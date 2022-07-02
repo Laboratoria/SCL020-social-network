@@ -2,8 +2,7 @@ import { login } from '../../firebase/auth.js';
 
 export const interpLogIn = () => {
 	const divLogIn = document.createElement('div');
-	const formIndex =
-		//html
+	const formIndex = //html
 		`
     <div id="root">
       <nav id="nav_registration">
@@ -14,13 +13,13 @@ export const interpLogIn = () => {
       <div class="containerFormIndex">
         <h1 class="title_page1" >SESHATLAB</h1>
         <img class="img_logo_page1" src="./images/logo.png" alt="logo" width="145"/>
-        <div id="form_login" action="">
-          <input type="text id="userName" placeholder="Correo electrónico" autofocus class="campotxt">
-          <input type="text id="password" placeholder="Contraseña" autofocus class="campotxt">
+        <form id="form_login" action="">
+          <input type="text" id="userName" name="email" placeholder="Correo electrónico" autofocus class="campotxt">
+          <input type="text" id="password" name="password" placeholder="Contraseña" autofocus class="campotxt">
           <a href='#/viewHome'>
           <button id="start">Iniciar sesión</button>
           </a>
-        </div>
+        </form>
         <a href='#/viewHome'>
         <button id="button_google" type="submit">
               <img
