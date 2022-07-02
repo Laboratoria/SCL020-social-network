@@ -2,19 +2,32 @@
 export const interpHome = () => {
 	const divHome = document.createElement('div');
 
-	const formHome =
-		//html
+	const formHome =//html
 		`
     <div id="rootHome" class="containerRootHome">
       <section class="containerHome">
-        <div class="textBoxContainer">
-          <input type="text" id="postTittle" class="boxtxt" placeholder="Título">
+        <form id="form_post" class="textBoxContainer">
+          <input type="text" name="postTitle" id="postTittle" class="boxtxt" placeholder="Título">
           <p></p>
-          <textarea type="text" id="postText" class="boxtxt" rows="5" placeholder="Escribe tu publicación aquí..."></textarea>
+          <textarea type="text" name="postText" id="postText" class="boxtxt" rows="5" placeholder="Escribe tu publicación aquí..."></textarea>
          <div class="containerPublicar">
           <button id="Post" class="post">Publicar</button>
           </div>
-        </div> 
+        </form>
+        </section>
+    </div>
+  `;
+	divHome.innerHTML = formHome;
+	return divHome;
+};
+
+export const interpHomePost = () => {
+	const divHomePost = document.createElement('div');
+
+	const formHomePost =//html
+		`
+    <div id="rootHomePost" class="containerRootHome">
+        <section> 
         <div class="containerPostPublicado">
           <div class="tittlePost">
             <img class="" src="./images/perfil.png" alt="perfil" height=auto width="40"/>
@@ -39,6 +52,6 @@ export const interpHome = () => {
       </footer>
     </div>
   `;
-	divHome.innerHTML = formHome;
-	return divHome;
+	divHomePost.innerHTML = formHomePost;
+	return divHomePost;
 };
