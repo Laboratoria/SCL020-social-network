@@ -11,8 +11,10 @@ import { menu } from './views/templateMenu';
 export const changeroutes = (hash) => {
    if (hash === '#/'){
       return showTemplate(hash);
-   } else if (hash === '#/login'){
+   } else if (hash === '#/home'){
       return showTemplate(hash);
+   } else if (hash === '#/perfilUsurio'){
+         return showTemplate(hash);
    } else {
       return showTemplate(hash);
    }

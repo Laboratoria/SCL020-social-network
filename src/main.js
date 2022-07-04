@@ -10,8 +10,12 @@ import { changeroutes } from './lib/routes';
 // const index =  document.getElementById('view1').innerHTML = indexScreen();
 // const login =  document.getElementById('view2').innerHTML += loginScreen();
 
+
+//
 const init = () => {
+    document.getElementById('view1').innerHTML = menu();
     window.addEventListener('hashchange', () => {
+
         changeroutes(window.location.hash);
     })
 }
