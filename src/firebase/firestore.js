@@ -1,4 +1,4 @@
-import { db, addDoc, collection } from './init.js';
+import { db, addDoc, collection, getDocs, onSnapshot, query } from './init.js';
 
 export const createPost = () => {
     const formPost = document.querySelector('#form_post');
@@ -22,8 +22,25 @@ export const newPost = (title, text) => {
       })
 };
 
-export const lookPost = () => {
-    const post = collection(db, "Comentarios");
-    console.log("post", post);
-}
+export const lookPost = async () => {
+  try {
+    let dataPost = [];
+    const respuestaDataPost = await getDocs(collection(db, "Comentarios"));
+      respuestaDataPost.forEach((doc) => {
+      console.log(doc.id, " => ", doc.data());
+      dataPost.push({ id: doc.id, data: doc.data() });
+    });
+    console.log(dataPost);
+    return dataPost;
+  }
+  catch (error) {
+    console.log(error);
+  }
+};
+
+export const snapshot = (callback) => {
+  const q = query(collection(db, "Comentarios"));
+  onSnapshot(q, (callback))
+  };
+  
 
