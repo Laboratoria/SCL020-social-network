@@ -41,7 +41,6 @@ export const feed = (containerRoot) => {
                     <button><img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/thor.png?raw=true" alt="movie-rank"></button>
                 </div>   
                 <div class="container-post">
-                <label>prueba</label>
                 </div>
             </div>
             <div class="container-menu">
@@ -68,7 +67,7 @@ divFeed.innerHTML = viewFeed;
   // const querySnapshot = createdPost();
   // debugger;
 
-  createdPost(divFeed, containerRoot, "feed");
+    createdPost(divFeed, containerRoot, "feed");
   // window.addEventListener("load", async () => {
   //     const querySnapshot = await createdPost();
   //     debugger;

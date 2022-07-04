@@ -18,9 +18,8 @@ export const ageRedirect = () => {
         
     `
     divAgeRedirect.innerHTML = viewAgeRedirect;
-
     return divAgeRedirect;
-}
+};
 
 
 

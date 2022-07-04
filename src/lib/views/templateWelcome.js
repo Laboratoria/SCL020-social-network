@@ -1,6 +1,5 @@
 export const welcome = () => {
     const divWelcome = document.createElement("div");
-
     const viewWelcome = //html
     `
         <div class="container-welcome">
@@ -16,5 +15,4 @@ export const welcome = () => {
     `
     divWelcome.innerHTML = viewWelcome;
     return divWelcome;
-    
-}
+};

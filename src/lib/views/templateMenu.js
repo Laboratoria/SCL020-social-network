@@ -20,6 +20,4 @@ export const menu = () =>{
     `
     divMenu.innerHTML = viewMenu
     return divMenu;
-}
-
-            // <a href="#/feed"><button class="btn-backFeed"><img src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/return.png?raw=true" alt="btn-backFeed"></button></a>
+};

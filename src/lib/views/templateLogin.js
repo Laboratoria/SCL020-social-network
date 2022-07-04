@@ -20,24 +20,20 @@ export const login = () => {
             </div>
         </div>     
     `
-    divLogin.innerHTML = viewLogin;
-    // <input type="button" value="Login" id="btn"></input>
-    
+    divLogin.innerHTML = viewLogin;    
 
-    const btnGoogle = divLogin.querySelector("#loginGoogle")
+    const btnGoogle = divLogin.querySelector("#loginGoogle");
     btnGoogle.addEventListener("click", ()=> {
         signInGoogle()
-
-    })
+    });
 
     const btn = divLogin.querySelector("#btn")
     btn.addEventListener("click", (e) => {
         e.preventDefault()
+    
         const email = divLogin.querySelector("#email").value;
         const password = divLogin.querySelector("#password").value;
-        logIn(email, password);
-        
-        
-    })
+        logIn(email, password);       
+    });
     return divLogin;
-}
+};

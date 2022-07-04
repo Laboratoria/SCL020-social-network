@@ -68,33 +68,5 @@ export const showTemplate = (hash) => {
           containerRoot.appendChild(err404());
       }
     }
-  });
+  })
 };
-
-// export const changeRoute = (hash) => {
-//     if (hash ==="#/login"){
-//         return showTemplate(hash);}
-//     else if (hash==="#/age"){
-//         return showTemplate (hash);
-//     }else if (hash==="#/ageRedirect"){
-//         return showTemplate (hash);
-//     }else if (hash==="#/sign-up"){
-//         return showTemplate (hash);
-//     }else if (hash==="#/welcome"){
-//         return showTemplate (hash);
-//     }else if (hash==="#/err404"){
-//         return showTemplate (hash);
-//     }else if (hash==="#/feed"){
-//         return showTemplate (hash);
-//     }else if (hash==="#/menu"){
-//         return showTemplate (hash);
-//     }else if (hash==="#/logoutConfirmation"){
-//         return showTemplate (hash);
-//     }else if (hash==="#/profile"){
-//         return showTemplate (hash);
-//     }else if (hash==="#/deleteComment"){
-//         return showTemplate (hash);
-//     } else {
-//         return showTemplate(hash);
-//     }
-// }

@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
-* {
+*{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -9,28 +9,28 @@
     font-weight: normal;
 }
 
-
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
     background-color: transparent;
     border-radius: 6px;
     border:rgb(255, 255, 255, 0.50) ridge 1px; 
     height: 10px;
 }
 
-::-webkit-scrollbar {
+::-webkit-scrollbar{
     width: 10px;
-    background-color: transparent    ;
+    background-color: transparent;
 }
 
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb{
     -webkit-box-shadow: inset 0 0 6px rgb(28, 41, 68);
+            box-shadow: inset 0 0 6px rgb(28, 41, 68);
     background: rgb(255, 255, 255, 0.25);
     border-radius: 6px;
     height: 10px;
     border:  rgb(255, 255, 255, 0.50) ridge 1px; 
 }
-
 
 a{
     color: rgb(58, 87, 252);
@@ -38,9 +38,7 @@ a{
 
 /*      --    HOME VIEW     --      */
 
-
-
-.container-home {
+.container-home{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,17 +53,20 @@ a{
     width: 320px;
     height: 568px;*/
 }
+
 .sub-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items:center; 
 }
+
 .container-logo-ticket{
     padding: 10px 20px;
     background-color: rgb(255, 255, 255, 0.75); 
     border-radius: 30px;
 }
+
 .logo-ticket{
     width: 80px;
     height: auto;
@@ -73,6 +74,7 @@ a{
     background-color: rgb(255, 255, 255, 0.75); 
     box-shadow: 4px 4px 8px 2px rgba(85, 85, 85, 0.28);
 }
+
 .sub-container p{
     text-align: center;
     width: 200px;
@@ -84,6 +86,7 @@ a{
     background-color: rgb(255, 255, 255, 0.85); 
     box-shadow: 4px 4px 8px 2px rgba(85, 85, 85, 0.28);
 }
+
 .btn-returnstitch{
     border-radius: 15px;
     font-weight: 400;
@@ -96,12 +99,14 @@ a{
     background-color: rgb(255, 255, 255, 0.75); 
     box-shadow: 4px 4px 8px 2px rgba(85, 85, 85, 0.28);
 }
+
 .btn-returnstitch:hover{
     background-color: rgba(205, 205, 205, 0.56);
     box-shadow: 2px 2px 2px 2px rgb(239, 249, 255, 0.50);
     color: black;
     border: solid 2px #FFFFFF;
 }
+
 .btn{
     border-radius: 15px;
     padding: 10px 20px;
@@ -122,16 +127,6 @@ a{
     border: solid 2px #FFFFFF;
 }
 
-/* .btn:before{  
-    content:"";
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 0px;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    transition: all 1s ease;
-} */
 
 /*      --      LOGIN VIEW      --      */
 .container-login {
@@ -146,7 +141,8 @@ a{
     width: 320px;
     height: 568px;*/
 }
-.sub-container {
+
+.sub-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -157,10 +153,12 @@ a{
     background-color: rgb(255, 255, 255, 0.5);
     border-radius: 30px;
 }
+
 .container-s-logo-ticket{
     padding: 10px 20px;
     border-radius: 30px;
 }
+
 .s-logo-ticket{
     width: 60px;
     height: auto;
@@ -178,12 +176,14 @@ a{
     margin-bottom: 30px;
     font-size: large;
 }
+
 .sub-container label{
     display: flex;
     justify-content: center;
     text-align: center;
     margin-top: -20px;
 }
+
 .sub-container input{
     text-decoration: none;
     text-align: center;
@@ -199,6 +199,7 @@ a{
     margin: 10px;
     margin-bottom: 20px;
 }
+
 .btn-access{
     display: flex;
     flex-direction: row;
@@ -213,12 +214,14 @@ a{
     border: none;
     margin-bottom: 30px;
 }
+
 .btn-access button:hover{
     background-color: rgba(205, 205, 205, 0.56);
     box-shadow: 2px 2px 2px 2px rgb(239, 249, 255, 0.50);
     color: black;
     border: solid 2px #FFFFFF;
 }
+
 .form-type{
     display: flex;
     flex-direction: column;
@@ -274,6 +277,7 @@ a{
     width: 320px;
     height: 568px;*/
 }
+
 .container-age p{
     text-align: center;
     width: 200px;
@@ -286,7 +290,7 @@ a{
 }
 
 /*      --    AGE REDIRECT VIEW     --      */
-.container-ageRedirect {
+.container-ageRedirect{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -299,6 +303,7 @@ a{
     width: 320px;
     height: 568px;*/
 }
+
 .container-ageRedirect p{
     text-align: center;
     width: 200px;
@@ -316,17 +321,6 @@ a{
     border: rgb(255, 255, 255, 0.75) inset 2px;
 }
 
-/* .form-type > p{
-    text-align: center;
-    width: 200px;
-    margin-top: 50px;
-    margin-bottom:20px;
-    padding: 20px;
-    border-radius: 15px;
-    background-color: rgb(255, 255, 255, 0.75); ; 
-    box-shadow: 4px 4px 8px 2px rgba(85, 85, 85, 0.28);
-} */
-
 /*      --    SIGN UP VIEW     --      */
 .container-signUp {
     display: flex;
@@ -340,6 +334,7 @@ a{
     width: 320px;
     height: 568px;*/
 }
+
 .container-btn {
     display: flex;
     flex-direction: row;
@@ -367,7 +362,6 @@ a{
     border: solid 2px #FFFFFF;
 }
 
-
 .btn-create{
     border-radius: 15px;
     padding: 10px 20px;
@@ -380,12 +374,14 @@ a{
     box-shadow: 4px 4px 8px 2px rgba(85, 85, 85, 0.28);
     text-decoration:none;   
 }
+
 .btn-create:hover{
     background-color: rgba(205, 205, 205, 0.56);
     box-shadow: 2px 2px 2px 2px rgb(239, 249, 255, 0.50);
     color: black;
     border: solid 2px #FFFFFF;
 }
+
 .container-btn button{
     border-radius: 15px;
     padding: 10px 20px;
@@ -397,16 +393,15 @@ a{
     width: 100px;
     font-size: small;
 }
+
 .form-sign-up{
     display: flex;
     flex-direction: column;
     justify-content: center;
-
 }
 
 
 /*      --    WELCOME VIEW     --      */
-
 .container-welcome {
     display: flex;
     justify-content: center;
@@ -448,6 +443,7 @@ a{
     width: 320px;
     height: 568px;*/
 }
+
 /* .sub-container-logOutConfirm {
     display: flex;
     flex-direction: column;
@@ -478,6 +474,8 @@ a{
     color: black;
     border: solid 2px #FFFFFF;
 }
+
+
 /*      --    DELETE CONFIRMATION VIEW     --      */
 .container-deleteComment {
     display: flex;
@@ -491,6 +489,7 @@ a{
     width: 320px;
     height: 568px;*/
 }
+
 .sub-container-deleteComment {
     display: flex;
     flex-direction: column;
@@ -511,6 +510,7 @@ a{
     width: 100vw;
     height: 60px;
 }
+
 .sub-container-menu {
     background: rgba(217, 217, 217, 0.3);
     display: flex;
@@ -519,11 +519,13 @@ a{
     margin: 0px auto;
     width: 100%;
 }
+
 .container-img {
     display: flex;
     justify-content: center;
     align-items: center; 
 }
+
 .sub-container-img {
     display: flex;
     justify-content: space-around;
@@ -563,6 +565,7 @@ a{
     width: 320px;
     height: 568px;*/
 }
+
 /* .container-feed{
     display: flex;
     align-items: center;
@@ -571,11 +574,7 @@ a{
     height: 568px;
     
 } */
-
-
-
-
-.nav-search {
+.nav-search{
     display:flex;
     flex-direction: row;
     justify-content: space-between;
@@ -584,24 +583,28 @@ a{
     height: 70px;
     margin: 0px 5px;
 }
-.nav-web {
+
+.nav-web{
     display: none;
 }
 
 .menu-feed{
     width: 50%;
 }
-.menu-feed img {
+
+.menu-feed img{
     margin-left: 10px;
     width: 20px;
     height: auto;
 }
+
 .search-bar{
     width: 50%;
 }
 
+
 /*      --    Search     --      */
-.search-box {
+.search-box{
     position: absolute;
     /* top: 50%;
     left: 50%; */
@@ -614,7 +617,8 @@ a{
     /* border: 2px solid magenta;  */
     width: 200px;
 }
-.search-box:hover > .search-input {
+
+.search-box:hover > .search-input{
     position:absolute;
     width: 200px;
     height: 40px;
@@ -624,13 +628,15 @@ a{
     /* border-radius: 100px; 
     border: 1px solid lightgray;  */
 }
-.search-box:hover > .search-button {
+
+.search-box:hover > .search-button{
     background: transparent;
     border: rgb(248, 201, 183) solid 3px;
     color : #fff;
     transition: 0.5s ease;
 }
-.search-input {  
+
+.search-input{  
     width: 0px;
     border:none;
     padding: 0;
@@ -641,7 +647,8 @@ a{
     transition: 0.5s ease;
     line-height: 30px;
 }
-.search-button {
+
+.search-button{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -658,11 +665,13 @@ a{
     border:none;
     /* border: orange 2px solid; */
 }
-.search-button:hover {
+
+.search-button:hover{
     transform: rotate(360deg)
     scale(0.8);
 }
-.movies {
+
+.movies{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -676,7 +685,8 @@ a{
     /* border: red solid 1px; */
     /* margin-left: 110px; */
 }
-.movies button {
+
+.movies button{
     display: flex;
     flex: auto;
     background-color: transparent;
@@ -688,8 +698,9 @@ a{
     height: 90%; */
     border: none;
     /* border: purple solid 2px; */
-} 
-.movie-rank {
+}
+
+.movie-rank{
     display: flex;
     flex: auto;
     width: 35px;
@@ -698,14 +709,16 @@ a{
     /* border-radius: 10px; */
     /* border: green solid 2px; */
 }
-.container-post {
+
+.container-post{
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
     /* margin-left: 100px; */
 }
-.post {
+
+.post{
     background: rgba(217, 217, 217, 0.3);
     width: 270px;
     height: 180px;
@@ -716,18 +729,21 @@ a{
     align-items: flex-start;
     border-radius: 15px;
 }
-.user-info {
+
+.user-info{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 160px;
     margin-bottom: 8px;
 }
-.user-info img {
+
+.user-info img{
     width: 50px;
     height: auto;
 }
-.post-p {
+
+.post-p{
     background: rgba(255, 255, 255, 0.75);
     width: 230px;
     height: 90px;
@@ -735,13 +751,16 @@ a{
     border-radius: 15px;
     margin: 0px auto;
 }
-.btn-popCorn {
+
+.btn-popCorn{
     background: transparent;
     border: none;
 }
+
 .btn-popCorn:hover{ 
     margin:2px
 }
+
 
 /*      --    PROFILE VIEW     --      */
 .container-profile {
@@ -758,6 +777,7 @@ a{
     width: 320px;
     height: 568px;*/
 }
+
 /* .profile nav {
     display: flex;
     justify-content: space-between;
@@ -766,10 +786,11 @@ a{
     height: 60px;
     margin: 0px 5px;
 } */
-.web-box {
+.web-box{
     width: 100vw;
 }
-.user-profile {
+
+.user-profile{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -777,18 +798,21 @@ a{
     width: 100vw;
     margin-top: 30px;
 }
-.user-profile img {
+
+.user-profile img{
     margin: 5px;
     width: 65px;
     height: auto;
 }
-.user-profile button {
+
+.user-profile button{
     width: 110px;
     height: 25px;
     border-radius: 20px;
     margin: 5px;
     padding: 5px;
 }
+
 .user-data {
     display: flex;
     justify-content: space-around;
@@ -797,7 +821,8 @@ a{
     height: 55px;
     margin: 10px auto;
 }
-.data {
+
+.data{
     background-color: rgb(255, 255, 255, 0.75);
     text-align: center;
     align-items: center;
@@ -807,14 +832,16 @@ a{
     border-radius: 10px;
     font-size: 15px;
 }
-.data:hover {
+
+.data:hover{
     transform: scale(1.2);
     background-color: rgba(205, 205, 205, 0.56);
     box-shadow: 2px 2px 2px 2px rgb(239, 249, 255, 0.50);
     color: black;
     border: solid 2px #FFFFFF;
 }
-.feed-post {
+
+.feed-post{
     background: rgba(217, 217, 217, 0.3);
     width: 280px;
     display: flex;
@@ -825,10 +852,12 @@ a{
     padding: 20px;
     border-radius: 15px; 
 }
-.form-post {
+
+.form-post{
     margin: 0px auto;
 }
-.feed-post textarea {
+
+.feed-post textarea{
     background: rgba(217, 217, 217, 1);
     width: 230px;
     height: 80px;
@@ -838,12 +867,13 @@ a{
     border: none;
     text-align: center;
 }
+
 /* .feed-post button {
     margin-top: 5px;
     width: 40px;
     height: 20px; 
 } */
-.web-post {
+.web-post{
     background: rgba(217, 217, 217, 0.3);
     width: 280px;
     height: 0px;
@@ -855,7 +885,8 @@ a{
     /* padding: 20px; */
     border-radius: 15px; 
 }
-.post-box {
+
+.post-box{
     background: rgba(217, 217, 217, 1);
     width: 240px;
     height: 110px;
@@ -867,27 +898,32 @@ a{
     justify-content: flex-end;
     align-items: flex-start; */
 }
-.btn-edit {
+
+.btn-edit{
     background-color: transparent;
     margin-left: 165px;
 }
-.btn-edit:hover {
+
+.btn-edit:hover{
     transform: scale(0.8);
 }
-.btn-delete {
+
+.btn-delete{
     background-color: transparent;
 }
+
 .btn-delete:hover{
     background-color: rgba(205, 205, 205, 0.56);
     box-shadow: 2px 2px 2px 2px rgb(239, 249, 255, 0.50);
     color: black;
     border: solid 2px #FFFFFF;
 }
-.post-box p {
+
+.post-box p{
     margin: 10px;
 }
 
-.btn-post {
+.btn-post{
     border: green solid 10px;
     border-radius: 15px;
     padding: 10px 20px;
@@ -920,6 +956,7 @@ a{
     text-align: center;
     min-height: 100vh;
 }
+
 .div-404{
     /* background-color: purple; */
     display: flex;
@@ -930,24 +967,28 @@ a{
     width: 320px;
     height: 568px;
 }
+
 .img-404{
     width: 260px;
     height: auto;
     margin-top: 20px;
     margin-bottom:20px;
 }
+
 .imgPopCorn {
     width: 140px;
     height: auto;
     margin-top: 20px;
     margin-bottom:20px;
 }
+
 .div-404 p{
     text-align: center;
     width: 200px;
     margin-top: 50px;
     margin-bottom:20px;
 }
+
 .btn-return{
     border-radius: 15px;
     padding: 10px 20px;
@@ -957,35 +998,39 @@ a{
     font-weight: 400;
 }
 
+
 /* -- Boton Hamburguesa -- */
-.hamburger {
+.hamburger{
     width: 30px;
     cursor: pointer;
 }
-.hamburger span {
+
+.hamburger span{
     width: 100%;
     height: 3px;
     display: block;
     background: #FFFFFF;
 }
+
 .stuffing{
     margin: 5px 0;
 }
 
+
 /*  GRADIENT BACKGROUND  */
-body {
+body{
 	background: linear-gradient(-45deg, #5492F5, #5391F6, #ED829E, #FFCA2C, #ED829E);
 	background-size: 900% 900%;
 	animation: gradient 30s ease infinite;
     animation-direction: alternate;
 	height: 100vh;
 }
+
 @keyframes gradient {
     0%{background-position:14% 0%}
     50%{background-position:70% 100%}
     100%{background-position:18% 0%}
 }
-
 
 @media screen and (min-width: 769px){      /* WEB */
 
@@ -1056,11 +1101,6 @@ body {
     .container-profile {
         width: auto;
     }
-
-
-
-
-
 
     /* .menu-display {
         display: block;
@@ -1199,20 +1239,6 @@ body {
     } */
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* @media (max-width: 420px){

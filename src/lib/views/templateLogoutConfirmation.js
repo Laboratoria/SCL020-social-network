@@ -1,5 +1,6 @@
 import { logout } from "../../firebase/auth.js";
 import { showTemplate } from "../router.js";
+
 export const logoutConfirmation = () => {
     const divlogoutConfirmation = document.createElement("div");
 
@@ -24,4 +25,4 @@ export const logoutConfirmation = () => {
         logout();
     })
     return divlogoutConfirmation;
-}
+};
