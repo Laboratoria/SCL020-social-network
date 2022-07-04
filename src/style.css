@@ -454,7 +454,7 @@ div .wall{
     display: flex;
 }
 .btn-like{
-    margin-left: 190px;
+    margin-left: 230px;
     width: 22px;
     height: 22px;
     border: none;
@@ -463,22 +463,24 @@ div .wall{
 .liked{
     background: purple;
 }
-.btn-comment img{
-    width: 22px;
-    height: 22px;
-    border-radius: 0;
-    display: flex;
-}
-.btn-comment{
-    margin-left: 20px;
-    margin-top: -30px;
-    width: 22px;
-    height: 22px;
-    border: none;
-    background-color: #ffffff;
-}
 .middleSection{
     margin-top: 30px;
+}
+.editing-area{
+    width: 270px;
+    height: 100px;
+    margin: 0;
+    margin-bottom: -50px;
+}
+.save-changes-btn{
+    margin-left: 125px;
+    background: #4cc9f0;
+    color: #25034c;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    width: 70px;
+    height: 18px;
 }
 @media screen and (min-width:426px) and (max-width:768px){
     .logo img{
