@@ -2,6 +2,8 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	/* background-image: url(../images/fondo_oscuro_page1.png);
+	background-position: absolute; */
 }
 
 #root {
@@ -16,7 +18,15 @@
 	justify-content: end;
 }
 
-.containerFormIndex,
+.containerFormIndex {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
+	margin-bottom: 30vh;
+}
+
 #form_login {
 	display: flex;
 	flex-direction: column;
@@ -286,6 +296,16 @@ p {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+}
+
+.footerLogin{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background: #f2865f;
+	margin-top: auto;
+	height: 60px;
+	opacity: 0%;
 }
 
 footer {

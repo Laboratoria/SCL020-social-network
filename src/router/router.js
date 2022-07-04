@@ -5,12 +5,7 @@ import { interpProfile } from '../lib/views/viewProfile.js';
 import { interp404 } from '../lib/views/view404.js';
 import { interpRegExitoso } from '../lib/views/viewRegistroExitoso.js';
 import { createPost, lookPost } from '../firebase/firestore.js';
-import {
-	logIn,
-	signInFunction,
-	signInFunctionGoogle,
-	redirectResult,
-} from '../firebase/auth.js';
+import { signInFunction, signInFunctionGoogle } from '../firebase/auth.js';
 
 export const changeRoute = (hash) => {
 	const root = document.getElementById('root');
@@ -19,8 +14,6 @@ export const changeRoute = (hash) => {
 			root.appendChild(interpLogIn());
 			signInFunction(); //esto es solo el llamado de la funcion para que se inicializara (se puede ocupar)
 			signInFunctionGoogle();
-			redirectResult();
-			logIn();
 			break;
 		case '#/viewSignUp':
 			root.appendChild(interpSignUp());
@@ -37,7 +30,8 @@ export const changeRoute = (hash) => {
 			break;
 		case '#/viewRegistroExitoso':
 			root.appendChild(interpRegExitoso());
-		// debo tener tantos casos como vistas hay
+			// debo tener tantos casos como vistas hay
+			break;
 		default:
 			root.appendChild(interp404());
 	}
