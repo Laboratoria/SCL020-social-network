@@ -67,8 +67,14 @@ const deletingPublication = (id) => deleteDoc(doc(db, 'Publications', id));
 
 
  /*const editingPublication = async (id, editPublication) => {
-     await updateDoc(doc(db, 'Publications', id), { comment: editPublication });
+     await updateDoc(doc(db, 'Publications', id), { Comment: editPublication });
 };*/
+const editingPublication = async (id, Comment) => {
+  const postRef = doc(db, 'Publications', id);
+  await updateDoc(postRef, {
+    Comment,
+  });
+};
 
-export { creatingNewPost, updatingPublications/* editingPublication*/, deletingPublication,
+export { creatingNewPost, updatingPublications, editingPublication, deletingPublication,
 getPublication/*, addLike, removeLike*/, editingComment };

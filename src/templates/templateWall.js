@@ -1,12 +1,12 @@
 import {
   creatingNewPost,
-  updatingPublications /*, editingPublication */,
+  updatingPublications , editingPublication ,
   deletingPublication,
   getPublication,
   editingComment,
 } from "../firebase-doc/firestore.js";
 import { logOut } from "../firebase-doc/authentication.js";
-import { auth, getDocs, collection, db } from "../firebase-doc/firebase.js";
+import { auth, getDocs, collection, db, updateDoc } from "../firebase-doc/firebase.js";
 import { changeRoute } from "../lib/router.js";
 
 export const wall = () => {
@@ -37,6 +37,7 @@ export const wall = () => {
   publishButton.addEventListener("click", async () => {
     const commentContainer = container.querySelector("#publication");
     let comment = commentContainer.value;
+    if (comment) {
     try {
       await creatingNewPost(comment);
       commentContainer.value = "";
@@ -44,7 +45,7 @@ export const wall = () => {
       return creatingNewPost;
     } catch (error) {
       return console.log("error");
-    }
+    } } else {alert('Por favor ingrese su comentario.')}
   });
 
   const allPublications = async () => {
@@ -74,9 +75,6 @@ export const wall = () => {
           </button>
         <button class="btn-like" data-id="${doc.id}">
         <img src = "../Social-Images/like-icon.png">
-        </button>
-        <button class="btn-comment" data-id="${doc.id}">
-        <img src = "../Social-Images/comment-icon.png">
         </button>
         </div>
       </div>
@@ -119,14 +117,21 @@ export const wall = () => {
           const postEl = btn.closest(".post");
           const paragraphEl = postEl.querySelector(".comment");
           console.log(paragraphEl);
+          const middleSection = postEl.querySelector('.middleSection');
           paragraphEl.classList.add("hide");
-          postEl.appendChild(editingAreaEl);
+          middleSection.appendChild(editingAreaEl);
           const saveChanges = document.createElement('button');
           saveChanges.classList.add('save-changes-btn');
           saveChanges.textContent = 'Guardar';
-          postEl.appendChild(saveChanges);
-          editingComment(id, editingAreaEl.value)
+          middleSection.appendChild(saveChanges);
+          saveChanges.addEventListener('click', async () => {
+           const newComment = editingAreaEl.value;
+           console.log()
+            await editingPublication(e.target.dataset.id, newComment);
+            console.log("prueba");
+        })
         });
+        
       });
     });
     return allPublications;
