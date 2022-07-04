@@ -12,7 +12,6 @@ export const indexScreen = () => {
         conoce todos los secretos
         para vivir sol@ antes de los 30
         
-        (づ￣ 3￣)づ 
       </p>
     </article>
     <section>
