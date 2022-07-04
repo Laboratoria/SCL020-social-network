@@ -1,8 +1,9 @@
-import { login } from '../../firebase/auth.js';
+import { logIn } from '../../firebase/auth.js';
 
 export const interpLogIn = () => {
 	const divLogIn = document.createElement('div');
-	const formIndex = //html
+	const formIndex =
+		//html
 		`
     <div id="root">
       <nav id="nav_registration">
