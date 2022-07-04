@@ -13,12 +13,9 @@ import {
 
 
 export const Posts = (querySnapshot, divFeed, containerRoot, where) => {
-
   const taskContainer = divFeed.querySelector(".container-post");
   let html = "";
   console.log("holaa");
-
-
 
   querySnapshot.forEach((doc) => {
     const task = doc.data();
