@@ -14,5 +14,4 @@ export const err404 = () => {
     `
     divErr404.innerHTML = viewErr404;
     return divErr404;
-    
-}
+};

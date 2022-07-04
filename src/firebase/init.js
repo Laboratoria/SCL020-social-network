@@ -1,6 +1,20 @@
-import{
+import {
     initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js"
-import{collection, getFirestore, addDoc, getDocs, onSnapshot, deleteDoc, doc, getDoc, query, where, orderBy} from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js"
+import {
+    collection,
+    getFirestore, 
+    addDoc, 
+    getDocs, 
+    onSnapshot, 
+    deleteDoc, 
+    doc, 
+    getDoc, 
+    query, 
+    where, 
+    orderBy,
+    arrayUnion,
+    updateDoc} from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js"
+    
 import {
     getAuth,
     signInWithEmailAndPassword,
@@ -8,16 +22,14 @@ import {
     signInWithPopup,
     GoogleAuthProvider,
     onAuthStateChanged,
-    signOut} from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
+    signOut} from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js"
+
 import config from "./config.js"
 
 const app = initializeApp(config);
-
 const auth = getAuth();
 const provider = new GoogleAuthProvider();
 const db = getFirestore(app);
-
-
 
 export {
     initializeApp, 
@@ -39,6 +51,8 @@ export {
     getDoc,
     query,
     where,
-    orderBy
-}
+    orderBy,
+    arrayUnion, 
+    updateDoc
+};
 

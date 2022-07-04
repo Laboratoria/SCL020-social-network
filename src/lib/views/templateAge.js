@@ -14,4 +14,4 @@ export const age = () => {
     `
     divAge.innerHTML = viewAge;
     return divAge;
-}
+};

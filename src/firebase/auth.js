@@ -9,18 +9,17 @@ import {
     GoogleAuthProvider, 
     signOut } from "./init.js";
 
-    const displayName = user.displayName;
-    const user = auth.currentUser;
 
-//Crea nueva cuenta de usuario
-export const signup = async (user, displayName, auth, email, password) => {
+/* CREATE USER */
+export const signup = async (auth, email, password) => {
 
     try {
-        const createUser = await createUserWithEmailAndPassword(user, displayName, auth, email, password);
-        //console.log(createUser);
+        const createUser = await createUserWithEmailAndPassword(auth, email, password);
+        // await setDoc(doc(db, "users", createUser.user.uid),{
+        //     displayName: "Peter"
+        // })
         showTemplate("#/welcome")
         return createUser;
-        //return userCredential;
     }
     catch (error) {
         // console.log(error.message);
@@ -32,22 +31,22 @@ export const signup = async (user, displayName, auth, email, password) => {
             alert("Error, Invalid Password")
         }
         else {
-            console.log("Not working");         /* NO LO SAQUE*/ 
+            console.log("Not working");
         }
         throw error.message;
     }
-}
+};
 
-/* INICIAR SESION */
-
+/* LOGIN */
 export const logIn = async(email,password) => {
     try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         showTemplate("#/feed");
-            console.log("Correct Login"); /* NO LO SAQUE*/
+            console.log("Correct Login"); 
             console.log(userCredential);
         return userCredential;
-    } catch(error){
+    }
+    catch(error){
         if(error.code == "auth/user-not-found"){
             alert("Error, user not found")
         }
@@ -57,74 +56,45 @@ export const logIn = async(email,password) => {
         // console.log(error);  /* NO LO SAQUE*/
         throw error.message
     }
-}
+};
 
 
-/* Inicio CUENTA GOOGLE */
-
+/* LOGIN GOOGLE */
 export const signInGoogle = () => {
     signInWithPopup(auth, provider)
     .then((result) => {
-
-      // This gives you a Google Access Token. You can use it to access the Google API.
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    const token = credential.accessToken;
-      // The signed-in user info.
-    const user = result.user;
-
-    // console.log("user", user);
-    showTemplate("#/feed");
-      // ...
-    }).catch((error) => {
-      // Handle Errors here.
-    console.log(error);                       /* NO LO SAQUE*/
-    const errorCode = error.code;
-    const errorMessage = error.message;
-      // The email of the user's account used.
-    const email = error.customData.email;
-    
-      // The AuthCredential type that was used.
-    const credential = GoogleAuthProvider.credentialFromError(error);
-    console.log("error", errorMessage)        /* NO LO SAQUE*/
-      // ...
-    });  
-}
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+        // console.log("user", user);
+        showTemplate("#/feed");
+    })
+    .catch((error) => {
+        // Handle Errors here.
+        console.log(error);
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        console.log("error", errorMessage);
+    })  
+};
 
 
-/* CERRAR SESION */
-
+/* LOGOUT */
 export const logout = async () => {
     try {
         const response = await signOut(auth);
         showTemplate("#/");
-        console.log("sesion cerrada");        /* NO LO SAQUE*/
+        console.log("sesion cerrada");
         return response;
     }   
     catch(error) {
         throw error.message;
     }
-}
+};
 
-/* OBSERVADOR */
-
-// export const obs = () => {
-//     onAuthStateChanged(auth, (user) => {
-//         if (user) {
-//                 //User is signed in, see docs for a list of available properties
-//                 //https://firebase.google.com/docs/reference/js/firebase.User
-//             //const uid = user.uid;
-//             console.log("user is signed out")
-//         }
-//         else {
-//                 console.log("user is signed out")
-//         }
-//     })
-// }
-
-// export const obs1 = () => {
-//     if(auth.currentUser){
-//         return true;
-//     }else {
-//         return false
-//     }
-// }

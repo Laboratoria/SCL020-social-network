@@ -1,5 +1,3 @@
-
-
 export const deleteComment = () => {
     const divDeleteComment = document.createElement("div");
 

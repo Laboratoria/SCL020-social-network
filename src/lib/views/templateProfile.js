@@ -93,20 +93,16 @@ export const profile = (containerRoot) => {
     // });
 
     formPost.addEventListener("submit", async (e) => {
-        debugger;
         e.preventDefault();
-        // console.log("submit");
         const contentPost = formPost["inputForm"].value;
         saveTask({
             contentPost: contentPost,
         });
         formPost.reset();
-
-
     })
     createdPost(divProfile, containerRoot, "profile");
     // return divProfile;
-}
+};
 
 /* <nav class="nav-search">
 <div class="search-bar">

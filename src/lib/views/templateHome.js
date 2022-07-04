@@ -13,5 +13,4 @@ export const home = () => {
     `
     divHome.innerHTML = viewHome;
     return divHome;
-    //return viewHome;
-}
+};
