@@ -1,6 +1,6 @@
 import{
     initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js"
-import{collection, getFirestore, addDoc, getDocs, onSnapshot, deleteDoc, doc, getDoc} from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js"
+import{collection, getFirestore, addDoc, getDocs, onSnapshot, deleteDoc, doc, getDoc, query, where, orderBy} from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js"
 import {
     getAuth,
     signInWithEmailAndPassword,
@@ -36,6 +36,9 @@ export {
     onSnapshot, 
     deleteDoc, 
     doc,
-    getDoc
+    getDoc,
+    query,
+    where,
+    orderBy
 }
 

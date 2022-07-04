@@ -68,7 +68,7 @@ divFeed.innerHTML = viewFeed;
   // const querySnapshot = createdPost();
   // debugger;
 
-  createdPost(divFeed, containerRoot);
+  createdPost(divFeed, containerRoot, "feed");
   // window.addEventListener("load", async () => {
   //     const querySnapshot = await createdPost();
   //     debugger;

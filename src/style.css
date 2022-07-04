@@ -1009,9 +1009,10 @@ body {
     }
 
     .nav-web {
-        display: block;
+        display: flex;
+        justify-content: space-between;
         background-color: white;
-        width: auto;
+        width: 100%;
         height: 5%;
         margin: 0px auto;
     }
