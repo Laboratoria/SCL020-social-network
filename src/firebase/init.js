@@ -4,8 +4,7 @@ import {
 	signInWithEmailAndPassword,
 	createUserWithEmailAndPassword,
 	GoogleAuthProvider,
-	getRedirectResult,
-	signInWithRedirect,
+	signInWithPopup,
 } from 'https://www.gstatic.com/firebasejs/9.8.3/firebase-auth.js';
 
 import {
@@ -24,10 +23,6 @@ const auth = getAuth();
 const db = getFirestore(app);
 const provider = new GoogleAuthProvider();
 
-signInWithRedirect(auth, provider);
-
-provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-
 export {
 	initializeApp,
 	signInWithEmailAndPassword,
@@ -39,7 +34,7 @@ export {
 	getDocs,
 	onSnapshot,
 	query,
-	getRedirectResult,
-	signInWithRedirect,
 	provider,
+	GoogleAuthProvider,
+	signInWithPopup,
 };

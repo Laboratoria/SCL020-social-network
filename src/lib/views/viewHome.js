@@ -1,11 +1,12 @@
 //Este archivo es para la vista principal de la app
 
-import { snapshot } from "../../firebase/firestore.js";
+import { snapshot } from '../../firebase/firestore.js';
 
 export const interpHome = () => {
 	const divHome = document.createElement('div');
 
-	const formHome =//html
+	const formHome =
+		//html
 		`
     <div id="rootHome" class="containerRootHome">
       <section class="containerHome">
@@ -36,17 +37,16 @@ export const interpHome = () => {
 	return divHome;
 };
 
-
 export const interpHomePost = async () => {
-  const divHomePost = document.querySelector('#inyectRootHomePost');
-	snapshot((callback)=> {
-   divHomePost.innerHTML = '';
-    callback.forEach((doc) => {
-      const post = doc.data();
-  
+	const divHomePost = document.querySelector('#inyectRootHomePost');
+	snapshot((callback) => {
+		divHomePost.innerHTML = '';
+		callback.forEach((doc) => {
+			const post = doc.data();
 
-	const formHomePost =//html
-		`
+			const formHomePost =
+				//html
+				`
     <div id="rootHomePost" class="containerRootHome">
         <section>
         <div class="containerPostPublicado">
@@ -63,11 +63,7 @@ export const interpHomePost = async () => {
   
     </div>
   `;
-  divHomePost.innerHTML += formHomePost;
- 
-  
-  });
-
-})
-
-  };
+			divHomePost.innerHTML += formHomePost;
+		});
+	});
+};
