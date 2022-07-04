@@ -9,12 +9,14 @@ import {
     GoogleAuthProvider, 
     signOut } from "./init.js";
 
+    const displayName = user.displayName;
+    const user = auth.currentUser;
+
 //Crea nueva cuenta de usuario
-export const signup = async (auth, email, password) => {
-    // console.log(email);
-    // console.log(password);
+export const signup = async (user, displayName, auth, email, password) => {
+
     try {
-        const createUser = await createUserWithEmailAndPassword(auth, email, password);
+        const createUser = await createUserWithEmailAndPassword(user, displayName, auth, email, password);
         //console.log(createUser);
         showTemplate("#/welcome")
         return createUser;
@@ -22,14 +24,15 @@ export const signup = async (auth, email, password) => {
     }
     catch (error) {
         // console.log(error.message);
-        if(error == 'FirebaseError: Firebase: Error (auth/invalid-email).'){
-            alert('Email Invalido')
+        if(error.code == "auth/invalid-email"){
+            console.log("prueba")
+            alert("Error, Invalid Email")
         }
-        else if(error == 'Firebase: Password should be at least 6 characters (auth/weak-password).'){
-            alert('Contraseña Invalido')
+        else if (error.code == "auth/weak-password"){
+            alert("Error, Invalid Password")
         }
         else {
-            console.log("no funciona");         /* NO LO SAQUE*/ 
+            console.log("Not working");         /* NO LO SAQUE*/ 
         }
         throw error.message;
     }
@@ -41,11 +44,17 @@ export const logIn = async(email,password) => {
     try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         showTemplate("#/feed");
-            console.log("inicio de sesion correcto"); /* NO LO SAQUE*/
+            console.log("Correct Login"); /* NO LO SAQUE*/
             console.log(userCredential);
         return userCredential;
     } catch(error){
-        console.log("Error al iniciar sesion"); /* NO LO SAQUE*/
+        if(error.code == "auth/user-not-found"){
+            alert("Error, user not found")
+        }
+        else {
+            console.log("Invalid Login");
+        }
+        // console.log(error);  /* NO LO SAQUE*/
         throw error.message
     }
 }
