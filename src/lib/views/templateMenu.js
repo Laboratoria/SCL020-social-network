@@ -1,6 +1,6 @@
 
 //Función que contiene vista del Menu
-const menu = () => {
+export const menu = () => {
     const menuScreen = `<div>
     <ul> 
     <li>Menú</li>
