@@ -2,14 +2,10 @@ import {
 	signInWithEmailAndPassword,
 	auth,
 	createUserWithEmailAndPassword,
-	getRedirectResult,
-	signInWithRedirect,
 	provider,
+	GoogleAuthProvider,
+	signInWithPopup,
 } from './init.js';
-
-export const logIn = async function () {
-	signInWithRedirect(auth, provider);
-};
 
 //Funcion que escucha evento de INGRESO correo y contraseña
 
@@ -56,18 +52,18 @@ export const signCreate = (email, password) => {
 };
 
 //ACCESO CON GOOGLE
-
 //Login Gmail
 
-export const redirectResult = function () {
-	const auth = getAuth();
-	getRedirectResult(auth)
+export const accessGoogle = () => {
+	signInWithPopup(auth, provider)
 		.then((result) => {
-			// This gives you a Google Access Token. You can use it to access Google APIs.
-			const credential = GoogleAuthProvider.credentialFromResult(result);
-			const token = credential.accessToken;
+			// This gives you a Google Access Token. You can use it to access the Google API.
+			// const credential = GoogleAuthProvider.credentialFromResult(result);
+			// const token = credential.accessToken;
 			// The signed-in user info.
 			const user = result.user;
+			console.log(user);
+			window.location.href = '#/viewHome';
 		})
 		.catch((error) => {
 			// Handle Errors here.
@@ -76,8 +72,9 @@ export const redirectResult = function () {
 			// The email of the user's account used.
 			// const email = error.customData.email;
 			// The AuthCredential type that was used.
-			const credential = GoogleAuthProvider.credentialFromError(error);
-			// ...
+			// const credential = GoogleAuthProvider.credentialFromError(error);
+			console.log(errorCode);
+			console.log(errorMessage);
 		});
 };
 
@@ -86,12 +83,6 @@ export const signInFunctionGoogle = () => {
 	const signInGoogle = document.querySelector('#button_google');
 	signInGoogle.addEventListener('click', (event) => {
 		event.preventDefault();
-		try {
-			logIn();
-			window.location.href = '#/viewHome';
-		} catch (error) {
-			throw error.message;
-		}
+		accessGoogle();
 	});
-	redirectResult();
 };
