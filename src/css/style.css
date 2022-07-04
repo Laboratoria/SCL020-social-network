@@ -7,7 +7,8 @@
 #root {
 	background-image: url(../images/fondo_oscuro_page1.png);
 	background-size: cover;
-	height: 100vh;
+	/* height: 100vh; */
+	background-attachment: fixed;
 }
 
 #nav_registration {
@@ -170,8 +171,7 @@
 	height: auto;
 }
 
-.textBoxContainer,
-.containerPostPublicado {
+.textBoxContainer {
 	background: #3d2e80;
 	margin: 50px 40px 40px 40px;
 	display: flex;
@@ -240,6 +240,19 @@ p {
 	margin: 5px;
 }
 
+.containerRootHome {
+	display: flex;
+	flex-direction: column;
+}
+
+.containerPostPublicado {
+	background: #3d2e80;
+	margin: 10px 40px 10px 40px;
+	display: flex;
+	flex-direction: column;
+	border-radius: 10px;
+}
+
 /* Estilos Perfil */
 .containerTittle{
 	height: auto;
@@ -269,7 +282,7 @@ p {
 
 
 /* estilos para el footer*/
-.containerRootHome, .containerRootProfile {
+.containerRootProfile {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
