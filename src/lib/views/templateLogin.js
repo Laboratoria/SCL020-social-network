@@ -15,8 +15,8 @@ export const loginScreen = () => {
   </label>
 </form>
   <section>
-  <button>
-    INICIAR SESIÓN
+  <button id="login">
+    Inicia Sesión con Google
   </button>
   <p>
     ¿No tienes cuenta aún? Regístrate <a href="">aquí.</a>  
