@@ -8,15 +8,14 @@ export const registerScreen = () => {
     <article>
 <form action="Registro de Sesión">
   <label for="Name">Nombre y Apellido<input type="text"></label>
-  <label for="Date of birth">Fecha de nacimiento<input type="month" id="seleccionarMes" min="1940-00" max="2020-01" /></label>
   <label for="Email">Email<input type="text"></label>
-  <label for="Password">Contraseña <input type="password"></label>
-  <label for="Confirm password">Confirmar contraseña<input type="password"></label> 
+  <label for="Password">Contraseña<input type="password"></label>
+  <label for="User">Usuario<input type="text"></label>
 </form>
     </article>
     <section>
     <button>
-      Listo
+      Confirmar cuenta
       (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
     </button>
    
