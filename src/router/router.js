@@ -1,6 +1,6 @@
 import { interpLogIn } from '../lib/views/viewLogIn.js';
 import { createUserEmail, interpSignUp } from '../lib/views/viewSignUp.js';
-import { interpHome, interpHomePost } from '../lib/views/viewHome.js';
+import { interpHome, interpHomePost, logOutFunction } from '../lib/views/viewHome.js';
 import { interpProfile } from '../lib/views/viewProfile.js';
 import { interp404 } from '../lib/views/view404.js';
 import { interpRegExitoso } from '../lib/views/viewRegistroExitoso.js';
@@ -24,9 +24,11 @@ export const changeRoute = (hash) => {
 			interpHomePost();
 			createPost();
 			lookPost();
+			logOutFunction();
 			break;
 		case '#/viewProfile':
 			root.appendChild(interpProfile());
+			logOutFunction();
 			break;
 		case '#/viewRegistroExitoso':
 			root.appendChild(interpRegExitoso());

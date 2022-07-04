@@ -1,6 +1,8 @@
 //Este archivo es para la vista principal de la app
 
 import { snapshot } from '../../firebase/firestore.js';
+import { signOutSession } from '../../firebase/auth.js';
+// import { signOut } from '../../firebase/init.js';
 
 export const interpHome = () => {
 	const divHome = document.createElement('div');
@@ -66,4 +68,13 @@ export const interpHomePost = async () => {
 			divHomePost.innerHTML += formHomePost;
 		});
 	});
+};
+
+export const logOutFunction = () => {
+  const logOut = document.querySelector("#logOut");
+  logOut.addEventListener("click", (e) =>{
+    e.preventDefault();
+    signOutSession();
+    window.location.href = "#/";
+  })
 };
