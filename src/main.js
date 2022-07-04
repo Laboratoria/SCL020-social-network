@@ -11,12 +11,14 @@ import { changeRouter } from './lib/router.js';
 
 
 const init = () => {
-    document.getElementById("root").innerHTML = intro();
-    changeRouter(window.location.hash);
     window.addEventListener("hashchange", () => {
+    document.getElementById("root").innerHTML = intro();
 
         changeRouter(window.location.hash);
     })
+
+    changeRouter(window.location.hash);  
 }
 window.addEventListener('load', init);
-console.log(window.location.hash);
+
+ console.log(window.location.hash);
