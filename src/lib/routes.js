@@ -1,17 +1,35 @@
+import { indexScreen } from './lib/views/templateIndex';
+import { loginScreen } from './lib/views/templateLogin.js';
+import { registerScreen } from './lib/views/templateRegister.js';
+import { menu } from './views/templateMenu';
 
 
 
-const PATHS = {
-    home: {
-        path: "/",
-        template: `<h1>🏠 Home</h1>`,
-    },
-    Login: {
-        path: "/about",
-        template: `<h1>👩🏻‍💻 Sobre mi</h1>`,
-    },
-    Registro: {
-        path: "/contact",
-        template: `<h1>📱 Contacto</h1>`,
-    }
+
+
+//Enrutador
+export const changeroutes = (hash) => {
+   if (hash === '#/'){
+      return showTemplate(hash);
+   } else if (hash === '#/login'){
+      return showTemplate(hash);
+   } else {
+      return showTemplate(hash);
+   }
+}
+
+const showTemplate = (hash) =>{
+   const containerDiv = document.getElementById('view1');
+   containerDiv.innerHTML = menu();
+
+   switch (hash){
+      case '#/':
+         containerDiv.appendChild();
+         break;
+      case '#/':
+         containerDiv.appendChild();
+         break;
+      default:
+         containerDiv.innerHTML= `<h2> Error (╯°□°）╯︵ ┻━┻ </h2>`
+   }
 }
