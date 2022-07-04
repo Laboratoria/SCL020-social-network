@@ -1,12 +1,12 @@
-import { saveTask, getTask, onGetTask, deleteTask, getTasks} from "../../firebase/firestore.js";
+import { saveTask, getTask, onGetTask, deleteTask, getTasks } from "../../firebase/firestore.js";
 import { feed } from "./templateFeed.js";
 import { createdPost } from "../post.js";
 
 export const profile = (containerRoot) => {
-    
+
     const divProfile = document.createElement("div");
     const viewProfile = //html
-    `
+        `
         <main class="container-profile">
             <nav class="nav-web">
                 <div class="sub-nav-web">
@@ -67,41 +67,44 @@ export const profile = (containerRoot) => {
     // const taskContainerFeed = feed().querySelectorAll(".post-p");
     // console.log(taskContainerFeed);
 
+    // const btnsDelete = taskContainer.querySelectorAll(".btn-delete");
+    // btnsDelete.forEach(btn => {
+    //     btn.addEventListener("click", async () => {
+    //         //e.preventDefault();
+    //         debugger;
+    //         const deleteConfirm = confirm("¿Are you sure that you want to delete this post?");
+    //         if (deleteConfirm === true) {
+    //             await deleteTask(btn.dataset.id)
+    //             alert("Post has been deleted");
+    //         }
+    //     })
+    // });
 
-    formPost.addEventListener("submit", async(e) => {
+    // const btnsEdit = taskContainer.querySelectorAll(".btn-edit");
+    // btnsEdit.forEach(btn => {
+    //     btn.addEventListener("click", async (e) => {
+    //         // //e.preventDefault();
+    //         const doc = await getTasks(e.target.dataset.id);
+    //         const task = doc.data()
+
+    //         formPost[task.contentPost].value = task.contentPost;
+    //         // console.log(task.contentPost); /* NO LO SAQUE*/
+    //     })
+    // });
+
+    formPost.addEventListener("submit", async (e) => {
+        debugger;
         e.preventDefault();
         // console.log("submit");
         const contentPost = formPost["inputForm"].value;
-        saveTask(contentPost);
-        formPost.reset(); 
-
-
-        const btnsDelete = taskContainer.querySelectorAll(".btn-delete");
-        btnsDelete.forEach( btn => {
-            btn.addEventListener("click", async () => {
-                //e.preventDefault();
-                const deleteConfirm = confirm("¿Are you sure that you want to delete this post?");
-                if(deleteConfirm === true) {
-                    await deleteTask(btn.dataset.id)
-                    alert("Post has been deleted");
-                }
-            })
+        saveTask({
+            contentPost: contentPost,
         });
+        formPost.reset();
 
-        const btnsEdit = taskContainer.querySelectorAll(".btn-edit");
-        btnsEdit.forEach( btn => {
-            btn.addEventListener("click", async (e) => {
-                // //e.preventDefault();
-                const doc = await getTasks(e.target.dataset.id);
-                const task = doc.data()
 
-                formPost[task.contentPost].value = task.contentPost;
-                // console.log(task.contentPost); /* NO LO SAQUE*/
-            })
-        });
-    })    
-    debugger;
-    createdPost(divProfile, containerRoot);
+    })
+    createdPost(divProfile, containerRoot, "profile");
     // return divProfile;
 }
 
