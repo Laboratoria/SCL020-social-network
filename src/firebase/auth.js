@@ -5,6 +5,7 @@ import {
 	provider,
 	GoogleAuthProvider,
 	signInWithPopup,
+	signOut
 } from './init.js';
 
 //Funcion que escucha evento de INGRESO correo y contraseña
@@ -85,4 +86,14 @@ export const signInFunctionGoogle = () => {
 		event.preventDefault();
 		accessGoogle();
 	});
+};
+
+export const signOutSession = () => {
+signOut(auth).then(() => {
+	alert("Adiós");
+  // Sign-out successful.
+}).catch((error) => {
+	alert("aún estás aquí");
+  // An error happened.
+});
 };

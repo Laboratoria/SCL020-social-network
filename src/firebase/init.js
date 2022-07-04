@@ -5,6 +5,7 @@ import {
 	createUserWithEmailAndPassword,
 	GoogleAuthProvider,
 	signInWithPopup,
+	signOut
 } from 'https://www.gstatic.com/firebasejs/9.8.3/firebase-auth.js';
 
 import {
@@ -37,4 +38,5 @@ export {
 	provider,
 	GoogleAuthProvider,
 	signInWithPopup,
+	signOut
 };
