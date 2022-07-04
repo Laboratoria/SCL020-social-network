@@ -22,7 +22,7 @@ export const changeRoute = (hash) => {
 			break;
 		case '#/viewHome':
 			root.appendChild(interpHome());
-			root.appendChild(interpHomePost());
+			interpHomePost();
 			createPost();
 			lookPost();
 			break;
