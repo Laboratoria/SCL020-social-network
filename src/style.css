@@ -335,27 +335,31 @@ a{
     height: 568px;*/
 }
 
-.container-btn {
-    display: flex;
+ .container-btn {
+   /* display: flex; */
     flex-direction: row;
     justify-content: space-around;
     text-align: center;
+    
 }
 
-.container-btn button{
+.btn-cancel{
     border-radius: 15px;
     padding: 10px 20px;
     letter-spacing: 3px;
     border: none;
+    color: rgba(59, 59, 59, 0.85);
     margin-top: 5px;
-    font-size: medium;
-    width: 200px;
+    font-size: small;
+    width: auto;
+    height: 10px;
+    margin-top: 20px;
     background-color: rgb(255, 255, 255, 0.75); 
     box-shadow: 4px 4px 8px 2px rgba(85, 85, 85, 0.28);
     text-decoration:none;   
 }
 
-.container-btn button:hover{
+.btn-cancel:hover{
     background-color: rgba(205, 205, 205, 0.56);
     box-shadow: 2px 2px 2px 2px rgb(239, 249, 255, 0.50);
     color: black;
@@ -364,10 +368,9 @@ a{
 
 .btn-create{
     border-radius: 15px;
-    padding: 10px 20px;
+    padding: 0 20px;
     letter-spacing: 3px;
     border: none;
-    margin-top: 5px;
     font-size: medium;
     width: 200px;
     background-color: rgb(255, 255, 255, 0.75); 

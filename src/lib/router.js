@@ -31,7 +31,7 @@ export const showTemplate = (hash) => {
       containerRoot.appendChild(signUp());
     } else if (!user && hash === "#/welcome") {
       containerRoot.appendChild(welcome());
-    } else if (!user) {
+    }else if (!user) {
       containerRoot.appendChild(home());
     } else {
       switch (hash) {

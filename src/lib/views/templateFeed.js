@@ -3,7 +3,7 @@ import { createdPost } from "../post.js";
 export const feed = (containerRoot) => {
     const divFeed = document.createElement("div");
     divFeed.setAttribute("class", "divFeed");
-    console.log("hola");
+
     const viewFeed = //html
     `
         <main class="container-feed">

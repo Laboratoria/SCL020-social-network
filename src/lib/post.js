@@ -40,8 +40,6 @@ export const posts = (querySnapshot, divFeed, containerRoot, where) => {
 		`
 	});
 
-
-
 	taskContainer.innerHTML = html;
 	containerRoot.innerHTML = "";
 	containerRoot.appendChild(divFeed);
@@ -73,17 +71,14 @@ export const posts = (querySnapshot, divFeed, containerRoot, where) => {
 			const task = doc.data().content;
 			const edited = taskContainer.innerHTML = task;
 			console.log(edited);
-			// formPost[task.contentPost].value = task.contentPost;
-			// console.log(task.contentPost); /* NO LO SAQUE*/
+			console.log(task.contentPost); /* NO LO SAQUE*/
 		})
 	});
 
-	// const postId = doc.id;
-	// const postUserId = task.useruid;
 	const btnLike = taskContainer.querySelectorAll(".btn-popCorn");
 	btnLike.forEach(btn => {
 		btn.addEventListener("click", async () => {
-
+			
 			let task = await getTasks(btn.dataset.id);
 			let likesActuales = task._document.data.value.mapValue.fields.like.integerValue;
 			let usuariosDieronLike = task._document.data.value.mapValue.fields.userlikes.arrayValue.values.map(x=>x.stringValue);
@@ -100,18 +95,11 @@ export const posts = (querySnapshot, divFeed, containerRoot, where) => {
 					"userlikes": usuariosDieronLike
 				});
 			}
-
-			
-
-
-			// 	const addLike =  (postId, postUserId) => {
-			// 	db.collection("task").doc(postId).update({
-			// 			like: arrayUnion(postUserId)
-			// 	});
-			// }
-			// addLike(postId, postUserId);
 		});
 	});
+
+	const searchBtn = divFeed.querySelectorAll(".search-input");
+	console.log(searchBtn);
 
 	return html;
 };
@@ -129,29 +117,4 @@ export const createdPost = (divFeed, containerRoot, where) => {
 		});
 	}
 };
-
-// funcion que de like a post con el objeto addLike
-// export function addLike(postId, userId) {
-//     db.collection("posts").doc(postId).update({
-//         likes: arrayUnion(userId)
-//     })
-// }
-
-// funcion que guarde el userId en la base de datos
-// export function saveUser(userId) {
-//     db.collection("users").doc(userId).set({
-//         userId: userId
-//     })
-//     return userId;
-// }
-
-// funcion que retorne el userId desde la base de datos
-
-// const userId = getUserId();
-// console.log(userId)
-// export function getUser(userId) {    
-//     const pepe = db.collection("users").doc(userId).get()
-//     console.log(pepe)
-//     return pepe
-// }
 

@@ -47,7 +47,7 @@ export const getTasks = (id) => getDoc(doc(db, "task", id));
 
 export const UpdateTask = (id, data) => {
     const postDocRef = doc(db, "task", id);
-   return updateDoc(postDocRef,data)
+    return updateDoc(postDocRef,data)
 }
 const saveUserName = async (data)=> {
     try {
