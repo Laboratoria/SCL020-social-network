@@ -1,5 +1,5 @@
-import { userLogin, userRedirect, usersGoogle } from "../../firebase/auth.js";
-import { auth, getRedirectResult } from "../../firebase/init.js";
+import { userLogin, usersGoogle } from "../../firebase/auth.js";
+
 import { changeRouter } from "../router.js";
 
 export const login = () => {
@@ -48,16 +48,7 @@ export const login = () => {
         }
 
     });
-    //const prueba =  getRedirectResult(auth)
-    const redirectGoogle = async() => {
-        const redirectUser = await getRedirectResult(auth);
 
-        if (redirectUser) {
-            changeRouter('#/wall')
-        }
-
-    };
-    redirectGoogle();
     return divLogin;
 
 };

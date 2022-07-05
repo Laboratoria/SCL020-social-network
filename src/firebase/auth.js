@@ -1,5 +1,5 @@
 import { changeRouter } from "../lib/router.js";
-import { signInWithEmailAndPassword, auth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, provider, signOut, onAuthStateChanged, getRedirectResult } from "./init.js"
+import { signInWithEmailAndPassword, auth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, provider, signOut, onAuthStateChanged } from "./init.js"
 // console.log(auth)
 
 const observer = (hash) => {
@@ -70,41 +70,6 @@ const usersGoogle = () => {
         })
 };
 
-const userRedirect = async(result) => {
-    try {
-        // This gives you a Google Access Token. You can use it to access Google APIs.
-        const resultRedirect = await getRedirectResult(auth);
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-
-        // The signed-in user info.
-        const user = result.user;
-    } catch (error) {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // The email of the user's account used.
-        //const email = error.customData.email;
-        // The AuthCredential type that was used.
-        const credential = GoogleAuthProvider.credentialFromError(error);
-        // ...
-    }
-};
-
-// const userLogin = async (email, password) => {
-//   console.log(userLogin);
-//   try {
-//     const result = await signInWithEmailAndPassword(auth, email, password) // eliminar async await, retornar signWithEmailAndPassowrd()
-//     console.log(result); 
-//     return result;
-//   } catch (error) {
-//     console.log(error);
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-
-//   }
-
-// }
 
 
 const userSignOut = () => {
@@ -115,4 +80,4 @@ const userSignOut = () => {
     });
 }
 
-export { userRegister, userLogin, usersGoogle, observer, userSignOut, userRedirect }
+export { userRegister, userLogin, usersGoogle, observer, userSignOut }
