@@ -20,16 +20,31 @@ export const getTask = () => {
     return getDocs(collection(db, "task"))
 };
 
-/*Order profile post*/
-export const getTaskUser = (callback) => {
+// /*Order profile post*/
+// export const getTaskUser = (callback) => {
+//     const q = query(
+//         collection(db, "task"),
+//         where("useruid", "==", auth.currentUser.uid),
+//         orderBy('created', 'desc')
+//     );
+//     return(onSnapshot(q, (callback)))
+// };
+export const getTaskUser2 = () => {
     const q = query(
         collection(db, "task"),
         where("useruid", "==", auth.currentUser.uid),
         orderBy('created', 'desc')
     );
-    return(onSnapshot(q, (callback)))
+    return(getDocs(q));
 };
 
+export const onGetTask2 = () => {
+    const q = query(
+        collection(db, "task"),
+        orderBy('created', 'desc')
+    );
+    return(getDocs(q));
+};
 /*Order feed post*/
 export const onGetTask = (callback) => {
     const q = query(

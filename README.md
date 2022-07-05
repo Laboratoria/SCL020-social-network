@@ -76,11 +76,12 @@ Criterio de aceptación:
  - Boton logout
 
 ## 2. Encuestas para prototipado
-
+Para comenzar a crear la app, realizamos una encuesta que nos ayudara a  definir vista y enfoque que le dariamos en base a lo que el usuario busca. En esta encuesta.........
 (Pegar graficos de la encuesta)
 ## 3. Diseño de Interfaz de Usuario
 
 Prototipo de baja
+Para nuestro prototipo de baja nos enfocamos primeramente en una app para teléfonos moviles, donde las medidas son más reducidas
 (Decir que nos enfocamos en mobile first, vistas de escritorio también.) 
 
 Prototipo de alta
