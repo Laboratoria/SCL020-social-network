@@ -100,7 +100,6 @@ export const posts = (querySnapshot, divFeed, containerRoot, where) => {
 
 	const searchBtn = divFeed.querySelectorAll(".search-input");
 	console.log(searchBtn);
-
 	return html;
 };
 
