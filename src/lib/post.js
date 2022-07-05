@@ -1,4 +1,5 @@
-import { onGetTask, deleteTask, getTaskUser, /*saveUserName,*/ getTasks, UpdateTask } from "../firebase/firestore.js";
+import { onGetTask, deleteTask, getTaskUser, /*saveUserName,*/ getTasks, UpdateTask, getTaskUser2, onGetTask2} from "../firebase/firestore.js";
+import { showTemplate  } from "./router.js";
 // import { taskContainer } from "./views/templateFeed.js";
 import {
 	db,
@@ -47,21 +48,47 @@ export const posts = (querySnapshot, divFeed, containerRoot, where) => {
 
 	// containerRoot.innerHTML = divFeed.innerHTML;
 
+	// /*trying */
+	//const btnsDelete = taskContainer.querySelectorAll(".btn-delete");
+	// btnsDelete.forEach(btn => {
+	// 	btn.addEventListener("click", async () => {
+	// 		const showAlert=()
+
+	// 	})
+	// 	// 	const deleteConfirm = swal("¿Are you sure you want to delete this post?",{
+	// 	// 		buttons:["Cancel", "Confirm"],
+	// 	// 		icon: "warning",
+	// 	// 	})
+	// 	// 	.then(respuesta=>{
+	// 	// 		if (respuesta){
+	// 	// 			await deleteTask(btn.dataset.id)
+	// 	// 			swal({text: "Post has been deleted", icon: "success", timer: "2000"});
+	// 	// 		}
+	// 	// 	})
+	// 	// 	if (deleteConfirm [buttons].Confirm === true) {
+	// 	// 		await deleteTask(btn.dataset.id)
+	// 	// 		swal("Post has been deleted");
+	// 	// 	}
+	// 	// })
+		
+	// });
 
 
-
+    /* *working* */
 	const btnsDelete = taskContainer.querySelectorAll(".btn-delete");
 
 	btnsDelete.forEach(btn => {
 		btn.addEventListener("click", async () => {
 
 			const deleteConfirm = confirm("¿Are you sure you want to delete this post?");
-			if (deleteConfirm === true) {
+			if (deleteConfirm  === true) {
 				await deleteTask(btn.dataset.id)
-				alert("Post has been deleted");
+				swal("Post has been deleted");
 			}
 		})
 	});
+
+
 
 	const btnsEdit = taskContainer.querySelectorAll(".btn-edit");
 	btnsEdit.forEach(btn => {
@@ -75,31 +102,54 @@ export const posts = (querySnapshot, divFeed, containerRoot, where) => {
 		})
 	});
 
+
 	const btnLike = taskContainer.querySelectorAll(".btn-popCorn");
+	console.log("btnLike", btnLike);
 	btnLike.forEach(btn => {
-		btn.addEventListener("click", async () => {
+		console.log("btn", btn);
+		btn.addEventListener("click", async (e) => {
 			
-			let task = await getTasks(btn.dataset.id);
-			let likesActuales = task._document.data.value.mapValue.fields.like.integerValue;
-			let usuariosDieronLike = task._document.data.value.mapValue.fields.userlikes.arrayValue.values.map(x=>x.stringValue);
+			e.preventDefault(); 
+			console.log("prueba")
+			let task = (await getTasks(btn.dataset.id)).data();
+			let likesActuales = task.like;
+			let usuariosDieronLike = task.userlikes;
 			if(usuariosDieronLike.includes(auth.currentUser.uid)){
 				usuariosDieronLike.pop(auth.currentUser.uid);
 				UpdateTask(btn.dataset.id, {
 					"like": (Number(likesActuales) - 1),
 					"userlikes": usuariosDieronLike
 				});
-			}else{
+			}
+			else{
 				usuariosDieronLike.push(auth.currentUser.uid);
 				UpdateTask(btn.dataset.id, {
 					"like": (Number(likesActuales) + 1),
 					"userlikes": usuariosDieronLike
 				});
 			}
+			onGetTask2().then((x=>{
+				posts(x.docs, divFeed, containerRoot, where);
+			}));
+	
 		});
 	});
 
-	const searchBtn = divFeed.querySelectorAll(".search-input");
-	console.log(searchBtn);
+	const searchBtn = divFeed.querySelector(".search-input");
+	searchBtn.addEventListener("keyup", () => {
+			const searchString = searchBtn.value;
+			// console.log(searchString);
+			// console.log(auth.currentUser.displayName);
+			if((auth.currentUser.displayName).includes(searchString)){
+				console.log("si funciona");
+
+			}
+			else {
+				console.log("nopi fabi :c")
+			}
+	})
+	// console.log(searchBtn);
+
 	return html;
 };
 
@@ -107,13 +157,19 @@ export const createdPost = (divFeed, containerRoot, where) => {
 	if (containerRoot === undefined) return;
 
 	if (where === "profile") {
-		getTaskUser((querySnapshot) => {
-			posts(querySnapshot, divFeed, containerRoot, where)
+		getTaskUser2().then((x)=>{
+			posts(x.docs, divFeed, containerRoot, where)
 		});
+
 	} else if (where === "feed") {
-		onGetTask((querySnapshot) => {
-			posts(querySnapshot, divFeed, containerRoot, where)
-		});
+		onGetTask2().then((x=>{
+			posts(x.docs, divFeed, containerRoot, where)
+		}));
+
+		// onGetTask((querySnapshot) => {
+		// 	posts(querySnapshot, divFeed, containerRoot, where)
+		// });
+
 	}
 };
 

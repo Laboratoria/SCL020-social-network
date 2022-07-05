@@ -1,10 +1,10 @@
 import { saveTask, getTask, onGetTask, deleteTask, getTasks, UpdateTask } from "../../firebase/firestore.js";
 // import { feed } from "./templateFeed.js";
 import { createdPost } from "../post.js";
+import { showTemplate } from "../router.js";
 
 
 export const profile = (containerRoot) => {
-
     const divProfile = document.createElement("div");
     const viewProfile = //html
 
@@ -75,7 +75,7 @@ export const profile = (containerRoot) => {
     // btnsDelete.forEach(btn => {
     //     btn.addEventListener("click", async () => {
     //         //e.preventDefault();
-    //         debugger;
+    //         
     //         const deleteConfirm = confirm("¿Are you sure that you want to delete this post?");
     //         if (deleteConfirm === true) {
     //             await deleteTask(btn.dataset.id)
@@ -103,7 +103,10 @@ export const profile = (containerRoot) => {
             contentPost: contentPost,
         });
         formPost.reset();
+        createdPost(divProfile, containerRoot, "profile");
+
     })
+    
     createdPost(divProfile, containerRoot, "profile");
     // return divProfile;
 };

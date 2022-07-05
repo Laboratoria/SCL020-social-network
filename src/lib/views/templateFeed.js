@@ -1,10 +1,11 @@
 import { getTask, onGetTask } from "../../firebase/firestore.js";
 import { createdPost } from "../post.js";
 export const feed = (containerRoot) => {
-    const divFeed = document.createElement("div");
-    divFeed.setAttribute("class", "divFeed");
-
-    const viewFeed = //html
+  const divFeed = document.createElement("div");
+  divFeed.setAttribute("class", "divFeed");
+  
+  const viewFeed =
+    //html
     `
         <main class="container-feed">
                 <nav class="nav-web">
@@ -60,22 +61,22 @@ export const feed = (containerRoot) => {
             </div>
         </main>
     `;
-divFeed.innerHTML = viewFeed;
+  divFeed.innerHTML = viewFeed;
 
-//   const taskContainer = divFeed.querySelectorAll(".container-post");
+  //   const taskContainer = divFeed.querySelectorAll(".container-post");
 
   // const querySnapshot = createdPost();
-  // debugger;
+  // 
 
-    createdPost(divFeed, containerRoot, "feed");
+  createdPost(divFeed, containerRoot, "feed");
   // window.addEventListener("load", async () => {
   //     const querySnapshot = await createdPost();
-  //     debugger;
+  //     
 
   //     taskContainer.innerHTML = querySnapshot;
   // })
 
-//   return divFeed;
+  //   return divFeed;
 };
 
 /* <div class="user-info">
@@ -147,8 +148,6 @@ divFeed.innerHTML = viewFeed;
 //     }
 //     textBarFunc(search, user);
 // });
-
-
 
 /* <div class="menu-display">
 <div class="container-menu">

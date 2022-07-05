@@ -29,10 +29,10 @@ export const signup = async (auth, email, password, NameUser) => {
         // console.log(error.message);
         if (error.code == "auth/invalid-email") {
             console.log("prueba")
-            alert("Error, Invalid Email")
+            swal("Error, Invalid Email")
         }
         else if (error.code == "auth/weak-password") {
-            alert("Error, Invalid Password")
+            swal("Error, Invalid Password")
         }
         else {
             console.log("Not working");
@@ -52,7 +52,7 @@ export const logIn = async (email, password) => {
     }
     catch (error) {
         if (error.code == "auth/user-not-found") {
-            alert("Error, user not found")
+            swal("Error, user not found")
         }
         else {
             console.log("Invalid Login");
