@@ -5,7 +5,7 @@ export const post = () => {
         `
     <div id= "post" class="container-post">
         <h1>Nueva Receta</h1>
-        <form>
+        <form id="formPost">
             <h4> Nombre de la Receta*</h4> 
             <input type="text" id= "nameRecipe" required />
             <h4> Ingredientes*</h4> 
@@ -29,15 +29,22 @@ export const post = () => {
      </div>`
 
     divPost.innerHTML = viewPost;
+    const creatingPost = () => {
+        const formPost = divPost.querySelector('#formPost');
+        formPost.addEventListener('click', () => {
 
-    const nameRecipe = divPost.querySelector("#nameRecipe").value;
-    const ingredients = divPost.querySelector("#ingredients").value;
-    const stepOne = divPost.querySelector("#stepOne").value;
-    const stepTwo = divPost.querySelector("#stepTwo").value;
-    const stepThree = divPost.querySelector("#stepThree").value;
-    const typeRecipe = divPost.querySelector("#typeRecipe").value;
-    const uploadImg = divPost.querySelector("#uploadImg").value;
 
-    posting(nameRecipe, ingredients, stepOne, stepTwo, stepThree, typeRecipe, uploadImg)
-    return divPost;
-};
+
+            const nameRecipe = divPost.querySelector("#nameRecipe").value;
+            const ingredients = divPost.querySelector("#ingredients").value;
+            const stepOne = divPost.querySelector("#stepOne").value;
+            const stepTwo = divPost.querySelector("#stepTwo").value;
+            const stepThree = divPost.querySelector("#stepThree").value;
+            const typeRecipe = divPost.querySelector("#typeRecipe").value;
+            const uploadImg = divPost.querySelector("#uploadImg").value;
+
+            posting(nameRecipe, ingredients, stepOne, stepTwo, stepThree, typeRecipe, uploadImg)
+        })
+        return divPost;
+    };
+}
