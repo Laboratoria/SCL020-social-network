@@ -455,8 +455,8 @@ div .wall{
 }
 .btn-like{
     margin-left: 230px;
-    width: 22px;
-    height: 22px;
+    max-width: 22px;
+    max-height: 22px;
     border: none;
     background-color: #ffffff;
 }

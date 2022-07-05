@@ -62,6 +62,7 @@ const removeLike = async (id, uid) => {
     usersLikes: arrayRemove(id),
   });
 };*/
+
 // Deleting publication
 const deletingPublication = (id) => deleteDoc(doc(db, 'Publications', id));
 

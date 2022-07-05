@@ -73,6 +73,7 @@ export const wall = () => {
         <button class="btn-delete" data-id="${doc.id}">
           <img src = "../Social-Images/delete-btn.png">
           </button>
+        <span id= "count" class = "count" data-id="${doc.id}"></span>
         <button class="btn-like" data-id="${doc.id}">
         <img src = "../Social-Images/like-icon.png">
         </button>
@@ -88,22 +89,61 @@ export const wall = () => {
         });
       });
 
-      /*const btnLikes = container.querySelectorAll('.btn-like');
+      //Crear un campo vacio en el html que este al lado del botón para que alli se muestre la suma de los likes
+      //Enviar un array vacío a Firebase donde se contenga la suma de los likes de la publicación
+      //Al hacer click en el botón de like, sumar 1 al array vacío
+     //Que los usuarios solo puedan dar 1 like por publicación
+    //Que al presionar nuevamente el botón se le pueda quitar el like a la publicación
+//Que el botón cambie de color cuando se le haya dado like a la publicación
+//Que vuelva a su color normal si le quitan el like
+//Que la suma de likes se muestre en la interfaz al lado del botón
+
+const btnLikes = container.querySelectorAll('.btn-like');
+let count = container.querySelectorAll(".count");
+let clicked = false;
+btnLikes.forEach((btn) => {
+  // console.log(btn.dataset.id);
+  btn.addEventListener("click", (e) => {
+  count.forEach((coun) =>{
+    if ( btn.dataset.id === coun.dataset.id ){
+
+    if (!clicked) {
+    clicked = true;
+    coun.textContent++;
+    } else {
+    clicked = false;
+    coun.textContent--;
+    if ( coun.textContent === "0" ){
+      coun.textContent = "";
+      console.log ("hola");
+    }
+    }
+  }
+  });
+})
+})
+
+// btnLikes.forEach((btn) => {
+//   btn.addEventListener("click", async (e) => {
+//     if (!clicked){
+//     click = true;
+//     count.textContent++;
+//     } else {
+//     clicked = false;
+//     count.textContent--;
+//     }
+//     });
+
+
+    /*const btnLikes = container.querySelectorAll('.btn-like');
     btnLikes.forEach(btn => {
-      btn.addEventListener('click', ({target: {dataset}}) => {
+    btn.addEventListener('click', ({target: {dataset}}) => {
         btn.classList.add('liked');
         addLike(dataset.id);
         console.log('jelou')
       })
     })*/
-      //Mostrar el comentario de la publicación
-      //Usuario pueda dar click en el boton y que se muestre en el text area y se oculte el comment
-      //Crear boton para guardar cambios
-      //Usuario puede editar texto
-      //Dar click al boton de guardar cambios
-      //Esconder text area y boton para guardar cambios
-      //Ejecutar funcion UpdateDoc Firestore
-      //Refrescar vista de publicacion con nuevo Comment de Firestore ( ver si onSnapshot actualiza el nuevo comment)
+    
       const btnEdit = container.querySelectorAll(".btn-edit");
       btnEdit.forEach((btn) => {
         btn.addEventListener("click", async (e) => {
