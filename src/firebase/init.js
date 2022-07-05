@@ -22,6 +22,7 @@ import {
     signInWithPopup,
     GoogleAuthProvider,
     onAuthStateChanged,
+    updateProfile,
     signOut} from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js"
 
 import config from "./config.js"
@@ -53,6 +54,7 @@ export {
     where,
     orderBy,
     arrayUnion, 
-    updateDoc
+    updateDoc,
+    updateProfile
 };
 
