@@ -42,15 +42,15 @@ Para: poder interactuar con la comunidad interesada en el cine.
 
 Criterio de aceptación:
 
- Visibilizar un scroll con un "ranking" de películas
-- [] 4-5 películas fijas (imágenes) a las que se les pueda dar tap (like-popcorn).
-- [ ] según cantidad de likes, se realiza un sort descendente (mayor-menor).
- Poder acceder a un menú que me permita dirigirme a mi propio perfil.
-- [ ] Crear menú
-- [ ] Ruta desde botón profile dentro de menú, que redireccione a profile
-- [ ] según ID de user, que se cree un perfil y se muestre en el template profile
- Crear post en el perfil del usuario
-- [ ] CRUD Firebase
+Visibilizar un scroll con un "ranking" de películas
+ -  4-5 películas fijas (imágenes) a las que se les pueda dar tap (like-popcorn).
+ -  Según cantidad de likes, se realiza un sort descendente (mayor-menor).
+ -  Poder acceder a un menú que me permita dirigirme a mi propio perfil.
+ -  Crear menú
+ -  Ruta desde botón profile dentro de menú, que redireccione a profile
+ -  Según ID de user, que se cree un perfil y se muestre en el template profile
+ -  Crear post en el perfil del usuario
+ -  CRUD Firebase
 
 Historia de usuario 3:
 
@@ -92,9 +92,9 @@ Se realizaron pruebas de usabilidad a 9 usuarios que cumplen con el perfil defin
 
 Algunos de los comentarios recibidos fueron: 
 
-- (Comentarios del diseño)
-- (Comentarios de lo amigable de la App)
-- (Oportunidades de mejora: "Contraste de las letras" "Mejora en la animacion de colores   del fondo")
+ - (Comentarios del diseño)
+ - (Comentarios de lo amigable de la App)
+ - (Oportunidades de mejora: "Contraste de las letras" "Mejora en la animacion de colores   del fondo")
 
 ## 5. MOVIE MATE 
 (Intro resultado Final)

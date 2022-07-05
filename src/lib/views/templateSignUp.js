@@ -17,7 +17,7 @@ export const signUp = () => {
                     <p>Do you already have an account?<a href="#/login">Login</a></p>
                     <div class="container-btn">
                         <button type="submit" class="btn-create">Create</button>
-                        <a href="#/" ><button class="btn-cancel"  formnovalidate="">Cancel</button></a>
+                        <a href="#/" class="btn-cancel">Cancel</a>
                     </div>
                 </form>
             </div>
@@ -36,3 +36,4 @@ export const signUp = () => {
     return divSignUp;
 };
 
+/* <button class="btn-cancel" formnovalidate=""><a href="#/">Cancel</a></button> */

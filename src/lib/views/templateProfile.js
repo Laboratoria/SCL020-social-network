@@ -1,11 +1,13 @@
-import { saveTask, getTask, onGetTask, deleteTask, getTasks,UpdateTask } from "../../firebase/firestore.js";
-import { feed } from "./templateFeed.js";
+import { saveTask, getTask, onGetTask, deleteTask, getTasks, UpdateTask } from "../../firebase/firestore.js";
+// import { feed } from "./templateFeed.js";
 import { createdPost } from "../post.js";
+
 
 export const profile = (containerRoot) => {
 
     const divProfile = document.createElement("div");
     const viewProfile = //html
+
         `
         <main class="container-profile">
             <nav class="nav-web">
@@ -26,7 +28,7 @@ export const profile = (containerRoot) => {
             <div class="web-box">
                 <div class="user-profile">
                     <img src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-profile%20(1).png?raw=true" alt="img-user">
-                    <p id="content">@${task.username}</p>
+                    <p></p>
                     <button class="btn">Follow</button>   
                 </div>
                 <div class="user-data">
@@ -61,6 +63,8 @@ export const profile = (containerRoot) => {
         </main>
     `
     divProfile.innerHTML = viewProfile;
+    
+
 
     const formPost = divProfile.querySelector(".formPost");
     const taskContainer = divProfile.querySelector("#feed-post");
@@ -103,6 +107,8 @@ export const profile = (containerRoot) => {
     createdPost(divProfile, containerRoot, "profile");
     // return divProfile;
 };
+
+
 
 /* <nav class="nav-search">
 <div class="search-bar">
