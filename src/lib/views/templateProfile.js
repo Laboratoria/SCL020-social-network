@@ -1,4 +1,4 @@
-import { saveTask, getTask, onGetTask, deleteTask, getTasks } from "../../firebase/firestore.js";
+import { saveTask, getTask, onGetTask, deleteTask, getTasks,UpdateTask } from "../../firebase/firestore.js";
 import { feed } from "./templateFeed.js";
 import { createdPost } from "../post.js";
 
@@ -26,7 +26,7 @@ export const profile = (containerRoot) => {
             <div class="web-box">
                 <div class="user-profile">
                     <img src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-profile%20(1).png?raw=true" alt="img-user">
-                    <p></p>
+                    <p id="content">@${task.username}</p>
                     <button class="btn">Follow</button>   
                 </div>
                 <div class="user-data">

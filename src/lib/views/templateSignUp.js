@@ -28,10 +28,10 @@ export const signUp = () => {
     const btn = divSignUp.querySelector(".btn-create")
     btn.addEventListener("click", async (e) => {
         e.preventDefault();
-        // const displayName = divSignUp.querySelector("#displayName").value;
+        const displayName = divSignUp.querySelector("#displayName").value;
         const email = divSignUp.querySelector("#email").value;
         const password = divSignUp.querySelector("#password").value;
-        signup(auth, email, password);
+        signup(auth, email, password,displayName);
     })
     return divSignUp;
 };

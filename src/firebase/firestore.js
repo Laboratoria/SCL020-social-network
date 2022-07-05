@@ -45,7 +45,10 @@ export const deleteTask = (id) => deleteDoc(doc(db, "task", id));
 
 export const getTasks = (id) => getDoc(doc(db, "task", id));
 
-
+export const UpdateTask = (id, data) => {
+    const postDocRef = doc(db, "task", id);
+   return updateDoc(postDocRef,data)
+}
 const saveUserName = async (data)=> {
     try {
         const docRef = await addDoc(collection(db, "user"),dataUser)// data con nombre de usuario y uid
