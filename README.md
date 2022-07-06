@@ -78,13 +78,13 @@ Criterio de aceptación:
 ## 2. Encuestas para prototipado
 Para comenzar a crear la app, realizamos una encuesta que nos ayudara a  definir vista y enfoque que le dariamos en base a lo que el usuario busca. En esta encuesta.........
 (Pegar graficos de la encuesta)
-## 3. Diseño de Interfaz de Usuario
 
+## 3. Diseño de Interfaz de Usuario
 Prototipo de baja
-Para nuestro prototipo de baja nos enfocamos primeramente en una app para teléfonos moviles, donde las medidas son más reducidas
-(Decir que nos enfocamos en mobile first, vistas de escritorio también.) 
+Para comenzar creamos un prototipo de baja donde nos enfocamos primeramente en una versión mobile de la app, donde acogimos los resultados de la encuesta realizada en un comienzo para que esta sea amigable con el usuario y enfocada a lo que ellos buscan.
 
 Prototipo de alta
+Finalmente luego de muchos cambios en nuestro prototipo inicial, acogiendo los distintos feedback recibidos, llegamos a crear a través de Figma (herramienta de generación de prototipos) lo que sería nuestro prototipo final de cómo se visualizaría la aplicación tanto en versión mobile como web.
 (Hablar de que usamos figma, mostrar ambas versiones (web y mobile))
 
 ## 4. Test de Usabilidad 

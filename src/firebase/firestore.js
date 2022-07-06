@@ -20,15 +20,16 @@ export const getTask = () => {
     return getDocs(collection(db, "task"))
 };
 
-// /*Order profile post*/
-// export const getTaskUser = (callback) => {
-//     const q = query(
-//         collection(db, "task"),
-//         where("useruid", "==", auth.currentUser.uid),
-//         orderBy('created', 'desc')
-//     );
-//     return(onSnapshot(q, (callback)))
-// };
+/*Order profile post*/
+export const getTaskUser = (callback) => {
+    const q = query(
+        collection(db, "task"),
+        where("useruid", "==", auth.currentUser.uid),
+        orderBy('created', 'desc')
+    );
+    return(onSnapshot(q, (callback)))
+};
+
 export const getTaskUser2 = () => {
     const q = query(
         collection(db, "task"),
@@ -64,14 +65,15 @@ export const UpdateTask = (id, data) => {
     const postDocRef = doc(db, "task", id);
     return updateDoc(postDocRef,data)
 }
-const saveUserName = async (data)=> {
-    try {
-        const docRef = await addDoc(collection(db, "user"),dataUser)// data con nombre de usuario y uid
-        console.log("Document written with ID: ", docRef.id);
-    } catch (e) {
-        console.error("Error adding document: ", e);
-    }
-}
+
+// const saveUserName = async (data)=> {
+//     try {
+//         const docRef = await addDoc(collection(db, "user"),dataUser)// data con nombre de usuario y uid
+//         console.log("Document written with ID: ", docRef.id);
+//     } catch (e) {
+//         console.error("Error adding document: ", e);
+//     }
+// }
 
 
 // export const likeStatus = async (postId, userUid) => {
@@ -95,17 +97,6 @@ const saveUserName = async (data)=> {
 //     return false;
 //     }
 // };
-
-
-
-
-
-
-
-
-
-
-
 
 
 // export const addLike = async (postId) => {

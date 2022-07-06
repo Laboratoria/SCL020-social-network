@@ -30,13 +30,16 @@ export const posts = (querySnapshot, divFeed, containerRoot, where) => {
 			<button class="btn-delete" data-id="${doc.id}">&#128465;</button>
 			`:
 				`
-			<button class="btn-popCorn" data-id="${doc.id}">🍿</button>
-			<p id="content">${task.like}</p>
+			<div class="likes">
+				<button class="btn-popCorn" data-id="${doc.id}">🍿</button>
+				<p id="content">${task.like}</p>
+			</div>
 			`
 			}
-			<p id="content">${task.contentPost}</p>
-	
-			<p id="content">@${task.username}</p>
+			<div class="content">
+				<p id="content" class="content-post">${task.contentPost}</p>
+				<p id="content" class="username">@${task.username}</p>
+			</div>
         </div>
 		`
 	});
@@ -85,9 +88,11 @@ export const posts = (querySnapshot, divFeed, containerRoot, where) => {
 				await deleteTask(btn.dataset.id)
 				swal("Post has been deleted");
 			}
+			getTaskUser2().then((x)=>{
+				posts(x.docs, divFeed, containerRoot, where)
+			});
 		})
 	});
-
 
 
 	const btnsEdit = taskContainer.querySelectorAll(".btn-edit");
@@ -97,20 +102,18 @@ export const posts = (querySnapshot, divFeed, containerRoot, where) => {
 			const doc = await getTasks(e.target.dataset.id);
 			const task = doc.data().content;
 			const edited = taskContainer.innerHTML = task;
-			console.log(edited);
-			console.log(task.contentPost); /* NO LO SAQUE*/
+			//console.log(edited);
+			//console.log(task.contentPost); /* NO LO SAQUE*/
 		})
 	});
 
-
 	const btnLike = taskContainer.querySelectorAll(".btn-popCorn");
-	console.log("btnLike", btnLike);
+	// console.log("btnLike", btnLike);
 	btnLike.forEach(btn => {
-		console.log("btn", btn);
+		//console.log("btn", btn);
 		btn.addEventListener("click", async (e) => {
 			
 			e.preventDefault(); 
-			console.log("prueba")
 			let task = (await getTasks(btn.dataset.id)).data();
 			let likesActuales = task.like;
 			let usuariosDieronLike = task.userlikes;
@@ -141,11 +144,11 @@ export const posts = (querySnapshot, divFeed, containerRoot, where) => {
 			// console.log(searchString);
 			// console.log(auth.currentUser.displayName);
 			if((auth.currentUser.displayName).includes(searchString)){
-				console.log("si funciona");
+				//console.log("si funciona");
 
 			}
 			else {
-				console.log("nopi fabi :c")
+				//console.log("nopi fabi :c")
 			}
 	})
 	// console.log(searchBtn);
