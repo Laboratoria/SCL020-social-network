@@ -151,10 +151,10 @@ export const posts = (querySnapshot, divFeed, containerRoot, where) => {
 				//console.log("nopi fabi :c")
 			}
 	})
-	// console.log(searchBtn);
 
 	return html;
 };
+
 
 export const createdPost = (divFeed, containerRoot, where) => {
 	if (containerRoot === undefined) return;

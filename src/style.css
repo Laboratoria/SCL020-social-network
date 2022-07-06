@@ -858,19 +858,13 @@ a{
 .post-box{
     background: rgba(217, 217, 217, 1);
     border-radius: 15px;
-    /* width: 240px;
-    height: 110px; */
-    width: 60%;
+    width: 100%;
     height: auto; 
     margin: 10px auto;
-    /* padding: 5px; */
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    /* margin: 10px auto;
-    border: none; */
-    /* padding: 0px; */
 }
 
 .content {

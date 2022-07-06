@@ -1,8 +1,21 @@
-// importamos la funcion que vamos a testear
-import { myFunction } from '../src/lib/index';
+import {
+  createUserWithEmailAndPassword,
+  auth,
+  provider,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+  signOut,
+  updateProfile,
+} from "./init.js";
 
-describe('myFunction', () => {
-  it('debería ser una función', () => {
-    expect(typeof myFunction).toBe('function');
+
+describe('Tests for the signInUser function', () => {
+  // toHaveBeenCalled y toHaveBennCalledWith solo sirven para funcion Mock
+  it('Should call signInWithEmailAndPassword', async () => {
+    await signInUser(auth, email, password);
+    // Revisamos si durante la ejecucion de signInUser
+    // se invoco la funcion singInWithEmailAndPassword
+    expect(signInWithEmailAndPassword).toHaveBeenCalled();
   });
 });

@@ -76,28 +76,35 @@ Criterio de aceptación:
  - Boton logout
 
 ## 2. Encuestas para prototipado
-Para comenzar a crear la app, realizamos una encuesta que nos ayudara a  definir vista y enfoque que le dariamos en base a lo que el usuario busca. En esta encuesta.........
-(Pegar graficos de la encuesta)
+Para comenzar a crear la app, realizamos una encuesta que nos ayudó a definir la vista y enfoque que le dariamos en base a lo que el usuario busca. Algunos de estos resultados fueron los siguientes: 
+
+https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/encuesta/01_encuesta.png?raw=true
+https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/encuesta/login.png?raw=true
+https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/encuesta/tematica.png?raw=true
 
 ## 3. Diseño de Interfaz de Usuario
-Prototipo de baja
+Prototipo de baja:
 Para comenzar creamos un prototipo de baja donde nos enfocamos primeramente en una versión mobile de la app, donde acogimos los resultados de la encuesta realizada en un comienzo para que esta sea amigable con el usuario y enfocada a lo que ellos buscan.
 
-Prototipo de alta
+https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/baja%20mobile.png?raw=true
+
+Prototipo de alta:
 Finalmente luego de muchos cambios en nuestro prototipo inicial, acogiendo los distintos feedback recibidos, llegamos a crear a través de Figma (herramienta de generación de prototipos) lo que sería nuestro prototipo final de cómo se visualizaría la aplicación tanto en versión mobile como web.
-(Hablar de que usamos figma, mostrar ambas versiones (web y mobile))
+
+https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/alta%20mobile.png?raw=true
+https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/alta%20web.png?raw=true
 
 ## 4. Test de Usabilidad 
 
 Se realizaron pruebas de usabilidad a 9 usuarios que cumplen con el perfil definido, lo cual ayudo a complementar nuestras historias de usuario, logrando una mejor experiencia para este.
 
 Algunos de los comentarios recibidos fueron: 
+https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/encuesta.png?raw=true
 
- - (Comentarios del diseño)
- - (Comentarios de lo amigable de la App)
- - (Oportunidades de mejora: "Contraste de las letras" "Mejora en la animacion de colores   del fondo")
 
 ## 5. MOVIE MATE 
+Nuestra aplicación finalmente 
+
 (Intro resultado Final)
 
 Imagenes del resultado de nuestra app. 
