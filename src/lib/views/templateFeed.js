@@ -1,16 +1,15 @@
 import { getTask, onGetTask } from "../../firebase/firestore.js";
 import { createdPost } from "../post.js";
 export const feed = (containerRoot) => {
-  const divFeed = document.createElement("div");
-  divFeed.setAttribute("class", "divFeed");
-  
-  const viewFeed =
-    //html
+    const divFeed = document.createElement("div");
+    divFeed.setAttribute("class", "divFeed");
+    
+    const viewFeed =//html
     `
         <main class="container-feed">
                 <nav class="nav-web">
                     <div class="sub-nav-web">
-                        <a href="#/feed" class="containter-logo-ticket"><img class ="logo-navweb" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-removebg-preview.png?raw=true" alt="logo-ticket"></a>
+                        <a href="#/feed" class="container-logo"><img class ="logo-navweb" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-removebg-preview.png?raw=true" alt="logo-ticket"></a>
                         <div class="search-bar">
                             <div class="search-box">
                                 <input class="search-input"type="text" name="" placeholder="Search...">
@@ -35,11 +34,16 @@ export const feed = (containerRoot) => {
                 </nav>
             <div class="web-box">
                 <div class="movies">
-                    <button><img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/dc%20strange.png?raw=true" alt="movie-rank"></button>
-                    <button><img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/jurassic%20wrld.png?raw=true" alt="movie-rank"></button>
-                    <button><img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/maverick.png?raw=true" alt="movie-rank"></button>
-                    <button><img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/the%20batman.png?raw=true" alt="movie-rank"></button>
-                    <button><img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/thor.png?raw=true" alt="movie-rank"></button>
+                    <img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/dc%20strange.png?raw=true" alt="movie-rank">
+                    <img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/jurassic%20wrld.png?raw=true" alt="movie-rank">
+                    <img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/maverick.png?raw=true" alt="movie-rank">
+                    <img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/the%20batman.png?raw=true" alt="movie-rank">
+                    <img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/thor.png?raw=true" alt="movie-rank">
+                    <img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/dc%20strange.png?raw=true" alt="movie-rank">
+                    <img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/jurassic%20wrld.png?raw=true" alt="movie-rank">
+                    <img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/maverick.png?raw=true" alt="movie-rank">
+                    <img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/the%20batman.png?raw=true" alt="movie-rank">
+                    <img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/thor.png?raw=true" alt="movie-rank">
                 </div>   
                 <div class="container-post">
                 </div>
@@ -61,14 +65,16 @@ export const feed = (containerRoot) => {
             </div>
         </main>
     `;
-  divFeed.innerHTML = viewFeed;
+    divFeed.innerHTML = viewFeed;
 
-  //   const taskContainer = divFeed.querySelectorAll(".container-post");
 
-  // const querySnapshot = createdPost();
-  // 
+    createdPost(divFeed, containerRoot, "feed");
 
-  createdPost(divFeed, containerRoot, "feed");
+};
+
+/* <button><img class="movie-rank" src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/thor.png?raw=true" alt="movie-rank"></button> */
+// class="container-logo-ticket"
+
   // window.addEventListener("load", async () => {
   //     const querySnapshot = await createdPost();
   //     
@@ -77,8 +83,6 @@ export const feed = (containerRoot) => {
   // })
 
   //   return divFeed;
-};
-
 /* <div class="user-info">
 <img src="https://github.com/fabibbc/SCL020-social-network/blob/main/src/img/logo-user-post1.png?raw=true" alt="user-img">
 <p>@user_name</p>
