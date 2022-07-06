@@ -697,9 +697,8 @@ a{
 .container-post{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
-    /* margin-left: 100px; */
+    margin: 20px;
 }
 
 .post{
@@ -855,35 +854,57 @@ a{
     text-align: center;
 }
 
-/* .feed-post button {
-    margin-top: 5px;
-    width: 40px;
-    height: 20px; 
-} */
-.web-post{
-    background: rgba(217, 217, 217, 0.3);
-    width: 280px;
-    height: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 35px auto;
-    /* padding: 20px; */
-    border-radius: 15px; 
-}
 
 .post-box{
     background: rgba(217, 217, 217, 1);
-    width: 240px;
-    height: 110px;
-    padding: 5px;
     border-radius: 15px;
+    /* width: 240px;
+    height: 110px; */
+    width: 60%;
+    height: auto; 
     margin: 10px auto;
-    border: none;
-    /* display: flex;
-    justify-content: flex-end;
-    align-items: flex-start; */
+    /* padding: 5px; */
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    /* margin: 10px auto;
+    border: none; */
+    /* padding: 0px; */
+}
+
+.content {
+    margin: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.username {
+    border-radius: 15px 15px 0px 0px;
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    padding: 0px 20px;
+}
+
+.content-post {
+    width: 95%;
+    height: 60px;
+    padding: 20px;
+    overflow-wrap: break-word;
+}
+
+.likes {
+    border-radius: 0px 0px 15px 15px;
+    background-color: whitesmoke;
+    display:flex;
+    width: 100%;
+    padding: 5px 20px;
 }
 
 .btn-edit{
@@ -906,9 +927,6 @@ a{
     border: solid 2px #FFFFFF;
 }
 
-.post-box p{
-    margin: 10px;
-}
 
 .btn-post{
     border: green solid 10px;
@@ -1119,33 +1137,6 @@ body{
 
     .container-post {
         width: 50%;
-    }
-                                                        
-    .post-box {
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-        width: 60%;
-        height: auto;
-    }
-
-    .content {
-        padding: 2.5px 0px;
-    }
-
-    .username {
-        background-color: whitesmoke;
-        width: 100%;
-        height: 50px;
-        padding: 0px;
-        margin: 0px;
-    }
-
-    .likes {
-        display:flex;
-        width: 20%;
-        margin: 0px;
     }
 }
 
