@@ -1,39 +1,36 @@
+
 import { db, collection, addDoc, getDocs, onSnapshot, query } from './init.js'
-
-export const posting = (nameRecipe, ingredients, stepOne, stepTwo, stepThree, typeRecipe, uploadImg) => {
-
-    addDoc(collection(db, "pots"), {
-            nombre: nameRecipe,
-            ingredientes: [ingredients],
-            preparacion: [{ stepOne }, { stepTwo }, { stepThree }],
-            tipo: typeRecipe,
-            img: uploadImg,
-
-        })
-        .then(() => {
-            console.log("Hola Pots");
-        })
-        .catch(() => {
-            console.error("Error se escribe posts");
-        });
+export const posting = async (nameRecipe, ingredients, stepOne, stepTwo, stepThree, uploadImg) => {
+    console.log(nameRecipe, ingredients, stepOne, stepTwo, stepThree, uploadImg)
+    await addDoc(collection(db, 'post'), {
+    nameRecipe: nameRecipe,
+        ingredients: [ingredients],
+        preparacion: [{stepOne}, {stepTwo},{stepThree}],
+        uploadImg: uploadImg
+     })
+    
 }
-
 export const capturePost = async() => {
     try {
         let dataBasePost = [];
-        const resultDataPost = await getDocs(collection(db, 'pots'));
+        const resultDataPost = await getDocs(collection(db, 'post'));
         resultDataPost.forEach((doc) => {
             console.log(doc.id, ' => ', doc.data());
             dataBasePost.push({ id: doc.id, data: doc.data() });
         });
         console.log(dataBasePost);
+        
+
         return dataBasePost;
+
     } catch (error) {
         console.log(error);
     }
 };
 
-export const snapshotPost = (callback) => {
-    const queryPost = query(collection(db, 'pots'));
+export const snapshot = (callback) => {
+    const queryPost = query(collection(db, 'post'));
     onSnapshot(queryPost, callback);
 };
+
+//window.location.href = '#/wall'
