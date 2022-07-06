@@ -1,7 +1,5 @@
 import { changeRouter } from "../lib/router.js";
 import { signInWithEmailAndPassword, auth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, provider, signOut, onAuthStateChanged } from "./init.js"
-// console.log(auth)
-
 const observer = (hash) => {
     onAuthStateChanged(auth, (user) => {
         console.log(user)
@@ -17,7 +15,6 @@ const observer = (hash) => {
         }
     });
 };
-
 const userRegister = async(userName, email, password) => {
     try {
         const userRegistration = await createUserWithEmailAndPassword(auth, email, password);
@@ -26,9 +23,7 @@ const userRegister = async(userName, email, password) => {
         console.log(error);
         throw error.code;
     };
-
 }
-
 const userLogin = async(email, password) => {
     console.log(userLogin);
     try {
@@ -39,12 +34,8 @@ const userLogin = async(email, password) => {
         console.log(error);
         const errorCode = error.code;
         const errorMessage = error.message;
-
     }
-
 }
-
-
 const usersGoogle = () => {
     signInWithPopup(auth, provider)
         .then((result) => {
@@ -69,9 +60,6 @@ const usersGoogle = () => {
             console.log('error', errorMessage)
         })
 };
-
-
-
 const userSignOut = () => {
     signOut(auth).then(() => {
         // Sign-out successful.
@@ -79,5 +67,4 @@ const userSignOut = () => {
         // An error happened.
     });
 }
-
 export { userRegister, userLogin, usersGoogle, observer, userSignOut }

@@ -2,8 +2,8 @@ import { intro } from './views/templateintro.js';
 import { register } from './views/templateregister.js';
 import { login } from './views/templatelogin.js';
 import { error } from './views/error.js';
-import { wall } from './views/templatewall.js';
-import { post } from './views/templatePost.js';
+import { wall} from './views/templatewall.js';
+import { divNewPost, post } from './views/templatepost.js';
 
 export const changeRouter = (hash) => {
     if (hash === '#/register') {
@@ -42,12 +42,14 @@ const showTemplate = (hash) => {
             break;
         case '#/wall':
             containerRoot.appendChild(wall());
+            divNewPost();
             break;
         case '#/post':
             containerRoot.appendChild(post());
             break;
         case '#/':
             containerRoot.appendChild(intro());
+            
             break;
         case '':
             containerRoot.appendChild(intro());
