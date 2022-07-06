@@ -194,7 +194,9 @@
 	align-items: center;
 }
 
-.textTittle, .userProfile, .nameProfile {
+.textTittle,
+.userProfile,
+.nameProfile {
 	color: #ffffff;
 	padding: 10px;
 	letter-spacing: 1px;
@@ -210,7 +212,7 @@
 
 .boxtxt {
 	background: #3d2e80;
-	border: #3d2e80; solid 1px;
+	border: 1px solid #3d2e80;
 	margin: 5px;
 	width: 290px;
 	height: auto;
@@ -244,10 +246,12 @@ p {
 	background-color: rgb(255, 255, 255);
 }
 
-.LIKE {
+.LIKE,
+.btnDelete,
+.btnEdit {
 	width: auto;
 	height: 35px;
-	margin: 5px;
+	margin: 2.5%;
 }
 
 .containerRootHome {
@@ -264,9 +268,9 @@ p {
 }
 
 /* Estilos Perfil */
-.containerTittle{
+.containerTittle {
 	height: auto;
-  width: 100%;
+	width: 100%;
 	background: #f2865f;
 	display: flex;
 	justify-content: center;
@@ -286,10 +290,10 @@ p {
 	justify-content: center;
 }
 
-.userProfile, .nameProfile {
+.userProfile,
+.nameProfile {
 	text-align: center;
 }
-
 
 /* estilos para el footer*/
 .containerRootProfile {
@@ -298,7 +302,7 @@ p {
 	min-height: 100vh;
 }
 
-.footerLogin{
+.footerLogin {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -321,7 +325,7 @@ footer {
 	width: auto;
 }
 
-.buttomimageFooter{
+.buttomimageFooter {
 	background-color: #f2865f;
 	border: #f2865f solid 1px;
 }
@@ -329,13 +333,11 @@ footer {
 @media (min-width: 768px) {
 	#root {
 		background-image: url(../images/fondo_oscuro_tablet.png);
-	
 	}
 }
 
 @media (min-width: 1024px) {
 	#root {
 		background-image: url(../images/fondo_oscuro_laptop.png);
-	
 	}
 }

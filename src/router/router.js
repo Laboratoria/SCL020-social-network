@@ -1,10 +1,14 @@
 import { interpLogIn } from '../lib/views/viewLogIn.js';
 import { createUserEmail, interpSignUp } from '../lib/views/viewSignUp.js';
-import { interpHome, interpHomePost, logOutFunction } from '../lib/views/viewHome.js';
+import {
+	interpHome,
+	interpHomePost,
+	logOutFunction,
+} from '../lib/views/viewHome.js';
 import { interpProfile } from '../lib/views/viewProfile.js';
 import { interp404 } from '../lib/views/view404.js';
 import { interpRegExitoso } from '../lib/views/viewRegistroExitoso.js';
-import { createPost, lookPost } from '../firebase/firestore.js';
+import { createPost } from '../firebase/firestore.js';
 import { signInFunction, signInFunctionGoogle } from '../firebase/auth.js';
 
 export const changeRoute = (hash) => {
@@ -23,8 +27,10 @@ export const changeRoute = (hash) => {
 			root.appendChild(interpHome());
 			interpHomePost();
 			createPost();
-			lookPost();
+			// lookPost();
 			logOutFunction();
+			// deletePost();
+			// funcionaPorfavor();
 			break;
 		case '#/viewProfile':
 			root.appendChild(interpProfile());

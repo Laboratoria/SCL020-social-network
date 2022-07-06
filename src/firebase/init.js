@@ -5,7 +5,7 @@ import {
 	createUserWithEmailAndPassword,
 	GoogleAuthProvider,
 	signInWithPopup,
-	signOut
+	signOut,
 } from 'https://www.gstatic.com/firebasejs/9.8.3/firebase-auth.js';
 
 import {
@@ -15,6 +15,8 @@ import {
 	addDoc,
 	onSnapshot,
 	query,
+	doc,
+	deleteDoc,
 } from 'https://www.gstatic.com/firebasejs/9.8.3/firebase-firestore.js';
 
 import { firebaseConfig } from './firebaseConfig.js';
@@ -38,5 +40,7 @@ export {
 	provider,
 	GoogleAuthProvider,
 	signInWithPopup,
-	signOut
+	signOut,
+	doc,
+	deleteDoc,
 };
