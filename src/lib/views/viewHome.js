@@ -1,8 +1,7 @@
 //Este archivo es para la vista principal de la app
 
-import { snapshot } from '../../firebase/firestore.js';
+import { deletePost, snapshot } from '../../firebase/firestore.js';
 import { signOutSession } from '../../firebase/auth.js';
-// import { signOut } from '../../firebase/init.js';
 
 export const interpHome = () => {
 	const divHome = document.createElement('div');
@@ -45,36 +44,46 @@ export const interpHomePost = async () => {
 		divHomePost.innerHTML = '';
 		callback.forEach((doc) => {
 			const post = doc.data();
-
+			// console.log(post);
+			// console.log('Prueba Marianny', doc.id);
 			const formHomePost =
 				//html
 				`
-    <div id="rootHomePost" class="containerRootHome">
-        <section>
+    <div id="rootHomePost" class="containerRootHome" data-postid="${doc.id}">
         <div class="containerPostPublicado">
           <div class="tittlePost">
             <img class="" src="./images/perfil.png" alt="perfil" height=auto width="40"/>
             <h3 class="textTittle">Usuario</h3>
           </div>
           <textarea type="text" id="forPosting" class="boxtxt" rows="5">${post.Content}</textarea>
-          <div class="containerlike" id="Post">
-            <input type="image" src="images/heart.png" class="LIKE" />
+
+          <div class="containerlike" id="Post" >
+          <input type="image" id="btnEditPost" class="btnEdit" src="images/lapizModoClaro.png" />
+          <input type="image" id="${doc.id}" class="btnDelete" src="images/BasuraModoOscuro.png" />
+          <input type="image" src="images/heart.png" class="LIKE" />
           </div>
-        </div>
-      </section>
-  
+          </div>
     </div>
   `;
+
 			divHomePost.innerHTML += formHomePost;
 		});
+		const btnDeletePost = document.querySelectorAll('.btnDelete');
+		btnDeletePost.forEach((idIterating) => {
+			idIterating.addEventListener('click', (event) => {
+				deletePost(event.target.getAttribute('id'));
+				// console.log(event.target.getAttribute('id'));
+			});
+		});
+		// console.log('Mi Boton:::', btnDeletePost);
 	});
 };
 
 export const logOutFunction = () => {
-  const logOut = document.querySelector("#logOut");
-  logOut.addEventListener("click", (e) =>{
-    e.preventDefault();
-    signOutSession();
-    window.location.href = "#/";
-  })
+	const logOut = document.querySelector('#logOut');
+	logOut.addEventListener('click', (e) => {
+		e.preventDefault();
+		signOutSession();
+		window.location.href = '#/';
+	});
 };
