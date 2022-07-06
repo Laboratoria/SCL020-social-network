@@ -1,8 +1,8 @@
 
-
 //Funcion que crea el template de la pantalla Inicio
-export const indexScreen = () => {
-  const screenIndex =  `<section>
+export const home = () => {
+  const divHome = document.createElement("div");
+  const viewHome =  `<section>
     <section>
       <img src="" alt="">
     </section>
@@ -23,6 +23,8 @@ export const indexScreen = () => {
     </p>
     </section>
   </section>
-  `;
-return indexScreen; 
-};
+  `
+  divHome.innerHTML = viewHome;
+  return divHome;
+
+}
