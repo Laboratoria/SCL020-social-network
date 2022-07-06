@@ -1,7 +1,6 @@
-//Templates de las diferentes pantallas
 
 //Funcion que crea el template de la pantalla Login
-export const loginScreen = () => {
+export const login = () => {
   const screenLogin = `<section>
   <section>
     <img src="" alt="">
@@ -24,7 +23,7 @@ export const loginScreen = () => {
   </section>
 </section>
 `;
-return loginScreen;
+return screenLogin;
   //console.log('Hola mundo!');
 };
 

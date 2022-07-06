@@ -8,10 +8,13 @@ export const menu = () => {
       <a href="#/">Home</a>
     </li>
     <li>
-      <a href="#/perfil">Perfil</a>
+      <a href="#/profile">Perfil</a>
     </li>
     <li>
-      <a href="#/cerrar">Cerrar Sesión</a>
+    <a href="#/feed">Muro</a>
+    </li>
+    <li>
+      <a href="#/logOut">Cerrar Sesión</a>
     </li>
   </ul>
     </div>`;
