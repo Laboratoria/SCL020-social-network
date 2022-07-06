@@ -2,12 +2,15 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	/* background-image: url(../images/fondo_oscuro_page1.png);
+	background-position: absolute; */
 }
 
 #root {
 	background-image: url(../images/fondo_oscuro_page1.png);
 	background-size: cover;
-	height: 100vh;
+	/* height: 100vh; */
+	background-attachment: fixed;
 }
 
 #nav_registration {
@@ -15,7 +18,15 @@
 	justify-content: end;
 }
 
-.containerFormIndex,
+.containerFormIndex {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
+	margin-bottom: 30vh;
+}
+
 #form_login {
 	display: flex;
 	flex-direction: column;
@@ -170,8 +181,7 @@
 	height: auto;
 }
 
-.textBoxContainer,
-.containerPostPublicado {
+.textBoxContainer {
 	background: #3d2e80;
 	margin: 50px 40px 40px 40px;
 	display: flex;
@@ -240,6 +250,19 @@ p {
 	margin: 5px;
 }
 
+.containerRootHome {
+	display: flex;
+	flex-direction: column;
+}
+
+.containerPostPublicado {
+	background: #3d2e80;
+	margin: 10px 40px 10px 40px;
+	display: flex;
+	flex-direction: column;
+	border-radius: 10px;
+}
+
 /* Estilos Perfil */
 .containerTittle{
 	height: auto;
@@ -269,10 +292,20 @@ p {
 
 
 /* estilos para el footer*/
-.containerRootHome, .containerRootProfile {
+.containerRootProfile {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+}
+
+.footerLogin{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background: #f2865f;
+	margin-top: auto;
+	height: 60px;
+	opacity: 0%;
 }
 
 footer {
