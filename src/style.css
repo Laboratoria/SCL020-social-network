@@ -5,40 +5,43 @@
     box-sizing: border-box;
 }
 
-body {
-        background-image: url(imagenes/fondo-app.jpg);
+@media (min-width: 1198.98px) {
+    body {
+        background-image: url(imagenes/bodydesktop.jpg);
         background-size: cover;
         background-attachment: fixed;
         min-height: 100vh;
-  }
-    
-.container-inicio {
+    }
+    .container-inicio {
         display: grid;
-        grid-template-rows: 180px 150px 230px;
+        grid-template-rows: 130px 160px 230px;
         background-color: white;
         opacity: 87%;
-        width: 90vw;
+        width: 60vw;
         height: 80vh;
         margin-top: 70px;
         border-radius: 35px;
         margin-left: auto;
         margin-right: auto;
     }
-.container-inicio h1 {
+    .container-inicio h1 {
         font-family: 'Lobster Two';
         text-align: center;
-        font-size: 65px;
+        font-size: 100px;
         line-height: 81.25px;
         color: #095E00;
         margin-top: 40px;
     }
- .container-inicio .logo {
+    .container-inicio .logo {
+        width: 18vw;
+        height: 18vh;
+        margin-top: 3px;
         margin-left: auto;
         margin-right: auto;
     }
-.container-orange {
+    .container-orange {
         height: 27vh;
-        width: 77vw;
+        width: 50vw;
         background: #E28413;
         border-radius: 10px;
         margin-top: 5px;
@@ -46,29 +49,29 @@ body {
         margin-left: auto;
         margin-right: auto;
     }
-.container-orange h2 {
+    .container-orange h2 {
         color: #FFFFFF;
         font-family: 'Jockey One';
         font-style: normal;
         font-weight: 400;
-        font-size: 22px;
+        font-size: 40px;
         line-height: 8px;
         text-align: center;
-        padding-top: 15px;
+        padding-top: 35px;
     }
-.container-orange p {
+    .container-orange p {
         color: #FFFFFF;
         font-family: 'Jockey One';
         font-style: normal;
         font-weight: 400;
-        font-size: 22px;
+        font-size: 40px;
         line-height: 35px;
         text-align: center;
-        margin-top: 10px;
+        margin-top: 20px;
     }
- .botonUnete {
-        width: 230px;
-        height: 45px;
+    .botonUnete {
+        width: 265px;
+        height: 65px;
         left: 74px;
         background: #2BA84A;
         margin-left: auto;
@@ -77,58 +80,57 @@ body {
         padding: 10px 10px;
         margin-bottom: 100px;
     }
-.botonUnete a {
+    .botonUnete a {
         text-decoration: none;
         color: #FFFFFF;
-        font-size: 20px;
+        font-size: 35px;
         font-family: 'Lobster Two';
         font-weight: bold;
-
     }
-.container-login {
+    .container-login {
         display: grid;
         justify-items: center;
         grid-template-columns: 1fr;
-        grid-template-rows: auto;
+        grid-template-rows: 0, 5fr;
         background-color: white;
         opacity: 87%;
-        width: 90vw;
-        height: 85vh;
+        width: 60vw;
+        height: 80vh;
         margin-top: 70px;
         border-radius: 35px;
         margin-left: auto;
         margin-right: auto;
     }
-.container-login h1 {
+    .container-login h1 {
         font-family: 'Lobster Two';
         text-align: center;
-        font-size: 65px;
+        font-size: 100px;
         line-height: 81.25px;
         color: #095E00;
         margin-top: 40px;
     }
-.form {
+    .form {
         display: grid;
         grid-template-rows: 1fr 1fr 1fr;
         margin: 0 auto;
     }
-.container-login .email {
-        width: 272px;
+    .container-login .email {
+        width: 380px;
         height: 50px;
         left: 63px;
         background: rgba(0, 0, 0, 0.15);
         margin: 0 auto;
     }
-.container-login .contraseña {
-        width: 270px;
+    .container-login .contraseña {
+        width: 380px;
         height: 50px;
         left: 64px;
         background: rgba(0, 0, 0, 0.15);
         margin-left: auto;
         margin-right: auto;
     }
-.container-login .btnContinuar {
-        width: 270px;
+    .container-login .btnContinuar {
+        width: 380px;
         height: 45px;
         left: 62px;
         background: #2BA84A;
@@ -139,10 +141,9 @@ body {
         font-weight: bold;
         font-size: 18px;
         font-family: 'Lobster Two';
-
     }
-.container-login .btnregister {
-        width: 270px;
+    .container-login .btnregister {
+        width: 380px;
         height: 50px;
         left: 65px;
         background: #E28413;
@@ -150,49 +151,44 @@ body {
         margin-right: auto;
         border-radius: 15px;
         font-family: 'Lobster Two';
-
     }
-.container-login .forgot {
-        width: 268.79px;
+    .container-login .forgot {
+        width: 380px;
         height: 54.5px;
         left: 62px;
         background: #FFFFFF(0, 0, 0, 0);
         margin-left: auto;
         margin-right: auto;
         border-radius: 15px;
-
     }
-    
-.container-login .btngoogle {
+    .container-login .btngoogle {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
         align-content: stretch;
         flex-direction: row;
-        width: 268.79px;
-        height: 54.5px;
+        width: 380px;
         left: 62px;
         background: #D9D9D9;
         margin-left: auto;
         margin-right: auto;
         border-radius: 15px;
-
     }
-.container-login .logogoogle {
+    .container-login .logogoogle {
         right: 20px;
     }
-.container-login a {
+    .container-login a {
         text-decoration: none;
         color: #FFFFFF;
         font-weight: bold;
         font-size: 18px;
     }
- .btngoogle a {
+    .btngoogle a {
         text-decoration: none;
         color: black;
         font-size: 15px;
     }
-.container-register {
+    .container-register {
         display: grid;
         grid-template-rows: 130px 170px 80px 80px 150px;
         background-color: white;
@@ -204,7 +200,7 @@ body {
         margin-left: auto;
         margin-right: auto;
     }
- .container-register h1 {
+    .container-register h1 {
         font-family: 'Lobster Two';
         text-align: center;
         font-size: 65px;
@@ -212,7 +208,7 @@ body {
         color: #095E00;
         margin-top: 40px;
     }
- .container-register .userName {
+    .container-register .userName {
         width: 272px;
         height: 50px;
         left: 63px;
@@ -220,7 +216,7 @@ body {
         margin-left: auto;
         margin-right: auto;
     }
-.container-register .email {
+    .container-register .email {
         width: 272px;
         height: 50px;
         left: 63px;
@@ -228,7 +224,7 @@ body {
         margin-left: auto;
         margin-right: auto;
     }
- .container-register .contraseña {
+    .container-register .contraseña {
         width: 270px;
         height: 50px;
         left: 64px;
@@ -236,7 +232,7 @@ body {
         margin-left: auto;
         margin-right: auto;
     }
- .container-register .btn {
+    .container-register .btn {
         width: 270px;
         height: 45px;
         left: 62px;
@@ -244,96 +240,93 @@ body {
         margin-left: auto;
         margin-right: auto;
         border-radius: 15px;
-
     }
- .container-register a {
+    .container-register a {
         text-decoration: none;
         color: #FFFFFF;
         font-weight: bold;
         font-size: 18px;
     }
-/*.container-wall {
+    /*.container-wall {
     
     }*/
-.container-wall header {
+    .container-wall header {
         display: flex;
-        justify-content:space-around;
+        justify-content: space-around;
         flex-direction: row-reverse;
         top: 800px;
-        width: 375px;
-        height: 100px;
-        background-color:  #E28413;
+        width: 100vw;
+        height: 15vh;
+        background-color: #E28413;
     }
- .container-wall h1 {
+    .container-wall h1 {
         font-family: 'Lobster Two';
         display: flex;
         text-align: right;
-        font-size: 40px;
+        font-size: 60px;
         color: #095E00;
         margin-top: 20px;
     }
- .container-wall .logoperfil {
-        Width: 12vw;
-        Height: 8vh;
-        margin-top: 10px;
+    .container-wall .logoperfil {
+        Width: 5vw;
+        Height: 5vh;
+        margin-top: 40px;
     }
- .container-wall footer{
+    .container-wall footer {
         display: flex;
-        justify-content:space-around;
+        justify-content: space-around;
         flex-direction: row-reverse;
         align-items: center;
         align-content: center;
         top: 1000px;
-        width: 375px;
-        height: 100px;
-        background-color:  #E28413;
+        width: 100vw;
+        height: 10vh;
+        background-color: #E28413;
     }
- .container-wall .logomuro{
-        Width: 12vw;
-        Height: 7vh;
-        
+    .container-wall .logomuro {
+        Width: 5vw;
+        Height: 5vh;
     }
- .container-wall .logopublicar{
-        Width: 10vw;
-        Height: 7vh;
-        
+    .container-wall .logopublicar {
+        Width: 5vw;
+        Height: 5vh;
     }
-.container-post {
+    .container-post {
         background-color: #FFFFFF;
         width: 100vw;
         height: 100vh;
         top: 0px;
-        border-radius: 0px; 
+        border-radius: 0px;
     }
-.container-post h1 {
+    .container-post h1 {
         font-family: 'Lobster Two';
         font-size: 40px;
         color: #095E00;
         margin-top: 20px;
         text-align: center;
     }
-.container-post form {
-       display: grid;
-       grid-template-rows: 50px 30px 50px 50px 20px 50px 50px 50px 50px 50px 50px 50px 30px 60px;
-       margin-left: auto;
-       margin-right: auto;
-       height: 80vh;
-       width: 90vw;
-       padding: 20px;
-       background-color: white;
-       border-radius: 35px;
-       opacity: 90%;
-       left: 35px;
-       top: 146px;
+    .container-post form {
+        display: grid;
+        grid-template-rows: 50px 30px 50px 50px 20px 50px 50px 50px 50px 50px 50px 50px 30px 60px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 80vh;
+        width: 90vw;
+        padding: 20px;
+        background-color: white;
+        border-radius: 35px;
+        opacity: 90%;
+        left: 35px;
+        top: 146px;
     }
-.container-post h4 {
+    .container-post h4 {
         font-family: 'Lobster Two';
         font-size: 20px;
         color: black;
         margin-top: 20px;
         margin-left: 15px;
     }
-.container-post .btnpublicar {
+    .container-post .btnpublicar {
         width: 30vw;
         height: 5vh;
         background: #E28413;
@@ -341,23 +334,50 @@ body {
         font-size: 20px;
         color: black;
         border-radius: 15px;
+    }
+    /*.newPost {
+        display: grid;
+        grid-template-rows: 130px 170px 80px 80px 150px;
+        background-color: white;
+        opacity: 90%;
+        width: 90vw;
+        height: 80vh;
+        margin-top: 70px;
+        border-radius: 35px;
+        margin-left: auto;
+        margin-right: auto;
+    }*/
+    .post {
+        height: 55vh;
+        width: 50vw;
+        background: white;
+        border-radius: 10px;
+        margin-top: 5px;
+        margin-bottom: 130px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .post p {
+        font-family: 'Lobster Two';
+        text-align: center;
+        font-size: 20px;
+        color: #095E00;
+    }
+    .post h4 {
+        font-family: 'Lobster Two';
+        text-align: center;
+        font-size: 20px;
+        color: #095E00;
+    }
+    .post .nameRecipe {
+        font-family: 'Lobster Two';
+        text-align: center;
+        font-size: 50px;
+        color: #095E00;
+    }
 }
-.newPost {
-    display: grid;
-    grid-template-rows: 130px 170px 80px 80px 150px;
-    background-color: white;
-    opacity: 90%;
-    width: 90vw;
-    height: 80vh;
-    margin-top: 70px;
-    border-radius: 35px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
-
-
-@media screen and (max-width: 428px) {
+@media (max-width: 425px) {
     body {
         background-image: url(imagenes/fondo-app.jpg);
         background-size: cover;
@@ -434,7 +454,6 @@ body {
         color: #FFFFFF;
         font-size: 20px;
         font-family: 'Lobster Two';
-
     }
     .container-login {
         display: grid;
@@ -490,7 +509,6 @@ body {
         font-weight: bold;
         font-size: 18px;
         font-family: 'Lobster Two';
-
     }
     .container-login .btnregister {
         width: 270px;
@@ -501,7 +519,6 @@ body {
         margin-right: auto;
         border-radius: 15px;
         font-family: 'Lobster Two';
-
     }
     .container-login .forgot {
         width: 268.79px;
@@ -511,7 +528,6 @@ body {
         margin-left: auto;
         margin-right: auto;
         border-radius: 15px;
-
     }
     .container-login .btngoogle {
         display: flex;
@@ -526,7 +542,6 @@ body {
         margin-left: auto;
         margin-right: auto;
         border-radius: 15px;
-
     }
     .container-login .logogoogle {
         right: 20px;
@@ -594,7 +609,6 @@ body {
         margin-left: auto;
         margin-right: auto;
         border-radius: 15px;
-
     }
     .container-register a {
         text-decoration: none;
@@ -602,12 +616,12 @@ body {
         font-weight: bold;
         font-size: 18px;
     }
-   /*.container-wall {
+    /*.container-wall {
 
     }*/
     .container-wall header {
         display: flex;
-        justify-content:space-around;
+        justify-content: space-around;
         flex-direction: row-reverse;
         top: 800px;
         width: 375px;
@@ -627,33 +641,31 @@ body {
         Height: 8vh;
         margin-top: 10px;
     }
-    .container-wall footer{
+    .container-wall footer {
         display: flex;
-        justify-content:space-around;
+        justify-content: space-around;
         flex-direction: row-reverse;
         align-items: center;
         align-content: center;
         top: 1000px;
         width: 375px;
         height: 100px;
-        background-color:  #E28413;
+        background-color: #E28413;
     }
-    .container-wall .logomuro{
+    .container-wall .logomuro {
         Width: 12vw;
         Height: 7vh;
-        
     }
-    .container-wall .logopublicar{
+    .container-wall .logopublicar {
         Width: 10vw;
         Height: 7vh;
-        
-    }*/
-    .container-post {
+    }
+    */ .container-post {
         background-color: #FFFFFF;
         width: 100vw;
         height: 100vh;
         top: 0px;
-        border-radius: 0px; 
+        border-radius: 0px;
     }
     .container-post h1 {
         font-family: 'Lobster Two';
@@ -663,18 +675,18 @@ body {
         text-align: center;
     }
     .container-post form {
-       display: grid;
-       grid-template-rows: 50px 30px 50px 50px 20px 50px 50px 50px 50px 50px 50px 50px 30px 60px;
-       margin-left: auto;
-       margin-right: auto;
-       height: 80vh;
-       width: 90vw;
-       padding: 20px;
-       background-color: white;
-       border-radius: 35px;
-       opacity: 90%;
-       left: 35px;
-       top: 146px;
+        display: grid;
+        grid-template-rows: 50px 30px 50px 50px 20px 50px 50px 50px 50px 50px 50px 50px 30px 60px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 80vh;
+        width: 90vw;
+        padding: 20px;
+        background-color: white;
+        border-radius: 35px;
+        opacity: 90%;
+        left: 35px;
+        top: 146px;
     }
     .container-post h4 {
         font-family: 'Lobster Two';
@@ -691,23 +703,35 @@ body {
         font-size: 20px;
         color: black;
         border-radius: 15px;
-
-        
     }
-    
-    .newPost {
-        display: grid;
-        grid-template-rows: 130px 170px 80px 80px 150px;
-        background-color: white;
-        opacity: 87%;
-        width: 90vw;
-        height: 80vh;
-        margin-top: 70px;
-        border-radius: 35px;
+    .post {
+        height: 55vh;
+        width: 50vw;
+        background: white;
+        border-radius: 10px;
+        margin-top: 5px;
+        margin-bottom: 130px;
         margin-left: auto;
         margin-right: auto;
     }
-    
+    .post p {
+        font-family: 'Lobster Two';
+        text-align: center;
+        font-size: 20px;
+        color: #095E00;
+    }
+    .post h4 {
+        font-family: 'Lobster Two';
+        text-align: center;
+        font-size: 20px;
+        color: #095E00;
+    }
+    .post .nameRecipe {
+        font-family: 'Lobster Two';
+        text-align: center;
+        font-size: 50px;
+        color: #095E00;
+    }
     /*@media screen and (max-width: 428px) {
         .container-wall .btncerrar {
             width: 270px;
@@ -719,4 +743,3 @@ body {
         }
     }*/
 }
-
