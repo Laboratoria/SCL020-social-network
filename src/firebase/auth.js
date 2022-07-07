@@ -5,7 +5,8 @@ import {
 	provider,
 	GoogleAuthProvider,
 	signInWithPopup,
-	signOut
+	signOut,
+	onAuthStateChanged,
 } from './init.js';
 
 //Funcion que escucha evento de INGRESO correo y contraseña
@@ -22,6 +23,8 @@ export const signInFunction = () => {
 			.then((userCredential) => {
 				// Signed in
 				const user = userCredential.user;
+				console.log(user.uid);
+				// console.log(user);
 				// ...
 				window.location.href = '/#/viewHome';
 			})
@@ -42,6 +45,7 @@ export const signCreate = (email, password) => {
 		.then((userCredential) => {
 			// Signed in
 			const user = userCredential.user;
+			console.log(user);
 			// ...
 			window.location.href = '/#/viewRegistroExitoso';
 		})
@@ -88,12 +92,43 @@ export const signInFunctionGoogle = () => {
 	});
 };
 
+//Cerrar Sesion
+
 export const signOutSession = () => {
-signOut(auth).then(() => {
-	alert("Adiós");
-  // Sign-out successful.
-}).catch((error) => {
-	alert("aún estás aquí");
-  // An error happened.
-});
+	signOut(auth)
+		.then(() => {
+			alert('Adiós');
+			// Sign-out successful.
+		})
+		.catch((error) => {
+			alert('aún estás aquí');
+			// An error happened.
+		});
 };
+
+//Observador
+export const authenticationObserver = (hash) => {
+	onAuthStateChanged(auth, (user) => {
+		if (user) {
+			// User is signed in, see docs for a list of available properties
+			// https://firebase.google.com/docs/reference/js/firebase.User
+			const uid = user.uid;
+			console.log(uid);
+			// ...
+		} else {
+			// User is signed out
+			// ...
+		}
+	});
+};
+
+// const gettingActiveUser = ( hash) => {
+//   onAuthStateChanged(auth, (user) => {
+//     console.log(user)
+//     if (user) {
+//       changeRoute(hash);
+//     } else {
+//       changeRoute('/#home');
+//     }
+//   });
+// }
