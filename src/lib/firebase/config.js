@@ -1,5 +1,5 @@
 // Your web app's Firebase configuration
-const firebaseConfig = {
+export const firebaseConfig = {
     apiKey: "AIzaSyBBsF0xI43K_mjmI_NUtb01CE4BApx7u2A",
     authDomain: "adultoindependiente-4f40c.firebaseapp.com",
     projectId: "adultoindependiente-4f40c",

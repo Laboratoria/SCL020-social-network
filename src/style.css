@@ -1,9 +1,16 @@
 body {
-    background-color: peachpuff;
-background-image: linear-gradient(to bottom,
-        Color/ rgba(245, 246, 252, 1),
-        color/ rgba(117, 19, 93, 0.3)
-      ),
-      url(https://images.pexels.com/photos/5966631/pexels-photo-5966631.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-    background-size: cover;
-  }
+ /* background-image: url(fondo.jpg);
+  background-size: cover;
+background: linear-gradient(color rgba(236, 215, 230), color rgba(219, 16, 168, 0.3));*/
+background: linear-gradient(rgba(201, 227, 233, 0.877), rgba(6, 106, 131, 0.938)) , url('./images/fondo.jpg');
+background-attachment: fixed;
+
+  /*background: linear-gradient(color rgba(236, 215, 230), color rgba(219, 16, 168, 0.3));*/
+}
+/*.meme {
+  display: block;
+  margin: 0px auto;
+  border-radius: 35%;
+  left: auto;
+  right: auto;
+}*/

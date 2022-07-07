@@ -9,12 +9,13 @@ import { myFunction} from './lib/index.js';
 
 
 
+
 //document.getElementById('root').appendChild(home())
 
-document.getElementById('root').innerHTML = menu();
+
 //
 const init = () => {
-   
+    document.getElementById('root').innerHTML = menu();
     window.addEventListener('hashchange', () => {
         myFunction();
         console.log("holaa");
