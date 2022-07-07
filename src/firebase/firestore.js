@@ -1,16 +1,21 @@
-
 import { db, collection, addDoc, getDocs, onSnapshot, query } from './init.js'
-export const posting = async (nameRecipe, ingredients, stepOne, stepTwo, stepThree, uploadImg) => {
-    console.log(nameRecipe, ingredients, stepOne, stepTwo, stepThree, uploadImg)
-    await addDoc(collection(db, 'post'), {
-    nameRecipe: nameRecipe,
-        ingredients: [ingredients],
-        preparacion: [{stepOne}, {stepTwo},{stepThree}],
-        uploadImg: uploadImg
-     })
-    
-}
-export const capturePost = async() => {
+export const posting = (nameRecipe, ingredients, stepOne, stepTwo, stepThree) => {
+    console.log(nameRecipe, ingredients, stepOne, stepTwo, stepThree)
+    addDoc(collection(db, 'post'), {
+            nameRecipe: nameRecipe,
+            ingredients: ingredients,
+            preparacion: [stepOne, stepTwo, stepThree],
+
+        })
+        .then(() => {
+            alert('funciono');
+        })
+        .catch(() => {
+            alert('Error no funciona');
+        });
+
+};
+/*export const capturePost = async() => {
     try {
         let dataBasePost = [];
         const resultDataPost = await getDocs(collection(db, 'post'));
@@ -26,7 +31,7 @@ export const capturePost = async() => {
     } catch (error) {
         console.log(error);
     }
-};
+};*/
 
 export const snapshot = (callback) => {
     const queryPost = query(collection(db, 'post'));

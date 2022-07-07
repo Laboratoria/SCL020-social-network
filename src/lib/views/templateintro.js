@@ -8,7 +8,7 @@ export const intro = () => {
         <img src= "imagenes/logo.png" class= "logo"></img>
         <div class="container-orange">
        <h2> Bienvenido </h2>
-        <p>Explora diferentes recetas con características increibles</p> 
+        <p>Explora y comparte diferentes recetas sin gluten</p> 
         <p>¡sin duda alguna el compañero 
         de cocina perfecto!</p>
         </div>
