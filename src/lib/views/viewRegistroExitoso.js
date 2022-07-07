@@ -6,7 +6,7 @@ export const interpRegExitoso = () => {
 		//html
 		`
       <div id="regExitoso" class="containerRegExitoso">
-        <p class="regExitoso">Registro de Usuario Creado con Exito</p>
+        <p class="regExitosoP">Registro de Usuario Creado con Exito</p>
         <a href="#/" id="inicio" class="buttonInicio">Inicio</a>
       </div>
     `;
