@@ -7,8 +7,8 @@
 - [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
 - [4. Definición del producto](#4-dfinición-del-producto)
 - [5. Historias de usuario](#5-historias-de-usuario)
-- [6. Diseño de la Interfaz de Usuario (prototipo de baja fidelidad)](#6-prototipo-de-baja-fidelidad)
-- [7. Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)](#7-prototipo-de-alta-fidelidad)
+- [6. Diseño de la Interfaz de Usuario (prototipo de baja fidelidad)](<#6-Diseño-de-la-Interfaz-de-Usuario-(prototipo-de-baja-fidelidad)>)
+- [7. Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)](<#6-Diseño-de-la-Interfaz-de-Usuario-(prototipo-de-alta-fidelidad)>)
 - [8. Otros](#8-otras)
 
 ## 1. Preámbulo
@@ -66,7 +66,7 @@ Permite que los usuarios visualicen y compartan información de un area en espec
 
 ![adem-ay-Tk9m_HP4rgQ-unsplash](https://github.com/anngelicafernanda/SCL020-social-network/blob/f1cc3327a5322a4e131e05292dde85abcbd6d6ae/Readme_Images/HistoriaDeUsuario2.png)
 
-![adem-ay-Tk9m_HP4rgQ-unsplash](https://github.com/anngelicafernanda/SCL020-social-network/blob/f1cc3327a5322a4e131e05292dde85abcbd6d6ae/Readme_Images/HistoriaDeUsuario3.png)
+![adem-ay-Tk9m_HP4rgQ-unsplash](https://github.com/anngelicafernanda/SCL020-social-network/blob/7963b2c37ebec07f7c880405ab114620a88cba13/Readme_Images/HistoriaDeUsuario3png.png)
 
 ![adem-ay-Tk9m_HP4rgQ-unsplash](https://github.com/anngelicafernanda/SCL020-social-network/blob/f1cc3327a5322a4e131e05292dde85abcbd6d6ae/Readme_Images/HistoriaDeUsuario4.png)
 
