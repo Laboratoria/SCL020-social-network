@@ -1,51 +1,65 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 /*estilo de fondo*/
 body {
   background: linear-gradient(rgba(201, 227, 233, 0.877), rgba(6, 106, 131, 0.938)), url('./images/fondo.jpg');
   background-attachment: fixed;
 }
-
+/*titulo y deformito*/
+.tips{
+  display: flex;
+  flex-direction: column;
+  text-align: center ;
+  font-family: 'Mitr';
+  font-style: normal;
+  font-size: 250%;
+  color: #000000;
+  margin-bottom: 10px;
+}
 
 /*contenedor de comunidad, es prueba solamente*/
 .containerIndex {
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 20px;
   font-family: 'Mitr';
   font-style: normal;
-  font-weight: 40%;
   font-size: 150%;
-  text-align: center;
   color: #000000;
 }
 
-/*div para unirse e iniciar y toma el boton dentro de la cajita*/
+/*texto de únete...*/
 .comunity {
-  display: block;
+  display: flex;
   justify-content: center;
+  flex-direction: column;
+  margin-left: 18%;
+  margin-right: 18%;
   color: rgb(1, 10, 10);
   background-color: rgb(247, 247, 247);
   font-family: 'Mitr';
   font-style: normal;
   font-size: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
+  padding: 15px;
   border-radius: 12%;
 }
 
-/*botoncito de inicio de sesión*/
-.logIn {
-  display: block;
-  justify-content: center;
+/*botoncito de inicio de sesión y registro de adorno*/
+.logIn, .signUp {
+  display: flex;
+  flex-direction: row;
+  font-family: 'Mitr';
+  font-weight: 500;
+  font-size: 30px;
+  color: #000000;
+  border-radius: 50px;
+  padding: 10px;
+  margin-top: 25px;
+  margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
-  color: #000000;
-  border-radius: 10%;
-  font-size: 80%;
-}
-
-/*contenedor de registro de adorno*/
-.signUp {
-  font-family: 'Mitr';
-  font-style: normal;
-  font-size: 30px;
-  text-align: center;
-  color: #000000;
 }
