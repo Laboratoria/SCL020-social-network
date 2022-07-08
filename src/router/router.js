@@ -1,11 +1,13 @@
 import { interpLogIn } from '../lib/views/viewLogIn.js';
 import { createUserEmail, interpSignUp } from '../lib/views/viewSignUp.js';
 import {
+	functionDataProfile,
+	functionSwitch,
 	interpHome,
 	interpHomePost,
 	logOutFunction,
 } from '../lib/views/viewHome.js';
-import { interpProfile } from '../lib/views/viewProfile.js';
+import { interpPostProfile, interpProfile } from '../lib/views/viewProfile.js';
 import { interp404 } from '../lib/views/view404.js';
 import { interpRegExitoso } from '../lib/views/viewRegistroExitoso.js';
 import { createPost } from '../firebase/firestore.js';
@@ -18,26 +20,33 @@ export const changeRoute = (hash) => {
 			root.appendChild(interpLogIn());
 			signInFunction(); //esto es solo el llamado de la funcion para que se inicializara (se puede ocupar)
 			signInFunctionGoogle();
+			functionSwitch();
 			break;
 		case '#/viewSignUp':
 			root.appendChild(interpSignUp());
 			createUserEmail();
+			functionSwitch();
 			break;
 		case '#/viewHome':
 			root.appendChild(interpHome());
 			interpHomePost();
 			createPost();
+			functionSwitch();
 			// lookPost();
 			logOutFunction();
 			// deletePost();
 			// funcionaPorfavor();
+			functionDataProfile();
 			break;
 		case '#/viewProfile':
 			root.appendChild(interpProfile());
 			logOutFunction();
+			interpPostProfile();
+			functionSwitch();
 			break;
 		case '#/viewRegistroExitoso':
 			root.appendChild(interpRegExitoso());
+			functionSwitch();
 			// debo tener tantos casos como vistas hay
 			break;
 		default:
