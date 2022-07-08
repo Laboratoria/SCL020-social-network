@@ -2,13 +2,12 @@
 
 import { deletePost, snapshot } from '../../firebase/firestore.js';
 import { signOutSession } from '../../firebase/auth.js';
+import { interpPostProfile } from './viewProfile.js';
 
 export const interpHome = () => {
 	const divHome = document.createElement('div');
-
-	const formHome =
-		//html
-		`
+	divHome.className = 'homeContainer';
+	const formHome = /*html*/ `
     <div id="rootHome" class="containerRootHome">
       <section class="containerHome">
         <form id="form_post" class="textBoxContainer">
@@ -19,17 +18,17 @@ export const interpHome = () => {
           </div>
         </form>
       </section>
+      <div id="inyectRootHomePost"></div>
     </div>
-    <div id="inyectRootHomePost"></div>
     <footer>
-      <input type="image" src="images/clima.png" id="topicChange" class="imageFooter">
-      <a href='#/viewProfile'>
-        <button class="buttomimageFooter">
-        <img class="imageFooter" id="home" src="images/home.png" alt="home" /> </button>
+      <button id="topicChange">
+        <img src="images/clima.png" class="imageFooter">
+      </button>
+      <a href='#/viewHome'>
+        <img class="imageFooter" id="home" src="images/home.png" alt="home" />
       </a>
       <a href='#/'>
-        <button class="buttomimageFooter">
-        <img class="imageFooter" id="logOut" src="images/log-out.png" alt="logOut"/> </button>
+        <img class="imageFooter" id="logOut" src="images/log-out.png" alt="logOut"/>
       </a>
     </footer>
   `;
@@ -39,26 +38,24 @@ export const interpHome = () => {
 
 export const interpHomePost = async () => {
 	const divHomePost = document.querySelector('#inyectRootHomePost');
-	snapshot((callback) => {
+	snapshot((post) => {
 		divHomePost.innerHTML = '';
-		callback.forEach((doc) => {
+		post.forEach((doc) => {
 			const post = doc.data();
 			console.log(post);
 			// console.log('Prueba Marianny', doc.id);
 			const formHomePost =
 				//html
 				`
-    <div id="rootHomePost" class="containerRootHome" data-postid="${doc.id}">
+    <div id="rootHomePost" class="containerRootHomePost" data-postid="${doc.id}">
       <div class="containerPostPublicado">
         <div class="tittlePost">
           <img class="" src="./images/perfil.png" alt="perfil" height=auto width="40"/>
           <h3 class="textTittle">${post.Autor}</h3>
         </div>
-        <textarea type="text" id="forPosting" class="boxtxt" rows="5">${post.Content}</textarea>
+        <p type="text" id="forPosting" class="boxtxt" rows="5">${post.Content}</p>
         <div class="containerlike" id="Post" >
-          <input type="image" id="btnEditPost" class="btnEdit" src="images/lapizModoClaro.png" />
-          <input type="image" id="${doc.id}" class="btnDelete" src="images/BasuraModoOscuro.png" />
-          <span id="${doc.id}" class="count">0</span>
+          <span id="${doc.id}" class="count"></span>
           <input type="image" id="${doc.id}" src="images/heart.png" class="LIKE" />
         </div>
       </div>
@@ -67,14 +64,22 @@ export const interpHomePost = async () => {
 
 			divHomePost.innerHTML += formHomePost;
 		});
-		const btnDeletePost = document.querySelectorAll('.btnDelete');
-		btnDeletePost.forEach((idIterating) => {
-			idIterating.addEventListener('click', (event) => {
-				deletePost(event.target.getAttribute('id'));
-				// console.log(event.target.getAttribute('id'));
-			});
-		});
-		// console.log('Mi Boton:::', btnDeletePost);
+	});
+};
+
+export const functionDataProfile = () => {
+	const btnProfile = document.querySelector('#home');
+	btnProfile.addEventListener('click', (e) => {
+		e.preventDefault();
+		window.location.href = '#/viewProfile';
+	});
+};
+
+export const functionSwitch = () => {
+	const btnSwitch = document.querySelector('#topicChange');
+	btnSwitch.addEventListener('click', (e) => {
+		e.preventDefault();
+		document.body.classList.toggle('dark');
 	});
 };
 
