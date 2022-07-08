@@ -18,7 +18,7 @@ export const post = () => {
            <h4> Paso 3*</h4>
            <textarea name="" id="stepThree" cols="30" rows="3" required></textarea>
             
-            <button id="btnpublicar"   class = "btnpublicar">Publicar</button>
+            <button id="btnpublicar" class = "btnpublicar">Publicar</button>
         </form>
      </div>`;
     divPost.innerHTML = viewPost;
@@ -55,9 +55,10 @@ export const divNewPost = async() => {
             const divInsertPost =
                 `<div id="insertPost" class="insertPost">
             
-         <article class = "post">
+         
                 <img class="" src="./imagenes/fotoperfil.png" alt="perfil" height=auto width="40"/>
               <h3 class="textTittle">Angelica</h3>
+              <article class = "post">
                <h4 class = "nameRecipe">${post.nameRecipe}</h4> 
                <p>${post.ingredients}</p> 
                <h4> Preparación:</h4>
@@ -67,8 +68,12 @@ export const divNewPost = async() => {
                <p>${post.preparacion[1]}</p>
                <h4> Paso 3:</h4>
                <p>${post.preparacion[2]}</p>
+               <div class = "icon">
+               </article>
                <input type="image" src="imagenes/like.png" class="like" />
-         </article>
+               <a href="#/post"><img id= "editPost" src="imagenes/lapiz.png" class="editPost"></img></a>
+               </div>
+        
          
             
             
@@ -79,3 +84,6 @@ export const divNewPost = async() => {
     });
 
 };
+
+
+//template para editar
