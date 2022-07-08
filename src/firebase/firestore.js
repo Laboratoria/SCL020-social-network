@@ -9,6 +9,7 @@ import {
 	deleteDoc,
 	auth,
 	onAuthStateChanged,
+	where,
 } from './init.js';
 
 export const createPost = () => {
@@ -44,6 +45,22 @@ export const newPost = (autor, title, text) => {
 export const snapshot = (callback) => {
 	const lookPost = query(collection(db, 'Comentarios'));
 	onSnapshot(lookPost, callback);
+};
+
+// const q = query(collection(db, "cities"), where("capital", "==", true));
+
+export const snapshotProfile = (callback) => {
+	let autor = '';
+	onAuthStateChanged(auth, (user) => {
+		console.log(user);
+		autor = user.email;
+		const lookPostProfile = query(
+			collection(db, 'Comentarios'),
+			where('Autor', '==', autor),
+		);
+		console.log(autor);
+		onSnapshot(lookPostProfile, callback);
+	});
 };
 
 export const deletePost = (id) => {

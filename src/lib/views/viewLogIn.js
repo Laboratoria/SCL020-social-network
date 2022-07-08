@@ -2,10 +2,8 @@
 
 export const interpLogIn = () => {
 	const divLogIn = document.createElement('div');
-	const formIndex =
-		//html
-		`
-    <div id="root">
+	divLogIn.className = 'loginContainer';
+	const formIndex = /*html*/ `
       <nav id="nav_registration">
         <a href="#/viewSignUp" id="signUp" >
           <button class="buttonSingUp">Registrate</button>
@@ -31,9 +29,11 @@ export const interpLogIn = () => {
             </button>
         <a class="olvido_contraseña" href="">¿Olvidó su contraseña?</a>
       </div>
-      <footer class="footerLogin">
-  </footer>
-    </div>
+      <footer>
+      <button id="topicChange">
+        <img src="images/clima.png" class="imageFooter">
+      </button>
+    </footer>
   `;
 	divLogIn.innerHTML = formIndex;
 

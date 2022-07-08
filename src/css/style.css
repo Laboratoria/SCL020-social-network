@@ -9,8 +9,12 @@
 #root {
 	background-image: url(../images/fondo_oscuro_page1.png);
 	background-size: cover;
-	/* height: 100vh; */
+	min-height: 100vh;
 	background-attachment: fixed;
+}
+
+body.dark #root {
+	background-image: url(../images/fondo_claro_page.png);
 }
 
 #nav_registration {
@@ -24,7 +28,6 @@
 	justify-content: center;
 	justify-items: center;
 	align-items: center;
-	margin-bottom: 30vh;
 }
 
 #form_login {
@@ -51,6 +54,12 @@
 	text-decoration: none;
 }
 
+body.dark .buttonSingUp,
+body.dark .buttonBack,
+body.dark .buttonInicio {
+	background-color: #1fc074;
+}
+
 .title_page1 {
 	margin-bottom: 10px;
 	font-family: 'Georgia', sans-serif;
@@ -60,6 +69,15 @@
 	color: #ffffff;
 	text-shadow: 5px 5px 10px #ffffff;
 }
+
+body.dark .title_page1 {
+	color: #281e52;
+	text-shadow: 5px 5px 10px #281e52;
+}
+
+/* body.dark .img_logo_page1 {
+	background-image: url(../images/Logo_fondo_claro.png);
+} */
 
 #form_login {
 	margin-top: 10px;
@@ -79,8 +97,18 @@
 	width: 250px;
 }
 
+body.dark .campotxt {
+	background-color: #e7f0f1;
+	border-color: #e7f0f1;
+	color: #644fc2;
+}
+
 .campotxt::placeholder {
 	color: #644fc2;
+}
+
+body.dark .campotxt::placeholder {
+	color: #babfbf;
 }
 
 #start,
@@ -117,6 +145,9 @@
 	font-family: 'Montserrat classic', sans-serif;
 }
 
+body.dark .olvido_contraseña {
+	color: #644fc2;
+}
 /* /VISTA SEGUNDA VISTA SIGN UP/  */
 
 .containerSignUp {
@@ -194,34 +225,68 @@ p, */
 	border-radius: 10px;
 }
 
-.tittlePost {
+body.dark .textBoxContainer {
+	background: #9e91d8;
+}
+
+.tittlePost,
+.tittlePostProfile {
 	display: flex;
 	align-items: center;
 }
 
 .textTittle,
 .userProfile,
-.nameProfile {
+.nameProfile,
+.textTittleProfile {
 	color: #ffffff;
 	padding: 10px;
 	letter-spacing: 1px;
 	font-family: 'Montserrat classic', sans-serif;
 }
 
+body.dark .textTittle,
+body.dark .userProfile,
+body.dark .nameProfile,
+.textTittleProfile {
+	color: #3d2e80;
+}
+
+body.dark .textTittle,
+body.dark .userProfile,
+body.dark .nameProfile,
+body.dark .textTittleProfile {
+	color: #554b7d;
+}
+
 .containerPublicar,
-.containerlike {
+.containerlike,
+.containerlikeProfile {
 	display: flex;
 	justify-content: end;
 	text-decoration: none;
 }
 
-.boxtxt {
+.boxtxt,
+.boxtxtProfile {
 	background: #3d2e80;
 	border: 1px solid #3d2e80;
 	margin: 5px;
-	width: 290px;
+	width: 90%;
 	height: auto;
 	color: white;
+	font-size: 20px;
+}
+
+body.dark .boxtxt,
+body.dark .boxtxtProfile {
+	background: #9e91d8;
+	border: 1px solid #9e91d8;
+	color: #3d2e80;
+}
+
+.boxtxt::placeholder {
+	color: floralwhite;
 }
 
 .post {
@@ -235,8 +300,10 @@ p, */
 	border: #f2865f solid 1px;
 }
 
-.boxtxt::placeholder {
-	color: floralwhite;
+body.dark .post {
+	background-color: #1fc074;
+	color: white;
+	border: #1fc074 solid 1px;
 }
 
 #postTittle {
@@ -252,7 +319,8 @@ p {
 
 .LIKE,
 .btnDelete,
-.btnEdit {
+.btnEdit,
+.btnEditProfile {
 	width: auto;
 	height: 35px;
 	margin: 2.5%;
@@ -266,17 +334,24 @@ p {
 	background-image: url(../images/heart.png);
 }
 
-.containerRootHome {
+.containerRootHomePost,
+.containerProfileUser {
 	display: flex;
 	flex-direction: column;
 }
 
-.containerPostPublicado {
+.containerPostPublicado,
+.containerPostProfile {
 	background: #3d2e80;
 	margin: 10px 40px 10px 40px;
 	display: flex;
 	flex-direction: column;
 	border-radius: 10px;
+}
+
+body.dark .containerPostPublicado,
+body.dark .containerPostProfile {
+	background: #9e91d8;
 }
 
 /* Estilos Perfil */
@@ -286,6 +361,11 @@ p {
 	background: #f2865f;
 	display: flex;
 	justify-content: center;
+	opacity: 0.8;
+}
+
+body.dark .containerTittle {
+	background: #1fc074;
 	opacity: 0.8;
 }
 
@@ -308,33 +388,36 @@ p {
 }
 
 /* estilos para el footer*/
-.containerRootProfile {
+.containerRootProfile,
+.containerRootHome {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-}
-
-.footerLogin {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	background: #f2865f;
-	margin-top: auto;
-	height: 60px;
-	opacity: 0%;
+	padding-bottom: 75px;
 }
 
 footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	background: #f2865f;
 	margin-top: auto;
 	height: 60px;
+	opacity: 0.5;
 }
+
+body.dark footer {
+	background: #1fc074;
+	opacity: 0.5;
+}
+
 .imageFooter {
 	height: 40px;
 	width: auto;
+	opacity: 100%;
 }
 
 .buttomimageFooter {
@@ -342,14 +425,27 @@ footer {
 	border: #f2865f solid 1px;
 }
 
+#topicChange {
+	border: none;
+	background-color: transparent;
+}
+
 @media (min-width: 768px) {
 	#root {
 		background-image: url(../images/fondo_oscuro_tablet.png);
+	}
+
+	body.dark #root {
+		background-image: url(../images/fondo_claro_tablet.png);
 	}
 }
 
 @media (min-width: 1024px) {
 	#root {
 		background-image: url(../images/fondo_oscuro_laptop.png);
+	}
+
+	body.dark #root {
+		background-image: url(../images/fondo_claro_laptop.png);
 	}
 }
