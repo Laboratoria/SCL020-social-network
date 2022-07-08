@@ -1,7 +1,7 @@
 import { home } from './views/templateHome.js';
 import { login } from './views/templateLogin.js';
 import { menu } from './views/templateMenu.js';
-
+import { feed } from '.views/templateFeed.js'
 
 
 
