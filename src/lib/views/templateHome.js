@@ -2,7 +2,7 @@
 //Funcion que crea el template de la pantalla Inicio
 export const home = () => {
   const divHome = document.createElement("div");
-  const viewHome =  `<section>
+  const viewHome =  /*`<section>
     <section>
       <img src="" alt="">
     </section>
@@ -23,7 +23,7 @@ export const home = () => {
     </p>
     </section>
   </section>
-  `
+  `*/
   divHome.innerHTML = viewHome;
   return divHome;
 
