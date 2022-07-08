@@ -257,7 +257,7 @@
         top: 800px;
         width: 100vw;
         height: 15vh;
-        background-color: #E28413;
+        background-color: #FCBC40;
     }
     .container-wall h1 {
         font-family: 'Lobster Two';
@@ -266,11 +266,6 @@
         font-size: 60px;
         color: #095E00;
         margin-top: 20px;
-    }
-    .container-wall .logoperfil {
-        Width: 5vw;
-        Height: 5vh;
-        margin-top: 40px;
     }
     .container-wall footer {
         display: flex;
@@ -281,15 +276,11 @@
         top: 1000px;
         width: 100vw;
         height: 10vh;
-        background-color: #E28413;
+        background-color: #FCBC40;
     }
-    .container-wall .logomuro {
+    .container-wall .iconoMas {
         Width: 5vw;
-        Height: 5vh;
-    }
-    .container-wall .logopublicar {
-        Width: 5vw;
-        Height: 5vh;
+        Height: 10vh;
     }
     .container-post {
         background-color: #FFFFFF;
@@ -335,21 +326,19 @@
         color: black;
         border-radius: 15px;
     }
-    /*.newPost {
-        display: grid;
-        grid-template-rows: 130px 170px 80px 80px 150px;
-        background-color: white;
+    .insertPost {
+        background-color: #E28413;
         opacity: 90%;
-        width: 90vw;
+        width: 40vw;
         height: 80vh;
         margin-top: 70px;
         border-radius: 35px;
         margin-left: auto;
         margin-right: auto;
-    }*/
+    }
     .post {
         height: 55vh;
-        width: 50vw;
+        width: 30vw;
         background: white;
         border-radius: 10px;
         margin-top: 5px;
@@ -374,6 +363,15 @@
         text-align: center;
         font-size: 50px;
         color: #095E00;
+    }
+    .icon {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-around;
+    }
+    .icon .editPost {
+        Width: 3.5vw;
+        Height: 3.5vh;
     }
 }
 
