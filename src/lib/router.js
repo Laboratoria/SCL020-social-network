@@ -2,7 +2,7 @@ import { home } from './views/templateHome.js';
 import { login } from './views/templateLogin.js';
 import { register } from './views/templateRegister.js';
 import { menu } from './views/templateMenu.js';
-
+import { feed } from '.views/templateFeed.js'
 
 
 
