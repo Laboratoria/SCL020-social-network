@@ -4,13 +4,13 @@ export const wall = () => {
     const viewWall =
         `<div class="container-wall">
         <header>
-            <img src="imagenes/perfil.png" class="logoperfil"></img>
+            
             <h1>Gluten Free Food</h1>
         </header>
         <div id="newPost" class= newPost></div>
         <footer>
-            <img src="imagenes/volverMuro.png" class="logomuro"></img>
-            <a href="#/post"><img id= "publicar" src="imagenes/iconoPublicar.png" class="logopublicar"></img></a>
+            
+            <a href="#/post"><img id= "publicar" src="imagenes/iconoMas.png" class="iconoMas"></img></a>
         </footer>
         </div> `;
     divWall.innerHTML = viewWall;
