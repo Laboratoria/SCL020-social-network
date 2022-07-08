@@ -1,16 +1,51 @@
+/*estilo de fondo*/
 body {
- /* background-image: url(fondo.jpg);
-  background-size: cover;
-background: linear-gradient(color rgba(236, 215, 230), color rgba(219, 16, 168, 0.3));*/
-background: linear-gradient(rgba(201, 227, 233, 0.877), rgba(6, 106, 131, 0.938)) , url('./images/fondo.jpg');
-background-attachment: fixed;
-
-  /*background: linear-gradient(color rgba(236, 215, 230), color rgba(219, 16, 168, 0.3));*/
+  background: linear-gradient(rgba(201, 227, 233, 0.877), rgba(6, 106, 131, 0.938)), url('./images/fondo.jpg');
+  background-attachment: fixed;
 }
-/*.meme {
+
+
+/*contenedor de comunidad, es prueba solamente*/
+.containerIndex {
+  font-family: 'Mitr';
+  font-style: normal;
+  font-weight: 40%;
+  font-size: 150%;
+  text-align: center;
+  color: #000000;
+}
+
+/*div para unirse e iniciar y toma el boton dentro de la cajita*/
+.comunity {
   display: block;
-  margin: 0px auto;
-  border-radius: 35%;
-  left: auto;
-  right: auto;
-}*/
+  justify-content: center;
+  color: rgb(1, 10, 10);
+  background-color: rgb(247, 247, 247);
+  font-family: 'Mitr';
+  font-style: normal;
+  font-size: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  border-radius: 12%;
+}
+
+/*botoncito de inicio de sesión*/
+.logIn {
+  display: block;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: #000000;
+  border-radius: 10%;
+  font-size: 80%;
+}
+
+/*contenedor de registro de adorno*/
+.signUp {
+  font-family: 'Mitr';
+  font-style: normal;
+  font-size: 30px;
+  text-align: center;
+  color: #000000;
+}
