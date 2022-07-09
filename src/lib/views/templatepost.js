@@ -48,19 +48,19 @@ export const divNewPost = async () => {
                 <img class="" src="./imagenes/fotoperfil.png" alt="perfil" height=auto width="40"/>
                 <h3 class="textTittle">Angelica</h3>
                 <article class = "posts" id = "posts">
-                <h4> <textarea type="text" id= "nameRecipe" required>${post.nameRecipe} </textarea>
+                <h4> <textarea type="text" id= "nameRecipe" required readonly>${post.nameRecipe} </textarea>
                 <h4> Ingredientes</h4> 
-                <textarea name="" id="ingredients" cols="30" rows="3" required>${post.ingredients}</textarea>
+                <textarea name="" id="ingredients" cols="30" rows="3" required readonly>${post.ingredients} </textarea>
                 <h4> Preparación:</h4>
                 <h4> Paso 1:</h4>
-                <textarea>${post.preparacion[0]}</textarea>
+                <textarea readonly>${post.preparacion[0]} </textarea>
                 <h4> Paso 2:</h4>
-                <textarea>${post.preparacion[1]}</textarea>
+                <textarea readonly>${post.preparacion[1]} </textarea>
                 <h4> Paso 3:</h4>
-                <textarea>${post.preparacion[2]}</textarea>
+                <textarea readonly>${post.preparacion[2]}</textarea>
                 <input type="image" src="imagenes/like.png" class="like" />
-                <button class="editPost" id= "editPost" data-id = ${doc.id}> Editar</img></button>
-                <button class="savePost" id= "savePost" data-id = ${doc.id}> Guardar</img></button>
+                <button class="editPost" id= "editPost" data-id = ${doc.id}> Editar</button>
+                <button class="savePost" id= "savePost" data-id = ${doc.id}> Guardar</button>
                 </article> 
             </div>`;
             insertPost.innerHTML = newPost
@@ -71,18 +71,25 @@ export const divNewPost = async () => {
         editButtons.forEach((element) => {
             element.addEventListener("click", (event) => {
                 console.log("Hoola")
-                const actualElements = element.closest('.insertPost')
-                console.log(actualElements)
-                const articulePost = actualElements.querySelectorAll('.posts')
-                console.log(articulePost)
-                const btnSaveEl = actualElements.querySelector('.savePost')
-                console.log(btnSaveEl)
-                //articulePost.removeAttribute('readonly')
-                btnSaveEl.style.display = 'inline'
+                const containerPost = element.closest('.insertPost');
+                const containerNameRecipe = containerPost.querySelectorAll('#nameRecipe');
+                const containerIngredients = containerPost.querySelectorAll('#ingredients');
+                const containerStepOne = containerPost.querySelectorAll('#stepOne');
+                const containerStepTwo = containerPost.querySelectorAll('#stepTwo');
+                const containerStepThree = containerPost.querySelectorAll('#stepThree');
+                const btnSaveElement = containerPost.querySelector('.savePost');
+                containerNameRecipe.removeAttribute('readonly');
+                containerIngredients.removeAttribute('readonly');
+                containerStepOne.removeAttribute('readonly');
+                containerStepTwo.removeAttribute('readonly');
+                containerStepThree.removeAttribute('readonly');
+                
+                btnSaveElement.style.display = 'inline'
+                console.log(containerNameRecipe);
 
-            })
+            });
         });
-        const btnSavePost = document.querySelectorAll(".savePost");
+        /*const btnSavePost = document.querySelectorAll(".savePost");
         btnSavePost.forEach((element) => {
         const button = element.parentElement;
         console.log(button);
@@ -95,9 +102,9 @@ export const divNewPost = async () => {
         editPost('B1zVOtX2UC8gqz0Oe4wo', nameRecipe, ingredients, stepOne, stepTwo, stepThree);
         console.log(nameRecipe);
         /*ditPost(id, nameRecipe, ingredients,stepOne, stepTwo, stepThree);
-        console.log(nameRecipe)*/
+        console.log(nameRecipe)
       });
-    });
+    });*/
 
             
         
