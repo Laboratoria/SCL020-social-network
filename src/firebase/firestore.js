@@ -1,9 +1,9 @@
-import { db, collection, addDoc, getDocs, onSnapshot, query } from './init.js'
+import { db, collection, addDoc, getDoc, onSnapshot, query, doc, updateDoc} from './init.js'
 export const posting = (nameRecipe, ingredients, stepOne, stepTwo, stepThree) => {
     console.log(nameRecipe, ingredients, stepOne, stepTwo, stepThree)
     addDoc(collection(db, 'post'), {
-            nameRecipe: nameRecipe,
-            ingredients: ingredients,
+            nameRecipe,
+            ingredients,
             preparacion: [stepOne, stepTwo, stepThree],
 
         })
@@ -15,27 +15,31 @@ export const posting = (nameRecipe, ingredients, stepOne, stepTwo, stepThree) =>
         });
 
 };
-/*export const capturePost = async() => {
-    try {
-        let dataBasePost = [];
-        const resultDataPost = await getDocs(collection(db, 'post'));
-        resultDataPost.forEach((doc) => {
-            console.log(doc.id, ' => ', doc.data());
-            dataBasePost.push({ id: doc.id, data: doc.data() });
-        });
-        console.log(dataBasePost);
-        
-
-        return dataBasePost;
-
-    } catch (error) {
-        console.log(error);
+//Editar posts
+export const postByEdit = async (id)=>{
+    const docRef = doc(db, "post", id);
+    const docSnap = await getDoc(docRef);
+    
+    if (docSnap.exists()) {
+     return docSnap
+    } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
     }
-};*/
+}
+export const editPost = async (id, nameRecipe, ingredients,stepOne, stepTwo, stepThree)=>{
+const recipeRef = doc(db, "post", id);
+await updateDoc(recipeRef, {
+    nameRecipe,
+    ingredients,
+    preparacion: [stepOne, stepTwo, stepThree],
+});
+}
 
 export const snapshot = (callback) => {
     const queryPost = query(collection(db, 'post'));
     onSnapshot(queryPost, callback);
 };
+
 
 //window.location.href = '#/wall'
