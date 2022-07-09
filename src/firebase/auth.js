@@ -1,41 +1,40 @@
 import { changeRouter } from "../lib/router.js";
-import { signInWithEmailAndPassword, auth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, provider, signOut, onAuthStateChanged } from "./init.js"
-const observer = (hash) => {
-    onAuthStateChanged(auth, (user) => {
-        console.log(user)
-        if (user) {
-            // User is signed in, see docs for a list of available properties
-            // https://firebase.google.com/docs/reference/js/firebase.User
-            changeRouter(hash);
-            // ...
-        } else {
-            // User is signed out
-            // ...
-            changeRouter('#/intro');
-        }
-    });
-};
+/*Importamos de firebase las funciones de inicializar la autenticación de nuevos usuarios, 
+y de usuarios con cuenta google*/
+import {
+    auth,
+    provider,
+    GoogleAuthProvider,
+    signOut,
+    signInWithPopup,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    onAuthStateChanged
+} from "./init.js"
+//Creamos la función que permite a usuarios nuevos registrarse
 const userRegister = async(userName, email, password) => {
-    try {
-        const userRegistration = await createUserWithEmailAndPassword(auth, email, password);
-        console.log(userRegistration)
-    } catch (error) {
-        console.log(error);
-        throw error.code;
-    };
-}
-const userLogin = async(email, password) => {
-    console.log(userLogin);
-    try {
-        const result = await signInWithEmailAndPassword(auth, email, password) // eliminar async await, retornar signWithEmailAndPassowrd()
-        console.log(result);
-        return result;
-    } catch (error) {
-        console.log(error);
-        const errorCode = error.code;
-        const errorMessage = error.message;
+        try {
+            const userRegistration = await createUserWithEmailAndPassword(auth, email, password);
+            console.log(userRegistration)
+        } catch (error) {
+            console.log(error);
+            throw error.code;
+        };
     }
-}
+    //Esta función permite a usuarios registrados loguearse
+const userLogin = async(email, password) => {
+        console.log(userLogin);
+        try {
+            const result = await signInWithEmailAndPassword(auth, email, password) // eliminar async await, retornar signWithEmailAndPassowrd()
+            console.log(result);
+            return result;
+        } catch (error) {
+            console.log(error);
+            const errorCode = error.code;
+            const errorMessage = error.message;
+        }
+    }
+    //Esta función permite a usuarios con cuentas google, loguearse con su mismo proveedor
 const usersGoogle = () => {
     signInWithPopup(auth, provider)
         .then((result) => {
@@ -60,11 +59,29 @@ const usersGoogle = () => {
             console.log('error', errorMessage)
         })
 };
+//Esta función autentica los datos de los usuarios que ya estan dentro de la app
 const userSignOut = () => {
-    signOut(auth).then(() => {
-        // Sign-out successful.
-    }).catch((error) => {
-        // An error happened.
+        signOut(auth).then(() => {
+            // Sign-out successful.
+        }).catch((error) => {
+            // An error happened.
+        });
+    }
+    //Función que permite desloguearse a usuarios que esten dentro de la app 
+const observer = (hash) => {
+    onAuthStateChanged(auth, (user) => {
+        console.log(user)
+        if (user) {
+            // User is signed in, see docs for a list of available properties
+            // https://firebase.google.com/docs/reference/js/firebase.User
+            changeRouter(hash);
+            // ...
+        } else {
+            // User is signed out
+            // ...
+            changeRouter('#/intro');
+        }
     });
-}
+};
+
 export { userRegister, userLogin, usersGoogle, observer, userSignOut }

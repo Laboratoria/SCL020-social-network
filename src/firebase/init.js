@@ -17,9 +17,11 @@ import {
     getFirestore,
     collection,
     addDoc,
-    getDocs,
+    getDoc,
     onSnapshot,
-    query
+    query,
+    doc, 
+    updateDoc 
 } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js';
 
 //Metodos y funciones de Firebase guardados en variables para ser exportados y utilizados en otros archivos
@@ -44,8 +46,10 @@ export {
     getFirestore,
     collection,
     addDoc,
-    getDocs,
+    getDoc,
     app,
     onSnapshot,
-    query
+    query,
+    doc, 
+    updateDoc 
 }
