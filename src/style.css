@@ -5,20 +5,26 @@
     box-sizing: border-box;
 }
 
+:root  {
+    --naranja: #E28413;
+}
 
 
     body {
         background-image: url(imagenes/fondo-app.jpg);
         background-size: cover;
         background-attachment: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .container-inicio {
         display: grid;
-        grid-template-rows: 180px 150px 230px;
+        grid-template-rows: 120px 178px 196px;
         background-color: white;
         opacity: 87%;
         width: 90vw;
-        height: 80vh;
+        height: 600px;
         margin-top: 70px;
         border-radius: 35px;
         margin-left: auto;
@@ -27,19 +33,21 @@
     .container-inicio h1 {
         font-family: 'Lobster Two';
         text-align: center;
-        font-size: 65px;
-        line-height: 81.25px;
+        font-size: 66px;
+        line-height: 115px;
         color: #095E00;
-        margin-top: 40px;
+        margin-top: 30px;
     }
     .container-inicio .logo {
         margin-left: auto;
         margin-right: auto;
+        width: 40%;
     }
     .container-orange {
-        height: 27vh;
-        width: 77vw;
-        background: #E28413;
+        height: 25vh;
+        width: 450px;
+        background: var(--naranja);
+        padding: 20px;
         border-radius: 10px;
         margin-top: 5px;
         margin-bottom: 130px;
@@ -61,7 +69,7 @@
         font-family: 'Jockey One';
         font-style: normal;
         font-weight: 400;
-        font-size: 22px;
+        font-size:20px;
         line-height: 35px;
         text-align: center;
         margin-top: 10px;
@@ -71,12 +79,12 @@
         height: 45px;
         left: 74px;
         background: #2BA84A;
-        margin-left: auto;
-        margin-right: auto;
+        margin: 30px auto;
         border-radius: 15px;
         padding: 10px 10px;
         margin-bottom: 100px;
         font-weight: bold;
+        border: none;
     }
     .botonUnete a {
         text-decoration: none;
@@ -92,7 +100,7 @@
         background-color: white;
         opacity: 87%;
         width: 90vw;
-        height: 85vh;
+        height: 600px;
         margin-top: 70px;
         border-radius: 35px;
         margin-left: auto;
@@ -111,24 +119,32 @@
         grid-template-rows: 1fr 1fr 1fr;
         margin: 0 auto;
     }
-    .container-login .email {
+
+    .container-login .email, 
+    .container-login .contraseña  {
         width: 272px;
         height: 50px;
+        border: none;
+        padding: 0 5px;
         left: 63px;
         background: rgba(0, 0, 0, 0.15);
         margin: 0 auto;
+        border-radius: 15px;
     }
-    .container-login .contraseña {
+
+    /* Este codigo se repetia en los dos input, por eso los trabaje juntos arriba */
+  /*   .container-login .contraseña {
         width: 270px;
         height: 50px;
         left: 64px;
         background: rgba(0, 0, 0, 0.15);
         margin-left: auto;
         margin-right: auto;
-    }
+    } */
+
     .container-login .btnContinuar {
         width: 270px;
-        height: 45px;
+        height: 50px;
         left: 62px;
         background: #2BA84A;
         margin-left: auto;
@@ -138,26 +154,31 @@
         font-weight: bold;
         font-size: 18px;
         font-family: 'Lobster Two';
+        border: none;
     }
     .container-login .btnregister {
         width: 270px;
         height: 50px;
         left: 65px;
-        background: #E28413;
+        background: var(--naranja);
         margin-left: auto;
         margin-right: auto;
         border-radius: 15px;
         font-family: 'Lobster Two';
+        border: none;
     }
     .container-login .forgot {
         width: 268.79px;
-        height: 54.5px;
+        height: 50px;
+        margin-top: 10px;
         left: 62px;
         background: #FFFFFF(0, 0, 0, 0);
         margin-left: auto;
         margin-right: auto;
         border-radius: 15px;
+        border: none;
     }
+
     .container-login .btngoogle {
         display: flex;
         justify-content: space-evenly;
@@ -165,12 +186,13 @@
         align-content: stretch;
         flex-direction: row;
         width: 268.79px;
-        height: 54.5px;
+        height: 50px;
         left: 62px;
         background: #D9D9D9;
         margin-left: auto;
         margin-right: auto;
         border-radius: 15px;
+        border: none;
     }
     .container-login .logogoogle {
         right: 20px;
@@ -188,7 +210,7 @@
     }
     .container-register {
         display: grid;
-        grid-template-rows: 130px 170px 80px 80px 150px;
+        grid-template-rows: 130px 170px 80px 80px 115px;
         background-color: white;
         opacity: 87%;
         width: 90vw;
@@ -206,29 +228,43 @@
         color: #095E00;
         margin-top: 40px;
     }
+
+    .container-register .logo {
+        margin: 0 auto;
+    }
+
     .container-register .userName {
         width: 272px;
         height: 50px;
+        padding: 10px;
         left: 63px;
         background: rgba(0, 0, 0, 0.15);
         margin-left: auto;
         margin-right: auto;
+        border-radius: 15px;
+        border: none;
     }
     .container-register .email {
         width: 272px;
         height: 50px;
+        padding: 10px;
         left: 63px;
         background: rgba(0, 0, 0, 0.15);
         margin-left: auto;
         margin-right: auto;
+        border-radius: 15px;
+        border: none;
     }
     .container-register .contraseña {
         width: 270px;
         height: 50px;
+        padding: 10px; 
         left: 64px;
         background: rgba(0, 0, 0, 0.15);
         margin-left: auto;
         margin-right: auto;
+        border-radius: 15px;
+        border: none;
     }
     .container-register .btn {
         width: 270px;
@@ -238,6 +274,7 @@
         margin-left: auto;
         margin-right: auto;
         border-radius: 15px;
+        border: none;
     }
     .container-register a {
         text-decoration: none;
@@ -253,9 +290,9 @@
         justify-content: space-around;
         flex-direction: row-reverse;
         top: 800px;
-        width: 375px;
+        width: 100vw;
         height: 100px;
-        background-color: #E28413;
+        background-color: var(--naranja);
     }
     .container-wall h1 {
         font-family: 'Lobster Two';
@@ -264,6 +301,7 @@
         font-size: 40px;
         color: #095E00;
         margin-top: 20px;
+        margin-right: 400px;
     }
     .container-wall .logoperfil {
         Width: 12vw;
@@ -271,68 +309,100 @@
         margin-top: 10px;
     }
     .container-wall footer {
-        display: flex;
-        justify-content: space-around;
-        flex-direction: row-reverse;
+        position: fixed;
+        left: 0;
+        bottom: 0;
         align-items: center;
-        align-content: center;
-        top: 1000px;
-        width: 375px;
-        height: 100px;
-        background-color: #E28413;
+        width: 100vw;
+        height: 60px; 
+        background-color: var(--naranja);
     }
+
+    .container-wall footer a {
+        display: flex;
+        justify-content: center;
+    }
+
+   .iconoMas {
+        width: 60px;
+    }
+  
     .container-wall .logomuro {
-        Width: 12vw;
-        Height: 7vh;
+        width: 12vw;
+        height: 7vh;
     }
     .container-wall .logopublicar {
-        Width: 10vw;
-        Height: 7vh;
+        width: 10vw;
+        height: 7vh;
     }
      .container-post {
-        background-color: #FFFFFF;
-        width: 100vw;
-        height: 100vh;
-        top: 0px;
+        display: flex;
+        /* align-items: center; */
+        width: 100px;
+        height: 100px;
         border-radius: 0px;
+        padding: 30px;
+        justify-content: center;
     }
     .container-post h1 {
         font-family: 'Lobster Two';
         font-size: 40px;
         color: #095E00;
-        margin-top: 20px;
         text-align: center;
     }
     .container-post form {
-        display: grid;
-        grid-template-rows: 50px 30px 50px 50px 20px 50px 50px 50px 50px 50px 50px 50px 30px 60px;
-        margin-left: auto;
-        margin-right: auto;
-        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        height: 600px;
         width: 90vw;
-        padding: 20px;
-        background-color: white;
+        padding: 30px 40px;
+        background-color: #FFFFFF;
         border-radius: 35px;
         opacity: 90%;
-        left: 35px;
-        top: 146px;
     }
+
+    #formPost input {
+        height: 40px; 
+        border: none;
+        border-bottom: 1px solid black;
+        font-size: 18px;
+    }
+
+    #formPost textarea {
+        height: 40px; 
+        border: none;
+        border-bottom: 1px solid black;
+        resize: none;
+        padding: 15px 0px 0px;
+        font-size: 18px;
+    }
+
+    textarea:focus, input:focus{
+        outline: none;
+    }
+
     .container-post h4 {
         font-family: 'Lobster Two';
         font-size: 20px;
         color: black;
         margin-top: 20px;
-        margin-left: 15px;
     }
     .container-post .btnpublicar {
         width: 30vw;
         height: 5vh;
-        background: #E28413;
+        background: var(--naranja);
         font-family: 'Lobster Two';
         font-size: 20px;
         color: black;
         border-radius: 15px;
+        margin-top: 45px;
+        border: none;
+
+       
+        
     }
+   
     .post {
         height: 55vh;
         width: 50vw;
@@ -361,32 +431,120 @@
         font-size: 50px;
         color: #095E00;
     }
-    /*@media screen and (max-width: 428px) {
-        .container-wall .btncerrar {
-            width: 270px;
-            height: 45px;
-            left: 62px;
-            background: #2BA84A;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    }*/
+
     .icon {
         display: flex;
         align-items: flex-end;
         justify-content: space-around;
     }
-    .editPost {
-        width: 30vw;
-        height: 5vh;
-    }
+ 
     .insertPost {
-        background-color: #E28413;
+        background-color: white; /* var(--naranja) */
         opacity: 90%;
-        width: 40vw;
-        height: 80vh;
+        width: 80vw;
+        height: 485px;
+        padding: 20px;
         margin-top: 70px;
         border-radius: 35px;
+        margin: 45px auto;
+    }
+
+    .insertPost textarea{
+        width:100%;
+        height:30px;
+        padding: 5px;
+        border: none;
+        border-radius:3px;
+        background-color:transparent;
+        margin-bottom: 5px;	
+        resize:none;
+        display:block;   
+    }
+
+    .insertPost .iconoEditar {
+        width: 42px;
+    }
+
+    .like  {
+        width: 50px;
+    }
+
+.insertPost .containerIconos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.insertPost .savePost {
+        width: 118px;
+        height: 35px;
+        left: 62px;
         margin-left: auto;
         margin-right: auto;
+        border-radius: 15px;
+        border: none;
+        justify-content: center;
+        background-color: var(--naranja);
+        color: white;
+        display: none;
+}
+
+ .container-wall .cerrar{
+    width: 118px;
+    height: 35px;
+    left: 62px;
+    margin-left: auto;
+    margin-right: 130px;
+    border-radius: 15px;
+    border: none;
+    justify-content: center;
+    background-color: #207b14;
+    color: white;
+  
+}
+
+@media(min-width: 425px) {            
+
+    .container-login {
+        width: 500px;
+        height: 85vh;
+     }
+
+     .insertPost {
+        width: 500px;
+        height: 550px;
+     }
+
+     .container-post {
+      width: 500px;
+     }
+
+    .container-register {
+        width: 500px;
     }
+    .container-orange {
+        width: 350px;
+        height: 38vh;
+    }
+
+}
+
+@media(min-width: 1080px)and (max-width: 1920px){
+    body {
+        background-image: url(imagenes/bodydesktop.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .container-inicio {
+    
+        opacity: 87%;
+        width: 600px;
+        height: 45vw;
+       
+    }
+
+}
