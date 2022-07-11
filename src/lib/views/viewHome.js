@@ -44,8 +44,7 @@ export const interpHomePost = async () => {
 			const post = doc.data();
 			console.log(post);
 			// console.log('Prueba Marianny', doc.id);
-			const formHomePost =
-				//html
+			const formHomePost = //html
 				`
     <div id="rootHomePost" class="containerRootHomePost" data-postid="${doc.id}">
       <div class="containerPostPublicado">
@@ -53,6 +52,7 @@ export const interpHomePost = async () => {
           <img class="" src="./images/perfil.png" alt="perfil" height=auto width="40"/>
           <h3 class="textTittle">${post.Autor}</h3>
         </div>
+        <p type="text" id="forTitlePosting" class="boxtxtTitle" rows="5">${post.Title}</p>
         <p type="text" id="forPosting" class="boxtxt" rows="5">${post.Content}</p>
         <div class="containerlike" id="Post" >
           <span id="${doc.id}" class="count"></span>

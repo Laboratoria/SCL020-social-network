@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Padauk:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+
+
 * {
 	padding: 0;
 	margin: 0;
@@ -62,22 +66,47 @@ body.dark .buttonInicio {
 
 .title_page1 {
 	margin-bottom: 10px;
-	font-family: 'Georgia', sans-serif;
-	margin-top: 40px;
+	font-family: 'Josefin Sans', sans-serif;
+	margin-top: 25px;
 	font-size: 45px;
 	letter-spacing: -2px;
 	color: #ffffff;
-	text-shadow: 5px 5px 10px #ffffff;
+	text-shadow: 2px 2px 30px #ffffff;
 }
 
 body.dark .title_page1 {
 	color: #281e52;
-	text-shadow: 5px 5px 10px #281e52;
+	text-transform: uppercase;
+	position: relative;
+	text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.31),
+		-0.025em -0.05em 0 rgba(0, 132, 255, 0.75),
+		0.025em 0.05em 0 rgba(255, 0, 255, 0.537);
 }
 
-/* body.dark .img_logo_page1 {
-	background-image: url(../images/Logo_fondo_claro.png);
-} */
+/*.containerimage {
+	display: flex;
+	justify-content: center;
+	height: 100px;
+	width: 100px;
+}*/
+
+.containerLogo {
+	display: flex;
+	justify-content: center;
+}
+
+.img_logo_page1 {
+	background-image: url(../images/logo.png);
+	width: 200px;
+	height: 150px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+body.dark .img_logo_page1 {
+	background-image: url(../images/SESHATLAB-MODO-CLARO.png);
+}
 
 #form_login {
 	margin-top: 10px;
@@ -148,6 +177,7 @@ body.dark .campotxt::placeholder {
 body.dark .olvido_contraseña {
 	color: #644fc2;
 }
+
 /* /VISTA SEGUNDA VISTA SIGN UP/  */
 
 .containerSignUp {
@@ -178,7 +208,11 @@ body.dark .olvido_contraseña {
 	font-family: 'Montserrat classic', sans-serif;
 	color: white;
 	font-size: 30px;
-	margin-bottom: 10vh;
+	margin-bottom: 5vh;
+}
+
+body.dark .tittleRegistroUser {
+	color: #281e52;
 }
 
 .container404,
@@ -242,21 +276,14 @@ body.dark .textBoxContainer {
 	color: #ffffff;
 	padding: 10px;
 	letter-spacing: 1px;
-	font-family: 'Montserrat classic', sans-serif;
-}
-
-body.dark .textTittle,
-body.dark .userProfile,
-body.dark .nameProfile,
-.textTittleProfile {
-	color: #3d2e80;
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 body.dark .textTittle,
 body.dark .userProfile,
 body.dark .nameProfile,
 body.dark .textTittleProfile {
-	color: #554b7d;
+	color: #3d2e80;
 }
 
 .containerPublicar,
@@ -276,6 +303,7 @@ body.dark .textTittleProfile {
 	height: auto;
 	color: white;
 	font-size: 20px;
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 body.dark .boxtxt,
@@ -310,11 +338,21 @@ body.dark .post {
 	font-size: large;
 	text-decoration: none;
 	letter-spacing: 3px;
-	font-family: 'Montserrat classic', sans-serif;
+	font-family: 'Josefin Sans', sans-serif;
 }
 
-p {
-	height: 1px;
+.boxtxtTitle {
+	height: 25px;
+	color: #ffffff;
+	padding: 10px;
+	letter-spacing: 1px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+body.dark .boxtxtTitle {
+	color: #3d2e80;
 }
 
 .LIKE,
@@ -361,12 +399,10 @@ body.dark .containerPostProfile {
 	background: #f2865f;
 	display: flex;
 	justify-content: center;
-	opacity: 0.8;
 }
 
 body.dark .containerTittle {
 	background: #1fc074;
-	opacity: 0.8;
 }
 
 .sectionProfile {
@@ -380,11 +416,6 @@ body.dark .containerTittle {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-}
-
-.userProfile,
-.nameProfile {
-	text-align: center;
 }
 
 /* estilos para el footer*/
@@ -406,12 +437,10 @@ footer {
 	background: #f2865f;
 	margin-top: auto;
 	height: 60px;
-	opacity: 0.5;
 }
 
 body.dark footer {
 	background: #1fc074;
-	opacity: 0.5;
 }
 
 .imageFooter {

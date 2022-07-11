@@ -10,8 +10,10 @@ export const interpLogIn = () => {
         </a>
       </nav>
       <div class="containerFormIndex">
-        <h1 class="title_page1" >SESHATLAB</h1>
-        <img class="img_logo_page1" src="./images/logo.png" alt="logo" width="145"/>
+        <h1 class="title_page1">SESHATLAB</h1>
+        <div class="containerLogo">
+        <div class="img_logo_page1"></div>
+        </div>
         <form id="form_login" action="">
           <input type="text" id="userName" name="email" placeholder="Correo electrónico" autofocus class="campotxt">
           <input type="text" id="password" name="password" placeholder="Contraseña" autofocus class="campotxt">
