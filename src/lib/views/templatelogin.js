@@ -14,7 +14,6 @@ export const login = () => {
             <button type="submit" class = "btnContinuar">Continuar</></button>
             </form>
             <button class = "btnregister"><a href='#/register'>Registrar</a></button>
-            <button class = "forgot">¿Has olvidado tu contraseña?</button>
             <button id = "btngoogle" class = "btngoogle"><img src= "imagenes/logogoogle.png" class= "logogoogle">Iniciar Sesión</button>
 
         </div>`
