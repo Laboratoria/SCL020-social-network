@@ -41,8 +41,7 @@ export const interpPostProfile = async () => {
 			const post = doc.data();
 			console.log(post.Autor);
 			// console.log('Prueba Marianny', doc.id);
-			const formHomePost =
-				//html
+			const formHomePost =//html
 				`
         <div id="rootProfilePost" class="containerProfileUser" data-postid="${doc.id}">
         <div class="containerPostProfile">
@@ -50,7 +49,8 @@ export const interpPostProfile = async () => {
             <img class="" src="./images/perfil.png" alt="perfil" height=auto width="40"/>
             <h3 class="textTittleProfile">${post.Autor}</h3>
           </div>
-          <textarea type="text" id="forPostingProfile" class="boxtxtProfile" rows="5">${post.Content}</textarea>
+          <p type="text" id="forTitlePosting" class="boxtxtTitle" rows="5">${post.Title}</p>
+          <p type="text" id="forPostingProfile" class="boxtxtProfile" rows="5">${post.Content}</p>
           <div class="containerlikeProfile" id="PostProfile" >
             <input type="image" id="btnEditPostProfile" class="btnEditProfile" src="images/lapizModoClaro.png" />
             <input type="image" id="${doc.id}" class="btnDelete" src="images/BasuraModoOscuro.png" />
