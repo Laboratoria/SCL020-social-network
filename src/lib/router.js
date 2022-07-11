@@ -23,6 +23,7 @@ export const changeRoutes = (hash) => {
    }
 }
 
+//muestra los templates segun el hash
 export const showTemplate = (hash) => {
    const containerRoot = document.getElementById('root');
    containerDiv.innerHTML = menu();

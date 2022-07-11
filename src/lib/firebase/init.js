@@ -1,4 +1,4 @@
-//Conecxión con Firebase
+//Conexión con Firebase
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-app.js'
 //Se trae la configuración
 import {firebaseConfig}  from './lib/firebase/config.js'

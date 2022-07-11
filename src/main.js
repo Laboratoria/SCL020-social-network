@@ -6,8 +6,10 @@ import { menu } from './lib/views/templateMenu.js';
 import { changeRoutes } from './lib/router.js';
 import { myFunction} from './lib/index.js';
 
+//Contiene o llama el div del html
+export const root =  document.getElementById('root');
 
-//
+//Init del router
 const init = () => {
     document.getElementById('root').innerHTML = menu();
     window.addEventListener('hashchange', () => {
@@ -16,5 +18,5 @@ const init = () => {
         changeRoutes(window.location.hash);
     })
 }
-
+//carga el init
 window.addEventListener('load', init);

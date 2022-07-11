@@ -7,8 +7,8 @@ export const feed = () => {
         <h2> Usuario</h2>
       </section>
       <section>
-      <form id="" class="">
-      <input type="text" name="postTitle" id="postTittle" class="" placeholder="Tips">
+      <form id="postform" class="">
+      <input type="text" name="postTitle" id="postTitle" class="" placeholder="Tips">
       <textarea type="text" name="postText" id="postText" class="" rows="5" placeholder="Comparte tus tips aquí..."></textarea>
       <div class="">
       <button id="postBtn" class="">Publicar</button>
