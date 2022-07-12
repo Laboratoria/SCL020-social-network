@@ -1,5 +1,5 @@
 import { userRegister } from "../../firebase/auth.js";
-
+//Funcion para crear el template en el que los usuarios se registran
 export const register = () => {
     
     const viewRegister =
@@ -17,13 +17,12 @@ export const register = () => {
         </div>`
     const divRegister = document.createElement("div")
      divRegister.innerHTML = viewRegister;
-
+  //Funcion para tomar los valores ingresados por los usuarios
     const btn = divRegister.querySelector("#btn")
     btn.addEventListener("click", () => {
         const userName = divRegister.querySelector("#userName").value;
         const email = divRegister.querySelector("#email").value;
         const psw = divRegister.querySelector("#contraseña").value;
-        // const masking = psw.replace(g, '.') ;
 
 
         userRegister(userName, email, psw);

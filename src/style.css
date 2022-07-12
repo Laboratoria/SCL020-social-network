@@ -1,139 +1,151 @@
 @import url('https://fonts.googleapis.com/css2?family=Koulen&family=Lobster+Two&family=Oswald:wght@700&display=swap');
+
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-:root  {
+:root {
     --naranja: #E28413;
 }
 
 
-    body {
-        background-image: url(imagenes/fondo-app.jpg);
-        background-size: cover;
-        background-attachment: fixed;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .container-inicio {
-        display: grid;
-        grid-template-rows: 120px 178px 196px;
-        background-color: white;
-        opacity: 87%;
-        width: 90vw;
-        height: 600px;
-        margin-top: 70px;
-        border-radius: 35px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .container-inicio h1 {
-        font-family: 'Lobster Two';
-        text-align: center;
-        font-size: 66px;
-        line-height: 115px;
-        color: #095E00;
-        margin-top: 30px;
-    }
-    .container-inicio .logo {
-        margin-left: auto;
-        margin-right: auto;
-        width: 40%;
-    }
-    .container-orange {
-        height: 25vh;
-        width: 450px;
-        background: var(--naranja);
-        padding: 20px;
-        border-radius: 10px;
-        margin-top: 5px;
-        margin-bottom: 130px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .container-orange h2 {
-        color: #FFFFFF;
-        font-family: 'Jockey One';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 22px;
-        line-height: 8px;
-        text-align: center;
-        padding-top: 15px;
-    }
-    .container-orange p {
-        color: #FFFFFF;
-        font-family: 'Jockey One';
-        font-style: normal;
-        font-weight: 400;
-        font-size:20px;
-        line-height: 35px;
-        text-align: center;
-        margin-top: 10px;
-    }
-    .botonUnete {
-        width: 230px;
-        height: 45px;
-        left: 74px;
-        background: #2BA84A;
-        margin: 30px auto;
-        border-radius: 15px;
-        padding: 10px 10px;
-        margin-bottom: 100px;
-        font-weight: bold;
-        border: none;
-    }
-    .botonUnete a {
-        text-decoration: none;
-        color: #FFFFFF;
-        font-size: 20px;
-        font-family: 'Lobster Two';
-    }
-    .container-login {
-        display: grid;
-        justify-items: center;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        background-color: white;
-        opacity: 87%;
-        width: 90vw;
-        height: 600px;
-        margin-top: 70px;
-        border-radius: 35px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .container-login h1 {
-        font-family: 'Lobster Two';
-        text-align: center;
-        font-size: 65px;
-        line-height: 81.25px;
-        color: #095E00;
-        margin-top: 40px;
-    }
-    .form {
-        display: grid;
-        grid-template-rows: 1fr 1fr 1fr;
-        margin: 0 auto;
-    }
+body {
+    background-image: url(imagenes/fondo-app.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    .container-login .email, 
-    .container-login .contraseña  {
-        width: 272px;
-        height: 50px;
-        border: none;
-        padding: 0 5px;
-        left: 63px;
-        background: rgba(0, 0, 0, 0.15);
-        margin: 0 auto;
-        border-radius: 15px;
-    }
+.container-inicio {
+    display: grid;
+    grid-template-rows: 200px 100px 196px;
+    background-color: white;
+    opacity: 87%;
+    width: 90vw;
+    height: 600px;
+    margin-top: 70px;
+    border-radius: 35px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-    /* Este codigo se repetia en los dos input, por eso los trabaje juntos arriba */
-  /*   .container-login .contraseña {
+.container-inicio h1 {
+    font-family: 'Lobster Two';
+    text-align: center;
+    font-size: 66px;
+    line-height: 90px;
+    color: #095E00;
+    margin-top: 30px;
+}
+
+.container-inicio .logo {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.container-orange {
+    height: 25vh;
+    width: 450px;
+    background: var(--naranja);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 130px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-orange h2 {
+    color: #FFFFFF;
+    font-family: 'Jockey One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 8px;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.container-orange p {
+    color: #FFFFFF;
+    font-family: 'Jockey One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 35px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.botonUnete {
+    width: 230px;
+    height: 45px;
+    left: 74px;
+    background: #2BA84A;
+    margin: 30px auto;
+    border-radius: 15px;
+    padding: 10px 10px;
+    margin-bottom: 100px;
+    font-weight: bold;
+    border: none;
+}
+
+.botonUnete a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-family: 'Lobster Two';
+}
+
+.container-login {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    background-color: white;
+    opacity: 87%;
+    width: 90vw;
+    height: 600px;
+    margin-top: 70px;
+    border-radius: 35px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-login h1 {
+    font-family: 'Lobster Two';
+    text-align: center;
+    font-size: 65px;
+    line-height: 81.25px;
+    color: #095E00;
+    margin-top: 40px;
+}
+
+.form {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin: 0 auto;
+}
+
+.container-login .email,
+.container-login .contraseña {
+    width: 272px;
+    height: 50px;
+    border: none;
+    padding: 0 5px;
+    left: 63px;
+    background: rgba(0, 0, 0, 0.15);
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+/* Este codigo se repetia en los dos input, por eso los trabaje juntos arriba */
+/*   .container-login .contraseña {
         width: 270px;
         height: 50px;
         left: 64px;
@@ -142,332 +154,373 @@
         margin-right: auto;
     } */
 
-    .container-login .btnContinuar {
-        width: 270px;
-        height: 50px;
-        left: 62px;
-        background: #2BA84A;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 15px;
-        color: #FFFFFF;
-        font-weight: bold;
-        font-size: 18px;
-        font-family: 'Lobster Two';
-        border: none;
-    }
-    .container-login .btnregister {
-        width: 270px;
-        height: 50px;
-        left: 65px;
-        background: var(--naranja);
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 15px;
-        font-family: 'Lobster Two';
-        border: none;
-    }
-    .container-login .forgot {
-        width: 268.79px;
-        height: 50px;
-        margin-top: 10px;
-        left: 62px;
-        background: #FFFFFF(0, 0, 0, 0);
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 15px;
-        border: none;
-    }
+.container-login .btnContinuar {
+    width: 270px;
+    height: 50px;
+    left: 62px;
+    background: #2BA84A;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Lobster Two';
+    border: none;
+}
 
-    .container-login .btngoogle {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        align-content: stretch;
-        flex-direction: row;
-        width: 268.79px;
-        height: 50px;
-        left: 62px;
-        background: #D9D9D9;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 15px;
-        border: none;
-    }
-    .container-login .logogoogle {
-        right: 20px;
-    }
-    .container-login a {
-        text-decoration: none;
-        color: #FFFFFF;
-        font-weight: bold;
-        font-size: 18px;
-    }
-    .btngoogle a {
-        text-decoration: none;
-        color: black;
-        font-size: 15px;
-    }
-    .container-register {
-        display: grid;
-        grid-template-rows: 130px 170px 80px 80px 115px;
-        background-color: white;
-        opacity: 87%;
-        width: 90vw;
-        height: 80vh;
-        margin-top: 70px;
-        border-radius: 35px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .container-register h1 {
-        font-family: 'Lobster Two';
-        text-align: center;
-        font-size: 65px;
-        line-height: 81.25px;
-        color: #095E00;
-        margin-top: 40px;
-    }
+.container-login .btnregister {
+    width: 270px;
+    height: 50px;
+    left: 65px;
+    background: var(--naranja);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    font-family: 'Lobster Two';
+    border: none;
+}
 
-    .container-register .logo {
-        margin: 0 auto;
-    }
+.container-login .forgot {
+    width: 268.79px;
+    height: 50px;
+    margin-top: 10px;
+    left: 62px;
+    background: #FFFFFF(0, 0, 0, 0);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    border: none;
+}
 
-    .container-register .userName {
-        width: 272px;
-        height: 50px;
-        padding: 10px;
-        left: 63px;
-        background: rgba(0, 0, 0, 0.15);
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 15px;
-        border: none;
-    }
-    .container-register .email {
-        width: 272px;
-        height: 50px;
-        padding: 10px;
-        left: 63px;
-        background: rgba(0, 0, 0, 0.15);
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 15px;
-        border: none;
-    }
-    .container-register .contraseña {
-        width: 270px;
-        height: 50px;
-        padding: 10px; 
-        left: 64px;
-        background: rgba(0, 0, 0, 0.15);
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 15px;
-        border: none;
-    }
-    .container-register .btn {
-        width: 270px;
-        height: 45px;
-        left: 62px;
-        background: #2BA84A;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 15px;
-        border: none;
-    }
-    .container-register a {
-        text-decoration: none;
-        color: #FFFFFF;
-        font-weight: bold;
-        font-size: 18px;
-    }
-    /*.container-wall {
+.container-login .btngoogle {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: stretch;
+    flex-direction: row;
+    width: 268.79px;
+    height: 50px;
+    left: 62px;
+    background: #D9D9D9;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    border: none;
+}
+
+.container-login .logogoogle {
+    right: 20px;
+}
+
+.container-login a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.btngoogle a {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+
+.container-register {
+    display: grid;
+    grid-template-rows: 120px 150px 70px 70px 70px;
+    background-color: white;
+    opacity: 87%;
+    width: 90vw;
+    height: 600px;
+    margin-top: 70px;
+    border-radius: 35px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-register h1 {
+    font-family: 'Lobster Two';
+    text-align: center;
+    font-size: 65px;
+    line-height: 81.25px;
+    color: #095E00;
+    margin-top: 40px;
+}
+
+.container-register .logo {
+    margin: 0 auto;
+}
+
+.container-register .userName {
+    width: 272px;
+    height: 50px;
+    padding: 10px;
+    left: 63px;
+    background: rgba(0, 0, 0, 0.15);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    border: none;
+}
+
+.container-register .email {
+    width: 272px;
+    height: 50px;
+    padding: 10px;
+    left: 63px;
+    background: rgba(0, 0, 0, 0.15);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    border: none;
+}
+
+.container-register .contraseña {
+    width: 270px;
+    height: 50px;
+    padding: 10px;
+    left: 64px;
+    background: rgba(0, 0, 0, 0.15);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    border: none;
+}
+
+.container-register .btn {
+    width: 270px;
+    height: 45px;
+    left: 62px;
+    background: #2BA84A;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    border: none;
+    font-family: 'Lobster Two';
+}
+
+.container-register a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/*.container-wall {
 
     }*/
-    .container-wall header {
-        display: flex;
-        justify-content: space-around;
-        flex-direction: row-reverse;
-        top: 800px;
-        width: 100vw;
-        height: 100px;
-        background-color: var(--naranja);
-    }
-    .container-wall h1 {
-        font-family: 'Lobster Two';
-        display: flex;
-        text-align: right;
-        font-size: 40px;
-        color: #095E00;
-        margin-top: 20px;
-        margin-right: 400px;
-    }
-    .container-wall .logoperfil {
-        Width: 12vw;
-        Height: 8vh;
-        margin-top: 10px;
-    }
-    .container-wall footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        align-items: center;
-        width: 100vw;
-        height: 60px; 
-        background-color: var(--naranja);
-    }
-
-    .container-wall footer a {
-        display: flex;
-        justify-content: center;
-    }
-
-   .iconoMas {
-        width: 60px;
-    }
+.container-wall header {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    width: 100vw;
+    height: 90px;
+    background-color: var(--naranja);
+    left: 0;
+    bottom: 500px;
   
-    .container-wall .logomuro {
-        width: 12vw;
-        height: 7vh;
-    }
-    .container-wall .logopublicar {
-        width: 10vw;
-        height: 7vh;
-    }
-     .container-post {
-        display: flex;
-        /* align-items: center; */
-        width: 100px;
-        height: 100px;
-        border-radius: 0px;
-        padding: 30px;
-        justify-content: center;
-    }
-    .container-post h1 {
-        font-family: 'Lobster Two';
-        font-size: 40px;
-        color: #095E00;
-        text-align: center;
-    }
-    .container-post form {
-        display: flex;
-        flex-direction: column;
-        margin: 0 auto;
-        height: 600px;
-        width: 90vw;
-        padding: 30px 40px;
-        background-color: #FFFFFF;
-        border-radius: 35px;
-        opacity: 90%;
-    }
+    
+}
+.container-wall .cerrar {
+    width: 118px;
+    height: 35px;
+    left: 62px;
+    margin-left: auto;
+    margin-right: 180px;
+    border-radius: 15px;
+    border: none;
+    justify-content: center;
+    background-color: #207b14;
+    color: white;
+    font-family: 'Lobster Two';
 
-    #formPost input {
-        height: 40px; 
-        border: none;
-        border-bottom: 1px solid black;
-        font-size: 18px;
-    }
-
-    #formPost textarea {
-        height: 40px; 
-        border: none;
-        border-bottom: 1px solid black;
-        resize: none;
-        padding: 15px 0px 0px;
-        font-size: 18px;
-    }
-
-    textarea:focus, input:focus{
-        outline: none;
-    }
-
-    .container-post h4 {
-        font-family: 'Lobster Two';
-        font-size: 20px;
-        color: black;
-        margin-top: 20px;
-    }
-    .container-post .btnpublicar {
-        width: 30vw;
-        height: 5vh;
-        background: var(--naranja);
-        font-family: 'Lobster Two';
-        font-size: 20px;
-        color: black;
-        border-radius: 15px;
-        margin-top: 45px;
-        border: none;
-
-       
-        
-    }
+}
+.container-wall h1 {
+    font-family: 'Lobster Two';
+    display: flex;
+    font-size: 40px;
+    color: #095E00;
+    margin-top: 20px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: 130px;
    
-    .post {
-        height: 55vh;
-        width: 50vw;
-        background: white;
-        border-radius: 10px;
-        margin-top: 5px;
-        margin-bottom: 130px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .post p {
-        font-family: 'Lobster Two';
-        text-align: center;
-        font-size: 20px;
-        color: #095E00;
-    }
-    .post h4 {
-        font-family: 'Lobster Two';
-        text-align: center;
-        font-size: 20px;
-        color: #095E00;
-    }
-    .post .nameRecipe {
-        font-family: 'Lobster Two';
-        text-align: center;
-        font-size: 50px;
-        color: #095E00;
-    }
+}
 
-    .icon {
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-around;
-    }
- 
-    .insertPost {
-        background-color: white; /* var(--naranja) */
-        opacity: 90%;
-        width: 80vw;
-        height: 485px;
-        padding: 20px;
-        margin-top: 70px;
-        border-radius: 35px;
-        margin: 45px auto;
-    }
 
-    .insertPost textarea{
-        width:100%;
-        height:30px;
-        padding: 5px;
-        border: none;
-        border-radius:3px;
-        background-color:transparent;
-        margin-bottom: 5px;	
-        resize:none;
-        display:block;   
-    }
+.container-wall footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    align-items: center;
+    width: 100vw;
+    height: 60px;
+    background-color: var(--naranja);
+}
 
-    .insertPost .iconoEditar {
-        width: 42px;
-    }
+.container-wall footer a {
+    display: flex;
+    justify-content: center;
+}
 
-    .like  {
-        width: 50px;
-    }
+.iconoMas {
+    width: 50px;
+    margin-top: 7px;
+}
+
+
+
+
+.container-post {
+    display: flex;
+    /* align-items: center; */
+    width: 100px;
+    height: 100px;
+    border-radius: 0px;
+    padding: 30px;
+    justify-content: center;
+}
+
+.container-post h1 {
+    font-family: 'Lobster Two';
+    font-size: 40px;
+    color: #095E00;
+    text-align: center;
+}
+
+.container-post form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    height: 600px;
+    width: 90vw;
+    padding: 30px 40px;
+    background-color: #FFFFFF;
+    border-radius: 35px;
+    opacity: 90%;
+}
+
+#formPost input {
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 18px;
+}
+
+#formPost textarea {
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid black;
+    resize: none;
+    padding: 15px 0px 0px;
+    font-size: 18px;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+.container-post h4 {
+    font-family: 'Lobster Two';
+    font-size: 20px;
+    color: black;
+    margin-top: 20px;
+}
+
+.container-post .btnpublicar {
+    width: 30vw;
+    height: 5vh;
+    background: var(--naranja);
+    font-family: 'Lobster Two';
+    font-size: 20px;
+    color: black;
+    border-radius: 15px;
+    margin-top: 45px;
+    border: none;
+
+
+
+}
+
+.post {
+    height: 55vh;
+    width: 50vw;
+    background: white;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 130px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post p {
+    font-family: 'Lobster Two';
+    text-align: center;
+    font-size: 20px;
+    color: #095E00;
+}
+
+.post h4 {
+    font-family: 'Lobster Two';
+    text-align: center;
+    font-size: 20px;
+    color: #095E00;
+}
+
+.post .nameRecipe {
+    font-family: 'Lobster Two';
+    text-align: center;
+    font-size: 50px;
+    color: #095E00;
+}
+
+.icon {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+.insertPost {
+    background-color: white;
+    /* var(--naranja) */
+    opacity: 90%;
+    width: 80vw;
+    height: 485px;
+    padding: 20px;
+    margin-top: 70px;
+    border-radius: 35px;
+    margin: 45px auto;
+    font-family: 'Lobster Two';
+    position: sticky;
+    overflow: auto;
+    
+
+
+}
+
+.insertPost textarea {
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    background-color: transparent;
+    margin-bottom: 5px;
+    resize: none;
+    display: block;
+}
+
+.insertPost .iconoEditar {
+    width: 42px;
+}
+
+.like {
+    width: 50px;
+}
 
 .insertPost .containerIconos {
     display: flex;
@@ -477,52 +530,41 @@
 }
 
 .insertPost .savePost {
-        width: 118px;
-        height: 35px;
-        left: 62px;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 15px;
-        border: none;
-        justify-content: center;
-        background-color: var(--naranja);
-        color: white;
-        display: none;
-}
-
- .container-wall .cerrar{
     width: 118px;
     height: 35px;
     left: 62px;
     margin-left: auto;
-    margin-right: 130px;
+    margin-right: auto;
     border-radius: 15px;
     border: none;
     justify-content: center;
-    background-color: #207b14;
+    background-color: var(--naranja);
     color: white;
-  
+    display: none;
 }
 
-@media(min-width: 425px) {            
+
+
+@media(min-width: 425px) {
 
     .container-login {
         width: 500px;
         height: 85vh;
-     }
+    }
 
-     .insertPost {
+    .insertPost {
         width: 500px;
         height: 550px;
-     }
+    }
 
-     .container-post {
-      width: 500px;
-     }
+    .container-post {
+        width: 500px;
+    }
 
     .container-register {
         width: 500px;
     }
+
     .container-orange {
         width: 350px;
         height: 38vh;
@@ -530,7 +572,7 @@
 
 }
 
-@media(min-width: 1080px)and (max-width: 1920px){
+@media(min-width: 1080px)and (max-width: 1920px) {
     body {
         background-image: url(imagenes/bodydesktop.jpg);
         background-size: cover;
@@ -539,12 +581,15 @@
         align-items: center;
         justify-content: center;
     }
+
     .container-inicio {
-    
+
         opacity: 87%;
         width: 600px;
         height: 45vw;
-       
+        display: grid;
+        grid-template-rows: 100px 150px 200px;
+
     }
 
 }

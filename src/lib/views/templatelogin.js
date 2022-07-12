@@ -1,7 +1,6 @@
 import { userLogin, usersGoogle } from "../../firebase/auth.js";
-
 import { changeRouter } from "../router.js";
-
+//Funcion para crear el template en el que los usuarios se loguean
 export const login = () => {
     const divLogin = document.createElement("div")
     const viewLogin =
@@ -18,14 +17,13 @@ export const login = () => {
 
         </div>`
     divLogin.innerHTML = viewLogin;
-
+    //Funcion para tomar los valores ingresados por los usuarios
     const btn = divLogin.querySelector(".btnContinuar")
     btn.addEventListener("click", async(e) => {
         e.preventDefault();
         const emailUser = divLogin.querySelector("#email").value;
         const pswUser = divLogin.querySelector("#contraseña").value;
-        // const masking = psw.replace(g, '.') ;
-        // userLogin(email, psw);
+        
         const loginUser = await userLogin(emailUser, pswUser);
 
         if (loginUser) {
@@ -33,7 +31,7 @@ export const login = () => {
         } else {
             console.log("no se ha encontrado Usuario")
         }
-        //dado que userLogin devuelve una promesa, a esta promesa  aplicarle .then y dentro del then, navegar
+        
     })
 
     const btnGoogle = divLogin.querySelector("#btngoogle")

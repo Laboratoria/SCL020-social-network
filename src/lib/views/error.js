@@ -1,3 +1,4 @@
+//Funcion para crear el template en caso de error
 export const error = () => {
     const divError = document.createElement("div")
     const viewError =
