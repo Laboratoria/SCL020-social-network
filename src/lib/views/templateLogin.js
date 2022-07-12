@@ -1,4 +1,4 @@
-
+import { changeRoutes } from "../lib/router";
 //Funcion que crea el template de la pantalla Login
 export const login = () => {
   const screenLogin = `<section>
@@ -23,7 +23,6 @@ export const login = () => {
   </section>
 </section>
 `;
-return screenLogin;
+  return screenLogin;
   //console.log('Hola mundo!');
 };
-
