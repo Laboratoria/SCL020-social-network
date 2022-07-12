@@ -1,26 +1,24 @@
-import { login } from "./templateLogin.js";
+
 //Función que contiene vista del Menu
-export const menu = () => {
-    const menuScreen = `<div><section class="containerIndex">
+export const menuLogin = () => {
+    const menuScreen = `<div class="containerIndex">
     <div class="tips">
-      <img src="images/deformitoTip.png" width="200px" height="200px">
+      <img src="images/doformitoTriste.png" width="329px" height="221px">
       Tips Adulto Independiente
     </div>
-    
       <div class="comunity">
       Únete a la comunidad y 
       conoce todos los secretos
       para vivir sol@ antes de los 30
-      (づ￣ 3￣)づ
     </div>
-    <button class="logIn"><a href="templateLogin.js">  
-     Inicia sesión 
-      (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧  
+    <a href=""><button class="logIn"> 
+     Inicia sesión con google
+
     </button></a>
     <section class="signUp"><p>
-      ¿No tienes cuenta aún? Regístrate <a href="https://img.freepik.com/vector-gratis/pagina-error-404-distorsion_23-2148105404.jpg?w=2000">aquí.</a>  
+      ¿No tienes cuenta aún? Regístrate <a href=/SCL020-social-network/src/images/error.jpg>aquí.</a>  
     </p>
-    <img src="images/deformitoTierno.png" width="250px" height="200px" ></section>
-    </div></section>`;
+    <img src="images/deformitoTierno.png" width="160px" height="160px" ></section>
+    </div>`;
     return menuScreen;
 };

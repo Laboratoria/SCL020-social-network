@@ -1,36 +1,7 @@
-import { async } from "regenerator-runtime";
-import { changeRoutes } from "../lib/router.js";
-/*
-export const login = () => {
-  const screenLogin = document.createElement("div")
-  const viewLogin =
-  ` <div class="container-log">
-  <h1> Adulto Independiente</h1>
-  <button id="btngoogle" id="btngoogle">Inicia Sesión</button>
-  </div>
-  `
-  screenLogin.innerHTML= viewLogin;
-
-  const btnGoogle = screenLogin.querySelector("#btngoogle")
-  btnGoogle.addEventListener("click", async() => {
-    const loginWithGoogle = usersGoogle();
-    if(loginWithGoogle) {
-      changeRoutes('#/feed')
-    } else {
-      changeRoutes('#/error')
-    }
-  });
-
- return screenLogin;
-
-};*/
-
-
 
 //Funcion que crea el template de la pantalla Login
 export const login = () => {
-  const divLogin = document.createElement("div");
-  const viewLogin = `<section>
+  const screenLogin =  `<section>
   <section>
     <img src="" alt="">
   </section>
@@ -52,6 +23,7 @@ export const login = () => {
   </section>
 </section>
 `;
-  return screenLogin;
+    return screenLogin;
+
   //console.log('Hola mundo!');
 };
