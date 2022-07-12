@@ -1,4 +1,5 @@
 import { userSignOut } from "../../firebase/auth.js";
+//Funcion para crear el template en el que el usuario ingresa al muro
 export const wall = () => {
     const divWall = document.createElement("div")
     const viewWall =
@@ -15,8 +16,10 @@ export const wall = () => {
         </footer>
         </div> `;
     divWall.innerHTML = viewWall;
+    //funcion para que al cerrar sesion el usuario cambie de hash a la intro
     const btnCerrar = divWall.querySelector("#btncerrar")
-    btnCerrar.addEventListener("click", () => {
+    btnCerrar.addEventListener("click", (e) => {
+    e.preventDefault();
     userSignOut();
     window.location.href = '#/intro'
 })
