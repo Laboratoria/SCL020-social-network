@@ -1,56 +1,26 @@
-// Este es el punto de entrada de tu aplicacion
-//Rutas
-import { home } from './lib/views/templateHome.js';
-import { login } from './lib/views/templateLogin.js';
-import { menu } from './lib/views/templateMenu.js';
-import { changeRoutes } from './lib/router.js';
-import { myFunction} from './lib/index.js';
 
-//funciones firestore
-import { savePost } from './lib/firebase/firestore.js';
+//Conexión con Firebase
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-app.js'
+
+//Importando funciones firebase auth
+import { getAuth, signInWithEmailAndPassword,  signInWithPopup, GoogleAuthProvider  } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js'
+//Importando funciones relacionadas a firestore
+import { getFirestore, collection, getDocs, addDoc,onSnapshot, query, doc, getDoc, deleteDoc } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js';
 
 
 
-//Contiene o llama el div del html
-export const root =  document.getElementById('root');
+// Initialize Firebase
+export const app = initializeApp(firebaseConfig);
 
-//Init del router
-const init = () => {
-    document.getElementById('root').innerHTML = menu();
-    window.addEventListener('hashchange', () => {
-        myFunction();
-        console.log("holaa");
-        changeRoutes(window.location.hash);
-    })
-}
-//carga el init
-window.addEventListener('load', init);
+// Get firestore
+const db = getFirestore(app);
+
+//Autenticación
+const auth = getAuth();
+
+const provider = new GoogleAuthProvider();
 
 
+//Exportar funciones firebase-firestore
+export { initializeApp, signInWithEmailAndPassword, auth, signInWithPopup, provider, GoogleAuthProvider, collection, getDocs, addDoc,onSnapshot, query, doc, db, deleteDoc, getDoc };
 
-
-//llama al input y textarea
-export const title = document.getElementById('postTitle');
-export const postText = postform['postText'];
-
-//Formulario enviado DOM
-export const postForm = document.getElementById('postform');
-postForm.addEventListener('submit', (e) =>{
-    e.preventDefault();
-
-    title;
-    postText;
-
-    // const title = document.getElementById('postTitle');
-    // const postText = postform['postText'];
-
-//console.log(title.value);
-
-   //obtiene el valor del titulo y el post del input y textarea
- console.log (savePost(title.value, postText.value));
-   // console.log(postText.value)
-
-   //Resetea el formulario, lo limpia
-   postForm.reset();
-
-});
