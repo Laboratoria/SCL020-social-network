@@ -3,7 +3,6 @@
 //Rutas
 import { home } from './lib/views/templateHome.js';
 import { login } from './lib/views/templateLogin.js';
-import { menu } from './lib/views/templateMenu.js';
 import { menuLogin } from './lib/views/templateMenu.js';
 import { changeRoutes } from './lib/router.js';
 
@@ -29,7 +28,7 @@ window.addEventListener('load', init);
 
 //llama al input y textarea
 export const title = document.getElementById('postTitle');
-export const postText = postform['postText'];
+export const postText = postForm['postText'];
 
 //Formulario enviado DOM
 export const postForm = document.getElementById('postform');
