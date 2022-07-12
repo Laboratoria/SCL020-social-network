@@ -3,27 +3,6 @@ import { login } from './views/templateLogin.js';
 import { menu } from './views/templateMenu.js';
 import { feed } from './views/templateFeed.js'
 
-
-
-
-//Enrutador
-export const changeRoutes = (hash) => {
-   if (hash === '#/'){
-      return showTemplate(hash);
-   } else if (hash === '#/home'){
-      return showTemplate(hash);
-   }  else if (hash === '#/login'){
-      return showTemplate(hash);
-   } else if (hash === '#/menu'){
-      return showTemplate(hash);
-   } else if (hash === '#/feed'){
-      return showTemplate(hash);
-   } else {
-      return showTemplate(hash);
-   }
-}
-
-//muestra los templates segun el hash
 export const showTemplate = (hash) => {
    const containerRoot = document.getElementById('root');
    containerDiv.innerHTML = menu();
@@ -44,5 +23,30 @@ export const showTemplate = (hash) => {
 
       default:
          containerDiv.innerHTML= `<h2> Error (╯°□°）╯︵ ┻━┻ </h2>`
+   };
+};
+
+
+//Enrutador
+export const changeRoutes = (hash) => {
+   if (hash === '#/'){
+      return showTemplate(hash);
+   } else if (hash === '#/home'){
+      return showTemplate(hash);
+   } else if (hash === '#/profile'){
+         return showTemplate(hash);
+   } else if (hash === '#/register'){
+      return showTemplate(hash);
+   } else if (hash === '#/login'){
+      return showTemplate(hash);
+   } else if (hash === '#/menu'){
+      return showTemplate(hash);
+   } else if (hash === '#/feed'){
+      return showTemplate(hash);
+   } else {
+      return showTemplate(hash);
    }
-}
+};
+
+
+
