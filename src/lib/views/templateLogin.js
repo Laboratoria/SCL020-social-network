@@ -1,7 +1,7 @@
+
 //Funcion que crea el template de la pantalla Login
 export const login = () => {
-  const divLogin = document.createElement("div");
-  const viewLogin = `<section>
+  const screenLogin =  `<section>
   <section>
     <img src="" alt="">
   </section>
@@ -22,9 +22,8 @@ export const login = () => {
   </p>
   </section>
 </section>
-`
-divLogin.innerHTML = viewLogin;
-    return divLogin;
+`;
+    return screenLogin;
   //console.log('Hola mundo!');
 };
 

@@ -1,4 +1,4 @@
-import { login } from "./templateLogin.js";
+
 //Función que contiene vista del Menu
 export const menu = () => {
     const menuScreen = `<div><section class="containerIndex">
@@ -13,12 +13,12 @@ export const menu = () => {
       para vivir sol@ antes de los 30
       (づ￣ 3￣)づ
     </div>
-    <button class="logIn"><a href="templateLogin.js">  
+    <a href=""><button class="logIn"> 
      Inicia sesión 
       (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧  
     </button></a>
     <section class="signUp"><p>
-      ¿No tienes cuenta aún? Regístrate <a href="https://img.freepik.com/vector-gratis/pagina-error-404-distorsion_23-2148105404.jpg?w=2000">aquí.</a>  
+      ¿No tienes cuenta aún? Regístrate <a href=/SCL020-social-network/src/images/error.jpg>aquí.</a>  
     </p>
     <img src="images/deformitoTierno.png" width="250px" height="200px" ></section>
     </div></section>`;
