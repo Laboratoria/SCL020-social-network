@@ -13,9 +13,9 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center ;
-  font-family: 'Mitr';
-  font-style: normal;
-  font-size: 250%;
+  font-family: 'Montserrat';
+  font-style: bold;
+  font-size: 40px;
   color: #000000;
   margin-bottom: 10px;
 }
@@ -41,11 +41,12 @@ body {
   margin-right: 18%;
   color: rgb(1, 10, 10);
   background-color: rgb(247, 247, 247);
-  font-family: 'Mitr';
+  font-family: 'Montserrat';
   font-style: normal;
-  font-size: 30px;
+  font-size: 28px;
   padding: 15px;
-  border-radius: 15%;
+  border-radius: 20px;
+  text-align: center;
 }
 
 /*botoncito de inicio de sesión y registro de adorno*/
@@ -53,9 +54,9 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  font-family: 'Mitr';
+  font-family: 'Montserrat';
   font-weight: 500;
-  font-size: 30px;
+  font-size: 20px;
   color: #000000;
   border-radius: 50px;
   padding: 10px;
