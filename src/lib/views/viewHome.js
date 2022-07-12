@@ -1,8 +1,7 @@
 //Este archivo es para la vista principal de la app
 
-import { deletePost, snapshot } from '../../firebase/firestore.js';
+import { snapshot } from '../../firebase/firestore.js';
 import { signOutSession } from '../../firebase/auth.js';
-import { interpPostProfile } from './viewProfile.js';
 
 export const interpHome = () => {
 	const divHome = document.createElement('div');

@@ -393,6 +393,30 @@ body.dark .containerPostProfile {
 }
 
 /* Estilos Perfil */
+.modale {
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.301);
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+  }
+
+.hidden-component {
+	opacity: 0;
+	display: none;
+  }  
+
+.modalEdit-container {
+	background-color: #f2865f;
+	font-family: 'Manjari', sans-serif; 
+	width: 70vw;
+	min-height: 30%;
+	transform: translateX(20%) translateY(75%);
+	border-radius: 10px;
+  }
+
 .containerTittle {
 	height: auto;
 	width: 100%;

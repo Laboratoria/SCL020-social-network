@@ -10,6 +10,7 @@ import {
 	auth,
 	onAuthStateChanged,
 	where,
+	updateDoc,
 } from './init.js';
 
 export const createPost = () => {
@@ -72,3 +73,19 @@ export const deletePost = (id) => {
 			alert('Error al eliminar el post');
 		});
 };
+
+// editar post
+
+export const updatePost = (id, title, text) => {
+	updateDoc(doc(db, 'Comentarios', id), {
+		Content: text,
+		Title: title,
+	}).then(() => {
+			alert("funciono")
+		})
+		.catch(() => {
+			alert('Error');
+		});
+};
+
+

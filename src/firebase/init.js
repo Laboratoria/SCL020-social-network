@@ -19,6 +19,7 @@ import {
 	doc,
 	deleteDoc,
 	where,
+	updateDoc,
 } from 'https://www.gstatic.com/firebasejs/9.8.3/firebase-firestore.js';
 
 import { firebaseConfig } from './firebaseConfig.js';
@@ -47,4 +48,5 @@ export {
 	deleteDoc,
 	onAuthStateChanged,
 	where,
+	updateDoc,
 };

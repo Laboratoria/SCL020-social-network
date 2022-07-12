@@ -7,7 +7,7 @@ import {
 	interpHomePost,
 	logOutFunction,
 } from '../lib/views/viewHome.js';
-import { interpPostProfile, interpProfile } from '../lib/views/viewProfile.js';
+import { interpPostProfile, interpProfile, modalEditAction } from '../lib/views/viewProfile.js';
 import { interp404 } from '../lib/views/view404.js';
 import { interpRegExitoso } from '../lib/views/viewRegistroExitoso.js';
 import { createPost } from '../firebase/firestore.js';
@@ -43,6 +43,7 @@ export const changeRoute = (hash) => {
 			logOutFunction();
 			interpPostProfile();
 			functionSwitch();
+			modalEditAction();
 			break;
 		case '#/viewRegistroExitoso':
 			root.appendChild(interpRegExitoso());
