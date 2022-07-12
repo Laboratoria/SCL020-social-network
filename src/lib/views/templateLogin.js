@@ -24,6 +24,6 @@ export const login = () => {
 </section>
 `;
     return screenLogin;
+
   //console.log('Hola mundo!');
 };
-

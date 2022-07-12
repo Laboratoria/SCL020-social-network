@@ -23,6 +23,7 @@ export const changeRoutes = (hash) => {
    }
 }
 
+
 export const showTemplate = (hash) => {
    const containerRoot = document.getElementById('root');
    containerDiv.innerHTML = menuLogin()
@@ -42,5 +43,30 @@ export const showTemplate = (hash) => {
 
       default:
          containerDiv.innerHTML= `<h2> Error (╯°□°）╯︵ ┻━┻ </h2>`
+   };
+};
+
+
+//Enrutador
+export const changeRoutes = (hash) => {
+   if (hash === '#/'){
+      return showTemplate(hash);
+   } else if (hash === '#/home'){
+      return showTemplate(hash);
+   } else if (hash === '#/profile'){
+         return showTemplate(hash);
+   } else if (hash === '#/register'){
+      return showTemplate(hash);
+   } else if (hash === '#/login'){
+      return showTemplate(hash);
+   } else if (hash === '#/menu'){
+      return showTemplate(hash);
+   } else if (hash === '#/feed'){
+      return showTemplate(hash);
+   } else {
+      return showTemplate(hash);
    }
-}
+};
+
+
+
