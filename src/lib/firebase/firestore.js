@@ -1,62 +1,79 @@
-import { collection, addDoc, getDocs, onSnapshot, query, doc } from "./init";
-import { root } from "../../main";
-import { post } from "./templatePost";
-
-//Formulario enviado DOM
-const postForm = document.getElementById('postform');
-postForm.addEventListener('submit', (e) =>{
-    e.preventDefault();
-
-   const title = postForm['posTitle'];
-   const postText = postForm['postText'];
-
-   //obtiene el valor del titulo y el post del input y textarea
-   savePost(title.value,postText.value);
-    
-   //Resetea el formulario, lo limpia
-   postForm.reset();
-
-});
+import { db, collection, addDoc, getDocs, onSnapshot, query, doc, getDoc, deleteDoc } from "./init.js";
+import { postText, root, title } from "../../main.js";
 
 
-//Función que guarda los datos del formulario del post
-export const savePost = (title, postText) => {
+
+//Función que guarda los datos del formulario del post en firebase
+export const savePost = (title, text) => {
 
     //Agrega un doc a una colección en formato de objeto
-    addDoc(collection(db,'posts'),{title:title, post:post});
-
+    addDoc(collection(db,'posts'),{title:title, text:text});
+    //console.log(collection(db,'posts'),{title:title, text:text});
 };
 
 //Busca o enlista el post desde Firestore
-export const getPost = () => { 
-    //enlista los datos o docs
-    const lookPost = getDocs(collection(db,'posts'));
-    return lookPost;
-}
+export const getPost = () => getDocs(collection(db,'posts'));
+   
+ //Son los mismos datos
+//console.log(getDocs(collection(db,'posts')));
+//console.log(getPost());
 
-//convierte el doc firebase en un obj js
-export const docData = doc.data();
 
-//Crea el post y los solicita una vez
-export const createPost = async () => {
-    //obtiene el listado de los docs inmediatos
-const snapShotText = await getPost();
-//recorre los datos y crea el html del post
-snapShotText.forEach( doc => {
-    post(docData) += root.innerHTML;
-});
-};    
+//obtiene los docs en tiempo real
+const onGetPost = (callback) => onSnapshot(collection(db, "posts"), callback);
+//console.log(onGetPost());
 
-//crea el post con una suscripción o sin refrescar la pagina
-export const onGetPost = async () => {
+//crea el post en tiempo real
+const createPost = async () => {
+  onGetPost((snapShot) => {
+    let card = "";
 
-    const querySnapShot = await getPost();
+    //recorre el array de docs de firebase
+    snapShot.forEach((doc) => {
+      //console.log(doc.data())
+      const docData = doc.data(); //el .data() convierte los objetos firebase a obj JS
+      //root.innerHTML = post(docData);
+      card += `<div> 
+        <h3>${docData.title}</h3>
+        <p>${docData.text}</p>
+        <button class="btnEdit" data-id="${doc.id}">Editar</button>
+        <button class="btnDelete" data-id="${doc.id}">Eliminar</button>
+        </div>`;
+    });
 
-onSnapshot(collection(db,'posts'),(querySnapShot) => 
+    root.innerHTML = card;
 
-//crea el html del post
-querySnapShot.forEach( doc => {
-    post(docData) += root.innerHTML;
-})
-)
+
+    const btnsDelete = root.querySelectorAll('.btnDelete');
+    btnsDelete.forEach(btn => {
+        btn.addEventListener('click', (event) => {
+
+            deletePost(event.target.dataset.id);
+        });
+       });
+
+
+    const btnsEdit = root.querySelectorAll('.btnEdit');
+    btnsEdit.forEach(btn => {
+        btn.addEventListener('click', async (event) => {
+           
+            const doc = await editPost(event.target.dataset.id);
+            
+           const docData = doc.data();
+
+           title.value = docData.title;
+           postText.value = docData.text;
+
+        });
+       }); 
+    
+  });
 };
+
+console.log(createPost());
+
+
+export const editPost = (id) => getDoc(doc(db,'posts',id));
+  
+
+export const deletePost = (id) => deleteDoc(doc(db,'posts',id));
