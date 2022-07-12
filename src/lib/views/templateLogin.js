@@ -1,4 +1,3 @@
-
 import { async } from "regenerator-runtime";
 import { changeRoutes } from "../lib/router.js";
 /*
@@ -28,12 +27,10 @@ export const login = () => {
 
 
 
-
-
-
 //Funcion que crea el template de la pantalla Login
 export const login = () => {
-  const screenLogin = `<section>
+  const divLogin = document.createElement("div");
+  const viewLogin = `<section>
   <section>
     <img src="" alt="">
   </section>

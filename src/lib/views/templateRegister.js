@@ -1,7 +1,7 @@
 
 //Funcion template de la pantalla de registro
 export const register = () => {
-  const screenRegister =  `<section>
+  const screenRegister =  /*`<section>
     <section>
       <img src="" alt="">
     </section>
@@ -21,7 +21,7 @@ export const register = () => {
    
     </section>
   </section>
-  `;
+  `*/;
 return screenRegister;
 
 };
