@@ -1,6 +1,6 @@
 import { home } from './views/templateHome.js';
 import { login } from './views/templateLogin.js';
-import { menu } from './views/templateMenu.js';
+import { menuLogin } from './views/templateMenu.js';
 import { feed } from './views/templateFeed.js'
 
 
@@ -14,7 +14,7 @@ export const changeRoutes = (hash) => {
       return showTemplate(hash);
    }  else if (hash === '#/login'){
       return showTemplate(hash);
-   } else if (hash === '#/menu'){
+   } else if (hash === '#/menuLogin'){
       return showTemplate(hash);
    } else if (hash === '#/feed'){
       return showTemplate(hash);
@@ -25,8 +25,7 @@ export const changeRoutes = (hash) => {
 
 export const showTemplate = (hash) => {
    const containerRoot = document.getElementById('root');
-   containerDiv.innerHTML = menu();
-
+   containerDiv.innerHTML = menuLogin()
    switch (hash){
       case '#/home':
          containerRoot.appendChild(home());
@@ -34,8 +33,8 @@ export const showTemplate = (hash) => {
       case '#/login':
          containerRoot.appendChild(login());
          break;
-      case '#/menu':
-            containerRoot.appendChild(menu());
+      case '#/menuLogin':
+            containerRoot.appendChild(menuLogin());
             break;  
       case '#/feed':
                containerRoot.appendChild(feed());
