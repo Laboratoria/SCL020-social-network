@@ -27,6 +27,7 @@ const onGetPost = (callback) => onSnapshot(collection(db, "posts"), callback);
 const createPost = async () => {
   onGetPost((snapShot) => {
     let card = "";
+    const divPost = document.createElement("div");
 
     //recorre el array de docs de firebase
     snapShot.forEach((doc) => {
@@ -41,10 +42,10 @@ const createPost = async () => {
         </div>`;
     });
 
-    root.innerHTML = card;
+    divPost.innerHTML = card;
 
 
-    const btnsDelete = root.querySelectorAll('.btnDelete');
+    const btnsDelete = divPost.querySelectorAll('.btnDelete');
     btnsDelete.forEach(btn => {
         btn.addEventListener('click', (event) => {
 
@@ -53,7 +54,7 @@ const createPost = async () => {
        });
 
 
-    const btnsEdit = root.querySelectorAll('.btnEdit');
+    const btnsEdit = divPost.querySelectorAll('.btnEdit');
     btnsEdit.forEach(btn => {
         btn.addEventListener('click', async (event) => {
            

@@ -5,7 +5,7 @@ export const menuLogin = () => {
     const divMenuLogin = document.createElement("div");
     const viewMenuLogin =  `<div class="containerIndex">
     <div class="tips">
-      <img src="images/doformitoTip.png" width="329px" height="221px">
+      <img src="images/deformitoTip.png" width="200px" height="200px">
       Tips Adulto Independiente
     </div>
       <div class="comunity">
@@ -26,16 +26,17 @@ export const menuLogin = () => {
   
 
 
-const logIn = divMenuLogin.querySelector("#logIn");
-logIn.addEventListener("click", async() => {
-const loginGoogle = loginWithGoogle ();
+// const logIn = divMenuLogin.querySelector("#logIn");
 
-if(loginGoogle) {
-  changeRoutes('#/feed')
-} else {
-  console.log("el gatito tuyo te perdió")
-}
-});
+// logIn.addEventListener("click", async() => {
+// const loginGoogle = loginWithGoogle();
+
+// if(loginGoogle) {
+//   changeRoutes('#/feed');
+// } else {
+//   console.log("el gatito tuyo te perdió");
+// }
+// });
 return divMenuLogin;
 
-};
+}
