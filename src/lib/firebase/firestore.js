@@ -61,8 +61,6 @@ const createPost = async () => {
             
            const docData = doc.data();
 
-           const title = document.getElementById('postTitle');
-           const postText = postform['postText'];
            title.value = docData.title;
            postText.value = docData.text;
 
