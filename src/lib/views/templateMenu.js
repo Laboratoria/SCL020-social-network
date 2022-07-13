@@ -1,7 +1,9 @@
+import { loginWithGoogle } from "../firebase/auth";
 
 //Función que contiene vista del Menu
 export const menuLogin = () => {
-    const menuScreen = `<div class="containerIndex">
+    const divMenuLogin = document.createElement("div");
+    const viewMenuLogin =  `<div class="containerIndex">
     <div class="tips">
       <img src="images/doformitoTriste.png" width="329px" height="221px">
       Tips Adulto Independiente
@@ -20,5 +22,13 @@ export const menuLogin = () => {
     </p>
     <img src="images/deformitoTierno.png" width="160px" height="160px" ></section>
     </div>`;
-    return menuScreen;
+    divMenuLogin.innerHTML = viewMenuLogin;
+  return divMenuLogin;
 };
+
+const logIn = divLogin.querySelector("#logIn")
+logIn.addEventListener("click", async() => {
+
+
+}
+)

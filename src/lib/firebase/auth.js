@@ -7,7 +7,8 @@ import {
 } from "./init.js";
 
 
-const auth = getAuth();
+//const auth = getAuth();
+export const loginWithGoogle = () => {
 signInWithPopup(auth, provider)
   .then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
@@ -16,7 +17,10 @@ signInWithPopup(auth, provider)
     // The signed-in user info.
     const user = result.user;
     // ...
-  }).catch((error) => {
+    window.location.href = "/#feed"
+  })
+
+  .catch((error) => {
     // Handle Errors here.
     const errorCode = error.code;
     const errorMessage = error.message;
@@ -26,7 +30,7 @@ signInWithPopup(auth, provider)
     const credential = GoogleAuthProvider.credentialFromError(error);
     // ...
   });
-
+}
 
 
 

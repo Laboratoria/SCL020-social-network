@@ -23,23 +23,24 @@ export const changeRoutes = (hash) => {
 
 export const showTemplate = (hash) => {
    const containerRoot = document.getElementById('root');
-   containerDiv.innerHTML = menuLogin()
+   containerRoot.innerHTML = " "
    switch (hash){
+      case '#/menuLogin':
+            containerRoot.appendChild(menuLogin());
+            break;  
       case '#/home':
          containerRoot.appendChild(home());
          break;
       case '#/login':
          containerRoot.appendChild(login());
          break;
-      case '#/menuLogin':
-            containerRoot.appendChild(menuLogin());
-            break;  
+      
       case '#/feed':
                containerRoot.appendChild(feed());
             break;
 
       default:
-         containerDiv.innerHTML= `<h2> Error (╯°□°）╯︵ ┻━┻ </h2>`
+         containerRoot.innerHTML= `<h2> Error (╯°□°）╯︵ ┻━┻ </h2>`
    };
 };
 

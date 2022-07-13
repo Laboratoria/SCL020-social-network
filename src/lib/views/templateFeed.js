@@ -1,7 +1,8 @@
 
 //Muro de la red
 export const feed = () => {
-    const viewFeed =  `<section class="">
+    const divFeed = document.createElement("div");
+    const viewFeed  =  `<section class="">
       <section>
         <img src="'./images/user.png" alt="imagenPerfil">
         <h2> Usuario</h2>
@@ -16,7 +17,9 @@ export const feed = () => {
       </form>
       </section>
       </section>`
-    return viewFeed;
+      divFeed.innerHTML = viewFeed;
+      return divFeed;
+    
   
   }
 
