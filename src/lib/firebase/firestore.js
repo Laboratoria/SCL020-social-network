@@ -1,6 +1,6 @@
+import { divFeed } from "../views/templateFeed.js";
 import { db, collection, addDoc, getDocs, onSnapshot, query, doc, getDoc, deleteDoc } from "./init.js";
-import { root } from "../../main.js";
-
+import { feed } from './views/templateFeed.js';
 
 
 //Función que guarda los datos del formulario del post en firebase
@@ -28,11 +28,13 @@ const createPost = async () => {
   onGetPost((snapShot) => {
     let card = "";
 
+    const divPost = document.createElement("div");
+
     //recorre el array de docs de firebase
     snapShot.forEach((doc) => {
       //console.log(doc.data())
       const docData = doc.data(); //el .data() convierte los objetos firebase a obj JS
-      //root.innerHTML = post(docData);
+     
       card += `<div> 
         <h3>${docData.title}</h3>
         <p>${docData.text}</p>
@@ -41,10 +43,10 @@ const createPost = async () => {
         </div>`;
     });
 
-    root.innerHTML = card;
+    divPost.innerHTML = card;
 
 
-    const btnsDelete = root.querySelectorAll('.btnDelete');
+    const btnsDelete = divPost.querySelectorAll('.btnDelete');
     btnsDelete.forEach(btn => {
         btn.addEventListener('click', (event) => {
 
@@ -53,7 +55,7 @@ const createPost = async () => {
        });
 
 
-       const btnsEdit = root.querySelectorAll('.btnEdit');
+       const btnsEdit = divPost.querySelectorAll('.btnEdit');
        btnsEdit.forEach(btn => {
            btn.addEventListener('click', async (event) => {
               
@@ -61,8 +63,8 @@ const createPost = async () => {
                
               const docData = doc.data();
    
-              const title = document.getElementById('postTitle');
-              const postText = postform['postText'];
+              const title = divFeed.querySelector('#postTitle');
+              const postText = divFeed.querySelector("#postText");
 
               title.value = docData.title;
               postText.value = docData.text;

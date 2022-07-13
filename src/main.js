@@ -1,9 +1,7 @@
 // Este es el punto de entrada de tu aplicacion
 
 //Rutas
-import { home } from './lib/views/templateHome.js';
-import { login } from './lib/views/templateLogin.js';
-import { menuLogin } from './lib/views/templateMenu.js';
+//import { menuLogin } from './lib/views/templateMenu.js';
 import { changeRoutes } from './lib/router.js';
 
 
