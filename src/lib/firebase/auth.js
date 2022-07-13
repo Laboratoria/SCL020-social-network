@@ -2,7 +2,6 @@ import {
   auth,
   provider,
   GoogleAuthProvider,
-  signInWithEmailAndPassword,
   signInWithPopup,
 } from "./init.js";
 

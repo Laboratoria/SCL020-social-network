@@ -1,5 +1,5 @@
 import { db, collection, addDoc, getDocs, onSnapshot, query, doc, getDoc, deleteDoc } from "./init.js";
-//import { postText, root, title } from "../../main.js";
+import { root } from "../../main.js";
 
 
 

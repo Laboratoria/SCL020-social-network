@@ -1,11 +1,11 @@
-import { loginWithGoogle } from "../firebase/auth";
-
+import { loginWithGoogle } from "../firebase/auth.js";
+import { changeRoutes } from "../router.js";
 //Función que contiene vista del Menu
 export const menuLogin = () => {
     const divMenuLogin = document.createElement("div");
     const viewMenuLogin =  `<div class="containerIndex">
     <div class="tips">
-      <img src="images/doformitoTriste.png" width="329px" height="221px">
+      <img src="images/doformitoTip.png" width="329px" height="221px">
       Tips Adulto Independiente
     </div>
       <div class="comunity">
@@ -21,14 +21,21 @@ export const menuLogin = () => {
       ¿No tienes cuenta aún? Regístrate <a href=/SCL020-social-network/src/images/error.jpg>aquí.</a>  
     </p>
     <img src="images/deformitoTierno.png" width="160px" height="160px" ></section>
-    </div>`;
+    </div>`
     divMenuLogin.innerHTML = viewMenuLogin;
-  return divMenuLogin;
-};
+  
 
-const logIn = divLogin.querySelector("#logIn")
+
+const logIn = divMenuLogin.querySelector("#logIn");
 logIn.addEventListener("click", async() => {
+const loginGoogle = loginWithGoogle ();
 
-
+if(loginGoogle) {
+  changeRoutes('#/feed')
+} else {
+  console.log("el gatito tuyo te perdió")
 }
-)
+});
+return divMenuLogin;
+
+};
