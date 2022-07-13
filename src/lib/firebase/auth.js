@@ -2,7 +2,6 @@ import {
   auth,
   provider,
   GoogleAuthProvider,
-  signInWithEmailAndPassword,
   signInWithPopup,
 } from "./init.js";
 
@@ -17,7 +16,7 @@ signInWithPopup(auth, provider)
     // The signed-in user info.
     const user = result.user;
     // ...
-    window.location.href = "/#feed"
+    window.location.href = "/#feed";
   })
 
   .catch((error) => {

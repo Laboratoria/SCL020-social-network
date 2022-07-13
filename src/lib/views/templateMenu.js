@@ -1,4 +1,4 @@
-import { loginWithGoogle } from "../firebase/auth";
+import { loginWithGoogle } from "../firebase/auth.js";
 
 //Función que contiene vista del Menu
 export const menuLogin = () => {
@@ -24,11 +24,25 @@ export const menuLogin = () => {
     </div>`;
     divMenuLogin.innerHTML = viewMenuLogin;
   return divMenuLogin;
+
+  const logIn = divMenuLogin.querySelector("#logIn");
+  logIn.addEventListener("click", async() => {
+  const loginGoogle = loginWithGoogle ();
+  
+  if(loginGoogle) {
+    changeRoutes('#/feed')
+  } else {
+    console.log("el gatito tuyo te perdió")
+  }
+  });
+
 };
 
-const logIn = divLogin.querySelector("#logIn")
-logIn.addEventListener("click", async() => {
 
 
-}
-)
+
+
+
+
+
+

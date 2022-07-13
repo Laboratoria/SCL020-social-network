@@ -1,5 +1,5 @@
 import { db, collection, addDoc, getDocs, onSnapshot, query, doc, getDoc, deleteDoc } from "./init.js";
-import { postText, root, title } from "../../main.js";
+import { root } from "../../main.js";
 
 
 
@@ -53,19 +53,22 @@ const createPost = async () => {
        });
 
 
-    const btnsEdit = root.querySelectorAll('.btnEdit');
-    btnsEdit.forEach(btn => {
-        btn.addEventListener('click', async (event) => {
-           
-            const doc = await editPost(event.target.dataset.id);
-            
-           const docData = doc.data();
+       const btnsEdit = root.querySelectorAll('.btnEdit');
+       btnsEdit.forEach(btn => {
+           btn.addEventListener('click', async (event) => {
+              
+               const doc = await editPost(event.target.dataset.id);
+               
+              const docData = doc.data();
+   
+              const title = document.getElementById('postTitle');
+              const postText = postform['postText'];
 
-           title.value = docData.title;
-           postText.value = docData.text;
-
-        });
-       }); 
+              title.value = docData.title;
+              postText.value = docData.text;
+   
+           });
+          }); 
     
   });
   
