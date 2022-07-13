@@ -6,8 +6,6 @@ import { login } from './lib/views/templateLogin.js';
 import { menuLogin } from './lib/views/templateMenu.js';
 import { changeRoutes } from './lib/router.js';
 
-//funciones firestore
-import { savePost } from './lib/firebase/firestore.js';
 
 //Contiene o llama el div del html
 export const root =  document.getElementById('root');
