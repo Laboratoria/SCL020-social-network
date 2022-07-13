@@ -14,41 +14,44 @@ export const root =  document.getElementById('root');
 
 //Init del router
 const init = () => {
-    document.getElementById('root').innerHTML = menuLogin();
+   // document.getElementById('root').innerHTML = menuLogin();
     changeRoutes(window.location.hash);
     window.addEventListener('hashchange', () => {
        
         changeRoutes(window.location.hash);
     })
+
+
+    
 }
 
 //carga el init
 window.addEventListener('load', init);
 
 
-//llama al input y textarea
-export const title = document.getElementById('postTitle');
-export const postText = postForm['postText'];
+// //llama al input y textarea
+// export const title = document.getElementById('postTitle');
+// export const postText = postform['postText'];
 
-//Formulario enviado DOM
-export const postForm = document.getElementById('postform');
-postForm.addEventListener('submit', (e) =>{
-    e.preventDefault();
+// //Formulario enviado DOM
+// export const postForm = document.getElementById('postform');
+// postForm.addEventListener('submit', (e) =>{
+//     e.preventDefault();
 
-    title;
-    postText;
+//     title;
+//     postText;
 
-    // const title = document.getElementById('postTitle');
-    // const postText = postform['postText'];
+//     // const title = document.getElementById('postTitle');
+//     // const postText = postform['postText'];
 
-//console.log(title.value);
+// //console.log(title.value);
 
-   //obtiene el valor del titulo y el post del input y textarea
- console.log (savePost(title.value, postText.value));
-   // console.log(postText.value)
+//    //obtiene el valor del titulo y el post del input y textarea
+//  console.log (savePost(title.value, postText.value));
+//    // console.log(postText.value)
 
-   //Resetea el formulario, lo limpia
-   postForm.reset();
+//    //Resetea el formulario, lo limpia
+//    postForm.reset();
 
-});
+// });
 

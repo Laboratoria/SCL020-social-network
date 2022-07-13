@@ -1,5 +1,5 @@
 import { db, collection, addDoc, getDocs, onSnapshot, query, doc, getDoc, deleteDoc } from "./init.js";
-import { postText, root, title } from "../../main.js";
+//import { postText, root, title } from "../../main.js";
 
 
 
@@ -61,6 +61,8 @@ const createPost = async () => {
             
            const docData = doc.data();
 
+           const title = document.getElementById('postTitle');
+           const postText = postform['postText'];
            title.value = docData.title;
            postText.value = docData.text;
 
@@ -68,6 +70,7 @@ const createPost = async () => {
        }); 
     
   });
+  
 };
 
 console.log(createPost());
