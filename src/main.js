@@ -30,6 +30,7 @@ window.addEventListener('load', init);
 export const title = document.getElementById('postTitle');
 export const postText = postForm['postText'];
 
+//Conecta con las funciones del post
 //Formulario enviado DOM
 export const postForm = document.getElementById('postform');
 postForm.addEventListener('submit', (e) =>{
