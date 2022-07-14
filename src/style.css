@@ -78,12 +78,11 @@ body {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    font-family: 'Montserrat';
+    margin-top: 5%;
 }
 
-label input {
 
-  border-radius: 10%;
-}
 
 .titlePost{
   height: 5vh;
@@ -92,6 +91,7 @@ label input {
   border-radius: 10px;
   text-align: center;
   margin: 10px 0px 10px 0px;
+  font-family: 'Montserrat';
 }
 
 .textPost{
@@ -100,5 +100,5 @@ label input {
   background-color: aquamarine;
   border-radius: 10px;
   text-align: center;
-  margin-bottom: 15px;
+  font-family: 'Montserrat';
 }
