@@ -70,3 +70,35 @@ body {
   flex-direction: row;
     justify-content: center;
 }
+
+
+.containerForm{
+  display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+label input {
+
+  border-radius: 10%;
+}
+
+.titlePost{
+  height: 5vh;
+  width: 50vw;
+  background-color: aquamarine;
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px 0px 10px 0px;
+}
+
+.textPost{
+  height: 15vh;
+  width: 50vw;
+  background-color: aquamarine;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 15px;
+}

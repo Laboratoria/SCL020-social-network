@@ -4,21 +4,23 @@ import { savePost, deletePost, editPost, onGetPost } from "../firebase/firestore
 //Muro de la red
 export const feed = () => {
   const divFeed = document.createElement("div");
-  const viewFeed = `<section class="feeed">
-      <section>
-        <img src="./images/user.png" alt="imagenPerfil">
-        <h2> Usuario</h2>
-      </section>
-      <section>
-      <form id="postform" class="postform">
-      <input type="text" name="postTitle" id="postTitle" class="possTitle" placeholder="Tips">
-      <textarea type="text" name="postText" id="postText" class="postText" rows="5" placeholder="Comparte tus tips aquí..."></textarea>
-      <div class="">
-      <button id="postBtn" type="submit" class="">Publicar</button>
-      </div>
-      </form>
-      </section>
-      </section>`;
+  const viewFeed = `<section class="containerForm">
+  <img src="/images/user.png" alt="imagenPerfil">
+  <h2> Usuario</h2>
+</section>
+<section class="containerForm">
+<form id="postform" class="postform">
+  <label for="postTitle" class="containerForm">
+<input type="text" name="postTitle" id="postTitle" class="postTitle" placeholder="Tips">
+  </label>
+  <label for="postText" class="containerForm">
+<textarea type="text" name="postText" id="postText" class="postText" rows="5" placeholder="Comparte tus tips aquí..."></textarea>
+</label>
+<div class="containerForm">
+<button id="postBtn" class="postBtn">Publicar</button>
+</div>
+</form>
+</section>`;
   divFeed.innerHTML = viewFeed;
 
 
