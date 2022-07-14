@@ -1,18 +1,6 @@
 import { menuLogin } from './views/templateMenu.js';
 import { feed } from './views/templateFeed.js'
 
-//Enrutador
-export const changeRoutes = (hash) => {
-   if (hash === '#/'){
-      return showTemplate(hash);
-   } else if (hash === '#/menuLogin'){
-      return showTemplate(hash);
-   } else if (hash === '#/feed'){
-      return showTemplate(hash);
-   } else {
-      return showTemplate(hash);
-   }
-}
 
 
 export const showTemplate = (hash) => {
@@ -31,6 +19,18 @@ export const showTemplate = (hash) => {
    };
 };
 
+//Enrutador
+export const changeRoutes = (hash) => {
+   if (hash === '#/'){
+      return showTemplate(hash);
+   } else if (hash === '#/menuLogin'){
+      return showTemplate(hash);
+   } else if (hash === '#/feed'){
+      return showTemplate(hash);
+   } else {
+      return showTemplate(hash);
+   }
+}
 
 
 

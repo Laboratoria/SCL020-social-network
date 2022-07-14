@@ -5,8 +5,8 @@ export const feed = () => {
     const divFeed = document.createElement("div");
     const viewFeed  =  `<section class="feeed">
       <section>
-        <img src="'./images/user.png" alt="imagenPerfil">
-        <h2> Usuario</h2>
+        <img src="./images/user.png" alt="imagenPerfil">
+        <h2> Pepito Alcachofa </h2>
       </section>
       <section>
       <form id="postform" class="postform">
@@ -16,6 +16,7 @@ export const feed = () => {
       <button id="postBtn" type="submit" class="">Publicar</button>
       </div>
       </form>
+      <button id="logOutBtn" class="logOut">LogOut</button>
       </section>
       </section>`
       divFeed.innerHTML = viewFeed;

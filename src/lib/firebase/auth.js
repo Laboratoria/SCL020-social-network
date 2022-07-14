@@ -2,6 +2,7 @@ import {
   auth,
   provider,
   GoogleAuthProvider,
+  //signOut,
   signInWithPopup,
 } from "./init.js";
 
@@ -11,12 +12,12 @@ export const loginWithGoogle = () => {
 signInWithPopup(auth, provider)
   .then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    const token = credential.accessToken;
+    //const credential = GoogleAuthProvider.credentialFromResult(result);
+    //const token = credential.accessToken;
     // The signed-in user info.
     const user = result.user;
     // ...
-    window.location.href = "/#feed"
+    window.location.href = "/#feed";
   })
 
   .catch((error) => {
@@ -24,14 +25,21 @@ signInWithPopup(auth, provider)
     const errorCode = error.code;
     const errorMessage = error.message;
     // The email of the user's account used.
-    const email = error.customData.email;
+    //const email = error.customData.email;
     // The AuthCredential type that was used.
-    const credential = GoogleAuthProvider.credentialFromError(error);
+    //const credential = GoogleAuthProvider.credentialFromError(error);
     // ...
   });
 }
-
-
+//--> funcion que escucha el click para acceder con Google //
+export const signWithGoogle = () => {
+	//funcion llamada en el router cuando se inicializa
+	const signGoogle = document.querySelector('#btnLogin');
+	signGoogle.addEventListener('click', (event) => {
+		event.preventDefault();
+		loginWithGoogle();
+	});
+};
 
 /*
 const login = async(email, password)=> {

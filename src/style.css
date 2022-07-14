@@ -50,7 +50,7 @@ body {
 }
 
 /*botoncito de inicio de sesión y registro de adorno*/
-.logIn, .signUp {
+.btnLogin, .signUp {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -67,6 +67,6 @@ body {
 }
 .feeed{
   display: flex;
-  flex-direction: row;
-    justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }

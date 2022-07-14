@@ -12,10 +12,12 @@ export const menuLogin = () => {
       Únete a la comunidad y 
       conoce todos los secretos
       para vivir sol@ antes de los 30
+      (づ￣ 3￣)づ 
     </div>
-   <button class="logIn"> 
-     Inicia sesión con google
+    <a href=""><button class="btnLogin" type="submit"> 
 
+     Inicia sesión con google
+     (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
     </button>
     <section class="signUp"><p>
       ¿No tienes cuenta aún? Regístrate <a href=/SCL020-social-network/src/images/error.jpg>aquí.</a>  
@@ -26,17 +28,18 @@ export const menuLogin = () => {
   
 
 
-const logIn = divMenuLogin.querySelector("#logIn");
 
-logIn.addEventListener("click", async() => {
-const loginGoogle = loginWithGoogle();
+// const btnLogin = divMenuLogin.querySelector("#login");
 
-if(loginGoogle) {
-  changeRoutes('#/feed');
-} else {
-  console.log("el gatito tuyo te perdió");
-}
-});
+// btnLogin.addEventListener("click", async() => {
+// const loginGoogle = loginWithGoogle();
+
+// if(loginGoogle) {
+//   changeRoutes('#/feed');
+// } else {
+//   console.log("el gatito tuyo te perdió");
+// }
+//});
 return divMenuLogin;
 
 };

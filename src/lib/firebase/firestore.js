@@ -1,15 +1,9 @@
-import { db, collection, addDoc, getDocs, onSnapshot, query, doc, getDoc, deleteDoc } from "./init.js";
+import { db, collection, addDoc, getDocs, onSnapshot, query, doc, getDoc, deleteDoc, auth } from "./init.js";
 import { root } from "../../main.js";
 
 
 
-//Función que guarda los datos del formulario del post en firebase
-export const savePost = (title, text) => {
 
-    //Agrega un doc a una colección en formato de objeto
-    addDoc(collection(db,'posts'),{title:title, text:text});
-    //console.log(collection(db,'posts'),{title:title, text:text});
-};
 
 //Busca o enlista el post desde Firestore
 export const getPost = () => getDocs(collection(db,'posts'));
@@ -69,12 +63,19 @@ const createPost = async () => {
 
         });
        }); 
-    
+   
   });
-  
+  return createPost;
 };
 
 console.log(createPost());
+//Función que guarda los datos del formulario del post en firebase
+export const savePost = (title, text) => {
+
+  //Agrega un doc a una colección en formato de objeto
+  addDoc(collection(db,'posts'),{title:title, text:text});
+  //console.log(collection(db,'posts'),{title:title, text:text});
+};
 
 
 export const editPost = (id) => getDoc(doc(db,'posts',id));
