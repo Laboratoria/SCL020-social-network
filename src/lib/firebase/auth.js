@@ -5,6 +5,15 @@ import {
   signInWithPopup,
 } from "./init.js";
 
+export const loginGoogle = () => {
+	//funcion llamada en el router cuando se inicializa
+	const signInGoogle = document.querySelector('.logIn');
+	signInGoogle.addEventListener('click', (event) => {
+		event.preventDefault();
+		loginWithGoogle();
+	});
+};
+
 
 //const auth = getAuth();
 export const loginWithGoogle = () => {
@@ -15,8 +24,8 @@ signInWithPopup(auth, provider)
     const token = credential.accessToken;
     // The signed-in user info.
     const user = result.user;
-    // ...
-    window.location.href = "/#feed";
+    console.log(user);
+    window.location.href = "#/feed"; 
   })
 
   .catch((error) => {
@@ -30,6 +39,7 @@ signInWithPopup(auth, provider)
     // ...
   });
 }
+
 
 
 

@@ -25,7 +25,7 @@ export const feed = () => {
 
 
   //Formulario enviado a DOM
-  const postForm = divFeed.querySelector("#postform");
+   const postForm = divFeed.querySelector("#postform");
 
   postForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -56,12 +56,19 @@ export const feed = () => {
       //console.log(doc.data())
       const docData = doc.data(); //el .data() convierte los objetos firebase a obj JS
      
-      card += `<div> 
-        <h3>${docData.title}</h3>
-        <p>${docData.text}</p>
-        <button class="btnEdit" data-id="${doc.id}">Editar</button>
-        <button class="btnDelete" data-id="${doc.id}">Eliminar</button>
-        </div>`;
+      card += `<div class="containerForm"> 
+      <div class="titlePost">
+      <h3>${docData.autor}</h3>
+      <h3>${docData.title}</h3>
+      </div>
+      <div class="textPost">
+      <p>${docData.text}</p>
+      </div>
+      <div>
+      <button class="btnEdit" data-id="${doc.id}">Editar</button>
+      <button class="btnDelete" data-id="${doc.id}">Eliminar</button>
+      </div>
+      </div>`;
     });
 
     divPost.innerHTML = card;

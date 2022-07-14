@@ -10,8 +10,6 @@ body {
 }
 /*titulo y deformito*/
 .tips{
-  display: flex;
-  flex-direction: column;
   text-align: center ;
   font-family: 'Montserrat';
   font-style: bold;
@@ -31,6 +29,14 @@ body {
   font-size: 150%;
   color: #000000;
 }*/
+
+.containerIndex{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
 
 /*texto de únete...*/
 .comunity {

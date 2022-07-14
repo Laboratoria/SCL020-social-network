@@ -4,11 +4,11 @@ import { db, collection, addDoc, onSnapshot, query, doc, getDoc, deleteDoc } fro
 
 
 //Función que guarda los datos del formulario del post en firebase
-export const savePost = (title, text) => {
+export const savePost = (autor, title, text) => {
 
     //Agrega un doc a una colección en formato de objeto
-    addDoc(collection(db,'posts'),{title:title, text:text});
-    //console.log(collection(db,'posts'),{title:title, text:text});
+    addDoc(collection(db,'posts'),{autor:autor, title:title, text:text});
+    //console.log(collection(db,'posts'),{autor:autor, title:title, text:text});
 };
 
 
