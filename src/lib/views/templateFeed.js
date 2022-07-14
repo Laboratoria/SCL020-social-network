@@ -5,7 +5,7 @@ import { savePost, deletePost, editPost, onGetPost } from "../firebase/firestore
 export const feed = () => {
   const divFeed = document.createElement("div");
   const viewFeed = `<section class="containerForm">
-  <img src="/images/user.png" alt="imagenPerfil">
+  <img src="./images/user.png" alt="imagenPerfil">
   <h2> Usuario</h2>
 </section>
 <section class="containerForm">
@@ -49,7 +49,7 @@ export const feed = () => {
   onGetPost((snapShot) => {
     let card = "";
 
-    const divPost = document.createElement("div");
+    const divPost = document.getElementById('rootPost');
 
     //recorre el array de docs de firebase
     snapShot.forEach((doc) => {
