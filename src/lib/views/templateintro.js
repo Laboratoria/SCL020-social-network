@@ -1,3 +1,4 @@
+//Funcion para crear el template de inicio
 export const intro = () => {
     const divIntro = document.createElement("div")
     const viewIntro =

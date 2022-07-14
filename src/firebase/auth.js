@@ -59,15 +59,19 @@ const usersGoogle = () => {
             console.log('error', errorMessage)
         })
 };
-//Esta función autentica los datos de los usuarios que ya estan dentro de la app
+//Esta función permite desloguear usuarios que ya estan dentro de la app
 const userSignOut = () => {
-        signOut(auth).then(() => {
+        signOut(auth)
+        .then(() => {
+            console.log("usuario deslogueado")
             // Sign-out successful.
-        }).catch((error) => {
+        })
+        .catch((error) => {
+            console.log("usuario continua logueado")
             // An error happened.
         });
     }
-    //Función que permite desloguearse a usuarios que esten dentro de la app 
+//Función que permite ver el estado actual del usuario  que esten dentro de la app 
 const observer = (hash) => {
     onAuthStateChanged(auth, (user) => {
         console.log(user)
@@ -76,6 +80,8 @@ const observer = (hash) => {
             // https://firebase.google.com/docs/reference/js/firebase.User
             changeRouter(hash);
             // ...
+            const uid = user.uid
+            console.log(uid)
         } else {
             // User is signed out
             // ...
