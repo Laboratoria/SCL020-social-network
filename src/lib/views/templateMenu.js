@@ -1,9 +1,7 @@
 import { loginWithGoogle } from "../firebase/auth.js";
-<<<<<<< HEAD
-
-=======
 import { changeRoutes } from "../router.js";
->>>>>>> 701c88fdf3a98b2b71ff377674409c585ae03bf5
+
+
 //Función que contiene vista del Menu
 export const menuLogin = () => {
     const divMenuLogin = document.createElement("div");
@@ -27,8 +25,7 @@ export const menuLogin = () => {
     <img src="images/deformitoTierno.png" width="160px" height="160px" ></section>
     </div>`
     divMenuLogin.innerHTML = viewMenuLogin;
-<<<<<<< HEAD
-  return divMenuLogin;
+ 
 
   const logIn = divMenuLogin.querySelector("#logIn");
   logIn.addEventListener("click", async() => {
@@ -41,32 +38,6 @@ export const menuLogin = () => {
   }
   });
 
+  return divMenuLogin;
+
 };
-
-
-
-
-
-
-
-
-
-=======
-  
-
-
-// const logIn = divMenuLogin.querySelector("#logIn");
-
-// logIn.addEventListener("click", async() => {
-// const loginGoogle = loginWithGoogle();
-
-// if(loginGoogle) {
-//   changeRoutes('#/feed');
-// } else {
-//   console.log("el gatito tuyo te perdió");
-// }
-// });
-return divMenuLogin;
-
-}
->>>>>>> 701c88fdf3a98b2b71ff377674409c585ae03bf5

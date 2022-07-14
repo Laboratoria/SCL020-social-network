@@ -1,11 +1,12 @@
-import { savePost } from "../firebase/firestore.js";
+import { savePost, deletePost, editPost, onGetPost } from "../firebase/firestore.js";
+
 
 //Muro de la red
 export const feed = () => {
   const divFeed = document.createElement("div");
-    const viewFeed  =  `<section class="feeed">
+  const viewFeed = `<section class="feeed">
       <section>
-        <img src="'./images/user.png" alt="imagenPerfil">
+        <img src="./images/user.png" alt="imagenPerfil">
         <h2> Usuario</h2>
       </section>
       <section>
@@ -17,33 +18,85 @@ export const feed = () => {
       </div>
       </form>
       </section>
-      </section>`
-      divFeed.innerHTML = viewFeed;
-      
-    
-  //Formulario enviado DOM
-  
-   const postForm = divFeed.querySelector('#postform');
+      </section>`;
+  divFeed.innerHTML = viewFeed;
 
-   postForm.addEventListener('submit', (e) =>{
+
+  //Formulario enviado a DOM
+  const postForm = divFeed.querySelector("#postform");
+
+  postForm.addEventListener("submit", (e) => {
     e.preventDefault();
-//llama al input y textarea
-const title = divFeed.querySelector('#postTitle');
-const postText = divFeed.querySelector("#postText");
- 
-console.log(title.value);
+    //llama al input y textarea
+    const title = divFeed.querySelector("#postTitle");
+    const postText = divFeed.querySelector("#postText");
 
-   //obtiene el valor del titulo y el post del input y textarea
- savePost(title.value, postText.value);
-   // console.log(postText.value)
+    console.log(title.value);
 
-   //Resetea el formulario, lo limpia
-   postForm.reset();
+    //obtiene el valor del titulo y el post del input y textarea
+    savePost(title.value, postText.value);
+    // console.log(postText.value)
 
-});
+    //Resetea el formulario, lo limpia
+    postForm.reset();
+  });
 
-return divFeed;
+
+  //crea el post en tiempo real
+  const createPost = async () => {
+  onGetPost((snapShot) => {
+    let card = "";
+
+    const divPost = document.createElement("div");
+
+    //recorre el array de docs de firebase
+    snapShot.forEach((doc) => {
+      //console.log(doc.data())
+      const docData = doc.data(); //el .data() convierte los objetos firebase a obj JS
+     
+      card += `<div> 
+        <h3>${docData.title}</h3>
+        <p>${docData.text}</p>
+        <button class="btnEdit" data-id="${doc.id}">Editar</button>
+        <button class="btnDelete" data-id="${doc.id}">Eliminar</button>
+        </div>`;
+    });
+
+    divPost.innerHTML = card;
+
+
+        const btnsDelete = divPost.querySelectorAll('.btnDelete');
+        btnsDelete.forEach(btn => {
+        btn.addEventListener('click', (event) => {
+
+            deletePost(event.target.dataset.id);
+          });
+        });
+
+
+       const btnsEdit = divPost.querySelectorAll('.btnEdit');
+       btnsEdit.forEach(btn => {
+           btn.addEventListener('click', async (event) => {
+              
+               const doc = await editPost(event.target.dataset.id);
+               
+              const docData = doc.data();
+   
+              const title = divFeed.querySelector('#postTitle');
+              const postText = divFeed.querySelector("#postText");
+
+              title.value = docData.title;
+              postText.value = docData.text;
+   
+           });
+          }); 
+    
+  });
   
 
 };
 
+console.log(createPost());
+
+  return divFeed;
+};

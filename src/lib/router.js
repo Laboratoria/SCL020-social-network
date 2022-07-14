@@ -1,6 +1,7 @@
 import { menuLogin } from './views/templateMenu.js';
 import { feed } from './views/templateFeed.js';
 
+
 //Enrutador
 export const changeRoutes = (hash) => {
    if (hash === '#/'){
@@ -10,20 +11,22 @@ export const changeRoutes = (hash) => {
    } else if (hash === '#/feed'){
       return showTemplate(hash);
    } else {
-      return showTemplate(hash);
+      return alert(' No existen rutas (╬▔皿▔)╯')
    }
 }
 
 
 export const showTemplate = (hash) => {
    const containerRoot = document.getElementById('root');
-   containerRoot.innerHTML = " "
+   containerRoot.innerHTML = " ";
    switch (hash){
       case '#/menuLogin':
             containerRoot.appendChild(menuLogin());
+            
             break;  
       case '#/feed':
                containerRoot.appendChild(feed());
+             
             break;
 
       default:
