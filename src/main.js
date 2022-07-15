@@ -6,7 +6,7 @@ import { changeRoutes } from './lib/router.js';
 
 
 //Contiene o llama el div del html
-//export const root =  document.getElementById('root');
+export const root =  document.getElementById('root');
 
 //Init del router
 const init = () => {

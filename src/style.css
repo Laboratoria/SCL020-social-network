@@ -30,6 +30,9 @@ body {
   color: #000000;
 }*/
 
+
+/*flexbox de la pagina de inicio, por favor no agregar más atributos a esta clase*/
+/*/////////////////////////////////////////////////*/
 .containerIndex{
   display: flex;
   flex-direction: column;
@@ -37,6 +40,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+/*/////////////////////////////////////////////////*/
 
 /*texto de únete...*/
 .comunity {
@@ -77,24 +81,26 @@ body {
     justify-content: center;
 }
 
-
+/*flexbox de la pagina de inicio, por favor no agregar más atributos a esta clase*/
+/*/////////////////////////////////////////////////*/
 .containerForm{
-  display: flex;
+    display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
 }
+/*/////////////////////////////////////////////////*/
 
 label input {
-
   border-radius: 10%;
 }
 
+/*posts desde aqui*/
 .titlePost{
   height: 5vh;
   width: 50vw;
-  background-color: aquamarine;
+  background-color: rgba(201, 227, 233, 0.877);
   border-radius: 10px;
   text-align: center;
   margin: 10px 0px 10px 0px;
@@ -103,7 +109,7 @@ label input {
 .textPost{
   height: 15vh;
   width: 50vw;
-  background-color: aquamarine;
+  background-color: rgba(201, 227, 233, 0.877);
   border-radius: 10px;
   text-align: center;
   margin-bottom: 15px;
