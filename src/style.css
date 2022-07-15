@@ -69,4 +69,39 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-direction: row;
+    justify-content: center;
+}
+
+
+.containerForm{
+  display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat';
+    margin-top: 5%;
+}
+
+
+
+.titlePost{
+  height: 5vh;
+  width: 50vw;
+  background-color: aquamarine;
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px 0px 10px 0px;
+  font-family: 'Montserrat';
+}
+
+.textPost{
+  height: 15vh;
+  width: 50vw;
+  background-color: aquamarine;
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'Montserrat';
+
 }

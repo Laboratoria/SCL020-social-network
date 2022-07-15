@@ -4,7 +4,6 @@
 //import { menuLogin } from './lib/views/templateMenu.js';
 import { changeRoutes } from './lib/router.js';
 
-;
 
 //Contiene o llama el div del html
 export const root =  document.getElementById('root');
