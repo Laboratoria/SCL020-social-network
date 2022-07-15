@@ -34,7 +34,6 @@ body {
 
 
 /*flexbox de la pagina de inicio, por favor no agregar más atributos a esta clase*/
-/*/////////////////////////////////////////////////*/
 .containerIndex{
   display: flex;
   flex-direction: column;
@@ -42,7 +41,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-/*/////////////////////////////////////////////////*/
+
 
 /*texto de únete...*/
 .comunity {
@@ -84,7 +83,6 @@ body {
 }
 
 /*flexbox de la pagina de inicio, por favor no agregar más atributos a esta clase*/
-/*/////////////////////////////////////////////////*/
 .containerForm{
     display: flex;
     flex-direction: column;
@@ -92,18 +90,15 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'Montserrat';
-    margin-top: 5%;
+    margin-top: 3%;
+    margin-bottom: 3%;
 }
-/*/////////////////////////////////////////////////*/
 
-label input {
-  border-radius: 10%;
-}
 
 /*posts desde aqui*/
 .titlePost{
-  height: 5vh;
-  width: 50vw;
+  height: 3vh;
+  width: 30vw;
   background-color: rgba(201, 227, 233, 0.877);
   border-radius: 10px;
   text-align: center;
@@ -113,10 +108,33 @@ label input {
 
 .textPost{
   height: 15vh;
-  width: 50vw;
+  width: 30vw;
   background-color: rgba(201, 227, 233, 0.877);
   border-radius: 10px;
   text-align: center;
   margin-bottom: 10px;
   font-family: 'Montserrat';
+  justify-content: center;
+  font-size: 15px;
 }
+
+
+.postTitle{
+  width: 30vw;
+  font-family: 'Montserrat';
+  font-size: 15px;
+  background-color: rgb(247, 247, 247);
+
+
+  
+  }
+.postText{
+height: 15vh;
+width: 30vw;
+font-family: 'Montserrat';
+font-size: 15px;
+background-color: rgb(247, 247, 247);
+
+
+}
+

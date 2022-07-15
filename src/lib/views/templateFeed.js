@@ -59,8 +59,7 @@ export const feed = () => {
         const docData = doc.data(); //el .data() convierte los objetos firebase a obj JS
 
         card += `<div class="containerForm"> 
-                 <div class="titlePost">
-                 <h3>${docData.autor}</h3>
+                 <div class="titlePost"> 
                  <h3>${docData.title}</h3>
                  </div>
                  <div class="textPost">
