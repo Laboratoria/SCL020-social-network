@@ -7,6 +7,7 @@ import {
 
 //Muro de la red
 export const feed = () => {
+
   const divFeed = document.createElement("div");
   const viewFeed = `<section class="containerForm">
     <img src="./images/user.png" alt="imagenPerfil">
@@ -27,6 +28,7 @@ export const feed = () => {
     </section>`;
 
   divFeed.innerHTML = viewFeed;
+
 
   //Formulario enviado a DOM
   const postForm = divFeed.querySelector("#postform");

@@ -16,7 +16,7 @@ export const onGetPost = (callback) => onSnapshot(collection(db, "posts"), callb
 //console.log(onGetPost());
 
 
+
 export const editPost = (id) => getDoc(doc(db,'posts',id));
   
-
 export const deletePost = (id) => deleteDoc(doc(db,'posts',id));

@@ -17,11 +17,13 @@ export const menuLogin = () => {
       </button>
       <section class="signUp">
       <p>
-      ¿No tienes cuenta aún? Regístrate <a href=/SCL020-social-network/src/images/error.jpg>aquí.</a>  
+      ¿No tienes cuenta aún? Regístrate <a href= 3\SCL020-social-network\src\images\error.jpg>aquí.</a>  
       </p>
       <img src="images/deformitoTierno.png" width="160px" height="160px"></section>
       </div>`
     divMenuLogin.innerHTML = viewMenuLogin;
     return divMenuLogin;
 
+
 };
+
