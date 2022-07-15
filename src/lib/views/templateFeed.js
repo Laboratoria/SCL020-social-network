@@ -60,7 +60,7 @@ export const feed = () => {
 
         card += `<div class="containerForm"> 
                  <div class="titlePost">
-                 <h3>${docData.autor}</h3>
+                 
                  <h3>${docData.title}</h3>
                  </div>
                  <div class="textPost">
