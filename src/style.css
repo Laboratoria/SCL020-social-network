@@ -7,61 +7,62 @@
 body {
   background: linear-gradient(rgba(201, 227, 233, 0.877), rgba(6, 106, 131, 0.938)), url('./images/fondo.jpg');
   background-attachment: fixed;
+  font-family: 'Montserrat';
+  font-style: normal;
 }
 /*titulo y deformito*/
 .tips{
-  display: flex;
-  flex-direction: column;
   text-align: center ;
   font-family: 'Montserrat';
   font-style: bold;
   font-size: 40px;
   color: #000000;
-  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
-
-/*contenedor de todo, es prueba solamente*/
-/*.containerIndex {
-  display:flex;
+/*flexbox de la pagina de inicio, por favor no agregar más atributos a esta clase*/
+/*/////////////////////////////////////////////////*/
+.containerIndex{
+  display: flex;
   flex-direction: column;
-  text-align: center;
-  border-radius: 20px;
-  font-family: 'Mitr';
-  font-style: normal;
-  font-size: 150%;
-  color: #000000;
-}*/
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+/*/////////////////////////////////////////////////*/
 
 /*texto de únete...*/
 .comunity {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin-left: 18%;
-  margin-right: 18%;
+  margin-left: 20%;
+  margin-right: 20%;
   color: rgb(1, 10, 10);
   background-color: rgb(247, 247, 247);
   font-family: 'Montserrat';
   font-style: normal;
+  font-weight: 300;
   font-size: 28px;
+  line-height: 24px;
+  text-align: center;
   padding: 15px;
   border-radius: 20px;
   text-align: center;
 }
 
 /*botoncito de inicio de sesión y registro de adorno*/
-.btnLogin, .signUp {
+.logIn,
+ .signUp {
   display: flex;
   flex-direction: row;
   justify-content: center;
   font-family: 'Montserrat';
-  font-weight: 500;
-  font-size: 20px;
+  font-style: bold;
+  font-size: 25px;
   color: #000000;
   border-radius: 50px;
   padding: 10px;
   margin-top: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -73,9 +74,10 @@ body {
     justify-content: center;
 }
 
-
+/*flexbox de la pagina de inicio, por favor no agregar más atributos a esta clase*/
+/*/////////////////////////////////////////////////*/
 .containerForm{
-  display: flex;
+    display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
@@ -83,13 +85,17 @@ body {
     font-family: 'Montserrat';
     margin-top: 5%;
 }
+/*/////////////////////////////////////////////////*/
 
+label input {
+  border-radius: 10%;
+}
 
-
+/*posts desde aqui*/
 .titlePost{
   height: 5vh;
   width: 50vw;
-  background-color: aquamarine;
+  background-color: rgba(201, 227, 233, 0.877);
   border-radius: 10px;
   text-align: center;
   margin: 10px 0px 10px 0px;
@@ -99,9 +105,10 @@ body {
 .textPost{
   height: 15vh;
   width: 50vw;
-  background-color: aquamarine;
+  background-color: rgba(201, 227, 233, 0.877);
   border-radius: 10px;
   text-align: center;
+  margin-bottom: 10px;
   font-family: 'Montserrat';
 
 }
