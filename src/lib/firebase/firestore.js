@@ -1,5 +1,5 @@
 //funciones firestore
-import { db, collection, addDoc, onSnapshot, doc, getDoc, deleteDoc } from "./init.js";
+import { db, collection, addDoc, onSnapshot, doc, getDoc, deleteDoc, updateDoc } from "./init.js";
 
 
 //Función que guarda los datos del formulario del post en firebase
@@ -20,3 +20,7 @@ export const onGetPost = (callback) => onSnapshot(collection(db, "posts"), callb
 export const editPost = (id) => getDoc(doc(db,'posts',id));
   
 export const deletePost = (id) => deleteDoc(doc(db,'posts',id));
+
+export const updatePost = (id, {title:title, text:text}) => {
+    updateDoc(doc(db,'posts',id), {title:title, text:text});
+}; 

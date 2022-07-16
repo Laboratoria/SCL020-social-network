@@ -3,6 +3,7 @@ import {
   deletePost,
   editPost,
   onGetPost,
+  updatePost,
 } from "../firebase/firestore.js";
 
 //Muro de la red
@@ -30,6 +31,9 @@ export const feed = () => {
   divFeed.innerHTML = viewFeed;
 
 
+  let statusPost = '';
+  let idPost ='';
+
   //Formulario enviado a DOM
   const postForm = divFeed.querySelector("#postform");
   postForm.addEventListener("submit", (e) => {
@@ -40,9 +44,16 @@ export const feed = () => {
 
     console.log(title.value);
 
-    //obtiene el valor del titulo y el post del input y textarea
-    savePost(title.value, postText.value);
-    // console.log(postText.value)
+    if (statusPost !== true){
+        //obtiene el valor del titulo y el post del input y textarea
+        savePost(title.value, postText.value);
+        // console.log(postText.value)
+    } else {
+        updatePost(idPost, {title: title.value, text: postText.value});
+    }
+
+
+ 
 
     //Resetea el formulario, lo limpia
     postForm.reset();
@@ -96,6 +107,10 @@ export const feed = () => {
 
           title.value = docData.title;
           postText.value = docData.text;
+
+          statusPost = true;
+          idPost = doc.id;
+
         });
       });
     });

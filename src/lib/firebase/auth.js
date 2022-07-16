@@ -39,3 +39,20 @@ signInWithPopup(auth, provider)
   });
 }
 
+
+
+
+
+// export const snapshotProfile = (callback) => {
+// 	let autor = '';
+// 	onAuthStateChanged(auth, (user) => {  //uso el metodo observador para acceder al usuario que se loguea
+// 		console.log(user);
+// 		autor = user.email;
+// 		const lookPostProfile = query(
+// 			collection(db, 'Comentarios'),
+// 			where('Autor', '==', autor), 
+// 		);// trae los comentadios "donde/where" autor es igual al logueado (accedemos por medio de observador)
+// 		console.log(autor);
+// 		onSnapshot(lookPostProfile, callback);
+// 	});
+// };
