@@ -1,3 +1,4 @@
+import { logOut } from "../firebase/auth.js";
 import {
   savePost,
   deletePost,
@@ -5,14 +6,18 @@ import {
   onGetPost,
   updatePost,
 } from "../firebase/firestore.js";
+import { auth } from "../firebase/init.js";
 
 //Muro de la red
 export const feed = () => {
 
   const divFeed = document.createElement("div");
   const viewFeed = `<section class="containerForm">
+    <div class="textUser">
     <img src="./images/user.png" alt="imagenPerfil">
     <h2> Usuario</h2>
+    <button id="logOutBtn" class="logOutBtn">Cerrar Cesión</button>
+    </div>
     </section>
     <section class="containerForm">
     <form id="postform" class="postform">
@@ -29,6 +34,14 @@ export const feed = () => {
     </section>`;
 
   divFeed.innerHTML = viewFeed;
+
+
+  const userOut = divFeed.querySelector('.logOutBtn');
+  userOut.addEventListener('click', (e) => {
+		e.preventDefault();
+		logOut();
+		window.location.href = '#/';
+	});
 
 
   let statusPost = '';
@@ -50,6 +63,7 @@ export const feed = () => {
     //Resetea el formulario, lo limpia
     postForm.reset();
   });
+
 
   //crea el post en tiempo real
   const createPost = async () => {
@@ -112,5 +126,9 @@ export const feed = () => {
 
   //console.log(createPost());
   createPost();
+
+
+  
+
   return divFeed;
 };

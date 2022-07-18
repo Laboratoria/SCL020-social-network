@@ -3,7 +3,7 @@ import {
   provider,
   signInWithPopup,
   doc, db,
-  setDoc, getDoc
+  setDoc, getDoc, signOut
 } from "./init.js";
 
 
@@ -48,10 +48,23 @@ export const loginWithGoogle = () => {
   });
 
 
-
 }
 
-const user = auth.currentUser.uid;
+
+
+export const logOut = () => {
+  signOut(auth).then(() => {
+    // Sign-out successful.
+    console.log('log out')
+     console.log(currentUser());
+  }).catch((error) => {
+    console.log(error);
+    // An error happened.
+  });
+};
+
+//console.log(logOut(auth));
+
 // export const getUser = async (id) => {
 //   try {
 //     const data = doc(db, 'users', id);
@@ -61,5 +74,3 @@ const user = auth.currentUser.uid;
 //     console.log(err);
 //   }
 // };
-
-console.log(getUser);
