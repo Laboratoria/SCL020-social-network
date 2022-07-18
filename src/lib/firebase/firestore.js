@@ -17,10 +17,16 @@ export const onGetPost = (callback) => onSnapshot(collection(db, "posts"), callb
 
 
 
-export const editPost = (id) => getDoc(doc(db,'posts',id));
+export const editPost = (id) => {
+   const postRef = getDoc(doc(db,'posts',id));
+    return postRef;
+}; 
   
-export const deletePost = (id) => deleteDoc(doc(db,'posts',id));
+export const deletePost = (id) => {
+    const delDocRef = deleteDoc(doc(db,'posts',id))
+    return delDocRef;
+};
 
 export const updatePost = (id, {title:title, text:text}) => {
-    updateDoc(doc(db,'posts',id), {title:title, text:text});
+     updateDoc(doc(db,'posts',id), {title:title, text:text});
 }; 

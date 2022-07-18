@@ -1,30 +1,38 @@
 import {
   auth,
   provider,
- onAuthStateChanged,
-  signInWithPopup
+  signInWithPopup,
+  doc, db,
+  setDoc, getDoc
 } from "./init.js";
 
 
 export const loginGoogle = () => {
+
 	const btnGoogle = document.querySelector('.logIn');
 	btnGoogle.addEventListener('click', (event) => {
 		event.preventDefault();
-		loginWithGoogle();
+	
+    loginWithGoogle();
 	});
 };
 
 
 
 export const loginWithGoogle = () => {
-signInWithPopup(auth, provider)
+  signInWithPopup(auth, provider)
   .then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
     //const credential = GoogleAuthProvider.credentialFromResult(result);
     //const token = credential.accessToken;
     // The signed-in user info.
     const user = result.user;
+    const userFirestore = setDoc(doc(db, "users", user.uid),{ 
+    name : user.displayName,
+    email: user.email
+  });
     console.log(user);
+    console.log(userFirestore);
     window.location.href = "#/feed"; 
   })
   .catch((error) => {
@@ -36,23 +44,22 @@ signInWithPopup(auth, provider)
     // The AuthCredential type that was used.
     //const credential = GoogleAuthProvider.credentialFromError(error);
     // ...
+    console.log()
   });
+
+
+
 }
 
-
-
-
-
-// export const snapshotProfile = (callback) => {
-// 	let autor = '';
-// 	onAuthStateChanged(auth, (user) => {  //uso el metodo observador para acceder al usuario que se loguea
-// 		console.log(user);
-// 		autor = user.email;
-// 		const lookPostProfile = query(
-// 			collection(db, 'Comentarios'),
-// 			where('Autor', '==', autor), 
-// 		);// trae los comentadios "donde/where" autor es igual al logueado (accedemos por medio de observador)
-// 		console.log(autor);
-// 		onSnapshot(lookPostProfile, callback);
-// 	});
+const user = auth.currentUser.uid;
+// export const getUser = async (id) => {
+//   try {
+//     const data = doc(db, 'users', id);
+//     const userData = await getDoc(data);
+//     return userData.data(); 
+//   } catch (err) {
+//     console.log(err);
+//   }
 // };
+
+console.log(getUser);

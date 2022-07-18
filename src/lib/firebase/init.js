@@ -6,7 +6,7 @@ import { firebaseConfig } from './config.js';
 //Importando funciones firebase auth
 import { getAuth, signInWithEmailAndPassword,  signInWithPopup, GoogleAuthProvider, onAuthStateChanged  } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js';
 //Importando funciones relacionadas a firestore
-import { getFirestore, collection, getDocs, addDoc,onSnapshot, query, doc, getDoc, deleteDoc, updateDoc } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js';
+import { getFirestore, collection, getDocs, addDoc,onSnapshot, query, doc, getDoc, deleteDoc, updateDoc, setDoc } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js';
 
 
 
@@ -26,5 +26,5 @@ const db = getFirestore(app);
 
 
 //Exportar funciones firebase-firestore
-export { initializeApp, signInWithEmailAndPassword, auth, signInWithPopup, provider, GoogleAuthProvider, collection, getDocs, addDoc,onSnapshot, query, doc, db, deleteDoc, getDoc, onAuthStateChanged, updateDoc };
+export { initializeApp, signInWithEmailAndPassword, auth, signInWithPopup, provider, GoogleAuthProvider, collection, getDocs, addDoc,onSnapshot, query, doc, db, deleteDoc, getDoc, onAuthStateChanged, updateDoc, setDoc };
 

@@ -43,16 +43,8 @@ export const feed = () => {
     const postText = divFeed.querySelector("#postText");
 
     console.log(title.value);
-
-    if (statusPost !== true){
-        //obtiene el valor del titulo y el post del input y textarea
-        savePost(title.value, postText.value);
-        // console.log(postText.value)
-    } else {
-        updatePost(idPost, {title: title.value, text: postText.value});
-    }
-
-
+    
+  statusPost !== true ?  savePost(title.value, postText.value) : updatePost(idPost, {title: title.value, text: postText.value}); 
  
 
     //Resetea el formulario, lo limpia
@@ -110,6 +102,8 @@ export const feed = () => {
 
           statusPost = true;
           idPost = doc.id;
+
+         
 
         });
       });
