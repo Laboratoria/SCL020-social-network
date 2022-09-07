@@ -20,9 +20,10 @@ const Login = () => {
         <div id="login-btns" class="login-btns">
             <button id="log-in" class="main-btn" type="submit">Entrar</button>
             <p class="or">Or?</p>
-            <button id="google-btn" class="google-btn">Sign In with Google</button>
+           
         </div>
     </form>
+    <button id="google-btn" class="google-btn">Sign In with Google</button>
     <div class="signup-link">
         <p>Don't you have an account?</p>
         <a href="#" id="sign-up" class="sign-up">SIGN UP</a>
