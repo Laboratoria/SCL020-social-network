@@ -129,4 +129,6 @@ Gracias al feedack proporcionado en la etapa previa por las personas entrevistad
 <b>App Vistas Perfil Likes/Favoritos del usuario, y Vista Búsqueda por País:</b>
 ![Prototype-High-Quality](/src/img/mobile-3.png)
 
+## Demo
+![Alt Text](/src/img/socialnetwork-gif.gif)
 
