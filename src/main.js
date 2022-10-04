@@ -1,5 +1,3 @@
-// Este es el punto de entrada de tu aplicacion
+import { navigate } from './router/router.js';
 
-import { myFunction } from './lib/index.js';
-
-myFunction();
+navigate(window.location.pathname);
